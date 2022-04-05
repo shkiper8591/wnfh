@@ -1,7 +1,6 @@
 init python:
-    
     far_size = (675, 1080)
-    
+    # Git test
     blwnfh_far_kat = "mods/blwnfh/images/sprites/far/kat/"
     
     kat = Character(u'Катя', color="#ff97bb", ctc="ctc_animation", ctc_position="fixed", what_color="#e2c778", drop_shadow = [ (2, 2) ], drop_shadow_color = "#000", what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")

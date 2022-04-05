@@ -1,19 +1,7 @@
-init python:
-    far_size = (675, 1080)
-    # Git test
-    blwnfh_far_kat = "mods/blwnfh/images/sprites/far/kat/"
-    
-    kat = Character(u'Катя', color="#ff97bb", ctc="ctc_animation", ctc_position="fixed", what_color="#e2c778", drop_shadow = [ (2, 2) ], drop_shadow_color = "#000", what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
-    ukat = Character(u'Девушка', color="#ff97bb", ctc="ctc_animation", ctc_position="fixed", what_color="#e2c778", drop_shadow = [ (2, 2) ], drop_shadow_color = "#000", what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
-
-    renpy.image("kat normal2 pioneer far", ConditionSwitch(
-    "persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite(far_size, (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.94, 0.82, 1.0)),
-    "persistent.sprite_time=='night'", im.MatrixColor(im.Composite(far_size, (0, 0), blwnfh_far_kat +  "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.63, 0.78, 0.82)),
-    True, im.Composite(far_size, (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png")))
- 
-init:
+init 0:
     $ mods["blwnfh_main"]=u"Мы не отсюда"
-    
+    $ ukat = Character(u'Девушка', color="#ff97bb", ctc="ctc_animation", ctc_position="fixed", what_color="#e2c778", drop_shadow = [ (2, 2) ], drop_shadow_color = "#000", what_drop_shadow = [ (2, 2) ], what_drop_shadow_color = "#000")
+
     # Персонажи #
         
     # Инициализация спрайтов #
@@ -52,10 +40,14 @@ init:
     # Катя обычная                                         
     #image kat normal pioneer
     #image kat normal pioneer close
+    $ blwnfh_far_kat = "mods/blwnfh/images/sprites/far/kat/"
     image kat normal pioneer far = ConditionSwitch(
-    "persistent.sprite_time=='sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.94, 0.82, 1.0)),
-    "persistent.sprite_time=='night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.63, 0.78, 0.82)),
-    True, im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"))
+    "persistent.sprite_time=='sunset'", 
+    im.MatrixColor(im.Composite((900, 1080), *[(0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"]), im.matrix.tint(0.94, 0.82, 1.0)),
+    "persistent.sprite_time=='night'", 
+    im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.63, 0.78, 0.82)),
+    True, 
+    im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"))
 
 
 
@@ -107,13 +99,13 @@ init:
 
     # BG #
     
-    $ blwnfh_bg = "mods/blwnfh/images/bg/"
-    image bg int_dining_hall_people_sunset = blwnfh_bg + "int_dining_hall_people_sunset.jpg"
-    image bg ext_camp_entrance_sunset = blwnfh_bg + "ext_camp_entrance_sunset.jpg"
-    image bg ext_clubs_sunset = blwnfh_bg + "ext_clubs_sunset.jpg"
-    image bg int_attic2_day = blwnfh_bg + "int_attic2_day.jpg"
-    image bg ext_warehouse_day = blwnfh_bg + "ext_warehouse_day.jpg"
-    image bg int_warehouse_day = blwnfh_bg + "int_warehouse_day.jpg"
+    # $ blwnfh_bg = "mods/blwnfh/images/bg/"
+    # image bg int_dining_hall_people_sunset = blwnfh_bg + "int_dining_hall_people_sunset.jpg"
+    # image bg ext_camp_entrance_sunset = blwnfh_bg + "ext_camp_entrance_sunset.jpg"
+    # image bg ext_clubs_sunset = blwnfh_bg + "ext_clubs_sunset.jpg"
+    # image bg int_attic2_day = blwnfh_bg + "int_attic2_day.jpg"
+    # image bg ext_warehouse_day = blwnfh_bg + "ext_warehouse_day.jpg"
+    # image bg int_warehouse_day = blwnfh_bg + "int_warehouse_day.jpg"
     # Эффекты #
     
     transform running:

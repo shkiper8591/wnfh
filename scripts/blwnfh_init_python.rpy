@@ -41,7 +41,7 @@ init -1 python:
                 for sprite in sprites:
                     composite_args.extend([(0, 0), path + "/" + keyword + "/" + sprite])
                 composite = im.Composite(size, *composite_args)
-                renpy.image(variant_name, ConditionSwitch(
+                renpy.image(keyword + " " + variant_name, ConditionSwitch(
                     "persistent.sprite_time=='sunset'", im.MatrixColor(composite, im.matrix.tint(0.94, 0.82, 1.0)),
                     "persistent.sprite_time=='night'", im.MatrixColor(composite, im.matrix.tint(0.63, 0.78, 0.82)),
                     True, composite

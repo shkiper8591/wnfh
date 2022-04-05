@@ -41,16 +41,6 @@ init 0:
     #image kat normal pioneer
     #image kat normal pioneer close
     $ blwnfh_far_kat = "mods/blwnfh/images/sprites/far/kat/"
-    image kat normal pioneer far = ConditionSwitch(
-    "persistent.sprite_time=='sunset'", 
-    im.MatrixColor(im.Composite((900, 1080), *[(0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"]), im.matrix.tint(0.94, 0.82, 1.0)),
-    "persistent.sprite_time=='night'", 
-    im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"), im.matrix.tint(0.63, 0.78, 0.82)),
-    True, 
-    im.Composite((900, 1080), (0, 0), blwnfh_far_kat + "kat_1_body.png", (0, 0), blwnfh_far_kat + "kat_1_pioneer.png", (0, 0), blwnfh_far_kat + "kat_1_normal.png"))
-
-
-
     
     
     # Катя в ярости                                         

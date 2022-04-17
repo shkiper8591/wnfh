@@ -14,26 +14,20 @@ init -2 python:
     
     kat_normal_pioneer = ["kat_1_body.png", "kat_1_pioneer.png", "kat_1_normal.png"]
     kat_gloomy_pioneer = ["kat_1_body.png", "kat_1_pioneer.png", "kat_1_gloomy.png"]
-    
 
-    blwnfh_add_character("kat", {
-        "name": "Катя",
-        "color": "#ff97bb",
-        "variants": [
-            
-            #kat normal pioneer
-            ("normal pioneer far", blwnfh_SPRITES_FAR, blwnfh_far_size, kat_normal_pioneer),
-            ("normal pioneer", blwnfh_SPRITES_NORMAL, blwnfh_normal_size, kat_normal_pioneer),
-            ("normal pioneer close", blwnfh_SPRITES_CLOSE, blwnfh_close_size, kat_normal_pioneer),
-            
-            #kat gloomy pioneer
-            ("gloomy pioneer far", blwnfh_SPRITES_FAR, blwnfh_far_size, kat_gloomy_pioneer),
-            ("gloomy pioneer", blwnfh_SPRITES_NORMAL, blwnfh_normal_size, kat_gloomy_pioneer),
-            ("gloomy pioneer close", blwnfh_SPRITES_CLOSE, blwnfh_close_size, kat_gloomy_pioneer),
-            
-            
+    def make_variants(name, sprites):
+        return [
+            (name + " far", blwnfh_SPRITES_FAR, blwnfh_far_size, sprites),
+            (name, blwnfh_SPRITES_NORMAL, blwnfh_normal_size, sprites),
+            (name + " close", blwnfh_SPRITES_CLOSE, blwnfh_close_size, sprites),
         ]
-    })
-    blwnfh_clone_character_as_unknown("kat", "Девушка")
+    
+    blwnfh_add_character("kat", "Катя", "Девушка", "#FF97BB")
 
+    blwnfh_add_variants("kat", []
+        + make_variants("normal pioneer", kat_normal_pioneer)
+        + make_variants("gloomy pioneer", kat_gloomy_pioneer)
+    )
+
+    # blwnfh_add_variant("kat", ("gloomy pioneer close", blwnfh_SPRITES_CLOSE, blwnfh_close_size, kat_gloomy_pioneer));
     

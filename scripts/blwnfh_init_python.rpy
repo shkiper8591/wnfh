@@ -1,3 +1,4 @@
+## Инициалзация BG и CG ##
 init -3 python:
     blwnfh_characters = {}
 
@@ -29,6 +30,9 @@ init -3 python:
     blwnfh_make_images("bg", blwnfh_backgrounds)
     blwnfh_make_images("cg", blwnfh_graphics)
 
+## Эта страшная хуйня, это оптимизация инициализации спрайтов. ##
+## Не пытайтесь понять как оно работает, я сам в ахуе от написанного. ##
+## Просто знайте, что в файле config эта штука позволяет без лишней анальной болит прописать спрайты. ##
 init -1 python:
     blwnfh_DEFAULT_CHARACTER_ARGS = { "ctc": "ctc_animation", "ctc_position": "fixed", "what_color": "#e2c778", "drop_shadow": [(2, 2)], "drop_shadow_color": "#000", "what_drop_shadow": [(2, 2)], "what_drop_shadow_color": "#000" }
 

@@ -22,29 +22,15 @@ init 0:
         repeat
     
 label blwnfh_main:
-    "Проверка связи, главный лейбл"
-    
-    show kat normal pioneer far with dspr
-    
-    "Ща врубаем ночь"
-    $ persistent.sprite_time = "night" # Освещение на спрайты #
-    $ night_time()
-    kat "Привет"
-    
-    show cg gulls with dspr
-    
-    "А теперь утро"
-    $ persistent.sprite_time = "sunset" # Освещение на спрайты #
-    $ sunset_time()
-    "Утро"
-    kat "Ахуеть, утро"
-    
-    "И хуякс, день!"
-    $ persistent.sprite_time = "day" # Освещение на спрайты #
+    $ persistent.sprite_time = "day"
     $ day_time()
-    "День"
-    kat "Колдун ебучий"
+    scene bg ext_square_day with dissolve
+    show mt smile pioneer panama with dspr
+    
+    mt "Бегунок нужно заполнить, я его дам"
+    mt "Карту лагеря нужно запомнить, её я не дам"
     
     "Мы запускаем лохотрон"
+    
     jump blwnfh_day1
     

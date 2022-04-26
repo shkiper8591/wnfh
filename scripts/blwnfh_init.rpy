@@ -25,19 +25,13 @@ init 0:
         align (0.7, 0.5) alpha 0.0
         linear 0.5 alpha 1.0
 
-    screen hello_title():
-        text "Hello." at hello_t
-        text "Hello.":
-            at transform:
-                align (0.2, 0.5) alpha 0.0
-                linear 0.5 alpha 1.0
+
 
 label blwnfh_main:
-    hello_title()
     $ persistent.sprite_time = "day"
     $ day_time()
     scene bg ext_square_day with dissolve
-    show mt smile pioneer panama with dspr
+    
 
     $ set_mode_nvl()
 
@@ -46,9 +40,39 @@ label blwnfh_main:
     nvlkat "Клуб любителей кожевного мастерства на один этаж ниже"
 
     $ set_mode_adv()
-
+    
+    
+    show kat 1 pioneer with dspr
+    "Пионер 1"
+    show kat 2 pioneer with dspr
+    "Пионер 2"
+    show kat 3 pioneer with dspr
+    "Пионер 3"
+    show kat 1 kupalnik with dspr
+    "Купальник 1"
+    show kat 2 kupalnik with dspr
+    "Купальник 2"
+    show kat 3 kupalnik with dspr
+    "Купальник 3"
+    show kat 1 povsedn with dspr
+    "Повседневка 1"
+    show kat 2 povsedn with dspr
+    "Повседневка 2"
+    show kat 3 povsedn with dspr
+    "Повседневка 3"
+    show kat 1 povsedn rubashka with dspr
+    "Повседневка с рубашкой 1"
+    show kat 2 povsedn rubashka with dspr
+    "Повседневка с рубашкой 2"
+    show kat 3 povsedn rubashka with dspr
+    "Повседневка с рубашкой 3"
+    
+    show sl upset pioneer at left with dspr
+    
+    show mt smile pioneer panama with dspr
     mt "Бегунок нужно заполнить, я его дам"
     mt "Карту лагеря нужно запомнить, её я не дам"
+    hide mt with dspr
     
     "Мы запускаем лохотрон"
 

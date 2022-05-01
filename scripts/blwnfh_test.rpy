@@ -3,9 +3,9 @@ label blwnfh_test:
     $ new_chapter(2, u"Мы не отсюда. Тест.")
     $ persistent.sprite_time = "day"
     $ day_time()
-    
-    show bg int_dining_hall_day with dspr
-    
+    show cg minecraft
+    $ renpy.pause(100.0, hard=True)
+    show bg int_dining_hall_day with dspr  
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -29,7 +29,6 @@ label blwnfh_test:
     mt "Карту лагеря нужно запомнить, её я не дам"
     
     hide mt with dspr
-    
     $ renpy.pause(1.0, hard=True)
     
     show us laugh2 pioneer close at center with dspr

@@ -142,5 +142,4 @@ init 2:
 
 
 label blwnfh_main:
-
     call screen blwnfh_menu with dspr

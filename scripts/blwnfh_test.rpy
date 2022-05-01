@@ -27,6 +27,7 @@ label blwnfh_test:
     show mt smile pioneer panama with dspr
     mt "Бегунок нужно заполнить, я его дам"
     mt "Карту лагеря нужно запомнить, её я не дам"
+    
     hide mt with dspr
     
     $ renpy.pause(1.0, hard=True)

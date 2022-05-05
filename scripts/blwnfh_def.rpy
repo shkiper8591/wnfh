@@ -2,15 +2,16 @@
 init -3 python:
 
     def blwnfh_parse_folder(key):
-        r = {}
+        r = []
         for path in renpy.list_files():
             if path.startswith(blwnfh_IMAGES + key + "/"):
-                r[path.split("/")[-1].split(".")[0]] = path
+                r.append((path.split("/")[-1].split(".")[0], path))
         return r
 
 
     def blwnfh_make_images(key, r):
-        for name, path in r.items():
+        for i in r:
+            name, path = i
             renpy.image(key + " " + name, path)
 
 
@@ -168,7 +169,7 @@ init -3 python:
     
     blwnfh_raw_paths = []
 
-    for i in blwnfh_parse_folder('sprites').items():
+    for i in blwnfh_parse_folder('sprites'):
         blwnfh_raw_paths.append(i[1])
 
     blwnfh_sprites_root = blwnfh_get_path_dict(blwnfh_raw_paths)['mods']['blwnfh']['images']['sprites']

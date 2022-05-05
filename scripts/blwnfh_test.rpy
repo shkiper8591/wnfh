@@ -20,7 +20,7 @@ label blwnfh_test:
     nvl hide dissolve
     $ blwnfh_set_mode()
     
-    show kat shocked pioneer with dspr
+    show kat shocked pioneer at right with dspr
     
     show mt smile pioneer panama with dspr
     mt "Бегунок нужно заполнить, я его дам"

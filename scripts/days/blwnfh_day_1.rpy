@@ -1,7 +1,7 @@
 
     # Мы не отсюда. День 1 #
     
-label blwnfh_day1:
+label blwnfh_day_1:
     
     $ new_chapter(1, u"Мы не отсюда. День первый.")
     $ persistent.sprite_time = "sunset"
@@ -31,15 +31,10 @@ label blwnfh_day1:
     window hide
     
     scene bg ext_house_of_mt_sunset with dspr
-    
     stop ambience fadeout 0.5
-    
     play sound sfx_close_door_1
-    
     play ambience ambience_camp_center_evening fadein 3
-    
     $ renpy.pause(1.0, hard=True)
-    
     play music music_list["everyday_theme"] fadein 3 
     
     window show
@@ -108,7 +103,6 @@ label blwnfh_day1:
     "Cобравшись с мыслями, мне кое как удалось начать думать о пробежке, а не о шикарных формах Слави, и через время мне удалось с ней сравнятся ближе к площади."
     
     play sound sfx_head_heartbeat
-    
     scene bg ext_square_sunset at fatigue
     
     me "А ты… {w}Отлично бегаешь."
@@ -120,7 +114,6 @@ label blwnfh_day1:
     "Славя же лишь бросила на меня недоумевающий взгляд и остановилась."
     
     scene bg ext_square_sunset with dissolve
-    
     show sl surprise sport at center with dspr
     
     sl "Тебе плохо? {w}Может сядешь отдохнешь?"
@@ -1303,4 +1296,4 @@ label blwnfh_day1:
     
     show blink
     
-    jump blwnfh_day2
+    jump blwnfh_day_2

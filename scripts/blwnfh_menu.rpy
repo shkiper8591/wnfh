@@ -32,7 +32,7 @@ init 2:
                 align(0.18, 0.23)
                 idle blwnfh_MAIN_MENU + "startgame_idle.png"
                 hover blwnfh_MAIN_MENU + "startgame_hover.png"
-                action Jump("blwnfh_day1")
+                action Jump("blwnfh_day_1")
                 
             imagebutton:
                 align(0.18, 0.3)

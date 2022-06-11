@@ -20,13 +20,22 @@ label blwnfh_test:
     nvl hide dissolve
     $ blwnfh_set_mode()
     
-    show kat shocked pioneer at right with dspr
     
     show mt smile pioneer panama with dspr
+    
+    #$ kat(set(len(blwnfh_sprites_variants + " спрайтов создано")))
+    
     mt "Бегунок нужно заполнить, я его дам"
     mt "Карту лагеря нужно запомнить, её я не дам"
     
     hide mt with dspr
+    
+    show kat shocked pioneer close at right with dspr
+    show kat shocked pioneer far at left with dspr
+    show kat shocked pioneer at center with dspr
+    
+    hide kat with dspr
+    
     $ renpy.pause(1.0, hard=True)
     
     show us laugh2 pioneer close at center with dspr

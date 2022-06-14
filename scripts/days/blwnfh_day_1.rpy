@@ -154,9 +154,11 @@ label blwnfh_day_1:
     me "Я тут пораньше проснулся, и вот со Славей побегал чуть-чуть."
     
     show mt surprise pioneer at center with dspr
-    
+    #mt "Дорогой, ты где был?"
+    #me "Бегал"
     mt "Ты?! {w}Бегал?!"
-    
+    #me "Бегал, а чё"
+    #mt "Хуй через плечо, наконец-то я тебя подъебала"
     show mt grin pioneer at center with dspr
     
     me "Да, бегал, чуть-чуть."

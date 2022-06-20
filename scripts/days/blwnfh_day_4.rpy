@@ -1,6 +1,6 @@
 label blwnfh_day_:
     play ambience ambience_day_countryside_ambience
-    play music music_list["waking_up_2"]							
+    play music music_list["waking_up_2"]                            
     
     # бг с землянкой
     # Семён с закрытым глазами
@@ -414,7 +414,7 @@ label blwnfh_day_:
     
     th "Впрочем, может так даже лучше, спать мне в любом случае не дали бы, а так хоть время убью."
     
-    show bg ext_warehouse_day_blwnfh	with dissolve
+    show bg ext_warehouse_day_blwnfh    with dissolve
     
     "Вскоре я дошел до склада и зайдя за него обнаружил ту самую подсобку."
     "Достав ключ, я уже потянулся открывать её, как по своей неосторожности выронил его и тот упал в густую траву."

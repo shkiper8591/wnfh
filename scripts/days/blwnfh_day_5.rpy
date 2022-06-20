@@ -2,7 +2,7 @@ label blwnfh_day_5:
     # семён открывает глаза
     
     scene bg int_house_of_mt_sunset with dissolve
-    play ambience_int_cabin_evening
+    play ambience ambience_int_cabin_evening
     
     "Я проснулся от дичайшей боли в голове."
     "Медленно переведя взгляд на будильник, мне захотелось раздолбать весь этот дом и лагерь впридачу."

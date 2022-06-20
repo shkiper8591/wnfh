@@ -392,7 +392,7 @@ label blwnfh_day_:
     stop ambience
     scene bg ext_house_of_mt_sunset with dissolve
     play ambience ambience_camp_center_evening
-    play music  
+    #play music  
     
     "Выйдя на ступеньки домика, я обдумывать, как одна невзначай выпущенная фраза, может привести к крайне неприятным последствиям."
     
@@ -2607,7 +2607,7 @@ label blwnfh_day_:
     scene bg ext_house_of_mt_sunset with dissolve
     stop ambience
     scene bg int_house_of_mt_sunset with dissolve
-    play ambience_int_cabin_evening
+    play ambience ambience_int_cabin_evening
     show mt normal pioneer far at center with dspr
     
     "Придя домой, вожатая уже была тут и лежала на своей кровати, читая книгу."

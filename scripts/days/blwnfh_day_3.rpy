@@ -190,7 +190,7 @@ label blwnfh_day_3:
     "Вся огромная толпа пионеров быстрым шагом отправилась в столовую."
     
     stop ambience
-    show scene bg int_dining_hall_people_sunset with dissolve
+    scene bg int_dining_hall_people_sunset with dissolve
     play ambience ambience_dining_hall_full
     
     "Я протиснулся в столовую, где уже было мало свободных мест."
@@ -959,7 +959,7 @@ label blwnfh_day_3:
     stop music 
     stop ambience
     scene bg ext_dining_hall_near_day with dissolve
-    play ambience 
+    #play ambience 
     
     "Уже выйдя из столовой, я было вздохнул в облегчением оттуда, как из столовой донеслись крайне недовольные возгласы."
     "Но самое что страшное, они приближались к выходу."

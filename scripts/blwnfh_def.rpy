@@ -325,3 +325,48 @@ init python:
     def blwnfh_reset_achievements():
         for ach in blwnfh_ach_list:
             persistent.blwnfh_ach[ach[0]] = False
+    
+init 1:
+    $ style.blwnfh_thought = Style(style.default)
+    $ style.blwnfh_thought.drop_shadow = (2, 2)
+    $ style.blwnfh_thought.drop_shadow_color = "#000"
+    $ style.blwnfh_thought.text_align = 0.5
+    $ renpy.image("blwnfh_thought", ParameterizedText(style="blwnfh_thought", size=40))
+    
+    python:
+
+        def blwnfh_thoughts_show(*args):
+            colors = {
+                "day":"#E2C778",
+                "sunset":"#DCD168",
+                "night":"#3CCFA2",
+                "prologue":"#98D8DA"
+            }
+            pt = 0.1
+            t = 4.0
+            sy = ey = 1.0 / len(args)
+            for i, text in enumerate(args):
+                if not i % 2:
+                    sx = -0.1
+                    ex = random.uniform(0.3, 0.4)
+                    rot = -27.5
+                else:
+                    sx = 1.1
+                    ex = random.uniform(0.7, 0.6)
+                    rot = 27.5
+                sy += 0.1
+                ey += 0.1
+                renpy.show("thought_text", [blwnfh_thoughts_atl(t, pt, sx, sy, ex, ey, rot)], tag="thought_text" + str(i), what=Text(text, style=style.blwnfh_thought, color=colors[persistent.timeofday], size=40))
+                pt += 0.22
+            renpy.pause()
+            for i in range(len(args)):
+                renpy.hide("thought_text" + str(i))
+                renpy.with_statement(Dissolve(0.15))
+
+    transform blwnfh_thoughts_atl(t, pt, sx, sy, ex, ey, rot):
+        pos(sx, sy)
+        anchor(0.5, 0.5)
+        rotate rot
+        alpha 0.0
+        pause pt
+        ease t pos(ex, ey) rotate renpy.random.randint(-4, 4) alpha 1.0

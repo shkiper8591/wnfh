@@ -17,10 +17,26 @@ label blwnfh_test:
     ukat "Asshole"
     kat "Клуб любителей кожевного мастерства на один этаж ниже"
     
+    
+    
     nvl hide dissolve
     $ blwnfh_set_mode()
     
+    $ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
     
+    me "Что же ещё с вами сделать?"
+    
+    call screen blwnfh_choise_1 with dspr
+    
+label blwnfh_pi:
+    "Пришил пиписю"
+    jump blwnfh_test_2
+    
+label blwnfh_si:
+    "Прикрепил сиси"
+    jump blwnfh_test_2
+    
+label blwnfh_test_2:
     show mt smile pioneer panama with dspr
     
     #$ kat(set(len(blwnfh_sprites_variants + " спрайтов создано")))

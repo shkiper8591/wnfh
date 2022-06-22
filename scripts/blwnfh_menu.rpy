@@ -1,4 +1,35 @@
 init 2:
+    screen blwnfh_choise_1():
+        tag menu
+        modal True
+        
+        key "game_menu":
+            action NullAction()
+
+        key "screenshot":
+            action NullAction()
+        
+        python:
+
+            def gallery_make_thumb(imgf):
+                return im.Scale(imgf, 384, 216)
+
+            columns = 2
+            rows = 3
+            cells = rows * columns
+        
+        frame:
+            background blwnfh_gui["img"]["fon"]
+            area(0.0, 0.0, 1.0, 1.0)
+            
+            textbutton "Оторвать пиписю?":
+                align(0.18, 0.16)
+                action Jump("blwnfh_pi")
+                
+            textbutton "Прикрепить сиси?":
+                align(0.18, 0.23)
+                action Jump("blwnfh_si")
+
     screen blwnfh_menu():
         tag menu
         modal True

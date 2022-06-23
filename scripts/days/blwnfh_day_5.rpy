@@ -138,7 +138,7 @@ label blwnfh_day_5:
     "Без лишних слов я покинул склад."
     
     stop ambience 
-    scene bg ext_house_of_mt_sunset with dissolve
+    scene bg ext_warehouse_sunset_blwnfh with dissolve
     play ambience ambience_camp_center_evening
     
     th "Удивительно, что Сергей Дмитриевич так просто поделился со мной бритвой, хоть и старой."
@@ -156,7 +156,7 @@ label blwnfh_day_5:
     scene bg ext_house_of_mt_sunset with dissolve
     
     stop ambience
-    scene bg int_warehouse_day_blwnfh with dissolve
+    scene bg int_house_of_mt_sunset with dissolve
     play ambience ambience_int_cabin_day
     
     "Придя домой, Ольга Дмитриевна уже проснулась, одела свою форму и расчёсывала волосы сидя на кровати." 
@@ -185,5 +185,29 @@ label blwnfh_day_5:
     
     mt "А теперь не будет больше таких дел."
     mt "Я сегодня впервые за последние пару дней нормально выспалась."
-    me "Ладно
+    me "Прости уж, разыгрались с кем не бывает."
+    
+    show mt normal pioneer at center with dspr
+    
+    mt "Я-то конечно тебя прекрасно понимаю Семён, ты подросток, хочется подольше повеселится, сама такой была."
+    mt "Но нужно понимать, что во первых вы тут не одни, а во вторых есть правила, которым надо следовать."
+    me "Хорошо, попытаюсь им следовать."
+
+    show mt smile pioneer at center with dspr
+    
+    mt "Не пытаться должен ты, а делать!"
+    th "Вожатая цитирует Йоду? Что?"
+    me "Хорошо, буду следовать правилам лагеря."
+    
+    show mt grin pioneer at center with dspr
+    
+    mt "Вот и славно! А теперь давай, топай умываться и иди на линейку."
+    th "Ага-ага, размечталась, в этот раз у меня всё схвачено и я не пойду на линейку, Ольга Дмитриевна."
+    th "Только как и в каком месте у меня всё схвачено, надо будет продумать, но факт остается фактом - на линейке меня сегодня точно не будет!"
+    me "Да, конечно."
+    
+    "Подобрав пакет с принадлежностями, я покинул дом." 
+    
+    scene bg ext_house_of_mt_sunset with dissolve
+    
     

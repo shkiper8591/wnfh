@@ -19,6 +19,7 @@ label blwnfh_test:
     
     
     
+    
     nvl hide dissolve
     $ blwnfh_set_mode()
     
@@ -29,7 +30,7 @@ label blwnfh_test:
     call screen blwnfh_choise_1 with dspr
     
 label blwnfh_pi:
-    "Пришил пиписю"
+    "Оторвал пиписю"
     jump blwnfh_test_2
     
 label blwnfh_si:
@@ -40,6 +41,8 @@ label blwnfh_test_2:
     show mt smile pioneer panama with dspr
     
     #$ kat(set(len(blwnfh_sprites_variants + " спрайтов создано")))
+    
+    lk "Ты что за хуй?"
     
     mt "Бегунок нужно заполнить, я его дам"
     mt "Карту лагеря нужно запомнить, её я не дам"
@@ -66,3 +69,4 @@ label blwnfh_test_2:
     "Мы запускаем лохотрон"
     
     jump blwnfh_main
+    

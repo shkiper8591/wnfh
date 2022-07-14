@@ -894,14 +894,18 @@ label blwnfh_day_5:
     
     # таймскип
     
+    stop ambience
     show bg ext_dining_hall_near_day with dissolve
+    play ambience ambience_camp_center_day
     show mi normal pioneer at right with dspr
     
     "Быстрым шагом мы дошли до столовой и на удивление не оказались последними."
     "Перед нами в столовую вошли ещё несколько незнакомых мне пионеров."
     "За ними мы и прошмыгнули внутрь."
     
-    show bg int_dining_hall_day with dissolve
+    stop ambience
+    show bg int_dining_hall_people_day with dissolve
+    play ambience ambience_dining_hall_full
     show mt angry pioneer at center with dspr
     
     "И столкнулись с Ольгой Дмитриевной, которая сразу же обратила на нас внимание."

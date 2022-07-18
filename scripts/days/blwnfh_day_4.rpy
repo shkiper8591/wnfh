@@ -1490,12 +1490,22 @@ label blwnfh_day_:
     
     show mz glasses bukal pioneer at left with dspr
     
-    mz "Сереж, пусть плывет, только отдельно, поможем лодку ей достать и грёбет."
+    mz "Сереж, я проговорилась, значит и мне решать."
+	el "Ох, ну и каков же твой вердикт?"
+	mz "Пусть плывет, поможем ей получить лодку."
+	kat "А мне что, самой грести придется?"
+	
+	show mz glasses laugh pioneer at left with dspr
+	
+	"Женя звонко рассмеялась."
+	mz "Ну не мне же."
     kat "А как же, я не умею на лодке плавать."
     
+	show mz glasses bukal pioneer at left with dspr 
+	
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     
-    th "Вот же… Попадос…"
+    th "Вот же… {w}Попадос…"
     
     show kat shy pioneer at center with dspr
     

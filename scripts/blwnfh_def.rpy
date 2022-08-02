@@ -187,12 +187,36 @@ init -3 python:
     blwnfh_make_images("cg", blwnfh_graphics)
 
 init python:
+    from random import choice
+
+    def blwnfh_get_usertime():
+        from time import strftime, localtime
+        time = strftime("%H:%M:%S", localtime())
+        hour, min, sec = time.split(":")
+        hour = int(hour)
+        return str(hour) + ":" + str(min)
+
     def blwnfh_form_files_list(path):
         return {i[len(path):i.rfind(".")]:i for i in renpy.list_files() if i.startswith(path)}
     
     blwnfh_gui = dict()
     
-    blwnfh_gui["img"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in ["fon", "bg", "vbar_full", "vbar_null"]}
+    # Объявление списка GUI
+    blwnfh_gui["img"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in ["fish", "exit", "info", "music", "scheme", "achievements",  "gallery", "settings", "test_fon", "fon", "bg", "vbar_full", "vbar_null", "play"]}
+    
+    blwnfh_gui["sound"] = {
+        "plimp": blwnfh_GUI + "plimp.ogg",
+        "meow": blwnfh_GUI + "meow4.ogg",
+        # тут перечисляем все звуки для меню
+    }
+
+    # Ссылки на страницы мода
+
+    blwnfh_gui["hyperlinks"] = {
+        "vk":"https://vk.com/blwnfh",
+        #"steam":""
+        #"discord":""
+    }
     
     blwnfh_characters = {
         # персонажи оригинала
@@ -326,7 +350,20 @@ init python:
         for ach in blwnfh_ach_list:
             persistent.blwnfh_ach[ach[0]] = False
     
+    
+    
 init 1:
+    $ style.blwnfh_service = Style(style.default)
+    $ style.blwnfh_service.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_service.color = "#FFF"
+    $ style.blwnfh_service.drop_shadow = (2, 2)
+    $ style.blwnfh_service.drop_shadow_color = "#222"
+    $ style.blwnfh_service.text_align = 0.5
+    $ style.blwnfh_service.yalign = 0.5
+    $ style.blwnfh_service.kerning = 17.0
+    $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
+
+
     $ style.blwnfh_thought = Style(style.default)
     $ style.blwnfh_thought.drop_shadow = (2, 2)
     $ style.blwnfh_thought.drop_shadow_color = "#000"

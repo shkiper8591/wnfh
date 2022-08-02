@@ -1,0 +1,3 @@
+#Призыв каких-то звуков
+renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
+

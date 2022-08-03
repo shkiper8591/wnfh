@@ -8,7 +8,6 @@ init -3 python:
                 r.append((path.split("/")[-1].split(".")[0], path))
         return r
 
-
     def blwnfh_make_images(key, r):
         for i in r:
             name, path = i
@@ -185,8 +184,9 @@ init -3 python:
 
     blwnfh_make_images("bg", blwnfh_backgrounds)
     blwnfh_make_images("cg", blwnfh_graphics)
-
+    
 init python:
+    #Функция для отображения времени в меню
     from random import choice
 
     def blwnfh_get_usertime():
@@ -196,163 +196,9 @@ init python:
         hour = int(hour)
         return str(hour) + ":" + str(min)
 
-    def blwnfh_form_files_list(path):
-        return {i[len(path):i.rfind(".")]:i for i in renpy.list_files() if i.startswith(path)}
-    
-    blwnfh_gui = dict()
-    
-    # Объявление списка GUI
-    blwnfh_gui["img"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in ["fish", "exit", "info", "music", "scheme", "achievements",  "gallery", "settings", "test_fon", "fon", "bg", "vbar_full", "vbar_null", "play"]}
-    
-    blwnfh_gui["sound"] = {
-        "plimp": blwnfh_GUI + "plimp.ogg",
-        "meow": blwnfh_GUI + "meow4.ogg",
-        # тут перечисляем все звуки для меню
-    }
-
-    # Ссылки на страницы мода
-
-    blwnfh_gui["hyperlinks"] = {
-        "vk":"https://vk.com/blwnfh",
-        #"steam":""
-        #"discord":""
-    }
-    
-    blwnfh_characters = {
-        # персонажи оригинала
-        "narrator":[None, None],     #Рассказчик
-        "th":[None, None],           #Мысля Семёна
-        "me":[u"Семён", "#E1DD7D"],
-        "mi":[u"Мику", "#00DEFF"],
-        "us":[u"Ульяна", "#FF3200"],
-        "dv":[u"Алиса", "#FFAA00"],
-        "mt":[u"Ольга Дмитриевна", "#00EA32"],
-        "mz":[u"Женя", "#4A86FF"],
-        "sh":[u"Шурик", "#FFF226"],
-        "sl":[u"Славя", "#FFD200"],
-        "el":[u"Электроник", "#FFFF00"],
-        "un":[u"Лена", "#B956FF"],
-        "cs":[u"Виола", "#A5A5FF"],
-        "pi":[u"Пионер", "#E60000"],
-        "uv":[u"Юля", "#4EFF00"],
-        "voice":[u"... ", "#E1DD7D"],
-        # новые персонажи
-        "kat":[u"Катя", "#FF97BB"],
-        "ukat":[u"Девушка", "#FF97BB"],
-        "gp":[u"Галина Петровна", "#CECECE"],
-        "zg":[u"Зинаида Геннадьевна", "#D199FF"],
-        "sd":[u"Сергей Дмитриевич", "#878787"],
-
-    }
-
-    #renpy.image("bkrr_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
-    #renpy.image("bkrr_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
-
-    def blwnfh_chars_define(kind=adv):
-        gl = globals()
-        if kind == nvl:
-            who_suffix = ":"
-            ctc = "ctc_animation_nvl"
-        else:
-            who_suffix = ""
-            ctc = "ctc_animation"
-        what_color = "#FFDD7D"
-        drop_shadow = (2, 2)
-        for i, j in blwnfh_characters.items():
-            if i == "narrator":
-                gl[i] = Character(None, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-            elif i == "th":
-                gl[i] = Character(None, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, what_prefix="~ ", what_suffix=" ~", ctc=ctc, ctc_position="fixed")
-            else:
-                gl[i] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                #gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=blwnfh_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                #gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=blwnfh_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-
-    # Создание / объявление парных персонажей
-
-    def blwnfh_double_char_define(first, second, time_of_day):
-        colors = {
-            "day":"#80A055",
-            "sunset":"#CDAF69",
-            "night":"#36B198"
-        }
-        gl = globals()
-        what_color = "#FFDD7D"
-        drop_shadow = (2, 2)
-        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
-        gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
-
-    for i in [("kat", "mi", "day"), ("kat", "un", "day")]:
-        blwnfh_double_char_define(i[0], i[1], i[2])\
-    
-    def blwnfh_set_mode(mode=adv):
-        nvl_clear()
-        blwnfh_chars_define(kind=mode)
-
-    def blwnfh_set_name(name, value):
-        blwnfh_characters[name][0] = value
-        blwnfh_chars_define()
-
-    def blwnfh_set_char_color(name, value):
-        blwnfh_characters[name][1] = value
-        blwnfh_chars_define()
-
-    # Регистрация ачивок и предметов
-    
-    blwnfh_ach_list = (
-        ("payday", u"Конфетный вор"),
-    )
-    
-    if not persistent.blwnfh_ach:
-        persistent.blwnfh_ach = dict()
-    
-    for ach in blwnfh_ach_list:
-        renpy.image("blwnfh_ach_" + ach[0], im.Scale(blwnfh_IMAGES + "gui/achievements/" + ach[0] + ".png", 600, 125))
-        if ach[0] not in persistent.blwnfh_ach:
-            persistent.blwnfh_ach[ach[0]] = False
-    
-    renpy.image("blwnfh_ach_blank", im.Scale(blwnfh_IMAGES + "gui/achievements/blank.png", 600, 125))
-    
-    blwnfh_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox", "love_letter", "tabs", "bandana", "gram", "birth_certificate", "roses", "healing_potion")
-    
-    for item in blwnfh_item_list:
-        renpy.image("blwnfh_item_" + item, im.Scale(blwnfh_IMAGES + "gui/items/" + item + ".png", 450, 360))
-    
-    # Призыв ачивок и предметов
-    
-    def blwnfh_get_achievement(ach):
-        if not persistent.blwnfh_ach[ach]:
-            persistent.blwnfh_ach[ach] = True
-            renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
-            renpy.show("blwnfh_ach_" + ach, [blwnfh_get_achievement_atl])
-            renpy.pause(7.5)
-            renpy.hide("blwnfh_ach_" + ach)
-
-    def blwnfh_get_item(item, sounded=True):
-        if sounded:
-            renpy.play(blwnfh_sfx_list["get_item"], channel="sound")
-        renpy.show("blwnfh_item_%s" % item, [blwnfh_get_item_atl])
-        renpy.pause(5.0)
-        renpy.hide("blwnfh_item_%s" % item)
-    
-    # Просто полезная херня
-    
-    def blwnfh_check_achievements():
-        j = 0
-        for i in persistent.bkrr_ach.values():
-            if i:
-                j += 1
-        return j
-    
-    def blwnfh_reset_achievements():
-        for ach in blwnfh_ach_list:
-            persistent.blwnfh_ach[ach[0]] = False
-    
-    
-    
 init 1:
+
+    # Шрифты
     $ style.blwnfh_service = Style(style.default)
     $ style.blwnfh_service.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_service.color = "#FFF"
@@ -369,6 +215,8 @@ init 1:
     $ style.blwnfh_thought.drop_shadow_color = "#000"
     $ style.blwnfh_thought.text_align = 0.5
     $ renpy.image("blwnfh_thought", ParameterizedText(style="blwnfh_thought", size=40))
+    
+    # Всплывающие мысли спизженный из БКРР, да кого я обманываю, тут половина кода спизжено из кефира и 7дл и ещё десятка других модов
     
     python:
 

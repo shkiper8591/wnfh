@@ -23,7 +23,34 @@ init -4 python:
     blwnfh_SPRITES_FAR = blwnfh_IMAGES + "sprites/far/"
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
+    blwnfh_TRANSIRIONS = blwnfh_IMAGES + "transitions/"
+    
+init 1:
+    python:
 
+        blwnfh_circlein_transition = ImageDissolve(blwnfh_TRANSIRIONS + "circle.png", 0.5, ramplen=5, reverse = True, alpha=True)
+        blwnfh_circleout_transition = ImageDissolve(blwnfh_TRANSIRIONS + "circle.png", 0.5, ramplen=5, reverse = False, alpha=True)
+        blwnfh_star_falling_transition = ImageDissolve(blwnfh_TRANSIRIONS + "star_falling.png", 1.0, ramplen=5, reverse = False, alpha=True)
+
+        blwnfh_blindstoleft_transition = ImageDissolve(blwnfh_TRANSIRIONS + "blinds_h.png", 1.0, ramplen=25, reverse = False, alpha=True)
+        blwnfh_blindstoright_transition = ImageDissolve(blwnfh_TRANSIRIONS + "blinds_h.png", 1.0, ramplen=25, reverse = True, alpha=True)
+        blwnfh_blindstotop_transition = ImageDissolve(blwnfh_TRANSIRIONS + "blinds_v.png", 1.0, ramplen=25, reverse = False, alpha=True)
+        blwnfh_blindstobottom_transition = ImageDissolve(blwnfh_TRANSIRIONS + "blinds_v.png", 1.0, ramplen=25, reverse = True, alpha=True)
+
+        def blwnfh_timeskip_transition(t=1.0):
+            return ImageDissolve(blwnfh_TRANSIRIONS + "timeskip.png", t, ramplen=0, reverse=False, alpha=True)
+
+        def blwnfh_fade(time=1.0, color="white"):
+            ft = time * 0.5
+            fc = {
+                "black":"#000",
+                "white":"#FFF",
+                "red":"#F00"
+            }
+            return Fade(ft, 0.0, ft, color = fc[color])
+
+        def blwnfh_hurt_transition(t=0.5):
+            return blwnfh_fade(time=t, color="red")
     
 init 2:
     ## Звуковые эффекты ##
@@ -79,7 +106,13 @@ init python:
         "left",
         "right",
         "lock",
-        
+        "idle_frame",
+        "hover_frame",
+        "back",
+        "button_1",
+        "button_2",
+        "cg",
+        "bg"
         ]}
     
     blwnfh_gui["sound"] = {
@@ -122,8 +155,8 @@ init python:
 
     }
 
-    #renpy.image("bkrr_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
-    #renpy.image("bkrr_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
+    #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
+    #renpy.image("blwnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 
     def blwnfh_chars_define(kind=adv):
         gl = globals()
@@ -218,7 +251,7 @@ init python:
     
     def blwnfh_check_achievements():
         j = 0
-        for i in persistent.bkrr_ach.values():
+        for i in persistent.blwnfh_ach.values():
             if i:
                 j += 1
         return j

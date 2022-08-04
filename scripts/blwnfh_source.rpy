@@ -109,7 +109,8 @@ init python:
         "idle_frame",
         "hover_frame",
         "back",
-        "button_1",
+        "button_1_idle",
+        "button_1_hover",
         "button_2",
         "cg",
         "bg"

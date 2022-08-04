@@ -40,7 +40,6 @@ init 2:
                 kerning 1
             
             text blwnfh_splash():
-                
                 font blwnfh_FONTS + "vcr_osd.ttf"
                 color "#FFFF00"
                 size 20

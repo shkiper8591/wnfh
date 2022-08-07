@@ -42,5 +42,5 @@ init python:
             "Сценарист любит Мику"
             "Злого пионера не будет"
             "Кто я?"
-			"Pride of a nation, a beast made of steel!"
+            "Pride of a nation, a beast made of steel!"
             ])

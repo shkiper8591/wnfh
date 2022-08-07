@@ -54,13 +54,18 @@ label blwnfh_test:
     
     hide mt with dspr
     
-    call screen blwnfh_choice("2_flang_dv", "2_flang_mi", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "blwnfh_dv", "blwnfh_mi") with sphere_dissolve2
+    call screen blwnfh_triple_choice("3_flang_dv", "3_flang_mi", "3_mid_un", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "Лена", "blwnfh_dv", "blwnfh_mi", "blwnfh_un") with sphere_dissolve2
+    
     label blwnfh_dv:
         show dv normal pioneer at center with dspr
         jump blwnfh_continue
         
     label blwnfh_mi:
         show mi normal pioneer at center with dspr
+        jump blwnfh_continue
+    
+    label blwnfh_un:
+        show un normal pioneer at center with dspr
         jump blwnfh_continue
     
 label blwnfh_continue:

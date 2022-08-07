@@ -189,7 +189,8 @@ init -1 python:
         "3_mid_un",
         "3_mid_us",
         "line_2",
-        "line_3"
+        "line_3",
+        "vignette"
         ]}
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
     #renpy.image("blwnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))

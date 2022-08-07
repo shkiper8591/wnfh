@@ -292,16 +292,17 @@ init:   #Транзиты на любой вкус и цвет, точно не 
     $ sphere_invert_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 5.0, 100)
     $ sphere_invert_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 10.0, 100)
     
-
+    #Диагональный слайд размытый
     $ slide_diagonal_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 1.0, 100)
     $ slide_diagonal_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 2.0, 100)
     $ slide_diagonal_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 5.0, 100)
     $ slide_diagonal_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 10.0, 100)
     
-    #$ slide_down = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 1, 1)
-    #$ gopr = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "blackout_go.png"), 0.95, 1)
-    #$ gopr2 = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "blackout_go.png"), 10, 100)
-    #$ circle = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "circle.png"), 5, 100)
+    
+    $ experemental1 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp1"]), 5, 1)
+    $ experemental2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp2"]), 5, 1)
+    $ experemental3 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp3"]), 5, 10)
+    $ experemental4 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["ecstrusion"]), 5, 1)
     
     image anim_grain: #АААЙ БЛЯ ЧЁ ТАК ГРОМКО ШУМИТ?!
         filmetile(blwnfh_TRANSITIONS + "alt_noise1.png")

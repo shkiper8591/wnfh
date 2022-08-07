@@ -24,6 +24,7 @@ init -4 python:
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
+    blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
     
 #init 1:
 #    python:
@@ -156,6 +157,39 @@ init -1 python:
         "clock_l",
         "clock_r",
         "slide_diagonal",
+        "exp1",
+        "exp2",
+        "exp3",
+        "ecstrusion"
+        ]}
+    
+    blwnfh_gui["choice"] = {img:(blwnfh_CHOICE + img + ".png") for img in [
+        "2_flang_dv",
+        "2_flang_kat",
+        "2_flang_mi",
+        "2_flang_mt",
+        "2_flang_neutral",
+        "2_flang_sl",
+        "2_flang_un",
+        "2_flang_us",
+        "3_flang_dv",
+        "3_flang_kat",
+        "3_flang_mi",
+        "3_flang_mt",
+        "3_flang_neutral",
+        "3_flang_sl",
+        "3_flang_un",
+        "3_flang_us",
+        "3_mid_dv",
+        "3_mid_kat",
+        "3_mid_mi",
+        "3_mid_mt",
+        "3_mid_neutral",
+        "3_mid_sl",
+        "3_mid_un",
+        "3_mid_us",
+        "line_2",
+        "line_3"
         ]}
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
     #renpy.image("blwnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))

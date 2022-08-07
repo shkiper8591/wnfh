@@ -27,25 +27,25 @@ label blwnfh_test:
     
     
     
-    "slide_diagonal"
+    "experemental1"
     scene
     $ renpy.show("bg int_warehouse_night_lamp_off_light_on", what = "bg int_warehouse_night_lamp_off_light_on")
-    with slide_diagonal
+    with experemental1
     
-    "slide_diagonal_blure"
+    "experemental2"
     scene
     $ renpy.show("bg int_warehouse_sunset", what = "bg int_warehouse_sunset")
-    with slide_diagonal_blure
+    with experemental2
     
-    "sphere_invert_blure_dissolve5"
+    "experemental3"
     scene
     $ renpy.show("bg ext_music_club_sunset", what = "bg ext_music_club_sunset")
-    with sphere_invert_blure_dissolve5
+    with experemental3
     
-    "sphere_invert_blure_dissolve10"
+    "experemental4"
     scene
     $ renpy.show("bg ext_clubs_sunset", what = "bg ext_clubs_sunset")
-    with sphere_invert_blure_dissolve10
+    with experemental4
     
     #$ renpy.pause(1.0, hard=True)
     
@@ -54,12 +54,16 @@ label blwnfh_test:
     
     hide mt with dspr
     
-    show kat shocked pioneer close at right with dspr
-    show kat shocked pioneer far at left with dspr
-    show kat shocked pioneer at center with dspr
+    call screen blwnfh_choice("2_flang_dv", "2_flang_mi", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "blwnfh_dv", "blwnfh_mi") with sphere_dissolve2
+    label blwnfh_dv:
+        show dv normal pioneer at center with dspr
+        jump blwnfh_continue
+        
+    label blwnfh_mi:
+        show mi normal pioneer at center with dspr
+        jump blwnfh_continue
     
-    hide kat with dspr
-    
+label blwnfh_continue:
     $ renpy.pause(1.0, hard=True)
     
     show us laugh2 pioneer close at center with dspr

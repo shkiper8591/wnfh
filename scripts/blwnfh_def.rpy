@@ -184,7 +184,33 @@ init -3 python:
 
     blwnfh_make_images("bg", blwnfh_backgrounds)
     blwnfh_make_images("cg", blwnfh_graphics)
-    
+
+
+init -265 python:
+
+    # Всякий разный цветокор
+    def Sepia(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.saturation(0.15) * im.matrix.tint(1.0, .94, .76))
+    def OldPhoto(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.saturation(0.6) * im.matrix.brightness(0.03))
+    def Grayed(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.saturation(0.01))
+
+    # Цветокор под разное время суток
+    def Notch(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.brightness(-0.2) * im.matrix.saturation(0.6))
+    def Dawn(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.brightness(-0.1) * im.matrix.tint(0.94, 0.82, 1.0))
+    def Noon(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.brightness(0.2) * im.matrix.tint(1.0, 0.94, 0.82))
+    def HomeCity(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.brightness(-0.1) * im.matrix.tint(0.82, 0.84, 1.0))
+    def Rained(id):
+        return im.MatrixColor(ImageReference(id), im.matrix.brightness(-0.4) * im.matrix.tint(0.68, 0.90, 0.8) * im.matrix.saturation(0.6))
+        
+    def filmetile(bitmap, opacity=0.1):
+        return im.Tile(im.Alpha(bitmap,opacity))
+        
 init python:
     #Функция для отображения времени в меню
     from random import choice
@@ -195,6 +221,97 @@ init python:
         hour, min, sec = time.split(":")
         hour = int(hour)
         return str(hour) + ":" + str(min)
+
+    
+init:   #Транзиты на любой вкус и цвет, точно не спизженные у 7дл, правда-правда         
+                                                                #1 параметр: степень замедления транзита
+                                                                #2 параметр: степень размытия
+    #Слайд слева
+    $ slide_left_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 1.0, 1)
+    $ slide_left_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 2.0, 1)
+    $ slide_left_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 5.0, 1)
+    $ slide_left_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 10.0, 1)
+    #Слайд слева размытый
+    $ slide_left_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 1.0, 100)
+    $ slide_left_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 2.0, 100)
+    $ slide_left_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 5.0, 100)
+    $ slide_left_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_left"]), 10.0, 100)
+    
+    #Слайд справа
+    $ slide_right_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 1.0, 1)
+    $ slide_right_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 2.0, 1)
+    $ slide_right_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 5.0, 1)
+    $ slide_right_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 10.0, 1)
+    #Слайд справа размытый
+    $ slide_right_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 1.0, 100)
+    $ slide_right_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 2.0, 100)
+    $ slide_right_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 5.0, 100)
+    $ slide_right_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_right"]), 10.0, 100)
+    
+    #Слайд сверху
+    $ slide_up_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 1.0, 1)
+    $ slide_up_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 2.0, 1)
+    $ slide_up_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 5.0, 1)
+    $ slide_up_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 10.0, 1)
+    #Слайд сверху размытый
+    $ slide_up_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 1.0, 100)
+    $ slide_up_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 2.0, 100)
+    $ slide_up_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 5.0, 100)
+    $ slide_up_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_up"]), 10.0, 100)
+    
+    #Слайд снизу
+    $ slide_down_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 1.0, 1)
+    $ slide_down_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 2.0, 1)
+    $ slide_down_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 5.0, 1)
+    $ slide_down_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 10.0, 1)
+    #Слайд снизу размытый
+    $ slide_down_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 1.0, 100)
+    $ slide_down_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 2.0, 100)
+    $ slide_down_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 5.0, 100)
+    $ slide_down_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 10.0, 100)
+    
+    #Сфера из центра
+    $ sphere_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 1.0, 1)
+    $ sphere_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 2.0, 1)
+    $ sphere_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 5.0, 1)
+    $ sphere_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 10.0, 1)
+    #Сфера из центра размытая
+    $ sphere_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 1.0, 100)
+    $ sphere_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 2.0, 100)
+    $ sphere_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 5.0, 100)
+    $ sphere_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere"]), 10.0, 100)
+    
+    #Сфера в центр
+    $ sphere_invert_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 1.0, 1)
+    $ sphere_invert_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 2.0, 1)
+    $ sphere_invert_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 5.0, 1)
+    $ sphere_invert_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 10.0, 1)
+    #Сфера в центр размытая
+    $ sphere_invert_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 1.0, 100)
+    $ sphere_invert_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 2.0, 100)
+    $ sphere_invert_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 5.0, 100)
+    $ sphere_invert_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 10.0, 100)
+    
+
+    $ slide_diagonal_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 1.0, 100)
+    $ slide_diagonal_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 2.0, 100)
+    $ slide_diagonal_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 5.0, 100)
+    $ slide_diagonal_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 10.0, 100)
+    
+    #$ slide_down = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_down"]), 1, 1)
+    #$ gopr = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "blackout_go.png"), 0.95, 1)
+    #$ gopr2 = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "blackout_go.png"), 10, 100)
+    #$ circle = ImageDissolve(im.Tile(blwnfh_TRANSITIONS + "circle.png"), 5, 100)
+    
+    image anim_grain: #АААЙ БЛЯ ЧЁ ТАК ГРОМКО ШУМИТ?!
+        filmetile(blwnfh_TRANSITIONS + "alt_noise1.png")
+        pause 0.1
+        filmetile(blwnfh_TRANSITIONS + "alt_noise2.png")
+        pause 0.1
+        filmetile(blwnfh_TRANSITIONS + "alt_noise3.png")
+        pause 0.1
+        repeat
+
 
 init 1:
 

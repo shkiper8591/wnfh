@@ -4,45 +4,50 @@ label blwnfh_test:
     $ persistent.sprite_time = "day"
     $ day_time()
     show bg int_dining_hall_day with dspr  
-    $ blwnfh_set_mode(nvl)
-    nvl show dissolve
+    #$ blwnfh_set_mode(nvl)
+    #nvl show dissolve
     
-    "Довольно громко сказала Ульяна."
-    th "Бегунок нужно заполнить, я его дам"
-    voice "nigga nigga"
-    me "who?!"
+    #"Довольно громко сказала Ульяна."
+    #th "Бегунок нужно заполнить, я его дам"
+    #voice "nigga nigga"
+    #me "who?!"
+    #
+    #kat "Ты пойдёшь со мной?"
+    #gp "Fuck you"
+    #ukat "Asshole"
+    #kat "Клуб любителей кожевного мастерства на один этаж ниже"
+    #
+    #
+    #
+    #
+    #nvl hide dissolve
+    #$ blwnfh_set_mode()
+    #
+    #$ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
     
-    kat "Ты пойдёшь со мной?"
-    gp "Fuck you"
-    ukat "Asshole"
-    kat "Клуб любителей кожевного мастерства на один этаж ниже"
     
     
+    "slide_diagonal"
+    scene
+    $ renpy.show("bg int_warehouse_night_lamp_off_light_on", what = "bg int_warehouse_night_lamp_off_light_on")
+    with slide_diagonal
     
+    "slide_diagonal_blure"
+    scene
+    $ renpy.show("bg int_warehouse_sunset", what = "bg int_warehouse_sunset")
+    with slide_diagonal_blure
     
-    nvl hide dissolve
-    $ blwnfh_set_mode()
+    "sphere_invert_blure_dissolve5"
+    scene
+    $ renpy.show("bg ext_music_club_sunset", what = "bg ext_music_club_sunset")
+    with sphere_invert_blure_dissolve5
     
-    $ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
+    "sphere_invert_blure_dissolve10"
+    scene
+    $ renpy.show("bg ext_clubs_sunset", what = "bg ext_clubs_sunset")
+    with sphere_invert_blure_dissolve10
     
-    me "Что же ещё с вами сделать?"
-    
-    call screen blwnfh_choise_1 with dspr
-    
-label blwnfh_pi:
-    "Оторвал пиписю"
-    jump blwnfh_test_2
-    
-label blwnfh_si:
-    "Прикрепил сиси"
-    jump blwnfh_test_2
-    
-label blwnfh_test_2:
-    show mt smile pioneer panama with dspr
-    
-    #$ kat(set(len(blwnfh_sprites_variants + " спрайтов создано")))
-    
-    lk "Ты что за хуй?"
+    #$ renpy.pause(1.0, hard=True)
     
     mt "Бегунок нужно заполнить, я его дам"
     mt "Карту лагеря нужно запомнить, её я не дам"

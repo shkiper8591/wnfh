@@ -63,12 +63,14 @@ label blwnfh_test:
     #    show us laugh2 pioneer close at center with dspr
     #    us "Пошли Лену пугать"
     #    jump blwnfh_continue
-
-label blwnfh_continue:    
-    "Ночной 1"
     scene
-    $ renpy.show("bg int_warehouse_sunset", what = "int_warehouse_night_sunset")
+    $ renpy.show("bg ext_warehouse_day", what = "ext_warehouse_day")
     with slide_left_blure_dissolve5
+    jump blwnfh_continue
+    
+label blwnfh_continue:    
+    "Дневной на три"
+    
     
     call screen blwnfh_triple_choice("dv", "mi", "un", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "Лена", "blwnfh_dv", "blwnfh_mi", "blwnfh_un", "day") with sphere_blure_dissolve2
     
@@ -91,13 +93,17 @@ label blwnfh_continue:
         jump blwnfh_continue_2
         
 label blwnfh_continue_2:
-    kat "Проверка"
-    "Ночной 2"
-    call screen blwnfh_triple_choice("bad", "kat", "mt", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Негр", "Катя", "Ольга Дмитриевна", "blwnfh_bad", "blwnfh_kat", "blwnfh_mt", "day") with sphere_blure_dissolve2
-    label blwnfh_bad:
-        voice "Тобi пiзда"
-        jump blwnfh_continue_3
-        
+
+    $ persistent.sprite_time = "sunset"
+    $ sunset_time()
+    
+    scene
+    $ renpy.show("bg ext_music_club_sunset", what = "ext_music_club_sunset")
+    with slide_left_blure_dissolve5
+
+    "Вечерний на два"
+    call screen blwnfh_double_choice("kat", "mt", "Какой-то текст", "Какой-то текст", "Катя", "Ольга Дмитриевна", "blwnfh_kat", "blwnfh_mt", "sunset") with sphere_blure_dissolve2
+    
     label blwnfh_kat:
         show kat normal pioneer at center with dspr
         kat "Ну и дурак ты, Семён"
@@ -112,8 +118,15 @@ label blwnfh_continue_2:
         
     
 label blwnfh_continue_3:
-
-    call screen blwnfh_triple_choice("neutral", "sl", "us", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Что-то", "Славя", "Ульяна", "blwnfh_neutral", "blwnfh_sl", "blwnfh_us", "day") with sphere_blure_dissolve2
+    
+    $ persistent.sprite_time = "night"
+    $ night_time()
+    
+    scene
+    $ renpy.show("bg int_warehouse_night_lamp_on_light_off", what = "int_warehouse_night_lamp_on_light_off")
+    with slide_left_blure_dissolve5
+    
+    call screen blwnfh_triple_choice("neutral", "sl", "us", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Что-то", "Славя", "Ульяна", "blwnfh_neutral", "blwnfh_sl", "blwnfh_us", "night") with sphere_blure_dissolve2
     label blwnfh_neutral:
         th "Чёт посрать захотелось"
         jump blwnfh_continue_4

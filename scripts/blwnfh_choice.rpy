@@ -66,7 +66,7 @@ init 2:
             unhovered ToggleScreenVariable("blwnfh_screen_2")
             action (Hide("blwnfh_choice_0", dissolve), Jump(label_2))
         
-        add (blwnfh_gui["choice"]["line_3"]) matrixcolor TintMatrix(line_tint_color)
+        add (blwnfh_gui["choice"]["line_2"]) matrixcolor TintMatrix(line_tint_color)
         
 
         #use blwnfh_timer(s1)

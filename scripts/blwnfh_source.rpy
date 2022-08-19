@@ -164,6 +164,7 @@ init -1 python:
         ]}
     
     blwnfh_gui["choice"] = {img:(blwnfh_CHOICE + img + ".png") for img in [
+        "2_flang_bad",
         "2_flang_dv",
         "2_flang_kat",
         "2_flang_mi",
@@ -172,6 +173,7 @@ init -1 python:
         "2_flang_sl",
         "2_flang_un",
         "2_flang_us",
+        "3_flang_bad",
         "3_flang_dv",
         "3_flang_kat",
         "3_flang_mi",
@@ -180,6 +182,7 @@ init -1 python:
         "3_flang_sl",
         "3_flang_un",
         "3_flang_us",
+        "3_mid_bad",
         "3_mid_dv",
         "3_mid_kat",
         "3_mid_mi",
@@ -189,7 +192,17 @@ init -1 python:
         "3_mid_un",
         "3_mid_us",
         "line_2",
-        "line_3"
+        "line_3",
+        "vignette",
+        "vignette_night",
+        "line_2_day",
+        "line_2_sunset",
+        "line_2_night",
+        "line_2_prologue",
+        "line_3_day",
+        "line_3_sunset",
+        "line_3_night",
+        "line_3_prologue",
         ]}
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
     #renpy.image("blwnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))

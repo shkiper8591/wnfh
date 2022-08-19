@@ -6,7 +6,7 @@ label blwnfh_test:
     show bg int_dining_hall_day with dspr  
     #$ blwnfh_set_mode(nvl)
     #nvl show dissolve
-    
+    #
     #"Довольно громко сказала Ульяна."
     #th "Бегунок нужно заполнить, я его дам"
     #voice "nigga nigga"
@@ -14,58 +14,138 @@ label blwnfh_test:
     #
     #kat "Ты пойдёшь со мной?"
     #gp "Fuck you"
-    #ukat "Asshole"
     #kat "Клуб любителей кожевного мастерства на один этаж ниже"
     #
     #
     #
     #
     #nvl hide dissolve
-    #$ blwnfh_set_mode()
+    $ blwnfh_set_mode()
     #
     #$ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
+    #
+    kat "Ты пойдёшь со мной?"
     
-    
-    
-    "experemental1"
+    #"experemental1"
+    #scene
+    #$ renpy.show("bg int_warehouse_night_lamp_off_light_on", what = "bg int_warehouse_night_lamp_off_light_on")
+    #with experemental1
+    #
+    #"experemental2"
+    #scene
+    #$ renpy.show("bg int_warehouse_sunset", what = "bg int_warehouse_sunset")
+    #with experemental2
+    #
+    #"experemental3"
+    #scene
+    #$ renpy.show("bg ext_music_club_sunset", what = "bg ext_music_club_sunset")
+    #with experemental3
+    #
+    #"experemental4"
+    #scene
+    #$ renpy.show("bg ext_clubs_sunset", what = "bg ext_clubs_sunset")
+    #with experemental4
+    #
+    ##$ renpy.pause(1.0, hard=True)
+    #
+    #"Двойной выбор"
+    #
+    #hide mt with dspr
+    #call screen blwnfh_double_choice("mt", "us", "Какой-то текст", "Какой-то текст", "Ольга дмитриевна", "Ульяна", "blwnfh_mt", "blwnfh_us", "day") with sphere_blure_dissolve2
+    #
+    #label blwnfh_mt:
+    #    show mt normal pioneer at center with dspr
+    #    mt "Бегунок нужно заполнить, я его дам"
+    #    mt "Карту лагеря нужно запомнить, её я не дам"
+    #    jump blwnfh_continue
+    #    
+    #label blwnfh_us:
+    #    show us laugh2 pioneer close at center with dspr
+    #    us "Пошли Лену пугать"
+    #    jump blwnfh_continue
     scene
-    $ renpy.show("bg int_warehouse_night_lamp_off_light_on", what = "bg int_warehouse_night_lamp_off_light_on")
-    with experemental1
+    $ renpy.show("bg ext_warehouse_day", what = "ext_warehouse_day")
+    with slide_left_blure_dissolve5
+    jump blwnfh_continue
     
-    "experemental2"
-    scene
-    $ renpy.show("bg int_warehouse_sunset", what = "bg int_warehouse_sunset")
-    with experemental2
+label blwnfh_continue:    
+    "Дневной на три"
     
-    "experemental3"
-    scene
-    $ renpy.show("bg ext_music_club_sunset", what = "bg ext_music_club_sunset")
-    with experemental3
     
-    "experemental4"
-    scene
-    $ renpy.show("bg ext_clubs_sunset", what = "bg ext_clubs_sunset")
-    with experemental4
+    call screen blwnfh_triple_choice("dv", "mi", "un", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "Лена", "blwnfh_dv", "blwnfh_mi", "blwnfh_un", "day") with sphere_blure_dissolve2
     
-    #$ renpy.pause(1.0, hard=True)
-    
-    mt "Бегунок нужно заполнить, я его дам"
-    mt "Карту лагеря нужно запомнить, её я не дам"
-    
-    hide mt with dspr
-    
-    call screen blwnfh_choice("2_flang_dv", "2_flang_mi", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "blwnfh_dv", "blwnfh_mi") with sphere_dissolve2
     label blwnfh_dv:
         show dv normal pioneer at center with dspr
-        jump blwnfh_continue
+        dv "Го бухать"
+        hide dv with dspr
+        jump blwnfh_continue_2
         
     label blwnfh_mi:
         show mi normal pioneer at center with dspr
-        jump blwnfh_continue
+        mi "лфдтивлтЛтщвЗ nAJ NND OB oJQDS JNPaweh pAMP WFJHASjpSNQponl aspsanmwQJDHFNPSJDwjfasndcnmfn"
+        hide mi with dspr
+        jump blwnfh_continue_2
     
-label blwnfh_continue:
+    label blwnfh_un:
+        show un normal pioneer at center with dspr
+        un "Привет"
+        hide un with dspr
+        jump blwnfh_continue_2
+        
+label blwnfh_continue_2:
+
+    $ persistent.sprite_time = "sunset"
+    $ sunset_time()
+    
+    scene
+    $ renpy.show("bg ext_music_club_sunset", what = "ext_music_club_sunset")
+    with slide_left_blure_dissolve5
+
+    "Вечерний на два"
+    call screen blwnfh_double_choice("kat", "mt", "Какой-то текст", "Какой-то текст", "Катя", "Ольга Дмитриевна", "blwnfh_kat", "blwnfh_mt", "sunset") with sphere_blure_dissolve2
+    
+    label blwnfh_kat:
+        show kat normal pioneer at center with dspr
+        kat "Ну и дурак ты, Семён"
+        hide kat with dspr
+        jump blwnfh_continue_3
+    
+    label blwnfh_mt:
+        show mt normal pioneer at center with dspr
+        mt "Хули так поздно припёрся, тварь?"
+        hide mt with dspr
+        jump blwnfh_continue_3
+        
+    
+label blwnfh_continue_3:
+    
+    $ persistent.sprite_time = "night"
+    $ night_time()
+    
+    scene
+    $ renpy.show("bg int_warehouse_night_lamp_on_light_off", what = "int_warehouse_night_lamp_on_light_off")
+    with slide_left_blure_dissolve5
+    
+    call screen blwnfh_triple_choice("neutral", "sl", "us", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Что-то", "Славя", "Ульяна", "blwnfh_neutral", "blwnfh_sl", "blwnfh_us", "night") with sphere_blure_dissolve2
+    label blwnfh_neutral:
+        th "Чёт посрать захотелось"
+        jump blwnfh_continue_4
+        
+    label blwnfh_sl:
+        show sl normal pioneer at center with dspr
+        sl "Отличное время, чтоб пойти подметать площадь"
+        hide sl with dspr
+        jump blwnfh_continue_4
+    
+    label blwnfh_us:
+        show us normal pioneer at center with dspr
+        us "Пришло время грабить столовку"
+        hide us with dspr
+        jump blwnfh_continue_4
+        
+label blwnfh_continue_4:    
     $ renpy.pause(1.0, hard=True)
-    
+    "..."
     show us laugh2 pioneer close at center with dspr
     us "Это было весело!"
     

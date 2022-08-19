@@ -1,3 +1,20 @@
 #Призыв каких-то звуков
 renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
 
+Вызов выбора, инструкция
+    Варианты функций:
+        blwnfh_double_choice_gte
+        blwnfh_double_choice
+        blwnfh_triple_choice_qte
+        blwnfh_triple_choice
+                                                                                                                #Это для qti
+    call screen blwnfh_double_choice(button_1, button_2, text_1, text_2, variant_1, variant_2, label_1, label_2, [qte]) 
+    #В качестве аргументов функция принимает в себя:
+    button_1 = "Файл кнопки 1" #Он будет слева
+    button_2 = "Файл кнопки 2" #Она соответственно справа
+    button_3 = "Файл кнопки 3" #Она будет внизу, только для triple_choice
+    text_1, text_2, text_3 = "Текст при наведении на кнопки 1, 2 и 3 соответственно"
+    variant_1, variant_2, variant_3 = "Заголовок кнопок 1, 2 и 3"
+    label_1, label_2, label_3 = "Прыжок на лейбл при выборе 1, 2 или 3"
+    
+    qte = "Чё будет если не успеть нажать"

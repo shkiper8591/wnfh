@@ -187,7 +187,9 @@ init -3 python:
 
 
 init -265 python:
-
+    
+    wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+    
     # Всякий разный цветокор
     def Sepia(id):
         return im.MatrixColor(ImageReference(id), im.matrix.saturation(0.15) * im.matrix.tint(1.0, .94, .76))

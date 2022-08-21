@@ -30,7 +30,7 @@ label blwnfh_day_1:
     
     stop ambience
     scene bg ext_house_of_mt_sunset with dissolve 
-    ambience ambience_camp_center_evening
+    play ambience ambience_camp_center_evening
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     

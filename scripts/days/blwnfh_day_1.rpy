@@ -1456,7 +1456,7 @@ label blwnfh_day_1:
     
     me "Ох, спасибо вам огромное[wp]"
     
-    shot mt angry pioneer panama at center with dspr
+    show mt angry pioneer panama at center with dspr
     
     mt "Только ты учти, что это первый и последний раз!"
     mt "Ведь я не собираюсь таскать тебе еду!"

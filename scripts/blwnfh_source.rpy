@@ -26,23 +26,23 @@ init -4 python:
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
     
-#init 1:
-#    python:
-#
-#        def blwnfh_timeskip_transition(t=1.0):
-#            return ImageDissolve(blwnfh_TRANSITIONS + "timeskip.png", t, ramplen=0, reverse=False, alpha=True)
-#        
-#        def blwnfh_fade(time=1.0, color="white"):
-#            ft = time * 0.5
-#            fc = {
-#                "black":"#000",
-#                "white":"#FFF",
-#                "red":"#F00"
-#            }
-#            return Fade(ft, 0.0, ft, color = fc[color])
-#        
-#        def blwnfh_hurt_transition(t=0.5):
-#            return blwnfh_fade(time=t, color="red")
+init 1:
+    python:
+
+        def blwnfh_timeskip_transition(t=1.0):
+            return ImageDissolve(blwnfh_TRANSITIONS + "timeskip.png", t, ramplen=0, reverse=False, alpha=True)
+        
+        def blwnfh_fade(time=1.0, color="white"):
+            ft = time * 0.5
+            fc = {
+                "black":"#000",
+                "white":"#FFF",
+                "red":"#F00"
+            }
+            return Fade(ft, 0.0, ft, color = fc[color])
+        
+        def blwnfh_hurt_transition(t=0.5):
+            return blwnfh_fade(time=t, color="red")
     
 init 2:
     ## Звуковые эффекты ##

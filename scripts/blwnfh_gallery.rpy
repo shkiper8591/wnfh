@@ -45,7 +45,7 @@ init 2:
                 action ShowMenu("blwnfh_menu")
                 idle blwnfh_gui["gallery"]["back"]
                 hover blwnfh_gui["gallery"]["back"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(0.82, 0.1, 0.082, 0.0)
 
             hbox:
@@ -57,7 +57,8 @@ init 2:
                         action Show("blwnfh_gallery", transition=dissolve)
                         idle (blwnfh_gui["gallery"][mode])
                         hover im.MatrixColor(blwnfh_gui["gallery"][mode], im.matrix.contrast(1.1))
-                        hovered [menu_hovered_action_plimp, SetVariable("blwnfh_gallery_mode", mode), SetVariable("blwnfh_gallery_page", 0)]
+                        hovered [SetVariable("blwnfh_gallery_mode", mode), SetVariable("blwnfh_gallery_page", 0)]
+                        hover_sound blwnfh_gui["sound"]["plimp"]
                         at blwnfh_gallery_mode_atl
 
     ## Экран меню галереи: ATL
@@ -120,7 +121,7 @@ init 2:
                 action ShowMenu("blwnfh_gallery_menu")
                 idle blwnfh_gui["gallery"]["back"]
                 hover blwnfh_gui["gallery"]["back"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(0.82, 0.1, 0.082, 0.0)
             
             # Галерея
@@ -152,14 +153,14 @@ init 2:
                                     action Show("blwnfh_gallery_item", transition=blwnfh_fade(0.5, color="black"), item=(blwnfh_gallery_mode, img[0]))
                                     idle im.Composite((383, 268), (13, 13), im.Alpha(th, 0.9), (0, 0), blwnfh_gui["gallery"]["idle_frame"])
                                     hover im.Composite((383, 268), (13, 13), th, (0, 0), blwnfh_gui["gallery"]["hover_frame"])
-                                    hovered menu_hovered_action_plimp
+                                    hover_sound blwnfh_gui["sound"]["plimp"]
                                     at blwnfh_gallery_item_atl
                             else:
                                 imagebutton:
                                     action NullAction()
                                     idle blwnfh_gui["gallery"]["lock"]
                                     hover blwnfh_gui["gallery"]["lock"]
-                                    hovered menu_hovered_action_plimp
+                                    hover_sound blwnfh_gui["sound"]["plimp"]
                                     at blwnfh_gallery_item_atl
 
                         for i in range(cells - len(blwnfh_gallery_grid[blwnfh_gallery_mode][blwnfh_gallery_page])):
@@ -186,7 +187,7 @@ init 2:
                                         action SetVariable("blwnfh_gallery_page", page)
                                         idle im.FactorScale(im.Alpha(blwnfh_gui["gallery"]["button_1_idle"], 0.8), 1.0)
                                         hover im.FactorScale(blwnfh_gui["gallery"]["button_1_hover"], 1.0)
-                                        hovered menu_hovered_action_plimp
+                                        hover_sound blwnfh_gui["sound"]["plimp"]
                                         align(0.5, 0.5)
                                 else:
                                     add im.FactorScale(blwnfh_gui["gallery"]["button_2"], 1.0):

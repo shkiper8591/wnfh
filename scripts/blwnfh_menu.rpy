@@ -21,6 +21,9 @@ init 2:
 
             menu_hovered_action_plimp = Play("sound", blwnfh_gui["sound"]["plimp"])
             menu_hovered_action_cat = Play("sound", blwnfh_GUI + "meow" + str(randrange(6)) + ".ogg")
+
+            
+            
             
         frame:
             
@@ -34,8 +37,8 @@ init 2:
 
             text "Мы не отсюда":
                 align(0.5, 0.04)
-                font blwnfh_FONTS + "msjhl.ttc"
-                #style "blwnfh_menu"
+                #font blwnfh_FONTS + "msjhl.ttc"
+                style "blwnfh_menu"
                 size 80
                 kerning 1
             
@@ -56,56 +59,57 @@ init 2:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["play"]
                 hover blwnfh_gui["img"]["play"]
-                hovered menu_hovered_action_plimp                        
+                hover_sound blwnfh_gui["sound"]["plimp"]                        
                 at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
                 
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["settings"]
                 hover blwnfh_gui["img"]["settings"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_gallery_menu")]
                 idle blwnfh_gui["img"]["gallery"]
                 hover blwnfh_gui["img"]["gallery"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
+                #hovered 
                 at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["achievements"]
                 hover blwnfh_gui["img"]["achievements"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.4875, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["scheme"]
                 hover blwnfh_gui["img"]["scheme"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.594270833, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["music"]
                 hover blwnfh_gui["img"]["music"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["info"]
                 hover blwnfh_gui["img"]["info"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.808333333, 0.284259259, 0.0)
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
                 idle blwnfh_gui["img"]["exit"]
                 hover blwnfh_gui["img"]["exit"]
-                hovered menu_hovered_action_plimp
+                hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.915104167, 0.284259259, 0.0)
 
     transform blwnfh_menu_pos_atl(z, x, y, rot):
@@ -133,4 +137,6 @@ init 2:
         repeat
 
 label blwnfh_main:
+    $ init_splash()
     call screen blwnfh_menu with dspr
+    

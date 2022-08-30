@@ -1356,7 +1356,8 @@ label blwnfh_day_1:
     show anim prolog_1 with dspr 
     play ambience ambience_soccer_play_background
     
-    $ set_mode_nvl()
+    $ blwnfh_set_mode_nvl()
+    nvl show dissolve
     
     "«[wp]и Алиса идёт на отчаянный шаг, срывается с ворот и вырывает мяч у соперника!»"
     "«Это просто невероятно!»"

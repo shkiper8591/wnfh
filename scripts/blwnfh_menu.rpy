@@ -1,11 +1,11 @@
 init 2:
+    
     screen blwnfh_menu():
-        tag menu
-        modal True
+        modal True tag menu
         
         key "game_menu":
             action NullAction()
-
+        
         key "screenshot":
             action NullAction()
 
@@ -21,10 +21,7 @@ init 2:
 
             menu_hovered_action_plimp = Play("sound", blwnfh_gui["sound"]["plimp"])
             menu_hovered_action_cat = Play("sound", blwnfh_GUI + "meow" + str(randrange(6)) + ".ogg")
-
-            
-            
-            
+        
         frame:
             
             background blwnfh_gui["img"]["fon"]
@@ -68,13 +65,12 @@ init 2:
                 hover blwnfh_gui["img"]["settings"]
                 hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
-            
+                
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_gallery_menu")]
                 idle blwnfh_gui["img"]["gallery"]
                 hover blwnfh_gui["img"]["gallery"]
                 hover_sound blwnfh_gui["sound"]["plimp"]
-                #hovered 
                 at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
             
             imagebutton:
@@ -93,8 +89,8 @@ init 2:
             
             imagebutton:
                 action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
-                idle blwnfh_gui["img"]["music"]
-                hover blwnfh_gui["img"]["music"]
+                idle blwnfh_gui["img"]["joke"]
+                hover blwnfh_gui["img"]["joke"]
                 hover_sound blwnfh_gui["sound"]["plimp"]
                 at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
             
@@ -106,7 +102,7 @@ init 2:
                 at blwnfh_menu_pos_atl(1.0, 0.808333333, 0.284259259, 0.0)
             
             imagebutton:
-                action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+                action Return()
                 idle blwnfh_gui["img"]["exit"]
                 hover blwnfh_gui["img"]["exit"]
                 hover_sound blwnfh_gui["sound"]["plimp"]

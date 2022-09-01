@@ -25,7 +25,7 @@ init -4 python:
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
-    
+  
 init 1:
     python:
 
@@ -82,6 +82,7 @@ init -1 python:
         "exit",
         "info",
         "music",
+        "joke",
         "scheme",
         "achievements", 
         "gallery",

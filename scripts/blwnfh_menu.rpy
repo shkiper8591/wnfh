@@ -38,8 +38,6 @@ init 2:
         default info_text = False
         default exit_text = False
         
-        
-        
         if play_text:
             text "Играть" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif settings_text:
@@ -182,4 +180,3 @@ init 2:
 label blwnfh_main:
     $ init_splash()
     call screen blwnfh_menu with dspr
-    

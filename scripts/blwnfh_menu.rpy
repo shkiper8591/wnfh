@@ -15,6 +15,9 @@ init 2:
         
         python:
         
+            blwnfh_posx = .333
+            blwnfh_posy = .52
+        
             from random import randrange
             
             def menu_img_status(imgf, condition="hover"):
@@ -36,21 +39,21 @@ init 2:
         default exit_text = False
         
         if play_text:
-            text "Играть" style "blwnfh_menu" size 80 kerning 1 align (.397, .52) text_align 0.0 
+            text "Играть" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif settings_text:
-            text "Настройки" style "blwnfh_menu" size 80 kerning 1 align (.437, .52) text_align 0.0 
+            text "Настройки" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif galary_text:
-            text "Галлерея" style "blwnfh_menu" size 80 kerning 1 align (.42, .52) text_align 0.0 
+            text "Галлерея" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif achievements_text:
-            text "Достижения" style "blwnfh_menu" size 80 kerning 1 align (.452, .52) text_align 0.0 
+            text "Достижения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif scheme_text:
-            text "Схема" style "blwnfh_menu" size 80 kerning 1 align (.39, .52) text_align 0.0
+            text "Схема" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif dlc_text:
-            text "Дополнения" style "blwnfh_menu" size 80 kerning 1 align (.455, .52) text_align 0.0
+            text "Дополнения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif info_text:
-            text "Информация" style "blwnfh_menu" size 80 kerning 1 align (.465, .52) text_align 0.0
+            text "Информация" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif exit_text:
-            text "Выход" style "blwnfh_menu" size 80 kerning 1 align (.39, .52) text_align 0.0
+            text "Выход" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         else:
             null height 20
             
@@ -177,4 +180,3 @@ init 2:
 label blwnfh_main:
     $ init_splash()
     call screen blwnfh_menu with dspr
-    

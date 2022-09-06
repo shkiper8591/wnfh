@@ -152,6 +152,45 @@ init 2:
             hovered ToggleScreenVariable("exit_text")
             unhovered ToggleScreenVariable("exit_text")
             at blwnfh_menu_pos_atl(1.0, 0.915104167, 0.284259259, 0.0)
+        
+        frame:
+            background "#0005"
+            area(1416, 466, 440, 550)
+
+            vbox:
+                align(0.5, 0.0)
+
+                null height 20
+
+                text u"Новости":
+                    align(0.5, 0.0)
+                    style "blwnfh_menu"
+                    size 42
+                    kerning 2.2
+
+                null height 25
+                
+                text u"alpha 0.1\n Добавлено 6 дней. Добавлено 6 дней. Добавлено 6 дней. Добавлено 6 дней.":
+                    pos(0.05, 0.0)
+                    style "blwnfh_menu"
+                    size 25
+                    kerning 1
+                
+                viewport:
+                        id "menu_ach_viewport"
+                        draggable True
+                        mousewheel True
+                        scrollbars None
+                
+                
+
+            vbar:
+                value YScrollValue("menu_ach_viewport")
+                bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
+                top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
+                thumb "null"
+                at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)
+        
 
     transform blwnfh_menu_pos_atl(z, x, y, rot):
         zoom z

@@ -45,6 +45,8 @@ init 1:
             return blwnfh_fade(time=t, color="red")
     
 init 2:
+
+    image null = Null(0, 0)
     ## Звуковые эффекты ##
     $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)
 

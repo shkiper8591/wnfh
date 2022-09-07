@@ -14,7 +14,6 @@ init 2:
             area(0.0, 0.0, 1.0, 1.0)
         
         python:
-        
             blwnfh_posx = .333
             blwnfh_posy = .52
         
@@ -155,42 +154,45 @@ init 2:
         
         frame:
             background "#0005"
-            area(1416, 466, 440, 550)
-
-            vbox:
-                align(0.5, 0.0)
-
-                null height 20
-
-                text u"Новости":
+            area(1201, 466, 655, 550)
+            
+            frame:
+                background "#0000"
+                left_margin 20
+                right_margin 30
+                
+                
+                vbox:
                     align(0.5, 0.0)
-                    style "blwnfh_menu"
-                    size 42
-                    kerning 2.2
-
-                null height 25
-                
-                text u"alpha 0.1\n Добавлено 6 дней. Добавлено 6 дней. Добавлено 6 дней. Добавлено 6 дней.":
-                    pos(0.05, 0.0)
-                    style "blwnfh_menu"
-                    size 25
-                    kerning 1
-                
-                viewport:
-                        id "menu_ach_viewport"
+    
+                    null height 20
+    
+                    text u"Новости":
+                        align(0.5, 0.0)
+                        style "blwnfh_menu"
+                        size 42
+                        kerning 2.2
+    
+                    null height 25
+    
+                    viewport:
+                        id "menu_news"
                         draggable True
                         mousewheel True
                         scrollbars None
-                
-                
-
+                        
+                        text u"alpha 0.1\nД о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й Д о б а в л е н о 6 д н е й ":
+                            style "blwnfh_news"
+                            size 25
+                            kerning 1
+                        
             vbar:
-                value YScrollValue("menu_ach_viewport")
+                value YScrollValue("menu_news")
                 bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
                 top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
                 thumb "null"
                 at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)
-        
+            
 
     transform blwnfh_menu_pos_atl(z, x, y, rot):
         zoom z

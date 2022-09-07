@@ -329,6 +329,16 @@ init 1:
     $ style.blwnfh_menu.kerning = 17.0
     $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
     
+    # Шрифты
+    $ style.blwnfh_news = Style(style.default)
+    $ style.blwnfh_news.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_news.color = "#FFF"
+    $ style.blwnfh_news.drop_shadow = (2, 2)
+    $ style.blwnfh_news.drop_shadow_color = "#222"
+    $ style.blwnfh_news.text_align = 0.0
+    $ style.blwnfh_news.kerning = 17.0
+    $ renpy.image("blwnfh_news", ParameterizedText(style="blwnfh_news", size=64))
+    
     $ style.blwnfh_choice_day = Style(style.default)
     $ style.blwnfh_choice_day.font = blwnfh_FONTS + "KarloCham-Line.otf"
     $ style.blwnfh_choice_day.color = "#E2C778"

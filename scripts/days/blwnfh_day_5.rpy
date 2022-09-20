@@ -2293,7 +2293,7 @@ label blwnfh_day_5:
     "Тем временем перерыв подходил к концу."
     
     hide kat with dspr
-    blwnfh_set_mode(nvl)
+    $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
     "Футболисты возвращались на поле, а трибуна вновь наполнялась пионерами."
@@ -2509,7 +2509,7 @@ label blwnfh_day_5:
     
     stop ambience
     scene bg ext_stage_big_sunset with dissolve
-    play ambience_camp_center_evening
+    play ambience ambience_camp_center_evening
     show el normal pioneer at center with dspr
     
     "Так мы и перетаскали с ним всё обратно на сцену, а кабель оттащить договорились завтра ибо лень."
@@ -2673,7 +2673,7 @@ label blwnfh_day_5:
     
     stop ambience
     scene bg ext_square_sunset with dissolve
-    play ambience_camp_center_evening
+    play ambience ambience_camp_center_evening
     
     "Я кое-как ковылял домой."
     "Всё же, усталость давала о себе знать."
@@ -2746,7 +2746,7 @@ label blwnfh_day_5:
     
     kat "Ну и отлично, тогда быстрее иди домой, чтобы у тебя точно ничего не отвалилось."
     kat "Мы уже как раз дошли." 
-	
+    
     show kat normal pioneer at center with dspr
     
     me "Ну-с, тогда спокойной ночи."

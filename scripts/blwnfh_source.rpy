@@ -276,7 +276,28 @@ init -1 python:
     
     renpy.image("blwnfh_ach_blank", im.Scale(blwnfh_IMAGES + "gui/achievements/blank.png", 600, 125))
     
-    blwnfh_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox", "love_letter", "tabs", "bandana", "gram", "birth_certificate", "roses", "healing_potion")
+    blwnfh_item_list = (
+        "knife",
+        "paint",
+        "tape",
+        "key",
+        "food",
+        "powder",
+        "accumulator",
+        "comb",
+        "pills",
+        "apple",
+        "note",
+        "shark_tooth",
+        "matchbox",
+        "love_letter",
+        "tabs",
+        "bandana",
+        "gram",
+        "birth_certificate",
+        "roses",
+        "healing_potion",
+        )
     
     for item in blwnfh_item_list:
         renpy.image("blwnfh_item_" + item, im.Scale(blwnfh_IMAGES + "gui/items/" + item + ".png", 450, 360))

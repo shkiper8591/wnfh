@@ -108,7 +108,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_achievements")]
             idle blwnfh_gui["img"]["achievements"]
             hover blwnfh_gui["img"]["achievements"]
             hover_sound blwnfh_gui["sound"]["plimp"]

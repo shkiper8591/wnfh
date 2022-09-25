@@ -2149,6 +2149,7 @@ label blwnfh_day_5:
     kat "Это да."
     me "Ладно, мы вернемся к вам через пятнадцать минут, а пока — перерыв."
     
+    nvl hide dissolve
     $ blwnfh_set_mode()
     show kat normal pioneer at left with dspr
     
@@ -2461,6 +2462,7 @@ label blwnfh_day_5:
     kat "И надеямся вам очень понравилось наблюдать за этими моментами, а также слушать как мы их озвучивали!"
     me "До скорох встреч."
     
+    nvl hide dissolve
     $ blwnfh_set_mode()
     
     show kat normal pioneer at center with dspr

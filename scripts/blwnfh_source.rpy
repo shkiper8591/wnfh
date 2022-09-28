@@ -21,6 +21,7 @@ init -4 python:
     blwnfh_SPRITES_CLOSE = blwnfh_IMAGES + "sprites/close/"
     blwnfh_SPRITES_NORMAL = blwnfh_IMAGES + "sprites/normal/"
     blwnfh_SPRITES_FAR = blwnfh_IMAGES + "sprites/far/"
+    blwnfh_ACHIEVEMENTS = blwnfh_IMAGES + "gui/achievements/"
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
@@ -94,6 +95,16 @@ init -1 python:
         "vbar_full",
         "vbar_null",
         "play"
+        ]}
+    
+    
+    
+    
+    blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
+        "lock",
+        "idle_frame",
+        "hover_frame",
+        "back",
         ]}
     
     blwnfh_gui["gallery"] = {img:(blwnfh_GALLERY + img + ".png") for img in [
@@ -263,18 +274,27 @@ init -1 python:
     # Регистрация ачивок и предметов
     
     blwnfh_ach_list = (
-        ("payday", u"Конфетный вор"),
+        ("payday", "payday_icon"),
+        ("bkrr", "bkrr_icon"),
+        ("alpha-0.1", "alpha-0.1_icon"),
+        ("post", "post_icon"),
+        ("zgdun", "zgdun_icon"),
     )
     
     if not persistent.blwnfh_ach:
         persistent.blwnfh_ach = dict()
     
     for ach in blwnfh_ach_list:
-        renpy.image("blwnfh_ach_" + ach[0], im.Scale(blwnfh_IMAGES + "gui/achievements/" + ach[0] + ".png", 600, 125))
+        renpy.image("blwnfh_ach_" + ach[0], im.Scale(blwnfh_ACHIEVEMENTS + ach[0] + ".png", 600, 125))
         if ach[0] not in persistent.blwnfh_ach:
             persistent.blwnfh_ach[ach[0]] = False
     
-    renpy.image("blwnfh_ach_blank", im.Scale(blwnfh_IMAGES + "gui/achievements/blank.png", 600, 125))
+    for ach in blwnfh_ach_list:
+        renpy.image("blwnfh_ach_" + ach[1], im.Scale(blwnfh_ACHIEVEMENTS + ach[1] + ".png", 1177, 150))
+        if ach[1] not in persistent.blwnfh_ach:
+            persistent.blwnfh_ach[ach[1]] = False
+    
+    renpy.image("blwnfh_ach_lock", im.Scale(blwnfh_ACHIEVEMENTS + "lock.png", 1177, 150))
     
     blwnfh_item_list = (
         "knife",

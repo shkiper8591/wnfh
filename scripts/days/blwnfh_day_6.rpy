@@ -674,7 +674,7 @@ label blwnfh_day_6:
     
     stop ambience
     scene bg int_musclub_day with dissolve
-    play ambience_music_club_day
+    play ambience ambience_music_club_day
     
     me "Ау?"
     

@@ -161,6 +161,7 @@ init -1 python:
         "gp":[u"Галина Петровна", "#CECECE"],
         "zg":[u"Зинаида Геннадьевна", "#D199FF"],
         "sd":[u"Сергей Дмитриевич", "#878787"],
+        "void":[u" ", "#000000"]
 
     }
     
@@ -360,10 +361,17 @@ init -1 python:
     
     def blwnfh_get_relation(character, text, relation):
         renpy.show("point", [blwnfh_get_table_atl])
-        renpy.show("message_text", [blwnfh_get_relation_atl(0.06, 0.17)], tag="message_text" + str(i), what=Text(text, style=style.blwnfh_thought, size=30))
+        
         renpy.show("char_text", [blwnfh_get_relation_atl(0.03, 0.14)], tag="char_text" + str(i), what=Text(blwnfh_characters[character][0], style=style.blwnfh_thought, color=blwnfh_characters[character][1], size=30))
         
-        pos_x = 0.25
+        
+        if character == "void":
+            text_pos_y = 0.15
+        else:
+            text_pos_y = 0.17
+        renpy.show("message_text", [blwnfh_get_relation_atl(0.06, text_pos_y)], tag="message_text" + str(i), what=Text(text, style=style.blwnfh_thought, size=30))
+
+        pos_x = 0.26
         pos_y = 0.15
         
         pos_y_step = 0.06
@@ -391,7 +399,7 @@ init -1 python:
             pos_x_end = pos_x + pos_x_step
             renpy.show("rel_neutral", [blwnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end)])
         elif relation == "None":
-            renpy.pause(0.1)
+            renpy.pause(1.0)
         renpy.pause(6.0)
         renpy.hide("point")
         

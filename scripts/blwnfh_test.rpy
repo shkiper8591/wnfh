@@ -49,7 +49,13 @@ label blwnfh_test:
     $ blwnfh_set_name("sl", "Славя")
     window show
     
+    "Как-то раз я невзначай сунул хуй в английский чай"
+    window hide
+    $ blwnfh_get_relation("void", "Кринжа сморозил", "None")
+    window show
+    
     "Ура, это говно заработало"
+    
     #"experemental1"
     #scene
     #$ renpy.show("bg int_warehouse_night_lamp_off_light_on", what = "bg int_warehouse_night_lamp_off_light_on")

@@ -228,5 +228,13 @@ init 1:
         ease 1.0 pos(0.0, 0.75) alpha 1.0
         pause 3.0
         ease 1.0 pos(-0.1, 0.75) alpha 0.0
+    
+    transform blwnfh_get_table_atl:
+        pos(-0.4, 0.15)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        ease 1.0 pos(0.0, 0.15) alpha 1.0
+        pause 4.0
+        ease 1.0 pos(-0.4, 0.15) alpha 0.0
 
 

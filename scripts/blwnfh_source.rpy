@@ -26,7 +26,13 @@ init -4 python:
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
-  
+    blwnfh_OTHER = blwnfh_IMAGES + "other/"
+    
+init python:
+    blwnfh_tint = {
+        "sunset":im.matrix.tint(0.94, 0.82, 1.0),
+        "night":im.matrix.tint(0.63, 0.78, 0.82)
+    }
 init 1:
     python:
 
@@ -46,7 +52,50 @@ init 1:
             return blwnfh_fade(time=t, color="red")
     
 init 2:
+    python:
+        def _sprite_for_all_times(full_sprite_name, composite_image):
+                """
+                Объявляем спрайт для всех времен суток
+                """
+                renpy.image(
+                    full_sprite_name,
+                    ConditionSwitch(
+                        "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, blwnfh_tint["sunset"]),
+                        "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, blwnfh_tint["night"]),
+                        True, composite_image,
+                    )
+                )
+                
+    image dv spine:
+        ConditionSwitch(
+            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"), blwnfh_tint["sunset"]),
+            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"), blwnfh_tint["night"]),
+            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"))
+    image sl spine:
+        ConditionSwitch(
+            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"), blwnfh_tint["sunset"]),
+            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"), blwnfh_tint["night"]),
+            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"))
+    image mi spine:
+        ConditionSwitch(
+            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"), blwnfh_tint["sunset"]),
+            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"), blwnfh_tint["night"]),
+            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"))
+    image us spine:
+        ConditionSwitch(
+            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"), blwnfh_tint["sunset"]),
+            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"), blwnfh_tint["night"]),
+            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"))
+    image un spine:
+        ConditionSwitch(
+            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"), blwnfh_tint["sunset"]),
+            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"), blwnfh_tint["night"]),
+            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"))
 
+    
+    
+    
+    
     image null = Null(0, 0)
     ## Звуковые эффекты ##
     $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)
@@ -97,8 +146,13 @@ init -1 python:
         "play"
         ]}
     
-    
-    
+    blwnfh_gui["other"] = {img:(blwnfh_OTHER + img + ".png") for img in [
+        "dv_spine"
+        "sl_spine"
+        "us_spine"
+        "un_spine"
+        "mi_spine"
+        ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
         "lock",
@@ -347,14 +401,9 @@ init -1 python:
     
     renpy.image("point", im.MatrixColor(
         im.Scale(blwnfh_gui["achievements"]["point"], 600, 100),
-        im.matrix.brightness(2)))
-        
+        im.matrix.brightness(2)))  
     renpy.image("rel_up", im.Scale(blwnfh_gui["achievements"]["rel_up"], 41, 59))
-        #im.matrix.brightness(2)))
-    
-    renpy.image("rel_down", im.Scale(blwnfh_gui["achievements"]["rel_down"], 41, 59))
-        #im.matrix.brightness(2)))
-        
+    renpy.image("rel_down", im.Scale(blwnfh_gui["achievements"]["rel_down"], 41, 59))  
     renpy.image("rel_neutral", im.MatrixColor(
         im.Scale(blwnfh_gui["achievements"]["rel_neutral"], 41, 70),
         im.matrix.brightness(1)))

@@ -27,7 +27,13 @@ label blwnfh_test:
     
     "тест спрайтов."
     
-    show un back at center with dspr
+    show dv spine at fleft with dspr
+    show sl spine at left with dspr
+    show un spine at center with dspr
+    show us spine at right with dspr
+    show mi spine at fright with dspr
+
+    
     
     un "йоу, чувырла"
     

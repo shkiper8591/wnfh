@@ -863,7 +863,7 @@ label blwnfh_day_:
     
     "Мы с Катей кивнули и удалились в подсобку"
     
-    scene bg int_editorial_day_blwnfh with dissolve
+    scene bg int_editorial_day_cat with dissolve
     show un normal pioneer at left with dspr
     show kat normal pioneer at right with dspr
     
@@ -1536,7 +1536,7 @@ label blwnfh_day_:
     
     hide mz with dspr
     hide el with dspr
-    show bg int_editorial_day_blwnfh
+    show bg int_editorial_day_cat with dissolve
     
     "Внутри обнаружилось, что нашей художницы нет на месте."  
     
@@ -1856,7 +1856,7 @@ label blwnfh_day_:
     
     "Я быстрым шагом направился в подсобку."
     
-    scene bg int_editorial_day_blwnfh with dissolve
+    scene bg int_editorial_day_cat with dissolve
     show un normal pioneer far at left with dspr
     show kat normal pioneer far at right with dspr
     

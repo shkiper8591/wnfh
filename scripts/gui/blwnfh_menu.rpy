@@ -62,10 +62,10 @@ init 2:
             size 30
 
         text "Мы не отсюда":
-            align(0.5, 0.04)
-            style "blwnfh_menu"
+            align(0.5, 0.06)
+            style "blwnfh_title"
             size 80
-            kerning 1
+            kerning 2
         
         text blwnfh_splash():
             font blwnfh_FONTS + "vcr_osd.ttf"

@@ -26,7 +26,6 @@ init -3 python:
             True, composite
         ))
 
-
     # Внимание ночные ужасы
 
     from collections import defaultdict
@@ -317,8 +316,18 @@ init:   #Транзиты на любой вкус и цвет, точно не 
 
 
 init 1:
-
     # Шрифты
+    $ style.blwnfh_title = Style(style.default)
+    #$ style.blwnfh_title.font = blwnfh_FONTS + "Dymaxion scriptS.ttf"
+    $ style.blwnfh_title.font = blwnfh_FONTS + "Sirius Cursiv.ttf"
+    $ style.blwnfh_title.color = "#FFF"
+    $ style.blwnfh_title.drop_shadow = (2, 2)
+    $ style.blwnfh_title.drop_shadow_color = "#222"
+    $ style.blwnfh_title.text_align = 0.5
+    $ style.blwnfh_title.yalign = 0.5
+    $ style.blwnfh_title.kerning = 17.0
+    $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
+
     $ style.blwnfh_menu = Style(style.default)
     $ style.blwnfh_menu.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_menu.color = "#FFF"
@@ -328,8 +337,7 @@ init 1:
     $ style.blwnfh_menu.yalign = 0.5
     $ style.blwnfh_menu.kerning = 17.0
     $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
-    
-    # Шрифты
+
     $ style.blwnfh_news = Style(style.default)
     $ style.blwnfh_news.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_news.color = "#FFF"

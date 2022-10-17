@@ -237,4 +237,10 @@ init 1:
         pause 4.0
         ease 1.0 pos(-0.4, 0.15) alpha 0.0
 
-
+    transform blwnfh_technical_chocolatki:
+        xpos 0.25
+        xzoom -1
+        pause 0.333
+        xzoom 1
+        pause 0.333
+        repeat

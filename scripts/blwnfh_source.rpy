@@ -34,6 +34,9 @@ init python:
         "night":im.matrix.tint(0.63, 0.78, 0.82)
     }
 init 1:
+
+    image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
+    
     python:
 
         def blwnfh_timeskip_transition(t=1.0):
@@ -52,59 +55,16 @@ init 1:
             return blwnfh_fade(time=t, color="red")
     
 init 2:
-    python:
-        def _sprite_for_all_times(full_sprite_name, composite_image):
-                """
-                Объявляем спрайт для всех времен суток
-                """
-                renpy.image(
-                    full_sprite_name,
-                    ConditionSwitch(
-                        "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, blwnfh_tint["sunset"]),
-                        "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, blwnfh_tint["night"]),
-                        True, composite_image,
-                    )
-                )
-                
-    image dv spine:
-        ConditionSwitch(
-            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"), blwnfh_tint["sunset"]),
-            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"), blwnfh_tint["night"]),
-            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "dv_spine.png"))
-    image sl spine:
-        ConditionSwitch(
-            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"), blwnfh_tint["sunset"]),
-            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"), blwnfh_tint["night"]),
-            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "sl_spine.png"))
-    image mi spine:
-        ConditionSwitch(
-            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"), blwnfh_tint["sunset"]),
-            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"), blwnfh_tint["night"]),
-            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "mi_spine.png"))
-    image us spine:
-        ConditionSwitch(
-            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"), blwnfh_tint["sunset"]),
-            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"), blwnfh_tint["night"]),
-            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "us_spine.png"))
-    image un spine:
-        ConditionSwitch(
-            "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"), blwnfh_tint["sunset"]),
-            "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"), blwnfh_tint["night"]),
-            True, im.Composite((900, 1080), (0, 0), blwnfh_OTHER + "un_spine.png"))
-
-    
-    
-    
-    
     image null = Null(0, 0)
     ## Звуковые эффекты ##
     $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)
-
+    $ blwnfh_music_list = blwnfh_form_files_list(blwnfh_MUSIC)
     
     # SFX Лист
     $ blwnfh_sfx_list["ps4_ach"] = blwnfh_SFX + "ps4_ach.ogg"
     
-    
+    # MUSIC Лист
+    $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
     # Рандомизация одинаковых звуков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
 
@@ -143,15 +103,8 @@ init -1 python:
         "bg",
         "vbar_full",
         "vbar_null",
-        "play"
-        ]}
-    
-    blwnfh_gui["other"] = {img:(blwnfh_OTHER + img + ".png") for img in [
-        "dv_spine"
-        "sl_spine"
-        "us_spine"
-        "un_spine"
-        "mi_spine"
+        "play",
+        "blank2"
         ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [

@@ -1,3 +1,13 @@
+label technical_chocolatki:
+    scene bg int_clubs_male_day
+    show technical chocolatki blwnfh_technical_chocolatki at blwnfh_technical_chocolatki
+    play music blwnfh_music_list["technical_chocolatki"] fadein 3
+    "Ведутся работы"
+    stop music
+    jump blwnfh_main
+
+
+
 label blwnfh_test:
 
     $ new_chapter(2, u"Мы не отсюда. Тест.")
@@ -25,20 +35,15 @@ label blwnfh_test:
     #$ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
     #
     
-    "тест спрайтов."
-    
-    show dv spine at fleft with dspr
-    show sl spine at left with dspr
-    show un spine at center with dspr
-    show us spine at right with dspr
-    show mi spine at fright with dspr
 
     
     
     un "йоу, чувырла"
+    show technical chocolatki blwnfh_technical_chocolatki at blwnfh_technical_chocolatki
     
+    show kat normal pioneer at center with dspr
     kat "Ты пойдёшь со мной?"
-
+    hide kat with dspr
     sd "Хана тебе, щегол"
     window hide
     

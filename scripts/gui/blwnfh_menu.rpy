@@ -24,7 +24,7 @@ init 2:
                     return im.MatrixColor(imgf, im.matrix.contrast(1.7))
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
-
+                    
             menu_hovered_action_plimp = Play("sound", blwnfh_gui["sound"]["plimp"])
             menu_hovered_action_cat = Play("sound", blwnfh_GUI + "meow" + str(randrange(6)) + ".ogg")
         
@@ -88,9 +88,9 @@ init 2:
             hovered ToggleScreenVariable("play_text")
             unhovered ToggleScreenVariable("play_text")            
             at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
-            
+        
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
             idle blwnfh_gui["img"]["settings"]
             hover blwnfh_gui["img"]["settings"]
             hover_sound blwnfh_gui["sound"]["plimp"]

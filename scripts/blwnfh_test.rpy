@@ -13,7 +13,14 @@ label blwnfh_test:
     $ new_chapter(2, u"Мы не отсюда. Тест.")
     $ persistent.sprite_time = "day"
     $ day_time()
-    show bg int_dining_hall_day with dspr  
+    
+    scene bg int_editorial_day_cat with dspr
+    window show
+    me "Всем привет"
+    show un draws_smile draws background with dspr
+    un "Доброе утро, Семён"
+    window hide
+    scene bg int_dining_hall_day with dspr  
     #$ blwnfh_set_mode(nvl)
     #nvl show dissolve
     #
@@ -34,12 +41,6 @@ label blwnfh_test:
     #
     #$ blwnfh_thoughts_show("Пойти нахуй?", "Остаться здесь?", "Вернуться домой?", "А может, поиграть в дотку?", "Или подрочить?", "Или купить пивка?")
     #
-    
-
-    
-    
-    un "йоу, чувырла"
-    show technical chocolatki blwnfh_technical_chocolatki at blwnfh_technical_chocolatki
     
     show kat normal pioneer at center with dspr
     kat "Ты пойдёшь со мной?"

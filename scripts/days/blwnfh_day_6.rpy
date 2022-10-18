@@ -1769,7 +1769,7 @@ label blwnfh_day_6:
     
     stop ambience
     scene bg ext_library_day with dissolve
-    play ambience_camp_center_day
+    play ambience ambience_camp_center_day
     show kat normal pioneer at center with dspr
     
     kat "Ну-с, куда идём?"

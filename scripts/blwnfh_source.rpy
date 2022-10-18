@@ -291,6 +291,7 @@ init -1 python:
         ("alpha-0.1", "alpha-0.1_icon"),
         ("post", "post_icon"),
         ("zgdun", "zgdun_icon"),
+        ("alarm", "alarm_icon")
     )
     
     if not persistent.blwnfh_ach:

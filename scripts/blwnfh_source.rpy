@@ -402,7 +402,7 @@ init -1 python:
             renpy.show("rel_neutral", [blwnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end)])
         elif relation == "None":
             renpy.pause(1.0)
-        renpy.pause(6.0)
+        renpy.pause(6.0, hard=True)
         renpy.hide("point")
         
     

@@ -13,12 +13,21 @@ label blwnfh_test:
     $ new_chapter(2, u"Мы не отсюда. Тест.")
     $ persistent.sprite_time = "day"
     $ day_time()
-    
     scene bg int_editorial_day_cat with dspr
+    
+    "Да настолько, что я полностью увлекся его поеданием и вообще необращал внимания ни на что."
+    "Ни на то, что говорила мне Катя,"
+    
+    show mt angry pioneer at right with dspr
+    
+    extend " и даже на то, что рядом со мной стояла рассерженная вожатая."
+    "Стоп. {w}Рассерженная вожатая?"
+    
     window show
     me "Всем привет"
     show un draws_smile draws background with dspr
     un "Доброе утро, Семён"
+    me "Нахуй иди, не с тобой разговариваю."
     window hide
     scene bg int_dining_hall_day with dspr  
     #$ blwnfh_set_mode(nvl)

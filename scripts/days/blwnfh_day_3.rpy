@@ -1549,7 +1549,7 @@ label blwnfh_day_3:
     
     hide kat with dspr
     hide mz with dspr  
-    show un serious pioneer at center with dspr
+    show un serious pioneer close at center with dspr
    
     un "Семён, не хочешь поговорить?"
     th "Ухты я снова Семён! Впрочем, похоже это её хитрый план, отослала Катю и Женю, чтобы поговорить тет-а-тет."
@@ -1559,12 +1559,12 @@ label blwnfh_day_3:
     
     me "О чем хочешь поговорить?"
     
-    show un normal pioneer at center with dspr
+    show un normal pioneer close at center with dspr
     
     un "А ты догадайся."
     me "Догадаться я могу много о чём, ты мне конкретнее скажи." 
     
-    show un sad pioneer at center with dspr
+    show un sad pioneer close at center with dspr
     
     "Лена промолчала, грустно уставившись на меня."
     
@@ -1578,7 +1578,7 @@ label blwnfh_day_3:
     
     un "Я[wp] Я[wp]"
     
-    show un cry pioneer at center with dspr
+    show un cry pioneer close at center with dspr
     
     "У Лены проступили на лице слезы."
     

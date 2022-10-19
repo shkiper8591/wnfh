@@ -117,7 +117,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.4875, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
             idle blwnfh_gui["img"]["scheme"]
             hover blwnfh_gui["img"]["scheme"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -126,7 +126,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.594270833, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
             idle blwnfh_gui["img"]["dlc"]
             hover blwnfh_gui["img"]["dlc"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -135,7 +135,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
             idle blwnfh_gui["img"]["info"]
             hover blwnfh_gui["img"]["info"]
             hover_sound blwnfh_gui["sound"]["plimp"]

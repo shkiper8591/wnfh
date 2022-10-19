@@ -105,7 +105,7 @@ init 2:
                     image_parts = [distance_to_position[distance]]
                     for layer in layers:
                         source, file_name = layer.split(':')
-                        base_path = blwnfh_IMAGES if source == 'mod' else blwnfh_IMAGES
+                        base_path = blwnfh_IMAGES if source == 'mod' else blwnfh_ES_IMAGES
                         if default:
                             image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
                                 distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
@@ -138,10 +138,17 @@ init 2:
         make_sprites_for('kat', 'casual', ['mod:body', 'mod:casual', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:<emotion>', 'mod:shirt'])
         make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
-        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('kat', 'body', ['mod:body', 'mod:<emotion>'])
+        
+        ## Новые старые спрайты
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'es:<emotion>'])
-        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
         make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'es:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'body', ['mod:body', 'es:<emotion>'])
+        make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'body glasses', ['mod:body', 'es:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
         
         ## Фоновые спрайты
         make_sprites_for('un', 'draws', ['mod:draws', 'mod:<emotion>'])

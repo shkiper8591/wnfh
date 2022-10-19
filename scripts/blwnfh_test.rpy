@@ -33,8 +33,6 @@ label blwnfh_test:
     
     scene bg int_library_day with dissolve
     
-    show mz normal pioneer at center with dspr
-    
     "Тест спрайтов Жени."
     "Дистанция close"
     "Женя amazed, close." 
@@ -120,6 +118,20 @@ label blwnfh_test:
     show mz rage pioneer glasses at center with dspr
     
     mz "ЧИВО?!?!??!?!?"
+    
+    me "ТАВО"
+    
+    show mz shy pioneer at center with dspr
+    
+    mz "Ну ладно"
+    
+    show mz shy body at center with dspr
+    
+    me "Ничё такие сиськи у тебя"
+    
+    show mz rage body glasses at center with dspr
+    
+    mz "ВСЁ?! НАСМОТРЕЛСЯ?! А ТЕПЕРЬ ПШЁЛ НАХУЙ ОТСЮДА!"
     
     scene bg int_dining_hall_day with dspr  
     #$ blwnfh_set_mode(nvl)

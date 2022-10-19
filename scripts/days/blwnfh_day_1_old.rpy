@@ -1,6 +1,6 @@
     # Мы не отсюда. День 1 #
     
-label blwnfh_day_1:
+label blwnfh_day_1_old:
     
     $ new_chapter(1, u"Мы не отсюда. День первый.")
     $ persistent.sprite_time = "sunset"

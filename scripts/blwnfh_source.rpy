@@ -15,6 +15,7 @@ init -4 python:
     blwnfh_MUSIC = blwnfh_SOUND + "music/"
     blwnfh_GUI = blwnfh_SOUND + "gui/"
     
+    blwnfh_ES_IMAGES = "images/"
     blwnfh_IMAGES = blwnfh_ROOT + "images/"
     blwnfh_CG = blwnfh_IMAGES + "cg/"
     blwnfh_BG = blwnfh_IMAGES + "bg/"
@@ -27,6 +28,7 @@ init -4 python:
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
     blwnfh_OTHER = blwnfh_IMAGES + "other/"
+    blwnfh_VIDEO = blwnfh_ROOT + "video/"
     
 init python:
     blwnfh_tint = {
@@ -67,6 +69,14 @@ init 2:
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
     # Рандомизация одинаковых звуков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
+    
+    $ blwnfh_video_list = {
+        "intro":blwnfh_VIDEO + "intro.webm",
+        "pegi":blwnfh_VIDEO + "pegi.webm",
+    }
+
+    #$ bkrr_video_list["backdrop"] = {dn:(BKRR_ROOT_DIR + "video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
+    #$ bkrr_video_list["backdrop"]["epilogue"] = BKRR_ROOT_DIR + "video/backdrop_epilogue.webm"
 
 init -1 python:
 ##    Звуковые функции    ##

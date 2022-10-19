@@ -23,12 +23,104 @@ label blwnfh_test:
     extend " и даже на то, что рядом со мной стояла рассерженная вожатая."
     "Стоп. {w}Рассерженная вожатая?"
     
+    show mt rage pioneer 
     
     me "Всем привет"
     show un draws_smile draws background with dspr
     un "Доброе утро, Семён"
     me "Нахуй иди, не с тобой разговариваю."
     window hide
+    
+    scene bg int_library_day with dissolve
+    
+    show mz normal pioneer at center with dspr
+    
+    "Тест спрайтов Жени."
+    "Дистанция close"
+    "Женя amazed, close." 
+    
+    show mz amazed pioneer close at center with dspr
+    
+    "Женя amazed, close с очками."
+    
+    show mz amazed pioneer glasses close at center with dspr
+    
+    "Женя shyangry, close."
+    
+    show mz shyangry pioneer close at center with dspr
+    
+    "Женя shyangry, close с очками."
+    
+    show mz shyangry pioneer glasses close at center with dspr
+    
+    "Женя confused, close."
+    
+    show mz confused pioneer close at center with dspr
+    
+    "Женя confused, close с очками."
+    
+    show mz confused pioneer glasses close at center with dspr
+    
+    "Дистанция normal"
+    
+    "Женя fun, normal."
+    
+    show mz fun pioneer at center with dspr
+    
+    "Женя fun, normal с очками."
+    
+    show mz fun pioneer glasses at center with dspr
+    
+    "Женя cry, normal."
+    
+    show mz cry pioneer at center with dspr
+    
+    "Женя cry, normal с очками."
+    
+    show mz cry pioneer glasses at center with dspr
+
+    "Женя excitement, normal."
+    
+    show mz excitement pioneer at center with dspr
+    
+    "Женя excitement, normal с очками."
+    
+    show mz excitement pioneer glasses at center with dspr
+
+    "Дистанция far"
+    "Женя sceptic, far."
+    
+    show mz sceptic pioneer far at center with dspr
+    
+    "Женя sceptic, far с очками"
+    
+    show mz sceptic pioneer glasses far at center with dspr
+    
+    "Женя smile2, far"
+    
+    show mz smile2 pioneer far at center with dspr
+    
+    "Женя smile2, far с очками"
+    
+    show mz smile2 pioneer glasses far at center with dspr
+    
+    "Женя shy, far"
+    
+    show mz shy pioneer far at center with dspr
+    
+    "Женя shy, far с очками"
+    
+    show mz shy pioneer glasses far at center with dspr
+    
+    show mz bukal pioneer glasses at center with dspr
+    
+    mz "Всё, показ мод окончен, а теперь выметайся."
+    me "А секас?"
+    
+    show mz rage pioneer glasses at center with dspr
+    
+    mz "ЧИВО?!?!??!?!?"
+    
     scene bg int_dining_hall_day with dspr  
     #$ blwnfh_set_mode(nvl)
     #nvl show dissolve

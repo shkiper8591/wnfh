@@ -11,7 +11,7 @@ init 2:
                 'cry': 1, 'scared': 1, 'shocked': 1, 'surprise': 1, 'grin': 2, 'guilty': 3, 'shy': 3, 'sad': 3, 'laugh': 4, 'normal': 4, 'smile': 4, 'angry': 5, 'rage': 5,
             },
             'mz': {
-                'bukal': 1, 'normal': 1, 'laugh': 1, 'angry': 2, 'rage': 2, 'shy': 3, 'smile': 3,
+                'bukal': 1, 'normal': 1, 'laugh': 1, 'amazed': 1, 'fun': 1,  'hope': 1, 'sad': 1, 'sceptic': 1, 'smile2': 2, 'cry': 2, 'shyangry': 2,'angry': 2, 'rage': 2, 'confused': 3, 'excitement': 3, 'shy': 3, 'smile': 3,
             },
             'mt': {
                 'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1, 'angry': 2, 'rage': 2, 'grin': 3, 'laugh': 3,
@@ -136,8 +136,12 @@ init 2:
         ## Новые персонажи
         make_sprites_for('kat', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual', ['mod:body', 'mod:casual', 'mod:<emotion>'])
-        make_sprites_for('kat', 'casual_shirt', ['mod:body', 'mod:casual', 'mod:<emotion>'])
-        make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>', 'mod:shirt'])
+        make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:<emotion>', 'mod:shirt'])
+        make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'es:<emotion>'])
+        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'es:<emotion>', 'es:glasses'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'draws', ['mod:draws', 'mod:<emotion>'])

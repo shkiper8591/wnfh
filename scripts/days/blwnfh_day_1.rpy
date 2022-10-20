@@ -1,25 +1,37 @@
 label blwnfh_day_1:
-
-    # семён просыпается
     
-    play ambience ambience_int_cabin_evening
-    scene bg int_house_of_mt_sunset with dissolve
+    $ blwnfh_set_savename(1)
+    scene black
+    $ blwnfh_set_time("sunset")
+    $ renpy.pause(1.5, hard=True)
+
+    play ambience ambience_int_cabin_evening fadein 3
+    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    show unblink
+    with None
+    
+    window show
     
     "Я резко распахнул глаза и привстав, быстро осмотрелся вокруг."
     
     th "Это всего лишь был сон..."
     
     "Вздохнув и потерев лоб, я лег обратно, пытаясь вновь заснуть."
+    window hide
     
-    # семён закрывает глаза
+    show blink
+    
+    window show
     
     "Но сердце колошматило так, что уснуть у меня не получалось."
+    scene black
     "Я попытался расслабится, дыша глубоко и размерено."
     "Сердце медленно успокоилось, вот только желания спать мне это не добавило."
     
     th "Видимо, придется вставать."
-    
-    # семён открывает глаза
+    scene bg int_house_of_mt_sunset
+    show unblink
+    with None
     
     "Встав и усевшись на кровати, я посмотрел на часы будильника. {w}Которые показывали, без десяти, восемь утра."
     # th "епаний сир"
@@ -27,9 +39,12 @@ label blwnfh_day_1:
     
     "Недовольно фыркнув, одевшись и тихонько взяв умывальные принадлежности, я покинул дом."
     
-    stop ambience
-    scene bg ext_house_of_mt_sunset with dissolve 
-    play ambience ambience_camp_center_evening
+    scene bg ext_house_of_mt_sunset with dspr
+    stop ambience fadeout 0.5
+    play sound sfx_close_door_1
+    play ambience ambience_camp_center_evening fadein 3
+    $ renpy.pause(1.0, hard=True)
+    play music music_list["everyday_theme"] fadein 3 
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
@@ -55,7 +70,7 @@ label blwnfh_day_1:
     scene bg ext_washstand2_day with dissolve
     
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, дабы ещё немного помыть тело."
-    "Конечно, сделать это будет непросто без горячей воды, но её как на зло пару дней отключили."
+    "Конечно, сделать это будет непросто без горячей воды, но её как на зло, пару дней назад отключили."
     "Бросив рубашку на траву рядом, я преступил к водным процедурам, плеснув водой себе в лицо."
     "И вода была не просто холодной, а буквально ледяной, что я аж охнул."
     

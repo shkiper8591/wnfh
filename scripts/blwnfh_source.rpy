@@ -31,54 +31,15 @@ init -4 python:
     blwnfh_VIDEO = blwnfh_ROOT + "video/"
     
 init python:
+
+    blwnfh_title = [u"Мы не отсюда"]
+    
     blwnfh_tint = {
         "sunset":im.matrix.tint(0.94, 0.82, 1.0),
         "night":im.matrix.tint(0.63, 0.78, 0.82)
     }
-init 1:
-
-    image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
     
-    python:
-
-        def blwnfh_timeskip_transition(t=1.0):
-            return ImageDissolve(blwnfh_TRANSITIONS + "timeskip.png", t, ramplen=0, reverse=False, alpha=True)
-        
-        def blwnfh_fade(time=1.0, color="white"):
-            ft = time * 0.5
-            fc = {
-                "black":"#000",
-                "white":"#FFF",
-                "red":"#F00"
-            }
-            return Fade(ft, 0.0, ft, color = fc[color])
-        
-        def blwnfh_hurt_transition(t=0.5):
-            return blwnfh_fade(time=t, color="red")
     
-init 2:
-    image null = Null(0, 0)
-    ## Звуковые эффекты ##
-    $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)
-    $ blwnfh_music_list = blwnfh_form_files_list(blwnfh_MUSIC)
-    
-    # SFX Лист
-    $ blwnfh_sfx_list["ps4_ach"] = blwnfh_SFX + "ps4_ach.ogg"
-    
-    # MUSIC Лист
-    $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
-    # Рандомизация одинаковых звуков
-    $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
-    
-    $ blwnfh_video_list = {
-        "intro":blwnfh_VIDEO + "intro.webm",
-        "pegi":blwnfh_VIDEO + "pegi.webm",
-    }
-
-    #$ bkrr_video_list["backdrop"] = {dn:(BKRR_ROOT_DIR + "video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
-    #$ bkrr_video_list["backdrop"]["epilogue"] = BKRR_ROOT_DIR + "video/backdrop_epilogue.webm"
-
-init -1 python:
 ##    Звуковые функции    ##
     from random import choice
     
@@ -91,8 +52,49 @@ init -1 python:
 
     def blwnfh_play_random(list, channel="sound"):
         renpy.play(random.choice(list), channel=channel)
-
+    
+    def blwnfh_set_time(time_of_day="day", sprite_time=None):
+        persistent.timeofday = time_of_day
+        if sprite_time == None:
+            if time_of_day == "prologue":
+                sprite_time = "night"
+            else:
+                sprite_time = time_of_day
+        persistent.sprite_time = sprite_time
+    
+    def blwnfh_set_savename(day):
+        spisok = {1:[1, 2], 2:[3, 4, 5, 6], 3:[7, 8, 9, 10], 4:[11, 12, 13, 14]}
+        for n,i in enumerate(spisok.values()):
+            if day in i:
+                ch = n+1
+        global save_name
+        title = blwnfh_title[0] + "\n"
+        if day in range(1, 14):
+            save_name = title + "Глава " + str(ch) + u"День №" + str(day)
+        else:
+            save_name = title + day
+            
+    def blwnfh_new_chapter(day):
+        # renpy.block_rollback()
+        blwnfh_set_mode()
+        blwnfh_mute(1.0)
+        for channel in ("sound", "sound2", "sound3", "sound_loop", "sound_loop2", "sound_loop3", "ambience", "music", "test_one", "test_two"):
+            blwnfh_set_volume(channel, 1.0, 0.0)
+        blwnfh_set_savename(day)
+        renpy.scene()
+        renpy.show("black")
+        renpy.with_statement(Dissolve(2.0))
+        blwnfh_set_time()
+        #if day in range(4, 20):
+        #    renpy.pause(1.0, hard=True)
+        #    renpy.movie_cutscene(blwnfh_video_list["backdrop"][day], delay=14.0)
+        #elif day == u"Эпилог":
+        #    renpy.pause(1.0, hard=True)
+        #    renpy.movie_cutscene(blwnfh_video_list["backdrop"]["epilogue"], delay=21.0)
+        #    
+init -1 python:
     # Создание листов
+    
     def blwnfh_form_files_list(path):
         return {i[len(path):i.rfind(".")]:i for i in renpy.list_files() if i.startswith(path)}
     
@@ -429,6 +431,49 @@ init -1 python:
     def blwnfh_reset_achievements():
         for ach in blwnfh_ach_list:
             persistent.blwnfh_ach[ach[0]] = False
+
+init 1:
+
+    image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
+    
+    python:
+
+        def blwnfh_timeskip_transition(t=1.0):
+            return ImageDissolve(blwnfh_TRANSITIONS + "timeskip.png", t, ramplen=0, reverse=False, alpha=True)
+        
+        def blwnfh_fade(time=1.0, color="white"):
+            ft = time * 0.5
+            fc = {
+                "black":"#000",
+                "white":"#FFF",
+                "red":"#F00"
+            }
+            return Fade(ft, 0.0, ft, color = fc[color])
+        
+        def blwnfh_hurt_transition(t=0.5):
+            return blwnfh_fade(time=t, color="red")
+    
+init 2:
+    image null = Null(0, 0)
+    ## Звуковые эффекты ##
+    $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)
+    $ blwnfh_music_list = blwnfh_form_files_list(blwnfh_MUSIC)
+    
+    # SFX Лист
+    $ blwnfh_sfx_list["ps4_ach"] = blwnfh_SFX + "ps4_ach.ogg"
+    
+    # MUSIC Лист
+    $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
+    # Рандомизация одинаковых звуков
+    $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
+    
+    $ blwnfh_video_list = {
+        "intro":blwnfh_VIDEO + "intro.webm",
+        "pegi":blwnfh_VIDEO + "pegi.webm",
+    }
+
+    #$ bkrr_video_list["backdrop"] = {dn:(BKRR_ROOT_DIR + "video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
+    #$ bkrr_video_list["backdrop"]["epilogue"] = BKRR_ROOT_DIR + "video/backdrop_epilogue.webm"
 
 init -2:
     transform blwnfh_get_relation_atl(pos_x, pos_y):

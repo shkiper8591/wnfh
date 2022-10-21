@@ -48,7 +48,7 @@ label blwnfh_day_1:
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
-    scene bg ext_houses_sunset with dissolve
+    scene bg ext_houses_sunset with slide_left_blure_dissolve2
     
     "Идя по дороге, я попытался вспомнить, что же мне такого приснилось."
     "Но дальше побега от огромной, огнедышащей, креветки, в моей памяти ничего не всплывало."
@@ -63,11 +63,11 @@ label blwnfh_day_1:
     
     "За своими размышлениями, я и не заметил как подошел к умывальникам."
     
-    scene bg ext_washstand_day with dissolve
+    scene bg ext_washstand_day with dissolve2
 
     "Здесь никого не было(что, в прочем, не удивительно)."
     
-    scene bg ext_washstand2_day with dissolve
+    scene bg ext_washstand2_day with sphere_blure_dissolve2
     
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, дабы ещё немного помыть тело."
     "Конечно, сделать это будет непросто без горячей воды, но её как на зло, пару дней назад отключили."

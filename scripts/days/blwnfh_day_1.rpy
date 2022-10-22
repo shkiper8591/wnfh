@@ -88,34 +88,38 @@ label blwnfh_day_1:
     "Как совершенно неожиданно сюда пришла Славя."    
     "Показывать ей свой голый торс совсем не хотелось, а посему я спрятался за умывальник."
     
+    scene bg ext_washstand_day with sphere_invert_blure_dissolve2
+    
     th "Надеюсь она не заметила меня."
-    
-    show sl normal sport close at center with dspr
-    
     "Я потянулся за своей рубашкой, ляжащей рядом."
+    
+    
+    
     "Однако, похоже Славя всё-таки заметила меня, ведь выглянула из-за умывальника и смотрела ровно на меня."
+    
+    show sl laugh sport close at center with dspr
     
     sl "А ты что тут делаешь?"
     # th "От тебя дуры прячусь."
     "Я посмотрел на Славю, потом на рубашку, а затем снова на неё." 
     
-    me "За рубашкой нагнулся, а что?"
-    
-    show sl laugh sport close at center with dspr
-    
+    me "За рубашкой нагнулся, а что?"    
     sl "Да так, думала прячешься от кого-то."
     #th "Да, от тебя."
     me "От кого мне прятаться-то?"
     sl "Не знаю, мало ли[wp]"
     
-    scene bg ext_washstand_day with dissolve
-    
     "Я поднял рубашку и, встав в полный рост, быстренько натянул её на себя."
+    
+    show sl smile2 sport close at center with dspr
     
     me "Ты кстати, чего так рано встала?"
     sl "Так я всегда рано встаю, пробежкой занимаюсь."
     me "Эво как, и как оно?"
     sl "Очень полезное занятие, советую и тебе этим заняться."
+    
+    show sl laugh sport close at center with dspr
+    
     sl "Хочешь, прямо сейчас со мной пробежаться?"
     
     "Застегнув рубашку, я повернулся к ней."
@@ -153,7 +157,7 @@ label blwnfh_day_1:
     sl "А ты у нас кто? {w}Правильно, пионер! А он всегда должен быть в форме, чтобы быть готовым ко всему."
     me "Ладно-ладно, я постараюсь."
     
-    show sl normal pioneer close at center with dspr
+    show sl normal sport close at center with dspr
     
     sl "Вот и славно. {w}Ладненько, мне ещё несколько километров нужно пробежать, пока."
     
@@ -165,17 +169,21 @@ label blwnfh_day_1:
     
     "Я собрал все свои принадлежности и отправился обратно в дом."
     
-    scene bg ext_houses_day with dissolve
-    # мини пауза
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_houses_day with dissolve2
+    $ renpy.pause(1)
+    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
     
     "Подойдя к дому, я услышал, что оттуда доносятся звуки возни."
     
     th "По всей видимости, наша вожатая проснулась."
     
-    stop ambience
     scene bg int_house_of_mt_day with dissolve
-    play ambience ambience_int_cabin_evening
+    stop ambience fadeout 0.5
+    stop music fadeout 3
+    play sound sfx_close_door_1
+    play ambience ambience_int_cabin_evening fadein 3
+    $ renpy.pause(1.0, hard=True)
+    
     show mt normal pioneer at center with dspr
     
     "Войдя внутрь, я увидел, как Ольга Дмитриевна ходила туда сюда по дому и, в явной спешке, рыскала по шкафам."

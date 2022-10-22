@@ -20,7 +20,7 @@ init 2:
                 'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1, 'cry': 2, 'normal_smile': 2, 'rage': 2, 'normal': 3, 'serious': 3, 'surprise': 3,
             },
             'un': {
-                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'draws_normal': 4, 'draws_smile': 4,
+                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'dr_normal': 4, 'dr_smile': 4,
             },
             'us': {
                 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
@@ -142,16 +142,16 @@ init 2:
         
         ## Новые старые спрайты
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'es:<emotion>'])
-        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'es:<emotion>', 'es:glasses'])
-        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         make_sprites_for('mz', 'body', ['mod:body', 'es:<emotion>'])
-        make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         make_sprites_for('mz', 'body glasses', ['mod:body', 'es:<emotion>', 'es:glasses'])
-        make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'angry', 'rage', 'shy', 'smile'))
+        make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         
         ## Фоновые спрайты
-        make_sprites_for('un', 'draws', ['mod:draws', 'mod:<emotion>'])
+        make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])
         #make_sprites_for('dv', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
         #make_sprites_for('dv', 'bkrr_swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude=('angry', 'guilty', 'rage', 'sad', 'shy'))
         #make_sprites_for('dv', 'bkrr_swim', ['mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))

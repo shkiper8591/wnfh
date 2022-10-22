@@ -26,7 +26,7 @@ label blwnfh_test:
     show mt rage pioneer 
     
     me "Всем привет"
-    show un draws_smile draws background with dspr
+    show un dr dr_smile background with dspr
     un "Доброе утро, Семён"
     me "Нахуй иди, не с тобой разговариваю."
     window hide

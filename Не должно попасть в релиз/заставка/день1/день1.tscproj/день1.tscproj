@@ -21,7 +21,7 @@
       "id" : 1,
       "src" : "автобус.png",
       "rect" : [0, 0, 1000, 667],
-      "lastMod" : "20221023T141742",
+      "lastMod" : "20221023T024727",
       "loudnessNormalization" : true,
       "sourceTracks" : [
         {
@@ -43,9 +43,36 @@
     },
     {
       "id" : 2,
+<<<<<<< Updated upstream
+=======
+      "src" : "kat_1_body.png",
+      "rect" : [0, 0, 675, 1080],
+      "lastMod" : "20221023T103735",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 675, 1080],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221023T120432.122095"
+      }
+    },
+    {
+      "id" : 3,
+>>>>>>> Stashed changes
       "src" : "Sleeping II.mp4",
       "rect" : [0, 0, 720, 720],
-      "lastMod" : "20221023T141742",
+      "lastMod" : "20221023T035534",
       "loudnessNormalization" : true,
       "sourceTracks" : [
         {
@@ -78,10 +105,17 @@
       }
     },
     {
+<<<<<<< Updated upstream
       "id" : 3,
       "src" : "kat_1_body.png",
       "rect" : [0, 0, 1950, 4873],
       "lastMod" : "20221023T221605",
+=======
+      "id" : 4,
+      "src" : "IMG_0168.png",
+      "rect" : [0, 0, 1950, 4873],
+      "lastMod" : "20221024T015643",
+>>>>>>> Stashed changes
       "loudnessNormalization" : true,
       "sourceTracks" : [
         {
@@ -98,12 +132,16 @@
         }
       ],
       "metadata" : {
+<<<<<<< Updated upstream
         "timeAdded" : "20221023T222203.242004"
+=======
+        "timeAdded" : "20221024T015653.359130"
+>>>>>>> Stashed changes
       }
     }
   ],
   "timeline" : {
-    "id" : 4,
+    "id" : 5,
     "sceneTrack" : {
       "scenes" : [
         {
@@ -113,11 +151,11 @@
                 "trackIndex" : 0,
                 "medias" : [
                   {
-                    "id" : 5,
+                    "id" : 6,
                     "_type" : "UnifiedMedia",
                     "video" : 
                         {
-                          "id" : 6,
+                          "id" : 7,
                           "_type" : "VMFile",
                           "src" : 2,
                           "trackNumber" : 0,
@@ -150,7 +188,7 @@
                         },
                     "audio" : 
                         {
-                          "id" : 7,
+                          "id" : 8,
                           "_type" : "AMFile",
                           "src" : 2,
                           "trackNumber" : 1,
@@ -238,7 +276,7 @@
                 "trackIndex" : 1,
                 "medias" : [
                   {
-                    "id" : 8,
+                    "id" : 9,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -437,7 +475,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 8,
+                    "leftMedia" : 9,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -453,7 +491,7 @@
                 "trackIndex" : 2,
                 "medias" : [
                   {
-                    "id" : 9,
+                    "id" : 10,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -697,7 +735,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 9,
+                    "leftMedia" : 10,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -713,38 +751,58 @@
                 "trackIndex" : 3,
                 "medias" : [
                   {
-                    "id" : 10,
+                    "id" : 11,
                     "_type" : "IMFile",
+<<<<<<< Updated upstream
                     "src" : 3,
+=======
+                    "src" : 4,
+>>>>>>> Stashed changes
                     "trackNumber" : 0,
-                    "trimStartSum" : 1552320000,
+                    "trimStartSum" : -70560000,
                     "attributes" : {
-                      "ident" : "kat_1_body"
+                      "ident" : "IMG_0168"
                     },
                     "parameters" : {
                       "translation0" : {
                         "type" : "double",
+<<<<<<< Updated upstream
                         "defaultValue" : 70.497264412253,
+=======
+                        "defaultValue" : 91.9018719413188,
+>>>>>>> Stashed changes
                         "interp" : "eioe"
                       },
                       "translation1" : {
                         "type" : "double",
+<<<<<<< Updated upstream
                         "defaultValue" : -82.0828939346925,
+=======
+                        "defaultValue" : -95.4867628764104,
+>>>>>>> Stashed changes
                         "interp" : "eioe"
                       },
                       "scale0" : {
                         "type" : "double",
+<<<<<<< Updated upstream
                         "defaultValue" : 0.036294842815821,
+=======
+                        "defaultValue" : 0.0143731274481619,
+>>>>>>> Stashed changes
                         "interp" : "eioe"
                       },
                       "scale1" : {
                         "type" : "double",
+<<<<<<< Updated upstream
                         "defaultValue" : 0.0362948428158209,
                         "interp" : "eioe"
                       },
                       "scale2" : {
                         "type" : "double",
                         "defaultValue" : 1.0,
+=======
+                        "defaultValue" : 0.0143731274481619,
+>>>>>>> Stashed changes
                         "interp" : "eioe"
                       },
                       "sourceCrop0" : {
@@ -791,8 +849,8 @@
                     "effects" : [
 
                     ],
-                    "start" : 3528000000,
-                    "duration" : 3528000000,
+                    "start" : 3457440000,
+                    "duration" : 3598560000,
                     "mediaStart" : 0,
                     "mediaDuration" : 1,
                     "scalar" : 1,
@@ -805,16 +863,25 @@
                       "default-rotation0" : 0.0,
                       "default-rotation1" : 0.0,
                       "default-rotation2" : 0.0,
+<<<<<<< Updated upstream
                       "default-scale0" : 1.0,
                       "default-scale1" : 1.0,
+=======
+                      "default-scale0" : 0.221629386414939,
+                      "default-scale1" : 0.221629386414939,
+>>>>>>> Stashed changes
                       "default-scale2" : 1.0,
                       "default-shear0" : 0.0,
                       "default-shear1" : 0.0,
                       "default-shear2" : 0.0,
+<<<<<<< Updated upstream
                       "default-translation0" : -0.5,
+=======
+                      "default-translation0" : 0.0,
+>>>>>>> Stashed changes
                       "default-translation1" : 0.0,
                       "default-translation2" : 0.0,
-                      "default-width" : 675.0
+                      "default-width" : 432.177303509132
                     },
                     "animationTracks" : {
 
@@ -824,8 +891,8 @@
                 "transitions" : [
                   {
                     "name" : "Fade",
-                    "duration" : 423360000,
-                    "rightMedia" : 10,
+                    "duration" : 705600000,
+                    "rightMedia" : 11,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -838,7 +905,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 10,
+                    "leftMedia" : 11,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -854,7 +921,7 @@
                 "trackIndex" : 4,
                 "medias" : [
                   {
-                    "id" : 11,
+                    "id" : 12,
                     "_type" : "IMFile",
                     "src" : 1,
                     "trackNumber" : 0,
@@ -865,47 +932,63 @@
                     "parameters" : {
                       "translation0" : {
                         "type" : "double",
-                        "defaultValue" : -1070.94452773613,
+                        "defaultValue" : -1097.88819875776,
                         "keyframes" : [
                           {
-                            "endTime" : 3528000000,
+                            "endTime" : 3457440000,
                             "time" : 0,
+<<<<<<< Updated upstream
                             "value" : -95.8412850312514,
                             "duration" : 3528000000
+=======
+                            "value" : -0.000125788569988572,
+                            "duration" : 3457440000
+>>>>>>> Stashed changes
                           }
                         ]
                       },
                       "translation1" : {
                         "type" : "double",
-                        "defaultValue" : -74.0,
+                        "defaultValue" : -87.0,
                         "keyframes" : [
                           {
-                            "endTime" : 3528000000,
+                            "endTime" : 3457440000,
                             "time" : 0,
+<<<<<<< Updated upstream
                             "value" : -93.7947171727176,
                             "duration" : 3528000000
+=======
+                            "value" : -95.4867628764104,
+                            "duration" : 3457440000
+>>>>>>> Stashed changes
                           }
                         ]
                       },
                       "scale0" : {
                         "type" : "double",
-                        "defaultValue" : 0.221889055472264,
+                        "defaultValue" : 0.275776397515528,
                         "keyframes" : [
                           {
-                            "endTime" : 3528000000,
+                            "endTime" : 3457440000,
                             "time" : 0,
+<<<<<<< Updated upstream
                             "value" : 0.68431760783862,
                             "duration" : 3528000000
+=======
+                            "value" : 0.275776396935862,
+                            "duration" : 3457440000
+>>>>>>> Stashed changes
                           }
                         ]
                       },
                       "scale1" : {
                         "type" : "double",
-                        "defaultValue" : 0.209895052473763,
+                        "defaultValue" : 0.260869565217391,
                         "keyframes" : [
                           {
-                            "endTime" : 3528000000,
+                            "endTime" : 3457440000,
                             "time" : 0,
+<<<<<<< Updated upstream
                             "value" : 0.699574097507041,
                             "duration" : 3528000000
                           }
@@ -920,9 +1003,14 @@
                             "time" : 0,
                             "value" : 0.999999999999999,
                             "duration" : 3528000000
+=======
+                            "value" : 0.260869564798023,
+                            "duration" : 3457440000
+>>>>>>> Stashed changes
                           }
                         ]
                       },
+                      "scale2" : 0.999999999999999,
                       "sourceCrop0" : 0.0,
                       "sourceCrop1" : 0.0,
                       "sourceCrop2" : 0.0,
@@ -963,15 +1051,15 @@
                     "animationTracks" : {
                       "visual" : [
                         {
-                          "endTime" : 3528000000,
-                          "duration" : 3528000000,
-                          "range" : [ 0, 3528000000]
+                          "endTime" : 3457440000,
+                          "duration" : 3457440000,
+                          "range" : [ 0, 3457440000]
                         }
                       ]
                     }
                   },
                   {
-                    "id" : 12,
+                    "id" : 13,
                     "_type" : "IMFile",
                     "src" : 1,
                     "trackNumber" : 0,
@@ -982,55 +1070,60 @@
                     "parameters" : {
                       "translation0" : {
                         "type" : "double",
-                        "defaultValue" : -0.000120269714844134,
+                        "defaultValue" : -0.000125788569903307,
+                        "interp" : "eioe",
                         "keyframes" : [
                           {
-                            "endTime" : 2516640000,
+                            "endTime" : 2940000000,
                             "time" : 0,
-                            "value" : 1300.83479562294,
-                            "duration" : 2516640000
+                            "value" : 1320.0,
+                            "duration" : 2940000000
                           }
                         ]
                       },
                       "translation1" : {
                         "type" : "double",
-                        "defaultValue" : -88.1534333640125,
+                        "defaultValue" : -95.4867630162698,
+                        "interp" : "eioe",
                         "keyframes" : [
                           {
-                            "endTime" : 2516640000,
+                            "endTime" : 2940000000,
                             "time" : 0,
-                            "value" : -68.3684753471824,
-                            "duration" : 2516640000
+                            "value" : -95.4867630162569,
+                            "duration" : 2940000000
                           }
                         ]
                       },
                       "scale0" : {
                         "type" : "double",
-                        "defaultValue" : 0.205,
+                        "defaultValue" : 0.275776397515528,
+                        "interp" : "eioe",
                         "keyframes" : [
                           {
-                            "endTime" : 2516640000,
+                            "endTime" : 2940000000,
                             "time" : 0,
-                            "value" : 0.205002924579215,
-                            "duration" : 2516640000
+                            "value" : 0.275776397515475,
+                            "duration" : 2940000000
                           }
                         ]
                       },
                       "scale1" : {
                         "type" : "double",
-                        "defaultValue" : 0.205,
+                        "defaultValue" : 0.260869565217391,
+                        "interp" : "eioe",
                         "keyframes" : [
                           {
-                            "endTime" : 2516640000,
+                            "endTime" : 2940000000,
                             "time" : 0,
-                            "value" : 0.205002924579258,
-                            "duration" : 2516640000
+                            "value" : 0.260869565217352,
+                            "duration" : 2940000000
                           }
                         ]
                       },
                       "scale2" : {
                         "type" : "double",
                         "defaultValue" : 0.999999999999999,
+<<<<<<< Updated upstream
                         "keyframes" : [
                           {
                             "endTime" : 2516640000,
@@ -1048,6 +1141,50 @@
                       "geometryCrop1" : 0.0,
                       "geometryCrop2" : 0.0,
                       "geometryCrop3" : 0.0
+=======
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+>>>>>>> Stashed changes
                     },
                     "effects" : [
 
@@ -1080,28 +1217,18 @@
                     "animationTracks" : {
                       "visual" : [
                         {
-                          "endTime" : 2516640000,
-                          "duration" : 2516640000,
-                          "range" : [ 0, 2516640000]
+                          "endTime" : 2940000000,
+                          "duration" : 2940000000,
+                          "range" : [ 0, 2940000000]
                         }
                       ]
                     }
                   }
-                ],
-                "transitions" : [
-                  {
-                    "name" : "Fade",
-                    "duration" : 329280000,
-                    "leftMedia" : 12,
-                    "attributes" : {
-                      "bypass" : false,
-                      "reverse" : false,
-                      "trivial" : false,
-                      "useAudioPreRoll" : true,
-                      "useVisualPreRoll" : true
-                    }
-
-                  }
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
                 ]
               }            ]
           }
@@ -1109,6 +1236,18 @@
       ]
     },
     "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
       {
         "ident" : "",
         "audioMuted" : false,
@@ -1188,8 +1327,13 @@
     "backgroundColor" : [ 0, 0, 0, 255]
   },
   "metadata" : {
+<<<<<<< Updated upstream
     "AutoSaveFile" : "",
     "CanvasZoom" : 60,
+=======
+    "AutoSaveFile" : "C:\\Users\\mecha\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\день1bdd00e6.autosave.tscproj",
+    "CanvasZoom" : 50,
+>>>>>>> Stashed changes
     "Date" : "2022-10-23 03:30:32 ",
     "Fit" : 0,
     "IsAutoSave" : false,

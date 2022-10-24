@@ -1,0 +1,1230 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "targetLoudness" : -18.0,
+  "shouldApplyLoudnessNormalization" : true,
+  "videoFormatFrameRate" : 30,
+  "audioFormatSampleRate" : 44100,
+  "allowSubFrameEditing" : false,
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "6.0",
+  "editRate" : 705600000,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Windows",
+    "version" : "22.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "автобус.png",
+      "rect" : [0, 0, 1000, 667],
+      "lastMod" : "20221023T141742",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1000, 667],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221023T114509.807066"
+      }
+    },
+    {
+      "id" : 2,
+      "src" : "Sleeping II.mp4",
+      "rect" : [0, 0, 720, 720],
+      "lastMod" : "20221023T141742",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 9600],
+          "type" : 0,
+          "editRate" : 1000,
+          "trackRect" : [0, 0, 720, 720],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 9637],
+          "type" : 2,
+          "editRate" : 1000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "integratedLUFS" : -14.1610900765762,
+          "peakLevel" : 0.94236946105957,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221023T120911.304852"
+      }
+    },
+    {
+      "id" : 3,
+      "src" : "IMG_0168.png",
+      "rect" : [0, 0, 32, 100],
+      "lastMod" : "20221024T135913",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 32, 100],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T140010.870617"
+      }
+    }
+  ],
+  "timeline" : {
+    "id" : 4,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 5,
+                    "_type" : "UnifiedMedia",
+                    "video" : 
+                        {
+                          "id" : 6,
+                          "_type" : "VMFile",
+                          "src" : 2,
+                          "trackNumber" : 0,
+                          "attributes" : {
+                            "ident" : "Sleeping II"
+                          },
+                          "parameters" : {
+                            "translation0" : 1320.0,
+                            "translation1" : 802.857142857143,
+                            "sourceCrop0" : 0.0,
+                            "sourceCrop1" : 0.0,
+                            "sourceCrop2" : 0.0,
+                            "sourceCrop3" : 0.0,
+                            "geometryCrop0" : 0.0,
+                            "geometryCrop1" : 0.0,
+                            "geometryCrop2" : 0.0,
+                            "geometryCrop3" : 0.0
+                          },
+                          "effects" : [
+
+                          ],
+                          "start" : 0,
+                          "duration" : 6773760000,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 6773760000,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        },
+                    "audio" : 
+                        {
+                          "id" : 7,
+                          "_type" : "AMFile",
+                          "src" : 2,
+                          "trackNumber" : 1,
+                          "attributes" : {
+                            "ident" : "",
+                            "gain" : 1.0,
+                            "mixToMono" : false,
+                            "loudnessNormalization" : true,
+                            "sourceFileOffset" : 0
+                          },
+                            "channelNumber" : "0,1",
+                          "parameters" : {
+                            "volume" : {
+                              "type" : "double",
+                              "keyframes" : [
+                                {
+                                  "endTime" : -23520000,
+                                  "time" : -23520000,
+                                  "value" : 1.0,
+                                  "duration" : 0
+                                },
+                                {
+                                  "endTime" : 0,
+                                  "time" : 0,
+                                  "value" : 0.0,
+                                  "duration" : 0
+                                },
+                                {
+                                  "endTime" : 446880000,
+                                  "time" : 446880000,
+                                  "value" : 1.0,
+                                  "duration" : 0
+                                },
+                                {
+                                  "endTime" : 4092480000,
+                                  "time" : 4092480000,
+                                  "value" : 1.0,
+                                  "duration" : 0
+                                },
+                                {
+                                  "endTime" : 6773760000,
+                                  "time" : 6773760000,
+                                  "value" : 0.0,
+                                  "duration" : 0
+                                },
+                                {
+                                  "endTime" : 6797280000,
+                                  "time" : 6797280000,
+                                  "value" : 1.0,
+                                  "duration" : 0
+                                }
+                              ]
+                            }
+                          },
+                          "effects" : [
+
+                          ],
+                          "start" : 0,
+                          "duration" : 6773760000,
+                          "mediaStart" : 0,
+                          "mediaDuration" : 6773760000,
+                          "scalar" : 1,
+                          "animationTracks" : {
+
+                          }
+                        }
+,
+                    "start" : 0,
+                    "duration" : 6773760000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 6773760000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-height" : 720.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 720.0
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 8,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 148.0,
+                      "line-spacing" : 0.17,
+                      "width" : 876.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "День 1",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fontSize","rangeEnd":10,"rangeStart":0,"value":130,"valueType":"double"},{"name":"fontName","rangeEnd":10,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fontItalic","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"kerning","rangeEnd":10,"rangeStart":0,"value":0.53000000000000003,"valueType":"double"},{"name":"strikethrough","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontWeight","rangeEnd":10,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fgColor","rangeEnd":10,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : -0.000125788569987893,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : 74.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : 65.5132406648054,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : 0.999999915894958,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : 1.00000004974426,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "reveal",
+                          "bypassed" : false,
+                          "start" : 0,
+                          "duration" : 7056000000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "fadeIn",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 65896448,
+                              "suggestedDurationPerCharacter" : 1317928960,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "fadeOut",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 65896448,
+                              "suggestedDurationPerCharacter" : 1317928960,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "default-behavior-center-style" : "reveal",
+                            "default-behavior-in-style" : "reveal",
+                            "default-behavior-out-offset" : 43930965.3333333,
+                            "default-behavior-out-style" : "reveal",
+                            "presetName" : "Раскрытие"
+                          }
+                        }
+                    ],
+                    "start" : 0,
+                    "duration" : 7056000000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 7056000000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 0,
+                          "duration" : 705600000,
+                          "range" : [ -705600000, 705600000]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 1176000000,
+                    "leftMedia" : 8,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 9,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 148.0,
+                      "line-spacing" : 0.17,
+                      "width" : 876.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "новые лица",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fontName","rangeEnd":19,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"underline","rangeEnd":19,"rangeStart":0,"value":0,"valueType":"int"},{"name":"strikethrough","rangeEnd":19,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontItalic","rangeEnd":19,"rangeStart":0,"value":0,"valueType":"int"},{"name":"kerning","rangeEnd":19,"rangeStart":0,"value":0.53000000000000003,"valueType":"double"},{"name":"fontSize","rangeEnd":19,"rangeStart":0,"value":76,"valueType":"double"},{"name":"fontWeight","rangeEnd":19,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fgColor","rangeEnd":19,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : -0.000125788569987893,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : -222.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : -230.486774059496,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : 0.999999915894958,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : -705600000,
+                            "value" : 1.00000004974426,
+                            "duration" : 705600000
+                          }
+                        ]
+                      },
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "fade",
+                          "bypassed" : false,
+                          "start" : 823200000,
+                          "duration" : 6232800000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 65896448,
+                              "suggestedDurationPerCharacter" : 3228925952,
+                              "overlapProportion" : "1/3",
+                              "movement" : 30,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 65896448,
+                              "suggestedDurationPerCharacter" : "2635857920/3",
+                              "overlapProportion" : "1/2",
+                              "movement" : 7,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "default-behavior-center-style" : "none",
+                            "default-behavior-in-movement" : 0.0,
+                            "default-behavior-in-style" : "fadeIn",
+                            "default-behavior-out-movement" : 7.0,
+                            "default-behavior-out-style" : "fadeOut",
+                            "presetName" : "Угасание"
+                          }
+                        }
+                    ],
+                    "start" : 823200000,
+                    "duration" : 6232800000,
+                    "mediaStart" : 823200000,
+                    "mediaDuration" : 6232800000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 0,
+                          "duration" : 705600000,
+                          "range" : [ -705600000, 705600000]
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 1176000000,
+                    "leftMedia" : 9,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 10,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -70560000,
+                    "attributes" : {
+                      "ident" : "IMG_0168"
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : 92.4333333333404,
+                        "interp" : "eioe"
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : -88.8200963495991,
+                        "interp" : "eioe"
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.610416666666667,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.600755227208044,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 3457440000,
+                    "duration" : 3598560000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 1080.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 0.221629386414939,
+                      "default-scale1" : 0.221629386414939,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 432.177303509132
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "rightMedia" : 10,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Fade",
+                    "duration" : 1176000000,
+                    "leftMedia" : 10,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 11,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "автобус"
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : -1097.88819875776,
+                        "keyframes" : [
+                          {
+                            "endTime" : 3457440000,
+                            "time" : 0,
+                            "value" : -0.00012578856996015,
+                            "duration" : 3457440000
+                          }
+                        ]
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : -87.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 3457440000,
+                            "time" : 0,
+                            "value" : -87.0,
+                            "duration" : 3457440000
+                          }
+                        ]
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.2758,
+                        "keyframes" : [
+                          {
+                            "endTime" : 3457440000,
+                            "time" : 0,
+                            "value" : 0.2758,
+                            "duration" : 3457440000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.260869565217391,
+                        "keyframes" : [
+                          {
+                            "endTime" : 3457440000,
+                            "time" : 0,
+                            "value" : 0.260869565217391,
+                            "duration" : 3457440000
+                          }
+                        ]
+                      },
+                      "scale2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.999999999999999,
+                        "keyframes" : [
+                          {
+                            "endTime" : 3457440000,
+                            "time" : 0,
+                            "value" : 0.999999999999999,
+                            "duration" : 3457440000
+                          }
+                        ]
+                      },
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 4539360000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 667.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : -0.5,
+                      "default-translation2" : 0.0,
+                      "default-width" : 1000.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 3457440000,
+                          "duration" : 3457440000,
+                          "range" : [ 0, 3457440000]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id" : 12,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "автобус"
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 2516640000,
+                            "time" : 0,
+                            "value" : 1265.25696,
+                            "duration" : 2516640000
+                          },
+                          {
+                            "endTime" : 2940000000,
+                            "time" : 2516640000,
+                            "value" : 1320.0,
+                            "duration" : 423360000
+                          }
+                        ]
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : -87.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 2516640000,
+                            "time" : 0,
+                            "value" : -87.0,
+                            "duration" : 2516640000
+                          },
+                          {
+                            "endTime" : 2940000000,
+                            "time" : 2516640000,
+                            "value" : -95.4867630162569,
+                            "duration" : 423360000
+                          }
+                        ]
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.275776397515528,
+                        "keyframes" : [
+                          {
+                            "endTime" : 2516640000,
+                            "time" : 0,
+                            "value" : 0.275776397515477,
+                            "duration" : 2516640000
+                          },
+                          {
+                            "endTime" : 2940000000,
+                            "time" : 2516640000,
+                            "value" : 0.275776397515475,
+                            "duration" : 423360000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.260869565217391,
+                        "keyframes" : [
+                          {
+                            "endTime" : 2516640000,
+                            "time" : 0,
+                            "value" : 0.260869565217354,
+                            "duration" : 2516640000
+                          },
+                          {
+                            "endTime" : 2940000000,
+                            "time" : 2516640000,
+                            "value" : 0.260869565217352,
+                            "duration" : 423360000
+                          }
+                        ]
+                      },
+                      "scale2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.999999999999999,
+                        "keyframes" : [
+                          {
+                            "endTime" : 2940000000,
+                            "time" : 2516640000,
+                            "value" : 0.999999999999999,
+                            "duration" : 423360000
+                          }
+                        ]
+                      },
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 4539360000,
+                    "duration" : 2516640000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 667.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : -0.5,
+                      "default-translation2" : 0.0,
+                      "default-width" : 1000.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 2516640000,
+                          "duration" : 2516640000,
+                          "range" : [ 0, 2516640000]
+                        },
+                        {
+                          "endTime" : 2940000000,
+                          "duration" : 423360000,
+                          "range" : [ 2516640000, 423360000]
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
+                ]
+              }            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 64,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "gain" : 1.0,
+    "legacyAttenuateAudioMix" : false,
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\день141e60c6.autosave.tscproj",
+    "CanvasZoom" : 60,
+    "Date" : "2022-10-23 03:30:32 ",
+    "Fit" : 0,
+    "IsAutoSave" : false,
+    "IsStandalone" : true,
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectThumbnail" : "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\r\n9957M97T+PHjrSs68floenzmzJkFo39eOnru+OOPJwEEAAClkRtMkeh03RgJoCpll156aXjrrbcK\r\nIn9eOj3j8ssvt0YTdenm6lKH8W233RZOP/10S0yTu34XL15sG17feuuthSeg6NK2MGqK0V6DWuOn\r\nKeA777yzYPTPS53KJIAAAKCUcoMZtKWJmhr++c9/2mkcOppNx6OtWrWqIOX560ungJx//vlhyZIl\r\n9vr111+3xhJNBevSebuquimeq0vTzyeffHJ4+umn7bXew5NPPll49JvO9R00aFB49dVX7bUu3atn\r\ndMaw9OvXL7zyyisFo39eSgB79uxJAggAAEojN5hB08Da2FhnAmtPwBYtWoR27dqFww8/3DaEvvrq\r\nq8Ps2bPDSy+9FL744gubAk2/tHn0mDFj7Pc6OUMbNWv9nE4ISSRYN998c7jjjjvs97m4pk6dGoYM\r\nGWKVPyWmRx99tJ3sceSRR4bXXnvN7lHFT/clLlUN9fNpHaN4P+vatWtDjx49aAIBAAClkRssEiWF\r\nmgKtVKmSVQjr1asXdthhh9ChQwdLpM4999wwbtw4W9unCpnW/em1LiVVSv40jdqyZUtbC6hL061X\r\nXHGFnaaRvKlzcenoN23IvCFq0lDjyQUXXGDvS5emnzXVrfekrucpU6ZYXMfPXXXVVfb7ol5Lly4N\r\ne++9N9vAAACA0sgNlog2P9Y5uFtuuaVtl6L1co0bN7aEr3///pYg6Ug3TZHqnF8d96apVl2XXXaZ\r\nNZy0b9++8Hi34lJlsWvXrlbF0znAG6J7W7VqFc444wxb46epaMUV09RuogJ47bXX2rFzAwYMsPWL\r\nnqFDh9r0te7RlHDHjh0tKdb6Se8zAgAAyCM3mBWqhrVp0yYsWLDAEitV6jT1q2qdrkWLFlnVTNOm\r\nqi4qkSwuVe8S9P3+E92vae22bdsWNrho7d/cuXMLE1KtCdTax6pVq9p6Pv1apUoVlxLeypUr2/vX\r\n9yf5AwAApZQbzBolUKqmaa89nbWrS9U3JWCquuXj/Fy9J1UMtSdh8vXee++F3r17255/JHMAACAi\r\nbjBrlEipSqYmEk23qoFEzRJqvFAipsqf91w26T2pgrfLLrtYd686nTVVrWlonfmrSqH3HAAAwP8o\r\nN5h1iQYSTZdqvWA+Er90SvT0fjSVq+leTeN69wEAAPyPc4MAAACIlxsEAABAvNwgAAAA4uUGAQAA\r\n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\r\n/wNhER7p0nvJNgAAAABJRU5ErkJggg==",
+    "Title" : "день1",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic"
+  }
+}

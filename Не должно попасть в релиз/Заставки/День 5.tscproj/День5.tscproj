@@ -1,0 +1,1041 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "targetLoudness" : -18.0,
+  "shouldApplyLoudnessNormalization" : true,
+  "videoFormatFrameRate" : 30,
+  "audioFormatSampleRate" : 44100,
+  "allowSubFrameEditing" : false,
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "6.0",
+  "editRate" : 705600000,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Windows",
+    "version" : "22.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "футбольный мяч.png",
+      "rect" : [0, 0, 900, 659],
+      "lastMod" : "20221024T102632",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 900, 659],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T021523.758153"
+      }
+    },
+    {
+      "id" : 2,
+      "src" : "videoplayback.mp4",
+      "rect" : [0, 0, 640, 360],
+      "lastMod" : "20221024T102632",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 24576],
+          "type" : 0,
+          "editRate" : 12800,
+          "trackRect" : [0, 0, 640, 360],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 84992],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "integratedLUFS" : -17.5356290643271,
+          "peakLevel" : 0.968987345695496,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T024506.898548"
+      }
+    },
+    {
+      "id" : 3,
+      "src" : "Футбол 1-й тайм - Смешарики 2D _ Мультфильмы для детей.mp4",
+      "rect" : [0, 0, 640, 356],
+      "lastMod" : "20221024T145538",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 35103600],
+          "type" : 0,
+          "editRate" : 90000,
+          "trackRect" : [0, 0, 640, 356],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 17201152],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "integratedLUFS" : -10.9598913535275,
+          "peakLevel" : 1.44799137115479,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T145758.884796"
+      }
+    },
+    {
+      "id" : 4,
+      "src" : "Гимн Федерации футбола СССР - ''Футбольный марш''.mp4",
+      "rect" : [0, 0, 1280, 720],
+      "lastMod" : "20221024T151742",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 5981976],
+          "type" : 0,
+          "editRate" : 90000,
+          "trackRect" : [0, 0, 1280, 720],
+          "sampleRate" : "37463/1250",
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        },
+        {
+          "range" : [0, 2931712],
+          "type" : 2,
+          "editRate" : 44100,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 16,
+          "numChannels" : 2,
+          "integratedLUFS" : -11.7380589132205,
+          "peakLevel" : 0.856013417243958,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T151803.833038"
+      }
+    }
+  ],
+  "timeline" : {
+    "id" : 5,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 6,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 1288.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "День 5",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fontItalic","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"strikethrough","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontWeight","rangeEnd":10,"rangeStart":0,"value":400,"valueType":"int"},{"name":"kerning","rangeEnd":10,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"fontSize","rangeEnd":10,"rangeStart":0,"value":129,"valueType":"double"},{"name":"underline","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":10,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontName","rangeEnd":10,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation1" : 125.0,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "fade",
+                          "bypassed" : false,
+                          "start" : 0,
+                          "duration" : 5785920000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "fadeIn",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "fadeOut",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "presetName" : "Угасание"
+                          }
+                        }
+                    ],
+                    "start" : 1270080000,
+                    "duration" : 5785920000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 5785920000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 40.0,
+                      "default-translation1" : -40.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 6,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 7,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 400.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "Футбол!",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fgColor","rangeEnd":13,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontSize","rangeEnd":13,"rangeStart":0,"value":75,"valueType":"double"},{"name":"fontName","rangeEnd":13,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fontItalic","rangeEnd":13,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontWeight","rangeEnd":13,"rangeStart":0,"value":400,"valueType":"int"},{"name":"kerning","rangeEnd":13,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"underline","rangeEnd":13,"rangeStart":0,"value":0,"valueType":"int"},{"name":"strikethrough","rangeEnd":13,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation1" : -217.743265687158,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "popUp",
+                          "bypassed" : false,
+                          "start" : 0,
+                          "duration" : 5785920000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 1728720000,
+                              "overlapProportion" : "1/3",
+                              "movement" : 30,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 470400000,
+                              "overlapProportion" : "1/2",
+                              "movement" : 7,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "default-behavior-center-style" : "popUp",
+                            "presetName" : "Шарнир"
+                          }
+                        }
+                    ],
+                    "start" : 1270080000,
+                    "duration" : 5785920000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 5785920000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-height" : 250.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 7,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 8,
+                    "_type" : "AMFile",
+                    "src" : 4,
+                    "trackNumber" : 1,
+                    "attributes" : {
+                      "ident" : "Гимн Федерации футбола СССР - ''Футбольный марш''",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : 1.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 10513440000,
+                            "time" : 10513440000,
+                            "value" : 1.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 11124960000,
+                            "time" : 11124960000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 11148480000,
+                            "time" : 11148480000,
+                            "value" : 1.0,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "NoiseReduction",
+                          "bypassed" : false,
+                          "category" : "categoryAudioEffects",
+                          "parameters" : {
+                            "denoiserAmount" : 20.0,
+                            "denoiserThreshold" : 0.0,
+                            "noiseProfile" : "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\r\nSQGOOU0OTTl+Rn45ItCPOUq2njkH7I45RQaFOZ+aeTkoNlQ5RaBfOXXqSTkqvh45os8wOoZkaTm+\r\nGu052Lx7OSRYkjn4pYg5beyJOfoWhznIIIc5TXuFOdbGhDlafoM5JnSBOdIwgDkS62s5rASTOVSo\r\ntTlXNZQ5/G+IOW38eTkVYUY5UcOGOfMGqzmAHYM5Nv4/OeuNbzm1sIA5/SqAOb2Yfzmy2oc5MM2X\r\nOfxCgTk/4lw50V5qOX35xjmw1YY58zudOR3zjTnTF405tMOJObAoiTlMjYc5aiGHOYQhhjn314U5\r\nZBmFOTvGhDkkPoQ5JPyDOdJ5gznJRIM5/NeCOc+ngjlUR4I5exuCOTbGgTkYloE5TjyBOZw0gTmH\r\n2IA5XqaAOThngDkfPoA589Z/OXaifznDGH857dJ+OehPfjkYDn45xI19OQRIfTmY0Hw5kod8OcoX\r\nfDkI1Hs59mJ7OSckezl+r3o5tnd6Od4Fejn2z3k5ZVx5OfwleTkkvXg5ToV4OXwZeDlC43c5DYB3\r\nOfpAdzk04nY5vqN2OdBKdjlWFXY5ebV1OfR6dTnEIHU5Dul0OeGOdDndUXQ5yf5zOQPIcznibnM5\r\n/z1zOTzkcjnkrHI5FV1yOdAncjkXzXE5cqdxOZxTcTkII3E50c5wOb6ZcDm+S3A5wBtwOSfMbzkJ\r\noW85BVRvOfcfbzkT0G4596VuOdVZbjlTK245UeRtOXi4bTkgb2052kJtOab1bDnCymw5SIZsOa9b\r\nbDnHEWw5A+RrOd2hazmkcms5LDBrOaIKazlaw2o5AaFqOYVaajkgM2o5FfFpOcrCaTnafmk5c2Jp\r\nOX8faTnz+Wg5HbNoOZuOaDmdUGg5JCxoOWbwZzm2y2c5koJnOTFpZzklJ2c5CQhnOUvRZjkZrGY5\r\nPmtmOTFQZjn5GWY5/vZlOZG3ZTk4nWU5KmNlObQ/ZTm7DGU5jO1kOUmqZDmjlWQ59FtkOT86ZDky\r\nC2Q5SudjOdG0YzlTkmM5Y2VjOX5FYzn2EmM5WfRiOTq5YjlLqmI5I2hiOQlYYjlEGWI5QethOSjy\r\nYTnux2E5o55hObKBYTlhSGE5TSxhOQD9YDnQ7GA5d7ZgOdShYDm/cmA5411gObUwYDmZHmA5e+lf\r\nOfnUXzlZn1856ZBfOeprXzl1VV85qSpfObAUXzn85F45es9eObyoXjmCnF45KWJeOY9bXjlULl45\r\n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\r\n9euHObm5hzkWnIc5EGuHOUBPhzmxH4c5tgKHOTnUhjnQtoY5F4iGOZtrhjmmP4Y53SKGORD1hTnK\r\n2YU5q6yFOd+QhTkoZIU5aUqFOUMbhTkWAoU5n9iEOVK+hDmMk4Q5bnuEOS1QhDnaN4Q5FAyEOW7x\r\ngzkIy4M5vrGDOd6JgzlHcYM5iEeDOQcvgzlPCYM5lPCCORbIgjlstII52oaCOTZygjl4TYI5STaC\r\nOQESgjnd+oE5i9SBOZm/gTlIm4E5MIeBOQ5ggTmmS4E5JCeBOR8VgTkX7YA5V9mAOeO1gDnkoYA5\r\n54CAOTVtgDmCSIA5uTaAObkSgDmfAYA587x/OSOcfzl0VX85Gy5/OZDxfjnfy345lYl+Obplfjni\r\nJn45IAZ+OajIfTnDo305E2N9OdREfTkbCH05Ued8OcumfDmVj3w55U98Oc0rfDm173s5lM97OY6t\r\nezkOeXs5BkJ7OYglezlS6no5Kc96OYaXejn4eno51kV6OUYiejmy7nk5CtZ5OSaeeTmkiXk5D015\r\nOWo6eTlx/ng5qep4Oeu1eDmImng5y2x4OaBReDl4H3g5mQl4OejXdzlEw3c5GZR3OeB6dznfRXc5\r\naBR3Oe8Sdzl4+HY5qsh2OSW0djlphXY5g3J2ORBAdjm6L3Y5QAJ2OUHzdTm+xHU5FrR1OeSKdTlV\r\ne3U5eE51OeE9dTnDF3U5of50OQTWdDnyzHQ5aqN0OdaVdDn6bXQ5gGZ0OZQ4dDmQLXQ5iwd0OeLq\r\ncznh03M5wcFzOQyiczk4k3M5LHNzOXxmczk5QnM5/jxzOVwZczn4EnM53uVyOSPrcjkA+XI5X5By\r\nOVCRcjmuiXI5T2dyOfdhcjm7Q3I56TxyOW0XcjnmFnI5TgJyOfL6cTkB4nE5PcxxOTiXcTmcsHE5\r\nh5NxOYiTcTnwdXE5uHZxOXxecTmAV3E5tkJxOdY5cTlyEnE5lRtxOaMDcTm6/HA5muJwORHmcDmG\r\nzHA5PNNwOTm5cDm5vnA586VwOdC4cDnIknA5HI9wOeV7cDnqfHA5dmhwOSZjcDm5QHA5LVJwOTJY\r\ncDkqTXA5vVlwOXoCcDm2InA5lStwOYodcDlUMnA5nmFwOWfSbzm76m85W/lvObP3bznk6G85HPlv\r\nOZ3/bzla9m85BQNwORLmbzll9W85L9tvOQzdbzle4m85JuxvOZjabzm14W85A+BvOQ==",
+                            "noiseTrainingType" : "default"
+                          },
+                          "metadata" : {
+                            "presetName" : "Удаление шумов"
+                          }
+                        }
+                    ],
+                    "start" : 0,
+                    "duration" : 7056000000,
+                    "mediaStart" : 4068960000,
+                    "mediaDuration" : 7056000000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 9,
+                    "_type" : "AMFile",
+                    "src" : 2,
+                    "trackNumber" : 1,
+                    "attributes" : {
+                      "ident" : "videoplayback",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "effects" : [
+
+                    ],
+                    "start" : 4210080000,
+                    "duration" : 588000000,
+                    "mediaStart" : 117600000,
+                    "mediaDuration" : 588000000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 10,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "футбольный мяч"
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : -1045.53629901765,
+                        "keyframes" : [
+                          {
+                            "endTime" : 4163040000,
+                            "time" : 282240000,
+                            "value" : 0.0,
+                            "interp" : "eioe",
+                            "duration" : 3880800000
+                          },
+                          {
+                            "endTime" : 4798080000,
+                            "time" : 4257120000,
+                            "value" : 1848.66666666667,
+                            "interp" : "bnce",
+                            "duration" : 540960000
+                          }
+                        ]
+                      },
+                      "translation1" : {
+                        "type" : "double",
+                        "defaultValue" : -62.6,
+                        "keyframes" : [
+                          {
+                            "endTime" : 4163040000,
+                            "time" : 282240000,
+                            "value" : -62.6315789473682,
+                            "interp" : "eioe",
+                            "duration" : 3880800000
+                          },
+                          {
+                            "endTime" : 4798080000,
+                            "time" : 4257120000,
+                            "value" : 377.631578947368,
+                            "interp" : "bnce",
+                            "duration" : 540960000
+                          }
+                        ]
+                      },
+                      "rotation2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "keyframes" : [
+                          {
+                            "endTime" : 4163040000,
+                            "time" : 282240000,
+                            "value" : -15.707963267949,
+                            "interp" : "eioe",
+                            "duration" : 3880800000
+                          },
+                          {
+                            "endTime" : 4798080000,
+                            "time" : 4257120000,
+                            "value" : 8.07389590921711,
+                            "interp" : "bnce",
+                            "duration" : 540960000
+                          }
+                        ]
+                      },
+                      "scale0" : 0.190080664483667,
+                      "scale1" : 0.190080664483667,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 7056000000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 659.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : -0.5,
+                      "default-translation2" : 0.0,
+                      "default-width" : 900.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 4163040000,
+                          "duration" : 3880800000,
+                          "range" : [ 282240000, 3880800000],
+                          "interp" : "eioe"
+                        },
+                        {
+                          "endTime" : 4798080000,
+                          "duration" : 540960000,
+                          "range" : [ 4257120000, 540960000],
+                          "interp" : "bnce"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 10,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
+                  {
+                    "id" : 11,
+                    "_type" : "AMFile",
+                    "src" : 3,
+                    "trackNumber" : 1,
+                    "attributes" : {
+                      "ident" : "Футбол 1-й тайм - Смешарики 2D _ Мультфильмы для детей",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : 1.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 244631520000,
+                            "time" : 244631520000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 244866720000,
+                            "time" : 244866720000,
+                            "value" : 1.0,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 682080000,
+                    "duration" : 2869440000,
+                    "mediaStart" : 244631520000,
+                    "mediaDuration" : 2869440000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 12,
+                    "_type" : "AMFile",
+                    "src" : 3,
+                    "trackNumber" : 1,
+                    "attributes" : {
+                      "ident" : "Футбол 1-й тайм - Смешарики 2D _ Мультфильмы для детей",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : 0.989010989010989,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 247018800000,
+                            "time" : 247018800000,
+                            "value" : 0.989010989010989,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 247453920000,
+                            "time" : 247453920000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 247477440000,
+                            "time" : 247477440000,
+                            "value" : 0.989010989010989,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 3551520000,
+                    "duration" : 3504480000,
+                    "mediaStart" : 243949440000,
+                    "mediaDuration" : 3504480000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 6,
+                "medias" : [
+                  {
+                    "id" : 13,
+                    "_type" : "AMFile",
+                    "src" : 3,
+                    "trackNumber" : 1,
+                    "attributes" : {
+                      "ident" : "Футбол 1-й тайм - Смешарики 2D _ Мультфильмы для детей",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : 0.43956043956044
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 1716960000,
+                    "duration" : 3598560000,
+                    "mediaStart" : 243902400000,
+                    "mediaDuration" : 3598560000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              }            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : true,
+        "videoHidden" : true,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : true,
+        "videoHidden" : true,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 64,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "gain" : 1.0,
+    "legacyAttenuateAudioMix" : false,
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\День54698067.autosave.tscproj",
+    "CanvasZoom" : 25,
+    "Date" : "2022-10-24 06:06:16 ",
+    "Fit" : 0,
+    "IsAutoSave" : false,
+    "IsStandalone" : true,
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectThumbnail" : "iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoCAYAAADHMkpRAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\r\njwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAZxSURBVHhe7chBDcAwAMSw8ifdFUAQ3BzJn5zX\r\nBQDgV3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICADDp3A/mI7CBEzt/RwAAAABJRU5ErkJggg==",
+    "Title" : "День5",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic"
+  }
+}

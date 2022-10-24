@@ -1,0 +1,803 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "targetLoudness" : -18.0,
+  "shouldApplyLoudnessNormalization" : true,
+  "videoFormatFrameRate" : 30,
+  "audioFormatSampleRate" : 44100,
+  "allowSubFrameEditing" : false,
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "6.0",
+  "editRate" : 705600000,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Windows",
+    "version" : "22.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "Лес 1.png",
+      "rect" : [0, 0, 10000, 675],
+      "lastMod" : "20221024T201906",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 10000, 675],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T202015.495215"
+      }
+    },
+    {
+      "id" : 2,
+      "src" : "Градиент.png",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20221024T202221",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T202307.260663"
+      }
+    }
+  ],
+  "timeline" : {
+    "id" : 3,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 4,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "Лес 1"
+                    },
+                    "parameters" : {
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : 382.0,
+                        "interp" : "eioe",
+                        "keyframes" : [
+                          {
+                            "endTime" : 4962720000,
+                            "time" : 0,
+                            "value" : -278.0,
+                            "interp" : "linr",
+                            "duration" : 4962720000
+                          }
+                        ]
+                      },
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.1824,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.1824,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2140320000,
+                    "duration" : 4257120000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-height" : 129.6,
+                      "default-scale0" : 0.192,
+                      "default-scale1" : 0.192,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 1920.0
+                    },
+                    "animationTracks" : {
+                      "visual" : [
+                        {
+                          "endTime" : 4962720000,
+                          "duration" : 4962720000,
+                          "range" : [ 0, 4962720000],
+                          "interp" : "linr"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "rightMedia" : 4,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 4,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 5,
+                    "_type" : "IMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "Градиент"
+                    },
+                    "parameters" : {
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2140320000,
+                    "duration" : 4962720000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 6,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 1288.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "День 4",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fgColor","rangeEnd":10,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"strikethrough","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"kerning","rangeEnd":10,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"underline","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontSize","rangeEnd":10,"rangeStart":0,"value":129,"valueType":"double"},{"name":"fontName","rangeEnd":10,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fontWeight","rangeEnd":10,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fontItalic","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -6.49436060484732e-12,
+                      "translation1" : 203.571428571428,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "fade",
+                          "bypassed" : false,
+                          "start" : -470400000,
+                          "duration" : 6256320000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "fadeIn",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "fadeOut",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "presetName" : "Угасание"
+                          }
+                        }
+                    ],
+                    "start" : 846720000,
+                    "duration" : 6256320000,
+                    "mediaStart" : -470400000,
+                    "mediaDuration" : 6256320000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-text-attributes" : "[{\"name\":\"fontItalic\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"strikethrough\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":400,\"valueType\":\"int\"},{\"name\":\"kerning\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0.56000000000000005,\"valueType\":\"double\"},{\"name\":\"fontSize\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":129,\"valueType\":\"double\"},{\"name\":\"underline\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fgColor\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":\"(255,255,255,255)\",\"valueType\":\"color\"},{\"name\":\"fontName\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":\"Sirius Cursiv\",\"valueType\":\"string\"}]",
+                      "default-translation0" : 40.0,
+                      "default-translation1" : -40.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 6,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 7,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 1436.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "Гуляем",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"kerning","rangeEnd":12,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"fontSize","rangeEnd":12,"rangeStart":0,"value":75,"valueType":"double"},{"name":"fontWeight","rangeEnd":12,"rangeStart":0,"value":400,"valueType":"int"},{"name":"strikethrough","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":12,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fgColor","rangeEnd":12,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation1" : -198.571428571428,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "popUp",
+                          "bypassed" : false,
+                          "start" : -470400000,
+                          "duration" : 6256320000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 1728720000,
+                              "overlapProportion" : "1/3",
+                              "movement" : 30,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 470400000,
+                              "overlapProportion" : "1/2",
+                              "movement" : 7,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "default-behavior-center-style" : "popUp",
+                            "presetName" : "Шарнир"
+                          }
+                        }
+                    ],
+                    "start" : 846720000,
+                    "duration" : 6256320000,
+                    "mediaStart" : -470400000,
+                    "mediaDuration" : 6256320000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-geometryCrop2" : 0.0,
+                      "default-geometryCrop3" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-text-attributes" : "[{\"name\":\"fgColor\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":\"(255,255,255,255)\",\"valueType\":\"color\"},{\"name\":\"fontSize\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":75,\"valueType\":\"double\"},{\"name\":\"fontName\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":\"Sirius Cursiv\",\"valueType\":\"string\"},{\"name\":\"fontItalic\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":400,\"valueType\":\"int\"},{\"name\":\"kerning\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0.56000000000000005,\"valueType\":\"double\"},{\"name\":\"underline\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"strikethrough\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"}]",
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 7,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 6,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 7,
+                "medias" : [
+                ]
+              }            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 64,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "gain" : 1.0,
+    "legacyAttenuateAudioMix" : false,
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\День54698067.autosave.tscproj",
+    "CanvasZoom" : 50,
+    "Date" : "2022-10-24 06:06:16 ",
+    "Fit" : 0,
+    "IsAutoSave" : false,
+    "IsStandalone" : true,
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectThumbnail" : "iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoCAYAAADHMkpRAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\r\njwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAZxSURBVHhe7chBDcAwAMSw8ifdFUAQ3BzJn5zX\r\nBQDgV3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3IC\r\nALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALAr\r\nJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAAu3ICALArJwAA\r\nu3ICALArJwAAu3ICALArJwAAu3ICADDp3A/mI7CBEzt/RwAAAABJRU5ErkJggg==",
+    "Title" : "День5",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic"
+  }
+}

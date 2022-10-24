@@ -1,0 +1,1587 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "targetLoudness" : -18.0,
+  "shouldApplyLoudnessNormalization" : true,
+  "videoFormatFrameRate" : 30,
+  "audioFormatSampleRate" : 44100,
+  "allowSubFrameEditing" : false,
+  "width" : 1920.0,
+  "height" : 1080.0,
+  "version" : "6.0",
+  "editRate" : 705600000,
+  "authoringClientName" :  {
+    "name" : "Camtasia",
+    "platform" : "Windows",
+    "version" : "22.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "Круги 2.png",
+      "rect" : [0, 0, 800, 600],
+      "lastMod" : "20221024T160453",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 800, 600],
+          "sampleRate" : 0,
+          "bitDepth" : 8,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T161037.518337"
+      }
+    },
+    {
+      "id" : 2,
+      "src" : "Круги 1.png",
+      "rect" : [0, 0, 800, 600],
+      "lastMod" : "20221024T160438",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 800, 600],
+          "sampleRate" : 0,
+          "bitDepth" : 8,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T161042.895313"
+      }
+    },
+    {
+      "id" : 3,
+      "src" : "Поплавок стоит.png",
+      "rect" : [0, 0, 800, 600],
+      "lastMod" : "20221024T160610",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 800, 600],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "integratedLUFS" : 100.0,
+          "peakLevel" : -1.0,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221024T161412.750366"
+      }
+    }
+  ],
+  "timeline" : {
+    "id" : 4,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                  {
+                    "id" : 5,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 1288.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "День 6",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fontName","rangeEnd":10,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fontWeight","rangeEnd":10,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fontSize","rangeEnd":10,"rangeStart":0,"value":129,"valueType":"double"},{"name":"strikethrough","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"kerning","rangeEnd":10,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"underline","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontItalic","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":10,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -6.49436060484732e-12,
+                      "translation1" : 203.571428571428,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "fade",
+                          "bypassed" : false,
+                          "start" : -776160000,
+                          "duration" : 6562080000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "fadeIn",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "fadeOut",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 705600000,
+                              "overlapProportion" : 0,
+                              "movement" : 0,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "presetName" : "Угасание"
+                          }
+                        }
+                    ],
+                    "start" : 493920000,
+                    "duration" : 6562080000,
+                    "mediaStart" : -776160000,
+                    "mediaDuration" : 6562080000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-text-attributes" : "[{\"name\":\"fontItalic\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"strikethrough\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":400,\"valueType\":\"int\"},{\"name\":\"kerning\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0.56000000000000005,\"valueType\":\"double\"},{\"name\":\"fontSize\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":129,\"valueType\":\"double\"},{\"name\":\"underline\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fgColor\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":\"(255,255,255,255)\",\"valueType\":\"color\"},{\"name\":\"fontName\",\"rangeEnd\":10,\"rangeStart\":0,\"value\":\"Sirius Cursiv\",\"valueType\":\"string\"}]",
+                      "default-translation0" : 40.0,
+                      "default-translation1" : -40.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 5,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 6,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "enable-ligatures" : 1.0,
+                      "height" : 250.0,
+                      "line-spacing" : 0.0,
+                      "width" : 1436.0,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "resize-behavior" : "resizeText",
+                      "text" : "Заслуженный отдых",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : [{"name":"fontName","rangeEnd":33,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fontItalic","rangeEnd":33,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":33,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"strikethrough","rangeEnd":33,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontSize","rangeEnd":33,"rangeStart":0,"value":75,"valueType":"double"},{"name":"fontWeight","rangeEnd":33,"rangeStart":0,"value":400,"valueType":"int"},{"name":"kerning","rangeEnd":33,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"underline","rangeEnd":33,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "ident" : "",
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation1" : -198.571428571428,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
+                    },
+                    "effects" : [
+                        {
+                          "_type" : "GenericBehaviorEffect",
+                          "effectName" : "popUp",
+                          "bypassed" : false,
+                          "start" : -776160000,
+                          "duration" : 6562080000                        ,
+                          "in" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 1728720000,
+                              "overlapProportion" : "1/3",
+                              "movement" : 30,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "center" : {
+                            "attributes" : {
+                              "name" : "none",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 0,
+                              "secondsPerLoop" : 1,
+                              "numberOfLoops" : -1,
+                              "delayBetweenLoops" : 0
+                            }
+                          
+                          },
+                          "out" : {
+                            "attributes" : {
+                              "name" : "hinge",
+                              "type" : 1,
+                              "characterOrder" : 6,
+                              "offsetBetweenCharacters" : 35280000,
+                              "suggestedDurationPerCharacter" : 470400000,
+                              "overlapProportion" : "1/2",
+                              "movement" : 7,
+                              "springDamping" : 5.0,
+                              "springStiffness" : 50.0,
+                              "bounceBounciness" : 0.45
+                            },
+                            "parameters" : {
+                              "direction" : {
+                                "type" : "int",
+                                "valueBounds" : {
+                                  "minValue" : 0,
+                                  "maxValue" : 3,
+                                  "defaultValue" : 3
+                                },
+                                "uiHints" : {
+                                  "userInterfaceType" : 2,
+                                  "unitType" : 0
+                                },
+                                "keyframes" : [
+                                  {
+                                    "endTime" : 0,
+                                    "time" : 0,
+                                    "value" : 3,
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            }
+                          
+                          },
+                          "metadata" : {
+                            "default-behavior-center-style" : "popUp",
+                            "presetName" : "Шарнир"
+                          }
+                        }
+                    ],
+                    "start" : 493920000,
+                    "duration" : 6562080000,
+                    "mediaStart" : -776160000,
+                    "mediaDuration" : 6562080000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-LineSpace" : 0.0,
+                      "default-VAlign" : "center",
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-geometryCrop2" : 0.0,
+                      "default-geometryCrop3" : 0.0,
+                      "default-height" : 250.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-text-attributes" : "[{\"name\":\"fgColor\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":\"(255,255,255,255)\",\"valueType\":\"color\"},{\"name\":\"fontSize\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":75,\"valueType\":\"double\"},{\"name\":\"fontName\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":\"Sirius Cursiv\",\"valueType\":\"string\"},{\"name\":\"fontItalic\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":400,\"valueType\":\"int\"},{\"name\":\"kerning\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0.56000000000000005,\"valueType\":\"double\"},{\"name\":\"underline\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"strikethrough\",\"rangeEnd\":13,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"}]",
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 400.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Fade",
+                    "duration" : 705600000,
+                    "leftMedia" : 6,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 7,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -470400000,
+                    "attributes" : {
+                      "ident" : "Поплавок стоит"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 1411200000,
+                    "duration" : 1128960000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 8,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "Поплавок стоит"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2540160000,
+                    "duration" : 1081920000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 9,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -470400000,
+                    "attributes" : {
+                      "ident" : "Поплавок стоит"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 3622080000,
+                    "duration" : 1128960000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 10,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "Поплавок стоит"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 4751040000,
+                    "duration" : 1081920000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Ripple",
+                    "duration" : 564480000,
+                    "rightMedia" : 7,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 564480000,
+                    "leftMedia" : 7,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 540960000,
+                    "rightMedia" : 8,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 540960000,
+                    "leftMedia" : 8,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 564480000,
+                    "rightMedia" : 9,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 564480000,
+                    "leftMedia" : 9,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 540960000,
+                    "rightMedia" : 10,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 540960000,
+                    "leftMedia" : 10,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 11,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -752640000,
+                    "attributes" : {
+                      "ident" : "Круги 2"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 1858080000,
+                    "duration" : 1928640000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 12,
+                    "_type" : "IMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -752640000,
+                    "attributes" : {
+                      "ident" : "Круги 2"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 4068960000,
+                    "duration" : 1928640000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "rightMedia" : 11,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "leftMedia" : 11,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "rightMedia" : 12,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "leftMedia" : 12,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 13,
+                    "_type" : "IMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -540960000,
+                    "attributes" : {
+                      "ident" : "Круги 1"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2069760000,
+                    "duration" : 1928640000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 14,
+                    "_type" : "IMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "trimStartSum" : -540960000,
+                    "attributes" : {
+                      "ident" : "Круги 1"
+                    },
+                    "parameters" : {
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.5,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "sourceCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop2" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      },
+                      "geometryCrop3" : {
+                        "type" : "double",
+                        "defaultValue" : 0.0,
+                        "interp" : "eioe"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 4280640000,
+                    "duration" : 1928640000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false,
+                      "default-anchor0" : 0.0,
+                      "default-anchor1" : 0.0,
+                      "default-anchor2" : 0.0,
+                      "default-height" : 600.0,
+                      "default-rotation0" : 0.0,
+                      "default-rotation1" : 0.0,
+                      "default-rotation2" : 0.0,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-scale2" : 1.0,
+                      "default-shear0" : 0.0,
+                      "default-shear1" : 0.0,
+                      "default-shear2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0,
+                      "default-translation2" : 0.0,
+                      "default-width" : 800.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "rightMedia" : 13,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "leftMedia" : 13,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "rightMedia" : 14,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  },
+                  {
+                    "name" : "Ripple",
+                    "duration" : 964320000,
+                    "leftMedia" : 14,
+                    "attributes" : {
+                      "bypass" : false,
+                      "reverse" : false,
+                      "trivial" : false,
+                      "useAudioPreRoll" : true,
+                      "useVisualPreRoll" : true
+                    }
+
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 6,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 7,
+                "medias" : [
+                ]
+              }            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 64,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "gain" : 1.0,
+    "legacyAttenuateAudioMix" : false,
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\День64b9de03.autosave.tscproj",
+    "CanvasZoom" : 35,
+    "Date" : "2022-10-24 06:06:16 ",
+    "Fit" : 0,
+    "IsAutoSave" : false,
+    "IsStandalone" : true,
+    "Language" : "ENU",
+    "ProfileName" : "",
+    "ProjectThumbnail" : "iVBORw0KGgoAAAANSUhEUgAAAoAAAAFoCAYAAADHMkpRAAAAAXNSR0IArs4c6QAAAARnQU1BAACx\r\njwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAC/3SURBVHhe7d0HlGRV1bDhj5xzGPKQh8yQk6Qh\r\n55wkByV8EpSogGJAXaAYABUDGRVFghhICopKFDFnMIEEE4IBAc//v+eb06uqeg9MddWtHk6/Z61n\r\ndde+t26Frq7atU+4//P/W5IkSdKYEgYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5Ik\r\nSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQk\r\nSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAk\r\nSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYl\r\nSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAo\r\nSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVB\r\nSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsM\r\nSpIkqV5hUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5h\r\nUJIkSfUKg5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUK\r\ng5IkSapXGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUJIkSfUKg5IkSapX\r\nGJQkSVK9wqAkSZLqFQYlSZJUrzAoSZKkeoVBSZIk1SsMSpIkqV5hUNKAzTzzzGmBBRZI48aNyz9n\r\nnHHGcD9JkvogDEoakPXXXz+df/756e67706/+tWv0uOPP54eeeSRdPvtt6djjz02zTPPPOH1JEnq\r\nQRiU1LBFF100ffzjH0//+Mc/0su1b3/722nixInhMSRJGqEwKKlByy23XLrvvvsmp3gp/fnPf043\r\n33xzesc73pGOP/74dN5556Vf/OIXk7emXBlceeWVw2NJkjQCYVBSQ+aaa670ta99bXJql9I111yT\r\nVl111WH7Lb744ummm26avFdKN9xwQ5phhhmG7SdJ0giEQUkNedOb3jQ5pUvpAx/4QJpuuunC/bDg\r\nggumhx56KO/7/PPPp0022STcT5qWTZo0KX3mM59Jn/3sZ/PPTtddd11685vf/LL/C5L6LgxKagAT\r\nOn74wx/mhI7ErnOCx2yzzZY23XTTNOussw7FDjvssLw/7fTTT2/bX3o1+PznPz/5FTzl9ulPfzq8\r\nrqTGhEFJDdh8883TCy+8kD/wTj311GHbzz777PTf//433XbbbWnttdfOsQkTJqRnnnkmX+dDH/rQ\r\nsOtI07I55phjqIr92GOPTbECuMcee4TXl9SYMCipAa973evyByFtu+22a9u22mqrpb/85S95Gz83\r\n3HDDHF9++eXTX//61xw/99xz264jTeuWWWaZ9NRTT+XX78c+9rFwH0mjIgxKakDr+L9tt922bdvb\r\n3/72yVtSOuaYY4bim222WfrPf/6T44cffnjbdaRpHeP/StX7xBNPDPeRNCrCoKQGHHroofmDkHbB\r\nBRcMxRnzd++99+b4Aw88kLvNyrajjz46x0kCGR9Y4k2bfvrp00knnZTHb0Xddp/73OfywP3W8YqD\r\nsMgii6RPfOITeVY0z2frttVXXz1PNOA+b7HFFm3bBuGss87Kt33GGWeE28civszQGNqw/fbbh/tI\r\nGhVhUFID6M594okn8gciP5dddtkcZ42/v/3tbzn+lre8pe06l1xySY6z//jx49u2NYm1CkvX85Ta\r\nP//5z7TKKquE128KSURpp5xyStu2kmzQOiusTZt//vnTk08+mW+bv1m0z1h04YUX5ueEtS5XXHHF\r\ncB9JoyIMSmoIM3lpVInKshe77rprjr344ottlSvOB3zXXXflbQ8++GCaffbZh7Y1jQSKqg2Ns5Fc\r\nffXVufJHhe2Pf/xjjv/ud7/LZzSJrt+U0047Ld82922bbbZp28YkGdqf/vSntPTSS7dtaxqTdvj7\r\n0Y466qhwn7GGKvKtt96anxNmv88999zhfpJGRRiU1BC6d0n4ZppppqEYlSwaVb6lllpqKL7wwgun\r\n3/zmN3kbiVeJDwJnJKExfqu165ku34cffjhv+8Y3vtH2OAbhqquuyrdNRalUUEEyXZKN733vewNN\r\n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\r\nGSflaSqFQWmKWt9cLrnkkvTCCy+kFVdcsW2fbtGFTDLFwPZTTjklJ5WHHnpouO/UYoka2vvf//60\r\n2267pc985jP58sSJE8P9p9Zqq62WP4Tuu+++dNRRR+UEkw/3aN+pte666+b79trXvjZf5ri0tdZa\r\na9i+3eCx0l7/+tfny0cffXT673//m1ZYYYV8+e67704//vGPe0peqTqQkNx11115aaAzzzwz3+bp\r\np58e7j+1qGL89Kc/zfeRy1RkuNzrB2d0XJLgW265Zdi+3br99ttzYtkZp1Lz+9//Pr8GO7d1i65f\r\nWvkbMiv/P//5T1pyySWH7TsaeKwkJSS7u+++ezrnnHPy/T322GPD/acGFdt99tknu/766/N7zhve\r\n8IZ00EEHpY022ii8ztT6xje+kb8Y7r///unII49M//znP9NVV10V7tuNr3/96+mBBx4YFuex8P/S\r\nj9sg+SX555hc5n/wwQcfHLafNAVhUApRMdljjz1yJfDyyy/Pg89POumkcN9ufP/7389VA34viRtJ\r\nUed+3SDZoZUPyg9+8IP52z1dSZ37duPmm2/OH3BUzeh+4zng236079Qqs6lLclruKxW8zn27QUJJ\r\nK4nkRRddlCu4VLpI3P74xz+mz33uc8Ou1w2e35deemmoYrvTTjvl29xhhx2G7dsNZpnzYfyhD30o\r\nX6ai+/e//z29+93vHrZvN5o6Lh/CfBhTTezctvTSS+ck7Ywzzhi2rVtMuCJhoety1llnzRUfEliG\r\nUUT7D9pyyy2XHyvJFJf32muv/HooFcte8T7x61//OtzWLbr+H3/88VzB5jLdqYxzPvXUU4ft2w2O\r\nS5LHF+TObeX56fU2+Hvzd//a176WL/PezG1+4AMfGLavNAVhUApNmDAhv2Ey7o/Wj9m/jLfhA7i8\r\nIZ588sm5C5jxM537doNuvqeeemqoC+ab3/xmWJ3pxvjx4/Ob9zve8Y58uXSBkxR37tuN8847L1cS\r\nS3LKm3qv9xV08XLckkjyHND9xO8rr7xyvu+9dtVuv/32+TjbbrttvszMVFqvVeHyRYBqKJfpFqcd\r\ncMABw/btRlPHXWmllXJ1lcpU57bNN9883wbLtXRu6wbj/H71q18NVSv58kXrNYnvJ7qoaSXho1uS\r\n9UKXWGKJYft2i2otXxa/9KUvhdu7Vf5m5cvL1ltvne97r19eWCifdtxxxw3bNmnSpLyNrvvObd1g\r\nHDZf4K644op8eauttspfxPjZua80BWFQClE5omLCmzlVqhdffDG/oUX7Tq3ll18+j+/ZeOON82Uq\r\ni712S4Jk5957782/U+2i27bXbpdS3aJri8ulyljGRI4U3ZoPP/xw/r10F1555ZXD9utW6aJfdtll\r\n8/NJhYAEm21UCqh29JqokUDyOqCyweWvfOUr+UsCVZDOfbtRntv1118/Xy5V0l67xTuPSzcirdfj\r\n0v1N22CDDYZto/uTRtLdua0bfAHhb0a3L9Vnnmdar5Ow+onXAxXWkvCRrP3iF7/oeXwlGCvLl8Ne\r\nq7UFCTmtJE0kgiRRvf5P7L333vm4fLno3MYXBG6DL9Od27rBlwFmgNPVzGuBxJj3kV4nr2hMCYPS\r\nK6Jbi2/PvXZrkZiQ9DCQmW/FdFF+9rOfDfedWiQffDv+xCc+kS9zfKp0jN/r3LcbTNKg8Q2fy3Sp\r\nUmXsZdA1XXmPPvpouuaaa/JlEikSql67iEDCyocx4xVLJYburmuvvTZ3Mb/xjW8Mr9eNT33qU7lL\r\nkt/5UKNCyjitzv26xXP773//OydmdK9yuR9d+FM6LpXoaP+pVcbmMfaRZJVqUvkSw23wBSSaENCN\r\nLbbYIt8GCQZV49K4HO0/GuiipUpJFyVJH7/3Y1IFmOhCY7xetL1bb37zm4e+IHGZ7nu+JPGFsXPf\r\nbjDpisZrgckvra+Fj3zkI/m9qayk0Au+xPFavv/++3MyuMwyy4T7SVMQBqVXtOaaa+Y3OSoo0fZu\r\n8K2YWbB8i6X1emaR0rVzwgknhNtHiu6W1m5lBpCXKuNIkUhT1eHDiMt0pdJ67YYCY5oYiE7jNqg8\r\nkBDS+FDux7ixb33rW7mbmS53PuyZ8dnr+E3ccccd+X6SnHFM7vs999wT7tsNJmp0HrfXvyEYDkF1\r\niuSaGcW0sj7fnXfe2Zf7/r//+7/5/lLFZNYqt8PftR8z2/uF11vpomViCgkKwwI69xuJUgXmvSfa\r\n3i0mnzGely+IXOZ1wP90537d4vHzP8EX2fJaYIIb2zg+S2l1Xmck6DUpjYlu0T7SywiD0iuiG5TG\r\n0iLR9qnFEjB8mPEGRrcciVuvY+pYPoXWa/d0Jz7cygc51SO64EqVcaQ4gwOtLPlCFxof8mXyykhR\r\nfWEsITNeuQ0mPVBppApK1zCNAfrRdacWE2GomJQzxFCRKNXRXlDBpRucxImZn0woYJxoGe80Uk0d\r\nt8x8LUMM6KrkuB/+8IfzZW6z19cJPvrRj+YkkyETzPhkGAZfSOgCjPYfNO4HS6kw9pTLZYxsvxaq\r\nPv/88/N7Ra+To1DGE5ZJFHyp47mkWtu5bzeYjMFrobymGMvMa4H/P6qATBT6+Mc/Pux63eI19+Uv\r\nfzm/B9Fj0I8Z5hpzwqDUhjcuPuyZdVhiLNfCt3vGJbXu2w2Oy7ppZUYmCQkJYK9j6qgg0hXZzy4R\r\nHj8Vo/LmXWa/Hn/88cP27QbVTxpVSy7ThdaPbqhdd901P5clQSdBK+vQcd9pZTzgSFF5or3uda8L\r\nt48UXcm0MkGFhIrKZetZaEaiqePyfPJc8z/BZSpfdLfz/DJmltdir+tagvFeND7w6Q7mbxotNTJa\r\nyinqqNRxuYy37FfFjtdvv5Y5KeMJy3tPmbhxzDHHDNu3G7zGeC2U/y2GtvBaYLgFFXm6nPvRM8Hy\r\nOrz/rr322jn5Y01EZrhH+0pTEAalNnyLJVFrXcvrYx/7WP42WxbTHQkGivPtuFQIGDvT65g68IbI\r\nuoIlYeXb8mKLLTZsv26QlNJKwkcXLa3Xc7CSULZOmuADnepO537dYjINzwHdvAwYp/rHuDG2lXUH\r\ne6208nejlcHuVFH6sQhtmWyz3Xbb5ctlFm2v3eJNHbdUnMtM6DLTk5+lm45xYJ3X6wbPLX9DGuNF\r\nWc+Qy2X5pGlBmfxQhgBceOGFfRm3Cf6HGWvar8dL4kQra2SWHg2qlp37doMvXrSy2DoTTGi8TzAz\r\nmtbrTF0qrbxPli+jrJlK63WSkcacMCi1KclP6zdXFtLtNVFhSQ6+EZcxTIyjYsJC537doKrI2mit\r\nCwbzps6HZS9vkOWNvSR8TNJg/BVj+Dr37QZjgsrzSJWRLrReu6FI+jgDCGsWcpmZ1lShynjNww47\r\nLFcpeu2upauPBL5MoGCMGl3kvSaBVOSornK/ucxyGv3oFm/quGeffXbbZAIqgRyXigxVMLaVWdIj\r\nxWuXvyHPN/eXLzS8/voxkadfWB6Jqlp5PdDVTnd1534jwXPL4+/X4+XsRbSy+sBZZ52VK3XlrBoj\r\nxZqg/L1L7wPvE7wW+HtRXeQxlNfJSJUvFWXyD68xKtm9vhdpzAmDUhvWSKOVSg+JAx8+zCzt3Lcb\r\nvCFyWqeykj2TCJhV2rlfN6j6lTMRlBjdMbwp9/IGyWxn3rzLMVimhaSytVt8JEjSGCPGt/rSRVmq\r\nEiNVuiCZmcrlUqEqpwvr16xUZk3yOihLqDABgqpjr+cBvvrqq/PfsFSXGfvWj27xpo7L2oosTlxm\r\nejL4n78pl5kcw++9VMpRvoCwBAyXS5Wx18piP1GRoleA33k9kwxSBezcbyTK+oL9erzlDCWle5q1\r\nFHn/6fWcynTLc5zyWuB/orwWmAHcj9cC7w+0MlSG11g/ll7SmBMGpTYMYKeRVDF7lDd5kqFonatu\r\nlOPypknFjtaPM4uUJTKorn3+85/PyQ7n5SxvyiPBcUgWygcEq/AzU7Vzv27xwUayRsWO2YM0KqPR\r\nvlOLD0la6eItS8Aw7onLVGV6rbSCZXsYj8aMx+9+97v5NplZGe07tfgbsaQF1aMS49jMNm7dr1tN\r\nHZcvAEyCYTwWiSD4ssF6iGxniY5y2rleUF2jleollSVar9WkfqLCTLWL4Qf87/FloNfqasEXsH4+\r\nXv43aKxRyMxwzujD+1C079TqfC1wvCZeC3zxomu9JHwsGt+Pmewac8Kg1IZuDc53y5saCSBv8Iyn\r\nivbtBl2GrBnHGyVIsnpdkBe8ETO5guNxf8FtRftOLT6AyynfGI/ETFq6Ujv3GwnGBpEM8y2eqkmv\r\n53WlOkTloRyHCQjMGGXmIwkslYhezs3ainFvVG3LBx6Vqmi/qUU1mErSEUcckS9zf6lw9DrRpKnj\r\nUuniuLzWePy81vhfKTPQqYD1WtEF3dX83Up1lcdBBZPXYue+o4Ukm/FoPBcXXHBBzwsqt2LGNo+3\r\n14p7wf8Cr1VmFpfzhDMGOdp3anW+FtDEa4FJbqUSzOuB1wXdwJ37Sa8gDEoaBXQdsh5iP86aIGnq\r\nlNMZcu7saLtUqTAoacConjB5pR/nV5Y09TiVHm1aWlBbGoAwKGnAWC/u2WefHerakdQ8kj7GCDNm\r\nsZcxwtKrUBiUNGAs2Ezr13lOJcVYfaCM13zmmWfyuNteJ7RJr0JhUNKAca5QzjTC2RSi7ZL6g4kZ\r\nzNSl8sfp1DbYYINwP6lyYVDSgLEWHd3AnOEh2i6pPzgzCadlY8FqZgNH+0hjQBiUJElSvcKgJEmS\r\n6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmS\r\nVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmS\r\npHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmS\r\nJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqS\r\nJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCS\r\nJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOS\r\nJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiU\r\nJElSvcKgJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKg\r\nJEmS6hUGJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUG\r\nJUmSVK8wKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVK8w\r\nKEmSpHqFQUmSJNUrDEqSJKleYVCSJEn1CoOSJEmqVxiUJElSvcKgJEmS6hUGJUmSVKX/Sf8PzMDL\r\noAri6NEAAAAASUVORK5CYII=",
+    "Title" : "День5",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "Basic"
+  }
+}

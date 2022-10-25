@@ -70,7 +70,7 @@ init python:
         global save_name
         title = blwnfh_title[0] + "\n"
         if day in range(1, 14):
-            save_name = title + "Глава " + str(ch) + u"День №" + str(day)
+            save_name = title + "Глава №" + str(ch) + ". " + u"День №" + str(day)
         else:
             save_name = title + day
             

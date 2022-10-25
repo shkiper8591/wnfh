@@ -15,6 +15,15 @@ label blwnfh_test:
     $ day_time()
     scene bg int_editorial_day_cat with dspr
     window show
+    
+    $ blwnfh_set_mode(nvl)
+    nvl show
+    
+    "Я устало закрываю глаза\nИз глубокой темноты вызываю космос\nМой космос\nЭтот праздник обернулся бедой"
+    
+    nvl hide
+    $ blwnfh_set_mode()
+    
     "Да настолько, что я полностью увлекся его поеданием (каво? деда) и вообще необращал внимания ни на что."
     "Ни на то, что говорила мне Катя,"
     

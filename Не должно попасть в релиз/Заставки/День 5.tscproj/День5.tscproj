@@ -691,8 +691,46 @@
                           }
                         ]
                       },
-                      "scale0" : 0.190080664483667,
-                      "scale1" : 0.190080664483667,
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.190080664483667,
+                        "keyframes" : [
+                          {
+                            "endTime" : 4163040000,
+                            "time" : 282240000,
+                            "value" : 0.190080664483667,
+                            "interp" : "eioe",
+                            "duration" : 3880800000
+                          },
+                          {
+                            "endTime" : 4798080000,
+                            "time" : 4257120000,
+                            "value" : 0.190080664483667,
+                            "interp" : "bnce",
+                            "duration" : 540960000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.190080664483667,
+                        "keyframes" : [
+                          {
+                            "endTime" : 4163040000,
+                            "time" : 282240000,
+                            "value" : 0.190080664483667,
+                            "interp" : "eioe",
+                            "duration" : 3880800000
+                          },
+                          {
+                            "endTime" : 4798080000,
+                            "time" : 4257120000,
+                            "value" : 0.190080664483667,
+                            "interp" : "bnce",
+                            "duration" : 540960000
+                          }
+                        ]
+                      },
                       "sourceCrop0" : 0.0,
                       "sourceCrop1" : 0.0,
                       "sourceCrop2" : 0.0,
@@ -948,42 +986,6 @@
       },
       {
         "ident" : "",
-        "audioMuted" : false,
-        "videoHidden" : false,
-        "magnetic" : false,
-        "matte" : 0,
-        "solo" : false,
-        "metadata" : {
-          "IsLocked" : "False",
-          "WinTrackHeight" : "56"
-        }
-      },
-      {
-        "ident" : "",
-        "audioMuted" : false,
-        "videoHidden" : false,
-        "magnetic" : false,
-        "matte" : 0,
-        "solo" : false,
-        "metadata" : {
-          "IsLocked" : "False",
-          "WinTrackHeight" : "56"
-        }
-      },
-      {
-        "ident" : "",
-        "audioMuted" : false,
-        "videoHidden" : false,
-        "magnetic" : false,
-        "matte" : 0,
-        "solo" : false,
-        "metadata" : {
-          "IsLocked" : "False",
-          "WinTrackHeight" : "56"
-        }
-      },
-      {
-        "ident" : "",
         "audioMuted" : true,
         "videoHidden" : true,
         "magnetic" : false,
@@ -996,8 +998,44 @@
       },
       {
         "ident" : "",
-        "audioMuted" : true,
-        "videoHidden" : true,
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "magnetic" : false,
+        "matte" : 0,
+        "solo" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
         "magnetic" : false,
         "matte" : 0,
         "solo" : false,
@@ -1026,7 +1064,7 @@
   },
   "metadata" : {
     "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\День54698067.autosave.tscproj",
-    "CanvasZoom" : 25,
+    "CanvasZoom" : 50,
     "Date" : "2022-10-24 06:06:16 ",
     "Fit" : 0,
     "IsAutoSave" : false,

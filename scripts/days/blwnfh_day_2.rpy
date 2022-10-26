@@ -131,7 +131,7 @@ label blwnfh_day_2:
     stop ambience
     stop music 
     scene bg int_dining_hall_people_sunset  
-    play ambience dinning_hall_full
+    play ambience dining_hall_full
     show kat normal pioneer at center with dspr
     
     "Войдя в столовую, я стал думать, куда бы сесть, как к нам подошла Лена."

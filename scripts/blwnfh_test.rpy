@@ -24,6 +24,8 @@ label blwnfh_test:
     nvl hide
     $ blwnfh_set_mode()
     
+    show stol podnos3 musli3 salfetkisolperec with dspr
+    
     "Да настолько, что я полностью увлекся его поеданием (каво? деда) и вообще необращал внимания ни на что."
     "Ни на то, что говорила мне Катя,"
     

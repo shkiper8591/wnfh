@@ -30,7 +30,8 @@ label blwnfh_day_1:
     "Сердце медленно успокоилось, вот только желания спать мне это не добавило."
     
     th "Видимо, придется вставать."
-    scene bg int_house_of_mt_sunset
+    
+    scene bg int_house_of_mt_sunset with dissolve2
     show unblink
     with None
     
@@ -49,7 +50,7 @@ label blwnfh_day_1:
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
-    scene bg ext_houses_sunset with slide_left_blure_dissolve2
+    scene bg ext_houses_sunset with slide_left_blure_dissolve22
     
     "Идя по дороге, я попытался вспомнить, что же мне такого приснилось."
     "Но дальше побега от огромной, огнедышащей, креветки, в моей памяти ничего не всплывало."
@@ -68,7 +69,7 @@ label blwnfh_day_1:
 
     "Здесь никого не было(что, в прочем, не удивительно)."
     
-    scene bg ext_washstand2_day with sphere_blure_dissolve2
+    scene bg ext_washstand2_day with sphere_blure_dissolve22
     
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, дабы ещё немного помыться."
     "Конечно, сделать это будет непросто без горячей воды, но её как на зло, пару дней назад отключили." 
@@ -89,13 +90,11 @@ label blwnfh_day_1:
     "Как совершенно неожиданно сюда пришла Славя."    
     "Показывать ей свой голый торс совсем не хотелось, а посему я спрятался за умывальник."
     
-    scene bg ext_washstand_day with sphere_invert_blure_dissolve2
+    scene bg ext_washstand_day with sphere_invert_blure_dissolve22
     
     th "Надеюсь она не заметила меня."
+    
     "Я потянулся за своей рубашкой, ляжащей рядом."
-    
-    
-    
     "Однако, похоже Славя всё-таки заметила меня, ведь выглянула из-за умывальника и смотрела ровно на меня."
     
     show sl laugh sport close at center with dspr
@@ -172,13 +171,13 @@ label blwnfh_day_1:
     
     scene bg ext_houses_day with dissolve2
     $ renpy.pause(1)
-    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
+    scene bg ext_house_of_mt_day with slide_left_blure_dissolve22
     
     "Подойдя к дому, я услышал, что оттуда доносятся звуки возни."
     
     th "По всей видимости, наша вожатая проснулась."
     
-    scene bg int_house_of_mt_day with dissolve
+    scene bg int_house_of_mt_day with dissolve2
     stop ambience fadeout 0.5
     stop music fadeout 3
     play sound sfx_close_door_1
@@ -237,9 +236,9 @@ label blwnfh_day_1:
     
     "С диким не желанием, я поднялся с кровати и направился на выход."
     
-    stop ambience
-    scene bg ext_house_of_mt_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 0.5
+    scene bg ext_house_of_mt_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     "Выйдя, я спустился с крыльца и стал думать, что делать."
     "Идти никуда не хотелось, тем более на линейку."
@@ -278,7 +277,7 @@ label blwnfh_day_1:
     # мини таймскип
     
     $ blwnfh_set_time()
-    scene bg ext_square_day with dissolve
+    scene bg ext_square_day with dissolve2
     
     "Придя на площадь, я был удивлен тому, что здесь было крайне мало народу."
     "Возможно ещё не все проснулись или умылись. {w}Но в целом, так даже было лучше для меня."
@@ -524,9 +523,9 @@ label blwnfh_day_1:
     
     ## тут бы переход какой-нибудь плавный, как в каких-нибудь звездных войнах.
     
-    stop ambience
-    scene bg int_dining_hall_people_day with dissolve
-    play ambience ambience_dining_hall_full
+    stop ambience fadeout 0.5
+    scene bg int_dining_hall_people_day with dissolve2
+    play ambience ambience_dining_hall_full fadein 3
     
     "Пришел я в столовую чуть ли не одним из первых."
     "Но несмотря на это, не успел я взять свой завтрак, как все нормальные места уже были заняты."
@@ -548,8 +547,14 @@ label blwnfh_day_1:
     th "Ох, не нравится мне всё это, по любому что-то нехорошее затеяла."
     
     "Усевшись за стол, я бегло изучий свой завтрак."
-    th "Овсянная каша. {w}Опять. {w}Сколько можно-то уже?"
-    th "Хотя бы наполнение уже вроде другое."
+    
+    me "Что это такое?"
+    us "Овсянка, сэр!"
+    me "Да вижу, вижу[wp]"
+    
+    th "Сколько можно подавать эту овсянку чёртову?"
+    th "Спасибо, что хотя бы наполнение другое."
+    
     "Закончив анализ, я принялся с большой скоростью уплетать свой завтрак."
     
     dv "Семён, а ты чем сегодня займешься?"
@@ -624,8 +629,8 @@ label blwnfh_day_1:
     th "Да бл[wp]"
     
     "Я посмотрел на вожатую крайне недовольным взглядом."
-    "Неужели у Ольги Дмитриевной нету и капельки совести?"
-    "Прям по среди завтрака дёргать человека!"
+    th "Неужели у Ольги Дмитриевной нету и капельки совести?"
+    th "Прям по среди завтрака дёргать человека!"
     
     show mt smile pioneer at center with dspr
     
@@ -656,17 +661,19 @@ label blwnfh_day_1:
     
     "Сказал я и помохав рукой на прощание, быстро удалился из столовой."
     
-    stop ambience
-    scene bg ext_dining_hall_near_day with dissolve
-    play ambience ambience_camp_center_day
+    window hide
+    stop ambience fadeout 0.5
+    scene bg ext_dining_hall_near_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     $ renpy.pause(1)
     
-    scene bg ext_dining_hall_away_day with dissolve 
+    scene bg ext_dining_hall_away_day with dissolve2 
     
     $ renpy.pause(1)
     
-    scene bg ext_houses_day with dissolve
+    scene bg ext_houses_day with dissolve2
+    window show
     
     "Покинув территорию столовой, я отправился на прямую к остановке."
     th "Интересно, кого к нам угораздило приехать? На целую неделю позже, с начала смены."
@@ -687,9 +694,9 @@ label blwnfh_day_1:
     
     "Я перешагнул за приоткрытые ворота."
     
-    stop ambience
-    scene bg ext_bus with dissolve
-    play ambience ambience_camp_entrance_day
+    stop ambience fadeout 0.5
+    scene bg ext_bus with dissolve2
+    play ambience ambience_camp_entrance_day fadein 3
     
     $ blwnfh_set_name("kat", "Новенькая")
     
@@ -726,7 +733,7 @@ label blwnfh_day_1:
     kat "А я[wp] Я Катя."
     
     "Снова крайне скромно она ответила."
-"    
+    
     me "Значит так, Катя, велено мне тебя одеть и сопроводить нашей вожатой."
     me "А поскольку у меня ещё сегодня имеются дела, давай не терять ни минуты и следуй за мной."
     me "Только разве что, мне по пути кое-куда надо будет зайти, но это быстро, я обещаю."
@@ -741,9 +748,9 @@ label blwnfh_day_1:
     
     "Мы пошли в лагерь."
     
-    stop ambience
-    scene bg ext_clubs_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 0.5
+    scene bg ext_clubs_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     "Зайдя за ворота и пройдя пару метров, мы оказались перед зданием клубов." 
     "Туда мне и нужно забежать, чтобы предупредить шефа, что я немного задержусь."
@@ -754,9 +761,9 @@ label blwnfh_day_1:
     
     "Быстренько поднявшись к двери, я вошел во внутрь."
     
-    stop ambience
-    scene bg int_clubs_male_day with dissolve
-    play ambience ambience_clubs_inside_day
+    stop ambience fadeout 0.5
+    scene bg int_clubs_male_day with dissolve2
+    play ambience ambience_clubs_inside_day fadein 3
     
     show sh upset pioneer at right with dspr
     show el normal pioneer at left with dspr
@@ -791,10 +798,10 @@ label blwnfh_day_1:
     
     "Я пулей выбежал из клубов."
     
-    stop ambience
-    scene bg ext_clubs_day with dissolve
+    stop ambience fadeout 0.5
+    scene bg ext_clubs_day with dissolve2
     show kat scared casual shirt at center with dspr
-    play ambience ambience_camp_center_day
+    play ambience ambience_camp_center_day fadein 3
     
     "Выйдя, я увидел двух убегающих лидеров ОПГ «Рыжие-хвосты». {w}Они же Алиса и Ульяна."    
     "Я спустился к Кате."
@@ -816,15 +823,15 @@ label blwnfh_day_1:
     
     # таймскип/переход
     
-    scene bg ext_warehouse_day with dissolve
+    scene bg ext_warehouse_day with dissolve2
 
     "Скоро мы пришли к складу."
     "Заходить туда и пересекаться с нашим завхозом, мне не очень хотелось."
     "Но иного пути не было, так что я подошел ко входу и дернул ручку."
     
-    stop ambince
-    scene bg int_warehouse_day with dissolve
-    play ambience ambience_int_cabin_day
+    stop ambince fadeout 0.5
+    scene bg int_warehouse_day with dissolve2
+    play ambience ambience_int_cabin_day fadein 3
     show sl normal pioneer far at right with dspr
     
     "Мы вошли на склад, но внутри деда не было."
@@ -896,9 +903,9 @@ label blwnfh_day_1:
     sl "Ой, Семён, не мог бы ты выйти?"
     me "Да, конечно."
     
-    stop ambience
-    scene bg ext_warehouse_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 0.5
+    scene bg ext_warehouse_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     "Я тут же покинул склад и в ожидании Кати, сел на бордюрчик."
     
@@ -945,7 +952,7 @@ label blwnfh_day_1:
     
     "Славя убежала куда-то по своим делам, а мы, неспеша, отправились к домику Ольги Дмитриевны."
     
-    scene bg ext_houses_day with dissolve
+    scene bg ext_houses_day with dissolve2
     
     "По пути к нашей вожатой меня посетила одна мысль."
     
@@ -957,7 +964,7 @@ label blwnfh_day_1:
     "Мотив звучал до невозможного знакомо но никак не мог понять, что же это за песня."
     "А спрашивать мне как-то неловко."
     
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_house_of_mt_day with dissolve2
     
     "Придя к домику вожатой, мне сразу стало понятно, что где-то меня явно обманули."
     "Ведь Ольга Дмитриевна просто лежала на шезлонге и читала книгу."
@@ -1007,9 +1014,9 @@ label blwnfh_day_1:
     ## тут можно достижение какое-нибудь дать "груз доставлен" или что-то в таком роде, желательно конечно шуточное
     # таймскип
     
-    stop ambience
-    scene bg int_clubs_male_day with dissolve
-    play ambience ambience_clubs_inside_day
+    stop ambience fadeout 0.5
+    scene bg int_clubs_male_day with dissolve2
+    play ambience ambience_clubs_inside_day fadein 3
     show el normal pioneer at left with dspr
     show sh normal pioneer at right with dspr
     
@@ -1039,7 +1046,9 @@ label blwnfh_day_1:
     
     "Тяжело вздохнув, я пошел в соседнее помещение, где был и вход на чердак."
     
-    scene bg int_clubs_male2_night with dissolve
+    stop ambience fadeout 0.5
+    scene bg int_clubs_male2_night with dissolve2
+    play ambience ambience_int_cabin_day fadein 3
     
     "Войдя внутрь и включив свет, я тут же сильно чихнул из-за пыли."
     
@@ -1055,8 +1064,8 @@ label blwnfh_day_1:
     "Переставив её со шкафа на соседнею стену, я полез наверх, где был люк на чердак."
     
     #пока нету фона, такая вот заглушка.
-    scene bg black with dissolve
-    #scene bg int_clubs_attic with dissolve
+    scene bg black with dissolve2
+    #scene bg int_clubs_attic with dissolve2
     
     "Тут наверху ситуация была ещё хуже в плане чистоты."
     "А ещё с моим немаленьким ростом здесь было крайне неудобно, так что я чуть ли ходил на четвереньках."
@@ -1073,7 +1082,7 @@ label blwnfh_day_1:
     "Спустя несколько минут поисков, я уже было собирался капитулировать, как мое внимание привлек ещё не осмотренный мной угол."
     "Я очень удивился как я пропустил его, ведь сюда прямо бил луч света, что пробивался сквозь щели."
     "Подойдя ближе я нащупал тряпку настолько затвердевшую, что её можно в угол ставить."
-    "Сняв её я ощупал под ней некий металлический объект." 
+    "Сняв её, я ощупал под ней некий металлический объект." 
     "Мне сразу стало понятно, что это то самое радио и тут же попытался его поднять."
     "Но оно оказалось настолько тяжелым, что с первого раза у меня ничего не вышло."
     "Зато со второго я кое-как смог его поднять и подтащить к люку."
@@ -1090,9 +1099,9 @@ label blwnfh_day_1:
     sh "Понял."
     
     "Шурик подготовился принимать радио, которое ему и спустил."
-    "Крехтя он поставил его на стол рядом, видимо, чтобы передохнуть, а я спустился вниз."
+    "Взяв его, он, крехтя, поставил сие артефакт прошлого на стол рядом."
     
-    scene bg int_clubs_male2_night with dissolve
+    scene bg int_clubs_male2_night with dissolve2
     show sh normal pioneer at center with dspr
     
     sh "Я малость легче представлял его."
@@ -1108,7 +1117,7 @@ label blwnfh_day_1:
     show sh serious pioneer at center with dspr
     
     sh "Ну а ещё, я не очень хочу пересекаться с завхозом."
-    me "Кстати деду, похоже ,плохо недавно стало, его сейчас Славя подменяет."
+    me "Кстати деду, похоже, плохо недавно стало, его сейчас Славя подменяет."
     me "Только не знаю насколько, так что может быть уже завтра он вернется."
     
     show sh normal pioneer at center with dspr
@@ -1118,7 +1127,9 @@ label blwnfh_day_1:
     
     "Схватившись вдвоем за радио, мы потащили его в основное помещение."
     
-    scene bg int_clubs_male_day with dissolve
+    stop ambience fadeout 0.5
+    scene bg int_clubs_male_day with dissolve2
+    play ambience ambience_clubs_inside_day fadein 3
     show sh normal pioneer at right with dspr
     show el normal pioneer at left with dspr
     
@@ -1135,7 +1146,7 @@ label blwnfh_day_1:
     "Под толстенными слоями пыли пряталось полностью убитое и проржавевшее радио. {w}Так что были {b}большие{/b} сомнения в том, что из него можно достать хоть что-то полезное."
     "Закончив протирать, Шурик сел за стол и взялся за отвертку."
     "Поднеся её к винту, тот стал его откручивать и[wp] {w}Радио, словно в каком-нибудь комедийном фильме, просто развалилось на части."
-    "Шурик, прибывая в легком шоке, ещё пару секунд держал отвертку в воздухе."
+    "Шурик, прибывая в легком недоумении, ещё пару секунд просто держал отвертку в воздухе."
     "После чего, поправив очки, стал разгребать груды мусора."
     
     sh "Мда[wp] Сплошное разочарование."
@@ -1170,9 +1181,9 @@ label blwnfh_day_1:
     
     "Вслед за ними и я покинул клубы."
     
-    stop ambience
-    scene bg ext_clubs_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 0.5
+    scene bg ext_clubs_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     "Выйдя, у меня тут же началась борьба с замком."
     "По своему качеству он ничем не уступал замку на складе, а даже был хуже."
@@ -1183,23 +1194,23 @@ label blwnfh_day_1:
     
     # переход
     
-    scene bg ext_dining_hall_away_day with dissolve
+    scene bg ext_dining_hall_away_day with dissolve2
     
     "Прибыв на место, к моему удивлению, здесь все ещё толпилось достаточно много пионеров."
     "От чего появлялась хоть и небольшая, но надежда, занять отличное место в глубине столовой и посидеть в гордом одиночестве."
     "А то с этим, в последнее время, у меня не очень выходило."
     
-    stop ambience
-    scene bg int_dining_hall_day with dissolve
-    play ambience ambience_dining_hall_empty 
+    stop ambience fadeout 0.5
+    scene bg int_dining_hall_day with dissolve2
+    play ambience ambience_dining_hall_empty fadein 3 
     
     "Внутри, действительно, было пока не очень многолюдно." 
     "А посиму я как можно быстрее взял поднос с едой и ушел в самый дальний угол столовой."
     "Там я занял вполне уютное местечко у окна, правда вид из него был не самый интересный."
     
-    stop ambience
-    scene bg int_dining_hall_people_day with dissolve
-    play ambience ambience_dining_hall_full
+    stop ambience fadeout 0.5
+    scene bg int_dining_hall_people_day with dissolve2
+    play ambience ambience_dining_hall_full fadein 3
     
     "Как только я занял свое место, столовая чуть ли не в миг наполнилась пионерами."
     
@@ -1272,7 +1283,7 @@ label blwnfh_day_1:
     th "А эта новенькая быстро нашла себе друга, не то что я."
     th "Интересно, почему именно с Леной? {w}Хотя учитывая как скромно она себя вела и какая стесняша у нас Тихонова, все вопросы отпадают сами собой."
     
-    "За моими размышлениями, я суп довольно быстро."
+    "За моими размышлениями, суп кончился довольно быстро."
     "Чай тоже держался не долго и был выпит одним залпом."
     
     me "Ладненько, пойду я."
@@ -1281,9 +1292,9 @@ label blwnfh_day_1:
     
     "Встав из-за стола, я быстренько покинул пределы столовой."
     
-    stop ambience
-    scene bg ext_dining_hall_near_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 0.5
+    scene bg ext_dining_hall_near_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
     
     "Выйдя на крыльцо, на меня резко напала дикая усталость и сонливость."
     "Так что мною было решено идти домой, но перед этим я присел на лавочку, немного отдохнуть от обеда." 
@@ -1294,7 +1305,7 @@ label blwnfh_day_1:
     "И откинувшись на лавочке и меня стало утягивать в сон."
     "Какое-то время я пытался сопротивляться этому желанию."
     
-    ## семён закрывает глаза
+    show blink
     
     "Вот только силы стремительно покидали меня и очень скоро я задремал."
     
@@ -1302,7 +1313,7 @@ label blwnfh_day_1:
     
     "Но, поспал я максимум минут десять, как меня стали трясти за плечо."
     
-    ## Семён открывает глаза
+    show unblink
     
     show mt normal pioneer panama at center with dspr
     
@@ -1321,7 +1332,7 @@ label blwnfh_day_1:
     
     # переход
     
-    scene bg ext_square_day with dissolve
+    scene bg ext_square_day with dissolve2
     
     "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     
@@ -1376,7 +1387,7 @@ label blwnfh_day_1:
     
     # переход
     
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_house_of_mt_day with dissolve2
     
     "Наконец дойдя до дома, я уже еле держался на ногах."
     "Но самое сложное было впереди."
@@ -1388,11 +1399,12 @@ label blwnfh_day_1:
     
     ## Семён закрывает глаза и плавное затухание эмбиенса
     
+    stop ambience fadeout 0.5
     show anim prolog_1 with dspr 
-    play ambience ambience_soccer_play_background
+    play ambience ambience_soccer_play_background fadein 3
     
     $ blwnfh_set_mode(nvl)
-    nvl show dissolve
+    nvl show dissolve2
     
     "«[wp]и Алиса идёт на отчаянный шаг, срывается с ворот и вырывает мяч у соперника!»"
     "«Это просто невероятно!»"
@@ -1451,10 +1463,11 @@ label blwnfh_day_1:
     "Но видимо, она не оценила такой шутки и стала трясти меня что есть мочи."
     
     $ blwnfh_set_mode()
-    stop ambience
-    scene bg ext_house_of_mt_sunset with dissolve
-    play ambience ambience_camp_center_evening
-    ## Семён открывает глаза
+    stop ambience fadeout 0.5
+    scene bg ext_house_of_mt_sunset with dissolve2
+    play ambience ambience_camp_center_evening fadein 3
+    show unblink
+    
     "Я проснулся оттого, что меня кто-то довольно сильно тряс за плечо."
     
     show mt normal pioneer panama at center with dspr
@@ -1538,9 +1551,9 @@ label blwnfh_day_1:
     
     # таймскип с переходом
     
-    stop ambience
-    scene bg ext_beach_sunset with dissolve
-    play ambience ambience_lake_shore_day
+    stop ambience fadeout 0.5
+    scene bg ext_beach_sunset with dissolve2
+    play ambience ambience_lake_shore_day fadein 3
     
     "Придя, я был рад обнаружить, что здесь никого нет."
     "И не став, как обычно, задаваться вопросами «почему?», я сел под дерево, где было вполне уютно." 
@@ -1548,9 +1561,12 @@ label blwnfh_day_1:
     "Было очень интересно наблюдать за бьющимися о берег волнами."
     "Мимо проезжающим, где-то в далеке, поездом." 
     
+    window hide
     stop ambience
-    scene bg ext_beach_night with dissolve
+    $ blwnfh_set_time("night")
+    scene bg ext_beach_night with dissolve2
     play ambience ambience_lake_shore_night
+    window show
     
     "Сидя и наблюдая за всем этим, я и не заметил, как на лагерь постепенно опустилась ночь."
     "С ночью пришла и прохлада, но уходить мне никуда не хотелось."
@@ -1558,7 +1574,7 @@ label blwnfh_day_1:
     
     # пауза
     
-    blwnfh_set_name("uv", "???")
+    $ blwnfh_set_name("uv", "???")
     
     uv "Не замерзнешь?"
     
@@ -1580,17 +1596,15 @@ label blwnfh_day_1:
     me "Дела идут просто отлично, сижу отдыхаю и смотрю на воду."
     uv "И без тебя поняла. {w}А что-нибудь из интересного сегодня произошло?"
     me "Сегодня новенькую встречал[wp] Катя вроде."
-    uv "Катя и Семён[wp] {w}Неплохо звучит."
+    uv "Красивое имя[wp]"
     
-    th "Чудесно, она ещё и моё имя знает."
-    th "И что это вообще значит «Неплохо звучит»?"
     th "Может это новенькая прикалывается?"
     th "Вот только голос не похож."
     th "Хотя зачем гадать? Сейчас я узнаю, кто позади меня шутки шутит!"
     
     me "Да, кто ты блин такая?"
     
-    "Я быстро развернулся, но позади никого не было."
+    "Я резко повернулся, но позади никого не было."
     
     th "Вот те раз[wp] {w}И как это понимать?"
     
@@ -1600,9 +1614,11 @@ label blwnfh_day_1:
     
     # переход
     
-    stop ambience
-    scene bg ext_square_night with dissolve
-    play ambience ambience_camp_center_night
+    window hide
+    stop ambience fadeout 0.5
+    scene bg ext_square_night with dissolve2 
+    play ambience ambience_camp_center_night fadein 3
+    window show
     
     "Только у площади я сбавил темп отступления и продолжил путь домой уже обычным шагом."
     "И в дороге решил обдумать, что же всё таки произошло на пляже."
@@ -1613,7 +1629,7 @@ label blwnfh_day_1:
     th "А у меня ни того, ни другого."
     th "Поэтому это явно чья-то шутка[wp]"
     
-    scene bg ext_houses_night with dissolve
+    scene bg ext_houses_night with dissolve2
     
     th "[wp]Но, если это даже кто-то решил подшутить надо мной, то мне вообще некого подозревать."
     th "Общалась со мной какая-то девушка, только вот[wp]"
@@ -1622,20 +1638,24 @@ label blwnfh_day_1:
     th "Кому могло приспичить издеваться над неизвестным парнем?"
     th "Сложно всё это, надо будет в этом обязательно разобраться, если не забуду конечно же."
     
-    scene bg ext_house_of_mt_night_without_light with dissolve
+    scene bg ext_house_of_mt_night_without_light with dissolve2
     
     "Тем временем я дошел до дома, в котором свет не горел."
     "Это было одновременно хорошей и плохой новостью."
     "Хорошо, потому что не придется устраивать тёрки с вожатой, почему я пришел ночью."
     "А плохо, потому что буду спотыкаться обо всё подряд."
 
-    scene bg int_house_of_mt_night2 with dissolve
+    scene bg int_house_of_mt_night2 with dissolve2
     
     "Аккуратно войдя во внутрь, я тихонько подошел к своей кровати."
     "Быстренько разделся и наконец лег на мягкую постель."
     "Это было прекрасное чувство, благодаря которому у меня появилось дикое желание спать."
+    
+    show blink
+    
     "И я не стал мешать этому желанию, так что всего через каких-то минут пять, я уже уснул."
     
+    stop ambience fadeout 3
     jump blwnfh_day_2
     
     # конец первого дня

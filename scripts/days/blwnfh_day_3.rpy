@@ -250,7 +250,7 @@ label blwnfh_day_3:
     
     stop ambience fadeout 0.5
     stop music fadeout 0.5
-    scene bg ext_dining_hall_near_sunset with dissolve fadein 3
+    scene bg ext_dining_hall_near_sunset with dissolve
     play ambience ambience_camp_center_evening fadein 3
     
     "Выйдя на крыльцо я потянулся, и взял курс на клубы."

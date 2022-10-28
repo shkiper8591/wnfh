@@ -268,20 +268,42 @@ init -1 python:
 
     # Создание / объявление парных персонажей
 
-    def blwnfh_double_char_define(first, second, time_of_day):
+    #def blwnfh_double_char_define(first, second, time_of_day):
+    #    colors = {
+    #        "day":"#80A055",
+    #        "sunset":"#CDAF69",
+    #        "night":"#36B198"
+    #    }
+    #    gl = globals()
+    #    what_color = "#FFDD7D"
+    #    drop_shadow = (2, 2)
+    #    character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
+    #    gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
+    #
+    #for i in [("kat", "mi", "day"), ("kat", "un", "day"), ("me", "dv", "night"), ("me", "el", "sunset")]:
+    #    blwnfh_double_char_define(i[0], i[1], i[2])
+    
+    def blwnfh_double_char_define(first, second, time_of_day, kind=adv):
         colors = {
             "day":"#80A055",
             "sunset":"#CDAF69",
             "night":"#36B198"
         }
         gl = globals()
+        if kind == nvl:
+            who_suffix = ":"
+            ctc = "ctc_animation_nvl"
+        else:
+            who_suffix = ""
+            ctc = "ctc_animation"
         what_color = "#FFDD7D"
         drop_shadow = (2, 2)
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
-        gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
+        gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
-    for i in [("kat", "mi", "day"), ("kat", "un", "day"), ("me", "dv", "night"), ("me", "el", "sunset")]:
-        blwnfh_double_char_define(i[0], i[1], i[2])\
+    for i in [("kat", "mi", "day", adv), ("kat", "un", "day", adv), ("me", "dv", "night", nvl), ("me", "el", "sunset", adv)]:
+        blwnfh_double_char_define(i[0], i[1], i[2], i[3])
+    
     
     def blwnfh_set_mode(mode=adv):
         nvl_clear()

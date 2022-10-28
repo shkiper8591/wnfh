@@ -280,7 +280,7 @@ init -1 python:
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
 
-    for i in [("kat", "mi", "day"), ("kat", "un", "day")]:
+    for i in [("kat", "mi", "day"), ("kat", "un", "day"), ("me", "dv", "night"), ("me", "el", "sunset")]:
         blwnfh_double_char_define(i[0], i[1], i[2])\
     
     def blwnfh_set_mode(mode=adv):

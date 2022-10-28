@@ -22,16 +22,16 @@ label blwnfh_day_1:
     
     show blink
     
+    $ renpy.pause(3, hard=True)
+    
     window show
     
     "Но сердце колошматило так, что уснуть у меня не получалось."
-    scene black
     "Я попытался расслабится, дыша глубоко и размерено."
     "Сердце медленно успокоилось, вот только желания спать мне это не добавило."
     
     th "Видимо, придется вставать."
     
-    scene bg int_house_of_mt_sunset with dissolve2
     show unblink
     with None
     

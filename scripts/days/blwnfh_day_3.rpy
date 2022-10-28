@@ -1,10 +1,13 @@
 # семён просыпается
 label blwnfh_day_3:
+    $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
+    $ renpy.pause(1.5, hard=True)
     show bg int_house_of_mt_sunset with dissolve
-    play ambience ambience_int_cabin_evening
+    show unblink
+    play ambience ambience_int_cabin_evening fadein 3
     
-    "Мне приснился странный сон, в котором я будучи зайцем косил ту самую волшебную трын-траву, и напевал странные слова."
+    "Мне приснился странный сон, в котором я, будучи зайцем, косил ту самую волшебную трын-траву и напевал странные слова."
     
     th "Видимо мой мозг решил визуализировать вчерашний вечер с Алисой[wp] {w}Весело."
     
@@ -16,10 +19,10 @@ label blwnfh_day_3:
     
     "Почесав затылок, я быстренько оделся и взяв банные принадлежности, покинул дом."
     
-    stop ambience
+    stop ambience fadeout 0.5
     show bg ext_house_of_mt_sunset with dissolve
-    play ambience ambience_camp_center_evening
-    play music music_list["everyday_theme"] 
+    play ambience ambience_camp_center_evening fadein 3
+    play music music_list["everyday_theme"] fadein 5
     
     "Я посмотрел на шезлонг, чтобы удостоверится в своей теории."
     "Но там её не было, однако, я не то чтобы был разочарован данному факту. {w}Скорее я даже был больше рад, что с утра меня никто не будет доставать."
@@ -96,15 +99,17 @@ label blwnfh_day_3:
     kat "Ладно, я пошла."
     th "Ну и пожалуйста, ну и не нужно!"
     
+    hide kat with dspr
+    
     "Катя весело зашагала в сторону площади, а я начал тактично отступать обратно в сторону домиков, желая тайком вернутся к своей кровати."
     
-    stop music 
+    stop music fadeout 3
     show bg ext_houses_sunset with dissolve
     
     "Вскоре я вышел на дорогу с домиками."
     "До моей постели и лишнего часа отдыха оставалось пару десятков метров, так что я немного ускорил свой шаг как[wp]"
     
-    play music music_list["awakening_power"]
+    play music music_list["awakening_power"] fadein 1
     play sound sfx_punch_medium
     show mt surprise pioneer at center with dspr
     
@@ -120,7 +125,7 @@ label blwnfh_day_3:
     me "Пакет с банными принадлежности домой нес."
     mt "Так давай скорее!"
     
-    "Ольга Дмитриевна взяла меня за руку, и на большой скорости потащила меня к домику."
+    "Ольга Дмитриевна взяла меня за руку, и на большой скорости потащила к домику."
     
     # таймскип
     
@@ -128,9 +133,9 @@ label blwnfh_day_3:
     
     th "Победа была так близка[wp] {w}Лишний час валяния на кровати[wp] {w}Ну Ольга Дмитриевна, откуда вы высра[wp] То есть появились."
     
-    stop music
+    stop music fadeout 3
     show bg ext_square_sunset with dissolve 
-    play music music_list["silhouette_in_sunset"]
+    play music music_list["silhouette_in_sunset"] fadein 5
     
     "Вожатая как обычно не рассказывала ничего интересного, по крайней мере для меня. {w}Просто лишний шум на фоне."
     
@@ -173,9 +178,9 @@ label blwnfh_day_3:
     "Наконец прозвучал горн, и мучительно долгая линейка окончилась."
     "Вся огромная толпа пионеров быстрым шагом отправилась в столовую."
     
-    stop ambience
+    stop ambience fadeout 0.5
     scene bg int_dining_hall_people_sunset with dissolve
-    play ambience ambience_dining_hall_full
+    play ambience ambience_dining_hall_full fadein 3
     
     "Я протиснулся в столовую, где уже было мало свободных мест."
     "Взяв поднос, я вновь осмотрелся на наличие мест, и увидел одно хорошее местечко, рядом с Мику и Катей."
@@ -243,19 +248,18 @@ label blwnfh_day_3:
     "Мы сидели и болтали о разных мелочах, которые не имели никакого смысла, и выполняли лишь роль поддержания диалога."
     "Несмотря на то, что ел довольно медленно, я закончил есть быстрее девочек, и попрощавшись покинул столовую."
     
-    stop ambience 
-    stop music
-    scene bg ext_dining_hall_near_sunset with dissolve
-    play ambience ambience_camp_center_evening
+    stop ambience fadeout 0.5
+    stop music fadeout 0.5
+    scene bg ext_dining_hall_near_sunset with dissolve fadein 3
+    play ambience ambience_camp_center_evening fadein 3
     
     "Выйдя на крыльцо я потянулся, и взял курс на клубы."
     
     scene bg ext_dining_hall_away_sunset with dissolve
-    
-    # небольшая пауза
-    scene bg ext_square_sunset with dissolve 
-    # небольшая пауза
-    scene bg ext_clubs_sunset_blwnfh with dissolve
+    $ renpy.pause(1.5, hard=True)
+    scene bg ext_square_sunset with dissolve2 
+    $ renpy.pause(1.5, hard=True)
+    scene bg ext_clubs_sunset with dissolve2
     
     "Вскоре я был перед клубами, в которые незамедлительно вошел."
     

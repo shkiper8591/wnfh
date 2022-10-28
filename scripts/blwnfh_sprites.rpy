@@ -37,13 +37,30 @@ init 2:
             #'uv': {
             #    'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
             #},
+            # Да, еда и стол это персонажи, чё вы мне сделаете?
+            'table': {
+                'shakers': 1,
+            },
+            'left-tray': {
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+            },
+            'right-tray': {
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+            },
+            'mid-tray': {
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+            },
         }
 
         distance_to_position = {
             "far": (630, 1080),
             "normal": (900, 1080),
             "close": (1050, 1080),
-            "background": (1920, 1080)
+            "background": (1920, 1080),
+            "foods": (1920, 1080),
+            #"left": (1920, 1080),
+            #"right": (1920, 1080),
+            #"mid": (1920, 1080),
         }
 
         def _sprite_for_all_times(full_sprite_name, composite_image):
@@ -98,6 +115,8 @@ init 2:
                     full_sprite_name = '%s %s %s' % (character, emotion, sprite_name)
                     if not sprite_name:
                         full_sprite_name = '%s %s' % (character, emotion)  # Не у всех есть одежда
+                    if not emotion:
+                        full_sprite_name = '%s' % (character) # Безэмоциональный спрайт
                     if distance != 'normal':
                         full_sprite_name += ' ' + distance
 
@@ -133,6 +152,13 @@ init 2:
 
 
         # Объявляем спрайты
+        ### Базированный кринж
+        ## Хавчик
+        make_sprites_for('left-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('right-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('mid-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        
+        ### Нормальные спрайты
         ## Новые персонажи
         make_sprites_for('kat', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual', ['mod:body', 'mod:casual', 'mod:<emotion>'])
@@ -273,8 +299,13 @@ init 2:
         #make_sprites_for('dv', 'pioneer2 sepia', ['es:body', 'es:pioneer2', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         #make_sprites_for('us', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         #make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
+    
+    ## Я не ебу как это по-русски нормально назвать
+    image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "shakers.png")
+    ## Стол
+    image table = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "table.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "table.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "table.png")
+    ## Стул
     image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "chair.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "chair.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "chair.png")
-
     image chair_l:
         "chair"
         left

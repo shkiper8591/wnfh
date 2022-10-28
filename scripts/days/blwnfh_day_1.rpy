@@ -50,7 +50,7 @@ label blwnfh_day_1:
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
-    scene bg ext_houses_sunset with slide_left_blure_dissolve22
+    scene bg ext_houses_sunset with slide_left_blure_dissolve2
     
     "Идя по дороге, я попытался вспомнить, что же мне такого приснилось."
     "Но дальше побега от огромной, огнедышащей, креветки, в моей памяти ничего не всплывало."
@@ -69,7 +69,7 @@ label blwnfh_day_1:
 
     "Здесь никого не было(что, в прочем, не удивительно)."
     
-    scene bg ext_washstand2_day with sphere_blure_dissolve22
+    scene bg ext_washstand2_day with sphere_blure_dissolve2
     
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, дабы ещё немного помыться."
     "Конечно, сделать это будет непросто без горячей воды, но её как на зло, пару дней назад отключили." 
@@ -90,7 +90,7 @@ label blwnfh_day_1:
     "Как совершенно неожиданно сюда пришла Славя."    
     "Показывать ей свой голый торс совсем не хотелось, а посему я спрятался за умывальник."
     
-    scene bg ext_washstand_day with sphere_invert_blure_dissolve22
+    scene bg ext_washstand_day with sphere_invert_blure_dissolve2
     
     th "Надеюсь она не заметила меня."
     
@@ -171,7 +171,7 @@ label blwnfh_day_1:
     
     scene bg ext_houses_day with dissolve2
     $ renpy.pause(1)
-    scene bg ext_house_of_mt_day with slide_left_blure_dissolve22
+    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
     
     "Подойдя к дому, я услышал, что оттуда доносятся звуки возни."
     

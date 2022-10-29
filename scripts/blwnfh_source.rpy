@@ -283,6 +283,8 @@ init -1 python:
     #for i in [("kat", "mi", "day"), ("kat", "un", "day"), ("me", "dv", "night"), ("me", "el", "sunset")]:
     #    blwnfh_double_char_define(i[0], i[1], i[2])
     
+    
+    ## Спизженные из БКРР парные персонажи и модернизированные для работы с NVL
     def blwnfh_double_char_define(first, second, time_of_day, kind=adv):
         colors = {
             "day":"#80A055",

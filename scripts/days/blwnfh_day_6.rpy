@@ -3691,7 +3691,7 @@ label blwnfh_day_6:
     $ blwnfh_set_time("sunset")
     scene bg ext_clubs_sunset with dissolve2
     play ambience ambience_camp_center_evening fadein 3
-    renpy.pause(1.0)
+    $ renpy.pause(1.0)
     window show
     
     

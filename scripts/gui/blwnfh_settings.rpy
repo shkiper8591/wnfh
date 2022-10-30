@@ -74,83 +74,13 @@ init 2:
             at blwnfh_splash_anim(0.65, 0.138, -3.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
-            idle blwnfh_gui["img"]["fish"]
-            hover blwnfh_gui["img"]["fish"]
-            hovered menu_hovered_action_cat                       
-            at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.0944444, 0.0) 
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_0")]
-            idle blwnfh_gui["img"]["play"]
-            hover blwnfh_gui["img"]["play"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("play_text")
-            unhovered ToggleScreenVariable("play_text")            
-            at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_settings")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
             idle blwnfh_gui["img"]["settings"]
             hover blwnfh_gui["img"]["settings"]
             hover_sound blwnfh_gui["sound"]["plimp"]
             hovered ToggleScreenVariable("settings_text")
             unhovered ToggleScreenVariable("settings_text")
             at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_gallery_menu")]
-            idle blwnfh_gui["img"]["gallery"]
-            hover blwnfh_gui["img"]["gallery"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("galary_text")
-            unhovered ToggleScreenVariable("galary_text")
-            at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_achievements")]
-            idle blwnfh_gui["img"]["achievements"]
-            hover blwnfh_gui["img"]["achievements"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("achievements_text")
-            unhovered ToggleScreenVariable("achievements_text")
-            at blwnfh_menu_pos_atl(1.0, 0.4875, 0.284259259, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
-            idle blwnfh_gui["img"]["scheme"]
-            hover blwnfh_gui["img"]["scheme"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("scheme_text")
-            unhovered ToggleScreenVariable("scheme_text")
-            at blwnfh_menu_pos_atl(1.0, 0.594270833, 0.284259259, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
-            idle blwnfh_gui["img"]["dlc"]
-            hover blwnfh_gui["img"]["dlc"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("dlc_text")
-            unhovered ToggleScreenVariable("dlc_text")
-            at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
-            idle blwnfh_gui["img"]["info"]
-            hover blwnfh_gui["img"]["info"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("info_text")
-            unhovered ToggleScreenVariable("info_text")
-            at blwnfh_menu_pos_atl(1.0, 0.808333333, 0.284259259, 0.0)
-        
-        imagebutton:
-            action Return()
-            idle blwnfh_gui["img"]["exit"]
-            hover blwnfh_gui["img"]["exit"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("exit_text")
-            unhovered ToggleScreenVariable("exit_text")
-            at blwnfh_menu_pos_atl(1.0, 0.915104167, 0.284259259, 0.0)
         
         frame:
             background "#0005"

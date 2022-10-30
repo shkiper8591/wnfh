@@ -30,6 +30,11 @@ label blwnfh_test:
     "Работает"
     "Вроде"
     
+    play music blwnfh_music_list["angus_climbs_the_hill"] fadein 3
+    $ blwnfh_get_relation("void", "Alec Holowka - Angus Climbs the Hill", "None")
+    
+    "И это тоже вроде работает"
+    
     show cg d2_dv_sem_scene with dspr
     $ blwnfh_set_mode(nvl)
     nvl show

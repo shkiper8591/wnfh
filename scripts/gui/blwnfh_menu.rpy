@@ -90,7 +90,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_settings")]
+            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_settings_menu")]
             idle blwnfh_gui["img"]["settings"]
             hover blwnfh_gui["img"]["settings"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -218,9 +218,13 @@ init 2:
             ease 0.20 zoom 1.25
         repeat
 
+
+
 label blwnfh_main:
     scene bg disclaimer with dissolve
     $ renpy.pause(100)
+    jump blwnfh_main_menu
+label blwnfh_main_menu:
     scene bg fon with dissolve
     $ renpy.pause(2)
     $ init_splash()

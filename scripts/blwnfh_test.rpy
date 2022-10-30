@@ -4,7 +4,7 @@ label technical_chocolatki:
     play music blwnfh_music_list["technical_chocolatki"] fadein 3
     "Ведутся работы"
     stop music
-    jump blwnfh_main
+    jump blwnfh_main_menu
 
 
 

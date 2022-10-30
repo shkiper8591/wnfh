@@ -25,6 +25,7 @@ init -4 python:
     blwnfh_ACHIEVEMENTS = blwnfh_IMAGES + "gui/achievements/"
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
+    blwnfh_SETTINGS = blwnfh_IMAGES + "gui/settings/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"
     blwnfh_OTHER = blwnfh_IMAGES + "other/"
@@ -142,6 +143,11 @@ init -1 python:
         "button_2",
         "cg",
         "bg"
+        ]}
+    
+    blwnfh_gui["settings"] = {img:(blwnfh_SETTINGS + img + ".png") for img in [
+        "on",
+        "off"
         ]}
     
     blwnfh_gui["sound"] = {

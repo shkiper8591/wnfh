@@ -439,7 +439,7 @@ init -1 python:
             renpy.show("rel_neutral", [blwnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end)])
         elif relation == "None":
             renpy.pause(1.0)
-        renpy.pause(6.0, hard=True)
+        renpy.pause(1.5, hard=True)
         renpy.hide("point")
         
     
@@ -488,6 +488,30 @@ init 2:
     
     # MUSIC Лист
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
+    $ blwnfh_music_list["angus_climbs_the_hill"] = blwnfh_MUSIC + "Alec Holowka - Angus Climbs the Hill.mp3"
+    $ blwnfh_music_list["church_hill"] = blwnfh_MUSIC + "Alec Holowka - Church Hill.mp3"
+    $ blwnfh_music_list["crimes"] = blwnfh_MUSIC + "Alec Holowka - Crimes.mp3"
+    $ blwnfh_music_list["crimes2"] = blwnfh_MUSIC + "Alec Holowka - Crimes2.mp3"
+    $ blwnfh_music_list["greggs_woods"] = blwnfh_MUSIC + "Alec Holowka - Gregg's Woods.mp3"
+    $ blwnfh_music_list["im_going_to_break_something"] = blwnfh_MUSIC + "Alec Holowka - I'm Going to Break Something.mp3"
+    $ blwnfh_music_list["library_investigations"] = blwnfh_MUSIC + "Alec Holowka - Library Investigations.mp3"
+    $ blwnfh_music_list["lori_m"] = blwnfh_MUSIC + "Alec Holowka - Lori M.mp3"
+    $ blwnfh_music_list["lost_woods"] = blwnfh_MUSIC + "Alec Holowka - Lost Woods.mp3"
+    $ blwnfh_music_list["maes_house_2"] = blwnfh_MUSIC + "Alec Holowka - Mae's House 2.mp3"
+    $ blwnfh_music_list["mystery"] = blwnfh_MUSIC + "Alec Holowka - Mystery .mp3"
+    $ blwnfh_music_list["outskirts"] = blwnfh_MUSIC + "Alec Holowka - Outskirts.mp3"
+    $ blwnfh_music_list["the_bridge"] = blwnfh_MUSIC + "Alec Holowka - The Bridge.mp3"
+    $ blwnfh_music_list["waking_up"] = blwnfh_MUSIC + "Alec Holowka - Waking up.mp3"
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     # Рандомизация одинаковых звуков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
     

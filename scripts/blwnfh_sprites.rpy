@@ -42,13 +42,13 @@ init 2:
                 'shakers': 1,
             },
             'left-tray': {
-                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+                'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'right-tray': {
-                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+                'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'mid-tray': {
-                'd1_breakfast_full': 1, 'd1_breakfast_half': 1,
+                'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
         }
 
@@ -58,9 +58,6 @@ init 2:
             "close": (1050, 1080),
             "background": (1920, 1080),
             "foods": (1920, 1080),
-            #"left": (1920, 1080),
-            #"right": (1920, 1080),
-            #"mid": (1920, 1080),
         }
 
         def _sprite_for_all_times(full_sprite_name, composite_image):

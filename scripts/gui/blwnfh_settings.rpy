@@ -1,6 +1,6 @@
 init 2:
     
-    screen blwnfh_menu():
+    screen blwnfh_settings_menu():
         modal True tag menu
         
         key "game_menu":
@@ -12,7 +12,14 @@ init 2:
         frame:
             background blwnfh_gui["img"]["fon"]
             area(0.0, 0.0, 1.0, 1.0)
-        
+            
+            imagebutton:
+                action ShowMenu("blwnfh_menu")
+                idle blwnfh_gui["gallery"]["back"]
+                hover blwnfh_gui["gallery"]["back"]
+                hover_sound blwnfh_gui["sound"]["plimp"]
+                at blwnfh_menu_pos_atl(0.82, 0.1, 0.082, 0.0)
+                
         python:
             blwnfh_posx = .333
             blwnfh_posy = .52
@@ -38,21 +45,21 @@ init 2:
         default exit_text = False
         
         if play_text:
-            text "Играть" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
+            text "Играть"       style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif settings_text:
-            text "Настройки" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
+            text "Настройки"    style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif galary_text:
-            text "Галерея" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
+            text "Галерея"      style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif achievements_text:
-            text "Достижения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
+            text "Достижения"   style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
         elif scheme_text:
-            text "Схема" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
+            text "Схема"        style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif dlc_text:
-            text "Дополнения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
+            text "Дополнения"   style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif info_text:
-            text "Информация" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
+            text "Информация"   style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         elif exit_text:
-            text "Выход" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
+            text "Выход"        style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
         else:
             null height 20
             
@@ -61,26 +68,27 @@ init 2:
             font blwnfh_FONTS + "msjhl.ttc"
             size 30
 
-        text "Мы не отсюда":
+        text "Настройки":
             align(0.5, 0.06)
             style "blwnfh_title"
             size 80
             kerning 2
         
-        text blwnfh_splash():
-            font blwnfh_FONTS + "vcr_osd.ttf"
-            color "#FFFF00"
-            size 20
-            at blwnfh_splash_anim(0.65, 0.138, -3.0)
-        
-        imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
-            idle blwnfh_gui["img"]["settings"]
-            hover blwnfh_gui["img"]["settings"]
-            hover_sound blwnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("settings_text")
-            unhovered ToggleScreenVariable("settings_text")
-            at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
+        if not persistent.sukablyat_blwnfh:
+            textbutton "Виджет (ЛП): выкл." xpos 0.65 ypos 0.255:
+                style "blwnfh_menu"
+                hover_sound blwnfh_gui["sound"]["plimp"]
+                hovered Show("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))
+                unhovered [Hide("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))]
+                action [SetField(persistent,'lp_widget_7dl', True), Hide("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))]
+        else:
+            textbutton "Виджет (ЛП): вкл." xpos 0.65 ypos 0.255:
+                style "blwnfh_menu"
+                hover_sound blwnfh_gui["sound"]["plimp"]
+                hovered Show("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))
+                unhovered [Hide("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))]
+                action [SetField(persistent,'lp_widget_7dl', False), Hide("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))]
+
         
         frame:
             background "#0005"
@@ -97,7 +105,7 @@ init 2:
     
                     null height 20
     
-                    text u"Новости":
+                    text u"Подсказка":
                         align(0.5, 0.0)
                         style "blwnfh_menu"
                         size 42
@@ -110,11 +118,7 @@ init 2:
                         draggable True
                         mousewheel True
                         scrollbars None
-                        
-                        text u"{b}alpha 0.1{/b}\n" + "Альфа! Что принесла нам Альфа? НИ#$@ она нам не принесла, только это окошко с новостями, где будут писаться свежие обновления мода. Это создано для тех, кто не следит за группой.":
-                            style "blwnfh_news"
-                            size 25
-                            kerning 1
+
                         
             vbar:
                 value YScrollValue("menu_news")
@@ -147,11 +151,22 @@ init 2:
             ease 0.25 zoom 1.30
             ease 0.20 zoom 1.25
         repeat
-
-label blwnfh_main:
-    scene bg disclaimer with dissolve
-    $ renpy.pause(100)
-    scene bg fon with dissolve
-    $ renpy.pause(2)
-    $ init_splash()
-    call screen blwnfh_menu with dissolve
+        
+screen settings_widget_sukablyat_on_blwnfh():
+    text "Включить виджет для" xpos 0.653 ypos 0.6:
+        style "blwnfh_menu"
+    text "отображения прогресса и" xpos 0.653 ypos 0.646:
+        style "blwnfh_menu"
+    text "информации по моду (в" xpos 0.653 ypos 0.692:
+        style "blwnfh_menu"
+    text "т.ч. очков отношений)." xpos 0.653 ypos 0.738:
+        style "blwnfh_menu"
+screen settings_widget_sukablyat_off_blwnfh():
+    text "Выключить виджет для" xpos 0.653 ypos 0.6:
+        style "blwnfh_menu"
+    text "отображения прогресса и" xpos 0.653 ypos 0.646:
+        style "blwnfh_menu"
+    text "информации по моду (в" xpos 0.653 ypos 0.692:
+        style "blwnfh_menu"
+    text "т.ч. очков отношений)." xpos 0.653 ypos 0.738:
+        style "blwnfh_menu"

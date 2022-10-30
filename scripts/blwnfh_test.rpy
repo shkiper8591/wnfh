@@ -37,6 +37,18 @@ label blwnfh_test:
     
     show cg d2_dv_sem_scene with dspr
     
+    # Матюки
+    if persistent.sukablyat_blwnfh == False:
+        me "Шурик блять, мне олово за шиворот капает!"
+    # Цензура
+    elif persistent.sukablyat_type_blwnfh == False:
+        me "Шурик @$&&^@, мне олово за шиворот капает!"
+    # Замена
+    else:
+        me "Александр, будь пожалуйста аккуратнее, а то из-за вашей криворукости расплавленное олово капает мне за шиворот."
+    
+    
+    
     me "Остров невезения!"
     
     $ blwnfh_set_mode(nvl)

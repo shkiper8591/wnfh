@@ -160,7 +160,8 @@ init 1:
     $ style.blwnfh_title.drop_shadow_color = "#222"
     $ style.blwnfh_title.text_align = 0.5
     $ style.blwnfh_title.yalign = 0.5
-    $ style.blwnfh_title.kerning = 17.0
+    $ style.blwnfh_title.size = 80
+    $ style.blwnfh_title.kerning = 2.0
     $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
 
     $ style.blwnfh_menu = Style(style.default)
@@ -170,16 +171,44 @@ init 1:
     $ style.blwnfh_menu.drop_shadow_color = "#222"
     $ style.blwnfh_menu.text_align = 0.5
     $ style.blwnfh_menu.yalign = 0.5
-    $ style.blwnfh_menu.kerning = 17.0
+    $ style.blwnfh_menu.size = 42
+    $ style.blwnfh_menu.kerning = 1.0
     $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
+    
+    $ style.blwnfh_settings = Style(style.default)
+    $ style.blwnfh_settings.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_settings.color = "#FFF"
+    $ style.blwnfh_settings.text_align = 0.0
+    $ style.blwnfh_settings.drop_shadow = (2, 2)
+    $ style.blwnfh_settings.drop_shadow_color = "#222"
+    $ style.blwnfh_settings.text_align = 0.5
+    $ style.blwnfh_settings.yalign = 0.5
+    $ style.blwnfh_settings.size = 35
+    $ style.blwnfh_settings.kerning = 1.0
+    $ renpy.image("blwnfh_settings", ParameterizedText(style="blwnfh_settings", size=64))
 
+    $ style.blwnfh_settings_textbutton = Style(style.default)
+    $ style.blwnfh_settings_textbutton.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_settings_textbutton.size = 35
+    $ style.blwnfh_settings_textbutton.kerning = 1.0
+    $ style.blwnfh_settings_textbutton.color = "#FFF"
+    $ style.blwnfh_settings_textbutton.text_align = 0.0
+    $ style.blwnfh_settings_textbutton.drop_shadow = (2, 2)
+    $ style.blwnfh_settings_textbutton.drop_shadow_color = "#222"
+    $ style.blwnfh_settings_textbutton.hover_color = "#E6E6E6"
+    $ style.blwnfh_settings_textbutton.selected_color = "#FFF"
+    $ style.blwnfh_settings_textbutton.selected_idle_color = "#FFF"
+    $ style.blwnfh_settings_textbutton.selected_hover_color = "#E6E6E6"
+    $ style.blwnfh_settings_textbutton.insensitive_color = "#FFF"
+      
     $ style.blwnfh_news = Style(style.default)
     $ style.blwnfh_news.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_news.color = "#FFF"
     $ style.blwnfh_news.drop_shadow = (2, 2)
     $ style.blwnfh_news.drop_shadow_color = "#222"
     $ style.blwnfh_news.text_align = 0.0
-    $ style.blwnfh_news.kerning = 17.0
+    $ style.blwnfh_settings.size = 25
+    $ style.blwnfh_news.kerning = 1.0
     $ renpy.image("blwnfh_news", ParameterizedText(style="blwnfh_news", size=64))
     
     $ style.blwnfh_choice_day = Style(style.default)
@@ -276,43 +305,3 @@ init 1:
     $ style.blwnfh_thought.drop_shadow_color = "#000"
     $ style.blwnfh_thought.text_align = 0.5
     $ renpy.image("blwnfh_thought", ParameterizedText(style="blwnfh_thought", size=40))
-    
-    # Всплывающие мысли спизженныe из БКРР, да кого я обманываю, тут половина кода спизжено из кефира, 7дл и ещё десятка других модов
-    
-    python:
-
-        def blwnfh_thoughts_show(*args):
-            colors = {
-                "day":"#E2C778",
-                "sunset":"#DCD168",
-                "night":"#3CCFA2",
-                "prologue":"#98D8DA"
-            }
-            pt = 0.1
-            t = 4.0
-            sy = ey = 1.0 / len(args)
-            for i, text in enumerate(args):
-                if not i % 2:
-                    sx = -0.1
-                    ex = random.uniform(0.3, 0.4)
-                    rot = -27.5
-                else:
-                    sx = 1.1
-                    ex = random.uniform(0.7, 0.6)
-                    rot = 27.5
-                sy += 0.1
-                ey += 0.1
-                renpy.show("thought_text", [blwnfh_thoughts_atl(t, pt, sx, sy, ex, ey, rot)], tag="thought_text" + str(i), what=Text(text, style=style.blwnfh_thought, color=colors[persistent.timeofday], size=40))
-                pt += 0.22
-            renpy.pause()
-            for i in range(len(args)):
-                renpy.hide("thought_text" + str(i))
-                renpy.with_statement(Dissolve(0.15))
-
-    transform blwnfh_thoughts_atl(t, pt, sx, sy, ex, ey, rot):
-        pos(sx, sy)
-        anchor(0.5, 0.5)
-        rotate rot
-        alpha 0.0
-        pause pt
-        ease t pos(ex, ey) rotate renpy.random.randint(-4, 4) alpha 1.0

@@ -64,8 +64,6 @@ init 2:
         text "Мы не отсюда":
             align(0.5, 0.06)
             style "blwnfh_title"
-            size 80
-            kerning 2
         
         text blwnfh_splash():
             font blwnfh_FONTS + "vcr_osd.ttf"
@@ -170,8 +168,6 @@ init 2:
                     text u"Новости":
                         align(0.5, 0.0)
                         style "blwnfh_menu"
-                        size 42
-                        kerning 2.2
     
                     null height 25
     
@@ -183,8 +179,6 @@ init 2:
                         
                         text u"{b}alpha 0.1{/b}\n" + "Альфа! Что принесла нам Альфа? НИ#$@ она нам не принесла, только это окошко с новостями, где будут писаться свежие обновления мода. Это создано для тех, кто не следит за группой.":
                             style "blwnfh_news"
-                            size 25
-                            kerning 1
                         
             vbar:
                 value YScrollValue("menu_news")

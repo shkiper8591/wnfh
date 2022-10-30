@@ -75,19 +75,39 @@ init 2:
             kerning 2
         
         if not persistent.sukablyat_blwnfh:
-            textbutton "Виджет (ЛП): выкл." xpos 0.65 ypos 0.255:
-                style "blwnfh_menu"
+            textbutton "Матфильтр: выкл." xpos 0.08 ypos 0.25:
+                style "blwnfh_settings"
+                text_style "blwnfh_settings_textbutton"
                 hover_sound blwnfh_gui["sound"]["plimp"]
                 hovered Show("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))
                 unhovered [Hide("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))]
-                action [SetField(persistent,'lp_widget_7dl', True), Hide("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))]
+                action [SetField(persistent,'sukablyat_blwnfh', True), Hide("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))]
         else:
-            textbutton "Виджет (ЛП): вкл." xpos 0.65 ypos 0.255:
-                style "blwnfh_menu"
+            textbutton "Матфильтр: вкл." xpos 0.08 ypos 0.25:
+                style "blwnfh_settings"
+                text_style "blwnfh_settings_textbutton"
                 hover_sound blwnfh_gui["sound"]["plimp"]
                 hovered Show("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))
                 unhovered [Hide("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2))]
-                action [SetField(persistent,'lp_widget_7dl', False), Hide("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))]
+                action [SetField(persistent,'sukablyat_blwnfh', False), Hide("settings_widget_sukablyat_off_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_on_blwnfh", transition=Dissolve(0.2))]
+                
+        if persistent.sukablyat_blwnfh == True:
+            if not persistent.sukablyat_type_blwnfh:
+                textbutton "Тип матфильтра: цензура" xpos 0.28 ypos 0.25:
+                    style "blwnfh_settings"
+                    text_style "blwnfh_settings_textbutton"
+                    hover_sound blwnfh_gui["sound"]["plimp"]
+                    hovered Show("settings_widget_sukablyat_type_censor_blwnfh", transition=Dissolve(0.2))
+                    unhovered [Hide("settings_widget_sukablyat_type_censor_blwnfh", transition=Dissolve(0.2))]
+                    action [SetField(persistent,'sukablyat_type_blwnfh', True), Hide("settings_widget_sukablyat_type_censor_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_type_change_blwnfh", transition=Dissolve(0.2))]
+            else:
+                textbutton "Тип матфильтра: замена слов" xpos 0.28 ypos 0.25:
+                    style "blwnfh_settings"
+                    text_style "blwnfh_settings_textbutton"
+                    hover_sound blwnfh_gui["sound"]["plimp"]
+                    hovered Show("settings_widget_sukablyat_type_change_blwnfh", transition=Dissolve(0.2))
+                    unhovered [Hide("settings_widget_sukablyat_type_change_blwnfh", transition=Dissolve(0.2))]
+                    action [SetField(persistent,'sukablyat_type_blwnfh', False), Hide("settings_widget_sukablyat_type_change_blwnfh", transition=Dissolve(0.2)), Show("settings_widget_sukablyat_type_censor_blwnfh", transition=Dissolve(0.2))]
 
         
         frame:
@@ -108,8 +128,6 @@ init 2:
                     text u"Подсказка":
                         align(0.5, 0.0)
                         style "blwnfh_menu"
-                        size 42
-                        kerning 2.2
     
                     null height 25
     
@@ -118,55 +136,17 @@ init 2:
                         draggable True
                         mousewheel True
                         scrollbars None
-
                         
-            vbar:
-                value YScrollValue("menu_news")
-                bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
-                top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
-                thumb "null"
-                at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)
-            
-
-    transform blwnfh_menu_pos_atl(z, x, y, rot):
-        zoom z
-        pos(x, y)
-        anchor(0.5, 0.5)
-        rotate rot
-        blwnfh_menu_hover_atl(z, rot)
-        
-    transform blwnfh_menu_hover_atl(z, rot):
-        on hover:
-            ease 0.1 zoom (z - 0.15) rotate 0.0
-            ease 0.1 zoom (z - 0.02)
-        on idle:
-            ease 0.1 zoom z rotate rot
-        
-    transform blwnfh_splash_anim(x, y, rot):
-        block:
-            rotate rot
-            pos(x, y)
-            anchor(0.5, 0.5)
-        block:
-            ease 0.25 zoom 1.30
-            ease 0.20 zoom 1.25
-        repeat
         
 screen settings_widget_sukablyat_on_blwnfh():
-    text "Включить виджет для" xpos 0.653 ypos 0.6:
-        style "blwnfh_menu"
-    text "отображения прогресса и" xpos 0.653 ypos 0.646:
-        style "blwnfh_menu"
-    text "информации по моду (в" xpos 0.653 ypos 0.692:
-        style "blwnfh_menu"
-    text "т.ч. очков отношений)." xpos 0.653 ypos 0.738:
-        style "blwnfh_menu"
+    text "Маты будут выглядеть так: блять" xpos 0.653 ypos 0.6:
+        style "blwnfh_settings"
 screen settings_widget_sukablyat_off_blwnfh():
-    text "Выключить виджет для" xpos 0.653 ypos 0.6:
-        style "blwnfh_menu"
-    text "отображения прогресса и" xpos 0.653 ypos 0.646:
-        style "blwnfh_menu"
-    text "информации по моду (в" xpos 0.653 ypos 0.692:
-        style "blwnfh_menu"
-    text "т.ч. очков отношений)." xpos 0.653 ypos 0.738:
-        style "blwnfh_menu"
+    text "Выключить матфильтр" xpos 0.653 ypos 0.6:
+        style "blwnfh_settings"   
+screen settings_widget_sukablyat_type_censor_blwnfh():
+    text "Маты будут выглядеть так: @%#$!" xpos 0.653 ypos 0.6:
+        style "blwnfh_settings"
+screen settings_widget_sukablyat_type_change_blwnfh():
+    text "Маты будут выглядеть так: блин" xpos 0.653 ypos 0.6:
+        style "blwnfh_settings"

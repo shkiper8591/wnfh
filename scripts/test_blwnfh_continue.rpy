@@ -22,29 +22,7 @@ label blwnfh_continue:
         hide un with dspr
         jump blwnfh_continue_2
         
-label blwnfh_continue_2:
 
-    $ persistent.sprite_time = "sunset"
-    $ sunset_time()
-    
-    scene
-    $ renpy.show("bg ext_music_club_sunset", what = "ext_music_club_sunset")
-    with slide_left_blure_dissolve5
-
-    "Вечерний на два"
-    call screen blwnfh_double_choice("kat", "mt", "Какой-то текст", "Какой-то текст", "Катя", "Ольга Дмитриевна", "blwnfh_kat", "blwnfh_mt", "sunset") with sphere_blure_dissolve2
-    
-    label blwnfh_kat:
-        show kat normal pioneer at center with dspr
-        kat "Ну и дурак ты, Семён"
-        hide kat with dspr
-        jump blwnfh_continue_3
-    
-    label blwnfh_mt:
-        show mt normal pioneer at center with dspr
-        mt "Хули так поздно припёрся, тварь?"
-        hide mt with dspr
-        jump blwnfh_continue_3
         
     
 label blwnfh_continue_3:

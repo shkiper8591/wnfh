@@ -10,7 +10,7 @@ label technical_chocolatki:
 
 label blwnfh_test:
 
-    $ new_chapter(2, u"Мы не отсюда. Тест.")
+    $ blwnfh_set_savename(0)
     $ blwnfh_set_time()
     scene black
     

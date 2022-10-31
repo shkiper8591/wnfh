@@ -1,14 +1,15 @@
 # семён просыпается
 label blwnfh_day_3:
+    $ blwnfh_set_savename(3)
     $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
-    $ renpy.pause(1.5, hard=True)
     show bg int_house_of_mt_sunset with dissolve
     show unblink
     play ambience ambience_int_cabin_evening fadein 3
+    $ renpy.pause(1.5, hard=True)
+    window show
     
-    "Мне приснился странный сон, в котором я, будучи зайцем, косил ту самую волшебную трын-траву и напевал странные слова."
-    
+    th "Я видел удивительный сон, в котором будучи зайцем, косил ту самую волшебную трын-траву и напевал странные слова."
     th "Видимо мой мозг решил визуализировать вчерашний вечер с Алисой[wp] {w}Весело."
     
     "Я потянулся в кровати и перевел взгляд на будильник. Он показывал время восемь утра."
@@ -298,7 +299,7 @@ label blwnfh_day_3:
     stop ambience
     scene bg ext_clubs_day with dissolve
     play ambience ambience_camp_center_day
-    play music music_list["angus_climbs_the_hill"]
+    play music blwnfh_music_list["angus_climbs_the_hill"]
     
     "Похрустев спиной, я отправился в сторону склада."
     
@@ -463,7 +464,7 @@ label blwnfh_day_3:
     me "Дела[wp] {w}Я знаешь, тоже могу много небылиц наговорить про вас, например Кате."
     dv "И думаешь она тебе поверит?"
     
-    play music music_list["im_going_to_break_something"]
+    play music blwnfh_music_list["im_going_to_break_something"]
     
     "Моё терпение понемногу стало заканчиваться, и я бросил на Алису крайне недовольный взгляд."
     
@@ -569,7 +570,7 @@ label blwnfh_day_3:
     stop ambience 
     scene bg ext_clubs_day with dissolve
     play ambience ambience_camp_center_day
-    play music music_list["lori_m"]
+    play music blwnfh_music_list["lori_m"]
     
     "Идти в обитель зла и разврата мне крайне не хотелось."
     
@@ -913,7 +914,7 @@ label blwnfh_day_3:
     show us normal pioneer at center with dspr
     play ambience ambience_dining_hall_empty
     show us smile pioneer at center with dspr
-    play music music_list["crimes"] 
+    play music blwnfh_music_list["crimes"] 
     
     us "Ну что? Пойдем на дело?"
     
@@ -987,7 +988,7 @@ label blwnfh_day_3:
     "Громко фыркнув, за ней последовала и Галя."
     "Отлипли мы от стены только тогда, когда повариха закрыла за собой дверь."
     
-    play music music_list["crimes_2"]
+    play music blwnfh_music_list["crimes_2"]
     show us laugh2 pioneer close at center with dspr
     
     us "Это было весело!"
@@ -1072,7 +1073,7 @@ label blwnfh_day_3:
     stop ambience
     scene bg int_library_day with dissolve
     play ambience ambience_library_day
-    play music music_list["library_investigations"]
+    play music blwnfh_music_list["library_investigations"]
     
     "Внутри я никого не обнаружил, но почти сразу ко мне из-за книжных полок вышла Женя."
     
@@ -1695,7 +1696,7 @@ label blwnfh_day_3:
     "Катя встала рядом со мной, и мы отправились к нашим домикам."
     
     scene bg ext_houses_sunset with dissolve
-    play music music_list["church_hill"]
+    play music blwnfh_music_list["church_hill"]
     
     "Шли мы неспеша."
     
@@ -1766,7 +1767,7 @@ label blwnfh_day_3:
     # Семён закрывает глаза
     window hide
     show anim prolog_1 with dspr
-    play music music_list["mystery"]
+    play music blwnfh_music_list["mystery"]
     $ blwnfh_set_mode(nvl)
     nvl show dissolve 
     
@@ -1780,6 +1781,8 @@ label blwnfh_day_3:
     "Сразу стало понятно, что я попал в осознанное сновиденье, но вот только как?"
     "Впрочем, имеет ли это значение?"
     "Я попытался сделать хоть что-то, но ничего не вышло, зато появилось ощущение того, что меня будто подвесили в воздухе."
+    
+    nvl clear
     
     th "Странное ощущение[wp] Похоже точно кошмар." 
     
@@ -1811,7 +1814,7 @@ label blwnfh_day_3:
     kat "Т-Ты в порядке?"
     me "Да так, во сне испугался."
     
-    play music music_list["maes_house_2"]
+    play music blwnfh_music_list["maes_house_2"]
     
     "Немного отдышавшись ответил я."
     
@@ -1908,7 +1911,7 @@ label blwnfh_day_3:
     stop ambience
     show bg ext_dining_hall_near_sunset with dissolve
     play ambience ambience_camp_center_evening            
-    play music music_list["the_bridge"]
+    play music blwnfh_music_list["the_bridge"]
     
     kat "Мы пойдем в какое-то определенное место или просто будет бродить по лесу?"
     me "Я думаю, просто ходить, без какой-то определенной цели."
@@ -2039,7 +2042,7 @@ label blwnfh_day_3:
     stop music
     show bg ext_path_night with dissolve
     play ambience ambience_forest_night
-    play music music_list["lost_woods"]
+    play music blwnfh_music_list["lost_woods"]
     
     # ночной интерфейс и спрайты
     
@@ -2117,7 +2120,7 @@ label blwnfh_day_3:
     
     "Растопив печь, я плотно закрыл дверь землянки."
     
-    play music music_list["firefiels_on_the_porch"]
+    play music blwnfh_music_list["firefiels_on_the_porch"]
     
     "Постепенно, землянка стала заливаться треском горящих дров и теплом."
     "Я повернулся к Кате и та, плотно завернувшись под одеяло, широко раскрыв глаза наблюдала за мной."

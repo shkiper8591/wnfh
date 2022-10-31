@@ -1,6 +1,7 @@
 # Тут желательно придумать какой-нибудь сон, но чет в голову ничего не лезет, так что потом, наверное, когда-нибудь, возможно никогда. (если сон будет, то надо данный саундтрек music_list["drown"])
 # Интерфейс утренний
 label blwnfh_day_2:
+    $ blwnfh_set_savename(2)
     $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
     scene bg int_house_of_mt_sunset with dissolve2

@@ -1,13 +1,17 @@
-label blwnfh_day_:
+label blwnfh_day_4:
+    $ blwnfh_set_savename(4)
+    $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
     scene black
-    play ambience ambience_day_countryside_ambience
-    play music music_list["waking_up_2"]
+    play ambience ambience_day_countryside_ambience fadein 3
+    play music blwnfh_music_list["waking_up_2"] fadein 5
+    $ renpy.pause(1.0, hard=True)
+    window show
     
     # бг с землянкой
     # Семён с закрытым глазами
     
-    "Я видел чудесный сон, где я и девочка гуляем по лесу. {w}Как жаль, что на самом интересном месте, птичье пение меня выбили из сна и я проснулся."
+    "Мне виделся чудесный сон, где я гуляю по лесу с девушкой. {w}Как жаль, что на самом интересном месте, птичье пение меня выбили из сна."
     # Семён открывает глаза
     
     th "Дурацкие птицы[wp] Сами не спите и другим не даете."
@@ -22,7 +26,7 @@ label blwnfh_day_:
     th "Дела[wp]"
     
     "Аккуратным движением правой руки, я попытался снять с себя руку Кати, но та ни в какую не хотела отставать, так что пришлось приложить некоторое усилие."
-    "Однако тем самым я только разбудил Катю."
+    "Однако тем самым я только разбудил её."
     
     kat "Ой!"
     
@@ -114,7 +118,7 @@ label blwnfh_day_:
     
     "Сказал я и повел за собой Катю на тропу, по которой мы шли вчера."
     
-    play music music_list["greggs_woods"]
+    play music blwnfh_music_list["greggs_woods"]
     show bg ext_path_sunset with dissolve
     
     "Катя шла за мной ели-ели, попутно подхватывая одеяло, которое так и норовило спасть с нее, из-за чего, то сильно пачкалось снизу."
@@ -609,7 +613,7 @@ label blwnfh_day_:
     # таймскип
     play ambience ambience_camp_center_day
     scene bg ext_kat_house_after_rain_day_blwnfh
-    play music music_list["lori_m"]
+    play music blwnfh_music_list["lori_m"]
     
     "Вскоре я пришел к домику Кати и огляделся по сторонам, дабы убедиться, что за мной никто не подглядывает, чтобы потом никто не на придумывал про меня всякие нехорошие вещи."
     "Никого не обнаружив, я поднялся по ступенькам к дверям и постучался."
@@ -2095,7 +2099,7 @@ label blwnfh_day_:
     "Я тихонько постучался и провернул дверную ручку."
     "Дверь была открыта и я вошел внутрь."
     
-    scene int_musclub_day with dissolve
+    scene bg int_musclub_day with dissolve
     show mi laugh pioneer at left with dspr
     show kat happy pioneer at right with dspr
     
@@ -2254,7 +2258,7 @@ label blwnfh_day_:
     show mi normal pioneer at left with dspr
     show kat normal pioneer at right with dspr
     # вставить эмбиент ветра.
-    play music music_list["outskirts"]
+    play music blwnfh_music_list["outskirts"]
     
     "Вид создавался крайне живописный. {w}Поле высокой травы, которую волнами колыхал ветер, а с водоема поблизости доносились звуки чаек."
     "Мику явно нас не обманула, назвав это место красивым."

@@ -1,8 +1,13 @@
 label blwnfh_day_5:
+    $ blwnfh_set_savename(5)
+    $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
-    # семён открывает глаза
+    $ renpy.pause(1.0)
     scene bg int_house_of_mt_sunset with dissolve
-    play ambience ambience_int_cabin
+    show unblink
+    play ambience ambience_int_cabin_evening fadein 3
+    $ renpy.pause(1.5, hard=True)
+    window show
     
     "Я проснулся от дичайшей боли в голове и спине."
     "Видимо моё небольшое вчерашнее приключение дало о себе знать."

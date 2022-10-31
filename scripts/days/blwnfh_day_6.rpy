@@ -1,9 +1,10 @@
 label blwnfh_day_6:
-    
-    # Семён просыпается
+    $ blwnfh_set_savename(6)
     $ blwnfh_set_name("el", "Сергей")
-    play ambience ambience_int_cabin_evening
-    scene bg int_house_of_mt_day with dissolve
+    $ blwnfh_set_time("sunset")
+    play ambience ambience_int_cabin_evening fadein 3
+    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    show unblink
 
     "Я проснулся от просто дичайшей боли во всех суставах."
     
@@ -263,8 +264,8 @@ label blwnfh_day_6:
     "И только чуть приоткрыв дверь, Селёдка тут же, пулей вылетел из дома."
     
     stop ambience
-    scene bg ext_house_of_mt_day with dissolve
-    play ambience ambience_camp_center_day
+    scene bg ext_house_of_mt_sunset with dissolve
+    play ambience ambience_camp_center_evening
     
     "Кот скрылся где-то в кустах."
     
@@ -278,9 +279,13 @@ label blwnfh_day_6:
     
     # переход 
     
-    stop ambience
-    scene bg ext_washstand_day with dissolve
-    play ambience ambience_day_countryside_ambience
+    window hide
+    stop ambience fadeout 0.5
+    $ blwnfh_set_time()
+    scene bg ext_washstand_day with dissolve2
+    play ambience ambience_day_countryside_ambience fadein 2
+    $ renpy.pause(1.0)
+    window show
     
     "Придя к умывальникам, я, на своё удивление, увидел здесь Ульяну."
     
@@ -379,7 +384,7 @@ label blwnfh_day_6:
     us "И что же получается? Будешь весь день балду гонять?"
     me "Нет, хуже, я и Катя будем заниматься отловом мелких Ульян."
     
-    show us normal pioneer at center with dsprн
+    show us normal pioneer at center with dspr
     
     us "А вам зачем?"
     me "Статью писать надо о прошедшем матче."

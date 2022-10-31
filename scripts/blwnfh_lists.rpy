@@ -6,6 +6,7 @@ init -1 python:
         return {i[len(path):i.rfind(".")]:i for i in renpy.list_files() if i.startswith(path)}
     
     blwnfh_gui = dict()
+   
     
     ## Спсок персонажей ##
     
@@ -89,6 +90,7 @@ init -1 python:
         #"steam":""
         #"discord":""
     }
+    
     
     """
     Тут у нас всё в тот же список пихаются уже транзиты.
@@ -196,10 +198,11 @@ init 2:
     $ blwnfh_music_list["lori_m"] = blwnfh_MUSIC + "Alec Holowka - Lori M.mp3"
     $ blwnfh_music_list["lost_woods"] = blwnfh_MUSIC + "Alec Holowka - Lost Woods.mp3"
     $ blwnfh_music_list["maes_house_2"] = blwnfh_MUSIC + "Alec Holowka - Mae's House 2.mp3"
-    $ blwnfh_music_list["mystery"] = blwnfh_MUSIC + "Alec Holowka - Mystery .mp3"
+    $ blwnfh_music_list["mystery"] = blwnfh_MUSIC + "Alec Holowka - Mystery.mp3"
     $ blwnfh_music_list["outskirts"] = blwnfh_MUSIC + "Alec Holowka - Outskirts.mp3"
     $ blwnfh_music_list["the_bridge"] = blwnfh_MUSIC + "Alec Holowka - The Bridge.mp3"
     $ blwnfh_music_list["waking_up"] = blwnfh_MUSIC + "Alec Holowka - Waking up.mp3"
-    
+    $ blwnfh_music_list["waking_up_2"] = blwnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
+    $ blwnfh_music_list["fireflies_on_the_porch"] = blwnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

@@ -20,13 +20,13 @@ label blwnfh_test:
     
     show table with dspr
     "Теперь поднос слева"
-    show left-tray d1 d1_breakfast_full foods with dspr
+    show left tray d6_breakfast_full foods with dspr
     "Поднос справа"
-    show right-tray d1 d1_breakfast_full foods with dspr
+    show right tray d6_breakfast_full foods with dspr
     "Забыли салфетницу и прочее говно"
     show shakers with dspr
     "Поднос для Семёна"
-    show mid-tray d1 d1_breakfast_full foods with dspr
+    show mid tray d6_breakfast_full foods with dspr
     "Работает"
     "Вроде"
     

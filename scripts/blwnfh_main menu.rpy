@@ -26,7 +26,7 @@ init 2:
                     return im.Alpha(imgf, 0.38)
                     
             menu_hovered_action_plimp = Play("sound", blwnfh_gui["sound"]["plimp"])
-            menu_hovered_action_cat = Play("sound", blwnfh_GUI + "meow" + str(randrange(6)) + ".ogg")
+            menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
         
         default play_text = False
         default settings_text = False

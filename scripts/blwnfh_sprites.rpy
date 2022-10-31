@@ -1,3 +1,9 @@
+init python:
+    blwnfh_tint = {
+            "sunset":im.matrix.tint(0.94, 0.82, 1.0),
+            "night":im.matrix.tint(0.63, 0.78, 0.82)
+        }
+        
 init 2:
 
     python:
@@ -41,17 +47,19 @@ init 2:
             'table': {
                 'shakers': 1,
             },
-            'left-tray': {
+            'left': {
                 'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
-            'right-tray': {
+            'right': {
                 'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
-            'mid-tray': {
+            'mid': {
                 'd5_breakfast_full': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
         }
-
+        
+        ## Разные дальности ##
+        # Да фоновые спрайты и еда у меня это отдельная дальность, чё вы мне сделаете?
         distance_to_position = {
             "far": (630, 1080),
             "normal": (900, 1080),
@@ -59,11 +67,10 @@ init 2:
             "background": (1920, 1080),
             "foods": (1920, 1080),
         }
-
+        
+        ## Тонирование спрайтов для разного времени суток ##
+        
         def _sprite_for_all_times(full_sprite_name, composite_image):
-            """
-            Объявляем спрайт для всех времен суток
-            """
             renpy.image(
                 full_sprite_name,
                 ConditionSwitch(
@@ -73,27 +80,25 @@ init 2:
                 )
             )
 
+        ## Спрайт, окрашенный в сепию ##
+        
         def _sepia_sprite(full_sprite_name, composite_image):
-            """
-            Спрайт, окрашенный в сепию
-            """
             renpy.image(full_sprite_name, im.Sepia(composite_image))
-
+        
+        ## Спрайт в темноте ##
+        
         def _dark_sprite(full_sprite_name, composite_image):
-            """
-            Спрайт в темноте
-            """
             renpy.image(full_sprite_name, im.MatrixColor(composite_image, im.matrix.brightness(-0.99)))
 
-        # Генератор новых спрайтов для персонажей из оригинального БЛ
-
+        ## Генератор новых спрайтов для персонажей из оригинального БЛ ##
+        
+        """
+        Позволяет объявить почти любой спрайт, состоящий из нескольких слоев,
+        каждый слой может идти либо из мода, либо из оригинала.
+        Картинки должны класться в папки строго как в оригинале, чтобы это работало.
+        """
+        
         def make_sprites_for(character, sprite_name, layers, emotions=None, distances=None, exclude=None, sprite_define_func=None, default=True):
-            """
-            Позволяет объявить почти любой спрайт, состоящий из нескольких слоев,
-            каждый слой может идти либо из мода, либо из оригинала.
-            Картинки должны класться в папки строго как в оригинале, чтобы это работало.
-            """
-
             if emotions is None:
                 emotions = emotion_to_pose[character].keys()
             if distances is None:
@@ -136,11 +141,8 @@ init 2:
                     # Объявляем спрайт
                     sprite_define_func(full_sprite_name, composite_image)
 
-
+        ## Объявление новых эмоций для существующих спрайтов ##
         def make_sprites_with_custom_emotions(custom_emotions, *args):
-            """
-            Удобно, когда нужно объявить новую эмоцию
-            """
             args = list(args)
             assert args[-1][-1] == 'es:<emotion>'
             make_sprites_for(*args, exclude=custom_emotions)
@@ -151,9 +153,9 @@ init 2:
         # Объявляем спрайты
         ### Базированный кринж
         ## Хавчик
-        make_sprites_for('left-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
-        make_sprites_for('right-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
-        make_sprites_for('mid-tray', 'd1', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('left', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('right', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('mid', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
         
         ### Нормальные спрайты
         ## Новые персонажи
@@ -297,6 +299,8 @@ init 2:
         #make_sprites_for('us', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         #make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
     
+    ## Юля
+    image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
     ## Я не ебу как это по-русски нормально назвать
     image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "shakers.png")
     ## Стол

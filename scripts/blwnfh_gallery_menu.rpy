@@ -3,7 +3,7 @@ init python:
         "bg":(
             #["",False], 
             (["int_warehouse_day", False], ["int_warehouse_night", False], ["int_warehouse_night_lamp_off_light_on", False], ["int_warehouse_night_lamp_on_light_off", False], ["int_warehouse_night_lamp_on_light_on", False], ["int_warehouse_sunset", False], ["ext_clubs_sunset",False], ["ext_music_club_sunset",False], ["ext_warehouse_day",False], ["int_dining_hall_people_sunset",False], ["int_library_sunset",False], ["ext_stage_big_day",False]),
-            (["int_house_of_mt_day_cleaning_4", False], ["ext_underwater", False,], ["int_boathouse_day", False], ["ext_pier_day", False], ["ext_house_of_el_day", False], ["ext_boathouse_sunset", False], ["ext_island_sunset", False], ["ext_island_forest_sunset", False], ["ext_sky", False])
+            (["int_house_of_mt_day_cleaning_4", False], ["ext_underwater", False,], ["int_boathouse_day", False], ["ext_pier_day", False], ["ext_house_of_el_day", False], ["ext_boathouse_sunset", False], ["ext_island_sunset", False], ["ext_island_forest_sunset", False], ["ext_island_otherside_sunset", False], ["ext_sky", False])
         ),
         "cg":(
             (["d2_dv_sem_scene", False], ["d5_me_mirror_tractor_blwnfh",False], ["disclaimer",False], ["Katya_Avtobus",False],),

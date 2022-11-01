@@ -20,7 +20,7 @@ label blwnfh_test_main_menu:
     menu:
         "Спрайты?":
             jump blwnfh_spritestest1
-        "Музыку со всплывашкой?":
+        "Музыку?":
             jump blwnfh_musictest
         "Цензуру?":
             jump blwnfh_matyki

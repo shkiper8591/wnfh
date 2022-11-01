@@ -17,6 +17,12 @@ label blwnfh_mttest_clothes:
     
     "Одежда"
     
+    scene bg int_house_of_mt_night with dissolve2
+    show mt smile nightdress at center with dspr    
+    
+    mt "Порезвимся?"
+    me "Я только за!"
+    
     "Возвращаемся в меню отладки?"
     
     menu: 

@@ -48,13 +48,13 @@ init 2:
                 'shakers': 1,
             },
             'left': {
-                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'right': {
-                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'mid': {
-                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
         }
         

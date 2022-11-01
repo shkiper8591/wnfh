@@ -166,6 +166,7 @@ init 2:
         make_sprites_for('kat', 'body', ['mod:body', 'mod:<emotion>'])
         
         ## Новые старые спрайты
+        # Женя
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'es:<emotion>'])
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'es:<emotion>', 'es:glasses'])
@@ -174,6 +175,9 @@ init 2:
         make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         make_sprites_for('mz', 'body glasses', ['mod:body', 'es:<emotion>', 'es:glasses'])
         make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
+        
+        # Панамка
+        make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distance =('normal')
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])

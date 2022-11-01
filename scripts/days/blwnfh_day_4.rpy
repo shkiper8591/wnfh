@@ -106,7 +106,7 @@ label blwnfh_day_4:
     
     "Я быстро покинул землянку."
     
-    scene bg ext_forest_blindage_sunset_blwnfh with dissolve
+    scene black with dissolve
     show kat guilty pioneer close at center with dspr
     
     "Катя же спустя некоторое время неуклюже тоже покинула домик и маленькими шагами подошла ко мне."
@@ -420,7 +420,7 @@ label blwnfh_day_4:
     
     th "Впрочем, может так даже лучше, спать мне в любом случае не дали бы, а так хоть время убью."
     
-    show bg ext_warehouse_day_blwnfh with dissolve
+    show bg ext_warehouse_day with dissolve
     
     "Вскоре я дошел до склада и зайдя за него обнаружил ту самую подсобку."
     "Достав ключ, я уже потянулся открывать её, как по своей неосторожности выронил его и тот упал в густую траву."
@@ -593,7 +593,7 @@ label blwnfh_day_4:
     
     stop ambience
     stop music
-    scene bg int_dining_hall_people_sunset_blwnfh with dissolve
+    scene bg int_dining_hall_people_sunset with dissolve
     play ambience ambience_dining_hall_full
     
     "Взяв поднос с едой, я занял место недалеко от выхода из столовой."
@@ -612,7 +612,7 @@ label blwnfh_day_4:
     stop ambience
     # таймскип
     play ambience ambience_camp_center_day
-    scene bg ext_kat_house_after_rain_day_blwnfh
+    scene bg ext_kat_house_after_rain_day
     play music blwnfh_music_list["lori_m"]
     
     "Вскоре я пришел к домику Кати и огляделся по сторонам, дабы убедиться, что за мной никто не подглядывает, чтобы потом никто не на придумывал про меня всякие нехорошие вещи."
@@ -789,7 +789,7 @@ label blwnfh_day_4:
     me "Прощаю, только давай уже скорее пойдем в библиотеку и отметимся."
     kat "Угу[wp]"
     
-    show bg ext_kat_house_day_blwnfh with dissolve
+    show bg ext_house_of_kat_after_rain_day with dissolve
     show kat normal pioneer at center with dspr
     
     "Выйдя из-за домика, я вспомнил, что надо бы заскочить к себе и забрать фотоаппарат."
@@ -800,7 +800,7 @@ label blwnfh_day_4:
     "Я оставил свою подругу и пошел к себе домой."
     
     scene bg ext_house_of_mt_day with dissolve
-    # мини пауза
+    $ renpy.pause(1.0, hard=True)
     show bg int_house_of_mt_day with dissolve 
     
     "Войдя внутрь я быстренько взял со стола полароид и надев его на шею, покинул дом."
@@ -1050,7 +1050,7 @@ label blwnfh_day_4:
     
     show un shy pioneer at left with dspr
     
-    un "Ой, даже не знаю, возможно [i]Семён[/b] прав."
+    un "Ой, даже не знаю, возможно [i]Семён[/i] прав."
     
     show kat obida pioneer at right with dspr
     
@@ -1497,20 +1497,20 @@ label blwnfh_day_4:
     kat "Ну пожалуйста!"
     el "Нет и всё, у нас к тому же есть санкция вожатой."
     
-    show mz glasses bukal pioneer at left with dspr
+    show mz bukal glasses pioneer at left with dspr
     
     mz "Сереж, я проговорилась, значит и мне решать."
     el "Ох, ну и каков же твой вердикт?"
     mz "Пусть плывет, поможем ей получить лодку."
     kat "А мне что, самой грести придется?"
     
-    show mz glasses laugh pioneer at left with dspr
+    show mz laugh glasses pioneer at left with dspr
     
     "Женя рассмеялась."
     mz "Ну не мне же."
     kat "А как же, я не умею[wp]"
     
-    show mz glasses bukal pioneer at left with dspr 
+    show mz bukal glasses pioneer at left with dspr 
     
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     
@@ -2089,7 +2089,7 @@ label blwnfh_day_4:
     
     scene ext_musclub_day with dissolve
     # мини пауза
-    scene bg ext_musclub_verandah_blwnfh with dissolve
+    scene bg ext_musclub_verandah with dissolve
     
     "Поднявшись на крыльцо, я заметил одну странную вещь."
     "Из муз кружка совсем не доносилась музыка."
@@ -2120,7 +2120,7 @@ label blwnfh_day_4:
     
     me "Ага."
     
-    show mi normal pioneer at right with dspr
+    show mi normal pioneer at left with dspr
     
     mi "Чудеса-то какие, ну сейчас тогда, принесу тебе гитару, будем вместе играть, ну или я и ты, если Катя не захочет, а если захочет то[wp]"
     kat "Да мы поняли Мику, я буду с вами играть."
@@ -2193,7 +2193,7 @@ label blwnfh_day_4:
     mi "А давайте сходим в одно место, оооочень красивое!"
     kat "Что за место?"
     
-    show mi grin pioneer at right with dspr
+    show mi grin pioneer at left with dspr
     
     mi "А вот придем, и узнаешь, оно тут недалеко!"
     me "Ну, делать нечего, так что почему бы и не сходить?"
@@ -2510,7 +2510,7 @@ label blwnfh_day_4:
     
     "Ольга Дмитривна отошла в сторону и пропустила нас вперед."
     
-    show bg int_dining_hall_people_sunset_blwnfh 
+    show bg int_dining_hall_people_sunset
     
     "В столовой уже было битком и найти место казалось крайне трудновыполнимой задачей."
     "Но Мику всё же смогла отыскать места, которые мы заняли, после того как взяли себе подносы с едой."
@@ -2613,7 +2613,7 @@ label blwnfh_day_4:
     me "Это так заметно?"
     mt "Ещё как."
     
-    show mt normal pioneer at center with dsor
+    show mt normal pioneer at center with dspr
     
     mt "В общем, к чему это всё я, раз уж ты справился с моим заданием, то тебе поручается выдать какое-то вознаграждение, верно?"
     me "Верно, и думаю день отдыха будет отличным вознаграждением."

@@ -360,7 +360,7 @@ label blwnfh_day_3:
     me "Ладно, пошли дальше, а то чего просто так стоять."
     sl "Да, давай."
     
-    scene bg ext_warehouse_day_blwnfh with dissolve
+    scene bg ext_warehouse_day with dissolve
     show sl normal pioneer at center with dspr
     
     "Вскоре мы стояли у склада."
@@ -394,9 +394,9 @@ label blwnfh_day_3:
     
     "Я открыл дверь и пустил вперед Славю, только затем зайдя внутрь."
     
-    stop ambience
-    scene bg int_warehouse_day_blwnfh with dspr
-    play ambience ambience_int_cabin_evening
+    stop ambience fadeout 0.5
+    scene bg int_warehouse_day with dspr
+    play ambience ambience_int_cabin_evening fadein 3
     show sl normal pioneer at center with dspr
     
     sl "Так, и что тебе нужно было на складе?"
@@ -416,7 +416,7 @@ label blwnfh_day_3:
     sl "Пока, и тебе тоже!"
     
     stop ambience
-    scene bg ext_warehouse_day_blwnfh with dissolve
+    scene bg ext_warehouse_day with dissolve
     stop music
     play ambience ambience_camp_center_day
     
@@ -1193,7 +1193,7 @@ label blwnfh_day_3:
     
     th "Может всё не так плохо, как я себе представляю? Вроде спокойно себе играют."
     
-    scene bg ext_musclub_verandah_blwnfh with dissolve
+    scene bg ext_musclub_verandah_day with dissolve
     
     "Подойдя ближе, я попытался разглядеть что-нибудь в окно, но из-за того, что солнце светило ровно в окна, ничего увидеть мне не удалось."
     
@@ -1671,12 +1671,12 @@ label blwnfh_day_3:
     
     "Я тихонько вздохнул и мы покинули подсобку."
     
-    scene bg int_library_sunset_blwnfh with dissolve
+    scene bg int_library_sunset with dissolve
     
     "Идя на выход из библиотеки мы помахали Жене на прощание, что она успешно проигнорировала."
     
     stop ambience
-    scene bg ext_library_sunset_blwnfh with dissolve
+    scene bg ext_library_sunset with dissolve
     play ambience ambience_camp_center_evening
     
     # интерфейс и спрайты вечерние
@@ -1868,7 +1868,7 @@ label blwnfh_day_3:
     
     # таймскип
     
-    scene bg int_dining_hall_people_sunset_blwnfh with dissolve
+    scene bg int_dining_hall_people_sunset with dissolve
     
     "Пришли мы одними из самых последних в столовую, но всё же нам удалось занять хорошее место в дальнем углу столовой."
     "Кате хотелось сесть с Мику, но она сидела с неизвестными мне пионерками, да и свободных мест не было."
@@ -2120,7 +2120,7 @@ label blwnfh_day_3:
     
     "Растопив печь, я плотно закрыл дверь землянки."
     
-    play music blwnfh_music_list["firefiels_on_the_porch"]
+    play music blwnfh_music_list["fireflies_on_the_porch"]
     
     "Постепенно, землянка стала заливаться треском горящих дров и теплом."
     "Я повернулся к Кате и та, плотно завернувшись под одеяло, широко раскрыв глаза наблюдала за мной."

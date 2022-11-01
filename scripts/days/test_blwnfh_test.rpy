@@ -10,7 +10,6 @@ label technical_chocolatki:
 
 label blwnfh_test:
 
-    $ blwnfh_set_savename(0)
     $ blwnfh_set_time()
     scene black
     

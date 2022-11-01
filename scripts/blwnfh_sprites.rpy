@@ -177,7 +177,7 @@ init 2:
         make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
         
         # Панамка
-        make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distance =('normal')
+        make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distance =['normal'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])

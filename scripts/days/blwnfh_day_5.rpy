@@ -59,7 +59,7 @@ label blwnfh_day_5:
     "Тем не менее, прежде чем войти, я постучался и только после вошел внутрь."
     
     stop ambience
-    scene bg int_warehouse_day_blwnfh with dissolve
+    scene bg int_warehouse_day with dissolve
     play ambience ambience_int_cabin_day
     
     "За письменным столом сидел, о ужас, сам завхоз, которому, видимо, сегодня похорошело."
@@ -146,7 +146,7 @@ label blwnfh_day_5:
     "Без лишних слов я покинул склад."
     
     stop ambience 
-    scene bg ext_warehouse_sunset_blwnfh with dissolve
+    scene bg ext_warehouse_sunset with dissolve
     play ambience ambience_camp_center_evening
     
     "Выйдя на улицу я рассмотрел станок и удивился."
@@ -998,6 +998,9 @@ label blwnfh_day_5:
     kat "Спасибо."
     
     "Я непонимающе посмотрел на нее, а она посмотрела на меня неким осуждающим взглядом."
+    
+    hide un with dspr
+    
     "Постояв так некоторое время, она ушла в сторону сдачи подносов."
     
     th "Да чего это с ней? {w}Вроде обижена на меня, но у умывальников мило беседовала со мной."

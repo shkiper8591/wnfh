@@ -191,7 +191,7 @@ init 2:
     $ blwnfh_music_list["angus_climbs_the_hill"] = blwnfh_MUSIC + "Alec Holowka - Angus Climbs the Hill.mp3"
     $ blwnfh_music_list["church_hill"] = blwnfh_MUSIC + "Alec Holowka - Church Hill.mp3"
     $ blwnfh_music_list["crimes"] = blwnfh_MUSIC + "Alec Holowka - Crimes.mp3"
-    $ blwnfh_music_list["crimes2"] = blwnfh_MUSIC + "Alec Holowka - Crimes2.mp3"
+    $ blwnfh_music_list["crimes_2"] = blwnfh_MUSIC + "Alec Holowka - Crimes2.mp3"
     $ blwnfh_music_list["greggs_woods"] = blwnfh_MUSIC + "Alec Holowka - Gregg's Woods.mp3"
     $ blwnfh_music_list["im_going_to_break_something"] = blwnfh_MUSIC + "Alec Holowka - I'm Going to Break Something.mp3"
     $ blwnfh_music_list["library_investigations"] = blwnfh_MUSIC + "Alec Holowka - Library Investigations.mp3"
@@ -204,6 +204,7 @@ init 2:
     $ blwnfh_music_list["waking_up"] = blwnfh_MUSIC + "Alec Holowka - Waking up.mp3"
     $ blwnfh_music_list["waking_up_2"] = blwnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
     $ blwnfh_music_list["fireflies_on_the_porch"] = blwnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
+    $ blwnfh_music_list["the_cars_you_might_think"] = blwnfh_MUSIC + "The Cars - You Might Think.ogg"
     $ blwnfh_music_list["test_song"] = blwnfh_MUSIC + "testsong.mp3"
     $ blwnfh_music_list["cyberpunk"] = blwnfh_MUSIC + "rebelpath.mp3"
     ## Рандомизация мявков

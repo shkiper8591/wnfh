@@ -734,7 +734,7 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     # таймскип
-    scene bg ext_clubs_day with dissolve5
+    scene bg ext_clubs_day with dissolve2
     play ambience ambience_camp_center_day fadein 3
     
     "Скоро я уже был перед клубами, откуда доносились звуки работы инструментами."
@@ -1800,7 +1800,7 @@ label blwnfh_day_2:
     "Внутри Ольга Дмитриевна, отведя руки за спину, ходила из одного конца дома в другой."
     "Она обратила на меня внимание только тогда, когда я закрыл за собой дверь."
     
-    show mt angry pioneer at center with dspr
+    show mt angry nightdress at center with dspr
     ## для ОД надо спиздить ночнушку из 7дл
     me "Добрый вечер."
     

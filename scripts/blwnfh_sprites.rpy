@@ -179,6 +179,12 @@ init 2:
         # Оля
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distances = ['normal'])
         
+        # Ульяна
+        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'swim', ['es:body', 'es:swim', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'sport', ['es:body', 'es:sport', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'body', ['es:body', 'es:<emotion>'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])

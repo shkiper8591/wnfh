@@ -207,5 +207,6 @@ init 2:
     $ blwnfh_music_list["the_cars_you_might_think"] = blwnfh_MUSIC + "The Cars - You Might Think.ogg"
     $ blwnfh_music_list["test_song"] = blwnfh_MUSIC + "testsong.mp3"
     $ blwnfh_music_list["cyberpunk"] = blwnfh_MUSIC + "rebelpath.mp3"
+    $ blwnfh_music_list["proximity"] = blwnfh_MUSIC + "Alec Holowka - Proximity.mp3"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

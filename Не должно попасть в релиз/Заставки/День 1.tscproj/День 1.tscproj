@@ -136,10 +136,34 @@
       "metadata" : {
         "timeAdded" : "20221025T140203.840451"
       }
+    },
+    {
+      "id" : 6,
+      "src" : "KATE_THEME_Piano.mp3",
+      "rect" : [0, 0, 0, 0],
+      "lastMod" : "20221102T161041",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 679449375],
+          "type" : 2,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 0,
+          "numChannels" : 2,
+          "integratedLUFS" : -16.7855188773571,
+          "peakLevel" : 0.645090997219086,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221102T161157.551340"
+      }
     }
   ],
   "timeline" : {
-    "id" : 6,
+    "id" : 7,
     "sceneTrack" : {
       "scenes" : [
         {
@@ -148,13 +172,8 @@
               {
                 "trackIndex" : 0,
                 "medias" : [
-                ]
-              },
-              {
-                "trackIndex" : 1,
-                "medias" : [
                   {
-                    "id" : 7,
+                    "id" : 8,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -353,7 +372,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 7,
+                    "leftMedia" : 8,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -366,10 +385,10 @@
                 ]
               },
               {
-                "trackIndex" : 2,
+                "trackIndex" : 1,
                 "medias" : [
                   {
-                    "id" : 8,
+                    "id" : 9,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -613,7 +632,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 8,
+                    "leftMedia" : 9,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -626,10 +645,10 @@
                 ]
               },
               {
-                "trackIndex" : 3,
+                "trackIndex" : 2,
                 "medias" : [
                   {
-                    "id" : 9,
+                    "id" : 10,
                     "_type" : "IMFile",
                     "src" : 1,
                     "trackNumber" : 0,
@@ -638,7 +657,19 @@
                       "ident" : "IMG_0168"
                     },
                     "parameters" : {
-                      "translation0" : -11.5666666666596,
+                      "translation0" : {
+                        "type" : "double",
+                        "defaultValue" : -11.5666666666596,
+                        "keyframes" : [
+                          {
+                            "endTime" : 1646400000,
+                            "time" : 1199520000,
+                            "value" : -11.5666666666595,
+                            "interp" : "eioe",
+                            "duration" : 446880000
+                          }
+                        ]
+                      },
                       "translation1" : {
                         "type" : "double",
                         "defaultValue" : -108.820096349599,
@@ -646,14 +677,38 @@
                           {
                             "endTime" : 1646400000,
                             "time" : 1199520000,
-                            "value" : -132.8200963496,
+                            "value" : -125.486763016267,
                             "interp" : "eioe",
                             "duration" : 446880000
                           }
                         ]
                       },
-                      "scale0" : 0.676361957525393,
-                      "scale1" : 0.665656761449356,
+                      "scale0" : {
+                        "type" : "double",
+                        "defaultValue" : 0.676361957525393,
+                        "keyframes" : [
+                          {
+                            "endTime" : 1646400000,
+                            "time" : 1199520000,
+                            "value" : 0.676361957525393,
+                            "interp" : "eioe",
+                            "duration" : 446880000
+                          }
+                        ]
+                      },
+                      "scale1" : {
+                        "type" : "double",
+                        "defaultValue" : 0.665656761449356,
+                        "keyframes" : [
+                          {
+                            "endTime" : 1646400000,
+                            "time" : 1199520000,
+                            "value" : 0.665656761449356,
+                            "interp" : "eioe",
+                            "duration" : 446880000
+                          }
+                        ]
+                      },
                       "sourceCrop0" : 0.0,
                       "sourceCrop1" : 0.0,
                       "sourceCrop2" : 0.0,
@@ -707,7 +762,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 705600000,
-                    "rightMedia" : 9,
+                    "rightMedia" : 10,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -720,7 +775,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1176000000,
-                    "leftMedia" : 9,
+                    "leftMedia" : 10,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -733,10 +788,10 @@
                 ]
               },
               {
-                "trackIndex" : 4,
+                "trackIndex" : 3,
                 "medias" : [
                   {
-                    "id" : 10,
+                    "id" : 11,
                     "_type" : "Group",
                     "parameters" : {
                       "translation0" : {
@@ -830,7 +885,7 @@
                         "trackIndex" : 0,
                         "medias" : [
                           {
-                            "id" : 11,
+                            "id" : 12,
                             "_type" : "Group",
                             "parameters" : {
                               "translation0" : {
@@ -908,7 +963,7 @@
                                 "trackIndex" : 0,
                                 "medias" : [
                                   {
-                                    "id" : 12,
+                                    "id" : 13,
                                     "_type" : "IMFile",
                                     "src" : 3,
                                     "trackNumber" : 0,
@@ -1009,7 +1064,7 @@
                                 "trackIndex" : 1,
                                 "medias" : [
                                   {
-                                    "id" : 13,
+                                    "id" : 14,
                                     "_type" : "IMFile",
                                     "src" : 4,
                                     "trackNumber" : 0,
@@ -1104,7 +1159,7 @@
                                 "trackIndex" : 2,
                                 "medias" : [
                                   {
-                                    "id" : 14,
+                                    "id" : 15,
                                     "_type" : "IMFile",
                                     "src" : 2,
                                     "trackNumber" : 0,
@@ -1246,7 +1301,7 @@
                         "trackIndex" : 3,
                         "medias" : [
                           {
-                            "id" : 15,
+                            "id" : 16,
                             "_type" : "IMFile",
                             "src" : 5,
                             "trackNumber" : 0,
@@ -1302,7 +1357,7 @@
                         "trackIndex" : 4,
                         "medias" : [
                           {
-                            "id" : 16,
+                            "id" : 17,
                             "_type" : "IMFile",
                             "src" : 5,
                             "trackNumber" : 0,
@@ -1416,7 +1471,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 1293600000,
-                    "rightMedia" : 10,
+                    "rightMedia" : 11,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -1425,6 +1480,100 @@
                       "useVisualPreRoll" : true
                     }
 
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 18,
+                    "_type" : "AMFile",
+                    "src" : 6,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "KATE_THEME_Piano",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : 1.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 11971680000,
+                            "time" : 11971680000,
+                            "value" : 1.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 11995200000,
+                            "time" : 11995200000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 13241760000,
+                            "time" : 13241760000,
+                            "value" : 0.467032967032967,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 17381280000,
+                            "time" : 17381280000,
+                            "value" : 0.467032967032967,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 18486720000,
+                            "time" : 18486720000,
+                            "value" : 0.164835164835165,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 18816000000,
+                            "time" : 18816000000,
+                            "value" : 0.0824175824175824,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 19051200000,
+                            "time" : 19051200000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 19074720000,
+                            "time" : 19074720000,
+                            "value" : 0.467032967032967,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 7056000000,
+                    "mediaStart" : 11995200000,
+                    "mediaDuration" : 7056000000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
                   }
                 ]
               },
@@ -1547,7 +1696,7 @@
   },
   "metadata" : {
     "AutoSaveFile" : "C:\\Users\\shkip\\AppData\\Local\\TechSmith\\Camtasia Studio\\22.0\\Auto-Saves\\день141e60c6.autosave.tscproj",
-    "CanvasZoom" : 150,
+    "CanvasZoom" : 50,
     "Date" : "2022-10-23 03:30:32 ",
     "Fit" : 0,
     "IsAutoSave" : false,

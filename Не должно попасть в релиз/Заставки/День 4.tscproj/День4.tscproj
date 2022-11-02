@@ -64,10 +64,34 @@
       "metadata" : {
         "timeAdded" : "20221024T202307.260663"
       }
+    },
+    {
+      "id" : 3,
+      "src" : "les.mp3",
+      "rect" : [0, 0, 0, 0],
+      "lastMod" : "20221102T155711",
+      "loudnessNormalization" : true,
+      "sourceTracks" : [
+        {
+          "range" : [0, 1087477500],
+          "type" : 2,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 44100,
+          "bitDepth" : 0,
+          "numChannels" : 2,
+          "integratedLUFS" : -31.1162253649743,
+          "peakLevel" : 0.183132663369179,
+          "metaData" : ""
+        }
+      ],
+      "metadata" : {
+        "timeAdded" : "20221102T155716.457510"
+      }
     }
   ],
   "timeline" : {
-    "id" : 3,
+    "id" : 4,
     "sceneTrack" : {
       "scenes" : [
         {
@@ -77,7 +101,7 @@
                 "trackIndex" : 0,
                 "medias" : [
                   {
-                    "id" : 4,
+                    "id" : 5,
                     "_type" : "IMFile",
                     "src" : 1,
                     "trackNumber" : 0,
@@ -89,7 +113,6 @@
                       "translation0" : {
                         "type" : "double",
                         "defaultValue" : 382.0,
-                        "interp" : "eioe",
                         "keyframes" : [
                           {
                             "endTime" : 4962720000,
@@ -100,56 +123,16 @@
                           }
                         ]
                       },
-                      "scale0" : {
-                        "type" : "double",
-                        "defaultValue" : 0.1824,
-                        "interp" : "eioe"
-                      },
-                      "scale1" : {
-                        "type" : "double",
-                        "defaultValue" : 0.1824,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop0" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop1" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop2" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop3" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop0" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop1" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop2" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop3" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      }
+                      "scale0" : 0.1824,
+                      "scale1" : 0.1824,
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
                     },
                     "effects" : [
 
@@ -185,7 +168,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 705600000,
-                    "rightMedia" : 4,
+                    "rightMedia" : 5,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -198,7 +181,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 705600000,
-                    "leftMedia" : 4,
+                    "leftMedia" : 5,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -214,7 +197,7 @@
                 "trackIndex" : 1,
                 "medias" : [
                   {
-                    "id" : 5,
+                    "id" : 6,
                     "_type" : "IMFile",
                     "src" : 2,
                     "trackNumber" : 0,
@@ -223,46 +206,14 @@
                       "ident" : "Градиент"
                     },
                     "parameters" : {
-                      "sourceCrop0" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop1" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop2" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "sourceCrop3" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop0" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop1" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop2" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      },
-                      "geometryCrop3" : {
-                        "type" : "double",
-                        "defaultValue" : 0.0,
-                        "interp" : "eioe"
-                      }
+                      "sourceCrop0" : 0.0,
+                      "sourceCrop1" : 0.0,
+                      "sourceCrop2" : 0.0,
+                      "sourceCrop3" : 0.0,
+                      "geometryCrop0" : 0.0,
+                      "geometryCrop1" : 0.0,
+                      "geometryCrop2" : 0.0,
+                      "geometryCrop3" : 0.0
                     },
                     "effects" : [
 
@@ -285,7 +236,7 @@
                 "trackIndex" : 2,
                 "medias" : [
                   {
-                    "id" : 6,
+                    "id" : 7,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -429,7 +380,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 705600000,
-                    "leftMedia" : 6,
+                    "leftMedia" : 7,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -445,7 +396,7 @@
                 "trackIndex" : 3,
                 "medias" : [
                   {
-                    "id" : 7,
+                    "id" : 8,
                     "_type" : "Callout",
                     "def" : {
                       "kind" : "remix",
@@ -454,11 +405,11 @@
                       "enable-ligatures" : 1.0,
                       "height" : 250.0,
                       "line-spacing" : 0.0,
-                      "width" : 1436.0,
+                      "width" : 1661.6682464455,
                       "word-wrap" : 1.0,
                       "horizontal-alignment" : "center",
                       "resize-behavior" : "resizeText",
-                      "text" : "Гуляем",
+                      "text" : "Заблудились в трёх соснах",
                       "vertical-alignment" : "center",
                       "font" : {
                         "color-blue" : 1.0,
@@ -475,7 +426,7 @@
                           {
                             "endTime" : 0,
                             "time" : 0,
-                            "value" : [{"name":"kerning","rangeEnd":12,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"fontSize","rangeEnd":12,"rangeStart":0,"value":75,"valueType":"double"},{"name":"fontWeight","rangeEnd":12,"rangeStart":0,"value":400,"valueType":"int"},{"name":"strikethrough","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":12,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"},{"name":"fgColor","rangeEnd":12,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":12,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "value" : [{"name":"fontWeight","rangeEnd":47,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fontSize","rangeEnd":47,"rangeStart":0,"value":75,"valueType":"double"},{"name":"fontItalic","rangeEnd":47,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":47,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"strikethrough","rangeEnd":47,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":47,"rangeStart":0,"value":0,"valueType":"int"},{"name":"kerning","rangeEnd":47,"rangeStart":0,"value":0.56000000000000005,"valueType":"double"},{"name":"fontName","rangeEnd":47,"rangeStart":0,"value":"Sirius Cursiv","valueType":"string"}],
                             "duration" : 0
                           }
                         ]
@@ -486,7 +437,8 @@
                       "autoRotateText" : true
                     },
                     "parameters" : {
-                      "translation1" : -198.571428571428,
+                      "translation0" : -6.60804744256893e-12,
+                      "translation1" : -202.56,
                       "sourceCrop0" : 0.0,
                       "sourceCrop1" : 0.0,
                       "sourceCrop2" : 0.0,
@@ -635,7 +587,7 @@
                   {
                     "name" : "Fade",
                     "duration" : 705600000,
-                    "leftMedia" : 7,
+                    "leftMedia" : 8,
                     "attributes" : {
                       "bypass" : false,
                       "reverse" : false,
@@ -650,6 +602,65 @@
               {
                 "trackIndex" : 4,
                 "medias" : [
+                  {
+                    "id" : 9,
+                    "_type" : "AMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "les",
+                      "gain" : 1.0,
+                      "mixToMono" : false,
+                      "loudnessNormalization" : true,
+                      "sourceFileOffset" : 0
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "endTime" : 0,
+                            "time" : 0,
+                            "value" : 0.32967032967033,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 5832960000,
+                            "time" : 5832960000,
+                            "value" : 0.32967032967033,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 7103040000,
+                            "time" : 7103040000,
+                            "value" : 0.0,
+                            "duration" : 0
+                          },
+                          {
+                            "endTime" : 7126560000,
+                            "time" : 7126560000,
+                            "value" : 0.32967032967033,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 7103040000,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 7103040000,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
                 ]
               },
               {

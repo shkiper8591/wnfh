@@ -14,11 +14,6 @@ init -4 python:
     
     blwnfh_ES_IMAGES = "images/"
     blwnfh_IMAGES = blwnfh_ROOT + "images/"
-    blwnfh_CG = blwnfh_IMAGES + "cg/"
-    blwnfh_BG = blwnfh_IMAGES + "bg/"
-    blwnfh_SPRITES_CLOSE = blwnfh_IMAGES + "sprites/close/"
-    blwnfh_SPRITES_NORMAL = blwnfh_IMAGES + "sprites/normal/"
-    blwnfh_SPRITES_FAR = blwnfh_IMAGES + "sprites/far/"
     blwnfh_ACHIEVEMENTS = blwnfh_IMAGES + "gui/achievements/"
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"

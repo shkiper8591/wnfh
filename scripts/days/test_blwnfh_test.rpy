@@ -16,7 +16,10 @@ label blwnfh_test:
     "Добро пожаловать в меню отладки!"
     "Что мы хотим отладить?"
 
-label blwnfh_test_main_menu:    
+label blwnfh_test_main_menu:
+
+    scene black
+    
     menu:
         "Спрайты?":
             jump blwnfh_spritestest1
@@ -26,7 +29,7 @@ label blwnfh_test_main_menu:
             jump blwnfh_matyki
         "NVL?":
             jump blwnfh_nvltest
-        "Выборы? ВРЕМЕННО НЕ РАБОТАЮТ!!!":
+        "Выборы?":
             jump blwnfh_continue
         "Достижения?":
             jump blwnfh_continue_4

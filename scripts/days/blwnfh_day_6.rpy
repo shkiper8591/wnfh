@@ -981,16 +981,16 @@ label blwnfh_day_6:
     me "Чем мы занимались?"
     mi "Просто разговаривали."
     
-    show mi grin pioneer at center with dspr
+    show mi grin with dspr
     
     mi "Кстати Катя, мне удалось уломать Семёна поучаствовать в нашем концерте."
     kat "Здорово!"
     
-    show mi happy pioneer at center with dspr
+    show mi happy with dspr
     
     mi "Осталось только все тонкости с вожатой обсудить и утвердить."
     
-    show mi upset pioneer at center with dspr
+    show mi upset with dspr
     
     mi "А то боюсь, не всё что приемлемо играть и слушать в Японии, столь же приемлемо в Советском Союзе."
     
@@ -1005,7 +1005,7 @@ label blwnfh_day_6:
     kat "Что именно?"
     me "Ну то, что у Мику по сути же два дома."
     
-    show mi serious pioneer at center with dspr
+    show mi serious with dspr
     
     mi "Да, иметь два дома хорошо, но не когда эти дома находятся в совершенно разных уголках мира."
     me "Летать далеко типа?"
@@ -1013,7 +1013,7 @@ label blwnfh_day_6:
     mi "Да, в Японии мне проще адаптироваться, ведь я прожила там много. Но с каждым возвращением этот процесс становится всё дольше и дольше[wp] И сложнее."
     me "Вот как."
     
-    show mi normal pioneer at center with dspr
+    show mi normal with dspr
     
     "Мюсли подошли к концу, как и стакан с чуть тёплым компотом." 
     
@@ -1038,16 +1038,16 @@ label blwnfh_day_6:
     kat "Ох Мику, не знаю у нас с Семёном пр[wp] {w}Д-Дела, да."
     kat "С утра до вечера работать будем."
     
-    show mi sad pioneer at center with dspr
+    show mi sad pioneer with dspr
     
     mi "Обидно[wp] Ну ладно уж[wp]"
     
-    show mi happy pioneer at center with dspr
+    show mi happy pioneer with dspr
     
     mi "Тогда может, если не забуду, к вам заскочу!"
     kat "О, это будет хорошо, мы тебе всё покажем и расскажем. {w}Главное чтобы Женя разрешила."
     
-    show mi normal pioneer at center with dspr
+    show mi normal pioneer with dspr
     
     kat "Ну всё, пока, а ты давай, вставай!"
     me "Блин, что уж у тебя память-то хорошая, я то думал ты забыла про меня."
@@ -3338,7 +3338,7 @@ label blwnfh_day_6:
     "Очевидно, Катя на сей раз слушала что говорит Шурик."
     "И потянулась к магнитофону, на котором ткнула кнопку воспроизведения."
     
-    ## Тут надо будет вставить песню The Cars — «You Might Think»
+    play music blwnfh_music_list["the_cars_you_might_think"] noloop
     
     show sh surprise pioneer with dspr
     
@@ -3413,6 +3413,7 @@ label blwnfh_day_6:
     sh "В данном случае именно бардак."
     
     show sh normal pioneer with dspr
+    stop music fadeout 
     
     "Катя стала смещаться к дальнему шкафу и[wp]"
     
@@ -3781,7 +3782,7 @@ label blwnfh_day_6:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_day_sunset with dissolve2
+    scene bg int_dining_hall_sunset with dissolve2
     play ambience ambience_dining_hall_empty fadein 3
     $ renpy.pause(1.0)
     
@@ -3805,7 +3806,7 @@ label blwnfh_day_6:
     
     window hide
     stop ambience fadeout 1
-    scene bg int_dining_hall_people_sunset with dissolve2
+    show bg int_dining_hall_people_sunset with dissolve2
     play ambience ambience_dining_hall_full fadein 3
     $ renpy.pause(1.0) 
     window show
@@ -4230,6 +4231,7 @@ label blwnfh_day_6:
     window hide
     stop ambience fadeout 0.5
     scene bg ext_island_otherside_sunset with dissolve2
+    show kat normal pioneer at right with dspr
     play ambience ambience_lake_shore_evening fadein 3
     $ renpy.pause(1.5)
     window show
@@ -4466,7 +4468,7 @@ label blwnfh_day_6:
     
     "Спустя полчаса с чисткой рыбы было покончено."
     "Мои руки были все в чешуе, жире и просто ужасно воняли рыбой."
-    "Я сходил помыл руки в реке, и по моему возращению, разделил с Катей пробу первой партии жаренной рыбы."
+    "Я сходил помыл руки и нож в реке, и по моему возращению, разделил с Катей пробу первой партии жаренной рыбы."
     "Было неплохо, но всё же, Катя немного пережарила её."
     "А посиму, ощущения были не совсем те, какие хотелось бы."
     
@@ -4478,7 +4480,76 @@ label blwnfh_day_6:
     "Взяв вторую палку я принялся жарить новую партию морепродуктов."
     "И ни на секунду не отвлекался от этого процесса."
     "Как и Катя."
-    "Она наблюдала и, похоже, прям таки впитывала опыт глазами."
+    "Она очень внимательно наблюдала за моими действиями."
+    
+    me "Сейчас дожарим и давай переместимся на одеяло?"
+    me "А то я уже устал в такой позе сидеть."
+    kat "Угу, я тоже."
+    
+    window hide
+    $ renpy.pause(1.5)
+    window show
+    
+    "Дожарив рыбу мы разместились на мягоньком одеяльце."
+    
+    th "Ох, наконец-то[wp] {w}Как же я устал за сегодня."
+    th "Такое ощущение, что сейчас съем этого карася и прям тут отрублюсь."
+    
+    "Катя откусила кусочек."
+    
+    me "Ну как?"
+    
+    "Она медленно прожувала с очень важным выражением лица."
+    
+    kat "Фигня, у меня лучше получилось!"
+    me "Ага, конечно."
+    
+    "Я повторил за ней."
+    
+    th "Нет, у меня идеально получилось!"
+    
+    me "Кажется, кто-то нагло мне врёт."
+    kat "Тебе только кажется!"
+    me "Да-а?~"
+    kat "Ну ладно, чуть слукавила."
+    kat "У тебя чуть хуже моей рыбки получилось."
+    
+    "Цыкнув я покачал головой."
+    
+    me "Но нравится тебе чьей прожарки? Моей или своей?"
+    kat "Твоей[wp]"
+    me "Но у тебя лучше?"
+    kat "Дя!"
+    
+    "Я фыркнул."
+    
+    me "Хорошо, пусть так."
+    kat "Хи-хи-хи."
+    kat "Ладно, признаю, у тебя лучше получилось."
+    kat "Но только я понимаю одного момента."
+    me "Какого же?"
+    kat "Я делала всё точно также как и ты."
+    kat "Так почему же у меня она вышла хуже?"
+    me "Потому-что ты её передержала самую малость."
+    me "Оттого был лёгкий привкус гари в некоторых местах."
+    me "Да и прожарила ты не равномерно."
+    kat "Оу[wp]"
+    me "Но теперь, я надеюсь, ты научилась правильно жарить рыбу на костре."
+    kat "Ну, думаю нужна будет ещё практика."
+    kat "Может ещё наловишь рыбы?"
+    
+    "Лукавым голоском сказала она."
+    "Я же усталым взглядом посмотрел на удочку и вздохнул."
+    
+    me "Не, я уже сильно устал."
+    kat "Вижу[wp]"
+    
+    window hide
+    $ renpy.pause(1.5)
+    window show
+    
+    
+    
     
     
     

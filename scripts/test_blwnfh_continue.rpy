@@ -1,5 +1,5 @@
 label blwnfh_continue:    
-    "Временно не работает."
+    "Выборы выборы кандидаты[wp]"
     
     
     call screen blwnfh_triple_choice("dv", "mi", "un", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "Лена", "blwnfh_dv", "blwnfh_mi", "blwnfh_un", "day") with sphere_blure_dissolve2

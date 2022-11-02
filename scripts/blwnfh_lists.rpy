@@ -173,7 +173,7 @@ init 2:
         "pegi":blwnfh_VIDEO + "pegi.webm",
     }
     
-    $ bkrr_video_list["backdrop"] = {dn:(blwnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 6)}
+    $ blwnfh_video_list["backdrop"] = {dn:(blwnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 6)}
 
     image null = Null(0, 0) # Я не ебу что это, не помню нахуй это писал, но пусть будет
 

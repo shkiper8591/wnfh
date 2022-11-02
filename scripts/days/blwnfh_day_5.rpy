@@ -1,5 +1,5 @@
 label blwnfh_day_5:
-    $ blwnfh_set_savename(5)
+    $ blwnfh_new_chapter(5)
     $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
     $ renpy.pause(1.0)

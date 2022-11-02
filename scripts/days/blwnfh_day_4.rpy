@@ -1,5 +1,5 @@
 label blwnfh_day_4:
-    $ blwnfh_set_savename(4)
+    $ blwnfh_new_chapter(4)
     $ blwnfh_set_time("sunset")
     $ blwnfh_set_name("el", "Сергей")
     scene black

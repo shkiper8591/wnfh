@@ -388,7 +388,7 @@ label blwnfh_day_5:
     
     "Я пожал плечами и пошли дальше к муз кружку." 
     
-    show bg ext_musclub_verandah_blwnfh with dissolve
+    show bg ext_musclub_verandah with dissolve
     
     "Придя к крыльцу, Катя заметила, что дверь была приоткрыта."
     

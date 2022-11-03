@@ -1674,6 +1674,7 @@ label blwnfh_day_2:
     
     nvl hide
     $ blwnfh_set_mode()
+    stop music fadeout 3
     hide cg d2_dv_sem_scene with dspr
     show dv laugh pioneer at center with dspr
     
@@ -1685,7 +1686,7 @@ label blwnfh_day_2:
     
     show dv surprise pioneer at center with dspr
     
-    "Алисой и я устремили свои удивленные взгляды туда и[wp] {w}Увидели стоящую перед сценой Лену."
+    "Алиса и я устремили свои удивленные взгляды туда и[wp] {w}Увидели стоящую перед сценой Лену."
     "Одним ловким движением, она забралась на сцену и подошла к нам."
     
     show un laugh pioneer at fright with dspr
@@ -1972,8 +1973,7 @@ label blwnfh_day_2:
     
     "Ольга Дмитриевна погасила свет и я стал медленно засыпать."
     
+    window hide
     show blink
-    
     $ renpy.pause(2.0, hard=True)
-    
     jump blwnfh_day_3

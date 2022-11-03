@@ -1050,7 +1050,7 @@ label blwnfh_day_4:
     
     show un shy pioneer at left with dspr
     
-    un "Ой, даже не знаю, возможно [i]Семён[/i] прав."
+    un "Ой, даже не знаю, возможно {i}Семён{/i} прав."
     
     show kat obida pioneer at right with dspr
     
@@ -2023,7 +2023,7 @@ label blwnfh_day_4:
     
     scene bg ext_clubs_day with dissolve 
     # мини пауза
-    scene bg int_clubs_day with dissolve
+    scene bg int_clubs_male_day with dissolve
     play ambience ambience_clubs_inside_day
     show sh serious pioneer at left with dspr
     show el serious pioneer at right with dspr

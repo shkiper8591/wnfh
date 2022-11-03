@@ -858,9 +858,10 @@ label blwnfh_day_1:
     
     stop music fadeout 3
     
-    # таймскип/переход
-    
+    window hide
     scene bg ext_warehouse_day with dissolve2
+    $ renpy.pause(1.0)
+    window show
 
     "Скоро мы пришли к складу."
     "Заходить туда и пересекаться с нашим завхозом, мне не очень хотелось."

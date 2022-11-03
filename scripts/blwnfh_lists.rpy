@@ -173,7 +173,7 @@ init 2:
         "pegi":blwnfh_VIDEO + "pegi.webm",
     }
     
-    $ blwnfh_video_list["backdrop"] = {dn:(blwnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 6)}
+    $ blwnfh_video_list["backdrop"] = {dn:(blwnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 14)}
 
     image null = Null(0, 0) # Я не ебу что это, не помню нахуй это писал, но пусть будет
 
@@ -207,5 +207,6 @@ init 2:
     $ blwnfh_music_list["test_song"] = blwnfh_MUSIC + "testsong.mp3"
     $ blwnfh_music_list["cyberpunk"] = blwnfh_MUSIC + "rebelpath.mp3"
     $ blwnfh_music_list["proximity"] = blwnfh_MUSIC + "Alec Holowka - Proximity.mp3"
+    $ blwnfh_music_list["we_dont_care"] = blwnfh_MUSIC + "We Dont Care.ogg"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

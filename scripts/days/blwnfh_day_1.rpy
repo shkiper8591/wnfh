@@ -5,12 +5,12 @@ label blwnfh_day_1:
     scene black
     $ blwnfh_set_time("sunset")
     $ renpy.pause(1.5, hard=True)
-
+    play music blwnfh_music_list["waking_up"] fadein 5
     play ambience ambience_int_cabin_evening fadein 3
     scene expression blwnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
-    
+    $ renpy.pause(1.0)
     window show
     
     "Я резко распахнул глаза и привстав, быстро осмотрелся вокруг."
@@ -18,12 +18,10 @@ label blwnfh_day_1:
     th "Это всего лишь был сон[wp]"
     
     "Вздохнув и потерев лоб, я лег обратно, пытаясь вновь заснуть."
+    
     window hide
-    
     show blink
-    
     $ renpy.pause(3, hard=True)
-    
     window show
     
     "Но сердце колошматило так, что уснуть у меня не получалось."
@@ -38,14 +36,18 @@ label blwnfh_day_1:
     # th "епаний сир"
     th "Твою ж дивизию, чего меня так рано угораздило-то?"
     
+    stop music fadeout 3
+    
     "Недовольно фыркнув, одевшись и тихонько взяв умывальные принадлежности, я покинул дом."
     
+    window hide
     scene bg ext_house_of_mt_sunset with dspr
     stop ambience fadeout 0.5
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0, hard=True)
     play music music_list["everyday_theme"] fadein 3 
+    window show
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
@@ -221,8 +223,8 @@ label blwnfh_day_1:
     me "Ничего не обещаю."
     mt "Что это ещё значит, ничего не обещаю?"
     mt "И вообще, ты чего разлеглся? У тебя линейка скоро, так что давай вставай и шагом марш на площадь."
-    me "Ольга Дмитриевна, ну целых пятнадцать, чего там спрашивается делать всё это время?"
-    mt "Целый пятнядцать минут не опаздывать!"
+    me "Ольга Дмитриевна, ну целых пятнадцать минут, чего там спрашивается делать всё это время?"
+    mt "Целый пятнадцать минут не опаздывать!"
     
     show mt rage pioneer at center with dspr
     
@@ -281,6 +283,7 @@ label blwnfh_day_1:
     window hide
     $ renpy.pause(1.5)
     $ blwnfh_set_time()
+    play music music_list["trapped_in_dreams"] fadein 5
     scene bg ext_square_day with dissolve2
     window show
     
@@ -290,8 +293,9 @@ label blwnfh_day_1:
     "Приятный ветерок создавал идеальные условия для того, чтобы глаза начали сами собой слипаться."
     
     show blink
-    scene black
-    $ renpy.pause(1.5, hard=True)
+    window hide
+    $ renpy.pause(1.5)
+    window show
     
     "Медленно, но верно, я стал засыпать и уже откинул голову назад."
     "Но не прошло и пяти минут, как кто-то подошел и встал передо мной."
@@ -301,6 +305,9 @@ label blwnfh_day_1:
     un "Ты спишь?"
     me "Нет, готовлюсь час стоять на линейке."
     un "Тогда, ты не против, если я сяду рядом?"
+    
+    stop music fadeout 3
+    
     th "А вот с этого момента по подробнее."
     
     "Честно, мне хотелось быть одному, без чьей либо компании."
@@ -331,7 +338,7 @@ label blwnfh_day_1:
 
     hide un with dspr
     
-    scene bg ext_sky with dissolve
+    scene bg ext_sky with slide_up_blure_dissolve2
     
     "Как только она села, я откинул голову обратно и стал изучать облака."
     "Лена очень притихла, лишь изредка вздыхая."
@@ -339,9 +346,11 @@ label blwnfh_day_1:
     
     un "Семён[wp]"
     
+    play music music_list["what_do_you_think_of_me"] fadein 5
+    
     th "Видно не судьба мне ещё немного поспать сегодня."
     
-    scene bg ext_square_day with dissolve
+    scene bg ext_square_day with slide_down_blure_dissolve
     
     "Я опустил голову и перевел свой взгляд на нее."
     
@@ -372,10 +381,13 @@ label blwnfh_day_1:
     
     "Стала она из себя выдавливать."
     "Однако договорить ей не дала Алиса, появившаяся в этот момент между нами из-за спины."
+    
+    stop music fadeout 3
+    
     # тут надо звук хруста веток и всякое такое !3
     show un angry2 pioneer close at right with dspr
     show dv grin pioneer2 close at center with dspr
-    # надо подумать над всей это сценой !4
+    
     dv "Приветик, о чём болтаете?"
     me "Да вот[wp]"
     #me "сидим пердим" 
@@ -389,6 +401,8 @@ label blwnfh_day_1:
     un "Ну погоди тогда[wp]"
     
     show dv surprise pioneer2 close at center with dspr
+    
+    play music music_list["always_ready"] fadein 3
     
     "Довольно резко и неожиданно, Лена схватила Алису за нос."
     
@@ -424,6 +438,8 @@ label blwnfh_day_1:
     "Я нежно взял Лену за руку и только тогда она остановилась."
     
     me "Отпусти Алису, пожалуйста."
+    
+    stop music fadeout 3
     
     "Она пару секунд просто смотрела на меня, своим недовольным взглядом."
     "Но всё же, наконец, отпустила Алису."
@@ -711,7 +727,7 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg ext_bus with dissolve2
     play ambience ambience_camp_entrance_day fadein 3
-    
+    play music music_list["timid_girl"] fadein 3
     $ blwnfh_set_name("kat", "Новенькая")
     
     "И был приятно удивлен, когда не увидел перед собой орду пионеров."
@@ -776,6 +792,7 @@ label blwnfh_day_1:
     
     "Быстренько поднявшись к двери, я вошел во внутрь."
     
+    stop music fadeout 3
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with dissolve2
     play ambience ambience_clubs_inside_day fadein 3
@@ -803,6 +820,9 @@ label blwnfh_day_1:
     me "Ладно, я бы рад тебе помочь, но я зашел сюда, дабы сообщить, что немного опоздаю."
     me "Мне просто было велено конвоировать новенькую."
     # надо добавить звуки воды и девичий визг !9
+    
+    play music music_list["awakening_power"]
+    
     "И тут, как гром средь ясного неба, с улицы раздался плеск воды, а затем и девичий визг."
 
     me "Вашу ж."
@@ -835,6 +855,8 @@ label blwnfh_day_1:
     kat "Угу[wp]"
     
     "Быстрым шагом мы отправились к товарищу завхозу."
+    
+    stop music fadeout 3
     
     # таймскип/переход
     
@@ -929,7 +951,7 @@ label blwnfh_day_1:
     th "Хотя кого я обманываю[wp] {w}Скорее всего, как обычно, ничего серьезного делать не буду."
     th "И какой чёрт дёрнул меня записаться в кибернетики, я же нихрена не умею, а они инженеры блин."
     th "Валить от них пора, пока Шурик не придумал очередную авантюру на целую неделю."
-    th "Только вариантов считай и нет, ведь нельзя не состоять."
+    th "Только вариантов считай и нет, ведь просто нельзя не состоять где-нибудь."
     th "И тут либо кибернетика, либо музыка."
     th "И если выбирать между молчаливыми парнями или бесконечно болтающей ни о чём Мику."
     th "Я выберу первый вариант."
@@ -1332,7 +1354,7 @@ label blwnfh_day_1:
     
     scene bg ext_dining_hall_near_day
     show unblink
-    
+    $ renpy.pause(1.0)
     show mt normal pioneer panama at center with dspr
     
     mt "Семён, ты чего тут лежишь? Тебе плохо?"
@@ -1602,10 +1624,11 @@ label blwnfh_day_1:
     "С ночью пришла и прохлада, но уходить мне никуда не хотелось."
     "Поэтому я продолжил и дальше любоваться морскими видами уже под светом луны." 
     
+    window hide
     $ renpy.pause(1.5)
-    
     $ blwnfh_set_name("un", "Голос")
     play music music_list["lets_be_friends"] fadein 5
+    window show
     
     un "Не замерзнешь?"
     
@@ -1620,17 +1643,21 @@ label blwnfh_day_1:
     "Девушка медленно подошла и села рядом со мной."
     
     show un smile2 pioneer close at center with dspr
+    $ blwnfh_set_name("un", "Лена")
     
     un "Как ты догадался?"
     me "У меня хорошая память на голоса."
-    un "Ничего-себе[wp]"
+    un "Ничего себе[wp]"
     un "Ну так что, не замерзаешь?"
     me "Не-а[wp]"
-    me "Кстати, зачем ты сюда пришла?"
+    
+    "Говорил я не отрывая взгляда от реки."
+    
+    me "А ты чего не спишь, кстати?"
     
     show un smile with dspr
     
-    un "Перед сном на водицу посмотреть захотелось."
+    un "Пришла перед сном на водицу посмотреть."
     un "Я так уже пару ночей подряд делаю."
     un "Очень успакаивает и даёт нужное настроение, чтобы быстрее заснуть без лишних тревог."
     me "Хм, интересно."
@@ -1689,7 +1716,7 @@ label blwnfh_day_1:
     "Я осмотрелся вокруг."
     
     me "Ну, сейчас, вроде как, никаких Алис рядом нет."
-    me "Так что, может договоришь мне, что не успела утром?"
+    me "Так что, можешь договорить мне всё что не успела."
 
     show un shy with dspr
     
@@ -1705,11 +1732,18 @@ label blwnfh_day_1:
     un "Вот что я не успела договорить тебе."
     me "Спасибо, наверное?"
     un "Ну всё, я пойду, а то поздно уже."
-    me "Спокойной ночи."
+    
+    show un shy with dspr
+    
+    un "И кстати, завтра прогулка отменяется."
+    me "Почему?"
+    un "Женя и Ольга Дмитриевна дел на завтра навалили."
+    me "Ясненько[wp]"
+    me "Ну, я полагаю, спокойной ночи?"
     
     show un grin with dspr
     
-    un "И тебе тоже."
+    un "Спокойной ночи."
     
     hide un with dspr
     
@@ -1741,7 +1775,7 @@ label blwnfh_day_1:
     
     scene bg ext_houses_night with dissolve2
     
-    th "Может это всё-таки действительно одна большая шутка?"
+    th "Может это и правда, всё одна большая шутка?"
     th "Сговорилась с Алисой или кем-нибудь ещё, подколоть меня решили."
     th "Но им меня так просто не взять этим грязным приёмом, опыт имеется."
     th "Хотя[wp] {w}Либо из Алисы хорошая актриса."
@@ -1756,7 +1790,7 @@ label blwnfh_day_1:
     "Хорошо, потому что не придется устраивать тёрки с вожатой, почему я пришел ночью."
     "А плохо, что буду спотыкаться обо всё подряд."
     
-    stop ambience fadeout 0.5
+    stop ambience fadeout 1
     scene bg int_house_of_mt_night2 with dissolve2
     play ambience ambience_int_cabin_night fadein 3
     
@@ -1767,6 +1801,9 @@ label blwnfh_day_1:
     show blink
     stop ambience fadeout 3
     
-    "Сон утащил меня очень быстро, так что через всего пять минут я уже спал."
+    "Сон утащил меня очень быстро, так что всего через пять минут я уже спал."
+    
+    window hide
+    $ renpy.pause(1.5, hard=True)
     
     jump blwnfh_day_2

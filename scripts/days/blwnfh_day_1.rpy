@@ -100,9 +100,17 @@ label blwnfh_day_1:
     th "Надеюсь она не заметила меня."
     
     "Я потянулся за своей рубашкой, ляжащей рядом."
-    "Однако, похоже Славя всё-таки заметила меня, ведь выглянула из-за умывальника и смотрела ровно на меня."
     
-    show sl laugh sport close at center with dspr
+    show sl laugh sport close:
+        xcenter 1.2 ycenter 0.65
+    with dissolve
+    show sl laugh sport close:
+        subpixel True
+        ease 2.5 xcenter 0.9 ycenter 0.65 rotate -25  
+    with dspr
+    $ renpy.pause(1.0, hard=True)
+    
+    "Однако, похоже Славя всё-таки заметила меня, ведь выглянула из-за умывальника и смотрела ровно на меня."
     
     sl "А ты что тут делаешь?"
     # th "От тебя дуры прячусь."
@@ -112,11 +120,18 @@ label blwnfh_day_1:
     sl "Да так, думала прячешься от кого-то."
     #th "Да, от тебя."
     me "От кого мне прятаться-то?"
+    
+    show sl smile2 sport close:
+        subpixel True
+        pause 0.2
+        ease 2.5 xcenter 0.5 ycenter 0.5 rotate 0
+    with dspr
+    
     sl "Не знаю, мало ли[wp]"
     
     "Я поднял рубашку и, встав в полный рост, быстренько натянул её на себя."
     
-    show sl smile2 sport close at center with dspr
+    #show sl smile2 sport close at center with dspr
     
     me "Ты кстати, чего так рано встала?"
     sl "Так я всегда рано встаю, пробежкой занимаюсь."

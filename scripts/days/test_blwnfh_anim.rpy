@@ -1,25 +1,22 @@
 label blwnfh_test_anim:
-    sl "Смотри, твои подружки идут!"
-
-    show dv laugh pioneer2 far at cleft
-    show mi laugh pioneer far at cright
+    "Я потянулся за своей рубашкой, ляжащей рядом."
+    
+    
+    show sl laugh sport close:
+        xcenter 1.2
     with dissolve
+    "Однако, похоже Славя всё-таки заметила меня, ведь выглянула из-за умывальника и смотрела ровно на меня."
+    
+    show sl laugh sport close:
+        ease 2.5 xcenter 0.9 rotate -25  
+    #with dspr
+    
+    sl "А ты что тут делаешь?"
+    # th "От тебя дуры прячусь."
+    "Я посмотрел на Славю, потом на рубашку, а затем снова на неё." 
+    
+    me "За рубашкой нагнулся, а что?"    
 
-    "Мимо, оживлённо болтая, прошли Алиса и Мику."
-
-    window hide
-
-    show dv surprise pioneer2 far at cleft with dspr
-
-    $ renpy.pause(1.0, hard=True)
-
-    show dv guilty pioneer2 far:
-        ease 2.5 rotate 90
-    show mi laugh pioneer far:
-        ease 2.8 rotate -90
-    with ease
-
-    window show
     
     "Увидев меня и Славю, сидящих вместе, Алиса удивлённо вскинула бровь и быстро утащила подругу вперёд по дорожке."
     "Я с восхищением проводил их взглядом. {w}Алиса осталась в обычной форме, а вот Мику…"

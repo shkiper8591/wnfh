@@ -21,6 +21,8 @@ label blwnfh_test_main_menu:
     scene black
     
     menu:
+        "Анимации":
+            jump blwnfh_test_anim
         "Спрайты?":
             jump blwnfh_spritestest1
         "Музыку?":

@@ -1,4 +1,4 @@
-label blwnfh_continue_4:
+label blwnfh_test_ach:
 
     scene bg ext_square_day with dissolve2
     $ renpy.pause(1.0, hard=True)

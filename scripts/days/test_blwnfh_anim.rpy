@@ -1,37 +1,30 @@
 label blwnfh_test_anim:
-    "Допустим ульяна"
-    show us sport smile at center with dspr
-    "ease 1"
-    show us sport grin:
-        center
-        ease_back 1 xpos -0.2
-        #ease 0.25 zoom 1.15
-    with dspr
-    "Сыбалась в страхе"
-    show us sport smile at center with dspr
-    "ease 1 субпиксель"
-    show us sport grin:
-        subpixel True
-        center
-        ease_back 1 xpos -0.2
-        #ease 0.25 zoom 1.15
-    with dspr
-    "сыбалась в страхе"
-    show us sport smile at center with dspr
-    "ease 0.5"
-    show us sport grin:
-        center
-        ease_back 0.5 xpos -0.2
-        #ease 0.25 zoom 1.15
-    with dspr
-    "сыбалась в страхе"
-    show us sport smile at center with dspr
-    "ease 0.1"
-    show us sport grin:
-        center
-        ease_back 0.1 xpos -0.2
-        #ease 0.25 zoom 1.15
-    with dspr
-    "Сыбалась в страхе"
-    "Возвращаемся в меню отладки"
+    sl "Смотри, твои подружки идут!"
+
+    show dv laugh pioneer2 far at cleft
+    show mi laugh pioneer far at cright
+    with dissolve
+
+    "Мимо, оживлённо болтая, прошли Алиса и Мику."
+
+    window hide
+
+    show dv surprise pioneer2 far at cleft with dspr
+
+    $ renpy.pause(1.0, hard=True)
+
+    show dv guilty pioneer2 far:
+        ease 2.5 rotate 90
+    show mi laugh pioneer far:
+        ease 2.8 rotate -90
+    with ease
+
+    window show
+    
+    "Увидев меня и Славю, сидящих вместе, Алиса удивлённо вскинула бровь и быстро утащила подругу вперёд по дорожке."
+    "Я с восхищением проводил их взглядом. {w}Алиса осталась в обычной форме, а вот Мику…"
+    "До этого я видел её только в пионерской форме. Сейчас, в нарядном платье неуловимого голубовато-бирюзового оттенка, она выглядела так красиво, что хотелось забыть обо всём, бежать следом и смотреть, смотреть не отрываясь на эту красоту, говорить не очень умелые, но очень искренние слова восхищения, и всё прочее, что положено делать в таких случаях."
+    th "Но, не сейчас. Прости, любимая, не для себя стараюсь, для друга!"
+    th "Вот закончу и побегу к тебе."
+    "Стоп-стоп. {w}Я что, только что подумал про неё «любимая»? {w}А ведь, пожалуй, так оно и есть."
     jump blwnfh_test

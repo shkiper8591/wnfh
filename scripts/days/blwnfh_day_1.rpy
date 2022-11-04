@@ -20,8 +20,11 @@ label blwnfh_day_1:
     "Вздохнув и потерев лоб, я лег обратно, пытаясь вновь заснуть."
     
     window hide
+    
     show blink
     $ renpy.pause(3, hard=True)
+    scene black
+    
     window show
     
     "Но сердце колошматило так, что уснуть у меня не получалось."

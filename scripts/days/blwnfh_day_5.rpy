@@ -173,12 +173,12 @@ label blwnfh_day_5:
     
     me "Доброе утро, Ольга Дмитриевна."
     
-    show mt smile pioneer at center with dspr
+    show mt smile pioneer with dspr
     
     mt "Доброе, гляжу моя терапия пошла на пользу тебе, проснулся раньше меня."
     me "Будто я до этого не просыпался раньше вас."
     
-    show mt angry pioneer at center with dspr
+    show mt angry with dspr
     
     mt "Зато ночью не шлялся по сценам и не изображал Никулина!"
     mt "Нет, это надо же, в двенадцать НОЧИ! Петь на весь лагерь[wp]"
@@ -187,29 +187,29 @@ label blwnfh_day_5:
     
     me "Ну чего вы, теперь будете напоминать мне об этом?"
     
-    show mt normal pioneer at center with dspr
+    show mt normal with dspr
     
     mt "Да потому-что я не забуду этого никогда, Семён."
     
-    show mt smile pioneer at center with dspr
+    show mt smile with dspr
     
     mt "Но благо ни ночных игр, не походов, более ни будет."
     mt "Понимаешь, я сегодня, впервые за последние несколько дней, нормально выспалась."
     me "Ну простите уж, разыгрались, с кем не бывает."
     
-    show mt normal pioneer at center with dspr
+    show mt normal with dspr
     
     mt "Я-то конечно тебя прекрасно понимаю Семён, ты подросток, хочется подольше повеселится, сама такой была."
     mt "Но нужно понимать, что во первых вы тут не одни, а во вторых есть правила, которым надо следовать."
     me "Хорошо, попробую им следовать."
     
-    show mt smile pioneer at center with dspr
+    show mt smile with dspr
     
     mt "Не пробуй — делай! Или нет, никаких попыток."
     th "Вожатая цитирует магистра Йоду? Что?"
     me "Хорошо, буду следовать правилам лагеря."
     
-    show mt grin pioneer at center with dspr
+    show mt grin with dspr
     
     mt "Вот и славно! А теперь давай, топай умываться и иди на линейку."
     th "Ага-ага, размечталась, в этот раз у меня всё схвачено и я не пойду на линейку, Ольга Дмитриевна."
@@ -218,10 +218,11 @@ label blwnfh_day_5:
     
     "Подобрав пакет с принадлежностями, я покинул дом." 
     
-    # таймскип
-    
-    scene bg ext_washstand_day with dissolve
-    show un normal pioneer far at center with dspr
+    window hide
+    scene bg ext_washstand_day with dissolve2
+    $ renpy.pause(1.5)
+    show un normal pioneer far with dissolve
+    window show
     
     "Придя к умывальникам, я нашел здесь Лену, которая активно умывалась."
     "Но также помимо умывания, она судя по пробивающимся звукам[wp] разговаривала сама с собой?"
@@ -237,7 +238,7 @@ label blwnfh_day_5:
     th "Интересно, чего ей надо?"
     
     scene bg ext_washstand_day with dissolve
-    show un smile pioneer close at center with dspr
+    show un smile pioneer close with dspr
     
     un "Привет."
     me "Ага."
@@ -247,7 +248,7 @@ label blwnfh_day_5:
     un "Как спалось?"
     me "Хорошо, правда проснулся с больной головой."
     
-    show un shy pioneer close at center with dspr 
+    show un shy with dspr 
     
     un "А чего ты так?"
     me "Да вот, режим сна благодаря вожатой восстановил, от того и болит."
@@ -260,17 +261,17 @@ label blwnfh_day_5:
     un "А если не пройдет?"
     me "Тогда пойду на гильотину, что мне ещё остается."
     
-    show un grin pioneer close at center with dspr
+    show un grin with dspr
     
     un "Ты если с медсестрой пересекаться не хочешь, то давай я тебе сама дам таблетку, у меня с собой есть."
     me "Да мне правда нормально, просто легкий дискомфорт и всё."
     
-    show un smile pioneer close at center with dspr
+    show un smile with dspr
     
     un "Ладно, я пойду, к линейке готовится."
     me "Ага, пока."
     
-    show un normal pioneer close at center with dspr
+    show un normal with dspr
     
     "После моего ответа, улыбка с лица Лены пропала."
     
@@ -307,7 +308,7 @@ label blwnfh_day_5:
     
     # мини таймскип
     
-    show kat normal pioneer at center with dspr
+    show kat normal with dspr
     
     kat "Приветик, а ты чего под деревом делаешь?"
     
@@ -315,7 +316,7 @@ label blwnfh_day_5:
     
     me "Сижу и ещё по совместительству отлыниваю от линейки."
     
-    show kat happy pioneer at center with dspr
+    show kat happy with dspr
     
     kat "Правда? Ну тогда у меня для тебя плохие новости."
     me "И какие же?"
@@ -464,12 +465,12 @@ label blwnfh_day_5:
     kat "Нет-нет, оставайся, мы как раз надеялись, что ты будешь с нами."
     me "Она права."
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Ладненько, только я же не умытая, не ухоженная, неужели вам будет приятно играть с такой чупакаброй?"
     kat "Ой Мику, ну брось. {w}Нормально ты выглядишь, а это не всем дано."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "А мне хочешь сказать дано?"
     kat "А-то!"
@@ -478,14 +479,14 @@ label blwnfh_day_5:
     th "Ещё одна."
     me "К чёрту её, к тому же ты уже проспала."
     
-    show mi shocked pioneer at right with dspr
+    show mi shocked with dspr
     
     mi "Правда?! {w}Нет ребят, вы как хотите, а я побежала, не то Ольга Дмитриевна мне такое устроит[wp]"
     mi "В общем одного раза мне было достаточно, чтобы запомнить навсегда."
     
     "Мику быстренько схватила пакет с умывальными принадлежностями и помчалась к выходу."
     
-    show mi grin pioneer at right with dspr
+    show mi grin with dspr
     
     mi "Кстати если вы тут остаетесь, то будете так добры убрать мою постель?"
     
@@ -626,12 +627,12 @@ label blwnfh_day_5:
     
     kat "А ты чего не на линейке?"
     
-    show mi happy pioneer at right with dspr
+    show mi happy with dspr
     
     mi "А я смогла отпросится у Ольги Дмитриевны."
     me "Вот так просто?"
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Ну я всё равно сильно опоздала и пропустила всё важное, так что я попросила у Ольги Дмитриевной отпустить меня пораньше с линейки, взамен на то, что буду дежурить весь день в столовой."
     th "Колдунья! Чёрная магия! {w}Мною же множество раз было доказано, что с ней просто невозможно договорится!"
@@ -639,12 +640,12 @@ label blwnfh_day_5:
     mi "Нет, вместо неё сегодня вещала Славя, пока вожатая стояла рядом и следила за порядком в строю, вот и смогла спокойно отпроситься без отвлечения от работы."
     me "Повезло[wp]"
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "Воооот[wp] А вы чего кстати не играете, а кассеты разглядываете?"
     kat "Так подсобка-то закрыта."
     
-    show mi shy pioneer at right with dspr
+    show mi shy with dspr
     
     mi "Ой правда? А я что, не выдала тебе ключ от нее?"
     kat "Как видишь."
@@ -658,40 +659,40 @@ label blwnfh_day_5:
     mi "Слушаю."
     me "А что за песня у тебя такая стоит в магнитофоне? Некая, Кербер, ратнэ игрэ, что это и откуда?"
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     "Мику на пару секунд серьезно задумалась, видимо вспоминая про что она.."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "Это песня из Югославии, мне эту кассету один знакомый, как раз оттуда, подарил, там насколько я помню с его слов, поется против войн и что надо жить дружнее."
     me "Понятно, интересные у тебя знакомые."
     
-    show mi smile pioneer at right with dspr
+    show mi smile with dspr
     
     mi "Так это ещё верхушка айсберга, так сказать! {w}У меня очень много знакомых, не только из разных городов, но и стран тоже."
     mi "Я когда с папой ездила в Польшу, познакомилась чуть ли не с половиной Варшавы."
     mi "И знаешь, там такие приятные люди, а ещё они все удивлялись тому, что я японка. {w}Вот с некоторыми друзьями и знакомыми мы до сих пор поддерживаем связь."
     mi "А до этого, я хоть и была маленькой, но отчетливо помню поездку в Берлин."
     
-    show mi sad pioneer at right with dspr
+    show mi sad with dspr
     
     mi "Там очень красиво, только жаль, что тогда весь город посмотреть нельзя было из-за стены, к которой и не подойти даже. Сразу дядя в погонах и военной форме развернет тебя в противоположную сторону."
     me "Будто сейчас сможешь его полностью посмотреть[wp]"
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Ну да, смогу если отец туда снова поедет, стены же уже как два года нету."
     me "Как это, нет?"
     
     "Такой ответ ввел меня в ступор мягко говоря."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "Германия уже как два года едина."
     me "О как, и что, там до сих пор коммунисты?"
     
-    show mi laugh pioneer at right with dspr
+    show mi laugh with dspr
     
     "От моего вопроса, Мику громко рассмеялась."
     
@@ -703,13 +704,13 @@ label blwnfh_day_5:
     
     th "Вот как значит[wp] Германия едина и под флагом ГДР[wp] {w}Какие же ещё тогда здесь могут быть отличия в истории?"
     
-    show mi normal pioneer at right with dspr
+    show mi normal at right with dspr
     
-    show kat normal pioneer at left with dspr
+    show kat normal at left with dspr
     
     "И в этот момент из подсобки донесся громкий грохот, от которого Мику немного вскрикнула, видимо от испуга."
     
-    show mi scared pioneer at right with dspr
+    show mi scared with dspr
     
     mi "Катя, у тебя там всё хорошо?"
     
@@ -727,7 +728,7 @@ label blwnfh_day_5:
     
     kat "Играть будем?"
     
-    show mi shocked pioneer at right with dspr
+    show mi shocked with dspr
     
     "Мику смотрела на пыльные инструменты вытаращив глаза."
     
@@ -735,7 +736,7 @@ label blwnfh_day_5:
     kat "А какая разница?"
     mi "Так ваши настроены правильно, а эти[wp] Я в первые вижу если честно."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "Пойду поищю ваши инструменты."
     
@@ -750,7 +751,7 @@ label blwnfh_day_5:
     me "Куда ты так залезла, что вся в пылюки?"
     kat "Так там не убирались лет сто!"
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     "Вскоре из подсобки вернулась Мику, с нашими инструментами на перевес."
 
@@ -761,7 +762,7 @@ label blwnfh_day_5:
     
     "Катя нагнулась обратно за инструментами, а Мику поставила наши рядом с пианино."
     
-    show mi dontlike pioneer at right with dspr
+    show mi dontlike with dspr
     
     mi "Только я тебя умоляю, не бери смычок в зубы! Неси его в руках как нормальный человек."
     kat "Хорошо-хорошо."
@@ -824,12 +825,12 @@ label blwnfh_day_5:
     kat "Что, алкоголик, уже глядим заскучал без нас."
     me "Чего я алкоголик-то сразу?"
     
-    show mi smile pioneer at right with dspr
+    show mi smile with dspr
     
     mi "А чего ты песни такие поешь? Про самогонку."
     me "Так из фильма же, почему бы и нет."
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Не знаю я таких фильмов, где такое можно было бы услышать."
     kat "Врёт небось нам."
@@ -838,13 +839,13 @@ label blwnfh_day_5:
     
     me "Да где ж я вру-то, вы мне сами на трубе подыгрывали."
     
-    show mi shocked pioneer at right with dspr
+    show mi shocked with dspr
     
     mi "Мы подыгрывали? {w}Мы так, просто трубу проверяли, может случайно попали в такт музыки." 
     me "И что, так точно попали? Не бывает такого."
     me "Да и[wp] {w}Ай, что я вам доказать-то пытаюсь."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     "Я отмахнулся рукой и отложил гитару в сторону."
     th "Тоже мне, актрисы нашлись."
@@ -854,7 +855,7 @@ label blwnfh_day_5:
     me "А то, не знаю как вы, а я сейчас бы не отказался от чая хотя бы."
     kat "Да и я как-то вот тоже передумала насчёт прогула завтрака."
     
-    show mi dontlike pioneer at right with dspr
+    show mi dontlike with dspr
     
     mi "А не могли раньше определится? Зачем я все эти инструменты доставала и зачем отпрашивалась у вожатой?"
     kat "Так после завтрака поиграем."
@@ -862,7 +863,7 @@ label blwnfh_day_5:
     me "Мику, слушай, пусть наши инструменты будут стоять рядом с барабанной установкой?"
     me "К чему вот всё жесткое распределение, из-за которого мы между прочим чуть не оказались в пролете."
     
-    show mi sad pioneer at right with dspr
+    show mi sad with dspr
     
     "Мику грустно вздохнула."
     
@@ -870,20 +871,20 @@ label blwnfh_day_5:
     me "Это у вас в Японии нельзя, а у нас в России, всё чуть проще."
     me "И пока ты живешь в России, ты тоже думай чуть проще и менее стандартно."
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Ладно[wp] Попробуем."
     kat "Ну что, пойдем есть или нет?"
     
     "Недовольно пробурчала Катя, стоящая у выхода сложив руки."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
         
     me "Да, идём уже."
     
     "Я встал со стула и направился на выход, как Мику схватила меня за руку."
     
-    show mi dontlike pioneer at right with dspr
+    show mi dontlike with dspr
     
     mi "А гитары кто на новое место убирать будет?"
     me "Когда закрывать муз клуб будем, тогда и уберем, а пока пошли есть."
@@ -912,7 +913,7 @@ label blwnfh_day_5:
     kat "Здравствуйте."
     mt "Так, Мику, можешь идти, а с этими мне нужно провести[wp] Профилактическую беседу."
     
-    show mi sad pioneer at right with dspr
+    show mi sad with dspr
     
     "Мику посмотрела на нас грустными глазами и ушла вглубь столовой."
     
@@ -938,7 +939,7 @@ label blwnfh_day_5:
     th "Солидный списочек хотя, могло быть и хуже." 
     th "Главное чтобы оборудование не весило под пол тонны."
     
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer with dspr
     
     mt "Кстати говоря, ты будешь кого-то звать с собой комментировать?"
     
@@ -1054,22 +1055,22 @@ label blwnfh_day_5:
     
     "Довольно безразлично ответили мы Мику."
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "А вы чего такие грустные?"
     kat "Да вот, завтраком недовольны остались."
     me "Ага."
     
-    show mi happy pioneer at right with dspr
+    show mi happy with dspr
     
     mi "Ой, все говорят, что не вкусно, а мне вот наоборот, понравился!"
     # th "больная блять."
     
-    show mi upset pioneer at right with dspr
+    show mi upset with dspr
     
     mi "Только вот пересолили его немного."
     
-    show mi normal pioneer at right with dspr
+    show mi normal with dspr
     
     mi "Но в целом было вкусно! Да и я люблю когда чуть-чуть пересолёно."
     
@@ -1093,7 +1094,7 @@ label blwnfh_day_5:
     mi "И чтобы было больше стимула работать, тот кто первый доберется до центра столовой получит кулек конфет."
     kat "А каких конфет?"
     
-    show mi grin pioneer at right with dspr
+    show mi grin with dspr
     
     mi "А вот ты первой уберись и узнай!"
     
@@ -1192,11 +1193,11 @@ label blwnfh_day_5:
     
     "Я стал приближаться ко входу в подсобку, как оттуда, чуть ли не выбежал, Сергей."
     
-    show el normal pioneer at center with dspr
+    show el normal pioneer with dspr
     
     el "Снова привет Шу[wp]" 
     
-    show el grin pioneer at center with dspr
+    show el grin with dspr
     
     el "А, это ты Семён, тогда доброе утро."
     me "Ага, доброе."
@@ -1209,7 +1210,7 @@ label blwnfh_day_5:
     me "Да вот меня вожатая как раз послала помогать вам его таскать на поле."
     me "А ты кстати почему не с ним?"
     
-    show el surprise pioneer at center with dspr
+    show el surprise with dspr
     
     el "Я? Аэм[wp]"
     
@@ -1220,12 +1221,12 @@ label blwnfh_day_5:
     
     el "Я[wp]"
     
-    show el serious pioneer at center with dspr
+    show el serious with dspr
     
     el "Я кабеля доставл для оборудования."
     me "И что, далеко были раз ты такой весь замученный?"
 
-    show el normal pioneer at center with dspr
+    show el normal with dspr
     
     el "На чердак пришлось лезть за кабелями, а там сам наверное помнишь как всё плохо." 
     me "Хорошо, а зачем заперся?"
@@ -1236,7 +1237,7 @@ label blwnfh_day_5:
     
     me "Ладно, бери кабеля и пошли к Шурику."
     
-    show el sad pioneer at center with dspr
+    show el sad with dspr
     
     el "Аэ, знаешь, у меня тут ещё есть одно дело, неотложное."
     el "Не мог бы ты сам отнести кабеля?"
@@ -1250,14 +1251,14 @@ label blwnfh_day_5:
     th "Почему же именно здесь? {w}Да и когда тебя явно ждут."
     th "Хотя, любоф она такая непредсказуемая."
     
-    show el normal pioneer at center with dspr
+    show el normal pioneer with dspr
     
     "Вскоре мой товарищ вернулся и протянул мне три длинных мотка и чёрный пакет впридачу."
     
     el "Вот."
     me "Ёлки палки, как я всё понесу-то это."
     
-    show el laugh pioneer at center with dspr
+    show el laugh with dspr
     
     el "Уже поздно отказываться Семён!"
     me "Что ж за дело такое неотложное у тебя."
@@ -1265,7 +1266,7 @@ label blwnfh_day_5:
     "Процедил я сквозь зубы, беря весь этот груз."
     "Кое как взяв это, не без помощи Сергея, я был полностью готов."
     
-    show el grin pioneer at center with dspr
+    show el grin with dspr
     
     el "Ну, в путь!"
     me "Ага."
@@ -1292,7 +1293,7 @@ label blwnfh_day_5:
     
     me "Привет, как успехи?"
     
-    show sh normal pioneer at center with dspr
+    show sh normal pioneer with dspr
     
     sh "А? Привет. Да вот, вожусь, скоро относить буду всё это."
     sh "Надеюсь ты мне поможешь?"
@@ -1300,13 +1301,13 @@ label blwnfh_day_5:
     sh "Отлично[wp] {w}А кстати, где Серёга?"
     me "В клубах, дела какие-то неотложные делает."
     
-    show sh surprise pioneer at center with dspr
+    show sh surprise with dspr
     
     sh "Какие ещё у него могут быть дела?!"
     sh "Я же сказал ему ещё утром, подготовь и отнеси мне кабели, после чего свободен." 
     me "Ну, кабели он достал, а принёс я."
     
-    show sh serious pioneer at center with dspr
+    show sh serious with dspr
     
     "Шурик покачал головой."
     
@@ -1315,7 +1316,7 @@ label blwnfh_day_5:
     sh "Молодец, я так понимаю Сергей тебе не сказал, что нести надо-то на поле."
     sh "А так теперь придется делать лишний подход."
     
-    show sh normal pioneer at center with dspr
+    show sh normal with dspr
     
     sh "Ладно, не велика беда."
     sh "Ну что, понесли?"
@@ -1329,7 +1330,7 @@ label blwnfh_day_5:
     
     stop ambience
     scene bg ext_path2_day with dissolve
-    show sh normal pioneer at center with dspr
+    show sh normal pioneer with dspr
     play ambience ambience_forest_day 
     
     
@@ -1381,12 +1382,12 @@ label blwnfh_day_5:
     "И словно как в каких-то мультиках, она бегала вокруг колонки, давя то на одну, то на другую сторону."
     "Естественно у нее ничего не получилось и вскоре Ульяна сдалась."
     
-    show us sad sport at right with dspr
+    show us sad with dspr
     
     us "Фуууух[wp]"
     me "Ну а чё ты хотела, сорок девять тонн!"
     
-    show us smile sport at right with dspr
+    show us smile with dspr
     
     us "Ой, кому ты болтаешь-то?"
     us "Если она весила столько, вы бы не подняли её."
@@ -1403,7 +1404,7 @@ label blwnfh_day_5:
     
     stop ambience
     scene bg ext_stage_normal_day with dissolve
-    show sh normal pioneer at center with dspr
+    show sh normal pioneer with dspr
     play ambience ambience_camp_center_day
     
     "Со второй колонкой мы управились куда быстрее."
@@ -1424,7 +1425,7 @@ label blwnfh_day_5:
     # Короче говоря, примерно на как фоне с площадью, переоборудованной под танцпол.
     
     scene bg ext_playground_day with dissolve
-    show sh normal pioneer at center with dspr
+    show sh normal pioneer with dspr
     
     "К моменту когда мы закончили всё таскать, на поле уже было пусто."
     
@@ -1433,7 +1434,7 @@ label blwnfh_day_5:
     
     "Шурик посмотрел на свои часы."
     
-    show sh normal_smile pioneer at center with dspr
+    show sh normal_smile with dspr
     
     sh "Друг, зачем куда-то торопиться?"
     me "Ну там, на обед, не?"
@@ -1459,7 +1460,7 @@ label blwnfh_day_5:
     
     me "Ау[wp]"
     
-    show sh normal pioneer at center with dspr
+    show sh normal with dspr
     
     sh "Да, громкость надо «чуть-чуть» сбавить, а ещё бы колонки наверное ещё чуть подальше поставить."
     me "Давай ты как-нибудь сам их потаскаешь, а про громкость соглашусь."
@@ -1480,12 +1481,12 @@ label blwnfh_day_5:
     "После чего, первый микрофон был настроен."
     "Регулятор второго микрофона выставили на то же значение."
     
-    show sh normal_smile pioneer at center with dspr
+    show sh normal_smile with dspr
     
     sh "Вот и собстна всё."
     me "Теперь можно и отдохнуть."
     
-    show sh normal pioneer at center with dspr
+    show sh normal with dspr
     
     sh "Пожалуй соглашусь."
     
@@ -1518,22 +1519,22 @@ label blwnfh_day_5:
 
     el "Привет снова."
     
-    show el grin pioneer at left with dspr
+    show el grin with dspr
     
     el "Я гляжу, вы без моей помощи справились."
     me "Да, справились, но с тобой это было бы куда проще и быстрее."
     
-    show el upset pioneer at left with dspr
+    show el upset with dspr
     
     el "Ну простите, не мог я, дела доделывал."
     sh "Кстати о делах. {w}Чем ты занимался полдня в клубах?"
     
-    show el serious pioneer at left with dspr
+    show el serious with dspr
     
     el "Это неважно, для себя кое-что."
     sh "Вот те раз, то есть мы тут с Семёном занимаемся делом, а ты у нас эгоист."
     
-    show el angry pioneer at left with dspr
+    show el angry with dspr
     
     el "Эгоист? {w}ЭГОИСТ?!"
     el "Слушай сюда, я и Семён всегда помогаем тебе по клубам."
@@ -1543,26 +1544,26 @@ label blwnfh_day_5:
     
     th "Сейчас пойдет потеха. {w}Жаль нету попкорна."
     
-    show sh serious pioneer at right with dspr 
+    show sh serious with dspr 
     
     sh "То есть по твоему это оправдывает использование тобой общих ресурсы клуба в свою пользу?"
     el "А по твоему это оправдано эксплутировать нас в свою пользу?"
     
-    show sh shocked pioneer at right with dspr
+    show sh shocked with dspr
     
     sh "Что? Когда такое было вообще?!"
     sh "Серый, что с тобой стало-то? Нормально же всё было!"
     el "Да вот, вещи некоторые переосмыслим и осознал."
     
-    show sh serious pioneer at right with dspr
+    show sh serious with dspr
     
     sh "Ну значит если тебе больше не нравится у нас, то[wp]"
     me "Да заткнитись вы блин, и так жарко, ещё и голова от вас болит."
     
     "Резко выдал я, перебив Шурика."
     
-    show sh normal pioneer at right with dspr
-    show el normal pioneer at left with dspr
+    show sh normal with dspr
+    show el normal with dspr
     
     "Парни, видимо, немного успокоились."
     
@@ -1574,7 +1575,7 @@ label blwnfh_day_5:
     sh "Да ради бога, тебя тут никто держать не собирается."
     el "Вот и славно."
     
-    show el grin pioneer at left with dspr
+    show el grin with dspr
     
     el "Так, моя миссия выполнена, аривидерчи."
     
@@ -1683,26 +1684,26 @@ label blwnfh_day_5:
     
     me "А звание дежурного даёт право садиться куда угодно без спроса?"
     
-    show mi shy pioneer at left with dspr
+    show mi shy with dspr
     
     mi "Ой прости, мы тебя и не заметили."
     kat "Да Семён, извини."
     me "Та как бы ладно, просто забавно вышло."
     mi "Просто ты вот сидишь тише травы, ниже воды[wp]"
     
-    show mi upset pioneer at left with dspr
+    show mi upset with dspr
     
     mi "Ой, наоборот, тише воды, ниже травы."
     me "Да, я понял."
     
-    show mi normal pioneer at left with dspr
+    show mi normal with dspr
     
     kat "В общем, ты не против нашей компании, верно?"
     me "Нет, только рад буду."
     me "А то обед какой-то невкусный подают, а тут хоть вас заточить можно будет."
     kat "Можешь закать губу обратно, мы тоже невкусные! {w}Правда Мику?"
     
-    show mi grin pioneer at left with dspr
+    show mi grin with dspr
     
     mi "Правда-правда!"
     
@@ -1710,13 +1711,15 @@ label blwnfh_day_5:
     
     me "Жаль! А выглядите вполне аппетитно."
     
-    show mi normal pioneer at left with dspr
+    show mi normal with dspr
     
     "Немного похихикав, девушки принялись за свой обед."
     "И на моё удивление, уплетали они его довольно активно."
     "Видимо их всё устраивало и это просто я такой везучий, получил невкусную порцию. {w}Или кто-то специально такую подложил[wp]"
     
-    # пауза
+    window hide
+    $ renpy.pause(2.0)
+    window show
     
     "С момента начала обеда прошло около десяти минут."
     "Я и мои подруги уже всё съели."
@@ -1754,7 +1757,7 @@ label blwnfh_day_5:
     me "А чего мы тут сидим, если еда давно кончилась? Может пойдем уже?"
     kat "Ой, заболтались просто, вот и сидим. {w}А так да, поддерживаю твою идею."
     
-    show mi sad pioneer at left with dspr
+    show mi sad with dspr
     
     mi "А мне вот наверное нельзя покидать столовую, я же как никак дежурная."
     me "Ой, хватит чтоле, после матча придешь и продолжишь дежурить, думаю никто не обидется."
@@ -1762,7 +1765,7 @@ label blwnfh_day_5:
     kat "Боюсь если ты спросишь, то тогда тебя точно не отпустят."
     me "Верно подмечено."
     
-    show mi upset pioneer at left with dspr
+    show mi upset with dspr
     
     mi "Но ведь так же нельзя, без спросу уходить с рабочего места."
     mi "Да и уже скоро матч, может сразу со всеми туда пойти?"
@@ -1770,7 +1773,7 @@ label blwnfh_day_5:
     mi "Ну в целом-то да но[wp]"
     me "Короче неважно это всё, пошли уже."
     
-    show mi serious pioneer at left with dspr
+    show mi serious with dspr
     
     mi "Ой, ну смотрите, если на меня ругаться будут, виноваты вы."
     kat "Да-да, мы поняли, пошли уже."
@@ -1800,12 +1803,12 @@ label blwnfh_day_5:
     dv "Что, занимаете самые лучшие места?"
     me "Нееет, у меня и Кати место покруче этих будет."
     
-    show us grin sport at right with dspr
+    show us grin with dspr
     
     us "Да? И какое-же? Дома вдвоем на кроватке будете «отдыхать» пока все свалили?"
     me "Ща как тресну тебе подзатыльник!"
     
-    show dv smile sport at left with dspr
+    show dv smile with dspr
     
     dv "Ульяна, как некультурно-то[wp]"
     
@@ -1813,11 +1816,11 @@ label blwnfh_day_5:
     
     me "За столом коментатора сидеть будем мы, объявлять на всё поле успехи и провалы ваши."
     
-    show us surp1 sport at right with dspr
+    show us surp1 with dspr
     
     us "Ого! И правда отличное вам местечко досталось."
     
-    show us laugh sport at right with dspr
+    show us laugh with dspr
     
     us "Только вы это, давайте лучше провалы Алисы освещайте."
     us "А если успехи, то только мои!"
@@ -1827,17 +1830,17 @@ label blwnfh_day_5:
     
     mi "К тому же так будет неинтересно и сложнее понять что происходит на поле, если ты потерял концентрацию."
     
-    show dv laugh sport at left with dspr
+    show dv laugh with dspr
     
     dv "А ещё у тебя не будет ни одного успешного момента за весь матч."
     
-    show us dontlike sport at right with dspr
+    show us dontlike with dspr
     
     us "Да ну вас, ты-то, Семён, на моей стороне?"
     me "Я не могу с ними не согласится."
     me "Так что прости уж."
     
-    show us upset sport at right with dspr
+    show us upset with dspr
     
     us "Ну и ладно, я и так победю."
     
@@ -1851,7 +1854,7 @@ label blwnfh_day_5:
     kat "И не сомневаемся!"
     
     hide us with dspr
-    show dv normal sport at center with dspr
+    show dv normal at center with dspr
     
     "Ульянка весело ускакала на дальний конец футбольного поля."
     "Алиса же осталась, и как-то странно изучала меня и Катю взглядом."
@@ -1860,13 +1863,13 @@ label blwnfh_day_5:
     dv "Да нет, всё нормально."
     me "А чего тогда так смотришь на нас?"
     
-    show dv smile sport at center with dspr
+    show dv smile with dspr
     
     dv "Просто вы забавно вместе смотритесь вот и всё."
     me "Вот как."
     kat "В каком смысле забавно?"
     
-    show dv laugh sport at center with dspr
+    show dv laugh with dspr
     
     dv "В смысле как два шута!"
     mi "Алиса, как грубо!"
@@ -1875,13 +1878,13 @@ label blwnfh_day_5:
     
     "Я же вместа слов, поднял на Алису презрительный взгляд."
     
-    show dv grin sport at center with dspr
+    show dv grin with dspr
     
     dv "Какие вы все серьезные, что пошутить нельзя?"
     dv "Задумалась я и всего-то. {w}Даже не о вас между прочим."
     kat "Ну-ну!"
     
-    show dv normal sport at center with dspr
+    show dv normal with dspr
     
     dv "Ладно, пойду я."
     kat "Счастливо."
@@ -1896,12 +1899,12 @@ label blwnfh_day_5:
     "А какие-то занимали места на трибунах."
     "Я даже заметил несколько знакомых лиц, прошедших мимо:"
     
-    show un normal pioneer at center with dspr
+    show un normal pioneer with dspr
     
     "Лену."
     
     hide un with dspr
-    show sl normal sport at center with dspr
+    show sl normal sport with dspr
     
     "Славю."
     
@@ -1918,12 +1921,12 @@ label blwnfh_day_5:
     "А всё потому, что она была в спортивной форме."
     th "Она тоже что ли участвует?"
     
-    show mt smile panama pioneer at center with dspr
+    show mt smile panama pioneer with dspr
     
     "И, собственно, замыкая сзади вереницу пионеров, шла Ольга Дмитриевна."
     "Которая подошла к нам."
     
-    show mt normal panama pioneer at center with dspr
+    show mt normal with dspr
     
     mt "А вы чего не на своем месте?"
     me "Ждали когда все соберутся."
@@ -1939,7 +1942,7 @@ label blwnfh_day_5:
     kat "Спасибо."
     me "Да, спасибо."
     
-    show mt angry panama pioneer at center with dspr
+    show mt angry with dspr
     
     mt "Ну что вы там так долго! У нас начало через пять минут!"
     mt "А мне ещё много чего вам рассказать нужно!"
@@ -1947,8 +1950,8 @@ label blwnfh_day_5:
     
     # переход наверное
     
-    show mt normal panama pioneer at right with dspr
-    show kat normal pioneer at left with dspr
+    show mt normal at right with dspr
+    show kat normal at left with dspr
     
     "Заняв наше место, мы стали внимательно слушать вожатую."
     
@@ -1958,7 +1961,7 @@ label blwnfh_day_5:
     mt "Вы, поприветствуете зрителей, представитесь и назовёте команды футболистов."
     kat "А как нам их называть, если мы не знаем имён команд?"
     
-    show mt smile panama pioneer at right with dspr
+    show mt smile with dspr
     
     mt "Всё очень просто."
     mt "С синими повязками на руках, это команда Алисы."
@@ -1974,12 +1977,12 @@ label blwnfh_day_5:
     
     "Мы одобрительно покивали головами."
     
-    show mt grin panama pioneer at right with dspr
+    show mt grin with dspr
     
     mt "Отлично, тогда я побежала и да прибудет с вами сила."
     
     hide mt with dspr
-    show kat normal pioneer at center with dspr
+    show kat normal with dspr
     
     me "Честно, я немного волнуюсь."
     kat "Ой, да ладно, всё будет нормально."
@@ -2159,7 +2162,7 @@ label blwnfh_day_5:
     
     nvl hide dissolve
     $ blwnfh_set_mode()
-    show kat normal pioneer at left with dspr
+    show kat normal with dspr
     
     "Мы выключили свои микрофоны и я откинулся на спинку стула."
     "И пофигу, что она была крайне неудобная."
@@ -2173,13 +2176,13 @@ label blwnfh_day_5:
     me "Довольно неплохо."
     kat "Только устали немного."
     
-    show sl happy sport at right with dspr
+    show sl happy with dspr
     
     sl "Быстро вы устали, вам тут ещё целый час сидеть!"
     kat "Знаем[wp]"
     me "Ну, а ты как в роли судьи?"
     
-    show sl smile sport at right with dspr
+    show sl smile with dspr
     
     sl "Интересно."
     sl "Мне нравится следить за порядком, соблюдением правил, все дела."
@@ -2191,34 +2194,34 @@ label blwnfh_day_5:
     kat "Ну это самое главное, чтобы нравилось."
     me "Кстати, а что тебе Ульяна в начале матча доказывала?"
     
-    show sl laugh sport at right with dspr 
+    show sl laugh with dspr 
     
     sl "Ой, ничего такого интересного."
     sl "Пожаловалась мне, что я подменила монетку в момент броска, у которой одна сторона, так сказать."
     sl "И когда я ей показала, что это не так, она высынула язык."
     me "Ну это мы видели."
     
-    show sl normal sport at right with dspr
+    show sl normal with dspr
     
     kat "И ещё такой вопрос: как мы вообще? Нас интересно слушать?"
     sl "Да, вполне."
     sl "Самое главное, что вы освещали нужные и важные моменты матча."
     sl "Я даже иногда ориентировалась только на вас, когда не поспевала за футболистами." 
     
-    show sl smile2 sport at right with dspr
+    show sl smile2 with dspr
     
     sl "Ну конечно у вас не без воды в виде юморка."
     sl "Но, я прекрасно понимаю, вы, по большей части, чтобы не дать зрителям заскучать."
     sl "С чем вы, собственно, прекрасно справляетесь."
     me "В общем жалоб нет и это хорошо."
     
-    show sl normal sport at right with dspr
+    show sl normal with dspr
     
     sl "Пойду я, надо мяч осмотреть, поменять может придется, а то Ульяна так лупит по нему."
     kat "Хорошо."
     
     hide sl with dspr
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer with dspr
     
     "Славя ушла и мы снова остались наедине."
     "Я посмотрел на часы. {w}До начала второго тайма оставалось семь минут."
@@ -2473,26 +2476,26 @@ label blwnfh_day_5:
     nvl hide dissolve
     $ blwnfh_set_mode()
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer with dspr
     
     "Выключив микрофоны, мы встали из-за стола и отправились к трибунам."
     "Народ оттуда уже активно уходил и только лишь Ольга Дмитриевна и Сергей остались там."
     "Тут и дураком быть не надо, чтобы понять: сейчас мы будем таскать всю аппаратуру назад[wp] {w}Мать её за ногу."
     
-    show kat normal pioneer at left with dspr
-    show mt smile panama pioneer at center with dspr
-    show el normal pioneer at right with dspr
+    show kat normal at left with dspr
+    show mt smile panama pioneer with dspr
+    show el normal at right with dspr
     
     "Подойдя, вожатая встретила нас легкими овациями."
     
     mt "А вот и наши коментаторы!"
     mt "Хорошо вы поработали."
     
-    show mt grin panama pioneer at center with dspr
+    show mt grin with dspr
     
     mt "Не без курьёзов конечно, но на перерыве, немного, да подурачиться можно."
     
-    show mt normal panama pioneer at center with dspr
+    show mt normal with dspr
     
     mt "Разве что не на людях."
     kat "Ну, а чего он грустил-то? Так я ему настроение подняла."
@@ -2504,7 +2507,7 @@ label blwnfh_day_5:
     mt "Катя, ты отправляешься в столовую дежурить с Мику, а вы парни[wp]"
     me_el_s "Идём таскать тяжести."
     
-    show mt grin panama pioneer at center with dspr
+    show mt grin with dspr
     
     mt "Какие молодцы, всё верно!"
     mt "Так что уперёд и с песней!"
@@ -2520,7 +2523,7 @@ label blwnfh_day_5:
     stop ambience
     scene bg ext_stage_big_sunset with dissolve
     play ambience ambience_camp_center_evening
-    show el normal pioneer at center with dspr
+    show el normal pioneer with dspr
     
     "Так мы и перетаскали с ним всё обратно на сцену, а кабель оттащить договорились завтра ибо лень."
     "И стоит отметить, что с Шуриком таскать всё это было куда как проще. А если быть точным, быстрее."
@@ -2534,7 +2537,7 @@ label blwnfh_day_5:
     me "Да, с божью помощью."
     me "Ладно, уже скоро должен ужин начинаться, пойдем к столовой."
     
-    show el grin pioneer at center with dspr
+    show el grin with dspr
     
     el "Неее, мне ещё в библиотеку зайти надо {i}кое-зачем.{/i}" 
     me "«кое-зачем»?"
@@ -2561,31 +2564,31 @@ label blwnfh_day_5:
     dv "Да, можно."
     me "Благодарю."
     
-    show us calml pioneer at left with dspr
+    show us calml with dspr
     
     us "А с каких это пор, голос проигравших стал иметь значение?"
     
-    show dv angry pioneer at right with dspr
+    show dv angry with dspr
     
     dv "А с каких это пор, мелким вообще давали право голоса?"
     
-    show us grin pioneer at left with dspr
+    show us grin with dspr
     
     us "А вот с таких!"
     
     th "Мда, похоже в тишине поужинать не получится."
     th "Так что, режим абсолютного игнорирования окружающих — включён."
     
-    show us normal pioneer at left with dspr
-    show dv normal pioneer at right with dspr
+    show us normal with dspr
+    show dv normal with dspr
     
     "Ужин представлял из себя картофельное пюре с рыбной котлетой."
     "Это было вполне съедобно, уж по крайней мере получше того недоразумения на обед."
     "Чай обычный, чёрный, а к нему приличных таких размеров булка из которой немного вытекало повидло, напоминающее клубничное."
     "В общем неплохо, неплохо."
     
-    show dv laugh pioneer at right with dspr
-    show us laugh pioneer at left with dspr
+    show dv laugh with dspr
+    show us laugh with dspr
     
     "И я бы так и продолжил спокойно есть, если бы не крайне странное обстоятельство."
     "Я такого и неожидал даже, так что пробыл в ступоре какое-то время."
@@ -2597,11 +2600,11 @@ label blwnfh_day_5:
     dv "А чё ты нас не слушаешь, а?"
     me "Потому-что когда я ем, я глух и нем."
     
-    show dv normal pioneer at right with dspr
+    show dv normal with dspr
 
     me "Так что вы хотели?"
     
-    show us normal pioneer at left with dspr
+    show us normal with dspr
     
     us "Почему «вы» сразу? Это всё она."
     dv "Да, я просто хотела поинтересоваться, пойдешь ли ты сейчас в музклуб?"
@@ -2609,12 +2612,12 @@ label blwnfh_day_5:
     me "И сейчас я пойду убираться у нас в доме."
     dv "Вот как[wp]"
     
-    show dv grin pioneer at right with dspr
+    show dv grin with dspr
     
     dv "Но зато теперь будешь знать, что бывает с теми, кто прогуливает!"
     dv "Мы вот с Ульянкой ни одной линейки не пропустили."
     
-    show us smile pioneer at left with dspr
+    show us smile with dspr
     
     us "Да-да!"
     me "Что ж, сочувствую вам, что впустую тратити своё время."
@@ -2624,8 +2627,8 @@ label blwnfh_day_5:
     
     me "Да, я такой, всё дайте теперь спокойно доесть."
     
-    show dv normal pioneer at right with dspr
-    show us normal pioneer at left with dspr
+    show dv normal with dspr
+    show us normal with dspr
     
     dv "Хорошо."
     
@@ -2647,26 +2650,26 @@ label blwnfh_day_5:
     
     "Повернувшись обратно лицом к выходу я столкнулся с Ольгой Дмитриевной."
     
-    show mt angry pioneer at center with dspr
+    show mt angry pioneer with dspr
 
     mt "Куда собрался?"
     me "Аэм, ну[wp] Это, пф[wp] {w}Дома убираться."
     
-    show mt grin pioneer at center with dspr
+    show mt grin with dspr
     
     mt "Чудненько, а я то думала, что ты забыл."
     mt "Вот какой ты у меня молодец! Сразу видно, моя трудотерапия идёт тебе на пользу!"
     
     th "Ага, конечно."
     
-    show mt smile pioneer at center with dspr
+    show mt smile with dspr
     
     mt "Ну раз так, то пойдем же убираться."
     me "Ольга Дмитриевна, а можно там ну[wp] Завтра например, а? А то я усну сейчас."
     mt "Можно, но поскольку у меня завтра куча дел, подъем у тебя будет в шесть утра."
     me "А позже никак?"
     
-    show mt normal pioneer at center with dspr
+    show mt normal with dspr
     
     "Вожатая задумалась."
     
@@ -2691,7 +2694,7 @@ label blwnfh_day_5:
     "А значит, никакие Ульяны или другие воры-редицивисты мне не помешают."
     "Думал я, если бы не легкое постукивание по плечу."
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer with dspr
     
     kat "Приветик."
     
@@ -2706,12 +2709,12 @@ label blwnfh_day_5:
     me "Ага."
     kat "Здорово, значит пойдем вместе!"
     
-    show kat normal pioneer close at center with dspr
+    show kat normal pioneer close with dspr
     
     "Катя встала поближе ко мне, и мы неспешным шагом отправлись к своим домикам."
     
     scene bg ext_houses_sunset with dissolve
-    show kat normal pioneer close at center with dspr
+    show kat normal with dspr
     
     kat "Слушай, а хорошо мы с тобой откомментировали, я в столовой только и слышала, как нас обсуждают, а не победителей."
     me "Круто, что могу сказать."
@@ -2752,12 +2755,12 @@ label blwnfh_day_5:
     me "Хорошо, если у меня завтра не будут отваливаться руки и ноги, сплаваем туда."
     
     scene bg ext_house_of_mt_sunset with dissolve
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer with dspr
     
     kat "Ну и отлично, тогда быстрее иди домой, чтобы у тебя точно ничего не отвалилось."
     kat "Мы уже как раз дошли." 
     
-    show kat normal pioneer at center with dspr
+    show kat normal with dspr
     
     me "Ну-с, тогда спокойной ночи."
     kat "Спокойной[wp]"

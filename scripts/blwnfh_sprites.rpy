@@ -26,7 +26,7 @@ init 2:
                 'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1, 'cry': 2, 'normal_smile': 2, 'rage': 2, 'normal': 3, 'serious': 3, 'surprise': 3,
             },
             'un': {
-                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'dr_normal': 4, 'dr_smile': 4,
+                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4,
             },
             'us': {
                 'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
@@ -38,7 +38,7 @@ init 2:
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
             'kat': {
-                'grin': 1, 'normal': 1, 'sad': 1, 'shocked': 1, 'akhegao': 2, 'angry': 2, 'fuk': 2, 'happy': 2, 'normal2': 2, 'scared': 2, 'shy': 2, 'guilty': 3, 'nepon': 3, 'obida': 3, 'rock': 3, 'sad2': 3, 'shy2': 3,
+                'grin': 1, 'normal': 1, 'sad': 1, 'shocked': 1, 'akhegao': 2, 'angry': 2, 'fuk': 2, 'happy': 2, 'normal2': 2, 'scared': 2, 'shy': 2, 'guilty': 3, 'nepon': 3, 'obida': 3, 'rock': 3, 'sad2': 3, 'shy2': 3, 'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5,
             },
             #'uv': {
             #    'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
@@ -188,6 +188,8 @@ init 2:
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])
+        make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'])
+        
         #make_sprites_for('dv', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
         #make_sprites_for('dv', 'bkrr_swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude=('angry', 'guilty', 'rage', 'sad', 'shy'))
         #make_sprites_for('dv', 'bkrr_swim', ['mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))

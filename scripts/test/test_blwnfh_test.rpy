@@ -9,12 +9,13 @@ label technical_chocolatki:
 
 
 label blwnfh_test:
-
+    $ blwnfh_new_chapter(13)
     $ blwnfh_set_time()
     scene black
     
     "Добро пожаловать в меню отладки!"
     "Что мы хотим отладить?"
+    jump blwnfh_test_main_menu
 
 label blwnfh_test_main_menu:
 
@@ -48,7 +49,7 @@ label blwnfh_spritestest1:
         "Обыкновенные?":
             jump blwnfh_spritestest2
         "Фоновые?":
-            jump blwnfh_backgroundconfirm
+            jump blwnfh_background
         "Обеденный стол?":
             jump blwnfh_stol
         "Вернутся назад?":
@@ -88,14 +89,3 @@ label blwnfh_spritestest2:
         "Вернутся назад":
             jump blwnfh_spritestest1
 
-label blwnfh_backgroundconfirm:
-
-    "Чей именно мы хотим отладить фоновый спрайт?"
-    
-    menu:
-        "Катя?":
-            jump blwnfh_katbgconfirm
-        "Лена?":
-            jump blwnfh_unbgconfirm
-        "Вернутся назад":
-            jump blwnfh_spritestest1

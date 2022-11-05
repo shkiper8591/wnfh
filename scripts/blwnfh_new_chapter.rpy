@@ -21,9 +21,10 @@ init python:
         renpy.show("black")
         renpy.with_statement(Dissolve(2.0))
         blwnfh_set_time()
-        if day in range(1, 14):
+        if day in range(0, 15):
             renpy.pause(1.0, hard=True)
             renpy.movie_cutscene(blwnfh_video_list["backdrop"][day], delay=10.0)
+        
         #elif day == u"Эпилог":
         #    renpy.pause(1.0, hard=True)
         #    renpy.movie_cutscene(blwnfh_video_list["backdrop"]["epilogue"], delay=21.0)

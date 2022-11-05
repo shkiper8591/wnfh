@@ -129,6 +129,9 @@ label blwnfh_day_1:
     
     sl "Не знаю, мало ли[wp]"
     
+    hide sl
+    show sl smile2 sport close
+    
     "Я поднял рубашку и, встав в полный рост, быстренько натянул её на себя."
     
     #show sl smile2 sport close at center with dspr
@@ -137,20 +140,20 @@ label blwnfh_day_1:
     sl "Так я всегда рано встаю, пробежкой занимаюсь."
     me "Эво как, и как оно?"
     sl "Очень полезное занятие, советую и тебе этим заняться."
-    
-    show sl laugh sport close at center with dspr
+
+    show sl laugh sport close with dspr
     
     sl "Хочешь, прямо сейчас со мной пробежаться?"
     
     "Застегнув рубашку, я повернулся к ней."
     
-    show sl smile2 sport close at center with dspr
+    show sl smile2 sport close with dspr
     # тут можно будет вставить выбор.
     me "Пожалуй откажусь, мне что-то не очень хорошо."
     
     "Утренняя пробежка было последним, чем мне хотелось бы заниматься здесь."
     
-    show sl sad sport close at center with dspr
+    show sl sad sport close with dspr
     
     sl "Да? А что с тобой? Может к медсестре сводить."
     
@@ -161,7 +164,7 @@ label blwnfh_day_1:
     sl "Плохо[wp]"
     me "Не то слово."
     
-    show sl angry sport close at center with dspr
+    show sl angry sport close with dspr
     
     sl "А это всё потому, что ты не занимаешься спортом!"
     
@@ -178,7 +181,7 @@ label blwnfh_day_1:
     sl "А ты у нас кто? {w}Правильно, пионер! А он всегда должен быть в форме, чтобы быть готовым ко всему."
     me "Ладно-ладно, я постараюсь."
     
-    show sl normal sport close at center with dspr
+    show sl normal sport close with dspr
     
     sl "Вот и славно. {w}Ладненько, мне ещё несколько километров нужно пробежать, пока."
     

@@ -1,6 +1,5 @@
 label blwnfh_day_6:
     $ blwnfh_new_chapter(6)
-    $ blwnfh_set_name("el", "Сергей")
     $ blwnfh_set_time("sunset")
     play ambience ambience_int_cabin_evening fadein 3
     scene expression blwnfh_wakeup("int_house_of_mt_sunset")

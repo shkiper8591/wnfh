@@ -1,8 +1,6 @@
-# семён просыпается
 label blwnfh_day_3:
     $ blwnfh_new_chapter(3)
     $ blwnfh_set_time("sunset")
-    $ blwnfh_set_name("el", "Сергей")
     scene black
     $ renpy.pause(1.5, hard=True)
     show bg int_house_of_mt_sunset with dissolve

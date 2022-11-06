@@ -1,7 +1,6 @@
 label blwnfh_day_4:
     $ blwnfh_new_chapter(4)
     $ blwnfh_set_time("sunset")
-    $ blwnfh_set_name("el", "Сергей")
     scene black
     play ambience ambience_day_countryside_ambience fadein 3
     play music blwnfh_music_list["waking_up_2"] fadein 5
@@ -2647,5 +2646,5 @@ label blwnfh_day_4:
     hide mt with dspr
     
     "Я же разделся и лег в постель, где сон почти сразу же утащил меня в свои объятия."
-    # конец 4-го дня.
+    
     jump blwnfh_day_5

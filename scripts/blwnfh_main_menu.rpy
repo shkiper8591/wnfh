@@ -79,7 +79,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.0944444, 0.0) 
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_0")]
+            action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]
             idle blwnfh_gui["img"]["play"]
             hover blwnfh_gui["img"]["play"]
             hover_sound blwnfh_gui["sound"]["plimp"]

@@ -217,8 +217,8 @@ init 2:
 label blwnfh_main:
     scene bg disclaimer with dissolve
     $ renpy.pause(100)
-#    jump blwnfh_main_menu
-#label blwnfh_main_menu:
+    jump blwnfh_main_menu
+label blwnfh_main_menu:
     scene bg fon with dissolve
     $ renpy.pause(2)
     $ init_splash()

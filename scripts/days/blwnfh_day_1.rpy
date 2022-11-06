@@ -4,14 +4,22 @@ label blwnfh_day_1_dream:
     $ blwnfh_set_time("prologue")
     show anim prolog_2 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
-    play music music_list["door_to_nightmare"]
+    play music music_list["door_to_nightmare"] 5
     
     "Я бегу, бегу не обращая внимания на сильную усталость. Моё тело уже давно просит отдыха, но нельзя останавливаться ни на секунду, ведь она идёт.\n"
     
     th "Чёртвая огнедыщащая креветка, чего же тебе надо от меня?!"
 
-    "\nКреветка становилась всё ближе и ближе, а звук её «лапок» всё более ужасающим. {w}"    
+    "\nКреветка становилась всё ближе и ближе, а звук её «лапок» всё более ужасающим."    
+    "Вдалеке виднелся выход, из которого бил белый свет. Неужели я спасусь?! Неужели этому кошмару настанет конец и ужасное чудовище больше не будет гнаться за мной?! {w}Неужели[wp]"
+    "Находясь в паре метров от выхода я, по своей невнимательности, обо что-то споткнулся и с грохотом ударился о земле."
+    "Посадка была очень тяжелой, меня буквально сковывала адская боль по всему телу."
+    "А креветка приближалась, приближалась и[wp]"
     
+    nvl clear
+    stop music fadeout 3
+    
+    th "[wp]Ничего? {w}Н-Но, почему? Что происходит?"
     
     
     
@@ -106,12 +114,12 @@ label blwnfh_day_1:
     
     "За своими размышлениями, я и не заметил как подошел к умывальникам."
     
-    scene bg ext_washstand_day with dissolve2
+    scene bg ext_washstand_sunset with dissolve2
 
     "Здесь никого не было, что было хорошо."
     "Люблю умываться в одиночестве."
     
-    scene bg ext_washstand2_day with sphere_blure_dissolve2
+    scene bg ext_washstand2_sunset with sphere_blure_dissolve2
     
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, дабы ещё немного помыться."
     "Конечно, сделать это будет непросто без горячей воды, но её как на зло, пару дней назад отключили." 
@@ -132,7 +140,7 @@ label blwnfh_day_1:
     "Как совершенно неожиданно сюда пришла Славя."    
     "Показывать ей свой голый торс совсем не хотелось, а посему я спрятался за умывальник."
     
-    scene bg ext_washstand_day with sphere_invert_blure_dissolve2
+    scene bg ext_washstand_sunset with sphere_invert_blure_dissolve2
     
     th "Надеюсь она не заметила меня."
     
@@ -230,7 +238,7 @@ label blwnfh_day_1:
     
     window hide
     
-    scene bg ext_houses_day with dissolve2
+    scene bg ext_houses_sunset with dissolve2
     $ renpy.pause(2.0, hard=True)
     scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
     $ renpy.pause(2.0, hard=True)
@@ -241,12 +249,12 @@ label blwnfh_day_1:
     # тут нада звуки возни !1
     th "По всей видимости, наша вожатая проснулась."
     
-    scene bg ext_house_of_mt_day:
+    scene bg ext_house_of_mt_sunset:
         truecenter
         zoom 1.0
         ease_quart 2.0 zoom 1.5
     
-    scene bg int_house_of_mt_day with dissolve2
+    scene bg int_house_of_mt_sunset with dissolve2
     stop ambience fadeout 0.5
     stop music fadeout 3
     play sound sfx_close_door_1
@@ -359,10 +367,10 @@ label blwnfh_day_1:
     
     hide mt with dspr
     
+    stop music fadeout 3
+    
     "Ольга Дмитриевна быстро ушагала, примерно, в сторону умывальников."
     "А я же отправился туда, куда велено мне."
-    
-    # мини таймскип
     
     window hide
     $ renpy.pause(1.5)

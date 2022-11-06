@@ -1514,11 +1514,11 @@ label blwnfh_day_6:
     
     show anim prolog_1 with dspr
     
-    #пауза
-    
+    $ renpy.pause(1.5)
     $ blwnfh_set_mode(nvl)
     $ blwnfh_set_name("me", "Я")
     $ blwnfh_set_name("voice", "Стражник")
+    play blwnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
     nvl show dissolve
     
     
@@ -1589,8 +1589,9 @@ label blwnfh_day_6:
     voice "Семён[wp]"
     me "Да что?!"
     
-    nvl hide dissolve    
+    nvl hide dissolve
     $ blwnfh_set_mode()
+    stop music fadeout 5
     $ blwnfh_set_name("me", "Семён")
     $ blwnfh_set_name("voice","Голос")
     hide anim_prolog_1 with dspr

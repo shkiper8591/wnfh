@@ -1,3 +1,38 @@
+label blwnfh_day_1_dream:
+    
+    $ blwnfh_set_mode(nvl)
+    $ blwnfh_set_time("prologue")
+    show anim prolog_2 with Dissolve(5.0)
+    $ renpy.pause(1.5, hard=True)
+    play music music_list["door_to_nightmare"]
+    
+    "Я бегу, бегу не обращая внимания на сильную усталость. Моё тело уже давно просит отдыха, но нельзя останавливаться ни на секунду, ведь она идёт.\n"
+    
+    th "Чёртвая огнедыщащая креветка, чего же тебе надо от меня?!"
+
+    "\nКреветка становилась всё ближе и ближе, а звук её «лапок» всё более ужасающим. {w}"    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 label blwnfh_day_1:
     
     $ blwnfh_new_chapter(1)

@@ -17,12 +17,20 @@ label blwnfh_day_2_dream:
     
     "Раздался лёгкий смешок.\n"
     
-    kat "Тогда[wp] {w}Ты пойдешь со мной?"
+    nvl clear
+    
+    kat "Это хорошо. А то думала, что там.\n"
+    me "Где там?\n"
+    kat "Ну[wp] Там[wp]\n"
+    me "Это где?\n"
+    kat "В Караганде! Ха-ха, ловко я тебя подловила, да?\n"
+    me "Ах ты[wp] Засранка!"
     
     nvl hide
     scene black with dissolve2
     $ blwnfh_set_mode()
     $ renpy.pause(2.0, hard=True)
+    
 label blwnfh_day_2:
     
     $ blwnfh_new_chapter(2)
@@ -37,8 +45,8 @@ label blwnfh_day_2:
     
     th "Кажется, мне приснился кто-то[wp] {w}Но вот кто? {w}Впрочем, имеет ли это какое-то значение сейчас?"
     
-    show unblink
     scene bg int_house_of_mt_sunset
+    show unblink
     
     "Открыв глаза, я увидел, что Ольга Дмитриевна всё ещё была в домике, и сидела за столом раскладывая какие-то бумаги."
     "Я приподнялся и протер глаза."

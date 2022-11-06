@@ -164,7 +164,7 @@ init 2:
         make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:<emotion>', 'mod:shirt'])
         make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
         make_sprites_for('kat', 'body', ['mod:body', 'mod:<emotion>'])
-        make_sprites_for('kat', 'pioneer dark', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], sprite_define_func=_dark_sprite)]
+        make_sprites_for('kat', 'pioneer dark', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], sprite_define_func=_dark_sprite)
         
         ## Новые старые спрайты
         # Женя

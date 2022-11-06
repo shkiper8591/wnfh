@@ -182,7 +182,7 @@ label blwnfh_day_1:
     
     sl "Хочешь, прямо сейчас со мной пробежаться?"
     
-    show sl smile2 with dspr
+    show sl surprise with dspr
     # тут можно будет вставить выбор.
     me "Пожалуй откажусь, мне что-то не очень хорошо."
     
@@ -228,13 +228,23 @@ label blwnfh_day_1:
     
     "Я собрал все свои принадлежности и отправился обратно в дом."
     
+    window hide
+    
     scene bg ext_houses_day with dissolve2
-    $ renpy.pause(1)
+    $ renpy.pause(2.0, hard=True)
     scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
+    $ renpy.pause(2.0, hard=True)
+    
+    window show
     
     "Подойдя к дому, я услышал, что оттуда доносятся звуки возни."
     # тут нада звуки возни !1
     th "По всей видимости, наша вожатая проснулась."
+    
+    scene bg ext_house_of_mt_day:
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
     
     scene bg int_house_of_mt_day with dissolve2
     stop ambience fadeout 0.5
@@ -243,13 +253,19 @@ label blwnfh_day_1:
     play ambience ambience_int_cabin_evening fadein 3
     $ renpy.pause(1.0, hard=True)
     
-    show mt normal pioneer with dspr
+    show mt normal pioneer far at right with dspr
     
     "Войдя внутрь, я увидел, как Ольга Дмитриевна ходила туда сюда по дому и, в явной спешке, рыскала по шкафам."
     
+    show mt normal pioneer far at fright with dspr
+    
     th "Интересно, куда она так торопиться рано утром?"
     
+    show mt normal pioneer at fright with dspr
+    
     "Я какое-то время наблюдал за всем этим процессом, пока вожатая не обратила на меня внимание."
+    
+    show mt normal pioneer far at center with dspr
     
     mt "О, Семён, доброе утро."
     me "И вам тоже[wp] {w}А вы тут чем занимаетесь?"
@@ -280,7 +296,7 @@ label blwnfh_day_1:
     mt "Что это ещё значит, ничего не обещаю?"
     mt "И вообще, ты чего разлеглся? У тебя линейка скоро, так что давай вставай и шагом марш на площадь."
     me "Ольга Дмитриевна, ну целых пятнадцать минут, чего там, спрашивается, делать всё это время?"
-    mt "Целый пятнадцать минут не опаздывать!"
+    mt "Целых пятнадцать минут не опаздывать!"
     
     show mt rage with dspr
     
@@ -294,11 +310,14 @@ label blwnfh_day_1:
     
     mt "Вот так бы сразу."
     
-    "С диким не желанием, я поднялся с кровати и направился на выход."
-    
+    window hide
+    scene bg ext_house_of_mt_sunset with dspr
     stop ambience fadeout 0.5
-    scene bg ext_house_of_mt_day with dissolve2
-    play ambience ambience_camp_center_day fadein 3
+    play sound sfx_close_door_1
+    play ambience ambience_camp_center_evening fadein 3
+    $ renpy.pause(1.0, hard=True)
+    play music music_list["everyday_theme"] fadein 3 
+    window show
     
     "Выйдя, я спустился с крыльца и стал думать, что делать."
     "Идти никуда не хотелось, тем более на линейку."
@@ -307,10 +326,19 @@ label blwnfh_day_1:
     th "Можно конечно подремать на лавочке, на площади."
     th "Но там наверняка уже понемногу собирается народ и просто так это у меня не выйдет."
     
+    scene bg ext_house_of_mt_sunset:
+        subpixel True
+        ease_quart 2.0 zoom 1.5 xcenter 0.3 ycenter 0.3
+    
     "Тут мой взор пал на шезлонг."
     "Я подошел к нему и уже было захотел лечь на него, как мой внутренний тормоз остановил меня."
     
     th "Нет, если я сейчас здесь улягусь, вожатая тут же выйдет из дома."
+    
+    scene bg ext_house_of_mt_sunset:
+        subpixel True
+        zoom 1.5 xcenter 0.3 ycenter 0.3
+        ease_quart 2.0 zoom 1.0 xcenter 0.5 ycenter 0.5
     
     "И буквально через секунду, после моей мысли, из дома вышла Ольга Дмитриевна."
     

@@ -1,6 +1,6 @@
 label blwnfh_nvltest: 
    
-show anim prolog_1 with Dissolve(5.0)
+    show anim prolog_1 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
     $ blwnfh_set_name("kat", "???")
     $ blwnfh_set_mode(nvl)

@@ -2,13 +2,14 @@ label blwnfh_day_1_dream:
     
     scene black
     $ renpy.pause(1.0)
-    $ blwnfh_set_mode(nvl)
+    
     $ blwnfh_set_time("prologue")
     $ blwnfh_set_name("kat", "Незнакомка")
     $ blwnfh_set_name("me", "Я")
     show anim prolog_2 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
     play music music_list["door_to_nightmare"] fadein 5
+    $ blwnfh_set_mode(nvl)
     nvl show
     
     "Я бегу, бегу не обращая внимания на сильную усталость. Моё тело уже давно просит отдыха, но нельзя останавливаться ни на секунду, ведь она идёт.\n"
@@ -58,11 +59,14 @@ label blwnfh_day_1_dream:
     stop ambience
     scene black
     $ renpy.pause(1.0)
+    jump blwnfh_day_0
     
 label blwnfh_day_1:
     
     $ blwnfh_new_chapter(1)
     $ blwnfh_set_name("el", "Сергей")
+    $ blwnfh_set_name("me", "Семён")
+    $ blwnfh_set_name("kat", "Катя")
     scene black
     $ blwnfh_set_time("sunset")
     $ renpy.pause(1.5, hard=True)
@@ -430,8 +434,9 @@ label blwnfh_day_1:
     
     $ blwnfh_set_name("un", "Лена")
     scene bg ext_square_day
-    show un smile pioneer with dspr
+    show un smile pioneer
     show unblink
+    with None
     
     "Открыв глаза, я был крайне удивлен, что передо мной стояла Лена."
     "Быстренько оглядевшись, я заметил, что вокруг было полно свободных и хороших мест."
@@ -450,9 +455,8 @@ label blwnfh_day_1:
     
     "Я немного отодвинулся к краю лавки и Лена села рядом."
 
-    hide un with dspr
-    
-    scene bg ext_sky with slide_up_blure_dissolve2
+    hide un with dissolve
+    scene bg ext_sky with slide_down_blure_dissolve2
     
     "Как только она села, я откинул голову обратно и стал изучать облака."
     "Лена очень притихла, лишь изредка вздыхая."
@@ -464,7 +468,7 @@ label blwnfh_day_1:
     
     th "Видно не судьба мне ещё немного поспать сегодня."
     
-    scene bg ext_square_day with slide_down_blure_dissolve
+    scene bg ext_square_day with slide_up_blure_dissolve2
     
     "Я опустил голову и перевел свой взгляд на нее."
     
@@ -497,10 +501,10 @@ label blwnfh_day_1:
     "Однако договорить ей не дала Алиса, появившаяся в этот момент между нами из-за спины."
     
     stop music fadeout 3
-    
     # тут надо звук хруста веток и всякое такое !3
-    show un angry2 pioneer with dspr
     show dv grin pioneer2 close with dspr
+    show un angry2 with dspr
+    
     
     dv "Приветик, о чём болтаете?"
     me "Да вот[wp]"
@@ -515,11 +519,16 @@ label blwnfh_day_1:
     un "Ну погоди тогда[wp]"
     
     show dv surprise with dspr
-    show un rage with dspr
+    show un evil_smile with dspr
     
     play music music_list["always_ready"] fadein 3
     
     "Довольно резко и неожиданно, Лена схватила Алису за нос."
+    
+    show dv surprise:
+        linear 0.1 xalign 0.45
+        linear 0.1 xalign 0.55
+        repeat
     
     dv "Ты чего творишь?!"
     un "А ты догадайся."

@@ -6,7 +6,7 @@ label blwnfh_day_1_dream:
     $ blwnfh_set_name("me", "Я")
     show anim prolog_2 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
-    play music music_list["door_to_nightmare"] 5
+    play music music_list["door_to_nightmare"] fadein 5
     
     "Я бегу, бегу не обращая внимания на сильную усталость. Моё тело уже давно просит отдыха, но нельзя останавливаться ни на секунду, ведь она идёт.\n"
     

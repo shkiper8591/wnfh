@@ -373,10 +373,14 @@ label blwnfh_day_1:
     "А я же отправился туда, куда велено мне."
     
     window hide
-    $ renpy.pause(1.5)
+    
+    scene bg ext_houses_day with slide_left_blure_dissolve2
+    $ renpy.pause(2.0, hard=True)
+    scene bg ext_square_day with slide_left_blure_dissolve2
+    $ renpy.pause(2.0)
     $ blwnfh_set_time()
     play music music_list["trapped_in_dreams"] fadein 5
-    scene bg ext_square_day with dissolve2
+    
     window show
     
     "Придя на площадь, я был удивлен тому, что здесь было крайне мало народу."

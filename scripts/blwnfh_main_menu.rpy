@@ -215,6 +215,7 @@ init 2:
 
 
 label blwnfh_main:
+    define config.developer = True
     scene bg disclaimer with dissolve
     $ renpy.pause(100)
     jump blwnfh_main_menu

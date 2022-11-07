@@ -271,6 +271,7 @@ label blwnfh_day_1:
     th "По всей видимости, наша вожатая проснулась."
     
     scene bg ext_house_of_mt_sunset:
+        subpixel True
         truecenter
         zoom 1.0
         ease_quart 2.0 zoom 1.5
@@ -689,12 +690,6 @@ label blwnfh_day_1:
     
     "Я подошел к ним и сразу заметил, что Ульяна давит ехидную лыбу, уставившись на меня."
     
-    
-    
-    me "Можно к вам сесть?"
-    dv "Да, можно."
-    us "Садись-садись!"
-    
     show chair_l behind us
     show chair_r behind dv
     show us grin pioneer at blwnfh_sit_left_close behind table
@@ -703,9 +698,15 @@ label blwnfh_day_1:
     show shakers
     show left d5_breakfast_full tray foods behind shakers
     show right d5_breakfast_full tray foods behind shakers
-    show mid d5_breakfast_full tray spoon foods
+    
     with dissolve
     
+    me "Можно к вам сесть?"
+    dv "Да, можно."
+    us "Садись-садись!"
+    
+    show mid d5_breakfast_full tray spoon foods
+    with dissolve
     
     "Хитрым голосом сказала Ульянка."
     
@@ -758,7 +759,7 @@ label blwnfh_day_1:
     "Чуть более спокойным голосом сказала Алиса."
     "Ульяна же быстро вернулась к своему обычному состоянию."
     
-    show us smile with dspr
+    show us normalsmile with dspr
     
     us "Ну-ну!"
     me "Мдэ[wp]"
@@ -846,19 +847,22 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_day with dissolve2
     play ambience ambience_camp_center_day fadein 3
-    
+    #play music music_list["timid_girl"] fadein 3
     $ renpy.pause(1)
     
     scene bg ext_dining_hall_away_day with dissolve2 
     
     $ renpy.pause(1)
     
-    scene bg ext_houses_day with dissolve2
+    scene bg ext_square_day with dissolve2
     window show
     
-    "Покинув территорию столовой, я отправился на прямую к остановке."
+    "Покинув территорию столовой, я отправился напрямую к остановке."
     th "Интересно, кого к нам угораздило приехать? На целую неделю позже, с начала смены."
     th "Конечно, не под самый конец, но тем не менее."
+    
+    scene bg ext_houses_day with dissolve2
+    
     th "Это же меньше веселья как-никак."
     th "В прочем, мне ли говорить о веселье? {w}Самому угрюмому человеку на свете."
     
@@ -867,6 +871,8 @@ label blwnfh_day_1:
     th "Ёлки иголки, а если там группа пионеров? Чет я об этом не подумал, когда соглашался[wp]"
     th "Я же с ними вообще никак не управлюсь."
     th "Балин блинский, думай-думай, чё делать."
+    
+    scene bg ext_clubs_day with dissolve2
     
     "Я стал усердно чесать затылок и пытаться придумать, что же мне делать."
     "Но естественно, по закону подлости, в голову ничего не лезло."
@@ -878,13 +884,13 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg ext_bus with dissolve2
     play ambience ambience_camp_entrance_day fadein 3
-    play music music_list["timid_girl"] fadein 3
+    play music blwnfh_music_list["kate_orchestra"] fadein 3
     $ blwnfh_set_name("kat", "Новенькая")
     
     "И был приятно удивлен, когда не увидел перед собой орду пионеров."
     "Перед автобусом стоял один единственный пионер, а если быть точнее — пионерка."
     
-    show kat normal2 casual shirt far at center with dspr
+    show kat normal2 casual shirt far at center with dissolve
     
     # тут потом можно будет вставить сцену, когда чел будет переигрывать, семён кароче узнает катю, но не поймет откуда он её знает, в общем типа как в 7дл, но в как в 7дл, но ты понял ок, да?
     # а ещё если ты не прочитаешь этот комент, у тебя отвалится комп через 5 минут.
@@ -924,10 +930,17 @@ label blwnfh_day_1:
     "Девочка, видимо, немного опешила от вывалившейся на нее информации."
     "О чем можно было судить по её лицу, на котором читалось «легкое» недоумение."
     
+    scene bg ext_camp_entrance_day with dissolve2
+    
     kat "Хорошо[wp]"
     me "Вот и отлично, пойдем тогда."
-    
     "Мы пошли в лагерь."
+    
+    scene bg ext_camp_entrance_day:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
     
     stop ambience fadeout 0.5
     scene bg ext_clubs_day with dissolve2
@@ -936,7 +949,7 @@ label blwnfh_day_1:
     "Зайдя за ворота и пройдя пару метров, мы оказались перед зданием клубов." 
     "Туда мне и нужно забежать, чтобы предупредить шефа, что я немного задержусь."
 
-    me "Так, вот он клуб авиамоделирования, я буквально на минуту к товарищам заскачу."
+    me "Так, вот он наш клуб авиамоделирования, я буквально на минуту к товарищам заскачу."
     
     "Быстренько поднявшись к двери, я вошел во внутрь."
     
@@ -1011,11 +1024,11 @@ label blwnfh_day_1:
     $ renpy.pause(1.0)
     window show
 
-    "Скоро мы пришли к складу."
+    "Вскоре мы пришли к складу."
     "Заходить туда и пересекаться с нашим завхозом, мне не очень хотелось."
     "Но иного пути не было, так что я подошел ко входу и дёрнул ручку."
     
-    stop ambince fadeout 0.5
+    stop ambience fadeout 0.5
     scene bg int_warehouse_day with dissolve2
     play ambience ambience_int_cabin_day fadein 3
     show sl normal pioneer far at right with dspr

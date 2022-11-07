@@ -210,5 +210,8 @@ init 2:
     $ blwnfh_music_list["we_dont_care"] = blwnfh_MUSIC + "We Dont Care.ogg"
     $ blwnfh_music_list["sharkle_dream"] = blwnfh_MUSIC + "Alec Holowka - Sharkle Dream.mp3"
     $ blwnfh_music_list["the_hole_at_the_center_of_everything"] = blwnfh_MUSIC + "Alec Holowka - The Hole At The Center Of Everything.mp3"
+    $ blwnfh_music_list["kate_acoustic"] = blwnfh_MUSIC + "Kate - Acoustic.mp3"
+    $ blwnfh_music_list["kate_orchestra"] = blwnfh_MUSIC + "Kate - Orchestra.mp3"
+    $ blwnfh_music_list["kate_piano"] = blwnfh_MUSIC + "Kate - Piano.mp3"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

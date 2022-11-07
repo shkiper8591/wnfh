@@ -36,18 +36,13 @@ init 1:
         xalign 0.28
         xanchor 0.5
         yanchor 0.0
-        ypos 0.22
-
-    transform blwnfh_sit_center:
-        xalign 0.5
-        yanchor 0.0
-        ypos 0.22
+        ypos 0.09
 
     transform blwnfh_sit_right:
         xalign 0.72
         xanchor 0.5
         yanchor 0.0
-        ypos 0.22
+        ypos 0.09
         
     # Для персонажей невысокого роста и для дистанции close
 
@@ -55,18 +50,13 @@ init 1:
         xalign 0.28
         xanchor 0.5
         yanchor 0.0
-        ypos 0.15
-
-    transform blwnfh_sit_center_close:
-        xalign 0.5
-        yanchor 0.0
-        ypos 0.15
+        ypos 0.02
 
     transform blwnfh_sit_right_close:
         xalign 0.72
         xanchor 0.5
         yanchor 0.0
-        ypos 0.15
+        ypos 0.02
         
     # Анимации "встань" и "сядь" для спрайтов
 

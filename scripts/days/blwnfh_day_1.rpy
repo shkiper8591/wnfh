@@ -525,9 +525,6 @@ label blwnfh_day_1:
     "Довольно резко и неожиданно, Лена схватила Алису за нос."
     
     show dv surprise:
-        linear 0.1 xalign 0.45
-        linear 0.1 xalign 0.55
-        repeat
     
     dv "Ты чего творишь?!"
     un "А ты догадайся."
@@ -647,7 +644,7 @@ label blwnfh_day_1:
     "Не то чтобы, она рассказывала не интересные вещи."
     "Просто она говорила много и нудно, от чего слушать её становилось почти невозможно."
     "А уйти так просто никто не разрешит."
-    "Но везде надо искать плюсы, так, я могу около часа побыть наедине со своими мыслями."
+    "Но везде надо искать плюсы, так, я могу полчаса побыть наедине со своими мыслями."
     
     th "Главное не сильно увлечься."
     
@@ -687,14 +684,28 @@ label blwnfh_day_1:
     "Единственным свободным местом, где сидели хоть немного мне знакомые люди, было рядом с Алисой и Ульяной."
     "Конечно, сидеть с ними было сомнительным удовольствием, но выбора нет."
     
-    show us grin pioneer at left with dspr 
-    show dv normal pioneer at right with dspr
+    
+    
     
     "Я подошел к ним и сразу заметил, что Ульяна давит ехидную лыбу, уставившись на меня."
+    
+    
     
     me "Можно к вам сесть?"
     dv "Да, можно."
     us "Садись-садись!"
+    
+    show chair_l behind us
+    show chair_r behind dv
+    show us grin pioneer at blwnfh_sit_left_close behind table
+    show dv normal pioneer at blwnfh_sit_right behind table
+    show table
+    show shakers
+    show left d5_breakfast_full tray foods behind shakers
+    show right d5_breakfast_full tray foods behind shakers
+    show mid d5_breakfast_full tray spoon foods
+    with dissolve
+    
     
     "Хитрым голосом сказала Ульянка."
     
@@ -710,6 +721,9 @@ label blwnfh_day_1:
     th "Спасибо, что хотя бы наполнение другое."
     
     "Закончив анализ, я принялся с большой скоростью уплетать свой завтрак."
+    
+    show mid d5_breakfast_full tray foods with dspr
+    show left d5_breakfast_half tray foods with dspr
     
     dv "Семён, а ты чем сегодня займешься?"
     me "Продолжу с моделистами мастерить. {w}А что?"
@@ -749,11 +763,14 @@ label blwnfh_day_1:
     us "Ну-ну!"
     me "Мдэ[wp]"
     
-    "Я стал возвращаться к своему завтрака, как тут же к нам чуть ли не подбежала Ольга Дмитриевна."
+    "Я стал возвращаться к своему завтраку, как тут же к нам чуть ли не подбежала Ольга Дмитриевна."
 
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer behind chair_r:
+        xcenter 1.2
+        ease 2.0 xcenter 0.9
     
     mt "Семён, вот ты где. {w}У меня для тебя важное парт задание!"
+    show right d5_breakfast_half tray foods with dspr
     
     "Говорила она немного запыхавшись."
     
@@ -790,16 +807,24 @@ label blwnfh_day_1:
     
     mt "Пожалуйста, а я тебе прощу твои ночные гуляния."
     
+    show mid d5_breakfast_half tray foods with dspr
+    
     "А вот такое предложение звучало куда интереснее."
     
     me "Таки с этого и надо было начинать."
     me "Ладно, сейчас доем и пойду встречу."
     mt "Спасибо тебе огромное!"
     
+    show mt normal pioneer behind chair_r:
+        xcenter 0.9
+        ease 2.0 xcenter 1.2
+    $ renpy.pause(2.0, hard=True)
     hide mt with dspr
     
     "Вожатая быстро куда-то удалилась."
     "А я с удвоенной силой принялся за завтрак и буквально спустя полминуты он был съеден."
+    
+    show mid d5_breakfast_empty tray spoon with dspr
     
     me "Так дамы, я опаздываю, так что покеда."
     
@@ -812,6 +837,8 @@ label blwnfh_day_1:
     "Недовольным голосом сказала она."
     
     me "Саль ави."
+    
+    scene bg int_dining_hall_people_day with dissolve2
     
     "Сказал я и помохав рукой на прощание, быстро удалился из столовой."
     

@@ -153,9 +153,13 @@ init 2:
         # Объявляем спрайты
         ### Базированный кринж
         ## Хавчик
-        make_sprites_for('left', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
-        make_sprites_for('right', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
-        make_sprites_for('mid', 'tray', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('left', 'tray spoon', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('right', 'tray spoon', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('mid', 'tray spoon', ['mod:tray', 'mod:spoon', 'mod:<emotion>'], distances=['foods'])
+        
+        make_sprites_for('left', 'tray', ['mod:tray', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('right', 'tray', ['mod:tray', 'mod:<emotion>'], distances=['foods'])
+        make_sprites_for('mid', 'tray', ['mod:tray', 'mod:<emotion>'], distances=['foods'])
         
         ### Нормальные спрайты
         ## Новые персонажи
@@ -325,14 +329,11 @@ init 2:
         "chair"
         left
         yalign 0.0
-
-    image chair_c:
-        "chair"
-        center
-        yalign 0.0
+        ypos -0.1
 
     image chair_r:
         "chair"
         right
         yalign 0.0
+        ypos -0.1
 

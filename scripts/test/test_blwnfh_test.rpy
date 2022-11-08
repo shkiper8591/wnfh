@@ -30,7 +30,7 @@ label blwnfh_test_main_menu:
         "Анимации":
             jump blwnfh_test_anim
         "Спрайты?":
-            jump blwnfh_spritestest1
+            jump blwnfh_sprites_test
         "Музыку?":
             jump blwnfh_musictest
         "Цензуру?":
@@ -59,38 +59,3 @@ label blwnfh_spritestest1:
             jump blwnfh_stol
         "Вернутся назад?":
             jump blwnfh_test_main_menu
-
-label blwnfh_spritestest2:
-    
-    "Чей именно мы хотим отладить спрайт?"
-    
-    menu:
-        "Катя? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Лена? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Мику? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Женя? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Славя? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Алиса? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Ульяна? - Пока не работает":
-            jump blwnfh_spritestest2
-        "Ольга Дмитриевна?":
-            jump blwnfh_mttest
-        "Виола?":
-            jump blwnfh_cstest
-        "Шурик? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Электроник? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Сергей Дмитриевич? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Поварихи? - Пока не работает.":
-            jump blwnfh_spritestest2
-        "Вернутся назад":
-            jump blwnfh_spritestest1
-

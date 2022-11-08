@@ -26,8 +26,8 @@ init -1 python:
         "gp":[u"Галина Петровна", "#CECECE"],
         "zg":[u"Зинаида Геннадьевна", "#D199FF"],
         "sd":[u"Сергей Дмитриевич", "#878787"],
-        "void":[u" ", "#000000"]
-        "sv":[u"Света", "#F3DA0B"]
+        "void":[u" ", "#000000"],
+        "sv":[u"Света", "#F3DA0B"],
     }
     
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))

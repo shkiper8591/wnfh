@@ -40,6 +40,9 @@ init 2:
             'kat': {
                 'grin': 1, 'normal': 1, 'sad': 1, 'shocked': 1, 'akhegao': 2, 'angry': 2, 'fuk': 2, 'happy': 2, 'normal2': 2, 'scared': 2, 'shy': 2, 'guilty': 3, 'nepon': 3, 'obida': 3, 'rock': 3, 'sad2': 3, 'shy2': 3, 'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5,
             },
+            'sv': {
+                'cry': 1, 'normal': 1, 'shocked': 1, 'tender': 1, 'calm_cry': 2, 'happy': 2, 'happy_cry': 2, 'sad': 2, 'scary': 2, 'smile': 2, 'afraid': 3, 'cute': 3, 'love': 3, 'norm': 3,
+            },
             #'uv': {
             #    'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
             #},
@@ -163,12 +166,20 @@ init 2:
         
         ### Нормальные спрайты
         ## Новые персонажи
+        # Катя
         make_sprites_for('kat', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual', ['mod:body', 'mod:casual', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:<emotion>', 'mod:shirt'])
         make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
         make_sprites_for('kat', 'body', ['mod:body', 'mod:<emotion>'])
         make_sprites_for('kat', 'pioneer dark', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], sprite_define_func=_dark_sprite)
+        
+        #Света
+        
+        make_sprites_for('sv', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('sv', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('sv', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('sv', 'panties', ['mod:body', 'mod:panties', 'mod:<emotion>'])
         
         ## Новые старые спрайты
         # Женя

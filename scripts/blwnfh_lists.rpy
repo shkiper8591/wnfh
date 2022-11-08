@@ -1,3 +1,6 @@
+init 1000 python:
+    config.developer = True
+
 init -1 python:
 
     ## Создание листов ##

@@ -17,7 +17,7 @@ init -1 python:
         "sl":[u"Славя", "#FFD200"],
         "el":[u"Сергей", "#FFFF00"],
         "un":[u"Лена", "#B956FF"],
-        "cs":[u"Виола", "#A5A5FF"],
+        "cs":[u"Виолетта Церновна", "#A5A5FF"],
         "pi":[u"Пионер", "#E60000"],
         "uv":[u"Юля", "#4EFF00"],
         "voice":[u"... ", "#E1DD7D"],
@@ -27,6 +27,7 @@ init -1 python:
         "zg":[u"Зинаида Геннадьевна", "#D199FF"],
         "sd":[u"Сергей Дмитриевич", "#878787"],
         "void":[u" ", "#000000"]
+        "sv":[u"Света", "#F3DA0B"]
     }
     
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))

@@ -176,10 +176,10 @@ init 2:
         
         #Света
         
-        make_sprites_for('sv', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
-        make_sprites_for('sv', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
-        make_sprites_for('sv', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
-        make_sprites_for('sv', 'panties', ['mod:body', 'mod:panties', 'mod:<emotion>'])
+        make_sprites_for('sv', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'panties', ['mod:body', 'mod:panties', 'mod:<emotion>'], distances = ['normal', 'far'])
         
         ## Новые старые спрайты
         # Женя

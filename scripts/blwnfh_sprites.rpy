@@ -180,10 +180,10 @@ init 2:
         make_sprites_for('sv', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'], distances = ['normal', 'far'])
         make_sprites_for('sv', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'], distances = ['normal', 'far'])
         make_sprites_for('sv', 'panties', ['mod:body', 'mod:panties', 'mod:<emotion>'], distances = ['normal', 'far'])
-        make_sprites_for('sv', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
-        make_sprites_for('sv', 'sport', ['mod:body', 'mod:sport', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
-        make_sprites_for('sv', 'swim', ['mod:body', 'mod:swim', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
-        make_sprites_for('sv', 'panties', ['mod:body', 'mod:panties', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'sport glasses', ['mod:body', 'mod:sport', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'swim glasses', ['mod:body', 'mod:swim', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
+        make_sprites_for('sv', 'panties glasses', ['mod:body', 'mod:panties', 'mod:glasses', 'mod:<emotion>'], distances = ['normal', 'far'])
         
         ## Новые старые спрайты
         # Женя

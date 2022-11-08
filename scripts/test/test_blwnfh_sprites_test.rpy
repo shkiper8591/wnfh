@@ -31,7 +31,7 @@ label hided:
     
     window hide
     $ renpy.pause(1.0)
-    jump sprites_test
+    jump blwnfh_sprites_test
     
 label accepted:
 
@@ -60,7 +60,7 @@ label accepted:
     
     window hide
     $ renpy.pause(1.0)
-    jump sprites_test
+    jump blwnfh_sprites_test
     
 label fuck:
 

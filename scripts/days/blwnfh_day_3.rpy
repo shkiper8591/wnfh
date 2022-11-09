@@ -1111,7 +1111,7 @@ label blwnfh_day_3:
     me "О как, а чего на обед не пришли?"
     mz "Так дело было, вот и не пошли."
     
-    show mz smile with dspr
+    show mz smile glasses pioneer at left with dspr
     
     mz "Да и ещё Серёжа принес с собой еды, так что не голодные."
     me "А я волновался что вы тут от голоду помираете, конфет даже вам принес. {w}Какая никакая еда всё-таки."
@@ -1143,7 +1143,7 @@ label blwnfh_day_3:
     
     el "Семён, мне кажется ты всё не так понял."
     
-    show mz angry with dspr
+    show mz angry glasses pioneer at left with dspr
     
     mz "Совсем не так!"
     
@@ -1451,7 +1451,7 @@ label blwnfh_day_3:
     mt "Вот мы и пришли, экскурсию по рабочему месту вам проведет Женя."
     me "Ольга Дмитриевна, нам и так известно где находится библиотека, зачем нас было сюда вести?"
     
-    show mt pioneer panama at left grin with dspr
+    show mt pioneer panama at left with dspr
     
     mt "Так чтобы не убежали! {w}К тому же быстрее закончите с экскурсией, быстрее вернетесь к игре в муз кружке."
     
@@ -1482,7 +1482,7 @@ label blwnfh_day_3:
     "Мы ушли в дальнюю часть библиотеке, где был вход в подсобное помещение, куда мы и вошли."
     
     scene bg int_editorial_day_cat with dissolve
-    show mz normal at cright with dspr 
+    show mz normal glasses pioneer at cright with dspr 
     show kat normal at fright with dspr
     show un normal far at left with dspr
     
@@ -1525,7 +1525,7 @@ label blwnfh_day_3:
     
     "Катя же немного ещё по печатав на машинке, убежала беседовать с Леной."
     
-    show mz normal at right with dspr 
+    show mz normal glasses pioneer at right with dspr 
     show kat smile far at cleft with dspr
     show un smile2 far at left with dspr
     
@@ -1544,7 +1544,7 @@ label blwnfh_day_3:
     mz "Значит тоже знаешь, что штука дорогая, так что если сломаешь, можешь сразу в гроб."
     me "Да, и это знаю."
     
-    show mz bukal at center with dspr
+    show mz bukal glasses pioneer at center with dspr
     
     mz "Тогда не крути его в руках, а повесь на шею и отнеси его домой."
     me "А чехла никакого нету?"

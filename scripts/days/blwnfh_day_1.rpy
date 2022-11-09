@@ -1405,15 +1405,14 @@ label blwnfh_day_1:
         xcenter 0.5 ycenter 0.5
         ease_quart 0.3 ycenter 0.55
         ease_quart 0.3 ycenter 0.5
-        ease_quart 0.5 xcenter 0.6
-        ease_quart 0.5 xcenter 0.7
-        ease_quart 0.5 xcenter 0.8
-        ease_quart 0.5 xcenter 0.9
-        ease_quart 0.5 xcenter 1.0
-        ease_quart 0.5 xcenter 1.1
-        ease_quart 0.5 xcenter 1.2
+        ease_quart 0.6 xcenter 0.6
+        ease_quart 0.7 xcenter 0.7
+        ease_quart 0.7 xcenter 0.8
+        ease_quart 0.6 xcenter 0.9
+        ease_quart 0.7 xcenter 1.0
+        ease_quart 0.6 xcenter 1.1
+        ease_quart 0.6 xcenter 1.2
     $ renpy.pause(3.9, hard=True)
-    
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with slide_left_blure_dissolve2
     play ambience ambience_clubs_inside_day fadein 3
@@ -1426,19 +1425,17 @@ label blwnfh_day_1:
         ease_quart 2.0 xcenter 0.72
     show sh normal pioneer:
         xcenter -0.2
-        ease_quart 0.5 xcenter -0.1
-        ease_quart 0.5 xcenter 0.0
-        ease_quart 0.5 xcenter 0.1
-        ease_quart 0.5 xcenter 0.2
-        ease_quart 0.5 xcenter 0.3
-        ease_quart 0.5 xcenter 0.4
-        ease_quart 0.5 xcenter 0.5
-        ease_quart 0.3 ycenter 0.55
-        ease_quart 0.3 ycenter 0.5
+        ease_quart 0.7 xcenter -0.1
+        ease_quart 0.7 xcenter 0.0
+        ease_quart 0.6 xcenter 0.1
+        ease_quart 0.6 xcenter 0.2
+        ease_quart 0.6 xcenter 0.3
+        ease_quart 0.7 xcenter 0.4
+        ease_quart 0.6 xcenter 0.5
+        ease_quart 0.7 ycenter 0.55
+        ease_quart 0.7 ycenter 0.5
     $ renpy.pause(3.9, hard=True)
     show el normal pioneer with dspr
-    
-    
     
     "Притащив радио, мы поставили его на заранее заготовленное место."
     

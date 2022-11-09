@@ -813,7 +813,7 @@ label blwnfh_day_1:
     th "Неужели у Ольги Дмитриевной нету и капельки совести?"
     th "Прям по среди завтрака дёргать человека!"
     
-    show mt smile with dspr
+    show mt smile pioneer behind chair_r with dspr
     
     mt "Пожалуйста, а я тебе прощу твои ночные гуляния."
     
@@ -838,7 +838,7 @@ label blwnfh_day_1:
     
     me "Так дамы, я опаздываю, так что покеда."
     
-    show us dontlike with dspr 
+    show us dontlike pioneer at blwnfh_sit_left_close behind tableм with dspr 
     
     "Я встал из-за стола."
     
@@ -910,7 +910,7 @@ label blwnfh_day_1:
     th "Быть может дочурка какого-нибудь партийного работника? {w}Так сказать всё самое лучшее из-за границы."
     th "Ладно, неважно."
     
-    show kat normal2 with dspr
+    show kat normal2 casual shirt far at center with dspr
     
     "Я подошел к ней поближе."
     
@@ -934,7 +934,7 @@ label blwnfh_day_1:
     me "А поскольку у меня ещё сегодня имеются дела, давай не терять ни минуты и следуй за мной."
     me "Только разве что, мне по пути кое-куда надо будет зайти, но это быстро, я обещаю."
     
-    show kat nepon with dspr 
+    show kat nepon casual shirt far at center with dspr 
     
     "Девочка, видимо, немного опешила от вывалившейся на нее информации."
     "О чем можно было судить по её лицу, на котором читалось «легкое» недоумение."
@@ -969,7 +969,7 @@ label blwnfh_day_1:
     
     show sh upset pioneer at right with dissolve
     show el normal pioneer at fleft with dissolve
-    show sv angry pioneer glasses with dissolve
+    show sv angry pioneer glasses at center with dissolve
     
     "В клубе, что не удивительно, находились Сергей и Шурик."
     "А вот что было удивительным, там это нахождение здесь нашей комсомолки."
@@ -1005,12 +1005,12 @@ label blwnfh_day_1:
     sv "А вот и третий пожаловал!"
     sv "Я правда и с первым не закончила[wp]"
     
-    show sv happy with dspr
+    show sv happy pioneer glasses at center with dspr
     
     sv "Но ничего и до тебя доберусь."
     me "Аэ[wp] Вообще-то нет, не доберёшься."
     
-    show sv angry with dspr
+    show sv angry pioneer glasses at center with dspr
     
     sv "Это ещё почему?"
     me "Мне вожатая поручила сопроводить новенькую."
@@ -1021,7 +1021,7 @@ label blwnfh_day_1:
     
     play music music_list["awakening_power"]
     
-    show sv shocked pioneer glasses with dspr
+    show sv shocked pioneer glasses at center with dspr
     
     "И тут, как гром средь ясного неба, с улицы раздался плеск воды, а затем и громкий девичий визг."
 
@@ -1062,7 +1062,7 @@ label blwnfh_day_1:
     me "Новенькую из ведра окатили."
     sv "Новенькую? Мне об этом ничего не говорили[wp]"
     
-    show sv angry with dspr
+    show sv angry pioneer glasses at right with dspr
     
     sv "То есть, кошмар какой! Ну я устрою этим двум рыжим!"
     sv "Всё Семён, давай я отведу нашу новенькую к складу."
@@ -1097,19 +1097,19 @@ label blwnfh_day_1:
     
     "Она положила что-то на полку и подошла ко мне."
     
-    show sl normal with dspr
+    show sl normal pioneer far at right with dspr
     
     sl "Привет снова."
     me "Привет, а где завхоз?"
     
-    show sl sad with dspr
+    show sl sad pioneer far at right with dspr
     
     sl "Сергею Дмитриевичу сегодня плохо и я его подменяю."
     
     "Грустно проговорила Славя."
     "Меня же такие вести, как бы это плохо не звучало, нисказанно обрадовали."
     
-    show sl normal with dspr
+    show sl normal pioneer far at right with dspr
     
     sl "А тебе зачем?"
     me "Да вот, нам бы новенькую переодеть в форму."
@@ -1121,17 +1121,17 @@ label blwnfh_day_1:
     with dspr
     "Катя медленно вышла из-за меня к Славе."
     
-    show sl surprise with dspr
+    show sl surprise pioneer far at right with dspr
     
     sl "А чего она вся мокрая?"
     me "Ей неповезло встретится с двумя рыжими террористками."
     sl "Бедная[wp]"
     
-    show sl normal with dspr
+    show sl normal pioneer far at right with dspr
     
     sl "Но мы тебя сейчас быстренько переоденем и всю твою одежду на сушку."
     
-    show sl normal with dspr
+    show sl normal pioneer far at right with dspr
     
     "Славя отошла обратно к стеллажу и поставив рядом стул, полезла наверх за формой." 
     
@@ -1146,7 +1146,7 @@ label blwnfh_day_1:
     
     "Взяв в руки комплект формы, Славя спустилась и подошла к Кате."
     
-    show sl normal with dspr
+    show sl normal pioneer far at right with dspr
     
     sl "Вот тебе, свежая, только недавно с сушки сняла."
     
@@ -1154,7 +1154,7 @@ label blwnfh_day_1:
     
     kat "А мне что, прямо перед {i}ним{/i} переодеваться?"
     
-    show sl shy with dspr
+    show sl shy pioneer far at right with dspr
     
     sl "Ой, Семён, не мог бы ты выйти?"
     me "Да, конечно."
@@ -1192,14 +1192,14 @@ label blwnfh_day_1:
     "Я подошел к Славе и мягко взял у нее ключ."
     "С помощью больших усилий и грубой силы, мне удалось закрыть дверь."
     
-    show sl happy with dspr
+    show sl happy pioneer at right with dspr
     
     th "Такое ощущение, что замки не менялись ещё со времен товарища Сталина."
     
     sl "Спасибо и чтобы я без тебя делала?"
     me "Наверняка провозилась бы с этой дверью полдня, в лучшем случае."
     
-    show sl normal with dspr
+    show sl normal pioneer at right with dspr
     
     sl "Ладно, мне надо идти."
     me "И нам тоже."
@@ -1240,31 +1240,31 @@ label blwnfh_day_1:
     
     "Вожатая быстренько закрыла книгу и встала с шезлонга."
     
-    show mt smile with dspr
+    show mt smile pioneer at right with dspr
     
     mt "Спасибо огромное Семён, прям выручил меня."
     mt "Ты у нас, Катя, верно?"
     kat "Да."
     
-    show mt normal with dspr
+    show mt normal pioneer at right with dspr
     
     mt "Ты уж прости меня, что встретила тебя не лично, дела были."
     kat "Ничего, всё нормально."
     mt "Так, а где твоя одежда в которой ты приехала?"
     kat "На сушке, только рюкзак сухой более менее."
     
-    show mt surprise with dspr
+    show mt surprise pioneer at right with dspr
     
     mt "Всмысле на сушке?"
     me "Ей Алиса с Ульяной штрафные прописали."
     
-    show mt normal with dspr
+    show mt normal pioneer at right with dspr
     
     mt "Ах, вот оно что[wp] {w}Знала я что перед ними нельзя ничего говорить."
     mt "Ну я им сегодня задам, как только мы тут закончим."
     me "Можете не беспокоиться, ими уже Планшетик собирается заняться."
     
-    show mt angry with dspr
+    show mt angry pioneer at right with dspr
     
     mt "И тебе сейчас задам! {w}Какой ещё «планшетик»?!"
     mt "Уже что с вами только не делали, лишь бы вы так её не называли!"
@@ -1274,7 +1274,7 @@ label blwnfh_day_1:
     
     th "А вот это я уже сколько раз слышал мм[wp] {w}Миллионером мог стать, если получал бы по рублю."
     
-    show mt normal with dspr
+    show mt normal pioneer at right with dspr
     
     me "Так, а я вам больше не нужен?"
     mt "Да, ты свободен."
@@ -1381,31 +1381,64 @@ label blwnfh_day_1:
     sh "Я малость легче представлял его."
     me "Ну вы конечно даете, хоть бы фонарь дали, а то еле нашел."
     
-    show sh upset with dspr
+    show sh upset pioneer at center with dspr
     
     sh "А фонарей у нас и нет."
     sh "Вернее, они есть, но в полностью не рабочем состоянии."
     me "Чего ж тогда на складе не возьмешь?"
     sh "Надобности как-то не было, да и спички со свечами есть."
     
-    show sh serious with dspr
+    show sh serious pioneer at center with dspr
     
     sh "Ну а ещё, я не очень хочу пересекаться с завхозом."
     me "Кстати деду, похоже, плохо недавно стало, его сейчас Славя подменяет."
     me "Только не знаю насколько и быть может уже завтра он вернется."
     
-    show sh normal with dspr
+    show sh normal pioneer at center with dspr
     
     sh "Было бы неплохо, чтобы завтра тоже Славя была, тогда и можно будет взять нам фонарики."
     sh "Но пока не суть, давай понесли лучше радио."
     
     "Схватившись вдвоем за радио, мы потащили его в основное помещение."
     
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.3 ycenter 0.55
+        ease_quart 0.3 ycenter 0.5
+        ease_quart 0.5 xcenter 0.6
+        ease_quart 0.5 xcenter 0.7
+        ease_quart 0.5 xcenter 0.8
+        ease_quart 0.5 xcenter 0.9
+        ease_quart 0.5 xcenter 1.0
+        ease_quart 0.5 xcenter 1.1
+        ease_quart 0.5 xcenter 1.2
+    $ renpy.pause(3.9, hard=True)
+    
     stop ambience fadeout 0.5
-    scene bg int_clubs_male_day with dissolve2
+    scene bg int_clubs_male_day with slide_left_blure_dissolve2
     play ambience ambience_clubs_inside_day fadein 3
-    show sh normal pioneer at right with dspr
-    show el normal pioneer at left with dspr
+    show el surprise pioneer:
+        xcenter 0.28
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show el surprise pioneer:
+        xcenter 0.28
+        ease_quart 2.0 xcenter 0.72
+    show sh normal pioneer:
+        xcenter -0.2
+        ease_quart 0.5 xcenter -0.1
+        ease_quart 0.5 xcenter 0.0
+        ease_quart 0.5 xcenter 0.1
+        ease_quart 0.5 xcenter 0.2
+        ease_quart 0.5 xcenter 0.3
+        ease_quart 0.5 xcenter 0.4
+        ease_quart 0.5 xcenter 0.5
+        ease_quart 0.3 ycenter 0.55
+        ease_quart 0.3 ycenter 0.5
+    $ renpy.pause(3.9, hard=True)
+    show el normal pioneer with dspr
+    
+    
     
     "Притащив радио, мы поставили его на заранее заготовленное место."
     

@@ -1920,7 +1920,7 @@ label blwnfh_day_5:
     "А всё потому, что она была в спортивной форме."
     th "Она тоже что ли участвует?"
     
-    show mt smile panama pioneer with dspr
+    show mt smile pioneer panama with dspr
     
     "И, собственно, замыкая сзади вереницу пионеров, шла Ольга Дмитриевна."
     "Которая подошла к нам."
@@ -2482,7 +2482,7 @@ label blwnfh_day_5:
     "Тут и дураком быть не надо, чтобы понять: сейчас мы будем таскать всю аппаратуру назад[wp] {w}Мать её за ногу."
     
     show kat normal at left with dspr
-    show mt smile panama pioneer with dspr
+    show mt smile pioneer panama with dspr
     show el normal at right with dspr
     
     "Подойдя, вожатая встретила нас легкими овациями."

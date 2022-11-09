@@ -1373,7 +1373,7 @@ label blwnfh_day_3:
     
     "Но не успел дойти до середины, как к нам в муз кружок ворвалась Ольга Дмитриевна."
     
-    show mt angry panama pioneer at left with dspr
+    show mt angry pioneer panama at left with dspr
     
     mt "Так, что вы тут за иностранные песни распеваете? Ну ка прекратили всё, пока характеристику на вас не написала!"
     
@@ -1445,7 +1445,7 @@ label blwnfh_day_3:
     
     "Но похоже богу было безразлично на мои мольбы, и мы неумолимо приближались ко входу в библиотеку, пока не оказались прямо перед ним."
     
-    show mt smile panama pioneer at left with dspr
+    show mt smile pioneer panama at left with dspr
     show kat normal pioneer at right with dspr
     
     mt "Вот мы и пришли, экскурсию по рабочему месту вам проведет Женя."

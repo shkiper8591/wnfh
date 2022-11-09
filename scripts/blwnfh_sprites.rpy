@@ -198,6 +198,15 @@ init 2:
         
         # Оля
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distances = ['normal'])
+        make_sprites_for('mt', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
+        make_sprites_for('mt', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])
+        make_sprites_for('mt', 'swim', ['es:body', 'es:swim', 'es:<emotion>'])
+        make_sprites_for('mt', 'body', ['es:body', 'es:<emotion>'])
+        make_sprites_for('mt', 'pioneer panama', ['es:body', 'es:pioneer', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'dress panama', ['es:body', 'es:dress', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'swim panama', ['es:body', 'es:swim', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'body panama', ['es:body', 'es:<emotion>', 'es:panama'])
+        
         
         # Ульяна
         make_sprites_with_custom_emotions(['normalsmile'], 'us', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])

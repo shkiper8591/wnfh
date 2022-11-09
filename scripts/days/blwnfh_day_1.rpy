@@ -188,7 +188,7 @@ label blwnfh_day_1:
     #th "Да, от тебя."
     me "От кого мне прятаться-то?"
     
-    show sl smile2 close:
+    show sl smile2 sport close:
         subpixel True
         pause 0.2
         ease 2.5 xcenter 0.5 ycenter 0.5 rotate 0
@@ -208,17 +208,17 @@ label blwnfh_day_1:
     me "И как оно?"
     sl "Очень полезное занятие, советую и тебе этим заняться."
 
-    show sl laugh with dspr
+    show sl laugh sport close with dspr
     
     sl "Хочешь, прямо сейчас со мной пробежаться?"
     
-    show sl surprise with dspr
+    show sl surprise sport close with dspr
     # тут можно будет вставить выбор.
     me "Пожалуй откажусь, мне что-то не очень хорошо."
     
     "Утренняя пробежка было последним, чем мне хотелось бы заниматься здесь."
     
-    show sl sad with dspr
+    show sl sad sport close with dspr
     
     sl "Да? А что с тобой? Может к медсестре сводить."
     
@@ -229,7 +229,7 @@ label blwnfh_day_1:
     sl "Плохо[wp]"
     me "Не то слово."
     
-    show sl angry with dspr
+    show sl angry sport close with dspr
     
     sl "А это всё потому, что ты не занимаешься спортом!"
     
@@ -246,11 +246,11 @@ label blwnfh_day_1:
     sl "А ты у нас кто? {w}Правильно, пионер! А он всегда должен быть в форме, чтобы быть готовым ко всему."
     me "Ладно-ладно, я постараюсь."
     
-    show sl normal with dspr
+    show sl normal sport close with dspr
     
     sl "Вот и славно. {w}Ладненько, мне ещё несколько километров нужно пробежать, пока."
     
-    hide sl with dspr
+    hide sl sport close with dspr
     
     "Помахав мне на прощание, Славя умчалась дальше по лесной тропе."
     
@@ -312,12 +312,12 @@ label blwnfh_day_1:
     mt "Ты кстати как-то рано встал."
     me "Ага, есть такое."
     
-    show mt grin with dspr
+    show mt grin pioneer far at center with dspr
     
     mt "Неужели ты наконец-то починил свой режим сна?"
     me "Возможно."
     
-    show mt angry with dspr
+    show mt angry pioneer far at center with dspr
     
     mt "Так, никаких «возможно»! Чтобы сегодня же твои шастанья по ночам прекратились."
     
@@ -329,7 +329,7 @@ label blwnfh_day_1:
     me "Ольга Дмитриевна, ну целых пятнадцать минут, чего там, спрашивается, делать всё это время?"
     mt "Целых пятнадцать минут не опаздывать!"
     
-    show mt rage with dspr
+    show mt rage pioneer far at center with dspr
     
     mt "Или тебе обязательно что-то делать чтоли?! {w}Ну хорошо! Я тебе сейчас найду дело!"
     
@@ -337,7 +337,7 @@ label blwnfh_day_1:
     
     me "Всё-всё, ну чего вы сразу-то начинаете, уже ухожу."
     
-    show mt angry with dspr
+    show mt angry pioneer far at center with dspr
     
     mt "Вот так бы сразу."
     

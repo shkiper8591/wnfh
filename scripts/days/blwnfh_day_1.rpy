@@ -1413,7 +1413,6 @@ label blwnfh_day_1:
         ease_quart 0.6 xcenter 1.1
         ease_quart 0.6 xcenter 1.2
     $ renpy.pause(3.9, hard=True)
-    
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with slide_left_blure_dissolve2
     play ambience ambience_clubs_inside_day fadein 3
@@ -1437,8 +1436,6 @@ label blwnfh_day_1:
         ease_quart 0.7 ycenter 0.5
     $ renpy.pause(3.9, hard=True)
     show el normal pioneer with dspr
-    
-    
     
     "Притащив радио, мы поставили его на заранее заготовленное место."
     

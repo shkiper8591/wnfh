@@ -325,12 +325,12 @@ label blwnfh_day_4:
     mt "А потом ты что делал? {w}Правильно, ложился днём спать, думаешь я не знаю?"
     me "Надеялся по крайней мере, что не знаете."
     
-    show mt normal nightdress close at center with dspr
+    show mt normal pioneer close at center with dspr
     
     mt "В общем Семён, отнесись к этому пожалуйста чуть серьезнее, чем ты обычно относишься к вещам и восстанови режим сна."
     mt "Ты же ведь буквально убиваешь своё здоровье, а я как вожатая обязана следить за здоровьем пионеров."
     
-    show mt laugh nightdress close at center with dspr
+    show mt laugh pioneer close at center with dspr
     
     mt "А теперь, давай вставай и иди на водные процедуры, а потом возвращайся."
     me "Ладно, сейчас[wp]"
@@ -361,24 +361,24 @@ label blwnfh_day_4:
     mt "Так мы сейчас найдем тебе дело, это не проблема."
     me "Ну Ольга Дмитриевна, ещё девяти утра нету, а вы уже злодействуете."
     
-    show mt laugh pioneer close at center with dspr
+    show mt laugh pioneer close with dspr
     
     mt "Где же я злодействую-то? Как по мне наоборот, очень доброе дело делаю."
     mt "А то ты у меня совсем обленился, хоть чем-то действительно полезным займешься." 
     th "Ну почему меня потянуло сказать про отсутствие дела?! {w}Язык мой – враг мой."
     
-    show mt normal pioneer close at center with dspr
+    show mt normal pioneer close with dspr
     
     mt "Значит слушай меня, лентяй, берёшь ключи от подсобки склада, берешь оттуда метёлку и идешь убирать площадь после дождя."
     me "Я вам что, грязь метать буду?"
     
-    show mt smile pioneer close at center with dspr
+    show mt smile pioneer close with dspr
     
     mt "А грязь подметать и не прошу, убери только упавшие листья, ветки и всякий другой мусор."  
     mt "К тому же, думаю Славя будет тебе благодарна за это."
     me "А вы не подумали, что ваше задание меня может утомить и я усну прямо на скамейке?"
     
-    show mt grin pioneer close at center with dspr
+    show mt grin pioneer close with dspr
     
     mt "Так пока ты закончишь мести, уже линейка будет начинаться, а если раньше закончишь, то на сырой лавочке ты точно не уснешь, ну а дома я тебя перехвачу."
     me "Как же у вас всё ловко схвачено."
@@ -1480,7 +1480,7 @@ label blwnfh_day_4:
     kat "О чём вы?"
     mz "Да этот дурак узнал, что я с Сережей через пару дней на остров поплывем."
     
-    show mz amazed with dspr
+    show mz amazed glasses pioneer at left with dspr
     show el scared with dspr
     
     el "Женя, ну ёмаё[wp]"
@@ -1496,20 +1496,20 @@ label blwnfh_day_4:
     kat "Ну пожалуйста!"
     el "Нет и всё, у нас к тому же есть санкция вожатой."
     
-    show mz bukal with dspr
+    show mz bukal glasses pioneer at left with dspr
     
     mz "Сереж, я проговорилась, значит и мне решать."
     el "Ох, ну и каков же твой вердикт?"
     mz "Пусть плывет, поможем ей получить лодку."
     kat "А мне что, самой грести придется?"
     
-    show mz laugh with dspr
+    show mz laugh glasses pioneer at left with dspr
     
     "Женя рассмеялась."
     mz "Ну не мне же."
     kat "А как же, я не умею[wp]"
     
-    show mz bukal with dspr 
+    show mz buka glasses pioneer at left with dspr 
     
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     

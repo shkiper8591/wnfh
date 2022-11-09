@@ -175,7 +175,7 @@ label blwnfh_day_2:
     
     show mt angry pioneer panama at left with dspr
     
-    "Потому-что, кое-кто потерял свою карту!"
+    mt "Потому-что, кое-кто потерял свою карту!"
     
     "Вожатая направила на меня свой строгий взгляд."
     
@@ -449,7 +449,7 @@ label blwnfh_day_2:
     
     "Совсем скоро, музыкантка вернулась из подсобки."
     
-    show mi normal with dspr
+    show mi normal pioneer at left with dspr
     
     mi "Готово! Теперь ты полноправная участница нашего муз кружка! То есть моего, но теперь будет наш!"
     
@@ -604,7 +604,7 @@ label blwnfh_day_2:
     mz "Зачем пришли?"
     me "Да вот, новенькой обходный лист подписать надо."
     
-    show mz bukal with dspr
+    show mz bukal glasses pioneer at left with dspr
     
     mz "Хорошо, давайте сюда."
     

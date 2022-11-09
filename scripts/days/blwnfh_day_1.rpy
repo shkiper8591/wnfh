@@ -1403,8 +1403,8 @@ label blwnfh_day_1:
     
     show sh normal pioneer:
         xcenter 0.5 ycenter 0.5
-        ease_quart 0.2 ycenter 0.55
-        ease_quart 0.2 ycenter 0.5
+        ease_quart 0.3 ycenter 0.55
+        ease_quart 0.3 ycenter 0.5
         ease_quart 0.5 xcenter 0.6
         ease_quart 0.5 xcenter 0.7
         ease_quart 0.5 xcenter 0.8
@@ -1415,7 +1415,7 @@ label blwnfh_day_1:
     $ renpy.pause(3.9, hard=True)
     
     stop ambience fadeout 0.5
-    scene bg int_clubs_male_day with slide_left_blure_dissolve5
+    scene bg int_clubs_male_day with slide_left_blure_dissolve2
     play ambience ambience_clubs_inside_day fadein 3
     show el surprise pioneer:
         xcenter 0.28
@@ -1433,8 +1433,8 @@ label blwnfh_day_1:
         ease_quart 0.5 xcenter 0.3
         ease_quart 0.5 xcenter 0.4
         ease_quart 0.5 xcenter 0.5
-        ease_quart 0.2 ycenter 0.55
-        ease_quart 0.2 ycenter 0.5
+        ease_quart 0.3 ycenter 0.55
+        ease_quart 0.3 ycenter 0.5
     $ renpy.pause(3.9, hard=True)
     show el normal pioneer with dspr
     

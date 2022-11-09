@@ -373,16 +373,16 @@ label blwnfh_day_1:
     
     "И буквально через секунду, после моей мысли, из дома вышла Ольга Дмитриевна."
     
-    show mt normal pioneer with dspr
+    show mt normal pioneer at center with dspr
     
     $ renpy.pause(1.0)
     
-    show mt angry with dspr
+    show mt angry pioneer at center with dspr
     
     mt "Семён, а ты чего до сих пор здесь делаешь?"
     me "А, да так, задумался кое о чем."
     
-    show mt normal with dspr
+    show mt normal pioneer at center with dspr
     
     mt "Вот как, тогда давай быстро приходи в себя и иди на площадь."
     me "Да-да[wp]"
@@ -434,7 +434,7 @@ label blwnfh_day_1:
     
     $ blwnfh_set_name("un", "Лена")
     scene bg ext_square_day
-    show un smile pioneer
+    show un smile pioneer at center
     show unblink
     with None
     
@@ -450,7 +450,7 @@ label blwnfh_day_1:
     "Меня так увлекла эта мысль, что я совсем забыл ответить Лене."
     "И просто сверлил её полу-уставшим взглядом."
     
-    show un shy with dspr
+    show un shy pioneer at center with dspr
     
     un "Видимо нельзя[wp]"
     
@@ -489,16 +489,16 @@ label blwnfh_day_1:
     un "Н-Нет[wp] {w}Я бы просто хотела тебе сказать спасибо."
     me "За что?"
     
-    show un smile2 with dspr
+    show un smile2 pioneer close with dspr
     
     un "Как за что? За то, что помог мне вчера перетаскать тяжелые ящики, конечно же!"
     me "А, так не надо никаких благодарностей, мне же совсем не тяжело было."
     
-    show un smile with dspr
+    show un smile pioneer close with dspr
     
     un "Ну как это не надо, всё надо[wp]"
     
-    show un shy with dspr
+    show un shy pioneer close with dspr
     
     "Она вновь вся замялась и покраснела."
     
@@ -509,8 +509,8 @@ label blwnfh_day_1:
     
     stop music fadeout 3
     # тут надо звук хруста веток и всякое такое !3
-    show dv grin pioneer2 close with dspr
-    show un angry2 with dspr
+    show dv grin pioneer2 close at center with dspr
+    show un angry2 pioneer close with dspr
     
     dv "Приветик, о чём болтаете?"
     me "Да вот[wp]"
@@ -524,14 +524,14 @@ label blwnfh_day_1:
     dv "Допустим знаю."
     un "Ну погоди тогда[wp]"
     
-    show dv surprise with dspr
-    show un evil_smile with dspr
+    show dv surprise pioneer2 close at center with dspr
+    show un evil_smile pioneer close with dspr
     
     play music music_list["always_ready"] fadein 3
     
     "Довольно резко и неожиданно, Лена схватила Алису за нос."
     
-    show dv surprise with dspr
+    show dv surprise pioneer2 close at center with dspr
     
     dv "Ты чего творишь?!"
     un "А ты догадайся."
@@ -567,18 +567,18 @@ label blwnfh_day_1:
     # тут надо сделать анимацию падения алисы
     "Но в этот самый момент, Лена отпустила Алису и та свалилась на землю."
     
-    show un grin with dspr
+    show un grin pioneer close with dspr
     
     un "Думаю, ты усвоила урок."
     un "И больше так делать не будешь."
     dv "Ты придурошная."
     
-    show dv guilty with dspr
+    show dv guilty pioneer2 close at center with dspr
     
     "Алиса медленно поднялась обратно на ноги."
     # тут надо анимацию
     
-    show un angry2 with dspr
+    show un angry2 pioneer close with dspr
     
     un "Ты опять?"
     dv "Зачем нужно было всё это устраивать?"
@@ -608,7 +608,7 @@ label blwnfh_day_1:
     dv "Чего это она?"
     me "Сам в шоке."
     
-    show dv normal with dspr
+    show dv normal pioneer2 close at center with dspr
     
     "Прекратив тереть нос, Алиса, видимо, немного пришла в себя и вернулась к своему обычному состоянию."
     
@@ -624,7 +624,7 @@ label blwnfh_day_1:
     dv "«Ни о чём» говоришь?"
     me "Именно."
     
-    show dv grin with dspr
+    show dv grin pioneer2 close at center with dspr
     
     dv "А чего это она тогда сидела вся смущённая перед тобой?"
     dv "Сознавайся, признался в чувствах к ней?"
@@ -636,13 +636,13 @@ label blwnfh_day_1:
     
     "Просебя, сказала она."
     
-    show dv normal with dspr
+    show dv normal pioneer2 close at center with dspr
     
     dv "Ладно, а что тогда?"
     me "Она просто поблагодарила меня за вчерашнюю помощь и всё."
     me "Только вот[wp] {w}Она что-то ещё сказать хотела, но ты перебила."
     
-    show dv laugh with dspr
+    show dv laugh pioneer2 close at center with dspr
     
     dv "Ну извиняйте! Я не хотела, чес слово!"
     
@@ -750,29 +750,29 @@ label blwnfh_day_1:
     me "Продолжу с моделистами мастерить. {w}А что?"
     dv "Да вот[wp]"
     
-    show us laugh with dspr
+    show us laugh pioneer at blwnfh_sit_left_close behind table with dspr
     
     us "На свиданку тебя позвать хочет!"
     
     "Довольно громко выкрикнула Ульянка, от чего аж некоторые пионеры посмотрели в нашу сторону."
     
-    show dv angry with dspr
+    show dv angry pioneer at blwnfh_sit_right behind table with dspr
     
     dv "Да чего ты разоралась!"
     
-    show us upset with dspr
+    show us upset pioneer at blwnfh_sit_left_close behind table with dspr
     
     us "Ой да ладно тебе, пошутить уже нельзя?"
     dv "Нельзя! {w}Я же просто по-дружески спросила."
     
-    show dv shy with dspr
+    show dv shy pioneer at blwnfh_sit_right behind table with dspr
     
     dv "И вовсе не собиралась его куда-то звать."
     
     "Застенчивым голосом сказала Алиса."
     "Ульяна же быстро вернулась к своему нормальному состоянию."
     
-    show us normalsmile with dspr
+    show us normalsmile pioneer at blwnfh_sit_left_close behind table with dspr
     
     us "Ну-ну!"
     me "Мдэ[wp]"
@@ -797,8 +797,8 @@ label blwnfh_day_1:
     
     mt "К нам пополнение приехало и его надо встретить и сопроводить ко мне."
     
-    show dv smile with dspr
-    show us smile with dspr
+    show dv smile pioneer at blwnfh_sit_right behind table with dspr
+    show us smile pioneer at blwnfh_sit_left_close behind table with dspr
     
     "Когда она это сказала, Ульяна и Алиса быстренько перекинулись хитрыми взглядами."
     th "Видно быть, что-то удумали."

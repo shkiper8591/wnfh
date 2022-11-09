@@ -3,7 +3,7 @@ label blwnfh_day_1_dream:
     scene black
     $ renpy.pause(1.0)
     $ blwnfh_set_time("prologue")
-    $ blwnfh_set_name("kat", "Незнакомка")
+    $ blwnfh_set_name("voice", "Незнакомка")
     $ blwnfh_set_name("me", "Я")
     show anim prolog_2 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
@@ -54,6 +54,7 @@ label blwnfh_day_1_dream:
     kat "Семён, ты веришь в Бога?"
     
     nvl hide
+    $ blwnfh_set_name("voice", "Голос")
     $ blwnfh_set_mode()
     stop ambience
     scene black
@@ -1762,7 +1763,7 @@ label blwnfh_day_1:
     mt "Понятно."
     me "Кстати, а когда ужин?"
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "А ты его проспал, так что будешь ходить остаток дня голодным."
     
@@ -1785,7 +1786,7 @@ label blwnfh_day_1:
     
     me "Ох, спасибо вам огромное[wp]"
     
-    show mt angry with dspr
+    show mt angry pioneer panama with dspr
     
     mt "Только ты учти, что это первый и последний раз!"
     mt "Ведь я не собираюсь таскать тебе еду!"
@@ -1793,7 +1794,7 @@ label blwnfh_day_1:
     
     "Сказал я уже с набитым ртом."
     
-    show mt normal with dspr
+    show mt normal pioneer panama with dspr
     
     mt "И так, раз я принесла тебе поесть, то ты должен будешь отработать эту услугу."
     
@@ -1803,17 +1804,17 @@ label blwnfh_day_1:
     me "Какоэ?"
     mt "Ты выступишь провожатым Кате, пока она будет заполнять обходной лист."
     
-    show mt angry with dspr
+    show mt angry pioneer panama with dspr
     
     mt "И только попробуй свалить задание на кого-нибудь другого!"
     mt "Иначе я тебе такое устрою, что эта смена точно тебе на всю жизнь запомнится!"
     me "Понял-понял, не буду."
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "Вот и славненько."
     
-    show mt smile with dspr
+    show mt smile pioneer panama with dspr
     
     mt "Значит на линейке обговорим все подробности."
     me "Хорошо."
@@ -1877,7 +1878,8 @@ label blwnfh_day_1:
     
     "Девушка медленно подошла и села рядом со мной."
     
-    show un smile2 pioneer close at center with dspr
+    show un smile2 pioneer close with dspr
+    
     $ blwnfh_set_name("un", "Лена")
     
     un "Как ты догадался?"
@@ -1980,6 +1982,12 @@ label blwnfh_day_1:
     
     un "Спокойной ночи."
     
+    show un grin:
+        xcenter 0.5
+        ease_quart 3.0 xcenter -0.2
+    $ renpy.pause(3.0)
+    with dspr
+    
     hide un with dspr
     
     stop music fadeout 3
@@ -1996,7 +2004,7 @@ label blwnfh_day_1:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_square_night with dissolve2 
+    scene bg ext_square_night with slide_left_blure_dissolve2
     play ambience ambience_camp_center_night fadein 3
     window show
     
@@ -2021,7 +2029,14 @@ label blwnfh_day_1:
     "Хорошо, потому что не придется устраивать тёрки с вожатой, почему я пришел ночью."
     "А плохо, что буду спотыкаться обо всё подряд."
     
+    scene bg ext_house_of_mt_night_without_light:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
     stop ambience fadeout 1
+    $ blwnfh_set_volume("sound", 0.3)
+    play sound sfx_close_door_1
     scene bg int_house_of_mt_night2 with dissolve2
     play ambience ambience_int_cabin_night fadein 3
     

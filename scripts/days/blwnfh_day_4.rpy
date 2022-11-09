@@ -284,7 +284,7 @@ label blwnfh_day_4:
     "Из сна меня выбило то, что кто-то с большим напором тряс за меня плечо, из-за чего я вскоре открыл глаза."
     # Семён открывает глаза
     play ambience ambience_int_cabin_evening
-    show mt angry nightdress close at center with dspr
+    show mt angry pioneer close at center with dspr
     
     "И увидел перед собой явно в не самом добром настроении Ольгу Дмитриевну."
     
@@ -297,7 +297,7 @@ label blwnfh_day_4:
     mt "Ты думаешь я не знаю, что тебя снова ночью не было в постели?"
     mt "Тебе вот сколько не говори, всё что об стенку горох!"
     
-    show mt rage nightdress close at center with dspr
+    show mt rage pioneer close with dspr
     
     mt "Сколько ты уже мне обещаний надавал?"
     mt "Ольга Дмитриевна это последний раз, Ольга Дмитриевна я так больше не буду, Ольга Дмитриевна в следующий раз точно приду {b}вовремя{/b} — говорил такое?"
@@ -307,7 +307,7 @@ label blwnfh_day_4:
     me "Ну[wp] Было."
     mt "Ну так вот, это была твоя последняя ночная прогулка, теперь Семён, будешь восстанавливать себе режим."
     
-    show mt angry nightdress close at center with dspr
+    show mt angry pioneer close with dspr
     
     mt "С этого момента тебе днём спать запрещено, а не то[wp]"
     
@@ -318,7 +318,7 @@ label blwnfh_day_4:
     th "Ага-ага, охотно верю, ничего хуже таскания нескольких мешков сахара вы уже точно не придумаете. {w}До сих пор иногда спина болит, напоминая о том страшном дне."
     me "Ольга Дмитриевна, но я же последние дни просыпался рано сам, может не всё так уж и плохо?"
     
-    show mt grin nightdress close at center with dspr
+    show mt grin pioneer close with dspr
     
     "Она тихонько рассмеялась."
     

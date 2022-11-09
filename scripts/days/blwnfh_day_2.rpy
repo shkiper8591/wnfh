@@ -1,12 +1,14 @@
 label blwnfh_day_2_dream:
     
-    show anim prolog_1 with Dissolve(5.0)
+    show anim prolog_1 with dissolve2
     $ renpy.pause(1.5, hard=True)
-    $ blwnfh_set_name("kat", "???")
+    $ blwnfh_set_name("voice", "???")
     $ blwnfh_set_mode(nvl)
-    nvl show
+    nvl show dissolve2
     
-    th "Какой чудный сон[wp] {w}Птички поют, цветочки благоухают[wp] {w}Где-то я это уже видел[wp] Вернее слышал.\nВот только где? Может в фильме? Или сериале? Быть может книге какой-то? {w}А когда я вообще в последний раз держал в руках книгу?\nКак много вопросов и ни на один из них у меня нет ответа[wp] Но ведь так хочется!{w}\nВ прочем насколько это мне нужно? Просто знакомая фраза. Может я её вообще сам придумал? Во смех-то, и ещё считаю, что она из какого-то произведения!"
+    "~ Какой чудный сон[wp] {w}Птички поют, цветочки благоухают[wp] {w}Где-то я это уже видел[wp] Вернее слышал."
+    "Вот только где? {w}Может в фильме? Сериале? Или быть может книге какой-то? {w}А когда я вообще в последний раз держал в руках книгу?"
+    "Как много вопросов и ни на один из них у меня нет ответа[wp] Но ведь так хочется иметь ответ!{w}В прочем насколько это мне нужно? Просто знакомая фраза. Может я её вообще сам придумал? Во смех-то, и ещё считаю, что она из какого-то произведения! ~\n"
     
     kat "Семён.\n"
     
@@ -26,9 +28,10 @@ label blwnfh_day_2_dream:
     kat "В Караганде! Ха-ха, ловко я тебя подловила, да?\n"
     me "Ах ты[wp] Засранка!"
     
-    nvl hide
+    nvl hide dissolve2
     scene black with dissolve2
     $ blwnfh_set_mode()
+    $ blwnfh_set_name("voice", "Голос")
     $ renpy.pause(2.0, hard=True)
     
 label blwnfh_day_2:
@@ -41,9 +44,11 @@ label blwnfh_day_2:
     $ renpy.pause(1.5, hard=True)
     window show
     
-    "Мне приснился странный сон, и я пытался вспомнить все его детали."
+    "Мне приснился странный сон."
+    "И он показался мне настолько странным, что я тут же попытался вспомнить все его детали."
     
-    th "Кажется, мне приснился кто-то[wp] {w}Но вот кто? {w}Впрочем, имеет ли это какое-то значение сейчас?"
+    th "Кажется, мне приснился кто-то[wp] {w}Но вот кто?"
+    th "Впрочем, имеет ли это какое-то значение сейчас?"
     
     scene bg int_house_of_mt_sunset
     show unblink
@@ -168,7 +173,7 @@ label blwnfh_day_2:
     mt "Катя, сегодня Семён выступит твоим провожатым, на время заполнения списка."
     kat "Хорошо, а не могли бы напомнить, почему я не могу сама этого сделать?"
     
-    show mt angry with dspr
+    show mt angry pioneer panama at left with dspr
     
     "Потому-что, кое-кто потерял свою карту!"
     
@@ -178,14 +183,14 @@ label blwnfh_day_2:
     
     "Катя тихонько засмеялась."
     
-    show mt rage with dspr
+    show mt rage pioneer panama at left with dspr
     
     mt "Разговорчики в строю!"
     
     "Рассержено рявкнула на меня вожатая."
     "Однако, она быстро успокоилась."
     
-    show mt normal with dspr
+    show mt normal pioneer panama at left with dspr
     
     mt "В общем, Семён выступит в роли провожатого, отрабатывая карту." 
     
@@ -194,7 +199,7 @@ label blwnfh_day_2:
     kat "Ладно[wp]"
     
     play sound sfx_dinner_horn_processed
-    show mt smile with dspr 
+    show mt smile pioneer panama at left with dspr 
     
     mt "Ну всё, а теперь на завтрак!"
     
@@ -1667,7 +1672,7 @@ label blwnfh_day_2:
     play music blwnfh_music_list["we_dont_care"] fadein 5
     show cg d2_dv_sem_scene with dspr
     $ blwnfh_set_mode(nvl)
-    nvl show
+    nvl show dissolve2
     
     "Мы схватились по увереннее за гитары и первым играть начал я, а Алиса за мной."
     "Песня начиналась медленно и довольно расслабляюще."
@@ -1710,7 +1715,7 @@ label blwnfh_day_2:
     "Тут я и Алиса бросились в небольшой такой пляс, попутно быстро играя на гитаре, завершающие аккорды."
     "Отыграв последний аккорд, я свалился на колени, устало положил гитару перед собой и с облегчением выдохнул."
     
-    nvl hide
+    nvl hide dissolve2
     $ blwnfh_set_mode()
     stop music fadeout 3
     hide cg d2_dv_sem_scene with dspr

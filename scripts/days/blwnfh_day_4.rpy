@@ -1464,7 +1464,7 @@ label blwnfh_day_4:
     
     "Я попытался сделать самую добрую улыбку на свете, чтобы хоть немного смягчить ситуацию."
     
-    show mz angry with dspr
+    show mz angry glasses pioneer at left with dspr
     
     mz "Мне очень интересно, что же ты услышал?"
     me "О ваших делах и то, что Серый рассказал тебе, что не следовало рассказывать."
@@ -1509,7 +1509,7 @@ label blwnfh_day_4:
     mz "Ну не мне же."
     kat "А как же, я не умею[wp]"
     
-    show mz buka glasses pioneer at left with dspr 
+    show mz bukal glasses pioneer at left with dspr 
     
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     
@@ -1575,6 +1575,7 @@ label blwnfh_day_4:
     
     "В библиотеке уже никого не было, так что мы здесь задерживаться не стали."
     
+    window hide
     stop ambience
     show bg ext_library_day with dissolve2
     $ renpy.pause(1.0)
@@ -1582,6 +1583,7 @@ label blwnfh_day_4:
     $ renpy.pause(1.0)
     show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full
+    window show
     
     "Придя в столовую, та на моё удивление уже была битком." 
     
@@ -1686,7 +1688,7 @@ label blwnfh_day_4:
     mt "Ну-ну! Если узнаю, что ты спал, ух и достанется же тебе! Я уже придумала отличное тебе наказание на такой случай."
     me "Да? И какое же?"
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "А вот расскажи тебе всё, поспи да узнаешь."
     
@@ -1694,7 +1696,7 @@ label blwnfh_day_4:
     
     me "Да знаете, как-то не очень хочется узнавать."
     
-    show mt angry with dspr
+    show mt angry pioneer panama with dspr
     
     mt "Тогда иди бери своих товарищей в охапку и идите в кружок! Нечего тут валяться и бездельничать!"
     
@@ -1731,18 +1733,18 @@ label blwnfh_day_4:
     mz "У нее есть Лена, так что не пропадет."
     me "А может попросишь Сергея? Ты же явно помнишь, что было в прошлый раз."
     
-    show mz bukal with dspr
+    show mz bukal glasses pioneer with dspr
     
     mz "Помню, но Сережа занят, а ты нет, да и до тебя ближе."
     
-    show mz smile with dspr
+    show mz smile glasses pioneer with dspr
     
     me "Ладно, давай помогу[wp]"
     mz "Отлично, только постарайся в этот раз не наваливаться всем весом на полки и не переворачивать мне всю библиотеку."
     mz "И может быть я прощу тебя за тот инцидент."
     th "Не то чтобы мне было прям нужно твоё прощение, но учитывая твоё господствующее положение надо мной, то с начальством лучше дружить, чем ссорится."
     
-    show mz normal with dspr
+    show mz normal glasses pioneer with dspr
     
     me "А что делать-то надо?"
     mz "Та всё тоже самое, протереть книги, полки и полы."
@@ -1769,11 +1771,11 @@ label blwnfh_day_4:
     mz "Ничем таким особенным: развести костер, пожарить на нем картошки, полюбоваться видами Волги, а потом домой."
     me "А откуда бульбу достанете?"
     
-    show mz smile with dspr
+    show mz smile glasses pioneer with dspr
     
     mz "Этот вопрос к Сереже, он говорил, что знает где её можно достать."
     
-    show mz normal with dspr
+    show mz normal glasses pioneer with dspr
     
     mz "А чего ты это так интересуешься?"
     me "Да просто вот, от скуки."
@@ -1789,7 +1791,7 @@ label blwnfh_day_4:
     mz "Послезавтра вечером будут эти идиотские танцы, а я на них участвовать не хочу, вот Серёжа и предложил, так сказать, альтернативу."
     me "Понятно[wp]"
     
-    show mz smile with dspr
+    show mz smile glasses pioneer with dspr
     
     mz "А когда ты уже успел пообещать Кате свозить её на остров?"
     me "Во второй день её прибывания здесь, когда лагерь показывал, рассказал заодно и про здешние острова."
@@ -1807,14 +1809,17 @@ label blwnfh_day_4:
     mz "Долго ты думал над ответом, небось серьезно задумался о ней, значит точно нравится!"
     me "Какое сильное заявление, только с правдой ничего общего не имеет."
     
-    show mz bukal with dspr
+    show mz bukal glasses pioneer with dspr
     
     "В библиотеке повисла тишина, а Женя смотрела на меня своим полу-презрительным, полу-уставшим взглядом."
-    # мини пауза с исчезновением интерфейса.
+    
+    window hide
+    $ renpy.pause(1.5)
+    window show
     
     "Постепенно книги первой полки наконец были протерты и вскоре выставлены в алфавитном порядке, и мы перешли к следующей партии книг."
     
-    show mz norma with dspr 
+    show mz normal glasses pioneer with dspr 
     
     mz "А когда решишь?"
     me "Что решу?"
@@ -1822,7 +1827,7 @@ label blwnfh_day_4:
     me "Так я вроде тебе ответил."
     me "Да и почему тебя вообще это так интересует?"
     
-    show mz smile with dspr
+    show mz smile glasses pioneer with dspr
     
     mz "Да вот, от скуки просто."
     
@@ -1837,21 +1842,23 @@ label blwnfh_day_4:
     "Так и проходила наша работа в тишине, пока она не решила включить радио, где крутили советские песни."
     "Преисполняясь духом коммунизма, работа шла куда эффективнее и веселее."
     
-    # таймскип
+    window hide
+    $ renpy.pause(2.0)
+    window show
     
-    show mz normal with dspr
+    show mz normal glasses pioneer with dspr
     
     "Наконец, спустя полтора часа, мы закончили протирать и расставлять книги, а на этом соответственно закончилась и вся уборка." 
     "Я отряхнулся и оглядел библиотеку, которая вся чуть ли не сияла от чистоты."
     
     me "Что ж, на этот раз всё прошло удачнее, да?"
     
-    show mz laugh with dspr
+    show mz laugh glasses pioneer with dspr
     
     mz "Это точно."
     me "Теперь я прощен за свою неаккуратность?"
     
-    show mz fun with dspr
+    show mz fun glasses pioneer with dspr
     
     mz "Да, ты вполне заслужил прощения, без тебя бы трудилась тут часа три."
     me "Вот и славно."
@@ -2253,11 +2260,11 @@ label blwnfh_day_4:
     "Вскоре мы вышли на некое поле."
     
     scene bg ext_meadow_day with dissolve
-    stop ambient
+    #stop ambience fadeout 3
     show mi normal pioneer at left with dspr
     show kat normal pioneer at right with dspr
     # вставить эмбиент ветра.
-    play music blwnfh_music_list["outskirts"]
+    play music blwnfh_music_list["outskirts"] fadein 5
     
     "Вид создавался крайне живописный. {w}Поле высокой травы, которую волнами колыхал ветер, а с водоема поблизости доносились звуки чаек."
     "Мику явно нас не обманула, назвав это место красивым."

@@ -520,8 +520,8 @@ label blwnfh_day_1:
     stop music fadeout 3
     show dv grin pioneer2 close:
         xcenter 0.5 ycenter 0.52
-    with dissolve    
-    #34 тут надо звук хруста веток и всякое такое
+    with dissolve
+    play sound sfx_tree_branches
     show dv grin pioneer2 close at center with dspr
     show un angry2 pioneer close with dspr
     
@@ -558,7 +558,7 @@ label blwnfh_day_1:
     
     th "Почему всякая такая хрень происходит когда я хочу побыть один?"
     
-    play sound blwnfh_sfx_list["nos"]
+    #play sound blwnfh_sfx_list["nos"]
     dv "Ай, ай, ай! Дурочка ты чего?! Остановись!"
     un "Я дурочка? {w}А может ты?"
     
@@ -606,11 +606,9 @@ label blwnfh_day_1:
     un "И больше так делать не будешь."
     dv "Ты придурошная."
     
-    show dv guilty pioneer2 close with dspr
-    
     "Алиса медленно поднялась обратно на ноги."
     
-    show dv surprise pioneer2 close:
+    show dv guilty pioneer2 close:
         ease 0.5 xcenter 0.47 ycenter 0.7
         pause 0.3
         ease 0.5 xcenter 0.5 ycenter 0.5
@@ -627,11 +625,13 @@ label blwnfh_day_1:
     un "Ах, более дипломатично значит[wp]"
     
     "Лена глубоко вздохнула и встала с лавочки."
+    
     show un angry2:
         xcenter 0.72
         ease_quart 2.0 xcenter 1.2 ycenter 0.5
     $ renpy.pause(2.0, hard=True)
     hide un
+    
     "Оглядев нас своим недовольным взглядом, она тут же быстро зашагала в сторону домиков."  
     
     th "Похоже, не стоило выбирать чью либо из сторон[wp]"
@@ -644,7 +644,7 @@ label blwnfh_day_1:
     dv "Чего это она?"
     me "Сам в шоке."
     
-    show dv normal pioneer2 close at center with dspr
+    show dv normal pioneer2 close with dspr
     
     "Прекратив тереть нос, Алиса, видимо, немного пришла в себя и вернулась к своему обычному состоянию."
     
@@ -660,7 +660,7 @@ label blwnfh_day_1:
     dv "«Ни о чём» говоришь?"
     me "Именно."
     
-    show dv grin pioneer2 close at center with dspr
+    show dv grin pioneer2 close with dspr
     
     dv "А чего это она тогда сидела вся смущённая перед тобой?"
     dv "Сознавайся, признался в чувствах к ней?"
@@ -672,13 +672,13 @@ label blwnfh_day_1:
     
     "Просебя, сказала она."
     
-    show dv normal pioneer2 close at center with dspr
+    show dv normal pioneer2 close with dspr
     
     dv "Ладно, а что тогда?"
     me "Она просто поблагодарила меня за вчерашнюю помощь и всё."
     me "Только вот[wp] {w}Она что-то ещё сказать хотела, но ты перебила."
     
-    show dv laugh pioneer2 close at center with dspr
+    show dv laugh pioneer2 close with dspr
     
     dv "Ну извиняйте! Я не хотела, чес слово!"
     

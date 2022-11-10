@@ -515,7 +515,7 @@ label blwnfh_day_2:
     play ambience ambience_medstation_inside_day fadein 3
     show cs normal at right with dspr 
     show kat normal pioneer at left with dspr
-    
+    #33 надо бы переосмыслить эту сцену
     $ blwnfh_set_name("cs","Виола")
     
     "В медпункте сидела Виола и заполняла какие-то бумаги."

@@ -1518,10 +1518,9 @@ label blwnfh_day_6:
     $ blwnfh_set_mode(nvl)
     $ blwnfh_set_name("me", "Я")
     $ blwnfh_set_name("voice", "Стражник")
-    play blwnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
+    play music blwnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
     nvl show dissolve
-    
-    
+    #34 звук противного скрипа 
     "Противный скрип открывающейся железной решётки, за которой открывается спуск в неизвестность."
     "Я медленно спускаюсь по лестнице в темноту. {w}Лишь факела, что держат стражники позади меня, чуть-чуть освещает дорогу и не дает случайно навернуться в бездну."
     
@@ -1591,10 +1590,10 @@ label blwnfh_day_6:
     
     nvl hide dissolve
     $ blwnfh_set_mode()
-    stop music fadeout 5
+    stop music fadeout 3
     $ blwnfh_set_name("me", "Семён")
     $ blwnfh_set_name("voice","Голос")
-    hide anim_prolog_1 with dspr
+    hide anim prolog_1 with dspr
     show un normal pioneer at left with dspr
     show kat normal at right with dspr
     
@@ -2689,7 +2688,7 @@ label blwnfh_day_6:
     "Вот только[wp] {w}Либо Катя с Мику чай пили, либо их вообще внутри не было."
     "Ибо со стороны здания не доносилось ни звука."
     
-    scene bg ext_music_club_verandah_day with dissolve
+    scene bg ext_musclub_verandah_day with dissolve
     
     "Подойдя поближе, я заметил одну интересную деталь."
     "Окна были зашторены. Даже на окошках в двери нацепили какую-то тряпку."
@@ -2827,7 +2826,7 @@ label blwnfh_day_6:
     me "Угу."
     
     stop ambience
-    scene bg ext_music_club_verandah_day with dissolve
+    scene bg ext_musclub_verandah_day with dissolve
     show kat normal pioneer with dissolve
     play ambience ambience_camp_center_day
     
@@ -4098,6 +4097,8 @@ label blwnfh_day_6:
     
     "Катю, похоже, всё это забавляло, ведь она сидела с широкой улыбкой на лице.\n"
     
+    nvl clear
+    
     me "Что они ни делают, не идут дела\nВидно в понедельник их мама родила\nВидно в понедельник их мама родила!\nЧто они не делают, не идут дела.\n"
     me "Крокодил не ловится, не растёт кокос\nПлачут, Богу молятся, не жалея слёз.\n"
     
@@ -4106,13 +4107,14 @@ label blwnfh_day_6:
     me "Плачут, Богу молятся, не жалея слёз\nКрокодил не ловится, не растёт кокос!\n"
     
     nvl clear
+    
     me "Вроде не бездельники и могли бы жить\nИм бы понедельники взять и отменить\n"
     
     "Катя тихонько захихикала.\n"
     
     me "Им бы понедельники взять и отменить!\nВроде не бездельники и могли бы жить\n"
     
-    th "Жаль, что мы на маленькой лодочке, а не на здоровенном круизном лайнере, а то сейчас как Миронов бы бросился танцевать.\n" 
+    th "Жаль, что мы на маленькой лодочке, а не на здоровенном круизном лайнере, а то сейчас как Миронов бы бросился танцевать." 
     
     me "Как назло на острове нет кален-даря.\nРебетня и взрослые пропадают зря\nРебетня и взрослые пропадают зря\nНа проклятоп острове нет календаря!\n"
     

@@ -614,7 +614,7 @@ label blwnfh_day_6:
     
     "Мы сидели молча какое-то время, пока Ульяна не решила встать."
     
-    show us with dspr
+    show us normal with dspr
     
     us "Что ж Семён, было действительно интересно и весело с тобой пообщаться."
     me "Взаимно."
@@ -666,7 +666,7 @@ label blwnfh_day_6:
     
     th "Может зайти, посмотреть? Всё равно, делать пока нечего."
     
-    scene bg ext_music_club_verandah_day with dissolve
+    scene bg ext_musclub_verandah_day with dissolve
     
     "Подойдя ко входу, я постучался в дверь."
     #вместо этого, тут можно будет вставить звук стука в дверь.
@@ -3273,7 +3273,7 @@ label blwnfh_day_6:
     me "Девушке интересно чем мы тут занимаемся."
     me "Не поможешь провести экскурсию?"
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Конечно же помогу!"
     sh "И так, с чего мы начнём?"
@@ -3330,7 +3330,7 @@ label blwnfh_day_6:
     sh "У Мику выменял."
     me "Выменял на что?"
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Секрет!"
     
@@ -3611,7 +3611,7 @@ label blwnfh_day_6:
     
     "Шурик поправил очки."
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Всё! Лимит ответов исчерпан!"
     sh "К тому же, мы и так тебе сказали больше нужного."
@@ -3900,7 +3900,7 @@ label blwnfh_day_6:
     
     me "Так, я надеюсь ты придумал чем собрался заделивать отверстие?"
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Ну конечно!"
     
@@ -3950,7 +3950,7 @@ label blwnfh_day_6:
     sh "Да-да, нормально, давай её сюда мне и можешь идти."
     me "А может я ещё что-то тебе сделаю?"
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Если хочешь, то почини дверь."
     me "Я пожалуй пойду."

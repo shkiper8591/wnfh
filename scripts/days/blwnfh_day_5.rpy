@@ -750,7 +750,7 @@ label blwnfh_day_5:
     me "Куда ты так залезла, что вся в пылюки?"
     kat "Так там не убирались лет сто!"
     
-    show mi normal with dspr
+    show mi normal pioneer with dspr
     
     "Вскоре из подсобки вернулась Мику, с нашими инструментами на перевес."
 
@@ -1433,7 +1433,7 @@ label blwnfh_day_5:
     
     "Шурик посмотрел на свои часы."
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Друг, зачем куда-то торопиться?"
     me "Ну там, на обед, не?"
@@ -1480,7 +1480,7 @@ label blwnfh_day_5:
     "После чего, первый микрофон был настроен."
     "Регулятор второго микрофона выставили на то же значение."
     
-    show sh normal_smile with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Вот и собстна всё."
     me "Теперь можно и отдохнуть."
@@ -1548,7 +1548,7 @@ label blwnfh_day_5:
     sh "То есть по твоему это оправдывает использование тобой общих ресурсы клуба в свою пользу?"
     el "А по твоему это оправдано эксплутировать нас в свою пользу?"
     
-    show sh shocked with dspr
+    show sh surprise with dspr
     
     sh "Что? Когда такое было вообще?!"
     sh "Серый, что с тобой стало-то? Нормально же всё было!"
@@ -1909,7 +1909,7 @@ label blwnfh_day_5:
     
     hide sl with dspr
     show el normal pioneer at left with dspr
-    show mz normal glasses at right with dspr
+    show mz normal glasses pioneer at right with dspr
     
     "И даже Сергея с Женей."
     
@@ -1925,7 +1925,7 @@ label blwnfh_day_5:
     "И, собственно, замыкая сзади вереницу пионеров, шла Ольга Дмитриевна."
     "Которая подошла к нам."
     
-    show mt normal with dspr
+    show mt normal pioneer panama with dspr
     
     mt "А вы чего не на своем месте?"
     me "Ждали когда все соберутся."
@@ -1941,7 +1941,7 @@ label blwnfh_day_5:
     kat "Спасибо."
     me "Да, спасибо."
     
-    show mt angry with dspr
+    show mt angry pioneer panama with dspr
     
     mt "Ну что вы там так долго! У нас начало через пять минут!"
     mt "А мне ещё много чего вам рассказать нужно!"
@@ -1949,7 +1949,7 @@ label blwnfh_day_5:
     
     # переход наверное
     
-    show mt normal at right with dspr
+    show mt normal pioneer panama at right with dspr
     show kat normal at left with dspr
     
     "Заняв наше место, мы стали внимательно слушать вожатую."
@@ -1960,7 +1960,7 @@ label blwnfh_day_5:
     mt "Вы, поприветствуете зрителей, представитесь и назовёте команды футболистов."
     kat "А как нам их называть, если мы не знаем имён команд?"
     
-    show mt smile with dspr
+    show mt smile pioneer panama with dspr
     
     mt "Всё очень просто."
     mt "С синими повязками на руках, это команда Алисы."
@@ -1976,12 +1976,12 @@ label blwnfh_day_5:
     
     "Мы одобрительно покивали головами."
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "Отлично, тогда я побежала и да прибудет с вами сила."
     
     hide mt with dspr
-    show kat normal with dspr
+    show kat normal pioneer with dspr
     
     me "Честно, я немного волнуюсь."
     kat "Ой, да ладно, всё будет нормально."
@@ -2483,18 +2483,18 @@ label blwnfh_day_5:
     
     show kat normal at left with dspr
     show mt smile pioneer panama with dspr
-    show el normal at right with dspr
+    show el normal pioneer at right with dspr
     
     "Подойдя, вожатая встретила нас легкими овациями."
     
     mt "А вот и наши коментаторы!"
     mt "Хорошо вы поработали."
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "Не без курьёзов конечно, но на перерыве, немного, да подурачиться можно."
     
-    show mt normal with dspr
+    show mt normal pioneer panama with dspr
     
     mt "Разве что не на людях."
     kat "Ну, а чего он грустил-то? Так я ему настроение подняла."
@@ -2506,7 +2506,7 @@ label blwnfh_day_5:
     mt "Катя, ты отправляешься в столовую дежурить с Мику, а вы парни[wp]"
     me_el_s "Идём таскать тяжести."
     
-    show mt grin with dspr
+    show mt grin pioneer panama with dspr
     
     mt "Какие молодцы, всё верно!"
     mt "Так что уперёд и с песней!"
@@ -2713,7 +2713,7 @@ label blwnfh_day_5:
     "Катя встала поближе ко мне, и мы неспешным шагом отправлись к своим домикам."
     
     scene bg ext_houses_sunset with dissolve
-    show kat normal with dspr
+    show kat normal pioneer with dspr
     
     kat "Слушай, а хорошо мы с тобой откомментировали, я в столовой только и слышала, как нас обсуждают, а не победителей."
     me "Круто, что могу сказать."

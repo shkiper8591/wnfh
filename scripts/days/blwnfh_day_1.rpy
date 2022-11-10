@@ -478,7 +478,7 @@ label blwnfh_day_1:
     "Я опустил голову и перевел свой взгляд на нее."
     
     show un shy pioneer close:
-        xcenter 0.72 ycenter 0.5
+        xcenter 0.72 ycenter 0.52
     with dissolve
     
     me "Слушаю."
@@ -509,7 +509,9 @@ label blwnfh_day_1:
     
     stop music fadeout 3
     # тут надо звук хруста веток и всякое такое !3
-    show dv grin pioneer2 close at center with dspr
+    show dv grin pioneer2 close:
+        xcenter 0.5 ycenter 0.52
+    with dissolve    
     show un angry2 pioneer close with dspr
     
     dv "Приветик, о чём болтаете?"
@@ -524,30 +526,46 @@ label blwnfh_day_1:
     dv "Допустим знаю."
     un "Ну погоди тогда[wp]"
     
-    show dv surprise pioneer2 close at center with dspr
-    show un evil_smile pioneer close with dspr
-    
+    show dv surprise pioneer2 close with dspr
+    show un evil_smile pioneer close:
+        ease 0.3 ycenter 0.5
+    with dspr
     play music music_list["always_ready"] fadein 3
     
-    "Довольно резко и неожиданно, Лена схватила Алису за нос."
-    
-    show dv surprise pioneer2 close at center with dspr
-    
+    "Довольно резко и неожиданно, Лена схватила Алису за нос."    
     dv "Ты чего творишь?!"
     un "А ты догадайся."
     
+    show un evil_smile pioneer close:
+        ease 0.3 xcenter 0.7
+        ease 0.7 xcenter 0.75
+    show dv surprise pioneer2 close:
+        ease 0.3 xcenter 0.49
+        ease 0.7 xcenter 0.55
+        
     "Спустя секунду Лена, стала тянуть нос Алисы на себя."
     
     th "Почему всякая такая хрень происходит когда я хочу побыть один?"
     
+    play sound blwnfh_sfx_list["nos"]
     dv "Ай, ай, ай! Дурочка ты чего?! Остановись!"
     un "Я дурочка? {w}А может ты?"
+    
+    show dv surprise pioneer2 close:
+        ease 0.5 xcenter 0.53
+    
     dv "Ленка, ну хватит!"
     
     "Судя по Алисенным возгласам ей действительно было не очень приятно."
     "А Лена не собиралась останавливаться."
     
     un "Нет, не хватит!"
+    show un evil_smile pioneer close:
+        ease 0.3 xcenter 0.7
+        ease 0.7 xcenter 0.75
+    show dv surprise pioneer2 close:
+        ease 0.3 xcenter 0.53
+        ease 0.7 xcenter 0.55
     un "Будешь знать, что бывает когда суешь нос в чужие разговоры!"
     dv "Семён, помоги пожалуйста!"
     me "А чего я-то сразу? {w}Мне мой нос жалко."
@@ -567,17 +585,26 @@ label blwnfh_day_1:
     # тут надо сделать анимацию падения алисы
     "Но в этот самый момент, Лена отпустила Алису и та свалилась на землю."
     
+    
+    play sound sfx_body_bump
+    show dv surprise pioneer2 close:
+        ease 0.3 xcenter 0.5 ycenter 1.2
+    with vpunch
+    
     show un grin pioneer close with dspr
     
     un "Думаю, ты усвоила урок."
     un "И больше так делать не будешь."
     dv "Ты придурошная."
     
-    show dv guilty pioneer2 close at center with dspr
+    show dv guilty pioneer2 close with dspr
     
     "Алиса медленно поднялась обратно на ноги."
-    # тут надо анимацию
     
+    show dv surprise pioneer2 close:
+        ease 0.5 xcenter 0.47 ycenter 0.7
+        pause 0.3
+        ease 0.5 xcenter 0.5 ycenter 0.5
     show un angry2 pioneer close with dspr
     
     un "Ты опять?"

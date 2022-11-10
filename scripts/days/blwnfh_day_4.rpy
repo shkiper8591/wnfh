@@ -2095,7 +2095,7 @@ label blwnfh_day_4:
     
     scene ext_musclub_day with dissolve2
     $ renpy.pause(1.0)
-    scene bg ext_musclub_verandah with dissolve2
+    scene bg ext_musclub_verandah_day with dissolve2
     
     "Поднявшись на крыльцо, я заметил одну странную вещь."
     "Из муз кружка совсем не доносилась музыка."

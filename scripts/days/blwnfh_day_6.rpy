@@ -783,6 +783,8 @@ label blwnfh_day_6:
     th "Блин, чё сказать-то. {w}Если скажу, что забыл, так сразу обида."
     th "А соглашаться на какой-то там «концерт» вообще желания нет."
     
+    play music blwnfh_music_list["major_grom"]
+    
     me "Прости, я[wp] я забыл."
     mi "Забыл."
     
@@ -796,6 +798,8 @@ label blwnfh_day_6:
     
     "Вскрикнула Мику и, невесь откуда достав гитару, ударила ей мне по голове."
     
+    $ renpy.music.set_pause(True, channel='music')
+    stop ambience fadeout 3
     show anim prolog_1 with dspr
     
     voice "Семён Персунов был хорошим человеком, верным товарищем — настоящим профессионалом своего дела."
@@ -808,6 +812,7 @@ label blwnfh_day_6:
     
     # переход
     
+    $ renpy.music.set_pause(False, channel='music')
     hide anim prolog_1 with dspr
     show mi serious with dspr
     
@@ -855,6 +860,8 @@ label blwnfh_day_6:
     th "Получается только соглашаться, а я вот совсем не хочу."
     th "У меня же дел не в проворот."
     th "Хотя[wp]"
+    
+    stop music fadeout 3
     
     "Я усмехнулся."
     

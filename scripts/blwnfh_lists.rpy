@@ -217,5 +217,7 @@ init 2:
     $ blwnfh_music_list["kate_acoustic"] = blwnfh_MUSIC + "Kate - Acoustic.mp3"
     $ blwnfh_music_list["kate_orchestra"] = blwnfh_MUSIC + "Kate - Orchestra.mp3"
     $ blwnfh_music_list["kate_piano"] = blwnfh_MUSIC + "Kate - Piano.mp3"
+    $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
+    $ blwnfh_music_list["major_grom2"] = blwnfh_MUSIC + "Move Like a Devil cut 10 sec.mp3"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

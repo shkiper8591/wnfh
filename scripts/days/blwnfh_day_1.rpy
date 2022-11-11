@@ -1591,22 +1591,35 @@ label blwnfh_day_1:
     show un smile pioneer with dspr
     
     un "Спасибо!"
-
+    
+    window hide
     show un smile pioneer:
         subpixel True
         ease_quart 2.0 xcenter 0.44
     show kat normal pioneer behind chair_r:
         subpixel True
         ease 1.0 xcenter 0.85
-    $ renpy.pause(2.0, hard=True)
-    show chair_l at chair_move_out behind table
-    $ renpy.pause(0.75, hard=True)
+    $ renpy.pause(1.0, hard=True)
+    show chair_l at chair_move_out behind kat
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_out behind un
+    #$ renpy.pause(0.75, hard=True)
+    show kat normal pioneer:
+        ease_quart 2.0 xcenter 0.72
+    $ renpy.pause(0.3, hard=True)
     show un smile pioneer: 
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
-    show un smile pioneer at sit_down    
-    show chair_l at chair_move_in behind table
-    show left d6_breakfast_full tray spoon foods behind mid with dissolve
+    show un smile pioneer at sit_down
+    $ renpy.pause(0.3, hard=True)
+    show kat normal pioneer at sit_down
+    show chair_l at chair_move_in
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_in
+    show left d6_breakfast_full tray spoon foods behind mid 
+    show right d6_breakfast_full tray spoon foods behind mid 
+    with dissolve
+    window show
     
     "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
     

@@ -63,7 +63,7 @@ init 1:
     transform sit_down:
         subpixel True
         parallel:
-            ease 1.0 ypos 0.22
+            ease 1.0 ypos 0.12
         parallel:
             ease 0.75 zoom 1.05
             ease 0.5 zoom 1.0
@@ -100,12 +100,13 @@ init 1:
             ease 0.2 zoom 1.05
             ease 0.07 zoom 1.0
 
-    # Анимация стула, когда персонаж встаёт или садится
 
-    transform chair_move_sd:
+    transform chair_move_out: # Отодвигается
         yanchor 0.0
-        ypos 0.1
-        zoom 0.95
+        ease 0.75 zoom 0.95
+    
+    transform chair_move_in: # Задвигается
+        yanchor 0.0 
         ease 0.75 ypos 0.0 zoom 1.0
 
     transform chair_move_gu:

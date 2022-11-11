@@ -522,7 +522,7 @@ label blwnfh_day_1:
         xcenter 0.5 ycenter 0.52
     with dissolve
     play sound sfx_tree_branches
-    show dv grin pioneer2 close at center with dspr
+    show dv grin pioneer2 close with dspr
     show un angry2 pioneer close with dspr
     
     dv "Приветик, о чём болтаете?"
@@ -601,6 +601,7 @@ label blwnfh_day_1:
         ease 0.3 xcenter 0.5 ycenter 1.2
     with vpunch
     show un grin pioneer close with dspr
+    show dv guilty pioneer2 close with dspr
     
     un "Думаю, ты усвоила урок."
     un "И больше так делать не будешь."
@@ -609,6 +610,8 @@ label blwnfh_day_1:
     "Алиса медленно поднялась обратно на ноги."
     
     show dv guilty pioneer2 close:
+        subpixel True
+        xcenter 0.5 ycenter 1.2
         ease 0.5 xcenter 0.47 ycenter 0.7
         pause 0.3
         ease 0.5 xcenter 0.5 ycenter 0.5
@@ -1444,6 +1447,9 @@ label blwnfh_day_1:
         xcenter 0.5 ycenter 0.5
         ease_quart 0.3 ycenter 0.55
         ease_quart 0.3 ycenter 0.5
+    sh "Ну-с, пошли."
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
         ease_quart 0.6 xcenter 0.6
         ease_quart 0.7 xcenter 0.7
         ease_quart 0.7 xcenter 0.8
@@ -1469,8 +1475,6 @@ label blwnfh_day_1:
         ease_quart 0.6 xcenter 0.1
         ease_quart 0.6 xcenter 0.2
         ease_quart 0.6 xcenter 0.3
-        ease_quart 0.7 xcenter 0.4
-        ease_quart 0.6 xcenter 0.5
         ease_quart 0.7 ycenter 0.55
         ease_quart 0.7 ycenter 0.5
     $ renpy.pause(3.9, hard=True)
@@ -1479,7 +1483,7 @@ label blwnfh_day_1:
     "Притащив радио, мы поставили его на заранее заготовленное место."
     #34 звук чего-то тяжелого
     sh "Фух[wp] {w}Дотащили."
-    me "Да уж, я-то надеялся что ничего тяжелого таскать сегодня не придется."
+    me "Да уж, я-то надеялся, что ничего тяжелого таскать сегодня не придется."
     sh "Серый, подай нам тряпку какую-нибудь, чтобы вытерется от грязи."
     el "Да, сейчас."
     
@@ -1551,20 +1555,32 @@ label blwnfh_day_1:
     "А посему я как можно быстрее взял поднос с едой и ушел в самый дальний угол столовой."
     "Там я занял вполне уютное местечко у окна, правда вид из него был не самый интересный."
     
+    show chair_l behind table
+    show chair_r behind table
+    show table
+    show shakers behind mid
+    with dissolve
+    
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_day with dissolve2
+    show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 3
+    
+    show mid d6_breakfast_full tray spoon foods with dissolve
     
     "Как только я занял своё место, столовая чуть ли не в миг наполнилась пионерами."
     
-    show un normal pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show un normal pioneer behind chair_r:
+        xcenter 1.2
+        ease_quart 4.0 xcenter 0.6
+    show kat normal pioneer behind chair_r:
+        xcenter 1.4
+        ease_quart 5.0 xcenter 0.8
     
     "И я было уже начал обедать, как ко мне подошли Лена и[wp] {w}Катя?"
     
     th "Что ж вам вечно всем от меня надо."
     
-    show un shy with dspr
+    show un shy pioneer with dspr
     
     un "Можно мы к тебе сядем?"
     
@@ -1572,9 +1588,38 @@ label blwnfh_day_1:
     
     me "Да конечно, садитесь."
     
-    show un smile with dspr
+    show un smile pioneer with dspr
     
     un "Спасибо!"
+    
+    window hide
+    show un smile pioneer:
+        subpixel True
+        ease_quart 2.0 xcenter 0.44
+    show kat normal pioneer behind chair_r:
+        subpixel True
+        ease 1.0 xcenter 0.85
+    $ renpy.pause(1.0, hard=True)
+    show chair_l at chair_move_out behind kat
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_out behind un
+    #$ renpy.pause(0.75, hard=True)
+    show kat normal pioneer:
+        ease_quart 2.0 xcenter 0.72
+    $ renpy.pause(0.3, hard=True)
+    show un smile pioneer: 
+        ease_quart 2.0 xcenter 0.28
+    $ renpy.pause(2.0, hard=True)
+    show un smile pioneer at sit_down
+    $ renpy.pause(0.3, hard=True)
+    show kat normal pioneer at sit_down
+    show chair_l at chair_move_in
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_in
+    show left d6_breakfast_full tray spoon foods behind mid 
+    show right d6_breakfast_full tray spoon foods behind mid 
+    with dissolve
+    window show
     
     "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
     
@@ -1587,14 +1632,14 @@ label blwnfh_day_1:
     
     me "О чём болтаете?"
     
-    show un shy with dspr
-    show kat shy with dspr
+    show un shy pioneer with dspr
+    show kat shy pioneer with dspr
     
     "Спросил я невзначай между употреблением порций супа."
     "Однако, после моего вопроса они залились румянцем, будто я спросил их о чём-то не пристойном."
     "И лишь спустя время, Лена взяла на себя инициативу."
     
-    show un grin with dspr
+    show un grin pioneer with dspr
     
     un "Боюсь, {i}Сёмочка{/i}, это не твоё дело."
     th "Сёмочка? {w}Меня так ещё никто не называл тут."
@@ -1603,11 +1648,11 @@ label blwnfh_day_1:
     
     "Ухмыляясь сказал я, полагая, что переиграл её."
     
-    show un laugh with dspr 
+    show un laugh pioneer with dspr 
     
     un "Тогда у меня для тебя плохие новости!"
     
-    show kat happy with dspr
+    show kat happy pioneer with dspr
     
     "Хихикая ответила Лена, а немного погодя захихикала и Катя."
     "Я же не сразу понял где меня подстебали, но зато быстро понял, что моё переигрывание было переиграно."

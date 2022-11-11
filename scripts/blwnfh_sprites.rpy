@@ -353,11 +353,9 @@ init 2:
         "chair"
         left
         yalign 0.0
-        ypos -0.1
 
     image chair_r:
         "chair"
         right
         yalign 0.0
-        ypos -0.1
 

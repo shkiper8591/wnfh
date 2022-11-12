@@ -18,7 +18,7 @@ label blwnfh_test:
     $ blwnfh_set_time()
     scene black
     
-    "Добро пожаловать в меню отладки!"
+    "Добро пожаловать в полигон!"
     "Что мы хотим отладить?"
     jump blwnfh_test_main_menu
 

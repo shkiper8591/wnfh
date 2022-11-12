@@ -188,6 +188,7 @@ init 2:
     $ blwnfh_sfx_list["ps4_ach"] = blwnfh_SFX + "ps4_ach.ogg"
     $ blwnfh_sfx_list["plimp"] = blwnfh_SFX + "ps4_ach.ogg"
     $ blwnfh_sfx_list["nos"] = blwnfh_SFX + "nos.ogg"
+    $ blwnfh_sfx_list["guitar_hit"] = blwnfh_SFX + "guitar_hit.ogg"
     
     # MUSIC Лист
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"

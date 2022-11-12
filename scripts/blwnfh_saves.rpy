@@ -6,7 +6,7 @@ init python:
     blwnfh_title = [u"Мы не отсюда"]
     
     def blwnfh_set_savename(day):
-        chapters_list = {1:[1, 2], 2:[3, 4, 5, 6], 3:[7, 8, 9, 10], 4:[11, 12, 13, 14]}
+        chapters_list = {1:[1, 2], 2:[3, 4, 5, 6], 3:[7, 8, 9, 10], 4:[11, 12, 13, 14], 5:["Тест"]}
         
         for n,i in enumerate(chapters_list.values()):
             if day in i:
@@ -19,11 +19,12 @@ init python:
             roman_chapter = "II"
         elif chapter == 3:
             roman_chapter = "III"
-        else:
+        elif chapter == 4:
             roman_chapter = "IV"
-            
+        else:
+            roman_chapter = "Тестовая"
         title = blwnfh_title[0] + "\n"
-        if day in range(0, 16):
+        if day in range(0, 15):
             save_name = title + "Глава " + str(roman_chapter) + ". " + u"День № " + str(day)
         else:
             save_name = title + day

@@ -177,7 +177,8 @@ init 2:
     }
     
     $ blwnfh_video_list["backdrop"] = {dn:(blwnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 14)}
-
+    $ blwnfh_video_list["backdrop"]["test"] = blwnfh_VIDEO + "backdrop_test.webm"
+    
     image null = Null(0, 0) # Я не ебу что это, не помню нахуй это писал, но пусть будет
 
     $ blwnfh_sfx_list = blwnfh_form_files_list(blwnfh_SFX)

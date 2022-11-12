@@ -14,7 +14,7 @@ label technical_chocolatki:
 
 
 label blwnfh_test:
-    $ blwnfh_new_chapter(13)
+    $ blwnfh_new_chapter(15)
     $ blwnfh_set_time()
     scene black
     

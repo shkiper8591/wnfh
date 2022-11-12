@@ -23,7 +23,7 @@ init python:
             roman_chapter = "IV"
             
         title = blwnfh_title[0] + "\n"
-        if day in range(0, 15):
+        if day in range(0, 16):
             save_name = title + "Глава " + str(roman_chapter) + ". " + u"День № " + str(day)
         else:
             save_name = title + day

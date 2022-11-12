@@ -343,6 +343,7 @@ init 2:
     
     ## Юля
     image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
+    image wat blwnfh_OTHER + "wat.png"
     ## Я не ебу как это по-русски нормально назвать
     image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "shakers.png")
     ## Стол

@@ -221,18 +221,22 @@ init 2:
     $ blwnfh_music_list["kate_piano"] = blwnfh_MUSIC + "Kate - Piano.mp3"
     $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
     $ blwnfh_music_list["major_grom2"] = blwnfh_MUSIC + "Move Like a Devil cut 10 sec.mp3"
+    
+    # AMBIENCE Лист
+    $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"
+    
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
     
     image cg d6_guitar_hit:
         contains:
-            "bg ext_clubs_day"
+            "bg int_musclub_day"
         contains:
-            "ext_clubs_day_blur"
+            "bg int_musclub_day_blur"
             alpha 0.0
-            linear 3.5 alpha 1.0
+            linear 2.0 alpha 1.0
         contains:
-            (blwnfh_OTHER + "misc/d6_mi_hit.png")
+            (blwnfh_OTHER + "d6_mi_hit.png")
             pos(0.75, 0.5)
             anchor(0.5, 0.5)
             linear 3.4 pos(0.5, 0.5)

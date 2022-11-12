@@ -93,7 +93,7 @@ init:
 
 init 1:
     python:
-        def bkrr_fade(time=1.0, color="white"):
+        def blwnfh_fade(time=1.0, color="white"):
             ft = time * 0.5
             fc = {
                 "black":"#000",

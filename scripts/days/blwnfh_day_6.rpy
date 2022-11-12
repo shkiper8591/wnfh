@@ -804,7 +804,7 @@ label blwnfh_day_6:
     play sound blwnfh_sfx_list["guitar_hit"]
     $ renpy.music.set_pause(True, channel='music')
     stop ambience fadeout 3
-    show anim prolog_1 with dspr
+    show black with dspr
     play ambience blwnfh_ambience_list["thunder"] fadein 2
     $ renpy.pause (2.5, hard=True)
     window show
@@ -816,9 +816,10 @@ label blwnfh_day_6:
     voice "Эх[wp] Прощай Семён. {w}Нам будет тебя не хватать."
     
     stop ambience fadeout 1.5
+    show cg d6_me_think_think with dspr
     
     th "Думай-думай!"
-    
+     
     # переход
     
     $ renpy.music.set_pause(False, channel='music')

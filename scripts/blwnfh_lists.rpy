@@ -223,3 +223,22 @@ init 2:
     $ blwnfh_music_list["major_grom2"] = blwnfh_MUSIC + "Move Like a Devil cut 10 sec.mp3"
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]
+    
+    image cg d6_guitar_hit:
+        contains:
+            "bg ext_clubs_day"
+        contains:
+            "ext_clubs_day_blur"
+            alpha 0.0
+            linear 3.5 alpha 1.0
+        contains:
+            (blwnfh_OTHER + "misc/d6_mi_hit.png")
+            pos(0.75, 0.5)
+            anchor(0.5, 0.5)
+            linear 3.4 pos(0.5, 0.5)
+            linear 0.1 zoom 1.33
+        contains:
+            "white"
+            alpha 0.0
+            pause 3.45
+            linear 0.05 alpha 1.0

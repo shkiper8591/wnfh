@@ -90,3 +90,14 @@ init:
         filmetile(blwnfh_TRANSITIONS + "alt_noise3.png")
         pause 0.1
         repeat
+
+init 1:
+    python:
+        def bkrr_fade(time=1.0, color="white"):
+            ft = time * 0.5
+            fc = {
+                "black":"#000",
+                "white":"#FFF",
+                "red":"#F00"
+            }
+            return Fade(ft, 0.0, ft, color = fc[color])

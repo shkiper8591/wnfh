@@ -59,9 +59,27 @@ init 1:
         ypos 0.02
         
     # Анимации "встань" и "сядь" для спрайтов
-
-    transform sit_down:
+    
+    transform go_to_chair_left:
         subpixel True
+        ease_quart 2.0 xpos 0.44
+    
+    transform go_to_chair_right:
+        subpixel True
+        ease 1.0 xpos 0.85
+    
+    transform sit_down_left:
+        subpixel True
+        ease_quart 2.0 xpos 0.28
+        parallel:
+            ease 1.0 ypos 0.12
+        parallel:
+            ease 0.75 zoom 1.05
+            ease 0.5 zoom 1.0
+    
+    transform sit_down_right:
+        subpixel True
+        ease_quart 2.0 xpos 0.72
         parallel:
             ease 1.0 ypos 0.12
         parallel:

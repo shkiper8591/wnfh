@@ -258,7 +258,7 @@ label blwnfh_day_1:
     play ambience ambience_int_cabin_evening fadein 3
     $ renpy.pause(1.0, hard=True)
     
-    show mt normal pioneer far at right with dspr
+    show mt normal pioneer far at right with dissolve
     
     "Войдя внутрь, я увидел, как Ольга Дмитриевна ходила туда сюда по дому и, в явной спешке, рыскала по шкафам."
     #34 звук шагов?
@@ -347,7 +347,7 @@ label blwnfh_day_1:
     
     "И буквально через секунду, после моей мысли, из дома вышла Ольга Дмитриевна."
     
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer at center with dissolve
     
     $ renpy.pause(1.0)
     
@@ -424,7 +424,7 @@ label blwnfh_day_1:
     "Меня так увлекла эта мысль, что я совсем забыл ответить Лене."
     "И просто сверлил её полу-уставшим взглядом."
     
-    show un shy pioneer at center with dspr
+    show un shy pioneer at center with dissolve
     
     un "Видимо нельзя[wp]"
     
@@ -486,7 +486,7 @@ label blwnfh_day_1:
         xcenter 0.5 ycenter 0.52
     with dissolve
     play sound sfx_tree_branches
-    show dv grin pioneer2 close with dspr
+    show dv grin pioneer2 close with dissolve
     show un angry2 pioneer close with dspr
     
     dv "Приветик, о чём болтаете?"
@@ -659,7 +659,7 @@ label blwnfh_day_1:
     dv "Всё, идём."
     me "Ага[wp]"
     
-    hide dv with dspr
+    hide dv with dissolve
     
     "Алиса встала с лавочки и ушла в строй."
     "Недовольно вздохнув, я поднялся и пошел за ней."
@@ -832,7 +832,7 @@ label blwnfh_day_1:
         xcenter 0.9
         ease 2.0 xcenter 1.2
     $ renpy.pause(2.0, hard=True)
-    hide mt with dspr
+    hide mt with dissolve
     
     "Вожатая быстро куда-то удалилась."
     "А я с удвоенной силой принялся за завтрак и буквально спустя полминуты он был съеден."
@@ -1036,7 +1036,7 @@ label blwnfh_day_1:
     
     stop ambience fadeout 0.5
     scene bg ext_clubs_day with dissolve2
-    show kat scared casual shirt at center with dspr
+    show kat scared casual shirt at center with dissolve
     play ambience ambience_camp_center_day fadein 3
     
     "Выйдя, я увидел двух убегающих лидеров ОПГ «Рыжие-хвосты». {w}Они же Алиса и Ульяна."    
@@ -1088,7 +1088,7 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg int_warehouse_day with dissolve2
     play ambience ambience_int_cabin_day fadein 3
-    show sl normal pioneer far at right with dspr
+    show sl normal pioneer far at right with dissolve
     
     "Мы вошли на склад, но внутри деда не было."
     "Однако, была Славя, которая занималась расстановкой вещей на полках и не обратила внимание на посетителей."
@@ -1122,7 +1122,7 @@ label blwnfh_day_1:
         xcenter -0.2
         ease_quart 2.0 xcenter 0.28 
     $ renpy.pause(2.0, hard=True)
-    with dspr
+    with dissolve
     "Катя медленно вышла из-за меня к Славе."
     
     show sl surprise pioneer far at right with dspr
@@ -1180,10 +1180,12 @@ label blwnfh_day_1:
     th "И если выбирать между молчаливыми парнями или бесконечно болтающей ни о чём Мику[wp] {w}Я выберу первый вариант."
     
     "В этот момент со склада вышла Катя, в своём новом, пионерском обличии."
+    
+    show kat normal pioneer at left with dissolve
+    
     "А также вместе с ней была Славя."
     
-    show kat normal pioneer at left with dspr
-    show sl normal pioneer at right with dspr
+    show sl normal pioneer at right with dissolve
     
     th "Довольно быстро."
     
@@ -1209,7 +1211,7 @@ label blwnfh_day_1:
     me "И нам тоже."
     sl "Тогда пока, ещё увидимся."
     
-    hide sl with dspr
+    hide sl with dissolve
     
     "Славя убежала куда-то по своим делам, а мы, неспеша, отправились к домику Ольги Дмитриевны."
     
@@ -1237,8 +1239,8 @@ label blwnfh_day_1:
     
     "Мы подошли к Ольге Дмитриевне."
     
-    show mt normal pioneer at right with dspr
-    show kat normal pioneer at left with dspr
+    show mt normal pioneer at right with dissolve
+    show kat normal pioneer at left with dissolve
     
     me "А вот и мы."
     
@@ -1293,8 +1295,8 @@ label blwnfh_day_1:
     scene bg int_clubs_male_day with dissolve2
     #34 звук открытия двери
     play ambience ambience_clubs_inside_day fadein 3
-    show el normal pioneer at left with dspr
-    show sh normal pioneer at right with dspr
+    show el normal pioneer at left with dissolve
+    show sh normal pioneer at right with dissolve
     
     "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
     "Без присутствия вездещуй комсомолки, Шурик и Сергей продолжили работу над своим изделием."
@@ -1382,7 +1384,7 @@ label blwnfh_day_1:
     "Взяв его, он, крехтя, поставил сие артефакт прошлого на стол рядом."
     
     scene bg int_clubs_male2_night with dissolve2
-    show sh normal pioneer at center with dspr
+    show sh normal pioneer at center with dissolve
     
     sh "Я малость легче представлял его."
     me "Ну вы конечно даете, хоть бы фонарь дали, а то еле нашел."
@@ -1483,8 +1485,8 @@ label blwnfh_day_1:
     
     "Сказал он и кинул мне ключи, которые я рефлекторно поймал."
     
-    hide sh with dspr
-    hide el with dspr
+    hide sh with dissolve
+    hide el with dissolve
     
     "И Сергей с Шуриком быстро покинули клубы."
     
@@ -1557,26 +1559,18 @@ label blwnfh_day_1:
     un "Спасибо!"
     
     window hide
-    show un smile pioneer:
-        subpixel True
-        ease_quart 2.0 xcenter 0.44
-    show kat normal pioneer behind chair_r:
-        subpixel True
-        ease 1.0 xcenter 0.85
+    
+    
+    show un smile pioneer at go_to_chair_left behind table
+    show kat normal pioneer at go_to_chair_right behind chair_r
     $ renpy.pause(1.0, hard=True)
-    show chair_l at chair_move_out behind kat
-    $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_out behind un
-    #$ renpy.pause(0.75, hard=True)
-    show kat normal pioneer:
-        ease_quart 2.0 xcenter 0.72
     $ renpy.pause(0.3, hard=True)
-    show un smile pioneer: 
-        ease_quart 2.0 xcenter 0.28
-    $ renpy.pause(2.0, hard=True)
-    show un smile pioneer at sit_down
+    show chair_l at chair_move_out behind kat
+    #$ renpy.pause(0.3, hard=True)
+    show un smile pioneer at sit_down_left
     $ renpy.pause(0.3, hard=True)
-    show kat normal pioneer at sit_down
+    show kat normal pioneer at sit_down_right
     show chair_l at chair_move_in
     $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_in
@@ -1587,7 +1581,13 @@ label blwnfh_day_1:
     
     "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
     
+    show mid d6_breakfast_full tray foods with dissolve
+    
     th "Как же давно такие не ел, наверное последний раз лет пять или шесть назад."
+    
+    show left d6_breakfast_full tray foods with dissolve
+    show right d6_breakfast_full tray foods with dissolve
+    
     th "На даче, стоял жаркий летний день и отец наготовил целую кастрюлю этих щей."
     th "Щий? Щей? Супа в общем."
     
@@ -1669,7 +1669,7 @@ label blwnfh_day_1:
     scene bg ext_dining_hall_near_day
     show unblink
     $ renpy.pause(1.0)
-    show mt normal pioneer panama with dspr
+    show mt normal pioneer panama with dissolve
     
     mt "Семён, ты чего тут лежишь? Тебе плохо?"
     me "А? Нет, мне хорошо, просто после обеда отдохнуть решил немного, да и уснул вот."
@@ -1680,7 +1680,7 @@ label blwnfh_day_1:
     
     mt "Ну иди давай, а то скоро тебе тут в любом случае поспать не дадут."
     
-    hide mt with dspr
+    hide mt with dissolve
     
     "Вожатая удалилась обратно в столовую, а я, встав с лавки, медленно поплелся к дому."
     
@@ -1692,7 +1692,7 @@ label blwnfh_day_1:
     
     "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     
-    show un smile pioneer at center with dspr
+    show un smile pioneer at center with dissolve
     
     "Я медленно повернулся и увидел перед собой Лену."
     
@@ -1736,7 +1736,7 @@ label blwnfh_day_1:
     un "Ну, тогда пока?"
     me "Да, до завтра."
     
-    hide un with dspr 
+    hide un with dissolve 
     
     "Она, обогнав меня, грустно ушла вперед к домикам."
     "Я же вздохнув ещё раз, продолжил свой путь к мягкой постели."
@@ -1757,7 +1757,7 @@ label blwnfh_day_1:
     ## Семён закрывает глаза и плавное затухание эмбиенса
     
     stop ambience fadeout 0.5
-    show anim prolog_1 with dspr 
+    show anim prolog_1 with dissolve
     play ambience ambience_soccer_play_background fadein 3
     
     $ blwnfh_set_mode(nvl)
@@ -1836,7 +1836,7 @@ label blwnfh_day_1:
     
     "Я проснулся оттого, что меня кто-то довольно сильно тряс за плечо."
     
-    show mt normal pioneer panama with dspr
+    show mt normal pioneer panama with dissolve
     
     "И этим «кто-то» оказалась наша вожатая."
     
@@ -1904,7 +1904,7 @@ label blwnfh_day_1:
     me "Хорошо."
     mt "Всё, можешь дальше отдыхать."
     
-    hide mt with dspr
+    hide mt with dissolve
     
     "Ольга Дмитриевна удалилась в дом."
     "Я же думал продолжить свой сон, но вожатая вытрясла все его остатки из меня."
@@ -1960,7 +1960,7 @@ label blwnfh_day_1:
     
     "Девушка медленно подошла и села рядом со мной."
     
-    show un smile2 pioneer close with dspr
+    show un smile2 pioneer close with dissolve
     
     $ blwnfh_set_name("un", "Лена")
     
@@ -2070,7 +2070,7 @@ label blwnfh_day_1:
     $ renpy.pause(3.0)
     with dspr
     
-    hide un with dspr
+    hide un with dissolve
     
     stop music fadeout 3
     

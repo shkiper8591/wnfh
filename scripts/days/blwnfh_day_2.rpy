@@ -299,7 +299,7 @@ label blwnfh_day_2:
     "Я вышел из столовой, и позвал сидящую на лавочке Катю." 
     "Посмотрев на меня, она неспешно поднялась с лавочки и подошла ко мне."
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     kat "Ну что, куда пойдем в первую очередь?"
     me "Смотря, что тебе интереснее."
@@ -331,7 +331,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_medstation_inside_day fadein 3
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     kat "Но, тут же никого нет[wp] {w}Кто подписывать-то будет?"
     
@@ -371,7 +371,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     stop music fadeout 0.5
     scene bg int_musclub_day with dissolve
-    show kat normal pioneer at right with dspr
+    show kat normal pioneer at right with dissolve
     play ambience ambience_music_club_day fadein 3
     play music music_list["so_good_to_be_careless"] fadein 5
     
@@ -379,7 +379,7 @@ label blwnfh_day_2:
     "Главное, что это было нисколечки ни удивительно."
     "Но продлилось это не долго, ведь она тут же обратила на нас внимание. А вот это уже было даже удивительно."
     
-    show mi normal pioneer at left with dspr
+    show mi normal pioneer at left with dissolve
     
     mi "Приветик, какими судьбами пожаловали к нам, ну то есть ко мне, я тут только одна, но надеюсь скоро будет больше!"
     
@@ -436,7 +436,7 @@ label blwnfh_day_2:
     
     "Катя протянула Мику бегунок, и та, элегантно выхватив его из рук, в припрыжку побежала в подсобку."
     
-    hide mi with dspr
+    hide mi with dissolve
     
     me "Ты точно хочешь играть с девочкой-пулеметом?"
     
@@ -480,7 +480,7 @@ label blwnfh_day_2:
     "Проходя мимо по площади, нас позади окликнули, и повернувшись увидел Славю."
     "Мы остановились, и она к нам подбежала."
     
-    show sl normal pioneer at center with dspr
+    show sl normal pioneer at center with dissolve
     
     sl "Вот вы где, а я вас везде ищу."
     me "Что-то случилось?"
@@ -488,7 +488,7 @@ label blwnfh_day_2:
     me "Хорошо, спасибо."
     sl "Всё, я побежала!"
     
-    hide sl with dspr
+    hide sl with dissolve
     
     "Славя развернулась и ушла в неизвестном направлении, а мы продолжили свой путь."
     
@@ -559,7 +559,7 @@ label blwnfh_day_2:
     stop music fadeout 0.5
     scene bg ext_aidpost_day with dissolve2
     play ambience ambience_camp_center_day fadein 3
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     me "Что ж, всё прошло куда лучше чем обычно."
     kat "А как обычно всё проходит?"
@@ -584,8 +584,8 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_library_day with dissolve
     play ambience ambience_library_day fadein 3
-    show mz normal glasses pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show mz normal glasses pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     
     "Женя сидела на своем месте и что самое удивительное — не спала."
     
@@ -618,7 +618,7 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     scene bg ext_library_day with dissolve
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     play ambience ambience_camp_center_day fadein 3
     play music music_list["two_glasses_of_melancholy"] fadein 5
     
@@ -645,14 +645,14 @@ label blwnfh_day_2:
     "Мы поднялись по ступенькам к двери, и постучавшись вошли в дом."
     
     stop ambience fadeout 0.5
-    show bg int_house_of_mt_day with dissolve
+    scene bg int_house_of_mt_day with dissolve2
     play ambience ambience_int_cabin_day fadein 3
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer at center with dissolve
     
     "Ольга Дмитриевна была в домике и вновь подписывала какие-то документы за столом."
     
     show mt normal pioneer close at right with dspr
-    show kat normal pioneer close at left with dspr
+    show kat normal pioneer close at left with dissolve
     
     "Мы подошли ближе к вожатой, и Катя торжественно протянула ей заполненный бегунок. {w}И Ольга Дмитриевна просто положила его в стопку к другим документам, даже не посмотрев."
     
@@ -671,7 +671,7 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_day with dissolve
-    show kat normal pioneer with dspr
+    show kat normal pioneer with dissolve
     play ambience ambience_camp_center_day fadein 3
     
     "Выйдя, мы сели на крылечке."
@@ -732,11 +732,11 @@ label blwnfh_day_2:
     
     "И как только мы заняли своё место, столовая тут же стала наполнятся людьми, так что через минуту она уже была заполнена."
     
-    show kat normal pioneer at left with dspr
+    show kat normal pioneer at left with dissolve
     
     "А ещё спустя минуту, к нам подошла Мику."
     
-    show mi normal pioneer at right with dspr
+    show mi normal pioneer at right with dissolve
     
     mi "Можно к вам сесть, а то я вроде старалась раньше закончить, чтобы успеть место занять, а по итогу опять пришла одна из самых последних."
     kat "Да конечно, садись."
@@ -785,8 +785,8 @@ label blwnfh_day_2:
     mi "Ладно Семен, мы с Катей пошли в муз кружок. Ты к нам тоже заходи, может даже вместе сыграем, я вот ещё ни разу не играла в трио!"
     me "Обязательно зайду."
     
-    hide mi with dspr
-    hide kat with dspr
+    hide mi with dissolve
+    hide kat with dissolve
     
     "Девочки ушли, а я, стал в ускоренном темпе доедать."
     "И спустя минуту наконец-то прикончил свой обед."
@@ -808,8 +808,8 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_clubs_inside_day fadein 3 
-    show el normal pioneer at left with dspr
-    show sh normal pioneer at right with dspr
+    show el normal pioneer at left with dissolve
+    show sh normal pioneer at right with dissolve
     
     "Ребята как обычно над чем-то работали."
     
@@ -932,8 +932,8 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_musclub_day with dissolve2
     play ambience ambience_music_club_day fadein 3
-    show kat normal pioneer at left with dspr
-    show mi normal pioneer at right with dspr 
+    show kat normal pioneer at left with dissolve
+    show mi normal pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 5
     $ renpy.pause(1.0)
     window show
@@ -960,7 +960,7 @@ label blwnfh_day_2:
     
     "Мику удалилась в подсобку."
     
-    hide mi with dspr
+    hide mi with dissolve
     # добавить звуки грохота, визжания кота, и девичий визг. 
     "Но не прошло и десяти секунд, как из подсобки стал доносится грохот и девичий визг." 
     "А через пару секунд из подсобки выбежал кот, который, пробежав мимо, опрокинул половину инструментов."
@@ -970,7 +970,7 @@ label blwnfh_day_2:
     
     "Вслед за котом, из подсобки выбежала вся взъерошенная и явно злая Мику."
     
-    show mi rage pioneer at right with dspr
+    show mi rage pioneer at right with dissolve
     
     mi "Где этот дурацкий кот?!"
     me "Во первых не дурацкий, а милый, а во вторых у него имя есть, забыла?"
@@ -1002,7 +1002,7 @@ label blwnfh_day_2:
     
     "Мику взяла сломанную электрогитару и снова удалилась в подсобку, а я повернулся к Кате, которая во всю игралась с котом."
     
-    hide mi with dspr
+    hide mi with dissolve
     
     me "Нравится кот?"
     kat "Да, забавный, такой пушистый и милый, а ещё прям ручной. {w}Кстати, как его зовут?"
@@ -1018,7 +1018,7 @@ label blwnfh_day_2:
     "Когда уже Катя устала его чесать, она наконец отпустила кота. {w}Тот потянулся, и позже выпрыгнул через окно на улицу."
     "Через пару секунд появилась и Мику с гитарой."
     
-    show mi normal pioneer at right with dspr
+    show mi normal pioneer at right with dissolve
     
     mi "Вот тебе инструмент."
     
@@ -1066,7 +1066,7 @@ label blwnfh_day_2:
     
     "Закончив играть, муз кружок наполнился тихими аплодисментами, и когда они стихли, кто-то другой, в дверях, захлопал в ладоши."
     
-    show dv normal pioneer with dspr
+    show dv normal pioneer with dissolve
     
     "Подняв взгляд, я увидел, что там стоит Алиса."
     
@@ -1125,7 +1125,7 @@ label blwnfh_day_2:
     
     mi "Ура, наконец-то ты согласилась!"
     
-    hide mi with dspr
+    hide mi with dissolve
     
     "Мику убежала в подсобку, где у нее, похоже, лежал лист с участниками кружка."
     
@@ -1136,7 +1136,7 @@ label blwnfh_day_2:
     
     "Вскоре Мику возвратилась к нам."
     
-    show mi normal pioneer at right with dspr
+    show mi normal pioneer at right with dissolve
     
     mi "Всё Алиса, теперь-то точно не отвертишься, ведь ты полноценный член нашего кружка! {w}И в честь этого вот тебе ключик!"
     
@@ -1152,7 +1152,7 @@ label blwnfh_day_2:
     stop music fadeout 0.5
     scene bg ext_musclub_day with dissolve
     play ambience ambience_camp_center_day fadein 3
-    show dv normal pioneer close at center with dspr
+    show dv normal pioneer close at center with dissolve
     
     # я хуй знает какую тут музыку подставить, так что потом разберемся, когда займемся режиссурой 
     
@@ -1187,15 +1187,15 @@ label blwnfh_day_2:
     
     "Алиса развернулась и ушла."
     
-    hide dv with dspr
+    hide dv with dissolve
     
     "Проводив её взглядом, я вернулся обратно в муз кружок."
     
     stop ambience fadeout 0.5
     scene bg int_musclub_day with dissolve
     play ambience ambience_music_club_day fadein 3
-    show kat normal pioneer at left with dspr
-    show mi grin pioneer at right with dspr 
+    show kat normal pioneer at left with dissolve
+    show mi grin pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 5
     
     "Войдя, девочки уже встречали меня своими хитрыми взглядами."
@@ -1333,8 +1333,8 @@ label blwnfh_day_2:
     $ blwnfh_set_time("sunset")
     play ambience ambience_camp_center_evening fadein 3
     stop music fadeout 3
-    show kat normal pioneer at left with dspr
-    show mi normal pioneer at right with dspr
+    show kat normal pioneer at left with dissolve
+    show mi normal pioneer at right with dissolve
     $ renpy.pause(1.5)
     window show
     
@@ -1388,8 +1388,8 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_dining_hall_people_sunset with dissolve2
     play ambience ambience_dining_hall_full fadein 3
-    show kat normal pioneer at right with dspr
-    show mi normal pioneer at left with dspr
+    show kat normal pioneer at right with dissolve
+    show mi normal pioneer at left with dissolve
     $ renpy.pause(1.0)
     window show
     
@@ -1419,7 +1419,7 @@ label blwnfh_day_2:
     
     "Катя же лишь грустно угукнула, после чего Мику покинула столовую."
     
-    hide mi with dspr
+    hide mi with dissolve
     
     "Доедать уже немного подостывшие макароны не было никакого желания."
     "Так что, я просто бросил еду недоеденной и принялся за чай. {w}Правда, который быстро закончился."
@@ -1468,8 +1468,7 @@ label blwnfh_day_2:
     
     scene bg ext_pier_sunset with dissolve2
     play music music_list["trapped_in_dreams"]
-    show kat normal pioneer at center with dspr
-    # диалог ниже следует переделать
+    show kat normal pioneer at center with dissolve
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
     "Мы молчали и просто наслаждались красивыми видами."
     
@@ -1596,7 +1595,7 @@ label blwnfh_day_2:
     "Сидя в полном отчаянии вспомнить хоть что-то более внятное, опустил голову и закрыл лицо руками, как услышал, что ко мне кто-то подошел."
     "Опустив руки, я поднял взгляд, и увидел стоящую перед собой Алису."
     
-    show dv surprise pioneer with dspr
+    show dv surprise pioneer with dissolve
     
     dv "Что-то случилось?"
     me "Да не, нормально всё."
@@ -1729,7 +1728,7 @@ label blwnfh_day_2:
     nvl hide dissolve2
     $ blwnfh_set_mode()
     stop music fadeout 3
-    hide cg d2_dv_sem_scene with dspr
+    hide cg d2_dv_sem_scene with dissolve
     show dv laugh with dspr
     
     dv "Из тебя бы вышел отличный гитарист, вот как отжигал!"
@@ -1743,7 +1742,7 @@ label blwnfh_day_2:
     "Алиса и я устремили свои удивленные взгляды туда и[wp] {w}Увидели стоящую перед сценой Лену."
     "Одним ловким движением, она забралась на сцену и подошла к нам."
     
-    show un laugh pioneer at fright with dspr
+    show un laugh pioneer at fright with dissolve
     
     un "Красиво поёте однако, да и играете тоже неплохо."
     dv "А ты чего не спишь?"
@@ -1770,7 +1769,7 @@ label blwnfh_day_2:
     dv "Знаете, мне что-то спать захотелось."
     dv "Эм[wp] {w}Спокойной ночи!"
     
-    hide dv with dspr 
+    hide dv with dissolve
     
     "Сказала она и, схватив свою гитару, мигом покинула сцену."
     
@@ -1941,7 +1940,7 @@ label blwnfh_day_2:
     me "Ладно, хозяин барин[wp] {w}Тогда, спокойной ночи?"
     un "Да, спокойной ночи."
     
-    hide un with dspr
+    hide un with dissolve
     
     "Мы разошлись в разные стороны."
     
@@ -1969,7 +1968,7 @@ label blwnfh_day_2:
     "Внутри Ольга Дмитриевна, отведя руки за спину, ходила из одного конца дома в другой."
     "Она обратила на меня внимание только тогда, когда я закрыл за собой дверь."
     
-    show mt angry nightdress at center with dspr
+    show mt angry nightdress at center with dissolve
     
     me "Добрый вечер."
     
@@ -2011,7 +2010,7 @@ label blwnfh_day_2:
     mt "А сейчас марш спать!"
     me "Есть марш спать."
     
-    hide mt with dspr
+    hide mt with dissolve
     
     "Вожатая отошла в сторону, пуская меня к моей кровати, к которой же мигом подошел."
     "Долго я ждать конечно же не стал и быстренько раздевшись, лёг под одеяло."

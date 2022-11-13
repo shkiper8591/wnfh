@@ -36,16 +36,18 @@ label blwnfh_day_6_dream:
     kat "Семён, ты веришь в Бога?"
     
     nvl hide dissolve
-    stop ambience fadeout 3
     $ blwnfh_set_mode()
-
+    stop ambience fadeout 0.5
+    scene black with dissolve2
+    
 label blwnfh_day_6:
     $ blwnfh_new_chapter(6)
     $ blwnfh_set_time("sunset")
     play ambience ambience_int_cabin_evening fadein 3
     scene expression blwnfh_wakeup("int_house_of_mt_sunset")
     show unblink
-
+    with None
+    
     "Я проснулся от просто дичайшей боли во всех суставах."
     
     th "Как я и предсказывал вчера."
@@ -58,31 +60,48 @@ label blwnfh_day_6:
     
     "Я попытался вновь заснуть."
     
-    # Семён закрывает глаза
+    window hide
+    show blink
+    $ renpy.pause(2.5, hard=True)
+    play sound blwnfh_sfx_list["raschyoska"] fadein 1
+    scene black
+    window show
     
     "Как ко мне в уши ворвался крайне надоедливый звук."
     "«Хрш—хрш, хрш—хрш» и так непрекращаясь."
     "Да и не похоже, что он вообще собирался прекращаться."
-    th "Да что же это такое?"
     
-    # Семён открывает глаза
+    th "Что это вообще такое?"
+    
+    window hide
+    scene bg int_house_of_mt_sunset
+    show unblink
+    with None
+    $ renpy.pause(1.5, hard=True)
+    window show
     
     "Приоткрыв глаза, мне сразу стал понятен источник этого звука."
-    "Вожатая как обычно, сидя у себя на кровати, расчёсывала волосы."
-    "Вот только, был один мааааленький нюанс."
-    "Ольга Дмитриевна сидела буквально полуголая."
-    "И только лишь рубашка (ну и нижнее белье само собой), немного, да прикрывала ещё."
+    "Вожатая, как обычно, сидя у себя на кровати, расчёсывала волосы."
+    "Вот только, был один ма-а-аленький нюансик."
+    "Ольга Дмитриевна буквально сидела полуголая."
+    "И только лишь накинутая рубашка, ну и нижнее белье, немного, да прикрывала ещё."
 
     th "Вот тебе и доброе утро."
     
     "Я попытался незаметно отвернуться."
-    "Но вожатая была у нас из глазастых и быстро заметила возню на моей стороне."
+    "Вот только вожатая, похоже, из глазастых и обратила внимание на меня."
+    
+    stop sound fadeout 1.5
     
     mt "Ой, ты что, проснулся?"
     me "Ну так, чуть-чуть."
-    mt "А чего молчишь! Я тут голая вообще-то!"
+    mt "А чего молчишь! Я тут голая вообще-то сижу!"
     me "Заметил уже, вот и отворачиваюсь."
     mt "Ай-яй-яй Семён, как тебе не стыдно."
+    
+    "Крехтя я повернулся на бок, уткнувшись лицом в стену."
+    "Тело просто разрывалось от адской боли."
+    
     me "Ольга Дмитриевна, можно я не пойду на линейку?"
     mt "Ещё чего! Пойдешь, как миленький."
     me "Ольга Дмитриевна я ног не чувствую."
@@ -93,15 +112,21 @@ label blwnfh_day_6:
     
     "Со стороны вожатой раздался смешок."
     
-    mt "Хорошо, я сегодня добрая, можешь полежать до завтрака."
-    mt "Но смотри, если не придешь на него, будешь голодать ибо еду я тебе таскать не буду."
-    me "Ага, спасибо."
+    mt "Хорошо, я сегодня добрая, можешь полежать."
+    mt "Но, чтобы на танцы сегодня вечером обязательно пришёл!"
     
-    "Я улегся по удобнее на боку и прикрыл глаза."
+    th "Твою ж дивизию, танцы! Я и забыл о них совсем[wp]"
     
-    # Семён закрывает глаза
+    me "А точно ли это прям обязательно?"
+    #mt "Башку атарву сука!" 
+    mt "Поскольку ты у нас особенный, то тебе — обязательно!"
     
-    mt "Кстати."
+    "Я раздражённо вздохнул и улегся по удобнее на боку."
+    
+    show blink
+    scene black
+    
+    mt "И ещё кстати."
     me "М?"
     mt "Я вчера поговорила с директорами и смогла выбить нам после обеда час на уборку."
     me "Мм, хорошо."
@@ -130,7 +155,9 @@ label blwnfh_day_6:
     "Прокашлявшись, я повторил. {w}Уже успешно." 
     "Но ответа не последовало, а скрежет так и не прекратился."
     
-    # Семён открывает глаза
+    scene bg int_house_of_mt_sunset
+    show unblink
+    with None
     
     me "Да кто там?!"
     
@@ -159,6 +186,9 @@ label blwnfh_day_6:
     me "Ну ладно, чуть-чуть можно наверное."
     
     "Приоткрыв окно, я впустил кота внутрь."
+    
+    play sound blwnfh_sfx_list["murchanie"] fadein 1
+    
     "Тот спрыгнул с подоконника на пол и стал терется об мои ноги, при этом громко мурлыкая."
     "Я спустился к нему и стал гладить."
     
@@ -174,7 +204,7 @@ label blwnfh_day_6:
     
     kat "Ольга Дмитриевна?"
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     "Посмотрев на вход, я увидел стояющую Катю."
     "Взгляд которой полнился полнейшим непониманием, а на лице была лёгкая ухмылка."
@@ -184,7 +214,9 @@ label blwnfh_day_6:
     kat "Кого?"
     
     "Селёдка поднял морду и завидев Катю, тут же встал и направился к ней."
-
+    
+    stop sound fadeout 1
+    
     kat "А, Селёдка! {w}А мы с Мику думали, что ты потерялся!"
 
     "Когда он подбежал к ней, она его подняла и крепко обняла."
@@ -228,7 +260,7 @@ label blwnfh_day_6:
     kat "Получается, до встречи на завтраке?"
     me "Ага."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Катя покинула дом, как мне показалось, немного расстроенной."
     "А я же лег обратно на кровать, не снимая формы."
@@ -241,7 +273,8 @@ label blwnfh_day_6:
     th "Зашибись, теперь я ещё и заложник кота."
     th "Надеюсь надолго он не задержится."
 
-    # Семён закрывает глаза.
+    show blink
+    scene black
     
     "Мышцы и кости жуть как болели."
     
@@ -251,7 +284,9 @@ label blwnfh_day_6:
     th "А то столько всего произошло, аж голова кругом идёт."
     th "Кстати говоря о прошедших событиях, я совсем забыл про мой дневник. {w}На месте ли он?"
     
-    # Семён открывает глаза.
+    scene bg int_house_of_mt_sunset
+    show unblink
+    with None
     
     "Засунув руку под подушку, я нащупал и достал оттуда небольшую книжку в мягкой красной обложке."
     
@@ -271,9 +306,9 @@ label blwnfh_day_6:
 
     me "Так ты меня лечить пришел?"
     
-    # вставить мяу 
+    play sound blwnfh_sfx_list["meow_yes"]
 
-    me "Полагаю это да."
+    me "Полагаю, это да."
     me "Или подожди[wp]"
     
     "Я немного привстал."
@@ -281,12 +316,12 @@ label blwnfh_day_6:
     me "Тебя вожатая послала, чтобы ты меня вылечил и она могла меня отправить на какую-нибудь тяжелую работу."
     me "Я раскусил тебя, не так ли?"
 
-    # вставить какое-нибудь раздраженное мяу
+    play sound blwnfh_sfx_list["meow_no"]
 
-    me "Так я и знал."
+    me "Так я и знал[wp]"
     me "Ну ты и негодяй, хоть и лечишь."
     
-    "Селёдка видимо не оценил моих возмущений в его адрес и убежал, расположившись на кровати вожатой."
+    "Селёдка, видимо, не оценил моего юмора и убежал, расположившись на кровати вожатой."
     
     me "Вот же радости ей будет, когда она тебя там увидит."
     
@@ -935,7 +970,7 @@ label blwnfh_day_6:
     
     th "Нет, так не пойдёт."
     th "Получается только соглашаться, а я вот совсем не хочу."
-    th "У меня же дел не в проворот."
+    th "У меня же дел не в проворот!"
     th "Хотя[wp]"
     
     stop music fadeout 3
@@ -955,9 +990,11 @@ label blwnfh_day_6:
     th "В теории, это может послужить мне хорошим оправданием, чтобы не делать всякие левые поручения вожатой."
     th "Может даже от линейки получу освобождение до конца смены. {w}Конечно, в любом случае её завтра не будет, ибо выходной, но тем не менее."
     th "Короче одни плюсы можно будет из этого вычленить."
-    th "Но с одним жирным минусом, это учить песню и потом ещё выступать."
-    th "И это будет куда сложнее, чем, например, комментировать."
+    th "Но с одним жирным минусом — это учить песню и потом ещё выступать."
+    th "И это будет куда сложнее чем, например, комментировать."
     th "А в прочем[wp]"
+    
+    # тут может быть выбор
     
     me "Ладно, я согласен поучаствовать в этом."
     
@@ -968,11 +1005,13 @@ label blwnfh_day_6:
     show mi upset with dspr
     
     mi "А то у нас серьезная проблема с талантливыми кадрами."
-    me "Да уж, я заметил."
+    me "А как же Алиса?"
+    mi "Она ни в какую не хочет, как бы я не старалась."
+    me "Ясно[wp]"
     
     show mi happy with dspr
     
-    mi "Но благо всё сложилось."
+    mi "Но благо с тобой всё сложилось."
     me "Ладно, и когда будем учить песню?"
     
     show mi smile with dspr
@@ -988,7 +1027,7 @@ label blwnfh_day_6:
     
     show mi upset with dspr
     
-    mi "Как-то[wp] рановато, тебе не кажется? Прошло вроде всего полчаса."
+    mi "Как-то[wp] Рановато, тебе не кажется? Прошло вроде всего полчаса."
     me "Да не, вроде по времени самое то."
     
     "Мику задумчиво поглядела на часы."
@@ -1004,14 +1043,14 @@ label blwnfh_day_6:
     
     mi "А если не поторопимся то будем в ещё более проигрышном положении."
     mi "Поэтому давай скорее пойдем!"
-    me "Ладно."
+    me "Ладно-ладно."
     
-    # переход
-    
-    stop ambience
-    scene bg int_dining_hall_people_day with dissolve
-    play ambience ambience_dining_hall_full 
-    show mi normal pioneer with dspr
+    window hide
+    stop ambience fadeout 3
+    scene bg int_dining_hall_people_day with Dissolve(5.0)
+    play ambience ambience_dining_hall_full fadein 5
+    show mi normal pioneer with dissolve
+    window show
     
     "Как и предполагалось, шансов попасть в столовую не в час пик был нулевой."
     "Но и Мику тоже была в чём-то права."
@@ -1203,7 +1242,7 @@ label blwnfh_day_6:
     
     scene bg int_editorial_day_cat with dissolve
     show un normal pioneer far at left with dspr
-    show kat normal at right with dspr
+    show kat normal pioneer at right with dspr
     
     kat "О, зато Лена на месте."
     un "Снова привет."
@@ -1247,14 +1286,14 @@ label blwnfh_day_6:
     "Взяв со стола фотоаппарат я покинул подсобку вместе с Катей."
     
     scene bg int_library_day with dissolve
-    show kat normal at center with dspr
+    show kat normal pioneer at center with dspr
     
     me "И где был запрятан блокнот?"
     kat "Он что-то делал в глубине стола."
     kat "Наверное, я просто кинула неаккуратно и забыла."
     
     scene bg ext_library_day with dissolve
-    show kat normal with dspr
+    show kat normal pioneer with dspr
     
     kat "Ладно, где бы нам найти наших футболистов."
     me "Так, ну, я знаю где искать только Ульяну."
@@ -1266,13 +1305,14 @@ label blwnfh_day_6:
     me "Должна быть на футбольном поле."
     kat "Бегом на футбольное поле!"
     
-    # переход
-    
-    stop ambience
-    scene bg ext_playground_day with dissolve
-    show kat normal pioneer at right with dspr
-    play ambience ambience_soccer_play_background
-    
+    window hide
+    stop ambience fadeout 3
+    scene bg ext_playground_day with dissolve2
+    show kat normal pioneer:
+        xcenter 0.72 ycenter 0.5
+    with dspr
+    play ambience ambience_soccer_play_background fadein 5
+    window show
     
     "Через минут десять я подошел к футбольному полю, где стояла вся запыхавшаяся Катя."
     
@@ -1285,6 +1325,13 @@ label blwnfh_day_6:
     
     us "Приветик, меня ждёте, да?"
     
+    play sound blwnfh_sfx_list["udarch"]
+    show kat normal pioneer:
+        subpixel True
+        parallel:
+            ease 1.0 xcenter 0.75 ycenter 0.85
+        parallel:
+            ease 1.0 rotate 30.0
     "Катя посмотрела на Ульяну и плюхнулась на землю."
     
     th "М-да Кать[wp] Да ты лохушка, её тут и не было."
@@ -1299,6 +1346,13 @@ label blwnfh_day_6:
     me "Ладно, давай вставай."
     
     show us smile with dspr
+    
+    show kat normal pioneer:
+        subpixel True
+        parallel:
+            ease 1.0 xcenter 0.72 ycenter 0.5
+        parallel:
+            ease 1.0 rotate 0.0
     
     "Катя протянула мне руку и, взяв её, я поставил пионерку на ноги."
     "Ульяна же каким-то хитрым взглядом смотрела на меня."
@@ -1540,12 +1594,13 @@ label blwnfh_day_6:
     
     th "Зашибись, зря бежали сюда вообще."
     
-    # таймскип + переход
-    
-    stop ambience
-    scene bg int_editorial_day_cat with dissolve
+
+    window hide
+    stop ambience fadeout 3
+    scene bg int_editorial_day_cat with Dissolve(5.0)
     show kat normal pioneer with dspr
-    play ambience ambience_library_day
+    play ambience ambience_library_day fadein 5
+    window show
     
     "Походив по полю около часа, пособирав интервью и пофотографировав людей, мы возвратились на базу."
     "Я снял фотоаппарат и положил его на стол."
@@ -1582,7 +1637,9 @@ label blwnfh_day_6:
     me "Как закончишь, разбудишь меня?"
     
     "Громко зевнув, сказал я."
-    # Семён закрывает глаза
+    
+    show blink
+    scene black
     
     kat "А? Какой разбудишь?"
     kat "Ты что, спать улёгся?!"
@@ -1677,9 +1734,11 @@ label blwnfh_day_6:
     stop music fadeout 3
     $ blwnfh_set_name("me", "Семён")
     $ blwnfh_set_name("voice","Голос")
-    hide anim prolog_1 with dspr
-    show un normal pioneer at left with dspr
-    show kat normal at right with dspr
+    scene bg int_editorial_day_cat
+    show un normal pioneer at left
+    show kat normal at right
+    show unblink
+    with None
     
     kat_un_d "Семён!"
     
@@ -1731,22 +1790,22 @@ label blwnfh_day_6:
     
     "Я закивал головой."
     
-    show mt grin with dspr
+    show mt grin pioneer with dspr
     
     mt "Ну ладно, а то я думала, что пока все работают он спит."
     
-    show mt normal with dspr
+    show mt normal pioneer with dspr
     
     mt "Так, давайте-ка посмотрим на ваши успехи."
    
     "Вожатая стала проходится по помещению, попутно изучая, что рисует Лена и что написано у Кати."
     "Также не прошла и мимо меня, глянув на фотографии."
     
-    show mt grin with dspr
+    show mt grin pioneer with dspr
     
     mt "Хорошо работаете, товарищи! {w}А это значит, что всё-таки не зря мы отобрали именно вас для этого кружка!"
     
-    show mt smile with dspr
+    show mt smile pioneer with dspr
     
     mt "Ладно, веселитесь ребята."
     mt "Ай, чуть не забыла. {w}Семён."
@@ -1813,7 +1872,9 @@ label blwnfh_day_6:
     
     "Лена грустно вздохнула и отстала от меня."
     
-    # мини таймскип
+    window hide
+    $ renpy.pause(1.5, hard=True)
+    window show
     
     "Спустя несколько минут томительного ожидания, Катя, наконец-то, поставила последний знак."
     
@@ -1853,12 +1914,12 @@ label blwnfh_day_6:
     kat "Эх[wp] Ясно всё с тобой[wp] {w}Пойдем Семён гулять, пока всё равно делать нечего."
     me "Ну пойдем."
     
-    # переход
-    
-    stop ambience
-    scene bg ext_library_day with dissolve
-    play ambience ambience_camp_center_day
+    window hide
+    stop ambience fadeout 2
+    scene bg ext_library_day with dissolve2
+    play ambience ambience_camp_center_day fadein 2
     show kat normal pioneer with dspr
+    window show
     
     kat "Ну-с, куда идём?"
     
@@ -1885,9 +1946,9 @@ label blwnfh_day_6:
     
     "Мы свернули в пролесок и отправились на пляж."
     
-    stop ambience
-    show bg ext_path2_day with dissolve
-    play ambience ambience_forest_day
+    stop ambience fadeout 2
+    show bg ext_path2_day with dissolve2
+    play ambience ambience_forest_day fadein 2
     
     me "Так, на чём я остановился[wp] {w}Ах да!"
     me "Ну полотенца взять можно, и я костёр зажечь могу."
@@ -1916,9 +1977,9 @@ label blwnfh_day_6:
     me "Тебе прям хочется порыбачить?"
     kat "Нет, рыбки хочется просто."
     
-    stop ambience
-    show bg ext_playground_day with dissolve
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 2
+    show bg ext_playground_day with dissolve2
+    play ambience ambience_camp_center_day fadein 2
     
     "Плавно покинув лесное царство мы вышли на футбольное поле[wp] {w}Третий раз за сегодня[wp]"
     
@@ -1930,9 +1991,9 @@ label blwnfh_day_6:
     me "Понял, значит мне хочешь не хочешь, а придётся договариваться с Сергеем Дмитриевичем?"
     kat "Дя."
     
-    stop ambience
-    show bg ext_beach_day with dissolve
-    play ambience ambience_lake_shore_day
+    stop ambience fadeout 2
+    show bg ext_beach_day with dissolve2
+    play ambience ambience_lake_shore_day fadein 2
     
     "На пляже было тепло, хорошо, а самое что главное — никого! {w}Кроме нас разумеется."
     "А значит, можно чудачить сколько душе угодно."
@@ -2080,15 +2141,12 @@ label blwnfh_day_6:
     "Только[wp] {w}Т-Только[wp] {w}В[wp] В-Воздух[wp] Зак[wp]"
     
     ## тут можно дать какое-нибудь достижение аля: Das Boot. Доплавался, блин.
-    ## Семён вырубается закрывая глаза
+    show blink
+    scene black
     ## Подводный эмбиент останавливается
     ## Таймскип (примерно где-то минут 5 спустя)
     
-    play ambience ambience_lake_shore_day
-    scene bg ext_beach_day with dissolve
-    show kat normal swim at left with dspr
-    show un smile pioneer close at right with dspr
-    show cs normal close with dspr
+    play ambience ambience_lake_shore_day fadein 5
     
     $ blwnfh_set_name("cs", "Голос")
     $ blwnfh_set_name("un", "Голос")
@@ -2141,7 +2199,12 @@ label blwnfh_day_6:
     
     "Спасательница мне так сильно надавила на грудь, что чуть не выдавила все лёгкие."
     
-    ## Семён быстро открывает глаза
+    scene bg ext_beach_day
+    show kat scared swim at left
+    show un smile pioneer close at right
+    show cs normal close
+    show unblink
+    with none
     
     "Распахнув глаза и откашлив воду, я стал жадно глотать воздух."
     
@@ -2244,11 +2307,11 @@ label blwnfh_day_6:
     
     "Катя грустно вздохнула и мы пошли одеваться."
     
-    # таймскип
-    
-    stop ambience
-    scene bg ext_dining_hall_away_day with dissolve
-    play ambience ambience_camp_center_day
+    window hide
+    stop ambience fadeout 3
+    scene bg ext_dining_hall_away_day with Dissolve(5.0)
+    play ambience ambience_camp_center_day fadein 3
+    window show
     
     me "Кажется, с меня до сих пор сыпется песок."
     kat "Правда? Вроде молодой ещё для такого." 
@@ -2266,7 +2329,9 @@ label blwnfh_day_6:
     kat "Жду-жду недождусь."
     me "Хо-хо."
     
-    scene bg int_dining_hall_day with dissolve
+    stop ambience fadeout 2
+    scene bg int_dining_hall_day with dissolve2
+    play ambience ambience_dining_hall_empty fadein 2
     show kat normal pioneer with dspr
     
     "В столовой было немного народу. Очевидно, обеденное время уже подходило к концу."
@@ -2312,7 +2377,7 @@ label blwnfh_day_6:
     "Да настолько, что я полностью увлекся его поеданием и вообще необращал внимания ни на что."
     "Ни на то, что говорила мне Катя,"
     
-    show mt angry pioneer at right with dspr
+    show mt angry pioneer at right with dissolve
     
     extend " и даже на то, что рядом со мной стояла рассерженная вожатая."
     "Стоп. {w}Рассерженная вожатая?"
@@ -2322,7 +2387,7 @@ label blwnfh_day_6:
     me "Нет, я всё помню, а что?."
     mt "Помнишь значит."
     
-    show mt rage with dspr
+    show mt rage pioneer with dspr
     
     mt "Так если ты помнишь, то почему ты всё ещё здесь, а?!"
     me "Да вы понимаете тут такое де[wp]"
@@ -2333,7 +2398,7 @@ label blwnfh_day_6:
     
     "Вожатая так громко кричала, что аж немного уши заложило."
     
-    show mt angry with dspr
+    show mt angry pioneer with dspr
     
     mt "Чтобы через пять минут был на месте!"
     
@@ -2348,19 +2413,20 @@ label blwnfh_day_6:
     me "Не, не хочу, так что можешь спокойно доедать."
     kat "Эх, ну ладно, давай, до встречи тогда."
     
-    # переход
     
-    stop ambience
-    scene bg ext_house_of_mt_day with dissolve
-    play ambience ambience_camp_center_day
+    window hide
+    stop ambience fadeout 3
+    scene bg ext_house_of_mt_day with Dissolve(5.0)
+    play ambience ambience_camp_center_day fadein 5
+    window show
     
     th "Вот я и здесь[wp] {w}Ну, как говорится:"
     th "Оставь надежду, всяк сюда входящий."
     
-    stop ambience
+    stop ambience fadeout 2
     scene bg int_house_of_mt_day with dissolve
-    show mt normal pioneer with dspr
-    play ambience ambience_int_cabin_day
+    show mt normal pioneer with dissolve
+    play ambience ambience_int_cabin_day fadein 2
     
     "Придя домой, здесь уже всё было заготовлено для уборки:"
     "Ведро в котором плавала пара небольших тряпок."
@@ -2458,9 +2524,11 @@ label blwnfh_day_6:
     mt "А то ты только будешь мешать мне тут."
     me "Угу."
     
-    stop ambience
-    scene bg ext_house_of_mt_day with dissolve
-    play ambience ambience_camp_center_day
+    window hide
+    stop ambience fadeout 2
+    scene bg ext_house_of_mt_day with dissolve2
+    play ambience ambience_camp_center_day fadein 3
+    window show
     
     me "Фуф[wp]"
     
@@ -2469,9 +2537,9 @@ label blwnfh_day_6:
     "Как мы вообще тут жили? {w}И что за безответственное отношение к чистоте со стороны вожатой?"
     "В прочем, уже неважно. Пойду лучше в полной мере наслажусь заслуженным отдыхом, а потом займусь добычей удочки."
     
-    # переход
-    
-    scene bg ext_square_day with dissolve
+    window hide
+    scene bg ext_square_day with Dissolve(5.0)
+    window show
     
     "Ноги вывели меня на площадь, где я и решил остаться на подольше."
     "Ведь заметил одиноко сидящую Алису."

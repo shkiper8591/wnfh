@@ -191,6 +191,12 @@ init 2:
     $ blwnfh_sfx_list["nos"] = blwnfh_SFX + "nos.ogg"
     $ blwnfh_sfx_list["guitar_hit"] = blwnfh_SFX + "guitar_hit.ogg"
     $ blwnfh_sfx_list["samogonshiki"] = blwnfh_SFX + "samogonshiki.ogg"
+    $ blwnfh_sfx_list["meow_yes"] = blwnfh_SFX + "meow yes.ogg"
+    $ blwnfh_sfx_list["meow_no"] = blwnfh_SFX + "meow no.ogg"
+    $ blwnfh_sfx_list["murchanie"] = blwnfh_SFX + "murchanie.ogg"
+    $ blwnfh_sfx_list["raschyoska"] = blwnfh_SFX + "brushing-hair.ogg"
+    $ blwnfh_sfx_list["udarch"] = blwnfh_SFX + "udarch.ogg"
+    
     
     # MUSIC Лист
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
@@ -222,6 +228,7 @@ init 2:
     $ blwnfh_music_list["kate_piano"] = blwnfh_MUSIC + "Kate - Piano.mp3"
     $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
     $ blwnfh_music_list["ratne_igre"] = blwnfh_MUSIC + "Kerber - Ratne Igre.mp3"
+    $ blwnfh_music_list["international"] = blwnfh_MUSIC + "international.mp3"
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

@@ -32,7 +32,7 @@ label blwnfh_day_4:
     "Видимо придя в себя, Катя обнаружила себя в довольно неловкой ситуации и быстро убрала руку с меня, благодаря чему я наконец смог встать."
     "Левый бок болел адски."
     
-    show kat shy2 pioneer close at center with dspr
+    show kat shy2 pioneer close at center with dissolve
     
     "Я посмотрел на Катю, которая была явно смущена сложившейся ситуацией."
     
@@ -43,7 +43,7 @@ label blwnfh_day_4:
     "С небольшой насмешкой сказал я."
     "Катя же поплотнее укуталась в одеяло спрятавшись под ним."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     kat "Ну так, чуть-чуть, а что ты против?"
     
@@ -69,7 +69,7 @@ label blwnfh_day_4:
     "Пробыв на улице ещё немного, я понял одну вещь – мне очень холодно, так что быстренько вернулся обратно в землянку."
     
     #бг внутри землянки
-    show kat guilty pioneer close at center with dspr
+    show kat guilty pioneer close at center with dissolve
     
     "Катя уже сидела на кровати, но всё также была плотно укутана в одеяло и лишь её грустное лицо выглядывало."
     
@@ -106,7 +106,7 @@ label blwnfh_day_4:
     "Я быстро покинул землянку."
     
     scene black with dissolve
-    show kat guilty pioneer close at center with dspr
+    show kat guilty pioneer close at center with dissolve
     
     "Катя же спустя некоторое время неуклюже тоже покинула домик и маленькими шагами подошла ко мне."
     
@@ -230,12 +230,12 @@ label blwnfh_day_4:
     kat "А отнести на склад, чтобы его там отправили на стирку?"
     me "И у завхоза точно не возникнут вопросы, почему у меня одеяло в грязи."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Катя молча удалилась в те кусты, куда я выкинул одеяло."
     "Вскоре она вернулась с ещё более грязным одеялом. {w}И она выглядела очень довольной."
     
-    show kat happy pioneer close at center with dspr
+    show kat happy pioneer close at center with dissolve
     
     me "И зачем?" 
     kat "Так оно ведь обидеться же ещё сильнее! А я хочу в летние дни, чтобы мне под одеялом было прохладно, а в зимние тепло."
@@ -252,7 +252,7 @@ label blwnfh_day_4:
     "Шли мы в ускоренном темпе, из-за подгоняющего нас холода, так что скоро уже стояли перед домиком Кати."
     
     show bg ext_kat_house_after_rain_morning with dissolve
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     kat "Наконец-то, убежище от холода."
     me "Полагаю тогда, до завтрака?"
@@ -260,7 +260,7 @@ label blwnfh_day_4:
     
     "Катя одним ловким движением отворила двери своего домика и вбежала внутрь, громко хлопнув дверью."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Я же потопал к домику вожатой."
     
@@ -284,7 +284,7 @@ label blwnfh_day_4:
     "Из сна меня выбило то, что кто-то с большим напором тряс за меня плечо, из-за чего я вскоре открыл глаза."
     # Семён открывает глаза
     play ambience ambience_int_cabin_evening
-    show mt angry pioneer close at center with dspr
+    show mt angry pioneer close at center with dissolve
     
     "И увидел перед собой явно в не самом добром настроении Ольгу Дмитриевну."
     
@@ -335,7 +335,7 @@ label blwnfh_day_4:
     mt "А теперь, давай вставай и иди на водные процедуры, а потом возвращайся."
     me "Ладно, сейчас[wp]"
     
-    hide mt with dspr
+    hide mt with dissolve
     
     "Вздохнув, я начал подниматься с кровати и только сейчас посмотрел на часы и опешил."
     
@@ -356,7 +356,7 @@ label blwnfh_day_4:
     
     "Ольга Дмитриевна громко захлопнула книгу и положив её на стол, встала с кровати и подошла ко мне."
     
-    show mt smile pioneer close at center with dspr
+    show mt smile pioneer close at center with dissolve
     
     mt "Так мы сейчас найдем тебе дело, это не проблема."
     me "Ну Ольга Дмитриевна, ещё девяти утра нету, а вы уже злодействуете."
@@ -444,7 +444,7 @@ label blwnfh_day_4:
     "Громко крикнув, я со злости ударил рукой по треклятой дверце подсобки, что та аж чуть не отвалилась."
     "И тут мне на плечо легла чья-то рука."
     
-    show sl surprise pioneer close at center with dspr
+    show sl surprise pioneer close at center with dissolve
     
     "Переведя взгляд, я увидел, что это была Славя."
     
@@ -477,6 +477,7 @@ label blwnfh_day_4:
     
     play music music_list["get_to_know_me_better"]
     scene bg ext_square_sunset with dissolve
+    show sl normal pioneer with dissolve
     
     "Вскоре мы прибыли на площадь."
     
@@ -502,7 +503,7 @@ label blwnfh_day_4:
     
     "Но не успел я погрузиться в свои внутренние философствования, как ко мне подошла Славя."
     
-    show sl surprise pioneer at center with dspr
+    show sl surprise pioneer at center with dissolve
     
     sl "Семён, ты чего на одном месте метешь-то?"
     me "А?"
@@ -515,11 +516,11 @@ label blwnfh_day_4:
     "Я посмотрел на ту половину площади, где убиралась Славя и она чуть ли не блестела от чистоты."
     "Поэтому, я решил больше не отвлекаться на всякие лишние раздумья и сконцентрировался на подметании площади."
     
-    hide sl with dspr
+    hide sl with dissolve
     
     "Полностью уйдя в работу, я теперь не заметил, как закончил и чуть ли не стал подметать траву."
     
-    show sl laugh pioneer at center with dspr
+    show sl laugh pioneer at center with dissolve
     
     sl "Стой! Куда ты пошел, уже всё подмел."
     me "Ого[wp] Быстро я однако."
@@ -576,7 +577,7 @@ label blwnfh_day_4:
     
     sl "Ладно, пойду построю их перед приходом вожатой."
     
-    hide sl with dspr
+    hide sl with dissolve
     
     "Славя встала перед всё растущей толпой пионеров, которая издавала море шума."
     "Громкими выкриками, она сперва заставила пионеров замолчать, а вскоре и построиться в красивый и ровный строй."
@@ -652,7 +653,8 @@ label blwnfh_day_4:
     
     "Вскоре прибежала Катя, которая явно была напугана произошедшим событием."
     
-    show kat scared pioneer at center with dspr
+    show kat scared pioneer at center with dissolve
+    
     me "Приветик, а я тут тебе, покушать принес."
     
     "Через силу я поднял пакет с едой вверх."
@@ -681,7 +683,9 @@ label blwnfh_day_4:
     me "Кто эту ветку сюда положил?"
     kat "Ты уверен, что всё хорошо с тобой?"
     me "Да, на все сто процентов."
+    
     show kat normal pioneer at center with dspr
+    
     kat "Ладно, тогда давай помогу встать."
     
     "Катя протянула мне руку, взявшись за которую, она меня с легкостью подтянула, благодаря чему я смог встать."
@@ -731,7 +735,7 @@ label blwnfh_day_4:
     
     "Она кивнула и зашла мне за спину."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     kat "Ёмаё, да у тебя тут вся спина в грязи."
     kat "А ещё рубашка немного порвалась."
@@ -743,7 +747,7 @@ label blwnfh_day_4:
     kat "Всё!"
     me "Уже?"
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     kat "Ну там немножко осталось, но теперь там не так хорошо видно грязь, а поэтому лучше сходи и поменяй сегодня рубашку."
     me "Та это понятно."
@@ -804,7 +808,7 @@ label blwnfh_day_4:
     "Войдя внутрь я быстренько взял со стола полароид и накинув его на шею, покинул дом."
     
     show bg ext_house_of_mt_day with dissolve
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at center with dissolve
     
     "Выйдя, немного неожиданно я столкнулся с Катей."
     
@@ -814,7 +818,7 @@ label blwnfh_day_4:
     
     # таймскип
     scene bg ext_library_day with dissolve
-    show kat happy pioneer at center with dspr
+    show kat happy pioneer at center with dissolve
     
     "Только у самой библиотеки Катя отпустила мою руку."
     
@@ -837,13 +841,13 @@ label blwnfh_day_4:
     stop ambience
     scene bg int_library_day with dissolve
     play ambience ambience_library_day
-    show kat happy pioneer at right with dspr
+    show kat happy pioneer at right with dissolve
     
     kat "Привет Женя!"
     
     "Добродушным голосом сказала Катя."
     
-    show mz rage glasses pioneer at left with dspr
+    show mz rage glasses pioneer at left with dissolve
     
     mz "Явились не запылились! {w}Вам не стыдно, в первый же день работы кружка опаздывать на полчаса?!"
     
@@ -868,8 +872,8 @@ label blwnfh_day_4:
     "Мы с Катей кивнули и удалились в подсобку"
     
     scene bg int_editorial_day_cat with dissolve
-    show un normal pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show un normal pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     
     "В подсобке мы встретили Лену, которая уже что-то рисовала на холсте, по всей видимости, в своё удовольствие."
     th "Вот чёрт, лучше бы это она вместо нас опоздала."
@@ -924,7 +928,7 @@ label blwnfh_day_4:
     "И пока мы все ждём Женю, чтобы не стоять как дурак посреди помещения, я сел на табуретку между девочками."
     "Но как только я сел, тут же пришла наша начальница, которая сходу начала громко говорить."
     
-    show mz normal glasses pioneer far at center with dspr
+    show mz normal glasses pioneer far at center with dissolve
     
     mz "И так товарищи пионеры, сегодня[wp]"
     
@@ -1028,7 +1032,7 @@ label blwnfh_day_4:
     
     mz "Всё, теперь точно я закончила, так что можете приступать к работе."
     
-    hide mz with dspr
+    hide mz with dissolve
     
     "Женя быстро покинула подсобку."
     
@@ -1103,7 +1107,7 @@ label blwnfh_day_4:
     window hide
     stop ambience fadeout 3
     scene bg ext_playground_day with dissolve
-    show kat normal pioneer at right with dspr
+    show kat normal pioneer at right with dissolve
     play ambience ambience_soccer_play_background fadein 3
     $ renpy.pause(1.5)
     window show
@@ -1119,7 +1123,7 @@ label blwnfh_day_4:
     
     "Я громко окликнул Ульянку и та, обнаружив меня, что-то сказала своим товарищам по команде и быстро подбежала к нам."
     
-    show us normal sport at center with dspr
+    show us normal sport at center with dissolve
     
     us "Приветик, чего звали?"
     me "Здравствуй Ульяна, я и моя коллега прибыли к вам из известного и многоуважаемого кружка журналистики пионерлагеря «Совёнок», чтобы взять у вас интервью по поводу завтрашнего матча, разрешите задать вам пару вопросов?"
@@ -1159,7 +1163,7 @@ label blwnfh_day_4:
     us "Я активно тренирую свою команду самыми суровыми, но зато крайне эффективными методами, так что у противоположной команды не будет ни единого шанса на победу."
     dv "Это ещё почему же у нас не будет шанса на победу?"
     
-    show dv normal sport at left with dspr
+    show dv normal sport at left with dissolve
     
     "Сказала неожиданно появившаяся Алиса."
     
@@ -1204,7 +1208,7 @@ label blwnfh_day_4:
     
     show kat normal pioneer at right with dspr
     
-    hide dv with dspr
+    hide dv with dissolve
     
     "Алиса покинула нас, уйдя к вратам."
     
@@ -1234,7 +1238,7 @@ label blwnfh_day_4:
     
     me "Вот теперь можешь идти."
     
-    hide us with dspr
+    hide us with dissolve
     
     "Ульяна радостно ускакала обратно к своей команде на поле, кинув нам какую-то фразу на прощание, однако я её не расслышал."
     "Вытащив фотографию и помохав ей, я протянул её Кате."
@@ -1244,7 +1248,7 @@ label blwnfh_day_4:
     "Катя взяла фото и вставила его между страниц блокнота."
     "Мы отправились к Алисе, которая, облокотившись спиной на штангу, очевидно ожидала нас."
     
-    show dv normal sport at left with dspr
+    show dv normal sport at left with dissolve
     
     me "А вот и мы."
     dv "Заметила."
@@ -1308,7 +1312,7 @@ label blwnfh_day_4:
     me "Мы тогда пошли." 
     dv "До встречи."
     
-    hide dv with dspr
+    hide dv with dissolve
     
     "Оставив Алису, мы направились к небольшой толпе участников, которая видимо была командой Ульяны, ибо она играла вместе с ними."
     
@@ -1334,7 +1338,7 @@ label blwnfh_day_4:
     stop ambience
     scene bg ext_library_day with dissolve
     play ambience ambience_camp_center_day
-    show kat shy2 pioneer at right with dspr 
+    show kat shy2 pioneer at right with dissolve 
     
     "Выйдя к библиотеке, я заметил, что Катя вся, засмущавшись смотрит на меня."
     
@@ -1344,7 +1348,7 @@ label blwnfh_day_4:
     kat "Ладно?" 
     me "Ну как бы, ладно, иди."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Катя быстренько убежала в сторону, где находился туалет, что подтверждало мою теорию."
     "Находясь в небольшом непонимании, зачем так завуалировано говорить о сие месте и так смущаться, я вошел в библиотеку."
@@ -1352,8 +1356,8 @@ label blwnfh_day_4:
     stop ambience
     scene bg int_library_day with dissolve
     play ambience ambience_library_day
-    show mz normal glasses pioneer at left with dspr
-    show el normal pioneer at right with dspr
+    show mz normal glasses pioneer at left with dissolve
+    show el normal pioneer at right with dissolve
     
     "На входе я встретил о чем-то разговаривающих Женю и Сергея."
     
@@ -1397,8 +1401,8 @@ label blwnfh_day_4:
     th "Вот как, свои дела значит[wp] {w}Интересно, что же за дела такие вы тут обсуждаете."
     me "Ладно тогда я пойду."
     
-    hide el with dspr
-    hide mz with dspr
+    hide el with dissolve
+    hide mz with dissolve
     
     "Идя в подсобку, прямо перед входом любопытство взяло надо мной вверх."
     "Изобразив, что я якобы вошел внутрь подсобки открыв и закрыв дверь, я спрятался за книжными полками и стал подслушивать."
@@ -1440,7 +1444,7 @@ label blwnfh_day_4:
     
     th "Вот и сгубило меня моё любопытство."
     
-    show kat happy pioneer with dspr
+    show kat happy pioneer with dissolve
     
     "И вот из-за угла показалась Катя, которая сразу же меня заметила."
     
@@ -1457,8 +1461,8 @@ label blwnfh_day_4:
     
     "Сразу же послышались стремительно приближающиеся шаги и вскоре появилась Женя с Сергеем."
     
-    show mz rage glasses pioneer at left with dspr
-    show el normal pioneer at right with dspr
+    show mz rage glasses pioneer at left with dissolve
+    show el normal pioneer at right with dissolve
     
     mz "Ты что, всё это время сидел здесь и подслушивал?!"
     me "Ну[wp] Так[wp] Чуть-чуть, нельзя?"
@@ -1539,8 +1543,8 @@ label blwnfh_day_4:
     
     "Мы оставили наших «голубков» одних и удалились в подсобку."
     
-    hide mz with dspr
-    hide el with dspr
+    hide mz with dissolve
+    hide el with dissolve
     show bg int_editorial_day_cat with dissolve
     
     "Внутри обнаружилось, что нашей художницы нет на месте."  
@@ -1601,7 +1605,7 @@ label blwnfh_day_4:
     me "Ладно, давай."
     
     show kat normal pioneer at left with dspr
-    show un normal pioneer at right with dspr
+    show un normal pioneer at right with dissolve
     
     kat "Приветик, можно к тебе сесть?"
     
@@ -1682,7 +1686,7 @@ label blwnfh_day_4:
     
     "Я медленно поднял голову и ожидаемо увидел перед собой Ольгу Дмитриевну."
     
-    show mt angry pioneer panama with dspr
+    show mt angry pioneer panama with dissolve
     
     mt "Семён, вставай сейчас же!"
     me "Ольга Дмитриевна, ну чего вы сразу ругаться начинаете, не сплю я, а просто отдыхаю, пока жду товарищей журналистов."
@@ -1701,7 +1705,7 @@ label blwnfh_day_4:
     
     mt "Тогда иди бери своих товарищей в охапку и идите в кружок! Нечего тут валяться и бездельничать!"
     
-    hide mt with dspr
+    hide mt with dissolve
     show kat normal pioneer at left with dspr
     show un normal pioneer at right with dspr
     
@@ -1722,7 +1726,7 @@ label blwnfh_day_4:
     "В библиотеке было одиноко и лишь одна Женя занималась своими делами. {w}Не обращая на нее особого внимания, мы двинулись в подсобку."
     "Уже почти у самого входа на наше рабочее место, начальница меня окликнула и я, оставив своих подруг, подошел к ней."
     
-    show mz normal glasses pioneer with dspr
+    show mz normal glasses pioneer with dissolve
     
     me "Слушаю."
     mz "Семён, будь так добр помочь мне прибраться в библиотеке."
@@ -1851,7 +1855,7 @@ label blwnfh_day_4:
     show mz laugh pioneer glasses with dspr
     
     mz "А значит точно понравилась!"
-    me "Жень, ну хватит."
+    me "Та ну тебя."
     
     show mz bukal glasses pioneer with dspr
     
@@ -1885,8 +1889,7 @@ label blwnfh_day_4:
     "Мой разговорный потенциал уже давно иссяк и говорить было уже лень."
     "Тем более на тему, где я был полный ноль."
     
-    me "Давай лучше продолжим под музыку работать." 
-    me "А то устал разговаривать уже."
+    me "Давай лучше продолжим под музыку работать."
     
     show mz normal glasses pioneer with dspr
     
@@ -1920,8 +1923,8 @@ label blwnfh_day_4:
     "Я быстрым шагом направился в подсобку."
     
     scene bg int_editorial_day_cat with dissolve
-    show un normal pioneer far at left with dspr
-    show kat normal pioneer far at right with dspr
+    show un normal pioneer far at left with dissolve
+    show kat normal pioneer far at right with dissolve
     # ТУТ НАДА ФОНОВЫЕ СПРАЙТЫ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     "Внутри девочки занимались своими делами."
     "Лена увлеченно рисовала на холсте, а Катя весело строчила по клавишам, набирая текст и будто погружаясь в это дело."
@@ -1988,7 +1991,7 @@ label blwnfh_day_4:
     
     "Катя схватила готовые листы и весело выбежала из подсобки."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Как только она вышла, я устало упал головой на стол."
     
@@ -2001,7 +2004,7 @@ label blwnfh_day_4:
     "Но сон всё больше и больше поглощал меня."
     "Тут вернулась Катя, громко хлопнув дверью, что немного выбило меня из сонного состояния."
     
-    show kat happy pioneer at right with dspr 
+    show kat happy pioneer at right with dissolve 
     
     th "Быстро она."
     kat "Всё, работа официально сдана."
@@ -2083,8 +2086,8 @@ label blwnfh_day_4:
     # мини пауза
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_clubs_inside_day
-    show sh serious pioneer at left with dspr
-    show el serious pioneer at right with dspr
+    show sh serious pioneer at left with dissolve
+    show el serious pioneer at right with dissolve
     
     "Внутри были мои товарищи Сергей и Шурик, которые о чём-то активно спорили."
     
@@ -2158,8 +2161,8 @@ label blwnfh_day_4:
     "Дверь была открыта и я вошел внутрь."
     
     scene bg int_musclub_day with dissolve2
-    show mi laugh pioneer at left with dspr
-    show kat happy pioneer at right with dspr
+    show mi laugh pioneer at left with dissolve
+    show kat happy pioneer at right with dissolve
     
     "Внутри сидели Катя и Мику, которые пили чай и над чем-то смеялись."
     
@@ -2184,7 +2187,7 @@ label blwnfh_day_4:
     kat "Да мы поняли Мику, я буду с вами играть."
     mi "Хорошо, сейчас буду."
     
-    hide mi with dspr
+    hide mi with dissolve
     
     "Мику удалилась в подсобку, а я сел рядом с Катей."
     
@@ -2263,7 +2266,7 @@ label blwnfh_day_4:
     
     "Быстрым шагом Мику ушла в подсобку."
     
-    hide mi with dspr
+    hide mi with dissolve
     
     th "Интересно, что она там хочет взять?"
     
@@ -2288,8 +2291,8 @@ label blwnfh_day_4:
     stop ambience
     # таймскип
     scene bg ext_path_day with dissolve
-    show mi normal pioneer far at left with dspr
-    show kat normal pioneer close at right with dspr
+    show mi normal pioneer far at left with dissolve
+    show kat normal pioneer close at right with dissolve
     play ambience ambience_forest_day
     
     "Вскоре мы вышли на лесную тропу."
@@ -2313,8 +2316,8 @@ label blwnfh_day_4:
     
     scene bg ext_meadow_day with dissolve
     #stop ambience fadeout 3
-    show mi normal pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show mi normal pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     # вставить эмбиент ветра.
     play music blwnfh_music_list["outskirts"] fadein 5
     
@@ -2468,8 +2471,8 @@ label blwnfh_day_4:
     
     "Я немного потянулся и решил немного прилечь, вытянувшись от одного края пледа до другого."
     
-    hide mi with dspr
-    hide kat with dspr
+    hide mi with dissolve
+    hide kat with dissolve
     
     me "Хорошо-то как[wp]"
     
@@ -2509,8 +2512,8 @@ label blwnfh_day_4:
     
     me "Наверное уже пора идти, а то так на ужин опоздаем."
     
-    show mi sad pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show mi sad pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     
     mi "Как же не хочется уходить отсюда[wp]"
     kat "Ага, но кушать тоже надо, да и вожатая наверное волноваться будет, куда мы подевались."
@@ -2522,8 +2525,8 @@ label blwnfh_day_4:
     stop music
     stop ambience
     scene bg ext_path_sunset with dissolve
-    show mi normal pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show mi normal pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     play ambience ambience_forest_evening
     
     "Когда мы вошли в лес, уже начало вечереть."
@@ -2540,8 +2543,8 @@ label blwnfh_day_4:
     # таймскип
     scene bg ext_square_sunset with dissolve
     play ambience ambience_camp_center_evening
-    show mi normal pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    show mi normal pioneer at left with dissolve
+    show kat normal pioneer at right with dissolve
     
     "Мы покинули лес, и занеся вещи в муз кружок, вскоре стояли на площади."
     "Пришли мы довольно вовремя, ведь в этот момент проиграл горн, зовущий пионеров на ужин."
@@ -2551,7 +2554,7 @@ label blwnfh_day_4:
     "Незамедлительно мы отправились в столовую."
     
     show bg ext_dining_hall_near_sunset
-    show mt normal pioneer panama with dspr
+    show mt normal pioneer panama with dissolve
     
     "На входе в столовую нас уже встречала Ольга Дмитриевна, и по виду она была явно не совсем доброй."
     
@@ -2568,7 +2571,7 @@ label blwnfh_day_4:
     
     "Ольга Дмитривна отошла в сторону и пропустила нас вперед."
     
-    hide mt with dspr
+    hide mt with dissolve
     show bg int_dining_hall_people_sunset with dissolve
     
     "В столовой уже было битком и найти место казалось крайне трудновыполнимой задачей."
@@ -2609,7 +2612,7 @@ label blwnfh_day_4:
     "Тут я неожиданно для себя заметил краем глаза Лену, которая только вошла в столовую."
     "Такое серьезное опоздание для столь пунктуальной девушки, показалось мне довольно странным."
     
-    show un normal pioneer far with dspr
+    show un normal pioneer far with dissolve
     
     "Когда она проходила мимо, я заметил, что стало причиной для опоздания."
     "Лицо Лены было измазано в краске." 
@@ -2654,7 +2657,7 @@ label blwnfh_day_4:
     stop ambience
     scene bg int_house_of_mt_sunset with dissolve2
     play ambience ambience_int_cabin_evening
-    show mt normal pioneer far with dspr
+    show mt normal pioneer far with dissolve
     
     "Придя домой, вожатая уже была тут и лежала на своей кровати, читая книгу."
     
@@ -2706,4 +2709,6 @@ label blwnfh_day_4:
     
     "Я же разделся и лег в постель, где сон почти сразу же утащил меня в свои объятия."
     
+    show blink
+    $ renpy.pause(1.0)
     jump blwnfh_day_5

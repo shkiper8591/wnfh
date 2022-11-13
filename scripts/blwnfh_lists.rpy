@@ -190,6 +190,7 @@ init 2:
     $ blwnfh_sfx_list["plimp"] = blwnfh_SFX + "ps4_ach.ogg"
     $ blwnfh_sfx_list["nos"] = blwnfh_SFX + "nos.ogg"
     $ blwnfh_sfx_list["guitar_hit"] = blwnfh_SFX + "guitar_hit.ogg"
+    $ blwnfh_sfx_list["samogonshiki"] = blwnfh_SFX + "samogonshiki.ogg"
     
     # MUSIC Лист
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"
@@ -220,7 +221,7 @@ init 2:
     $ blwnfh_music_list["kate_orchestra"] = blwnfh_MUSIC + "Kate - Orchestra.mp3"
     $ blwnfh_music_list["kate_piano"] = blwnfh_MUSIC + "Kate - Piano.mp3"
     $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
-    $ blwnfh_music_list["major_grom2"] = blwnfh_MUSIC + "Move Like a Devil cut 10 sec.mp3"
+    $ blwnfh_music_list["ratne_igre"] = blwnfh_MUSIC + "Kerber - Ratne Igre.mp3"
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

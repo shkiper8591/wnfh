@@ -1,14 +1,33 @@
 label blwnfh_test_anim:
     
-    "Прописываем полнсотью"
-    show sl smile2 sport at right with dspr
-    "Без at right"
-    show sl sad sport with dspr
+    "hooynya nevedomoya"
     
-    "Без sport"
+    scene expression blwnfh_doubvis_vert("int_house_of_mt_sunset")
     
-    show sl laugh with dspr
+    #show wat:
+    #    subpixel True
+    #    block:
+    #        xalign 0.3 yalign 0.5
+    #    parallel:
+    #        ease 2.0 xalign 0.7
+    #        ease 2.0 xalign 0.3
+    #        repeat
+    #    parallel:
+    #        ease 2.0 yalign 0.3
+    #        ease 2.0 yalign 0.7
+    #        repeat
+    #    parallel:
+    #        linear 2.0 rotate 360.0
+    #        linear 2.0 rotate 0.0
+    #        repeat
+    #with dissolve
+    #
+    #show un smile pioneer behind wat with dspr 
     
-    "Работает"
+    "stop"
+    
+    scene bg int_house_of_mt_sunset
+
+    "nigga"
     
     jump blwnfh_test

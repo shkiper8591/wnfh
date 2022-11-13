@@ -147,11 +147,10 @@ init 1:
             alpha 0.0
             pause zt
             parallel:
-                linear t alpha 0.3 zoom (z + 0.05)
+                ease t alpha 0.3 zoom (z + 0.05)
             parallel:
-                linear 5.0 rotate -first
-                linear 10.0 rotate first
-                linear 5.0 rotate 0
+                ease 7.0 rotate -first
+                ease 7.0 rotate first
                 repeat
         contains:
             ImageReference(imgn)
@@ -161,13 +160,12 @@ init 1:
             pause zt
             linear t alpha 0.2 zoom (z + 0.05)
             parallel:
-                linear 1.0 rotate second
-                linear 2.0 rotate -second
-                linear 1.0 rotate 0
+                ease 3.0 rotate second
+                ease 3.0 rotate -second
                 repeat
             parallel:
-                linear 1.5 zoom (z + 0.15)
-                linear 2.5 zoom (z + 0.05)
+                ease 1.5 zoom (z + 0.15)
+                ease 2.5 zoom (z + 0.05)
     
     # Эффект для моментов пробуждения
 

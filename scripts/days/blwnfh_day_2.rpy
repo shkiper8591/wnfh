@@ -1,39 +1,3 @@
-label blwnfh_day_2_dream:
-    
-    show anim prolog_1 with dissolve2
-    $ renpy.pause(1.5, hard=True)
-    $ blwnfh_set_name("voice", "???")
-    $ blwnfh_set_mode(nvl)
-    nvl show dissolve2
-    
-    "~ Какой чудный сон[wp] {w}Птички поют, цветочки благоухают[wp] {w}Где-то я это уже видел[wp] Вернее слышал."
-    "Вот только где? {w}Может в фильме? Сериале? Или быть может книге какой-то? {w}А когда я вообще в последний раз держал в руках книгу?"
-    "Как много вопросов и ни на один из них у меня нет ответа[wp] Но ведь так хочется иметь ответ! {w}В прочем насколько это мне нужно? Просто знакомая фраза. Может я её вообще сам придумал? Во смех-то, и ещё считаю, что она из какого-то произведения! ~\n"
-    
-    kat "Семён.\n"
-    
-    "Донеслось откуда-то из тьмы.\n"
-    
-    kat "Семё-о-о-он, ты тут?"
-    me "Да?\n"
-    
-    "Раздался лёгкий смешок.\n"
-    
-    nvl clear
-    
-    kat "Это хорошо. А то думала, что там.\n"
-    me "Где там?\n"
-    kat "Ну[wp] Там[wp]\n"
-    me "Это где?\n"
-    kat "В Караганде! Ха-ха, ловко я тебя подловила, да?\n"
-    me "Ах ты[wp] Засранка!"
-    
-    nvl hide dissolve2
-    scene black with dissolve2
-    $ blwnfh_set_mode()
-    $ blwnfh_set_name("voice", "Голос")
-    $ renpy.pause(1.5, hard=True)
-    
 label blwnfh_day_2:
     
     $ blwnfh_new_chapter(2)
@@ -515,7 +479,6 @@ label blwnfh_day_2:
     play ambience ambience_medstation_inside_day fadein 3
     show cs normal at right with dissolve
     show kat normal pioneer at left with dissolve
-    #33 надо бы переосмыслить эту сцену
     $ blwnfh_set_name("cs","Виола")
     
     "В медпункте сидела Виола и заполняла какие-то бумаги."

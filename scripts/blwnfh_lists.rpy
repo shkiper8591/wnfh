@@ -196,6 +196,7 @@ init 2:
     $ blwnfh_sfx_list["murchanie"] = blwnfh_SFX + "murchanie.ogg"
     $ blwnfh_sfx_list["raschyoska"] = blwnfh_SFX + "brushing-hair.ogg"
     $ blwnfh_sfx_list["udarch"] = blwnfh_SFX + "udarch.ogg"
+    $ blwnfh_sfx_list["pickup_sound"] = blwnfh_SFX + "pickup sound.ogg"
     
     
     # MUSIC Лист

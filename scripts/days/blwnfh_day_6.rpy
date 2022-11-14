@@ -124,7 +124,6 @@ label blwnfh_day_6:
     "Я раздражённо вздохнул и улегся по удобнее на боку."
     
     show blink
-    scene black
     
     mt "И ещё кстати."
     me "М?"
@@ -274,7 +273,6 @@ label blwnfh_day_6:
     th "Надеюсь надолго он не задержится."
 
     show blink
-    scene black
     
     "Мышцы и кости жуть как болели."
     
@@ -1736,7 +1734,7 @@ label blwnfh_day_6:
     $ blwnfh_set_name("voice","Голос")
     scene bg int_editorial_day_cat
     show un normal pioneer at left
-    show kat normal at right
+    show kat normal pioneer at right
     show unblink
     with None
     
@@ -1744,7 +1742,7 @@ label blwnfh_day_6:
     
     show un scared pioneer at left with dspr
     
-    "Громко выкрикнули девушки, что я аж от испуга упал со стула и больно стукнулся об пол."
+    "Громко крикнули девушки, что я аж от испуга упал со стула и больно стукнулся об пол."
     
     un "Ой[wp]"
     me "Твою ж за ногу."
@@ -2028,7 +2026,7 @@ label blwnfh_day_6:
     
     show kat normal swim with dissolve
     
-    th "Ух, уля-ля-ля, какая красота."
+    #th "Ух, уля-ля-ля, какая красота."
     
     kat "Так, а чего ты стоишь столбом?"
     kat "Давай, тоже переодевайся!"

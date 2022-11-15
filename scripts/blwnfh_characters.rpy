@@ -28,6 +28,7 @@ init -1 python:
         "sd":[u"Сергей Дмитриевич", "#878787"],
         "void":[u" ", "#000000"],
         "sv":[u"Света", "#F3DA0B"],
+        "din":[u"Дина", "#080ACE"],
     }
     
     #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))

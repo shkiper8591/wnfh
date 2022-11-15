@@ -43,6 +43,8 @@ label blwnfh_test_main_menu:
             jump blwnfh_test_ach
         "Дни?":    
             jump blwnfh_test_days
+        "А может хэнтай?)))))))))":
+            jump blwnfh_test_anim
         "Покинуть меню отладки":
             jump blwnfh_main_menu
 

@@ -1,4 +1,4 @@
-label blwnfh_daystest:
+label blwnfh_test_days:
 
     "Какой день нам нужно отладить?"
     

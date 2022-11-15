@@ -16,4 +16,4 @@ label blwnfh_test_ach:
     menu: 
     
         "Да":
-            jump blwnfh_test_main_menu 
+            jump blwnfh_test_main_menu

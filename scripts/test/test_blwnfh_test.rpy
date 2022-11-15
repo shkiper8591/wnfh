@@ -30,23 +30,23 @@ label blwnfh_test_main_menu:
         "Анимации":
             jump blwnfh_test_anim
         "Спрайты?":
-            jump blwnfh_sprites_test
+            jump blwnfh_test_sprites
         "Музыку?":
-            jump blwnfh_musictest
+            jump blwnfh_test_music
         "Цензуру?":
-            jump blwnfh_matyki
+            jump blwnfh_test_matyki
         "NVL?":
-            jump blwnfh_nvltest
+            jump blwnfh_test_nvl
         "Выборы?":
-            jump blwnfh_continue
+            jump blwnfh_test_choice
         "Достижения?":
-            jump blwnfh_continue_4
+            jump blwnfh_test_ach
         "Дни?":    
-            jump blwnfh_daystest
+            jump blwnfh_test_days
         "Покинуть меню отладки":
             jump blwnfh_main_menu
 
-label blwnfh_spritestest1:
+label blwnfh_test_sprites:
     
     "Какие именно нам нужно отладить спрайты?"
     

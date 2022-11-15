@@ -1,4 +1,4 @@
-label blwnfh_continue:    
+label blwnfh_test_choice:    
     "Выборы выборы кандидаты[wp]"
     
     

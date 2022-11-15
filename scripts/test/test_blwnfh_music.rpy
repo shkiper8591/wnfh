@@ -1,4 +1,4 @@
-label blwnfh_musictest:
+label blwnfh_test_music:
     
     "Что конкретно мы хотим протестировать?"
     
@@ -26,7 +26,7 @@ label blwnfh_brbrbrbr:
         "Вернутся в меню отладки":
             jump blwnfh_test_main_menu 
         "Вернутся к выбору типа музыки":    
-            jump blwnfh_musictest            
+            jump blwnfh_test_music            
 
 label blwnfh_justmusic:
 
@@ -44,4 +44,4 @@ label blwnfh_justmusic:
         "Вернутся в меню отладки":
             jump blwnfh_test_main_menu
         "Вернутся к выбору типа музыки":    
-            jump blwnfh_musictest
+            jump blwnfh_test_music

@@ -1,4 +1,4 @@
-init 1:
+init -2:
     # Шрифты
     $ style.blwnfh_title = Style(style.default)
     #$ style.blwnfh_title.font = blwnfh_FONTS + "Dymaxion scriptS.ttf"
@@ -11,7 +11,17 @@ init 1:
     $ style.blwnfh_title.size = 80
     $ style.blwnfh_title.kerning = 2.0
     $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
-
+    
+    $ style.blwnfh_ach_title = Style(style.default)
+    $ style.blwnfh_ach_title.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_ach_title.color = "#000"
+    $ style.blwnfh_ach_title.text_align = 0.5
+    $ style.blwnfh_ach_title.yalign = 0.5
+    $ style.blwnfh_ach_title.size = 42
+    $ style.blwnfh_ach_title.kerning = 1.0
+    $ renpy.image("blwnfh_ach_title", ParameterizedText(style="blwnfh_ach_title", size=64))
+    
+    
     $ style.blwnfh_menu = Style(style.default)
     $ style.blwnfh_menu.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_menu.color = "#FFF"

@@ -1,4 +1,4 @@
-label blwnfh_nvltest: 
+label blwnfh_test_nvl: 
    
     show anim prolog_1 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)

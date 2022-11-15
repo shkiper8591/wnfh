@@ -1,7 +1,7 @@
 init 1000 python:
     config.developer = True
 
-init -1 python:
+init -2 python:
 
     ## Создание листов ##
     
@@ -49,16 +49,20 @@ init -1 python:
         "blank2"
         ]}
     
-    # Для меню ачивок
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
         "lock",
         "idle_frame",
         "hover_frame",
         "back",
-        "point",
-        "rel_up",
-        "rel_down",
-        "rel_neutral",
+        ]}
+    # Всплывашки
+    blwnfh_gui["banners"] = {img:(blwnfh_BANNERS + img + ".png") for img in [
+        
+        "relation_frame",
+        "relation_up",
+        "relation_down",
+        "relation_neutral",
+        "ach_frame",
         ]}
     
     # Для галереи

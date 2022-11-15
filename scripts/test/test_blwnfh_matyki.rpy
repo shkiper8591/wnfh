@@ -1,4 +1,4 @@
-label blwnfh_matyki:
+label blwnfh_test_matyki:
     if persistent.sukablyat_blwnfh == False:
         me "Шурик блять, мне олово за шиворот капает!"
     # Цензура

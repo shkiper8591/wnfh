@@ -1,20 +1,20 @@
 init -1 python:
     
-    ## Объявляем картинки для табличек ##
+    ## Объявляем картинки для баннеров отношений ##
     
-    renpy.image("point", im.MatrixColor(
-        im.Scale(blwnfh_gui["achievements"]["point"], 600, 100),
+    renpy.image("rel_frame", im.MatrixColor(
+        im.Scale(blwnfh_gui["banners"]["relation_frame"], 600, 100),
         im.matrix.brightness(2)))  
-    renpy.image("rel_up", im.Scale(blwnfh_gui["achievements"]["rel_up"], 41, 59))
-    renpy.image("rel_down", im.Scale(blwnfh_gui["achievements"]["rel_down"], 41, 59))  
+    renpy.image("rel_up", im.Scale(blwnfh_gui["banners"]["relation_up"], 41, 59))
+    renpy.image("rel_down", im.Scale(blwnfh_gui["banners"]["relation_down"], 41, 59))  
     renpy.image("rel_neutral", im.MatrixColor(
-        im.Scale(blwnfh_gui["achievements"]["rel_neutral"], 41, 70),
+        im.Scale(blwnfh_gui["banners"]["relation_neutral"], 41, 70),
         im.matrix.brightness(1)))
     
-    ## А тут уже хуярим сами таблички ##
+    ## А тут уже хуярим сами баннеры ##
     
     def blwnfh_get_relation(character, text, relation):
-        renpy.show("point", [blwnfh_get_table_atl])
+        renpy.show("rel_frame", [blwnfh_get_table_atl])
         
         renpy.show("char_text", [blwnfh_get_relation_atl(0.03, 0.14)], tag="char_text" + str(i), what=Text(blwnfh_characters[character][0], style=style.blwnfh_thought, color=blwnfh_characters[character][1], size=30))
         
@@ -24,6 +24,7 @@ init -1 python:
             text_pos_y = 0.17
         renpy.show("message_text", [blwnfh_get_relation_atl(0.06, text_pos_y)], tag="message_text" + str(i), what=Text(text, style=style.blwnfh_thought, size=30))
 
+        # Страшная математика
         pos_x = 0.26
         pos_y = 0.15
         
@@ -54,7 +55,7 @@ init -1 python:
         elif relation == "None":
             renpy.pause(1.0)
         renpy.pause(1.5, hard=True)
-        renpy.hide("point")
+        renpy.hide("rel_frame")
 
 init -2:
     transform blwnfh_get_relation_atl(pos_x, pos_y):

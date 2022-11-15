@@ -7,12 +7,15 @@ init -1 python:
     ## Регистрация ачивок ##
     
     blwnfh_ach_list = (
-        ("payday",    "icon_payday",    "title_payday",    "signature_payday"),   
-        ("bkrr",      "icon_bkrr",      "title_bkrr",      "signature_bkrr"),     
-        ("alpha-0.1", "icon_alpha-0.1", "title_alpha-0.1", "signature_alpha-0.1"),
-        ("post",      "icon_post",      "title_post",      "signature_post"),     
-        ("zgdun",     "icon_zgdun",     "title_zgdun",     "signature_zgdun"),    
-        ("alarm",     "icon_alarm",     "title_alarm",     "signature_alarm"),    
+        #Тэг ачивки   Иконка            Заголовк           Подпись                Листок         Трофей
+        ("payday"    ,"icon_payday"    ,"title_payday"    ,"signature_payday"    ,"leaf_day"    ,"trophy_silver"),   
+        ("bkrr"      ,"icon_bkrr"      ,"title_bkrr"      ,"signature_bkrr"      ,"leaf_sunset" ,"trophy_bronz"),     
+        ("alpha-0.1" ,"icon_alpha-0.1" ,"title_alpha-0.1" ,"signature_alpha-0.1" ,"leaf_day"    ,"trophy_platina"),
+        ("post"      ,"icon_post"      ,"title_post"      ,"signature_post"      ,"leaf_day"    ,"trophy_bronz"),     
+        ("zgdun"     ,"icon_zgdun"     ,"title_zgdun"     ,"signature_zgdun"     ,"leaf_day"    ,"trophy_platina"),    
+        ("alarm"     ,"icon_alarm"     ,"title_alarm"     ,"signature_alarm"     ,"leaf_day"    ,"trophy_silver"),
+        ("zaebist"   ,"icon_zaebist"   ,"title_zaebist"   ,"signature_zaebist"   ,"leaf_day"    ,"trophy_silver"),
+        ("handass"   ,"icon_handass"   ,"title_handass"   ,"signature_handass"   ,"leaf_day"    ,"trophy_bronz"),
     )
     
     
@@ -29,7 +32,8 @@ init -1 python:
         (94, 26), im.Scale(blwnfh_BANNERS + ach[1] + ".png", 75, 75),
         (0, 0), im.Scale(blwnfh_BANNERS + ach[2] + ".png", 600, 125),
         (0, 0), im.Scale(blwnfh_BANNERS + ach[3] + ".png", 600, 125),
-        
+        (515, 30), im.Scale(blwnfh_BANNERS + ach[4] + ".png", 45, 68),
+        (184, 65), im.Scale(blwnfh_BANNERS + ach[5] + ".png", 38, 38),
         ))
         
         if ach[0] not in persistent.blwnfh_ach:

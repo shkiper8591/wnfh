@@ -11,7 +11,7 @@ init -2:
     $ style.blwnfh_title.size = 80
     $ style.blwnfh_title.kerning = 2.0
     $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
-    
+
     $ style.blwnfh_ach_title = Style(style.default)
     $ style.blwnfh_ach_title.font = blwnfh_FONTS + "msjhl.ttc"
     $ style.blwnfh_ach_title.color = "#000"
@@ -21,6 +21,14 @@ init -2:
     $ style.blwnfh_ach_title.kerning = 1.0
     $ renpy.image("blwnfh_ach_title", ParameterizedText(style="blwnfh_ach_title", size=64))
     
+    $ style.blwnfh_ach_signature = Style(style.default)
+    $ style.blwnfh_ach_signature.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_ach_signature.color = "#000"
+    $ style.blwnfh_ach_signature.text_align = 0.5
+    $ style.blwnfh_ach_signature.yalign = 0.5
+    $ style.blwnfh_ach_signature.size = 38
+    $ style.blwnfh_ach_signature.kerning = 1.0
+    $ renpy.image("blwnfh_ach_signature", ParameterizedText(style="blwnfh_ach_signature", size=64))
     
     $ style.blwnfh_menu = Style(style.default)
     $ style.blwnfh_menu.font = blwnfh_FONTS + "msjhl.ttc"

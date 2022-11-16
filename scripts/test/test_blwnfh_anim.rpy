@@ -1,5 +1,7 @@
 label blwnfh_test_anim:
     
+    $ renpy.notify ('Семён не совсем удачно пошутил отсылкой на один из клипов бывшего клипмейкера «Enjoykin».')
+    
     scene cg test_unknown with Dissolve(5.0)
     
     $ renpy.pause(180.0, hard=True)

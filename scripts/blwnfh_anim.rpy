@@ -227,6 +227,20 @@ init 1:
         ease 1.0 pos(0.0, 0.15)
         pause 3.0
         ease 1.0 pos(-0.4, 0.15)
+    
+    transform blwnfh_get_ach_title_atl(x_pos=0.095, y_pos=0.131):
+        pos(x_pos-0.4, y_pos)
+        anchor(0.0, 0.5)
+        ease 1.0 pos(x_pos, y_pos)
+        pause 3.0
+        ease 1.0 pos(x_pos-0.4, y_pos)
+        
+    transform blwnfh_get_ach_signature_atl(x_pos=0.119, y_pos=0.17):
+        pos(x_pos-0.4, y_pos)
+        anchor(0.0, 0.5)
+        ease 1.0 pos(x_pos, y_pos)
+        pause 3.0
+        ease 1.0 pos(x_pos-0.4, y_pos)
         
     transform blwnfh_get_item_atl:
         pos(-0.1, 0.75)

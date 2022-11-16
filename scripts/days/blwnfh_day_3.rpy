@@ -859,7 +859,7 @@ label blwnfh_day_3:
     "И постепенно меня начало клонить в сон."
     "Но мой путь в царство морфея прервала появившиеся из ниоткуда Ульяна."
     
-    show us smile pioneer with dspr
+    show us smile pioneer with dissolve
     play music music_list["i_want_to_play"]
     
     us "Семён, чего развалился? Пошли на площадку, в футбол поиграем!"
@@ -915,7 +915,7 @@ label blwnfh_day_3:
     
     stop ambience
     scene bg int_dining_hall_day with dissolve
-    show us normal pioneer with dspr
+    show us normal pioneer with dissolve
     play ambience ambience_dining_hall_empty
     
     "Придя одними из первых, мы заняли самое удобное по моему мнению место."
@@ -935,7 +935,7 @@ label blwnfh_day_3:
     "И скоро у выхода стали толпиться пионеры, а ещё спустя некоторое время, столовая полностью опустела, что стало сигналом."
     
     stop ambience
-    show us normal pioneer with dspr
+    show us normal pioneer with dissolve
     play ambience ambience_dining_hall_empty
     show us smile with dspr
     play music blwnfh_music_list["crimes"] 
@@ -980,10 +980,10 @@ label blwnfh_day_3:
     
     "В спешке завернув этот и забрав первый пакет, мы быстро удалились из столовой."
     
-    stop music 
-    stop ambience
+    stop music fadeout 3
+    stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_day with dissolve
-    #play ambience 
+    play ambience ambience_camp_center_day fadein 2 
     
     "Уже выйдя из столовой, я было вздохнул в облегчением оттуда, как из столовой донеслись крайне недовольные возгласы."
     "Но самое что страшное, они приближались к выходу."
@@ -992,10 +992,8 @@ label blwnfh_day_3:
     
     "Я подбежал к краю крыльца и перепрыгнул через перилла. Моему примеру последовала и Ульяна."
     
-    scene bg ext_dining_hall_backroad_day_blwnfh with dissolve
-    stop music
-    play ambience ambience_camp_center_day
-    show us fear pioneer close at center with dspr 
+    scene bg ext_dining_hall_backroad_day_blwnfh with dissolve2
+    show us fear pioneer close at center with dissolve 
     
     "Мы спрятались за столовой, а спустя пару секунд было слышно звук открывающейся двери."
     

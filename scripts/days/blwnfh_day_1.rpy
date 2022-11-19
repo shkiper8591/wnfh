@@ -1605,10 +1605,11 @@ label blwnfh_day_1:
     show chair_r at chair_move_out behind un
     $ renpy.pause(0.3, hard=True)
     show chair_l at chair_move_out behind kat
-    #$ renpy.pause(0.3, hard=True)
+    $ renpy.pause(0.7, hard=True)
     show un smile pioneer at sit_down_left
     $ renpy.pause(0.3, hard=True)
     show kat normal pioneer at sit_down_right
+    $ renpy.pause(1.0, hard=True)
     show chair_l at chair_move_in
     $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_in
@@ -1630,6 +1631,9 @@ label blwnfh_day_1:
     th "Щий? Щей? Супа в общем."
     
     "За своими раздумиями я не обращал внимания на то, что Лена и Катя о чем-то увлечённо болтали."
+    
+    show mid d6_breakfast_half tray foods with dissolve
+    
     "Не знаю почему, но мне стало крайне любопытно о чем же они таком разговаривают."
     
     me "О чём болтаете?"
@@ -1642,6 +1646,7 @@ label blwnfh_day_1:
     "И лишь спустя время, Лена взяла на себя инициативу."
     
     show un grin pioneer with dspr
+    show right d6_breakfast_half tray foods with dissolve
     
     un "Боюсь, {i}Сёмочка{/i}, это не твоё дело."
     th "Сёмочка? {w}Меня так ещё никто не называл тут."
@@ -1650,6 +1655,7 @@ label blwnfh_day_1:
     
     "Ухмыляясь сказал я, полагая, что переиграл её."
     
+    show left d6_breakfast_half tray foods with dissolve
     show un laugh pioneer with dspr 
     
     un "Тогда у меня для тебя плохие новости!"
@@ -1673,14 +1679,20 @@ label blwnfh_day_1:
     th "А эта новенькая быстро нашла себе друга, не то что я."
     th "Интересно, почему именно с Леной? {w}Хотя учитывая как скромно она себя вела и какая стесняша у нас Тихонова, все вопросы отпадают сами собой."
     
+    show mid d6_breakfast_empty tray spoon foods with dissolve
+    
     "За моими размышлениями, суп кончился довольно быстро."
     "Чай тоже держался не долго и был выпит одним залпом."
+    
+    hide mid with dissolve
     
     me "Ладненько, пойду я."
     un "Пока!"
     kat "Угу."
     
-    "Встав из-за стола, я быстренько покинул пределы столовой."
+    scene bg int_dining_hall_people_day with dissolve2
+    
+    "Встав из-за стола, я быстренько отнёс поднос и покинул пределы столовой."
     
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_day with dissolve2
@@ -1699,15 +1711,17 @@ label blwnfh_day_1:
     
     "Вот только силы стремительно покидали меня и очень скоро я задремал."
     
+    scene black
     window hide
     $ renpy.pause(1.0)
     window show
+    
     "Но, поспал я максимум минут десять, как меня стали трясти за плечо."
     
     scene bg ext_dining_hall_near_day
+    show mt normal pioneer panama
     show unblink
-    $ renpy.pause(1.0)
-    show mt normal pioneer panama with dissolve
+    with None
     
     mt "Семён, ты чего тут лежишь? Тебе плохо?"
     me "А? Нет, мне хорошо, просто после обеда отдохнуть решил немного, да и уснул вот."
@@ -1718,7 +1732,9 @@ label blwnfh_day_1:
     
     mt "Ну иди давай, а то скоро тебе тут в любом случае поспать не дадут."
     
-    hide mt with dissolve
+    show mt grin pioneer panama:
+        zoom 1.0 alpha 1.0
+        ease 2.0 zoom 0.7 alpha 0.0
     
     "Вожатая удалилась обратно в столовую, а я, встав с лавки, медленно поплелся к дому."
     
@@ -1780,8 +1796,10 @@ label blwnfh_day_1:
     "Я же вздохнув ещё раз, продолжил свой путь к мягкой постели."
     
     window hide
+    scene bg ext_houses_day with dissolve2
+    $ renpy.pause(2.0)
     scene bg ext_house_of_mt_day with dissolve2
-    $ renpy.pause(1.0)
+    $ renpy.pause(2.0)
     window show
     
     "Наконец дойдя до дома, я уже еле держался на ногах."
@@ -1792,7 +1810,10 @@ label blwnfh_day_1:
     "Лень и сонливость оказались сильнее, так что я решил лечь на шезлонге."
     "Расположившись на котором по удобнее, тут же уснул."
     
+    window hide
+    
     show blink
+    $ blwnfh_set_time("sunset")
     $ renpy.pause(3.5, hard=True)
     scene bg ext_house_of_mt_sunset
     show unblink
@@ -1857,8 +1878,10 @@ label blwnfh_day_1:
     show mt angry pioneer panama with dspr
     
     mt "И только попробуй свалить задание на кого-нибудь другого!"
+    # Дополнить тем что он уже проштрафился один раз
+    
     mt "Иначе я тебе такое устрою, что эта смена точно тебе на всю жизнь запомнится!"
-    me "Понял-понял, не буду."
+    me "Понял-понял, больше не буду."
     
     show mt grin pioneer panama with dspr
     
@@ -1869,10 +1892,13 @@ label blwnfh_day_1:
     mt "Значит на линейке обговорим все подробности."
     me "Хорошо."
     mt "Всё, можешь дальше отдыхать."
+    show mt grin pioneer panama:
+        zoom 1.0 alpha 1.0
+        ease 2.0 zoom 0.7 alpha 0.0
     
-    hide mt with dissolve
     
     "Ольга Дмитриевна удалилась в дом."
+    hide mt with dissolve
     "Я же думал продолжить свой сон, но вожатая вытрясла все его остатки из меня."
     "А значит следовало придумать какое-нибудь другое занятие."
     
@@ -1885,6 +1911,9 @@ label blwnfh_day_1:
     
     window hide
     stop ambience fadeout 0.5
+    scene bg ext_houses_sunset with dissolve2
+    $ renpy.pause(1.5)
+    
     scene bg ext_beach_sunset with dissolve2
     $ renpy.pause(1.5)
     play ambience ambience_lake_shore_day fadein 3

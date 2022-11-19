@@ -236,6 +236,7 @@ init 2:
     $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
     $ blwnfh_music_list["ratne_igre"] = blwnfh_MUSIC + "Kerber - Ratne Igre.mp3"
     $ blwnfh_music_list["international"] = blwnfh_MUSIC + "international.mp3"
+    $ blwnfh_music_list["strange"] = blwnfh_MUSIC + "strange.ogg" 
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

@@ -156,7 +156,8 @@ label blwnfh_day_5:
     "Без лишних слов я покинул склад."
     
     stop ambience fadeout 0.5
-    scene bg ext_warehouse_sunset with dissolve
+    scene bg ext_warehouse_sunset with dissolve2
+    stop music fadeout 3
     play ambience ambience_camp_center_evening fadein 2
     
     "Выйдя на улицу я рассмотрел станок и удивился."
@@ -166,7 +167,6 @@ label blwnfh_day_5:
     
     window hide
     scene bg ext_houses_sunset with dissolve2
-    # вставить переход крутой
     window show
     
     "По пути домой, я уже мысленно начал проклинать самого себя, за то, что обратил внимание на свою бороду."
@@ -176,10 +176,15 @@ label blwnfh_day_5:
     th "А ещё помимо всего, за ней же ведь нужно и ухаживать, чтобы она уж совсем не была бесформенной колючкой."
     
     scene bg ext_house_of_mt_sunset with dissolve
-    # вставить переход крутой
+    $ renpy.pause(0.3)
+    scene bg ext_house_of_mt_sunset:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
+    $ renpy.pause(2.0)
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_sunset with dissolve
-    # вставить анимацию того, что семён входит в дом.
     play ambience ambience_int_cabin_day fadein 2
     
     "Когда я пришел домой, Ольга Дмитриевна уже проснулась, надела свою форму и расчёсывала волосы сидя на кровати." 
@@ -233,12 +238,11 @@ label blwnfh_day_5:
     
     window hide
     $ blwnfh_set_time()
-    stop ambience fadeout 0.5
-    scene bg ext_washstand_day with dissolve2
-    # тут нужен крутой переход
+    stop ambience fadeout 1.5
+    scene bg ext_washstand_day with sphere_invert_blure_dissolve2
     play ambience ambience_camp_center_day fadein 2
-    $ renpy.pause(1.5)
     show un normal pioneer far with dissolve
+    $ renpy.pause(1.5)
     window show
     
     "Придя к умывальникам, я нашел здесь Лену, которая активно умывалась."
@@ -362,10 +366,9 @@ label blwnfh_day_5:
     kat "Хорошо, только постарайся в этот раз не заблудится."
     me "Ничего не обещаю."
     
-    stop ambience fadeout 0.5
-    scene bg ext_path_day with dissolve2
+    stop ambience fadeout 2
+    scene bg ext_path_day with slide_diagonal_blure_dissolve2
     show kat normal pioneer with dissolve
-    # крутой переход
     play ambience ambience_forest_day fadein 2
     
     "Мы вышли в пролесок."
@@ -413,9 +416,14 @@ label blwnfh_day_5:
     "Восстановив равновесие, я вошел внутрь."
     
     window hide
+    show bg ext_musclub_verandah_day:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 1.5 zoom 1.5 xcenter 0.4
+    $ renpy.pause(1.5)
     stop ambience fadeout 0.5
     scene bg int_musclub_day with dissolve2
-    # крутой переход?
     play ambience ambience_music_club_day fadein 2
     show kat normal pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 3
@@ -476,7 +484,7 @@ label blwnfh_day_5:
     th "Как же иногда сложно просто не смотреть!"
     th "Но всё же совесть иметь-то надо! {w}Не то она поимеет меня."
     th "А мне этого совсем не надо."
-    th "Да и к тому же, я же мужчина, а не какой-то там извращуга, который будет подглядывать за[wp] Кхм."
+    th "Да и к тому же, подглядывать совсем не культурно!"
     
     "Я постарался очистить свой разум от всех лишних мыслей и просто углубился в себя."
     
@@ -544,7 +552,9 @@ label blwnfh_day_5:
     kat "Хорошо, сделаю всё как надо."
     mi "Спасибо. {w}Так, всё, я побежала, до встречи!"
     
-    hide mi with dissolve
+    show mi grin pioneer:
+        ease_quart 2.0 xcenter -0.2
+    hide mi
     
     "Мику выбежала из муз клуба и помчалась в сторону площади, видимо, отметиться у вожатой."
     
@@ -730,6 +740,7 @@ label blwnfh_day_5:
     
     show kat normal pioneer at right:
         ease_quart 2.0 xcenter -0.2
+    $ renpy.pause(2.0, hard=True)
     
     "Мику достала из под рубашки небольшой ключик на веревке и открыла подсобку, в которую мигом же удалилась Катя."
     
@@ -918,7 +929,6 @@ label blwnfh_day_5:
     
     show mi normal pioneer:
         ease_quart 3.0 xcenter -0.2
-        
     show kat normal pioneer:
         ease_quart 2.5 xcenter -0.2
     
@@ -964,13 +974,19 @@ label blwnfh_day_5:
     
     $ blwnfh_set_mode()
     
+    show mi normal pioneer:
+        ease_quart 2.5 xcenter -0.2
+    show kat normal pioneer:
+        ease_quart 3.0 xcenter -0.2
+    
     "Закончив играть, я заметил, что девушки выглядывая из подсобки смотрят на меня."
-    "Видимо поняв, что их обнаружили, они вышли оттуда."
     
     show mi normal pioneer:
         ease_quart 2.5 xcenter 0.28
     show kat normal pioneer:
         ease_quart 3.0 xcenter 0.72
+    
+    "Видимо поняв, что их обнаружили, они вышли оттуда."
     
     kat "Что, алкоголик, уже глядим заскучал без нас."
     me "Чего я алкоголик-то сразу?"
@@ -1274,7 +1290,7 @@ label blwnfh_day_5:
         ease_quart 1.8 xcenter -0.2
     show kat normal pioneer:
         ease_quart 1.8 xcenter 1.28
-    $ renpy.pause(1.8)
+    $ renpy.pause(1.8, hard=True)
     
     "Они взяли тряпки и быстро разошлись по разным углам, а я недоумевающим взглядом проводил обоих."
     "Постояв ещё пару секунд я взял ведро и понес его в центр столовой."
@@ -1358,7 +1374,8 @@ label blwnfh_day_5:
     
     stop ambience fadeout 3
     scene bg int_clubs_male_day with dissolve2
-    # 33 крутой переход?
+    show el normal pioneer:
+        xcenter -0.2 ycenter 0.5
     play ambience ambience_int_cabin_day fadein 3
     
     "Дверь в подсобку была приоткрыта, а оттуда доносился какой-то шорох."
@@ -1368,7 +1385,8 @@ label blwnfh_day_5:
     
     "Я стал приближаться ко входу в подсобку, как оттуда, чуть ли не выбежал, Сергей."
     
-    show el normal pioneer with dissolve
+    show el normal pioneer:
+        ease_quart 2.3 xcenter 0.28
     
     el "Снова привет Шу[wp]" 
     
@@ -1419,14 +1437,18 @@ label blwnfh_day_5:
     me "Без проблем, давай их сюда."
     el "Ага."
     
-    "Сергей пошел в подсобку, а фигура, тем временем, плавно скрылась."
+    show el sad pioneer:
+        ease_quart 2.8 xcenter -0.2
     
-    hide el with dspr
+    "Сергей пошел в подсобку, а фигура, тем временем, плавно скрылась."
     
     th "Почему же именно здесь? {w}Да и когда тебя ждут."
     th "Хотя, любоф она такая непредсказуемая."
     
-    show el normal pioneer with dspr
+    show el normal pioneer:
+        xcenter -0.2 ycenter 0.5
+    show el normal pioneer:
+        ease_quart 2.8 xcenter 0.28
     
     "Вскоре мой товарищ вернулся и протянул мне три длинных мотка и чёрный пакет впридачу."
     
@@ -1495,21 +1517,40 @@ label blwnfh_day_5:
     
     sh "Ладно, не велика беда."
     sh "Ну что, понесли?"
-    me "Да давай, чего кота за хвост тянуть."
+    me "Да давай, чего кота тянуть за его мягкие[wp] Тёплые[wp] Усы."
     
     "Начали мы с колонок, как самых тяжелых и габаритных."
+    
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.7 ycenter 0.6
+        ease_quart 1.2 ycenter 0.5
+    
     "Обхватив их с двух сторон, мы кое как подняли одну колонку и потащили в сторону поля."
     "Благо, можно было сократить через пролесок. {w}Главное не запнуться."
     
-    # переход
-    
-    stop ambience
-    scene bg ext_path2_day with dissolve
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.7 xcenter 0.6
+        ease_quart 0.8 xcenter 0.7
+        ease_quart 0.8 xcenter 0.8
+        ease_quart 0.7 xcenter 0.9
+        ease_quart 0.8 xcenter 1.0
+        ease_quart 0.7 xcenter 1.1
+        ease_quart 0.7 xcenter 1.2
+    $ renpy.pause(3.9, hard=True)
+    stop ambience fadeout 2
+    scene bg ext_path2_day with sphere_blure_dissolve2
     show sh normal pioneer with dissolve
-    play ambience ambience_forest_day 
-    
+    play ambience ambience_forest_day fadein 2 
     
     "Обойдя библиотеку и войдя в зеленку, я сигнализировал Шурику остановиться, дабы немного отдохнуть."
+    
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.7 ycenter 0.6
+        ease_quart 1.2 ycenter 0.5
+    
     "Мы остановились и поставили колонку на землю."
     
     me "Фух, тяжелая падла."

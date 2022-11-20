@@ -5,7 +5,7 @@ label blwnfh_day_5:
     play ambience ambience_int_cabin_evening fadein 3
     scene bg int_house_of_mt_sunset
     show unblink
-    with none
+    with None
     $ renpy.pause(1.5, hard=True)
     window show
     
@@ -42,25 +42,32 @@ label blwnfh_day_5:
     
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_sunset with dissolve
+    play music music_list["dance_of_fireflies"]
     play ambience ambience_camp_center_evening fadein 2
     
     "Утро хоть и было довольно ранее, на улице было неожиданно тепло и очень свежо."
     "Головная боль немного отступила и я набрав полные легкие свежого воздуха, отправился в сторону склада."
     
-    scene bg ext_houses_sunset with dissolve
-    # вставить переход крутой
+    scene bg ext_houses_sunset with slide_right_blure_dissolve2
+    
     th "Надеюсь склад открыт и обойдется без завхоза."
     th "Конечно последнее время Славя его подменяет, но никто не отменят тот факт, что всё может измениться и Сергей Дмитриевич выйдет на работу."
     th "А с этим вредным дедом хочется пересекаться ещё меньше чем с вожатой."
     
-    scene bg ext_warehouse_sunset with dissolve
-    # вставить переход крутой
+    scene bg ext_warehouse_sunset with slide_left_blure_dissolve2
+    
     "Подойдя к складу, я заметил, что дверь была немного приоткрыта и это было хорошей новостью."
     "Тем не менее, прежде чем войти, я постучался и только после вошел внутрь."
     
+    scene bg ext_warehouse_sunset:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5 xcenter 0.72
+    $ renpy.pause(2.0)
+    
     stop ambience fadeout 0.5
     scene bg int_warehouse_day with dissolve
-    # вставить анимацию того, что семён входит
     play ambience ambience_int_cabin_day fadein 2
     
     "За письменным столом сидел, о ужас, сам завхоз."
@@ -1401,7 +1408,7 @@ label blwnfh_day_5:
     el "Чтобы не отвлекали всякие случайные личности."
     me "Понятно[wp]"
     
-    th "Да-да, кабеля он доставал[wp] {w}Охотно верю."    
+    th "Да-да, кабеля он доставал[wp] Охотно верю."    
     
     me "Ладно, бери кабеля и пошли к Шурику."
     
@@ -1416,7 +1423,7 @@ label blwnfh_day_5:
     
     hide el with dspr
     
-    th "Почему же именно здесь? {w}Да и когда тебя явно ждут."
+    th "Почему же именно здесь? {w}Да и когда тебя ждут."
     th "Хотя, любоф она такая непредсказуемая."
     
     show el normal pioneer with dspr
@@ -1428,7 +1435,7 @@ label blwnfh_day_5:
     
     show el laugh with dspr
     
-    el "Уже поздно отказываться Семён!"
+    el "Уже поздно отказываться, Семён!"
     me "Что ж за дело такое неотложное у тебя."
     
     "Процедил я сквозь зубы, беря весь этот груз."

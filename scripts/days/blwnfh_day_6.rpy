@@ -186,7 +186,7 @@ label blwnfh_day_6:
     "Селёдка встал на задние лапы и облокотился передними на окно, жалостно мяукая."
     "Как будто умоляя впустить его."
     
-    me "Ну ладно, чуть-чуть можно наверное."
+    me "Ну ладно, чуть-чуть можно[wp] Наверно."
     
     "Приоткрыв окно, я впустил кота внутрь."
     
@@ -229,7 +229,7 @@ label blwnfh_day_6:
     
     th "Так, пока Катя отвлечена на кота, нужно поскорее одется."
     
-    "Сняв шорты и рубашку со стула, я быстренько натянул на себя форму."
+    "Сняв шорты и рубашку со стула, я быстренько натянул их на себя."
     "Правда с пуговицами торопиться было лишним, ибо то и дело не получалось их застегнуть."
     "Но, я смог справится с этой, во истину, сложной задачей."
     "Катя же наконец отпустила бедного котейку, который (вот тут хуй знает, может запятая нужна, надо будет подуматб ещё) пройдя пару метров, разлегся на ковре."
@@ -354,12 +354,12 @@ label blwnfh_day_6:
     me "Может всё-таки на кровати быстрее пройдет? {w}Хотя, вряд ли."
     me "Ладно, пойду для начала умоюсь, а потом уже решу, стоит напрягаться или нет."
     
-    # переход 
-    
     window hide
     stop ambience fadeout 0.5
     $ blwnfh_set_time()
-    scene bg ext_washstand_day with dissolve2
+    scene bg ext_houses_day with slide_left_blure_dissolve2
+    $ renpy.pause(1.5)
+    scene bg ext_washstand_day with slide_right_blure_dissolve2
     play ambience ambience_day_countryside_ambience fadein 2
     $ renpy.pause(1.0)
     window show
@@ -722,7 +722,7 @@ label blwnfh_day_6:
     "После чего отправился в путь, который пролегал через небольшой пролесок."
     
     stop ambience
-    scene bg ext_path2_day with dissolve
+    scene bg ext_path2_day with sphere_invert_blure_dissolve2
     play ambience ambience_forest_day
     
     th "Вообще кошмар какой-то выходит."
@@ -735,7 +735,7 @@ label blwnfh_day_6:
     th "В прочем, у меня ещё неделя впереди, айда что-нибудь придумается."
     
     stop ambience
-    scene bg ext_musclub_day with dissolve
+    scene bg ext_musclub_day with door_blure_dissolve2
     play ambience ambience_camp_center_day 
     
     "Вскоре, я вышел к муз кружку."
@@ -744,7 +744,7 @@ label blwnfh_day_6:
     
     th "Может зайти, посмотреть? Всё равно, делать пока нечего."
     
-    scene bg ext_musclub_verandah_day with dissolve
+    scene bg ext_musclub_verandah_day with sphere_blure_dissolve2
     
     "Подойдя ко входу, я постучался в дверь."
     #вместо этого, тут можно будет вставить звук стука в дверь.
@@ -754,8 +754,13 @@ label blwnfh_day_6:
     "Но в ответ тишина."
     "Тогда, я дернул за ручку и оказалось, что дверь-то открыта."
     
+    scene bg ext_musclub_verandah_day:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
     stop ambience
-    scene bg int_musclub_day with dissolve
+    scene bg int_musclub_day with dissolve2
     play ambience ambience_music_club_day
     
     me "Ау?"
@@ -811,7 +816,7 @@ label blwnfh_day_6:
     me "Отпуск заработал."
     mi "Вот как, и как же у тебя это вышло? Вожатая же просто так не отпускает."
     
-    th "Блин, если мне всем придется рассказывать, почему меня отпустили с линейки, то я с ума сойду."
+    th "Если мне всем придется рассказывать, почему меня отпустили с линейки, то я с ума сойду."
     #me "А меня вот отпустила просто так блять! Я же тут в лагере, в отличии от других, нихуя не делаю, хуи пинаю, а поэтому всегда готов стоять грёбанный час на площади и выслушивать ёбанную, никому нахрен не нужную, речь вожатой! НАХУЙ ОНО БЛЯТЬ МНЕ ВООБЩЕ СДАЛОСЬ, А?! ТАК ЧТО ДАВАЙ УЕБЫВАЙ СУКА! БЕГИ ФОРЕСТ! БЕГИ!"
     
     me "Долго рассказывать."
@@ -1046,6 +1051,13 @@ label blwnfh_day_6:
     mi "А если не поторопимся то будем в ещё более проигрышном положении."
     mi "Поэтому давай скорее пойдем!"
     me "Ладно-ладно."
+    
+    scene bg ext_musclub_verandah_day with dspr
+    play sound sfx_close_door_1
+    $ renpy.pause(1.5, hard=True)
+    scene bg ext_musclub_day with sphere_invert_blure_dissolve2
+    $ renpy.pause(1.5, hard=True)
+    
     
     window hide
     stop ambience fadeout 3

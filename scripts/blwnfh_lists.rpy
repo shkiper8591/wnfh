@@ -120,6 +120,8 @@ init -2 python:
         "slide_down",
         "sphere",
         "sphere_invert",
+        "door",
+        "door_invert",
         "clock_l",
         "clock_r",
         "slide_diagonal",

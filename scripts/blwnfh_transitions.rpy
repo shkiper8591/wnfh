@@ -70,6 +70,28 @@ init:
     $ sphere_invert_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 5.0, 100)
     $ sphere_invert_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["sphere_invert"]), 10.0, 100)
     
+    # Дверь из центра
+    $ door_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 1.0, 1)
+    $ door_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 2.0, 1)
+    $ door_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 5.0, 1)
+    $ door_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 10.0, 1)
+    # Дверь из центра размытая
+    $ door_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 1.0, 100)
+    $ door_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 2.0, 100)
+    $ door_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 5.0, 100)
+    $ door_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door"]), 10.0, 100)
+    
+    # Дверь в центр
+    $ door_invert_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 1.0, 1)
+    $ door_invert_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 2.0, 1)
+    $ door_invert_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 5.0, 1)
+    $ door_invert_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 10.0, 1)
+    # Дверь в центр размытая
+    $ door_invert_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 1.0, 100)
+    $ door_invert_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 2.0, 100)
+    $ door_invert_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 5.0, 100)
+    $ door_invert_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["door_invert"]), 10.0, 100)
+    
     # Диагональный слайд размытый
     $ slide_diagonal_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 1.0, 100)
     $ slide_diagonal_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 2.0, 100)

@@ -22,7 +22,7 @@ label blwnfh_day_1_dream:
     nvl hide dissolve
     stop music fadeout 0.5
     $ blwnfh_set_mode()
-    scene black
+    scene black with dissolve
     $ renpy.pause(1.0)
     jump blwnfh_day_0
     
@@ -1597,8 +1597,6 @@ label blwnfh_day_1:
     un "Спасибо!"
     
     window hide
-    
-    
     show un smile pioneer at go_to_chair_left behind table
     show kat normal pioneer at go_to_chair_right behind chair_r
     $ renpy.pause(1.0, hard=True)

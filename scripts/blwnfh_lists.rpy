@@ -125,6 +125,8 @@ init -2 python:
         "clock_l",
         "clock_r",
         "slide_diagonal",
+        "santa_barbara_in",
+        "santa_barbara_out",
         "exp1",
         "exp2",
         "exp3",
@@ -238,7 +240,9 @@ init 2:
     $ blwnfh_music_list["major_grom"] = blwnfh_MUSIC + "Move Like A Devil.mp3"
     $ blwnfh_music_list["ratne_igre"] = blwnfh_MUSIC + "Kerber - Ratne Igre.mp3"
     $ blwnfh_music_list["international"] = blwnfh_MUSIC + "international.mp3"
-    $ blwnfh_music_list["strange"] = blwnfh_MUSIC + "strange.ogg" 
+    $ blwnfh_music_list["strange"] = blwnfh_MUSIC + "strange.ogg"
+    $ blwnfh_music_list["major_grom_2"] = blwnfh_MUSIC + "ya znayu kto ti.mp3"
+    $ blwnfh_music_list["santa_barbara"] = blwnfh_MUSIC + "santa barbara music.mp3"
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

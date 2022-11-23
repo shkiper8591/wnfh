@@ -1052,16 +1052,24 @@ label blwnfh_day_6:
     mi "Поэтому давай скорее пойдем!"
     me "Ладно-ладно."
     
+    window hide
     scene bg ext_musclub_verandah_day with dspr
     play sound sfx_close_door_1
-    $ renpy.pause(1.5, hard=True)
-    scene bg ext_musclub_day with sphere_invert_blure_dissolve2
-    $ renpy.pause(1.5, hard=True)
-    
-    
-    window hide
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_musclub_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_path_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_houses_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_square_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_dining_hall_away_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_dining_hall_near_day with santa_barbara_in_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 3
-    scene bg int_dining_hall_people_day with Dissolve(5.0)
+    scene bg int_dining_hall_people_day with santa_barbara_in_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 5
     show mi normal pioneer with dissolve
     window show

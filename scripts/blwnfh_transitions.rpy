@@ -98,23 +98,23 @@ init:
     $ slide_diagonal_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 5.0, 100)
     $ slide_diagonal_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["slide_diagonal"]), 10.0, 100)
     
-    # Санта барбара внутрь
+    # Санта барбара изнутри
     $ santa_barbara_in_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 1.0, 1)
     $ santa_barbara_in_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 2.0, 1)
     $ santa_barbara_in_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 5.0, 1)
     $ santa_barbara_in_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 10.0, 1)
-    # Санта барбара внутрь размытая
+    # Санта барбара изнутри размытый
     $ santa_barbara_in_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 1.0, 100)
     $ santa_barbara_in_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 2.0, 100)
     $ santa_barbara_in_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 5.0, 100)
     $ santa_barbara_in_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_in"]), 10.0, 100)
     
-    # Санта барбара изнутри
+    # Санта барбара внутрь
     $ santa_barbara_out_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 1.0, 1)
     $ santa_barbara_out_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 2.0, 1)
     $ santa_barbara_out_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 5.0, 1)
     $ santa_barbara_out_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 10.0, 1)
-    # Санта барбара изнутри размытая
+    # Санта барбара внутрь размытие
     $ santa_barbara_out_blure_dissolve = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 1.0, 100)
     $ santa_barbara_out_blure_dissolve2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 2.0, 100)
     $ santa_barbara_out_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 5.0, 100)

@@ -1081,8 +1081,7 @@ label blwnfh_day_6:
     "И пара свободных мест были рядом с Катей и[wp] {w}Леной."
     
     show mi normal pioneer at left with dissolve
-    show kat normal pioneer with dissolve
-    show un normal pioneer at right with dissolve
+    show kat normal pioneer at right with dissolve
     
     mi "Доброе утро, товарищи, разрешите сесть с вами?"
     kat "Да, конечно."
@@ -1102,15 +1101,7 @@ label blwnfh_day_6:
     kat "Ходить, людей опрашивать, фотографировать."
     me "Да, это всё будет очень утомительно, поэтому давайте поедим в тишине."
     
-    "Лена тихонько встала из-за стола."
-    "Видимо она уже закончила свой завтрак, пока мы тут трепались."
-    
-    un "Увидимся в кружке."
-    kat "Ага, до встречи!"
-    
-    hide un with dissolve
-    
-    th "Ну всё, теперь жрать!"
+    "Я только опустил ложку в мюсли, как Катя задала вопрос:"
     
     kat "А чем вы занимались?"
     

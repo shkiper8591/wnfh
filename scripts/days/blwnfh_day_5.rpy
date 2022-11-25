@@ -331,7 +331,7 @@ label blwnfh_day_5:
     
     "Она резко взяла меня обеими руками за запястье и стала пытаться поднять. {w}Разумеется, без особого успеха."
     
-    me "Ну а чего ты хотела, сорок пять тонн как-никак!"
+    me "На что ты вообще рассчитывала?"
     kat "Ну вставай давай!"
     
     "Катя сделала грустные глазки, которыми уставилась на меня."
@@ -1563,15 +1563,20 @@ label blwnfh_day_5:
     sh "Хорошо, спасибо."
     me "Так, ну, продолжаем."
     
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.7 ycenter 0.6
+        ease_quart 1.2 ycenter 0.5
+    
     "Вновь подняв колонку мы пошли дальше."
     
-    stop ambience
-    scene bg ext_playground_day with dissolve
+    stop ambience fadeout 1.5
+    scene bg ext_playground_day with dissolve2
     show sh normal pioneer at left with dissolve
-    play ambience ambience_soccer_play_background
+    play ambience ambience_soccer_play_background fadein 2
     
     "Вскоре мы вышли на поле."
-    "И вышли немного не вовремя, ибо там во всю гоняли мяч мелкие."
+    "И вышли немного не вовремя, ибо мелкие там во всю гоняли мяч."
     
     th "Похоже, финальная отработка маневров."
 
@@ -1581,6 +1586,11 @@ label blwnfh_day_5:
     
     "Дойдя до нужного места с горем пополам, мы поставили колонку на место."
     
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 0.7 ycenter 0.6
+        ease_quart 1.2 ycenter 0.5
+    
     sh "Вот и донесли[wp] Теперь вторая."
     me "Слушай, а зачем две-то? Мне кажется одной вполне хватит."
     sh "Так коментатора-то два."
@@ -1589,7 +1599,7 @@ label blwnfh_day_5:
     
     show us surp1 sport at right with dissolve
     
-    "Тут, вся запыхавшись, подбежала к нам Ульянка."
+    "Тут, вся запыхавшись, к нам подбежала Ульянка."
     
     us "Ого, как вы это смогли дотащить?! {w}Она же неподъемная!"
     
@@ -1608,20 +1618,21 @@ label blwnfh_day_5:
     us "Ой, кому ты болтаешь-то?"
     us "Если она весила столько, вы бы не подняли её."
     me "Так мы же с Шуриком Гераклы, чё нам какая-то лёгонькая коробочка."
-    us "Лёгонькая говоришь? {w}А чего ж тогда с вас двоих пот течёт ручьем?"
+    us "Лёгонькая говоришь?"
+    us "А чего ж тогда с вас двоих пот течёт ручьем?"
     me "Жарко просто."
     us "Ну-ну!"
-    sh "Это конечно всё очень весело, но нам надо нести вторую колонку."
+    sh "Товарищи, это конечно всё очень смешно и весело, но нам надо нести вторую колонку."
     me "Да, пойдем."
     us "Ещё увидимся!"
     me "Несомненно."
     
-    # таймскип
-    
-    stop ambience
-    scene bg ext_stage_normal_day with dissolve
+    window hide
+    stop ambience fadeout 3
+    scene bg ext_stage_normal_day with sphere_invert_dissolve5
     show sh normal pioneer with dissolve
-    play ambience ambience_camp_center_day
+    play ambience ambience_camp_center_day fadein 3
+    window show
     
     "Со второй колонкой мы управились куда быстрее."
     "Также мы оттаранили стол и разного рода оборудование."
@@ -1635,12 +1646,11 @@ label blwnfh_day_5:
     
     "Взяв провода мы отправились на поле тем же путем."
     
-    # переход
-    
     # Желательно как-нибудь, так сказать, модернизировать фон с полем, добавив на него две колонки, стол, микрофоны и всякое такое.
     # Короче говоря, примерно на как фоне с площадью, переоборудованной под танцпол.
+    # Ну или тупо заказать новый фон у Ивана например или Насти.
     
-    scene bg ext_playground_day with dissolve
+    scene bg ext_playground_day with slide_diagonal_blure_dissolve2
     show sh normal pioneer with dissolve
     
     "К моменту когда мы закончили всё таскать, на поле уже было пусто."
@@ -1720,7 +1730,9 @@ label blwnfh_day_5:
     
     hide sh with dissolve
     
-    # пауза с исчезновением интерфейса
+    window hide
+    $ renpy.pause(3.5, hard=True)
+    window show
     # мб какое-нибудь достижение тут дать, хз, или чуть раньше.
     
     "Скука стояла смертная, заняться было абсолютно нечем."
@@ -1791,17 +1803,22 @@ label blwnfh_day_5:
     sh "Да ради бога, тебя тут никто держать не собирается."
     el "Вот и славно."
     
-    show el grin with dspr
+    show el grin:
+        xcenter 0.28 ycenter 0.5
+    with dspr
     
     el "Так, моя миссия выполнена, аривидерчи."
     
-    hide el with dissolve
+    show el grin pioneer:
+        ease_quart 2.5 xcenter -0.2
     
     "Сергей быстро покинул поле, но не обычным путем, а через пролесок."
     "Через который мы таскали оборудование."
     
     th "Интересно, почему же он пошел туда, даже не могу предположить."
     th "А, точно, там же библиотека рядом, очевидно же куда он направился."
+    
+    hide el
     
     sh "Пришел, и так невеселое настроение ещё сильнее испортил и ушёл. {w}Чудно."
     me "Да, неприятно."
@@ -1814,11 +1831,15 @@ label blwnfh_day_5:
     
     "Он демонстративно посмотрел на часы."
     
+    show sh normal pioneer:
+        xcenter 0.72 ycenter 0.5
+    
     sh "Обед уже скоро, вот как раз пока дойду, положу, уже прозвучит горн."
     me "Да? Ну тогда до скорого."
     sh "Ага."
     
-    hide sh with dissolve
+    show sh normal pioneer:
+        ease_quart 3.5 xcenter 1.2
     
     "Шурик по уверенее схватил мотки и ушёл."
     
@@ -1863,11 +1884,11 @@ label blwnfh_day_5:
     
     "Я встал и быстрым шагом отправился в столовую."
     
-    # переход
-    
-    stop ambience 
-    scene bg int_dining_hall_day with dissolve
-    play ambience ambience_dining_hall_empty
+    window hide
+    stop ambience fadeout 0.5
+    scene bg int_dining_hall_day with slide_up_dissolve5
+    play ambience ambience_dining_hall_empty fadein 5.0
+    window show
     
     "В столовой было пусто, даже наши дежурные куда-то запропастились."
     "Взяв поднос я занял своё обыденное место в дальнем углу."
@@ -1880,9 +1901,9 @@ label blwnfh_day_5:
     
     "Я тут же принялся уничтожать свой обед, пока столовая, тем временем, стала наполнятся пионерами."
 
-    stop ambience
+    stop ambience fadeout 1.0
     scene bg int_dining_hall_people_day with dissolve
-    play ambience ambience_dining_hall_full
+    play ambience ambience_dining_hall_full fadein 2.5
     
     "Однако, еда на вкус была такой себе."
     "Макароны были явно недосолённы, мясо было каким-то чёрвствым."
@@ -1996,23 +2017,20 @@ label blwnfh_day_5:
     kat "Да-да, мы поняли, пошли уже."
     
     "Недовольно пробурчала Катя, которая уже вышла из-за стола."
-    "Мы последовали примеру Кати и вскоре взяли курс на выход из столовой."
+    "Мы согласно покивали и взяли курс на выход из столовой."
     
-    # переход
-    
-    stop ambience
-    scene bg ext_dining_hall_near_day with dissolve
-    play ambience ambience_camp_center_day 
+    stop ambience fadeout 1.0
+    show bg ext_dining_hall_near_day with dissolve
+    play ambience ambience_camp_center_day fadein 1.0
     
     "Покинув её пределы, я встал на крыльце и сделал глубокий вдох."
     "После почти получаса нахождения в замкнутом помещении, мне просто был необходим этот глоток свежего воздуха."
     
-    # переход
-    
-    scene bg ext_playground_day with dissolve
+    scene bg ext_playground_day with santa_barbara_in_blure_dissolve2
     
     "Мы сразу пришли на поле, где расположились на небольшой трибуне."
     "Сюда также, помимо нас, подтягивались и наши футболисты."
+    "Катя и Мику же расположились позади меня."
     
     show dv normal sport at left with dissolve
     show us normal sport at right with dissolve
@@ -2022,20 +2040,13 @@ label blwnfh_day_5:
     
     show us grin with dspr
     
-    us "Да? И какое-же? Дома вдвоем на кроватке будете «отдыхать» пока все свалили?"
-    me "Ща как тресну тебе подзатыльник!"
-    
-    show dv smile with dspr
-    
-    dv "Ульяна, как некультурно-то[wp]"
-    
-    "Алиса поцыкивая закачала головой."
-    
-    me "За столом коментатора сидеть будем мы, объявлять на всё поле успехи и провалы ваши."
+    us "Да? И какое-же?"
+    me "За столом коментатора!"
+    me "Будем мы объявлять на всё поле успехи и провалы ваши."
     
     show us surp1 with dspr
     
-    us "Ого! И правда отличное вам местечко досталось."
+    us "Ого! И правда отличное вам местечко досталось[wp]"
     
     show us laugh with dspr
     
@@ -2065,16 +2076,21 @@ label blwnfh_day_5:
     
     us "Побежду. {w}Побе[wp]"
     
-    show us grin sport at right with dspr
+    show us grin sport:
+        xcenter 0.72 ycenter 0.5
+    with dspr
     
     us "Выиграю короче!"
     kat "И не сомневаемся!"
     
-    hide us with dissolve
-    show dv normal at center with dspr
+    show us normal sport:
+        ease_quart 3.0 xcenter -0.2
+    show dv normal with dspr
     
     "Ульянка весело ускакала на дальний конец футбольного поля."
     "Алиса же осталась, и как-то странно изучала меня и Катю взглядом."
+    
+    hide us
     
     me "Что-то не так?"
     dv "Да нет, всё нормально."
@@ -2101,17 +2117,22 @@ label blwnfh_day_5:
     dv "Задумалась я и всего-то. {w}Даже не о вас между прочим."
     kat "Ну-ну!"
     
-    show dv normal with dspr
+    show dv normal sport:
+        xcenter 0.28 ycenter 0.5
+    with dspr
     
     dv "Ладно, пойду я."
     kat "Счастливо."
     mi "Удачи тебе!"
     
-    hide dv with dissolve
-    
-    # пауза
+    show dv normal sport:
+        ease_quart 3.0 xcenter -0.2
+    $ renpy.pause(1.0)
     
     "Потихоньку, народ стал подтягиваться сюда."
+    
+    hide dv
+    
     "Какие-то пионеры разбредались по обеим сторонам футбольного поля."
     "А какие-то занимали места на трибунах."
     "Я даже заметил несколько знакомых лиц, прошедших мимо:"
@@ -2136,6 +2157,7 @@ label blwnfh_day_5:
     
     "Из всех мимо прошедших, меня заинтересовала Славя."
     "А всё потому, что она была в спортивной форме."
+    
     th "Она тоже что ли участвует?"
     
     show mt smile pioneer panama with dissolve
@@ -2211,7 +2233,7 @@ label blwnfh_day_5:
     kat "Да и ты не один[wp] {w}Короче бросай это, нормально всё будет."
     me "Надеюсь."
     
-    # пауза
+    $ renpy.pause(1.5)
     
     "Наконец, вдалеке, Ольга Дмитриевна помахала нам."
     
@@ -2373,8 +2395,8 @@ label blwnfh_day_5:
     "Участники побегали по полю две с половиной минуты, явно имитируя активные действия."
     "И наконец рефери объявила о перерыве.\n"
     
-    stop ambience
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 1.0
+    play ambience ambience_camp_center_day fadein 2.0
     
     me "И так, первый тайм заканчивается ничьей."
     kat "Довольно весело было, особенно в начале и конце."
@@ -2384,15 +2406,24 @@ label blwnfh_day_5:
     
     nvl hide dissolve
     $ blwnfh_set_mode()
-    show kat normal pioneer with dissolve
+    show kat normal pioneer:
+        xcenter 0.5 ycenter 0.5
+    with dissolve
     
     "Мы выключили свои микрофоны и я откинулся на спинку стула."
     "И пофигу, что она была крайне неудобная."
     
+    show sl normal sport:
+        xcenter 1.2 ycenter 0.5
+    
     kat "Фуух[wp] Устала разговаривать."
     me "Да, есть такое."
     
-    show sl normal sport at right with dspr
+    show sl normal sport:
+        ease_quart 2.0 xcenter 0.72 
+    show kat normal pioneer:
+        ease_quart 2.3 xcenter 0.28
+    $ renpy.pause(2.3, hard=True)
     
     sl "Ну что, коментаторы, как вы тут?"
     me "Довольно неплохо."
@@ -2442,11 +2473,16 @@ label blwnfh_day_5:
     sl "Пойду я, надо мяч осмотреть, поменять может придется, а то Ульяна так лупит по нему."
     kat "Хорошо."
     
-    hide sl with dissolve
-    show kat normal pioneer with dspr
+    show sl normal sport:
+        ease_quart 2.5 xcenter 1.2
+    show kat normal pioneer:
+        ease_quart 2.7 xcenter 0.5
     
     "Славя ушла и мы снова остались наедине."
     "Я посмотрел на часы. {w}До начала второго тайма оставалось семь минут."
+    
+    hide sl
+    
     "Семь минут, на протяжении которых себя надо было чем-то занять[wp]"
     
     me "Кать, а какой у тебя любимый сухофрукт?"
@@ -2543,8 +2579,8 @@ label blwnfh_day_5:
     
     nvl clear
     
-    stop ambience
-    play ambience ambience_soccer_play_background
+    stop ambience fadeout 1.5
+    play ambience ambience_soccer_play_background fadein 2
     
     "\nПоскольку в прошлый раз первыми били футболисты Алисы, в этот раз мяч был за командой Ульяны. {w}Собственно, первый удар она и наносила, а если быть предельно точным — давала пас.\n"
     
@@ -2675,8 +2711,8 @@ label blwnfh_day_5:
     "Алиса же валяется на земле, и ни то от усталости, ни то от разочарования. {w}В прочем, последнее по её вине."
     "Рефери свистком останавливает матч и строит футболистов рядом с трибуной.\n"
     
-    stop ambience
-    play ambience ambience_camp_center_day
+    stop ambience fadeout 1.5
+    play ambience ambience_camp_center_day fadein 2
     
     me "Не хочу показаться больно хитрым, но я так и знал, что Ульяна победит."
     kat "Ой, всё ты знал, просто у тебя кто побеждают те и наши!"
@@ -2712,9 +2748,9 @@ label blwnfh_day_5:
     "Тут и дураком быть не надо, чтобы понять одну простую истину." 
     "Сейчас мы будем таскать всю аппаратуру назад[wp] {w}Мать её за ногу."
     
-    show kat normal at left with dissolve
+    show kat normal pioneer at left with dissolve
     show mt smile pioneer panama with dissolve
-    show sv angry pioneer glasses with dissolve
+    show sv angry pioneer glasses at right with dissolve
     show el normal pioneer at fright with dissolve
     
     "Подойдя, вожатая встретила нас легкими овациями."
@@ -2746,6 +2782,7 @@ label blwnfh_day_5:
     
     hide kat with dissolve
     hide mt with dissolve
+    show sv angry pioneer at left with dspr
     show el normal pioneer at right with dspr
     
     "И мы все мы разошлись в разные стороны."
@@ -2852,15 +2889,15 @@ label blwnfh_day_5:
     
     me "Хорошо, тогда до встречи."
     
-    # переход
-    
-    stop ambience
-    scene bg int_dining_hall_people_sunset with dissolve
-    play ambience ambience_dining_hall_full
+    window hide
+    stop ambience fadeout 3
+    scene bg int_dining_hall_people_sunset with door_dissolve5
+    play ambience ambience_dining_hall_full fadein 3
     
     "Пришел я в столовую немного позже самого горна."
-    "И как обычно народу было море и свободное место наблюдалось только рядом с нашими футболистками."
-    "К которым я пошел, взяв поднос с ужином."
+    "И, как обычно, народу было море."
+    "Единственное свободное место наблюдалось только рядом с нашими футболистками."
+    "К которым, взяв поднос с ужином, я и отправился."
     
     show dv normal pioneer at right with dissolve
     show us normal pioneer at left with dissolve
@@ -2882,7 +2919,7 @@ label blwnfh_day_5:
     us "А вот с таких!"
     
     th "Мда, похоже в тишине поужинать не получится."
-    th "Так что, режим абсолютного игнорирования окружающих — включён."
+    th "Что ж, режим абсолютного игнорирования внешних раздражителей — включён."
     
     show us normal with dspr
     show dv normal with dspr
@@ -2970,7 +3007,7 @@ label blwnfh_day_5:
     show mt smile with dspr
     
     mt "Ну раз так, то пойдем же убираться."
-    me "Ольга Дмитриевна, а можно там ну[wp] Завтра например, а? А то я усну сейчас."
+    me "Ольга Дмитриевна, а можно там ну[wp] Завтра например, а? {w}А то я усну сейчас."
     mt "Можно, но поскольку у меня завтра куча дел, подъем у тебя будет в шесть утра."
     me "А позже никак?"
     
@@ -2987,17 +3024,17 @@ label blwnfh_day_5:
     
     me "Всё, я пошел."
     
-    # переход
-    
-    stop ambience
-    scene bg ext_square_sunset with dissolve
-    play ambience ambience_camp_center_evening
+    stop ambience fadeout 2.0
+    scene bg ext_square_sunset with santa_barbara_out_dissolve2
+    play ambience ambience_camp_center_evening fadein 2.0
     
     "Я кое-как ковылял домой."
     "Всё же, усталость давала о себе знать."
-    "Благо, что в этом лагере большинство едят медленно и ещё не скоро выйдут из столовой."
-    "А значит, никакие Ульяны или другие воры-редицивисты мне не помешают."
-    "Думал я, если бы не легкое постукивание по плечу."
+    
+    th "Благо, что в этом лагере большинство едят медленно и ещё не скоро выйдут из столовой."
+    th "А значит, никакие Ульяны или другие воры-редицивисты мне не помешают."
+    
+    "Думал я, как мне кто-то легко похлопал по плечу."
     
     show kat normal pioneer with dissolve
     
@@ -3018,8 +3055,7 @@ label blwnfh_day_5:
     
     "Катя встала поближе ко мне, и мы неспешным шагом отправлись к своим домикам."
     
-    scene bg ext_houses_sunset with dissolve
-    show kat normal pioneer with dissolve
+    show bg ext_houses_sunset with dissolve
     
     kat "Слушай, а хорошо мы с тобой откомментировали, я в столовой только и слышала, как нас обсуждают, а не победителей."
     me "Круто, что могу сказать."
@@ -3059,8 +3095,7 @@ label blwnfh_day_5:
     kat "Да!"
     me "Хорошо, если у меня завтра не будут отваливаться руки и ноги, сплаваем туда."
     
-    scene bg ext_house_of_mt_sunset with dissolve
-    show kat normal pioneer with dissolve
+    show bg ext_house_of_mt_sunset with dissolve
     
     kat "Ну и отлично, тогда быстрее иди домой, чтобы у тебя точно ничего не отвалилось."
     kat "Мы уже как раз дошли." 
@@ -3075,11 +3110,17 @@ label blwnfh_day_5:
     "Катя в припрыжку убежала в соседний домик."
     
     th "Интересно, чего это она так рано? {w}Ладно я, весь зае[wp] уставший."
-    th "Хотя, возможно ей завтра надо встать пораньше."
+    th "Хотя, возможно её действительно утомила вся эта комментаторская деятельность."
     
-    stop ambience
+    scene bg ext_house_of_mt_sunset:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
+    $ renpy.pause(2.0)
+    stop ambience fadeout 1.0
     scene bg int_house_of_mt_sunset with dissolve
-    play ambience ambience_int_cabin_evening
+    play ambience ambience_int_cabin_evening fadein 1.0
     
     "Войдя внутрь, я уже почти не мог ходить."
     

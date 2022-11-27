@@ -30,7 +30,7 @@ label blwnfh_test_main_menu:
         "Анимации":
             jump blwnfh_test_anim
         "Спрайты?":
-            jump blwnfh_test_sprites
+            jump blwnfh_sprites_test
         "Музыку?":
             jump blwnfh_test_music
         "Цензуру?":

@@ -168,30 +168,30 @@ init 2:
         ## Новые персонажи
         # Катя
         make_sprites_for('kat', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
-        make_sprites_for('kat2', 'pioneer', ['mod:body2', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('kat', 'pioneer loose', ['mod:body2', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('kat', 'pioneer shirt', ['mod:body', 'mod:pioneer', 'mod:shirt', 'mod:<emotion>'])
-        make_sprites_for('kat2', 'pioneer shirt', ['mod:body2', 'mod:pioneer', 'mod:shirt', 'mod:<emotion>'])
+        make_sprites_for('kat', 'pioneer shirt loose', ['mod:body2', 'mod:pioneer', 'mod:shirt', 'mod:<emotion>'])
         
         make_sprites_for('kat', 'casual', ['mod:body', 'mod:casual', 'mod:<emotion>'])
-        make_sprites_for('kat2', 'casual', ['mod:body2', 'mod:casual', 'mod:<emotion>'])
+        make_sprites_for('kat', 'casual loose', ['mod:body2', 'mod:casual', 'mod:<emotion>'])
         make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
-        make_sprites_for('kat2', 'casual shirt', ['mod:body', 'mod:casual', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat2', 'casual shirt', ['mod:body', 'mod:casual', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
+        make_sprites_for('kat', 'casual shirt', ['mod:body', 'mod:casual', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
+        make_sprites_for('kat', 'casual shirt loose', ['mod:body2', 'mod:casual', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
+        make_sprites_for('kat', 'casual shirt loose', ['mod:body2', 'mod:casual', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
         
         make_sprites_for('kat', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
-        make_sprites_for('kat2', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('kat', 'swim loose', ['mod:body2', 'mod:swim', 'mod:<emotion>'])
         make_sprites_for('kat', 'swim shirt', ['mod:body', 'mod:swim', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat', 'swim shirt', ['mod:body', 'mod:swim', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
-        make_sprites_for('kat2', 'swim shirt', ['mod:body', 'mod:swim', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat2', 'swim shirt', ['mod:body', 'mod:swim', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
+        make_sprites_for('kat', 'swim shirt', ['mod:body', 'mod:swim', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
+        make_sprites_for('kat', 'swim shirt loose', ['mod:body2', 'mod:swim', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
+        make_sprites_for('kat', 'swim shirt loose', ['mod:body2', 'mod:swim', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
         
         make_sprites_for('kat', 'body', ['mod:body', 'mod:<emotion>'])
-        make_sprites_for('kat2', 'body', ['mod:body', 'mod:<emotion>'])
+        make_sprites_for('kat', 'body loose', ['mod:body2', 'mod:<emotion>'])
         make_sprites_for('kat', 'body shirt', ['mod:body', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat', 'body shirt', ['mod:body', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
-        make_sprites_for('kat2', 'body shirt', ['mod:body', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
-        make_sprites_for('kat2', 'body shirt', ['mod:body', 'mod:shirt2', 'mod:<emotion>'], emotion=('angry', 'grin', 'laugh', 'smile2')) # Для 3 позы
+        make_sprites_for('kat', 'body shirt', ['mod:body', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
+        make_sprites_for('kat', 'body shirt loose', ['mod:body2', 'mod:shirt', 'mod:<emotion>'], exclude=('angry', 'grin', 'laugh', 'smile2'))
+        make_sprites_for('kat', 'body shirt loose', ['mod:body2', 'mod:shirt2', 'mod:<emotion>'], emotions=['angry', 'grin', 'laugh', 'smile2']) # Для 3 позы
 
         make_sprites_for('kat', 'pioneer dark', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], sprite_define_func=_dark_sprite)
         

@@ -4,90 +4,458 @@ label blwnfh_sprites_test:
     play ambience ambience_camp_center_day fadein 3
     scene bg ext_square_day with dissolve
     
-    "О нет, к нам приближается Светлана, что мы будем делать?"
+    "Тест нового спрайта Кати"
+    "Какую тушку нам нужно просмотреть?"
     
     menu:
-        "Прятаться":
-            jump hided
-        "Примем свою судьбу":
-            jump accepted
-        "Ебать Свету":
-            jump fuck
-    
-label hided:
-    
-    "Вы спрятались от Светы за скамейкой."
-    
-    show sv smile pioneer glasses with dissolve
-    
-    "По началу, вам кажется, что она не заметила вас."
-    "Но она явно не просто так улыбается."
-    "Да и смотрит прямо на вас[wp]"
-    
-    show sv happy with dspr
-    
-    sv "Семён, тебе не скрыться от общественно полезных работ!"
-    me "Да блять!"
-    
-    window hide
-    $ renpy.pause(1.0)
-    jump blwnfh_sprites_test
-    
-label accepted:
+        "Первую":
+            jump kat_1
+        "Вторую":
+            jump kat_2
+        "Третью":
+            jump kat_3
+        "Четвертую":
+            jump kat_4
 
-    "Вы решили не прятатся от своей судьбы и принять её как следует, лицом к лицу."
+label kat_1:
     
-    show sv norm pioneer glasses with dissolve
+    "Какую одёжку мы хотим отсмотреть?"
     
-    sv "О, вот ты где, а я тебя ищу."
-    
-    show sv smile with dspr
-    
-    sv "У тебя важное задание, Семён!"
-    me "И какое же?"
-    sv "Смотри, видишь статую Генды?"
-    me "Ну[wp] Сложно не заметить."
-    sv "В общем тебе нужно перетащить его на другое место рядом со сценой."
-    sv "Вон верёвка рядом лежит, цепляешь за Генду и тащишь."
-    
-    "Семён внимательно изучил рядом стоящую комсомолку."
-    "Буквально заглянул ей в душу."
-    
-    show sv cute with dspr
-    
-    me "Свет, {w}ты ёбнулась?"
-    sv "Нет, а ты?"
-    
-    window hide
-    $ renpy.pause(1.0)
-    jump blwnfh_sprites_test
-    
-label fuck:
+    menu:
+        "Пионерскую":
+            jump kat_1_pioneer
+        "Купальник":
+            jump kat_1_swim
+        "Обычную одежду":
+            jump kat_1_casual
+        "Обычную одежду + рубашка":
+            jump kat_1_shirt
 
-    "Вы решили[wp] {w}Серьёзно?"
-    "Не-не-не, ну что это[wp]"
-    "Слушайте! Это вообще-то тест спрайтов, а не порно!"
-    "Вам за таким нужно идти на соответствующие сайты, готовить салфетки и[wp]"
-    "Ай, кому я объясняю, не маленькие уже раз такие веши хотите увидеть."
-    "Я всё сказал, топайте отсюда."
-    "Чего вы не ещё уходите?"
-    "Нету у меня голой Светы! И сцен[wp] {w}«Эротического» содержания."
-    "Но вы же не угомонные да?"
-    "Ладно, чтобы вам такого предложить[wp]"
-    "Как насчёт Лены? Все любят Лену!"
-    "Да-а-а[wp] Её вам и покажу."
-    "Острожно, голые женщины через[wp]"
+label kat_1_pioneer:    
+    "Первая тушка пионерская"                                                   
     
-    show d7_un_hentai with dissolve
+    "Normal"
     
-    "Сейчас!"
-    "Вот, смотрите сколько влезет."
-    "Изучите каждую мелкую деталь столь чудесной девушки в такой прекрасной позе."
-    "Ну что? Довольны?"
+    show kat normal pioneer with dissolve
     
-    hide d7_un_hentai with dspr
+    "Confused"
     
-    "Всё, хватит."
-    "Вы отправляетесь обратно в меню отладки за плохое поведение!"
+    show kat confused with dspr
+    
+    "Cry"
+    
+    show kat cry with dspr
+    
+    "interested"
+    
+    show kat interested with dspr
+    
+    "Sad"
+    
+    show kat sad with dspr
+    
+    "Serious"
+    
+    show kat serious with dspr
+    
+    "Smile"
+    
+    show kat smile with dspr
+
+label kat_1_swim:
+    
+    "Первая тушка купальник"
+    
+    "Normal"
+    
+    show kat normal swim with dissolve
+    
+    "Confused"
+    
+    show kat confused with dspr
+    
+    "Cry"
+    
+    show kat cry with dspr
+    
+    "interested"
+    
+    show kat interested with dspr
+    
+    "Sad"
+    
+    show kat sad with dspr
+    
+    "Serious"
+    
+    show kat serious with dspr
+    
+    "Smile"
+    
+    show kat smile with dspr
+
+label kat_1_casual:
+    
+    "Первая тушка обычная одежда"
+    
+    "Normal"
+    
+    show kat normal casual with dissolve
+    
+    "Confused"
+    
+    show kat confused with dspr
+    
+    "Cry"
+    
+    show kat cry with dspr
+    
+    "interested"
+    
+    show kat interested with dspr
+    
+    "Sad"
+    
+    show kat sad with dspr
+    
+    "Serious"
+    
+    show kat serious with dspr
+    
+    "Smile"
+    
+    show kat smile with dspr
+
+label kat_1_casual:
+    
+    "Первая тушка обычная одежда + рубашка"
+    
+    "Normal"
+    
+    show kat normal casual shirt with dissolve
+    
+    "Confused"
+    
+    show kat confused with dspr
+    
+    "Cry"
+    
+    show kat cry with dspr
+    
+    "interested"
+    
+    show kat interested with dspr
+    
+    "Sad"
+    
+    show kat sad with dspr
+    
+    "Serious"
+    
+    show kat serious with dspr
+    
+    "Smile"
+    
+    show kat smile with dspr     
+    
+label kat_2:
+    
+    "Какую одёжку мы хотим отсмотреть?"
+    
+    menu:
+        "Пионерскую":
+            jump kat_2_pioneer
+        "Купальник":
+            jump kat_2_swim
+        "Обычную одежду":
+            jump kat_2_casual
+        "Обычную одежду + рубашка":
+            jump kat_2_shirt
+            
+label kat_2_pioneer:
+            
+    "Вторая тушка пионерская"
+    
+    "Guilty"
+    
+    show kat guilty pioneer with dissolve
+    
+    "Horny"
+    
+    show kat horny with dspr
+    
+    "Scared"
+    
+    show kat scared with dspr
+    
+    "Shy"
+    
+    show kat shy with dspr
+    
+    "Surprise"
+    
+    show kat surprise with dspr
+    
+label kat_2_swim:
+            
+    "Вторая тушка купальник"
+    
+    "Guilty"
+    
+    show kat guilty swim with dissolve
+    
+    "Horny"
+    
+    show kat horny with dspr
+    
+    "Scared"
+    
+    show kat scared with dspr
+    
+    "Shy"
+    
+    show kat shy with dspr
+    
+    "Surprise"
+    
+    show kat surprise with dspr    
+    
+label kat_2_casual:
+            
+    "Вторая тушка обычная одежда"
+    
+    "Guilty"
+    
+    show kat guilty casual with dissolve
+    
+    "Horny"
+    
+    show kat horny with dspr
+    
+    "Scared"
+    
+    show kat scared with dspr
+    
+    "Shy"
+    
+    show kat shy with dspr
+    
+    "Surprise"
+    
+    show kat surprise with dspr    
+    
+label kat_2_shirt:
+            
+    "Вторая тушка обычная одежда + рубашка"
+    
+    "Guilty"
+    
+    show kat guilty casual shirt with dissolve
+    
+    "Horny"
+    
+    show kat horny with dspr
+    
+    "Scared"
+    
+    show kat scared with dspr
+    
+    "Shy"
+    
+    show kat shy with dspr
+    
+    "Surprise"
+    
+    show kat surprise with dspr      
+    
+label kat_3:
+    
+    "Какую одёжку мы хотим отсмотреть?"
+    
+    menu:
+        "Пионерскую":
+            jump kat_3_pioneer
+        "Купальник":
+            jump kat_3_swim
+        "Обычную одежду":
+            jump kat_3_casual
+        "Обычную одежду + рубашка":
+            jump kat_3_shirt    
+    
+label kat_3_pioneer:
+
+    "Третья тушка пионерская"
+    
+    "Angry"
+    
+    show kat angry pioneer with dissolve
+    
+    "Grin"
+    
+    show kat grin with dspr
+    
+    "Laugh"
+    
+    show kat laugh with dspr
+    
+    "Smile2"
+    
+    show kat smile2 with dspr
+
+label kat_3_swim:
+
+    "Третья тушка купальник"
+
+    "Angry"
+    
+    show kat angry swim with dissolve
+    
+    "Grin"
+    
+    show kat grin with dspr
+    
+    "Laugh"
+    
+    show kat laugh with dspr
+    
+    "Smile2"
+    
+    show kat smile2 with dspr
+    
+label kat_3_casual:
+
+    "Третья тушка обычная одежда"
+
+    "Angry"
+    
+    show kat angry casual with dissolve
+    
+    "Grin"
+    
+    show kat grin with dspr
+    
+    "Laugh"
+    
+    show kat laugh with dspr
+    
+    "Smile2"
+    
+    show kat smile2 with dspr
+    
+label kat_3_shirt:   
+    
+    "Третья тушка обычная одежда + рубашка"
+
+    "Angry"
+    
+    show kat angry casual shirt with dissolve
+    
+    "Grin"
+    
+    show kat grin with dspr
+    
+    "Laugh"
+    
+    show kat laugh with dspr
+    
+    "Smile2"
+    
+    show kat smile2 with dspr
+    
+label kat_4:
+
+    "Какую одёжку мы хотим отсмотреть?"
+    
+    menu:
+        "Пионерскую":
+            jump kat_4_pioneer
+        "Купальник":
+            jump kat_4_swim
+        "Обычную одежду":
+            jump kat_4_casual
+        "Обычную одежду + рубашка":
+            jump kat_4_shirt
+
+label kat_4_pioneer:
+
+    "Четвертая тушка пионерская"
+    
+    "Happy"
+    
+    show kat happy pioneer with dissolve
+    
+    "Obida"
+    
+    show kat obida with dspr
+    
+    "Thinking"
+    
+    show kat thinking with dspr
+    
+    "Upset"
+    
+    show kat upset with dspr
+
+label kat_4_swim:
+
+    "Четвертая тушка купальник"
+    
+    "Happy"
+    
+    show kat happy swim with dissolve
+    
+    "Obida"
+    
+    show kat obida with dspr
+    
+    "Thinking"
+    
+    show kat thinking with dspr
+    
+    "Upset"
+    
+    show kat upset with dspr
+
+label kat_4_casual:
+
+    "Четвертая тушка обычная одежда"
+    
+    "Happy"
+    
+    show kat happy casual with dissolve
+    
+    "Obida"
+    
+    show kat obida with dspr
+    
+    "Thinking"
+    
+    show kat thinking with dspr
+    
+    "Upset"
+    
+    show kat upset with dspr
+
+label kat_4_shirt:
+
+    "Четвертая тушка обычная одежда + рубашка"
+    
+    "Happy"
+    
+    show kat happy casual with dissolve
+    
+    "Obida"
+    
+    show kat obida with dspr
+    
+    "Thinking"
+    
+    show kat thinking with dspr
+    
+    "Upset"
+    
+    show kat upset with dspr
+    
+    "Кликни, чтобы вернутся в тестовое меню"
     
     jump blwnfh_test

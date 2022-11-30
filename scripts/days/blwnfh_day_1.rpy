@@ -535,12 +535,14 @@ label blwnfh_day_1:
     "А Лена не собиралась останавливаться."
     
     un "Нет, не хватит!"
+    
     show un evil_smile pioneer close:
         ease 0.3 xcenter 0.7
         ease 0.7 xcenter 0.75
     show dv surprise pioneer2 close:
         ease 0.3 xcenter 0.53
         ease 0.7 xcenter 0.55
+    
     un "Будешь знать, что бывает когда суешь нос в чужие разговоры!"
     dv "Семён, помоги пожалуйста!"
     me "А чего я-то сразу? {w}Мне мой нос жалко."
@@ -901,7 +903,7 @@ label blwnfh_day_1:
     "И был приятно удивлен, когда не увидел перед собой орду пионеров."
     "Перед автобусом стоял один единственный пионер, а если быть точнее — пионерка."
     
-    show kat normal2 casual shirt far at center with dissolve
+    show kat normal casual shirt far at center with dissolve
     
     # тут потом можно будет вставить сцену, когда чел будет переигрывать, семён кароче узнает катю, но не поймет откуда он её знает, в общем типа как в 7дл, но в как в 7дл, но ты понял ок, да?
     # а ещё если ты не прочитаешь этот комент, у тебя отвалится комп через 5 минут.
@@ -914,7 +916,7 @@ label blwnfh_day_1:
     th "Быть может дочурка какого-нибудь партийного работника? {w}Так сказать всё самое лучшее из-за границы."
     th "Ладно, неважно."
     
-    show kat normal2 casual shirt far at center with dspr
+    show kat thinking casual shirt far at center with dspr
     
     "Я подошел к ней поближе."
     
@@ -938,7 +940,7 @@ label blwnfh_day_1:
     me "А поскольку у меня ещё сегодня имеются дела, давай не терять ни минуты и следуй за мной."
     me "Только разве что, мне по пути кое-куда надо будет зайти, но это быстро, я обещаю."
     
-    show kat nepon casual shirt far at center with dspr 
+    show kat confused casual shirt far at center with dspr 
     
     "Девочка, видимо, немного опешила от вывалившейся на нее информации."
     "О чем можно было судить по её лицу, на котором читалось «легкое» недоумение."
@@ -956,7 +958,7 @@ label blwnfh_day_1:
         ease_quart 2.0 zoom 1.5
     
     stop ambience fadeout 0.5
-    scene bg ext_clubs_day with dissolve2
+    show bg ext_clubs_day with dissolve2 
     play ambience ambience_camp_center_day fadein 3
     
     "Зайдя за ворота и пройдя пару метров, мы оказались перед зданием клубов." 
@@ -1051,7 +1053,11 @@ label blwnfh_day_1:
     
     kat "Это у вас нормально так?"
     me "Лагерные традиции."
-    kat "Ужасные традиции[wp] {w}Но спасибо хотя бы, что волосы не намочили."
+    kat "Ужасные традиции[wp]"
+    
+    show kat upset casual shirt with dspr
+    
+    kat "Но спасибо хотя бы, что волосы не намочили."
     me "Зато у нас появился ещё один повод быстрее сходить на склад."
     kat "Угу[wp]"
     
@@ -1118,7 +1124,7 @@ label blwnfh_day_1:
     sl "А тебе зачем?"
     me "Да вот, нам бы новенькую переодеть в форму."
     
-    show kat normal casual shirt:
+    show kat sad casual shirt:
         xcenter -0.2
         ease_quart 2.0 xcenter 0.28 
     $ renpy.pause(2.0, hard=True)
@@ -1155,6 +1161,8 @@ label blwnfh_day_1:
     sl "Вот тебе, свежая, только недавно с сушки сняла."
     
     "Сказала она протягивая Кате форму."
+    
+    show kat surprise with dspr
     
     kat "А мне что, прямо перед {i}ним{/i} переодеваться?"
     
@@ -1811,6 +1819,7 @@ label blwnfh_day_1:
     window hide
     
     show blink
+    stop ambience fadeout 3.5
     $ blwnfh_set_time("sunset")
     $ renpy.pause(3.5, hard=True)
     scene bg ext_house_of_mt_sunset
@@ -1893,7 +1902,6 @@ label blwnfh_day_1:
     show mt grin pioneer panama:
         zoom 1.0 alpha 1.0
         ease 2.0 zoom 0.7 alpha 0.0
-    
     
     "Ольга Дмитриевна удалилась в дом."
     hide mt with dissolve

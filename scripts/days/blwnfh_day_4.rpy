@@ -32,7 +32,7 @@ label blwnfh_day_4:
     "Видимо придя в себя, Катя обнаружила себя в довольно неловкой ситуации и быстро убрала руку с меня, благодаря чему я наконец смог встать."
     "Левый бок болел адски."
     
-    show kat shy2 pioneer close at center with dissolve
+    show kat shy pioneer close at center with dissolve
     
     "Я посмотрел на Катю, которая была явно смущена сложившейся ситуацией."
     

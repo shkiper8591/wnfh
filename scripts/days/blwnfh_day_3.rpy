@@ -1543,7 +1543,7 @@ label blwnfh_day_3:
     
     "Мы ушли в дальнюю часть библиотеке, где был вход в подсобное помещение, куда мы и вошли."
     
-    scene bg int_editorial_day_cat with dissolve
+    scene bg int_editorial_day with dissolve
     show mz normal pioneer glasses at cright with dspr 
     show kat normal pioneer at fright with dspr
     show un normal pioneer far at left with dspr

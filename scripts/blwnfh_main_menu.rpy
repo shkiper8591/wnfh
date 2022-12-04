@@ -88,7 +88,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_settings_menu")]
+            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_settings_menu", _transition=dissolve)]
             idle blwnfh_gui["img"]["settings"]
             hover blwnfh_gui["img"]["settings"]
             hover_sound blwnfh_gui["sound"]["plimp"]

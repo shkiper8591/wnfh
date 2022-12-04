@@ -1769,7 +1769,7 @@ label blwnfh_day_3:
     stop ambience fadeout 1.5
     scene bg ext_library_sunset with dissolve2
     show kat normal pioneer with dissolve
-    play ambience ambience_camp_center_evening 2.5
+    play ambience ambience_camp_center_evening fadein 2.5
     $ renpy.pause(0.5)
     $ blwnfh_set_time("sunset")
     window show

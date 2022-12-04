@@ -1254,7 +1254,7 @@ label blwnfh_day_6:
     
     me "Не знаю, да и знать не хочу."
     
-    scene bg int_editorial_day_cat with dissolve2
+    scene bg int_editorial_day with dissolve2
     show un normal pioneer far at left with dissolve
     show kat normal pioneer at right with dissolve
     
@@ -1611,7 +1611,7 @@ label blwnfh_day_6:
 
     window hide
     stop ambience fadeout 3
-    scene bg int_editorial_day_cat with Dissolve(5.0)
+    scene bg int_editorial_day with Dissolve(5.0)
     show kat normal pioneer with dspr
     play ambience ambience_library_day fadein 5
     window show
@@ -1748,7 +1748,7 @@ label blwnfh_day_6:
     stop music fadeout 3
     $ blwnfh_set_name("me", "Семён")
     $ blwnfh_set_name("voice","Голос")
-    scene bg int_editorial_day_cat
+    scene bg int_editorial_day
     show un normal pioneer at left
     show kat normal pioneer at right
     show unblink

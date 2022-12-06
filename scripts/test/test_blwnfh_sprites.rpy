@@ -4,7 +4,17 @@ label blwnfh_sprites_test:
     play ambience ambience_camp_center_day fadein 3
     scene bg ext_square_day with dissolve
     
-    "Тест нового спрайта Кати"
+    "Тест новых спрайтов"
+    "Чей спрайт нам нужно отладить?"
+    
+    menu:
+        "Кати":
+            jump kat
+        "Светы":
+            jump sv
+
+label kat:
+    
     "Какую тушку нам нужно просмотреть?"
     
     menu:
@@ -1338,5 +1348,21 @@ label kat_4_pioneer_shirt_loose:
     "Upset"
     
     show kat upset with dspr
+    
+label sv:
+    
+    "Света в очках без планшета."
+    
+    show sv angry pioneer glasses with dissolve
+    
+    "Света без очков с планшетом."
+    
+    show sv angry pioneer tablet with dspr
+    
+    "Света с очками и планшетом."
+    
+    show sv angry pioneer glasses tablet with dissolve
+    
+    "Кликни чтобы вернутся в меню отладки"
     
     jump blwnfh_test

@@ -3032,6 +3032,8 @@ label blwnfh_day_4:
     
     "Я же разделся и лег в постель, где сон почти сразу же утащил меня в свои объятия."
     
+    window hide
     show blink
-    $ renpy.pause(1.0)
+    stop ambience fadeout 3.5
+    $ renpy.pause(2.0, hard=True)
     jump blwnfh_day_5

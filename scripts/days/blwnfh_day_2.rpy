@@ -14,8 +14,9 @@ label blwnfh_day_2:
     th "Кажется, мне приснился кто-то[wp] {w}Но вот кто?"
     th "Впрочем, имеет ли это какое-то значение сейчас?"
     
-    scene bg int_house_of_mt_sunset
+    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
     show unblink
+    with None
     
     "Открыв глаза, я увидел, что Ольга Дмитриевна всё ещё была в домике, и сидела за столом раскладывая какие-то бумаги."
     "Я приподнялся и протер глаза."
@@ -52,18 +53,21 @@ label blwnfh_day_2:
     
     me "Всё, я пошел."
     
+    hide mt with dissolve
+    
     "Взяв банные принадлежности, я покинул дом."
     
-    stop ambience fadeout 1
-    play sound sfx_open_door_2
-    scene bg ext_house_of_mt_sunset with dissolve2
+    window hide
+    scene bg ext_house_of_mt_sunset with dspr
+    stop ambience fadeout 0.5
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["get_to_know_me_better"] fadein 5
     
     "Выйдя на улицу, я вдохнул свежего воздуха, что дало мне небольшой заряд бодрости."
     "Ещё немного постояв, и полностью насладившись таким прекрасным утром, я пошел в сторону умывальников."
     
-    scene bg ext_houses_sunset with dissolve2
+    scene bg ext_houses_sunset with slide_left_blure_dissolve2
     
     "По пути к умывальникам, я стал вспоминать, что же всё-таки мне снилось."
     "Кажется, это был самый обычный сон, в том плане, что в нем ничего такого и не происходило." 
@@ -88,17 +92,20 @@ label blwnfh_day_2:
     "А поэтому я быстренько сделал все дела и потопал обратно к домику, дабы занести принадлежности."
     
     window hide
-    scene bg ext_houses_sunset with dissolve2
+    scene bg ext_houses_sunset with slide_right_blure_dissolve2
     
-    $ renpy.pause(1)
+    $ renpy.pause(1.0, hard=True)
     
     scene bg ext_house_of_mt_sunset with dissolve2
-    
-    $ renpy.pause(1)
+    scene bg ext_house_of_mt_sunset:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
     
     scene bg int_house_of_mt_sunset with dissolve2
     play sound sfx_open_door_1
-    $ renpy.pause(1)
+    $ renpy.pause(1.0, hard=True)
     window show
     
     "Вожатой дома уже не было."
@@ -108,7 +115,14 @@ label blwnfh_day_2:
     
     "Я быстрым шагом направился на площадь."
     
-    scene bg ext_square_sunset with dissolve2
+    window hide
+    stop ambience fadeout 0.5
+    scene bg ext_house_of_mt_sunset with dspr
+    play sound sfx_close_door_1
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_houses_sunset with slide_left_blure_dissolve2
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_square_sunset with slide_right_blure_dissolve2
     
     "На площади уже собрался народ, и я встал в строй рядом с Серым." 
     

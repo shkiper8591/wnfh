@@ -975,7 +975,7 @@ label blwnfh_day_1:
     
     show sh upset pioneer at right with dissolve
     show el normal pioneer at fleft with dissolve
-    show sv angry pioneer glasses at center with dissolve
+    show sv angry pioneer glasses tablet at center with dissolve
     
     "В клубе, что не удивительно, находились Сергей и Шурик."
     "А вот что было удивительным, там это нахождение здесь нашей комсомолки."
@@ -1011,12 +1011,12 @@ label blwnfh_day_1:
     sv "А вот и третий пожаловал!"
     sv "Я правда и с первым не закончила[wp]"
     
-    show sv happy pioneer glasses at center with dspr
+    show sv happy pioneer glasses tablet at center with dspr
     
     sv "Но ничего и до тебя доберусь."
     me "Аэ[wp] Вообще-то нет, не доберёшься."
     
-    show sv angry pioneer glasses at center with dspr
+    show sv angry pioneer glasses tablet at center with dspr
     
     sv "Это ещё почему?"
     me "Мне вожатая поручила сопроводить новенькую."
@@ -1025,9 +1025,9 @@ label blwnfh_day_1:
     
     #34 надо добавить звуки воды и девичий визг !9
     
-    play music music_list["awakening_power"]
+    play music music_list["awakening_power"] fadein 1.5
     
-    show sv shocked pioneer glasses at center with dspr
+    show sv scared pioneer glasses tablet at center with dspr
     
     "И тут, как гром средь ясного неба, с улицы раздался плеск воды, а затем и громкий девичий визг."
 
@@ -1061,7 +1061,7 @@ label blwnfh_day_1:
     me "Зато у нас появился ещё один повод быстрее сходить на склад."
     kat "Угу[wp]"
     
-    show sv afraid pioneer glasses at right with dissolve
+    show sv angry pioneer glasses tablet at right with dissolve
     stop music fadeout 3
     
     "Из клубов к нам вышла Планшетик."
@@ -1071,9 +1071,6 @@ label blwnfh_day_1:
     sv "Что тут случилось?"
     me "Новенькую из ведра окатили."
     sv "Новенькую? Мне об этом ничего не говорили[wp]"
-    
-    show sv angry pioneer glasses at right with dspr
-    
     sv "То есть, кошмар какой! Ну я устрою этим двум рыжим!"
     sv "Всё Семён, давай я отведу нашу новенькую к складу."
     me "Не, я провалился я и отведу." 

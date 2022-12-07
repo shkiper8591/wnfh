@@ -320,13 +320,22 @@ label blwnfh_day_5:
     
     kat "Правда? Ну тогда у меня для тебя плохие новости."
     me "И какие же?"
+    
+    show kat grin with dspr
+    
     kat "Меня за тобой Ольга Дмитриевна послала."
-    kat "Так что давай, встал и побежал на линейку." 
+    kat "Так что давай, встал и побежал на линейку."
+
+    show kat thinking with dspr
+    
     kat "А то если верить вожатой, тебя будут ждать очень неприятные последствия."
     
     th "Интересно, что это за последствия такие?" 
     
     me "Кать, я не очень-то и хо[wp]"
+    
+    show kat serious with dspr
+    
     kat "Я сказала побежал!"
     
     "Она резко взяла меня обеими руками за запястье и стала пытаться поднять. {w}Разумеется, без особого успеха."
@@ -334,18 +343,28 @@ label blwnfh_day_5:
     me "На что ты вообще рассчитывала?"
     kat "Ну вставай давай!"
     
+    show kat sad with dspr
+    
     "Катя сделала грустные глазки, которыми уставилась на меня."
     "Конечно в этот раз, эта схема на меня не сработала, но всё же решил немного подыграть ей и встал на ноги."
+    
+    show kat normal with dspr
     
     me "Ну встал я, дальше что?"
     kat "А теперь пошли на линейку!"
     me "У меня есть предложение получше. {w}Давай немного погуляем, м?"
+    
+    show kat obida with dspr
+    
     kat "Ага, чтобы ещё и мне прилетело от вожатой? Пожалуй откажусь."
     
     "Однако, несмотря на её отказ, я не собирался так просто отступать."
     "И у меня даже, кажется, созрел план как убедить её поменять своё мнение."
     
     me "Ой, да ладно, что вот тебе сделает Ольга Дмитриевна?"
+    
+    show kat thinking with dspr
+    
     kat "Ну[wp] Не знаю[wp] Много чего[wp] {w}Наверное."
     me "Вот именно, что «наверное»!"
     me "А ты ещё никак не успела серьезно провиниться перед ней[wp]"
@@ -357,28 +376,38 @@ label blwnfh_day_5:
     
     th "Видимо, мой план увенчался успехом."
     
+    show kat upset with dspr
+    
     "Тяжело вздохнув, она наконец отпустила мои руки и я сразу же принялся тереть своё запястье."
     
     th "Ну и крепкая хватка у нее, аж зудит немного. {w}Так у меня ничего не выйдет сыграть, хотя может по пути пройдет."
     
+    show kat happy with dspr
+    
     kat "Вот Семён, умеешь ты убеждать, пошли поиграем."
     me "Ага, только давай, чтобы время не терять, сократим путь через пролесок."
+    
+    show kat grin with dspr
+    
     kat "Хорошо, только постарайся в этот раз не заблудится."
     me "Ничего не обещаю."
     
-    stop ambience fadeout 2
+    stop ambience fadeout 2.0
     scene bg ext_path_day with slide_diagonal_blure_dissolve2
-    show kat normal pioneer with dissolve
-    play ambience ambience_forest_day fadein 2
+    show kat interested pioneer with dissolve
+    play ambience ambience_forest_day fadein 2.0
     
     "Мы вышли в пролесок."
     "На протяжении пути, что нами был пройден, Катя с большим любопытством разглядывает моё лицо."
     "И когда меня стало это уже реально смущать, она сказала:"
     
     kat "Ты побрился что ли?"
-    me "М? Ну, да."
+    me "М? Ну, да." 
     kat "Так во-о-от оно что, а я тут думаю."
     me "А что? Хочешь сказать щетина мне шла?"
+    
+    show kat serious with dspr
+    
     kat "Нет, совсем не шла, ты так куда {i}симпатичнее{/i} выглядишь."
     me "Что ж, спасибо."    
     
@@ -391,7 +420,13 @@ label blwnfh_day_5:
     "Никакой музыки с его стороны не доносилось."
     
     kat "Похоже будем одни играть."
+    
+    show kat upset with dspr
+    
     me "Ну и ладно."
+    
+    show kat happy with dspr
+    
     kat "Ну не знаю, Мику входила в наш с тобой уговор."
     me "Так, я и не утверждал, что она на месте."
     kat "Ах, ах вот ты какой, да? {w}Манипулятор!"
@@ -425,7 +460,7 @@ label blwnfh_day_5:
     stop ambience fadeout 0.5
     scene bg int_musclub_day with dissolve2
     play ambience ambience_music_club_day fadein 2
-    show kat normal pioneer at right with dissolve
+    show kat surprise pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 3
     window show
     
@@ -437,18 +472,22 @@ label blwnfh_day_5:
     th "Надо же, все удобства тут организовала себе, постелила подобие матраса, притащила одеяло, подушку и спит."
     th "Интересно, почему именно здесь."
     
+    
+    
     kat "Не удобно вышло как-то[wp] {w}Может пойдем куда-то в другое место?" 
     me "Да[wp]"
     
     "Мы уже было собирались уходить, как полы подло протяжно проскрипели и Мику проснулась."
     "Протерев глаза, та немного приподнялась и посмотрела на нас, а мы на нее."
     
+    show kat shy with dspr
+    
     kat "Доброе утро я полагаю."
     
     "Пока мы разглядывали друг друга, я заметил крайне важную деталь, от которой мне стало ещё более неловко и заставило немного покраснеть."
     "На стуле возле пианино висела её пионерская форма и[wp] {w}И нижнее бельё[wp]"
     
-    th "Вот это поворот."
+    th "Вот это поворот[wp]"
     
     "Мику, видимо, немного пришла в себя и вся покрылась румянцем."
     
@@ -2750,7 +2789,7 @@ label blwnfh_day_5:
     
     show kat normal pioneer at left with dissolve
     show mt smile pioneer panama with dissolve
-    show sv angry pioneer glasses at right with dissolve
+    show sv angry pioneer glasses tablet at right with dissolve
     show el normal pioneer at fright with dissolve
     
     "Подойдя, вожатая встретила нас легкими овациями."
@@ -2782,7 +2821,7 @@ label blwnfh_day_5:
     
     hide kat with dissolve
     hide mt with dissolve
-    show sv angry pioneer at left with dspr
+    show sv angry pioneer glasses tablet at left with dspr
     show el normal pioneer at right with dspr
     
     "И мы все мы разошлись в разные стороны."
@@ -2790,7 +2829,7 @@ label blwnfh_day_5:
     
     me "А ты чего осталась?"
     
-    show sv happy pioneer glasses at left with dspr
+    show sv happy pioneer glasses tablet at left with dspr
     
     sv "А мне поручено проконтролировать вас."
     
@@ -2798,7 +2837,7 @@ label blwnfh_day_5:
     
     me "Да мы как-то и сами справимся, наверное[wp]"
     
-    show sv angry pioneer glasses with dspr
+    show sv angry pioneer glasses tablet with dspr
     
     sv "Вот именно, что «наверное»!"
     sv "Давайте-давайте, идём!"
@@ -2809,11 +2848,16 @@ label blwnfh_day_5:
     sv "А побыстрее никак?"
     me "Никак!"
     sv "Тогда, я вам помогу."
+    
+    show sv angry pioneer glasses with dspr
+    
+    "Света положила свой планшет на стол и принялась вместе с нами отключать кабеля."
+    
     sv "А то вы так до ночи сидеть будете."
     
     "Покачав головой, я продолжил отключать устройства."
     
-    show sv shocked pioneer glasses with dspr
+    show sv scared pioneer glasses with dspr
     
     "Но не успел вытащить очередной кабель, как раздался громкий треск."
     
@@ -2830,7 +2874,7 @@ label blwnfh_day_5:
     
     me "Лучше стой и командуй."
     
-    show sv angry pioneer glasses with dspr
+    show sv angry pioneer glasses tablet with dspr
     
     sv "Хм! Не очень-то и хотелось вам помогать, знаете ли."
     me "Ага, конечно."

@@ -43,6 +43,7 @@ label blwnfh_day_6_dream:
 label blwnfh_day_6:
     $ blwnfh_new_chapter(6)
     $ blwnfh_set_time("sunset")
+    $ blwnfh_set_name("kat", "Катя")
     $ blwnfh_set_name("me", "Семён")
     play ambience ambience_int_cabin_evening fadein 3
     scene expression blwnfh_wakeup("int_house_of_mt_sunset")
@@ -1257,7 +1258,7 @@ label blwnfh_day_6:
     scene bg int_editorial_day with dissolve2
     show un normal pioneer far at left with dissolve
     show kat normal pioneer at right with dissolve
-    
+    # тут нада фоновые спрайты. Отвечаю на вопрос почему я сам этого не сделаю: пошёл нахуй
     kat "О, зато Лена на месте."
     un "Снова привет."
     
@@ -1343,9 +1344,9 @@ label blwnfh_day_6:
     show kat normal pioneer:
         subpixel True
         parallel:
-            ease 1.0 xcenter 0.75 ycenter 0.85
+            ease 1.0 xcenter 0.76 ycenter 0.90
         parallel:
-            ease 1.0 rotate 30.0
+            ease 1.0 rotate 23.0
     "Катя посмотрела на Ульяну и плюхнулась на землю."
     
     th "М-да Кать[wp] Да ты лохушка, её тут даже не было."

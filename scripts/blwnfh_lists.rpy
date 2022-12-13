@@ -243,6 +243,7 @@ init 2:
     $ blwnfh_music_list["strange"] = blwnfh_MUSIC + "strange.ogg"
     $ blwnfh_music_list["major_grom_2"] = blwnfh_MUSIC + "ya znayu kto ti.mp3"
     $ blwnfh_music_list["santa_barbara"] = blwnfh_MUSIC + "santa barbara music.mp3"
+    $ blwnfh_music_list["back_in_black"] = blwnfh_MUSIC + "AC-DC - Back in black.mp3"
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

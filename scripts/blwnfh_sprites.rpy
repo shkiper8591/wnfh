@@ -43,6 +43,9 @@ init 2:
             'sv': {
                 'angry': 1, 'happy': 1, 'scared': 1,
             },
+            'sd': {
+                'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1,
+            },
             #'uv': {
             #    'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
             #},
@@ -198,9 +201,16 @@ init 2:
         #Света
         
         make_sprites_for('sv', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
-        make_sprites_for('sv', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:glasses', 'mod:<emotion>'])
+        make_sprites_for('sv', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'mod:glasses'])
         make_sprites_for('sv', 'pioneer tablet', ['mod:body', 'mod:pioneer', 'mod:tablet', 'mod:<emotion>'])
-        make_sprites_for('sv', 'pioneer glasses tablet', ['mod:body', 'mod:pioneer', 'mod:glasses', 'mod:tablet', 'mod:<emotion>'])
+        make_sprites_for('sv', 'pioneer glasses tablet', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'mod:glasses', 'mod:tablet'])
+        
+        #Сергей Дмитриевич
+        
+        make_sprites_for('sd', 'forma', ['mod:body', 'mod:<emotion>'])
+        make_sprites_for('sd', 'forma glasses', ['mod:body', 'mod:<emotion>', 'mod:glasses'])
+        make_sprites_for('sd', 'forma cigarete', ['mod:cigarete', 'mod:<emotion>'])
+        make_sprites_for('sd', 'forma cigarete glasses', ['mod:cigarete', 'mod:<emotion>', 'mod:glasses'])
         
         ## Новые старые спрайты
         # Женя
@@ -223,7 +233,6 @@ init 2:
         make_sprites_for('mt', 'dress panama', ['es:body', 'es:dress', 'es:<emotion>', 'es:panama'])
         make_sprites_for('mt', 'swim panama', ['es:body', 'es:swim', 'es:<emotion>', 'es:panama'])
         make_sprites_for('mt', 'body panama', ['es:body', 'es:<emotion>', 'es:panama'])
-        
         
         # Ульяна
         make_sprites_with_custom_emotions(['normalsmile'], 'us', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])

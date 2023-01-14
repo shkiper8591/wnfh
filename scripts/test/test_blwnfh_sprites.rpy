@@ -12,7 +12,8 @@ label blwnfh_sprites_test:
             jump kat
         "Светы":
             jump sv
-
+        "Деда":
+            jump sd
 label kat:
     
     "Какую тушку нам нужно просмотреть?"
@@ -1366,3 +1367,137 @@ label sv:
     "Кликни чтобы вернутся в меню отладки"
     
     jump blwnfh_test
+    
+label sd:
+
+    "Мы хотим отсмотреть спрайты с сигаретой или без?"
+    
+    menu:
+        "Без сигареты":
+            jump sd_normal
+        "С сигаретой":
+            jump sd_cigarete
+            
+label sd_normal:
+    
+    "С очками или без?"
+    
+    menu:
+        "С очками":
+            jump sd_normal_glasses
+        "Без":
+            jump sd_normal_1
+
+label sd_normal_1:
+    
+    "Нормальная/спокойная эмоция"
+    
+    show sd forma normal at center with dissolve
+    
+    "Злая эмоция"
+    
+    show sd forma angry with dspr
+    
+    "Ухмылка"
+    
+    show sd forma grin with dspr
+    
+    "Сурьёзная эмоция"
+    
+    show sd forma serious with dspr
+    
+    "Улыбка"
+    
+    show sd forma smile with dspr
+    
+    "Смех"
+    
+    show sd forma laugh with dspr
+    
+label sd_normal_glasses:    
+    
+    "Нормальная/спокойная эмоция"
+    
+    show sd forma normal glasses at center with dissolve
+    
+    "Злая эмоция"
+    
+    show sd forma angry with dspr
+    
+    "Ухмылка"
+    
+    show sd forma grin with dspr
+    
+    "Сурьёзная эмоция"
+    
+    show sd forma serious with dspr
+    
+    "Улыбка"
+    
+    show sd forma smile with dspr
+    
+    "Смех"
+    
+    show sd forma laugh with dspr
+    
+label sd_cigarete:
+
+    "С очками или без?"
+    
+    menu:
+        "С очками":
+            jump sd_cigarete_glasses
+        "Без":
+            jump sd_cigarete_1
+            
+label sd_cigarete_1:
+    
+    "Нормальная/спокойная эмоция"
+    
+    show sd forma cigarete normal at center with dissolve
+    
+    "Злая эмоция"
+    
+    show sd forma cigarete angry with dspr
+    
+    "Ухмылка"
+    
+    show sd forma cigarete grin with dspr
+    
+    "Сурьёзная эмоция"
+    
+    show sd forma cigarete serious with dspr
+    
+    "Улыбка"
+    
+    show sd forma cigarete smile with dspr
+    
+    "Смех"
+    
+    show sd forma cigarete laugh with dspr
+    
+label sd_cigarete_glasses:
+
+    "Нормальная/спокойная эмоция"
+    
+    show sd forma cigarete normal glasses at center with dissolve
+    
+    "Злая эмоция"
+    
+    show sd forma cigarete angry with dspr
+    
+    "Ухмылка"
+    
+    show sd forma cigarete grin with dspr
+    
+    "Сурьёзная эмоция"
+    
+    show sd forma cigarete serious with dspr
+    
+    "Улыбка"
+    
+    show sd forma cigarete smile with dspr
+    
+    "Смех"
+    
+    show sd forma cigarete laugh with dspr

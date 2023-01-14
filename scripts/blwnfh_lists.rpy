@@ -271,6 +271,7 @@ init 2:
     $ blwnfh_music_list["violin_solo"] = blwnfh_MUSIC + "ConcernedApe - Violin Solo.mp3"
     $ blwnfh_music_list["the_wind_can_be_still"] = blwnfh_MUSIC + "ConcernedApe - Winter (The Wind Can Be Still).mp3"
     $ blwnfh_music_list["winter_festival"] = blwnfh_MUSIC + "ConcernedApe - Winter Festival.mp3"
+    $ blwnfh_music_list["the_80_hs"] = blwnfh_MUSIC + "the_80_hs.mp3"
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

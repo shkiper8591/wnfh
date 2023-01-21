@@ -38,10 +38,10 @@ init 2:
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
             'kat': {
-                'confused': 1, 'cry': 1, 'interested': 1, 'normal': 1, 'sad': 1, 'serious': 1, 'smile': 1, 'guilty': 2, 'horny': 2, 'scared': 2, 'shy': 2, 'surprise': 2, 'angry': 3, 'grin': 3, 'laugh': 3, 'smile2': 3, 'happy': 4, 'obida': 4, 'thinking': 4, 'upset': 4, 'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5,
+                'confused': 1, 'cry': 1, 'interested': 1, 'normal': 1, 'sad': 1, 'serious': 1, 'smile': 1, 'joy': 1, 'guilty': 2, 'horny': 2, 'scared': 2, 'shy': 2, 'surprise': 2, 'angry': 3, 'rage': 3, 'grin': 3, 'laugh': 3, 'smile2': 3, 'happy': 4, 'obida': 4, 'thinking': 4, 'upset': 4, 'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5,
             },
             'sv': {
-                'angry': 1, 'happy': 1, 'scared': 1,
+                'angry': 1, 'happy': 1, 'scared': 1, 'worried': 1,
             },
             'sd': {
                 'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1,

@@ -63,6 +63,10 @@ label kat_1_pioneer:
     
     show kat normal pioneer with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -94,6 +98,10 @@ label kat_1_swim:
     "Normal"
     
     show kat normal swim with dissolve
+    
+    "Joy"
+    
+    show kat joy with dspr
     
     "Confused"
     
@@ -127,6 +135,10 @@ label kat_1_casual:
     
     show kat normal casual with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -158,6 +170,10 @@ label kat_1_casual:
     "Normal"
     
     show kat normal casual shirt with dissolve
+    
+    "Joy"
+    
+    show kat joy with dspr
     
     "Confused"
     
@@ -191,6 +207,10 @@ label kat_1_swim_shirt:
     
     show kat normal swim shirt with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -222,6 +242,10 @@ label kat_1_pioneer_shirt:
     "Normal"
     
     show kat normal swim shirt with dissolve
+    
+    "Joy"
+    
+    show kat joy with dspr
     
     "Confused"
     
@@ -435,6 +459,10 @@ label kat_3_pioneer:
     
     show kat angry pioneer with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -454,6 +482,10 @@ label kat_3_swim:
     "Angry"
     
     show kat angry swim with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -475,6 +507,10 @@ label kat_3_casual:
     
     show kat angry casual with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -494,6 +530,10 @@ label kat_3_shirt:
     "Angry"
     
     show kat angry casual shirt with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -515,6 +555,10 @@ label kat_3_swim_shirt:
     
     show kat angry swim shirt with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -534,6 +578,10 @@ label kat_3_pioneer_shirt:
     "Angry"
     
     show kat angry pioneer shirt with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -726,6 +774,10 @@ label kat_1_pioneer_loose:
     
     show kat normal pioneer loose with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -757,6 +809,10 @@ label kat_1_swim_loose:
     "Normal"
     
     show kat normal swim loose with dissolve
+    
+    "Joy"
+    
+    show kat joy with dspr
     
     "Confused"
     
@@ -790,6 +846,10 @@ label kat_1_casual_loose:
     
     show kat normal casual loose with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -821,6 +881,10 @@ label kat_1_casual_loose:
     "Normal"
     
     show kat normal casual shirt loose with dissolve
+    
+    "Joy"
+    
+    show kat joy with dspr
     
     "Confused"
     
@@ -854,6 +918,10 @@ label kat_1_swim_shirt_loose:
     
     show kat normal swim shirt loose with dissolve
     
+    "Joy"
+    
+    show kat joy with dspr
+    
     "Confused"
     
     show kat confused with dspr
@@ -885,6 +953,10 @@ label kat_1_pioneer_shirt_loose:
     "Normal"
     
     show kat normal swim shirt loose with dissolve
+    
+    "Joy"
+    
+    show kat joy
     
     "Confused"
     
@@ -1098,6 +1170,10 @@ label kat_3_pioneer_loose:
     
     show kat angry pioneer loose with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -1117,6 +1193,10 @@ label kat_3_swim_loose:
     "Angry"
     
     show kat angry swim loose with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -1138,6 +1218,10 @@ label kat_3_casual_loose:
     
     show kat angry casual loose with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -1157,6 +1241,10 @@ label kat_3_shirt_loose:
     "Angry"
     
     show kat angry casual shirt loose with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -1178,6 +1266,10 @@ label kat_3_swim_shirt_loose:
     
     show kat angry swim shirt loose with dissolve
     
+    "Rage"
+    
+    show kat rage with dspr
+    
     "Grin"
     
     show kat grin with dspr
@@ -1197,6 +1289,10 @@ label kat_3_pioneer_shirt_loose:
     "Angry"
     
     show kat angry pioneer shirt loose with dissolve
+    
+    "Rage"
+    
+    show kat rage with dspr
     
     "Grin"
     
@@ -1351,6 +1447,10 @@ label kat_4_pioneer_shirt_loose:
     show kat upset with dspr
     
 label sv:
+    
+    "Новая эмоция Светы"
+    
+    show sv worried pioneer with dissolve
     
     "Света в очках без планшета."
     

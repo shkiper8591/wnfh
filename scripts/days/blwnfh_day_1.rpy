@@ -1061,7 +1061,7 @@ label blwnfh_day_1:
     me "Зато у нас появился ещё один повод быстрее сходить на склад."
     kat "Угу[wp]"
     
-    show sv angry pioneer glasses tablet at right with dissolve
+    show sv worried pioneer glasses tablet at right with dissolve
     stop music fadeout 3
     
     "Из клубов к нам вышла Планшетик."
@@ -1071,6 +1071,9 @@ label blwnfh_day_1:
     sv "Что тут случилось?"
     me "Новенькую из ведра окатили."
     sv "Новенькую? Мне об этом ничего не говорили[wp]"
+    
+    show sv angry pioneer glasses tablet at right with dspr
+    
     sv "То есть, кошмар какой! Ну я устрою этим двум рыжим!"
     sv "Всё Семён, давай я отведу нашу новенькую к складу."
     me "Не, я провалился я и отведу." 

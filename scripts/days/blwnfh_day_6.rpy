@@ -3417,6 +3417,7 @@ label blwnfh_day_6:
     stop ambience
     scene bg int_library_day with dissolve
     play ambience ambience_library_day
+    show kat normal pioneer at right with dissolve
     show mz bukal pioneer with dissolve
     
     me "Снова привет."
@@ -3466,7 +3467,7 @@ label blwnfh_day_6:
     "На вид, две абсолютные противоположности друг друга."
     "Но, я полагаю, против любви не пойдешь, если она искренняя."
     
-    show kat intersted with dspr
+    show kat interested with dspr
     
     kat "Ау, Земля вызывает Юпитер."
     
@@ -3496,7 +3497,7 @@ label blwnfh_day_6:
     
     "Шли мы не разговаривая."
     "Спокойно и медленно, прям таки наслаждаясь этой прогулкой."
-    "Но похоже мой мозг не может вечно быть в тишине."
+    "Но, похоже, мой мозг не может вечно быть в тишине."
     "Оттого в нём созрел один, немаловажный вопрос."
     
     me "Кать[wp]"
@@ -3659,6 +3660,7 @@ label blwnfh_day_6:
     me "Туда!"
     
     scene black with dissolve
+    show kat normal pioneer at left with dissolve
     # тут должен быть нормальный фон, но его нет, так что да.
     
     "Спустившись с брандвахты, мы отошли метров на двадцать в сторону."
@@ -3907,7 +3909,7 @@ label blwnfh_day_6:
     
     kat "А, нет, я немка."
     
-    show kat normal with dsprr
+    show kat normal with dspr
     
     kat "Буштэйблих этвас ауф дойч."
     
@@ -4499,7 +4501,7 @@ label blwnfh_day_6:
     kat "Но только при условии, что это был первый и последний раз!"
     me "Обещаю."
     
-    show normal with dspr
+    show kat normal with dspr
     
     "Тем временем Саня убрал бутылку «Столичной» в ящик в столе."
     "А после подошел к дыре, которая только недавно была нашим тайником."
@@ -4888,10 +4890,10 @@ label blwnfh_day_6:
     "Я расположился по удобнее и вставив вёсла на свои места, мы отчалили."
     
     window hide
-    stop ambience fadeout 1.0
-    show cg d6_me_kat_boat_curious with dissolve
-    play ambience ambience_lake_shore_evening fadein 3
-    $ renpy.pause(1.0)
+    stop ambience fadeout 2.5
+    show cg d6_me_kat_boat_curious with Dissolve(5.0)
+    play ambience ambience_lake_shore_evening fadein 3.5
+    $ renpy.pause(0.5)
     window show
     
     "Катя радостно осматривалась вокруг, будто она первый раз в жизне плавает на лодке."

@@ -683,7 +683,7 @@ label blwnfh_day_4:
     
     "Немного потупившись, Катя взяла пакет в руки."
     
-    show kat nepon pioneer at center with dspr
+    show kat thinking pioneer at center with dspr
     #kat "Убери это говно отсюда нахуй."
     #me "Я тебе покушать принёс."
     #kat "Хули ты говном то вымазался."
@@ -2321,7 +2321,7 @@ label blwnfh_day_4:
     me "Слушай, я тут вспомнил, мне надо в клубы заскочить, ладно?"
     me "Просто о кое-чём узнать, так сказать, а потом я сразу в муз кружок."
     
-    show kat interested with dspr
+    show kat interested pioneer with dissolve
     
     "Катя осмотрела меня подозрительным взглядом."
     

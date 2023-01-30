@@ -8,7 +8,7 @@ label blwnfh_day_6_dream:
     show anim prolog_2 with Dissolve(5.0)
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
-    
+    # надо бы расширить этот сон
     "\nЯ медленно поднялся с земли и осмотрелся вокруг. {w}Удивительно, но стены неизвестных и страшных катакомб сменились на открытое небо и огромных размеров травянное поле, где в далеке виднелось море."
     "Не зная, что делать, я решил идти к воде, в надежде найти там что-то интересное. {w}Хотя прекрасно осознавал, что вряд ли что-то найду.\n"
     
@@ -1834,6 +1834,7 @@ label blwnfh_day_6:
     play music blwnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
     nvl show dissolve
     #34 звук противного скрипа 
+    # нужен ли этот сон...
     "Противный скрип открывающейся железной решётки, за которой открывается спуск в неизвестность."
     "Я медленно спускаюсь по лестнице в темноту. {w}Лишь факела, что держат стражники позади меня, чуть-чуть освещает дорогу и не дает случайно навернуться в бездну."
     
@@ -1993,7 +1994,8 @@ label blwnfh_day_6:
     mt "Так, давайте-ка посмотрим на ваши успехи."
    
     show kat normal with dspr
-    show un dr_normal_wk dr background with dissolve
+    show un dr_normal_wk dr background at center with dissolve
+    show mt normal pioneer at left with dspr
     
     "Вожатая стала проходится по помещению, попутно изучая, что рисует Лена и что написано у Кати."
     "Также не прошла и мимо меня, глянув на фотографии."
@@ -2208,7 +2210,7 @@ label blwnfh_day_6:
     kat "А что ещё?"
     me "Как ты относишься к рыбалке?"
     
-    show kat surpise with dspr
+    show kat surprise with dspr
     
     kat "Р-Рыбалке?"
     
@@ -2221,7 +2223,7 @@ label blwnfh_day_6:
     kat "Не знаю даже, нейтрально наверное."
     me "Уже неплохо."
     
-    show kat interesting with dspr
+    show kat interested with dspr
     
     kat "Значит, ты предлагаешь добыть еду прямо на острове?"
     me "Да, именно."  

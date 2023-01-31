@@ -75,7 +75,7 @@ label blwnfh_day_1:
     # th "епаний сир"
     th "Твою ж дивизию, чего меня так рано угораздило-то?"
     
-    stop music fadeout 3
+    stop music fadeout 2.0
     
     "Недовольно фыркнув, одевшись и тихонько взяв умывальные принадлежности, я покинул дом."
     
@@ -87,7 +87,7 @@ label blwnfh_day_1:
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0, hard=True)
-    play music music_list["everyday_theme"] fadein 3 
+    play music blwnfh_music_list["the_smell_of_mushroom"] fadein 3.0 
     window show
     
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
@@ -131,6 +131,9 @@ label blwnfh_day_1:
     me "Хороша вода!"
     
     "Затем я быстренько почистыл зубы, и уже начал поливать себя водой."
+    
+    stop music fadeout 1.5
+    
     "Как совершенно неожиданно сюда пришла Славя."    
     "Показывать ей свой голый торс совсем не хотелось, а посему я спрятался за умывальник."
     
@@ -139,6 +142,8 @@ label blwnfh_day_1:
     th "Надеюсь она не заметила меня."
     
     "Я потянулся за своей рубашкой, ляжащей рядом."
+    
+    play music music_list["she_is_kind"] fadein 1.5
     
     show sl laugh sport close:
         xcenter 1.2 ycenter 0.65
@@ -233,12 +238,11 @@ label blwnfh_day_1:
     "Я собрал все свои принадлежности и отправился обратно в дом."
     
     window hide
-    
-    scene bg ext_houses_sunset with dissolve2
-    $ renpy.pause(2.0, hard=True)
-    scene bg ext_house_of_mt_sunset with slide_left_blure_dissolve2
-    $ renpy.pause(2.0, hard=True)
-    
+    stop music fadeout 2.0
+    scene bg ext_houses_sunset with dissolve
+    $ renpy.pause(1.0, hard=True)
+    scene bg ext_house_of_mt_sunset with slide_left_blure_dissolve
+    $ renpy.pause(1.0, hard=True)
     window show
     
     "Подойдя к дому, я услышал, что оттуда доносятся звуки возни."
@@ -253,7 +257,7 @@ label blwnfh_day_1:
     
     scene bg int_house_of_mt_sunset with dissolve2
     stop ambience fadeout 0.5
-    stop music fadeout 3
+    play music blwnfh_music_list["distant_banjo"] fadein 2.5
     play sound sfx_close_door_1
     play ambience ambience_int_cabin_evening fadein 3
     $ renpy.pause(1.0, hard=True)
@@ -316,7 +320,8 @@ label blwnfh_day_1:
     mt "Вот так бы сразу."
     
     window hide
-    scene bg ext_house_of_mt_sunset with dspr
+    stop music fadeout 1.0
+    scene bg ext_house_of_mt_sunset with dissolve
     stop ambience fadeout 0.5
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3

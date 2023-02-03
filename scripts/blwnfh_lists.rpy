@@ -306,6 +306,22 @@ init 2:
     $ blwnfh_music_list["the_swarms_of_hades"] = blwnfh_MUSIC + "Max LL - The Swarms of Hades.mp3"
     $ blwnfh_music_list["thunder_harvest"] = blwnfh_MUSIC + "Max LL - Thunder Harvest.mp3"
     $ blwnfh_music_list["overgrowth"] = blwnfh_MUSIC + "Portal 2 OST - Overgrowth.mp3"
+    $ blwnfh_music_list["fors_major"] = blwnfh_MUSIC + "fors major - dalnoboishiki.mp3"
+    $ blwnfh_music_list["intriga"] = blwnfh_MUSIC + "intriga - svati.mp3"
+    $ blwnfh_music_list["kilometri_leta"] = blwnfh_MUSIC + "kilometri leta - svati.mp3"
+    $ blwnfh_music_list["leimotiv"] = blwnfh_MUSIC + "leimotiv - svati.mp3"
+    $ blwnfh_music_list["summer_changed_geography"] = blwnfh_MUSIC + "leto pomenyalo geographiyu - svati.mp3"
+    $ blwnfh_music_list["march_folk"] = blwnfh_MUSIC + "march folk - svati.mp3"
+    $ blwnfh_music_list["pole"] = blwnfh_MUSIC + "pole - svati.mp3"
+    $ blwnfh_music_list["razbor_poletov"] = blwnfh_MUSIC + "razbor poletov - svati.mp3"
+    $ blwnfh_music_list["move_theme"] = blwnfh_MUSIC + "tema dvizjeniya - svati.mp3"
+    $ blwnfh_music_list["joke_theme"] = blwnfh_MUSIC + "tema prikolov - dalnoboishiki.mp3"
+    $ blwnfh_music_list["trevoga_1"] = blwnfh_MUSIC + "trevoga - svati.mp3"
+    $ blwnfh_music_list["trevoga_2"] = blwnfh_MUSIC + "trevojnoya - dalnoboishiki.mp3"
+    $ blwnfh_music_list["uhod_ot_pogoni"] = blwnfh_MUSIC + "uhod ot pogoni - dalnoboishiki.mp3"
+    $ blwnfh_music_list["uverture"] = blwnfh_MUSIC + "uverture - ivan vasilech.mp3"
+    $ blwnfh_music_list["volneniye"] = blwnfh_MUSIC + "volneniye - dalnoboishiki.mp3"
+    
     
     # AMBIENCE Лист
     $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"

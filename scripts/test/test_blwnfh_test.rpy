@@ -1,7 +1,7 @@
 label technical_chocolatki:
     $ blwnfh_set_time()
     scene bg int_clubs_male_day
-    show technical chocolatki blwnfh_technical_chocolatki at blwnfh_technical_chocolatki
+    show technical chocolatki at blwnfh_technical_chocolatki
     show el grin pioneer at blwnfh_technical_chocolatki:
         xcenter 0.25
     show sh normal_smile pioneer at blwnfh_technical_chocolatki:

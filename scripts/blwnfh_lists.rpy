@@ -321,6 +321,19 @@ init 2:
     $ blwnfh_music_list["uhod_ot_pogoni"] = blwnfh_MUSIC + "uhod ot pogoni - dalnoboishiki.mp3"
     $ blwnfh_music_list["uverture"] = blwnfh_MUSIC + "uverture - ivan vasilech.mp3"
     $ blwnfh_music_list["volneniye"] = blwnfh_MUSIC + "volneniye - dalnoboishiki.mp3"
+    $ blwnfh_music_list["pianino"] = blwnfh_MUSIC + "pianino - svati.mp3"
+    $ blwnfh_music_list["pogonya_folk"] = blwnfh_MUSIC + "pogonya folk - svati.mp3"
+    $ blwnfh_music_list["polka_folk"] = blwnfh_MUSIC + "polka folk - svati.mp3"
+    $ blwnfh_music_list["sport1"] = blwnfh_MUSIC + "sport1 - svati.mp3"
+    $ blwnfh_music_list["sport2"] = blwnfh_MUSIC + "sport2 - svati.mp3"
+    $ blwnfh_music_list["sport3"] = blwnfh_MUSIC + "sport3 - svati.mp3"
+    $ blwnfh_music_list["sport4"] = blwnfh_MUSIC + "sport4 - svati.mp3"
+    $ blwnfh_music_list["v_gorode_vesna"] = blwnfh_MUSIC + "v gorode vesna - svati"
+    $ blwnfh_music_list["march_soviet_union"] = blwnfh_MUSIC + "march soviet union - svati.mp3"
+    $ blwnfh_music_list["guitar_svati"] = blwnfh_MUSIC + "guitar - svati.mp3"
+    $ blwnfh_music_list["internet_inkognito"] = blwnfh_MUSIC + "internet_inkognito - svati.mp3"
+    $ blwnfh_music_list["estafeta"] = blwnfh_MUSIC + "estafeta - svati.mp3"
+    $ blwnfh_music_list["country_shop"] = blwnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
     
     
     # AMBIENCE Лист

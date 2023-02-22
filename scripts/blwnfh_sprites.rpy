@@ -245,7 +245,7 @@ init 2:
         make_sprites_for('us', 'sport bant', ['mod:body2', 'mod:sport', 'mod:<emotion>'])
         make_sprites_for('us', 'sport2', ['mod:body', 'mod:sport2', 'mod:<emotion>'])
         make_sprites_for('us', 'sport2 bant', ['mod:body2', 'mod:sport2', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport2 bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
+        make_sprites_for('us', 'sport2 bandage', ['mod:body', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
         make_sprites_for('us', 'sport2 bant bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
         make_sprites_for('us', 'body', ['mod:body', 'mod:<emotion>'])
         make_sprites_for('us', 'body bant', ['mod:body2', 'mod:<emotion>'])

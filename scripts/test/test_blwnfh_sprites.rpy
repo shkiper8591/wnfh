@@ -1641,17 +1641,17 @@ label us_1:
     "Какую одёжку мы хотим отсмотреть?"
     
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_1_pioneer
-        "Платье"
+        "Платье":
             jump us_1_dress
-        "Купальник"
+        "Купальник":
             jump us_1_swim
-        "Спортивная"
+        "Спортивная":
             jump us_1_sport
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_1_sport2
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_1_sport2_bandage
 
 label us_1_pioneer:
@@ -1849,17 +1849,17 @@ label us_1_sport2_bandage:
 label us_2:
     
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_2_pioneer
-        "Платье"
+        "Платье":
             jump us_2_dress
-        "Купальник"
+        "Купальник":
             jump us_2_swim
-        "Спортивная"
+        "Спортивная":
             jump us_2_sport
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_2_sport2
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_2_sport2_bandage
 
 label us_2_pioneer:
@@ -2009,17 +2009,17 @@ label us_2_sport2_bandage:
 label us_3: 
 
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_3_pioneer
-        "Платье"
+        "Платье":
             jump us_3_dress
-        "Купальник"
+        "Купальник":
             jump us_3_swim
-        "Спортивная"
+        "Спортивная":
             jump us_3_sport
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_3_sport2
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_3_sport2_bandage
 
 label us_3_pioneer:
@@ -2214,27 +2214,22 @@ label us_3_sport2_bandage:
     
     show us surp3 with dspr
 
-
-
-
-
-
 label us_1_bant:
 
     "Какую одёжку мы хотим отсмотреть?"
     
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_1_pioneer_bant
-        "Платье"
+        "Платье":
             jump us_1_dress_bant
-        "Купальник"
+        "Купальник":
             jump us_1_swim_bant
-        "Спортивная"
+        "Спортивная":
             jump us_1_sport_bant
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_1_sport2_bant
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_1_sport2_bandage_bant
 
 label us_1_pioneer_bant:
@@ -2429,20 +2424,20 @@ label us_1_sport2_bandage_bant:
     
     show us smile with dspr
     
-label us_2:
+label us_2_bant:
     
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_2_pioneer_bant
-        "Платье"
+        "Платье":
             jump us_2_dress_bant
-        "Купальник"
+        "Купальник":
             jump us_2_swim_bant
-        "Спортивная"
+        "Спортивная":
             jump us_2_sport_bant
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_2_sport2_bant
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_2_sport2_bandage_bant
 
 label us_2_pioneer_bant:
@@ -2592,17 +2587,17 @@ label us_2_sport2_bandage:
 label us_3_bant: 
 
     menu:
-        "Пионерскую"
+        "Пионерскую":
             jump us_3_pioneer_bant
-        "Платье"
+        "Платье":
             jump us_3_dress_bant
-        "Купальник"
+        "Купальник":
             jump us_3_swim_bant
-        "Спортивная"
+        "Спортивная":
             jump us_3_sport_bant
-        "Спортивная 2"
+        "Спортивная 2":
             jump us_3_sport2_bant
-        "Спортивная 2 с повязками"
+        "Спортивная 2 с повязками":
             jump us_3_sport2_bandage_bant
 
 label us_3_pioneer_bant:

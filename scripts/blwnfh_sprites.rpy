@@ -235,11 +235,20 @@ init 2:
         make_sprites_for('mt', 'body panama', ['es:body', 'es:<emotion>', 'es:panama'])
         
         # Ульяна
-        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'swim', ['es:body', 'es:swim', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'sport', ['es:body', 'es:sport', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['normalsmile'], 'us', 'body', ['es:body', 'es:<emotion>'])
+        make_sprites_for('us', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('us', 'pioneer bant', ['mod:body2', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('us', 'dress', ['mod:body', 'mod:dress', 'mod:<emotion>'])
+        make_sprites_for('us', 'dress bant', ['mod:body2', 'mod:dress', 'mod:<emotion>'])
+        make_sprites_for('us', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('us', 'swim bant', ['mod:body2', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('us', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('us', 'sport bant', ['mod:body2', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('us', 'sport2', ['mod:body', 'mod:sport2', 'mod:<emotion>'])
+        make_sprites_for('us', 'sport2 bant', ['mod:body2', 'mod:sport2', 'mod:<emotion>'])
+        make_sprites_for('us', 'sport2 bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
+        make_sprites_for('us', 'sport2 bant bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
+        make_sprites_for('us', 'body', ['mod:body', 'mod:<emotion>'])
+        make_sprites_for('us', 'body bant', ['mod:body2', 'mod:<emotion>'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])

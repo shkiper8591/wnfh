@@ -14,6 +14,40 @@ label blwnfh_sprites_test:
             jump sv
         "Деда":
             jump sd
+        "Ульяны":
+            jump us
+label us:
+    "Какую тушку нам нужно просмотреть?"
+    
+    menu:
+        "С пучком на голове":
+            jump us_normal
+        "С бантиком":
+            jump us_bant
+
+label us_normal:
+
+    "Какую позу нам нужно просмотреть?"
+    
+    menu:
+        "Первую":
+            jump us_1
+        "Вторую":
+            jump us_2
+        "Третью":
+            jump us_3
+
+label us_bant:
+    "Какую позу нам нужно просмотреть?"
+    
+    menu:
+        "Первую":
+            jump us_1_bant
+        "Вторую":
+            jump us_2_bant
+        "Третью":
+             jump us_3_bant
+
 label kat:
     
     "Какую тушку нам нужно просмотреть?"
@@ -1601,3 +1635,1164 @@ label sd_cigarete_glasses:
     "Смех"
     
     show sd forma cigarete laugh with dspr
+    
+label us_1:
+
+    "Какую одёжку мы хотим отсмотреть?"
+    
+    menu:
+        "Пионерскую"
+            jump us_1_pioneer
+        "Платье"
+            jump us_1_dress
+        "Купальник"
+            jump us_1_swim
+        "Спортивная"
+            jump us_1_sport
+        "Спортивная 2"
+            jump us_1_sport2
+        "Спортивная 2 с повязками"
+            jump us_1_sport2_bandage
+
+label us_1_pioneer:
+    
+    "Пионерская"
+    
+    "Нормальная"
+    
+    show us normal pioneer at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_dress:
+
+    "Платье"
+    
+    "Нормальная"
+    
+    show us normal dress at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_swim:
+
+    "Купальник"
+    
+    "Нормальная"
+    
+    show us normal swim at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_sport:
+
+    "Спортивная"
+    
+    "Нормальная"
+    
+    show us normal sport at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+       
+label us_1_sport2:
+
+    "Спортивная2"
+    
+    "Нормальная"
+    
+    show us normal sport2 at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_sport2_bandage:
+
+    "Спортивная2 с повязками"
+    
+    "Нормальная"
+    
+    show us normal sport2 bandage at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_2:
+    
+    menu:
+        "Пионерскую"
+            jump us_2_pioneer
+        "Платье"
+            jump us_2_dress
+        "Купальник"
+            jump us_2_swim
+        "Спортивная"
+            jump us_2_sport
+        "Спортивная 2"
+            jump us_2_sport2
+        "Спортивная 2 с повязками"
+            jump us_2_sport2_bandage
+
+label us_2_pioneer:
+
+    "Пионерская"
+    
+    "Злая"
+    
+    show us angry pioneer at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+
+label us_2_dress:
+
+    "Платье"
+    
+    "Злая"
+    
+    show us angry dress at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_swim:
+
+    "Купальник"
+    
+    "Злая"
+    
+    show us angry swim at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport:
+
+    "Спортивная"
+    
+    "Злая"
+    
+    show us angry sport at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport2:
+
+    "Спортивная2"
+    
+    "Злая"
+    
+    show us angry sport2 at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport2_bandage:
+
+    "Спортивная2 с повязками"
+    
+    "Злая"
+    
+    show us angry sport2 bandage at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+       
+label us_3: 
+
+    menu:
+        "Пионерскую"
+            jump us_3_pioneer
+        "Платье"
+            jump us_3_dress
+        "Купальник"
+            jump us_3_swim
+        "Спортивная"
+            jump us_3_sport
+        "Спортивная 2"
+            jump us_3_sport2
+        "Спортивная 2 с повязками"
+            jump us_3_sport2_bandage
+
+label us_3_pioneer:
+
+    "Пионерская"
+    
+    "Плачь"
+    
+    show us cry pioneer at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+    
+label us_3_dress:    
+
+    "Платье"
+    
+    "Плачь"
+    
+    show us cry dress at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_swim:    
+
+    "Купальник"
+    
+    "Плачь"
+    
+    show us cry swim at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_sport:    
+
+    "Спортивная"
+    
+    "Плачь"
+    
+    show us cry sport at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_sport2:    
+
+    "Спортивная2"
+     
+    "Плачь"
+    
+    show us cry sport2 at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+       
+label us_3_sport2_bandage:
+
+    "Спортивная2 с повязками"
+    
+    "Плачь"
+    
+    show us cry sport2 bandage at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+
+
+
+
+
+
+label us_1_bant:
+
+    "Какую одёжку мы хотим отсмотреть?"
+    
+    menu:
+        "Пионерскую"
+            jump us_1_pioneer_bant
+        "Платье"
+            jump us_1_dress_bant
+        "Купальник"
+            jump us_1_swim_bant
+        "Спортивная"
+            jump us_1_sport_bant
+        "Спортивная 2"
+            jump us_1_sport2_bant
+        "Спортивная 2 с повязками"
+            jump us_1_sport2_bandage_bant
+
+label us_1_pioneer_bant:
+    
+    "Пионерская"
+    
+    "Нормальная"
+    
+    show us normal pioneer bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_dress_bant:
+
+    "Платье"
+    
+    "Нормальная"
+    
+    show us normal dress bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_swim_bant:
+
+    "Купальник"
+    
+    "Нормальная"
+    
+    show us normal swim bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_sport_bant:
+
+    "Спортивная"
+    
+    "Нормальная"
+    
+    show us normal sport bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+       
+label us_1_sport2_bant:
+
+    "Спортивная2"
+    
+    "Нормальная"
+    
+    show us normal sport2 bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_1_sport2_bandage_bant:
+
+    "Спортивная2 с повязками"
+    
+    "Нормальная"
+    
+    show us normal sport2 bandage bant at center with dissolve
+    
+    "Нормальная с улыбкой"
+    
+    show us normalsmile with dspr
+    
+    "Ухмылка"
+    
+    show us grin with dspr
+    
+    "Смех"
+    
+    show us laugh with dspr
+    
+    "Смех2"
+    
+    show us laugh2 with dspr
+    
+    "Грусть"
+    
+    show us sad with dspr
+    
+    "Улыбка"
+    
+    show us smile with dspr
+    
+label us_2:
+    
+    menu:
+        "Пионерскую"
+            jump us_2_pioneer_bant
+        "Платье"
+            jump us_2_dress_bant
+        "Купальник"
+            jump us_2_swim_bant
+        "Спортивная"
+            jump us_2_sport_bant
+        "Спортивная 2"
+            jump us_2_sport2_bant
+        "Спортивная 2 с повязками"
+            jump us_2_sport2_bandage_bant
+
+label us_2_pioneer_bant:
+
+    "Пионерская"
+    
+    "Злая"
+    
+    show us angry pioneer bant at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+
+label us_2_dress_bant:
+
+    "Платье"
+    
+    "Злая"
+    
+    show us angry dress bant at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_swim_bant:
+
+    "Купальник"
+    
+    "Злая"
+    
+    show us angry swim bant at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport_bant:
+
+    "Спортивная"
+    
+    "Злая"
+    
+    show us angry sport bant at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport2_bant:
+
+    "Спортивная2"
+    
+    "Злая"
+    
+    show us angry sport2 bant at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+    
+label us_2_sport2_bandage:
+
+    "Спортивная2 с повязками"
+    
+    "Злая"
+    
+    show us angry sport2 bant bandage at center with dissolve
+    
+    "Непонимание?"
+    
+    show us calml with dspr
+    
+    "Недовольство"
+    
+    show us dontlike with dspr
+    
+    "Страх"
+    
+    show us fear with dspr
+    
+    "Поникшая"
+    
+    show us upset with dspr
+       
+label us_3_bant: 
+
+    menu:
+        "Пионерскую"
+            jump us_3_pioneer_bant
+        "Платье"
+            jump us_3_dress_bant
+        "Купальник"
+            jump us_3_swim_bant
+        "Спортивная"
+            jump us_3_sport_bant
+        "Спортивная 2"
+            jump us_3_sport2_bant
+        "Спортивная 2 с повязками"
+            jump us_3_sport2_bandage_bant
+
+label us_3_pioneer_bant:
+
+    "Пионерская"
+    
+    "Плачь"
+    
+    show us cry pioneer bant at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+    
+label us_3_dress_bant:    
+
+    "Платье"
+    
+    "Плачь"
+    
+    show us cry dress bant at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_swim_bant:    
+
+    "Купальник"
+    
+    "Плачь"
+    
+    show us cry swim bant at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_sport_bant:    
+
+    "Спортивная"
+    
+    "Плачь"
+    
+    show us cry sport bant at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+        
+label us_3_sport2_bant:    
+
+    "Спортивная2"
+     
+    "Плачь"
+    
+    show us cry sport2 bant at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr
+       
+label us_3_sport2_bandage_bant:
+
+    "Спортивная2 с повязками"
+    
+    "Плачь"
+    
+    show us cry sport2 bant bandage at center with dissolve
+    
+    "Плачь2"
+    
+    show us cry2 with dspr
+    
+    "Смущение"
+    
+    show us shy with dspr
+    
+    "Смущение2"
+    
+    show us shy2 with dspr
+    
+    "Удивление1"
+    
+    show us surp1 with dspr
+    
+    "Удивление2"
+    
+    show us surp2 with dspr
+    
+    "Удивление3"
+    
+    show us surp3 with dspr

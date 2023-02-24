@@ -490,7 +490,7 @@ label blwnfh_day_1:
     show dv grin pioneer2 close:
         xcenter 0.5 ycenter 0.52
     with dissolve
-    play sound sfx_tree_branches
+    play sound blwnfh_sfx_list["hrust_vetki"]
     show dv grin pioneer2 close with dissolve
     show un angry2 pioneer close with dspr
     

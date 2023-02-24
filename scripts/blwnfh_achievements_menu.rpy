@@ -24,10 +24,10 @@ init 2:
         frame:
             background blwnfh_gui["img"]["fon"]
             area (0.0, 0.0, 1.0, 1.0)
-        #{size=-4}{k=0.0}(%s / %s){/k}{/size} % (blwnfh_check_achievements(), len(blwnfh_ach_list))
-            text u"Достижения {size=-4}{k=0.0}(%s / %s){/k}{/size}" % (blwnfh_check_achievements(), len(blwnfh_ach_list)):
+            #text u"Достижения {size=-4}{k=0.0}(%s / %s){/k}{/size}" % (blwnfh_check_achievements(), len(blwnfh_ach_list)):
+            text u"Достижения":
                 align(0.5, 0.04)
-                style "blwnfh_menu"
+                style "blwnfh_title"
                 size 80
                 kerning 1
                 # back
@@ -43,23 +43,14 @@ init 2:
 
             frame:
                 background "#0005"
-                area(-10, 166, 1920, 845)
+                area(-10, 166, 3840, 845)
             
                 frame:
                     background "#0000"
-                    left_margin 60
-                    #right_margin 30
-                    
-                    #hbox:
-                    #    align(0.5, 0.0)
-                    #
-                    #    null height 50
-                    #    
-                    #
-                    #    null height 25
+                    left_margin 10
                 
-                    viewport:
-                        id "menu_ach_viewport"
+                    viewport id "menu_ach_viewport":
+                        
                         draggable True
                         mousewheel "horizontal"
                         scrollbars None
@@ -69,37 +60,37 @@ init 2:
                             idle blwnfh_gui["banners"]["ach_kat_idle"]
                             hover blwnfh_gui["banners"]["ach_kat_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 0.1, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.05, 0.5, 0.0)
                         imagebutton:
                             action ShowMenu("blwnfh_menu")
                             idle blwnfh_gui["banners"]["ach_un_idle"]
                             hover blwnfh_gui["banners"]["ach_un_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 0.3, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.15, 0.5, 0.0)
                         imagebutton:
                             action ShowMenu("blwnfh_menu")
                             idle blwnfh_gui["banners"]["ach_mi_idle"]
                             hover blwnfh_gui["banners"]["ach_mi_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 0.5, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.25, 0.5, 0.0)
                         imagebutton:
                             action ShowMenu("blwnfh_menu")
                             idle blwnfh_gui["banners"]["ach_us_idle"]
                             hover blwnfh_gui["banners"]["ach_us_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 0.7, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.35, 0.5, 0.0)
                         imagebutton:
                             action ShowMenu("blwnfh_menu")
                             idle blwnfh_gui["banners"]["ach_dv_idle"]
                             hover blwnfh_gui["banners"]["ach_dv_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 0.9, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.45, 0.5, 0.0)
                         imagebutton:
                             action ShowMenu("blwnfh_menu")
                             idle blwnfh_gui["banners"]["ach_sl_idle"]
                             hover blwnfh_gui["banners"]["ach_sl_hover"]
                             hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_menu_pos_atl(1.0, 1.1, 0.5, 0.0)
+                            at blwnfh_menu_pos_atl(1.0, 0.55, 0.5, 0.0)
                         #for ach in blwnfh_ach_list:
                         #    if persistent.blwnfh_ach[ach[0]]:
                         #        imagebutton:
@@ -120,9 +111,9 @@ init 2:
                         #
                         #null
                 
-                bar:
-                    value YScrollValue("menu_ach_viewport")
-                    bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
-                    top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
-                    thumb "null"
-                    at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)
+                    #bar:
+                    #    value XScrollValue("menu_ach_viewport")
+                    #    bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
+                    #    top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
+                    #    thumb "null"
+                    #    at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)

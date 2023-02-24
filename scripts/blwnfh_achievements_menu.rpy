@@ -37,64 +37,88 @@ init 2:
                 idle blwnfh_gui["achievements"]["back"]
                 hover blwnfh_gui["achievements"]["back"]
                 hover_sound blwnfh_gui["sound"]["plimp"]
-                at blwnfh_menu_pos_atl(0.82, 0.1, 0.082, 0.0)
+                at blwnfh_menu_pos_atl(0.5, 0.1, 0.082, 0.0)
 
             # achievements
 
             frame:
                 background "#0005"
-                area(300, 166, 1351, 845)
+                area(-10, 166, 1920, 845)
             
                 frame:
                     background "#0000"
                     left_margin 60
                     #right_margin 30
                     
-                    hbox:
-                        align(0.5, 0.0)
+                    #hbox:
+                    #    align(0.5, 0.0)
+                    #
+                    #    null height 50
+                    #    
+                    #
+                    #    null height 25
                 
-                        null height 50
+                    viewport:
+                        id "menu_ach_viewport"
+                        draggable True
+                        mousewheel "horizontal"
+                        scrollbars None
                         
-                
-                        null height 25
-                
-                        viewport:
-                            id "menu_ach_viewport"
-                            draggable True
-                            mousewheel "horizontal"
-                            scrollbars None
-                            
-                            imagebutton:
-                                action ShowMenu("blwnfh_menu")
-                                idle blwnfh_gui["banners"]["ach_kat_idle"]
-                                hover blwnfh_gui["banners"]["ach_kat_hover"]
-                                hover_sound blwnfh_gui["sound"]["plimp"]
-                                at blwnfh_menu_pos_atl(0.82, 0.1, 0.5, 0.0)
-                            #imagebutton:
-                            #    action ShowMenu("blwnfh_menu")
-                            #    idle blwnfh_gui["banners"]["ach_un_idle"]
-                            #    hover blwnfh_gui["banners"]["ach_un_hover"]
-                            #    hover_sound blwnfh_gui["sound"]["plimp"]
-                            #    at blwnfh_menu_pos_atl(0.82, 0.5, 0.082, 0.0)
-                            #for ach in blwnfh_ach_list:
-                            #    if persistent.blwnfh_ach[ach[0]]:
-                            #        imagebutton:
-                            #            action NullAction()
-                            #            idle ("blwnfh_ach_" + ach[1])
-                            #            hover im.MatrixColor(ImageReference("blwnfh_ach_" + ach[1]), im.matrix.contrast(1.3))
-                            #            align(0.75, 0.5)
-                            #        text " ":
-                            #            style "blwnfh_news"
-                            #    else:
-                            #        add im.Alpha(ImageReference("blwnfh_ach_lock"), 0.42):
-                            #            align(0.75, 0.5)
-                            #        text " ":
-                            #            style "blwnfh_news"
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_kat_idle"]
+                            hover blwnfh_gui["banners"]["ach_kat_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 0.1, 0.5, 0.0)
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_un_idle"]
+                            hover blwnfh_gui["banners"]["ach_un_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 0.3, 0.5, 0.0)
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_mi_idle"]
+                            hover blwnfh_gui["banners"]["ach_mi_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 0.5, 0.5, 0.0)
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_us_idle"]
+                            hover blwnfh_gui["banners"]["ach_us_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 0.7, 0.5, 0.0)
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_dv_idle"]
+                            hover blwnfh_gui["banners"]["ach_dv_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 0.9, 0.5, 0.0)
+                        imagebutton:
+                            action ShowMenu("blwnfh_menu")
+                            idle blwnfh_gui["banners"]["ach_sl_idle"]
+                            hover blwnfh_gui["banners"]["ach_sl_hover"]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_menu_pos_atl(1.0, 1.1, 0.5, 0.0)
+                        #for ach in blwnfh_ach_list:
+                        #    if persistent.blwnfh_ach[ach[0]]:
+                        #        imagebutton:
+                        #            action NullAction()
+                        #            idle ("blwnfh_ach_" + ach[1])
+                        #            hover im.MatrixColor(ImageReference("blwnfh_ach_" + ach[1]), im.matrix.contrast(1.3))
+                        #            align(0.75, 0.5)
+                        #        text " ":
+                        #            style "blwnfh_news"
+                        #    else:
+                        #        add im.Alpha(ImageReference("blwnfh_ach_lock"), 0.42):
+                        #            align(0.75, 0.5)
+                        #        text " ":
+                        #            style "blwnfh_news"
 
                 
-                            #null
-                            #
-                            #null
+                        #null
+                        #
+                        #null
                 
                 bar:
                     value YScrollValue("menu_ach_viewport")

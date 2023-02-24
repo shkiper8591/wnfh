@@ -73,6 +73,8 @@ init -2 python:
         "ach_us_hover",
         "ach_dv_idle",
         "ach_dv_hover",
+        "ach_sl_idle",
+        "ach_sl_hover",
         ]}
     
     # Для галереи

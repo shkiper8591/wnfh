@@ -628,7 +628,7 @@ label blwnfh_day_4:
     window hide
     stop ambience fadeout 1.5
     play ambience ambience_camp_center_day fadein 2.5
-    scene bg ext_kat_house_after_rain_morning with dissolve2
+    scene bg ext_house_of_kat_after_rain_sunset with dissolve2
     #34 крутой переход
     play music blwnfh_music_list["lori_m"] fadein 3.0
     $ blwnfh_set_time()
@@ -1207,14 +1207,14 @@ label blwnfh_day_4:
     
     "Я громко окликнул Ульянку и та, обнаружив меня, что-то сказала своим товарищам по команде и быстро подбежала к нам."
     
-    show us normal sport at center with dissolve
+    show us normal sport2 at center with dissolve
     
     us "Приветик, чего звали?"
     me "Здравствуй Ульяна, я и моя коллега прибыли к вам из известного и многоуважаемого кружка журналистики пионерлагеря «Совёнок», чтобы взять у вас интервью по поводу завтрашнего матча, разрешите задать вам пару вопросов?"
     
     "Шутливо-ироничным голосом проговорил я, еле сдерживая смех." 
     
-    show us laugh sport at center with dspr
+    show us laugh sport2 at center with dspr
     show kat smile pioneer at right with dspr
     
     "Ульяна и Катя оценили мою шутку, и если моя «коллега» лишь тихонько похихикала, то наша спортсменка звонко так рассмеялась."
@@ -1230,11 +1230,11 @@ label blwnfh_day_4:
     me "И так, первый вопрос: Какое ваше общее мнение о грядущем матче?"
     us "О, я крайне рада, что директор лагеря разрешил провести такое веселое событие! А то всё походы на пятьдесят метров от лагеря да танцы какие-то дурацкие."
     
-    show us upset sport at center with dspr
+    show us upset sport2 at center with dspr
     
     us "К тому же мне наконец удастся отыграться в полную силу, а то когда просто играем, всё идёт ради веселья, а не победы, что конечно тоже хорошо, но хочется хоть какого-то интереса."
     
-    show us normal sport at center with dspr
+    show us normal sport2 at center with dspr
     
     us "Думаю это всё, что я хотела бы сказать на данный счёт."
     
@@ -1242,7 +1242,7 @@ label blwnfh_day_4:
     
     me "Хорошо, следующий вопрос: Как проходят ваши тренировки?"
     
-    show us grin sport at center with dspr
+    show us grin sport2 at center with dspr
     
     us "Я активно тренирую свою команду самыми суровыми, но зато крайне эффективными методами, так что у противоположной команды не будет ни единого шанса на победу."
     dv "Это ещё почему же у нас не будет шанса на победу?"
@@ -1251,7 +1251,7 @@ label blwnfh_day_4:
     
     "Сказала неожиданно появившаяся Алиса."
     
-    show us surp1 sport at center with dspr
+    show us surp1 sport2 at center with dspr
     
     us "А почему же он у вас должен быть?"
     
@@ -1259,18 +1259,18 @@ label blwnfh_day_4:
     
     dv "Потому-что я на вратах стою, дурында, тебе ни за что меня не пробить."
     
-    show us dontlike sport at center with dspr
+    show us dontlike sport2 at center with dspr
     
     us "Да? Ну это мы ещё посмотрим!"
     dv "А чего смотреть? Всё и так очевидно, ты и твоя команда – проиграют."
     
-    show us angry sport at center with dspr
+    show us angry sport2 at center with dspr
     
     us "Ну-ну! Я тебе на поле покажу ещё, на что способна!"
     dv "Ой боюсь-боюсь."
     me "Так, бросайте это всё, работе мешаете только."
     
-    show us normal sport at center with dspr
+    show us normal sport2 at center with dspr
     
     "После моего наглого вмешательства, девочки замолчали и успокоились, но по лицу Ульяны было ясно, что она явно держит обиду на Алису."
     
@@ -1299,7 +1299,7 @@ label blwnfh_day_4:
     
     me "Так, у тебя есть ещё что рассказать про свои тренировки?"
     
-    show us grin sport at center with dspr
+    show us grin sport2 at center with dspr
     
     "На мой вопрос, Ульяна сделала хитрое лицо и отрицательно замотала головой."
     
@@ -1310,14 +1310,14 @@ label blwnfh_day_4:
     us "А мне было очень интересно отвечать на ваши вопросы. {w}Ну всё, пока!"
     me "Подожди."
     
-    show us calml sport at center with dspr
+    show us calml sport2 at center with dspr
     
     us "Ну что ещё?"
     me "Прежде чем ты уйдешь, позволь мне сделать фотографию тебя."
     us "Только быстро, ладно?"
     me "Постараюсь, а теперь встань нормально и улыбнись."
     
-    show us smile sport at center with dspr
+    show us smile sport2 at center with dspr
     
     "Ульяна последовала моему указанию и я, вскинув полароид сделал фотографию, которая вскоре начала выезжать из фотоаппарата."
     

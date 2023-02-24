@@ -1935,7 +1935,6 @@ label blwnfh_day_5:
     
     show us smile with dspr
     
-    us "Ой, кому ты болтаешь-то?"
     us "Если она весила столько, вы бы не подняли её."
     me "Так мы же с Шуриком Гераклы, чё нам какая-то лёгонькая коробочка."
     us "Лёгонькая говоришь?"
@@ -2375,7 +2374,7 @@ label blwnfh_day_5:
     "Катя и Мику же расположились позади меня."
     
     show dv normal sport at left with dissolve
-    show us normal sport at right with dissolve
+    show us normal sport2 bandage at right with dissolve
     
     dv "Что, занимаете самые лучшие места?"
     me "Не-е-е, у меня и Кати место покруче этих будет."
@@ -2414,18 +2413,18 @@ label blwnfh_day_5:
     
     us "Ну и ладно, я и так победю."
     
-    show us calml sport at right with dspr
+    show us calml sport2 bandage at right with dspr
     
     us "Побежду. {w}Побе[wp]"
     
-    show us grin sport:
+    show us grin sport2 bandage:
         xcenter 0.72 ycenter 0.5
     with dspr
     
     us "Выиграю короче!"
     kat "И не сомневаемся!"
     
-    show us normal sport:
+    show us normal sport2 bandage:
         ease_quart 3.0 xcenter -0.2
     show dv normal with dspr
     

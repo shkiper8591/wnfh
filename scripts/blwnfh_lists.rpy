@@ -63,6 +63,16 @@ init -2 python:
         "relation_down",
         "relation_neutral",
         "ach_frame",
+        "ach_kat_idle",
+        "ach_kat_hover",
+        "ach_un_idle",
+        "ach_un_hover",
+        "ach_mi_idle",
+        "ach_mi_hover",
+        "ach_us_idle",
+        "ach_us_hover",
+        "ach_dv_idle",
+        "ach_dv_hover",
         ]}
     
     # Для галереи

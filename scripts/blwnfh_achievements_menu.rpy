@@ -12,7 +12,7 @@ init 2:
             action NullAction()
 
         $ columns = 2
-        $ rows = len(blwnfh_ach_list)+1
+        $ rows = 1
 
         # Основные элементы
         
@@ -50,7 +50,7 @@ init 2:
                     left_margin 60
                     #right_margin 30
                     
-                    vbox:
+                    hbox:
                         align(0.5, 0.0)
                 
                         null height 50
@@ -61,33 +61,42 @@ init 2:
                         viewport:
                             id "menu_ach_viewport"
                             draggable True
-                            mousewheel True
+                            mousewheel "horizontal"
                             scrollbars None
-                
-                            grid columns rows:
-                                spacing 15
-                
-                                for ach in blwnfh_ach_list:
-                                    if persistent.blwnfh_ach[ach[0]]:
-                                        imagebutton:
-                                            action NullAction()
-                                            idle ("blwnfh_ach_" + ach[1])
-                                            hover im.MatrixColor(ImageReference("blwnfh_ach_" + ach[1]), im.matrix.contrast(1.3))
-                                            align(0.75, 0.5)
-                                        text " ":
-                                            style "blwnfh_news"
-                                    else:
-                                        add im.Alpha(ImageReference("blwnfh_ach_lock"), 0.42):
-                                            align(0.75, 0.5)
-                                        text " ":
-                                            style "blwnfh_news"
+                            
+                            imagebutton:
+                                action ShowMenu("blwnfh_menu")
+                                idle blwnfh_gui["banners"]["ach_kat_idle"]
+                                hover blwnfh_gui["banners"]["ach_kat_hover"]
+                                hover_sound blwnfh_gui["sound"]["plimp"]
+                                at blwnfh_menu_pos_atl(0.82, 0.1, 0.5, 0.0)
+                            #imagebutton:
+                            #    action ShowMenu("blwnfh_menu")
+                            #    idle blwnfh_gui["banners"]["ach_un_idle"]
+                            #    hover blwnfh_gui["banners"]["ach_un_hover"]
+                            #    hover_sound blwnfh_gui["sound"]["plimp"]
+                            #    at blwnfh_menu_pos_atl(0.82, 0.5, 0.082, 0.0)
+                            #for ach in blwnfh_ach_list:
+                            #    if persistent.blwnfh_ach[ach[0]]:
+                            #        imagebutton:
+                            #            action NullAction()
+                            #            idle ("blwnfh_ach_" + ach[1])
+                            #            hover im.MatrixColor(ImageReference("blwnfh_ach_" + ach[1]), im.matrix.contrast(1.3))
+                            #            align(0.75, 0.5)
+                            #        text " ":
+                            #            style "blwnfh_news"
+                            #    else:
+                            #        add im.Alpha(ImageReference("blwnfh_ach_lock"), 0.42):
+                            #            align(0.75, 0.5)
+                            #        text " ":
+                            #            style "blwnfh_news"
 
                 
-                                null
+                            #null
+                            #
+                            #null
                 
-                                null
-                
-                vbar:
+                bar:
                     value YScrollValue("menu_ach_viewport")
                     bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
                     top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)

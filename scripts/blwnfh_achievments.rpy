@@ -7,15 +7,15 @@ init -1 python:
     ## Регистрация ачивок ##
     
     blwnfh_ach_list = [
-        #Тэг ачивки   Иконка            Заголовк             Подпись                           Листок         Трофей
-        ["payday"    ,"icon_payday"    ,"Конфетный вор"     ,"Было весело"                    ,"leaf_day"    ,"trophy_silver"   ],   
-        ["bkrr"      ,"icon_bkrr"      ,"Да, именно"        ,"Это отсылка на БКРР"            ,"leaf_sunset" ,"trophy_bronz"    ],     
-        ["alpha-0.1" ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"              ,"leaf_day"    ,"trophy_platina"  ],
-        ["post"      ,"icon_post"      ,"Груз доставлен"    ,"Почти без повреждений"          ,"leaf_day"    ,"trophy_bronz"    ],     
-        ["zgdun"     ,"icon_zgdun"     ,"Великий ждун"      ,"Дети уже школу закончили?"      ,"leaf_day"    ,"trophy_platina"  ],    
-        ["alarm"     ,"icon_alarm"     ,"Das Boot"          ,"Доплавался, блин"               ,"leaf_day"    ,"trophy_silver"   ],
-        ["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану" ,"При коммунизме всё будет за..." ,"leaf_day"    ,"trophy_silver"   ],
-        ["handass"   ,"icon_handass"   ,"Рукожоп"           ,"Ну как так-то?"                 ,"leaf_day"    ,"trophy_bronz"    ],
+        #Тэг ачивки   Иконка            Заголовк             Подпись                           Листок         Трофей             Персонаж
+        ["payday"    ,"icon_payday"    ,"Конфетный вор"     ,"Было весело"                    ,"leaf_day"    ,"trophy_silver"   ,"kat"],   
+        ["bkrr"      ,"icon_bkrr"      ,"Да, именно"        ,"Это отсылка на БКРР"            ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
+        ["alpha-0.1" ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"              ,"leaf_day"    ,"trophy_gold"     ,"kat"],
+        ["post"      ,"icon_post"      ,"Груз доставлен"    ,"Почти без повреждений"          ,"leaf_day"    ,"trophy_bronz"    ,"kat"],     
+        ["zgdun"     ,"icon_zgdun"     ,"Великий ждун"      ,"Дети уже школу закончили?"      ,"leaf_day"    ,"trophy_gold"     ,"un"],    
+        ["alarm"     ,"icon_alarm"     ,"Das Boot"          ,"Доплавался, блин"               ,"leaf_day"    ,"trophy_silver"   ,"un"],
+        ["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану" ,"При коммунизме всё будет за..." ,"leaf_day"    ,"trophy_silver"   ,"un"],
+        ["handass"   ,"icon_handass"   ,"Рукожоп"           ,"Ну как так-то?"                 ,"leaf_day"    ,"trophy_bronz"    ,"un"],
     ]
     
     
@@ -33,6 +33,7 @@ init -1 python:
         (515, 30 ), im.Scale(blwnfh_BANNERS + ach[4] + ".png"  , 45 , 68 ),
         (184, 65 ), im.Scale(blwnfh_BANNERS + ach[5] + ".png"  , 38 , 38 ),
         ))
+        
         
         if ach[0] not in persistent.blwnfh_ach:
             persistent.blwnfh_ach[ach[0]] = False
@@ -53,10 +54,10 @@ init -1 python:
             persistent.blwnfh_ach[ach] = True
             renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
             
-            renpy.show("blwnfh_ach_" + ach, [blwnfh_get_achievement_atl])
+            renpy.show("blwnfh_ach_" + ach, [blwnfh_get_achievement_atl], behind=["ach_title" + str(i), "ach_signature" + str(i)])
             for index,title in enumerate(blwnfh_ach_list, start = 0):
                 if ach in title:
-                    num=index
+                    num = index
             renpy.show("ach_title", [blwnfh_get_ach_title_atl], tag="ach_title" + str(i), what=Text(blwnfh_ach_list[num][2], style=style.blwnfh_ach_title, size=30))
             renpy.show("ach_signature", [blwnfh_get_ach_signature_atl], tag="ach_signature" + str(i), what=Text(blwnfh_ach_list[num][3], style=style.blwnfh_ach_signature, size=27))
             

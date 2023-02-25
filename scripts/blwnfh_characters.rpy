@@ -2,7 +2,7 @@ init -265 python:
     # Нормальные троеточия
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
 
-init -1 python:
+init -3 python:
     blwnfh_characters = {
         # персонажи оригинала
         "narrator":[None, None],     #Рассказчик

@@ -55,7 +55,27 @@ init -2 python:
         "hover_frame",
         "back",
         ]}
+        
+   # achivments_list={pers:{"trophy_gold":[],"trophy_silver":[],"trophy_bronz":[]} for pers in blwnfh_characters.keys()}    
     # Всплывашки
+    characters_banners_idle = [
+        "ach_kat_idle",
+        "ach_un_idle",
+        "ach_mi_idle",
+        "ach_us_idle",
+        "ach_dv_idle",
+        "ach_sl_idle",
+        "ach_me_idle"
+        ]
+    characters_banners_hover = [
+        "ach_kat_hover",
+        "ach_un_hover",
+        "ach_mi_hover",
+        "ach_us_hover",
+        "ach_dv_hover",
+        "ach_sl_hover",
+        "ach_me_hover",
+    ]
     blwnfh_gui["banners"] = {img:(blwnfh_BANNERS + img + ".png") for img in [
         
         "relation_frame",
@@ -63,19 +83,14 @@ init -2 python:
         "relation_down",
         "relation_neutral",
         "ach_frame",
-        "ach_kat_idle",
-        "ach_kat_hover",
-        "ach_un_idle",
-        "ach_un_hover",
-        "ach_mi_idle",
-        "ach_mi_hover",
-        "ach_us_idle",
-        "ach_us_hover",
-        "ach_dv_idle",
-        "ach_dv_hover",
-        "ach_sl_idle",
-        "ach_sl_hover",
-        ]}
+        "trophy_bronz",
+        "trophy_silver",
+        "trophy_gold",
+        
+        #Тут срез для ачивок в файле blwnfh_achievements_menu
+        ] + characters_banners_idle + characters_banners_hover
+        }
+    
     
     # Для галереи
     blwnfh_gui["gallery"] = {img:(blwnfh_GALLERY + img + ".png") for img in [

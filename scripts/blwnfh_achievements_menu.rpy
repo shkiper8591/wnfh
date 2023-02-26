@@ -14,23 +14,13 @@ init 2:
         $ columns = len(characters_banners_idle)
         $ rows = 1
 
-        # Основные элементы
-        
-        
-        
-        python:
-            def achievements_make_thumb(imgf):
-                return im.Scale(imgf, 357, 200)
-            
-            
-            
-            
+        # Основные элементы   
         frame:
             background blwnfh_gui["img"]["fon"]
             area (0.0, 0.0, 1.0, 1.0)
             #text u"Достижения {size=-4}{k=0.0}(%s / %s){/k}{/size}" % (blwnfh_check_achievements(), len(blwnfh_ach_list)):
-            text u"Достижения":
-                align(0.5, 0.04)
+            text "Достижения":
+                align(0.5, 0.055)
                 style "blwnfh_title"
                 size 80
                 kerning 1
@@ -74,7 +64,7 @@ init 2:
                                     background "#0000"
                                     area(0.0, 0.0, 300, 700)
                                     imagebutton:
-                                        action ShowMenu("blwnfh_menu")
+                                        action ShowMenu("blwnfh_achievements_window")
                                         idle blwnfh_gui["banners"][characters_banners_idle[index]]
                                         hover blwnfh_gui["banners"][characters_banners_hover[index]]
                                         hover_sound blwnfh_gui["sound"]["plimp"]
@@ -103,8 +93,60 @@ init 2:
                                                         size 30
                                                         kerning 1
     
-    #screen blwnfh_achievements_window():
-    
+    screen blwnfh_achievements_window():
+        tag menu
+        modal True
+
+        key "game_menu":
+            action NullAction()
+
+        key "screenshot":
+            action NullAction()
+
+        $ columns = len(characters_banners_idle)
+        $ rows = 1
+
+        # Основные элементы   
+        frame:
+            background blwnfh_gui["img"]["fon"]
+            area (0.0, 0.0, 1.0, 1.0)
+            text "Достижения":
+                align(0.5, 0.055)
+                style "blwnfh_title"
+                size 80
+                kerning 1
+            imagebutton:
+                    action ShowMenu("blwnfh_achievements")
+                    idle blwnfh_gui["achievements"]["back"]
+                    hover blwnfh_gui["achievements"]["back"]
+                    hover_sound blwnfh_gui["sound"]["plimp"]
+                    at blwnfh_menu_pos_atl(0.5, 0.1, 0.082, 0.0)
+            grid 3 1:
+                xalign 0.5
+                for i in ["trophy_bronz","trophy_silver","trophy_gold"]:
+                    frame:
+                        background "#0005"
+                        area(0.0, 145, 550, 70)
+                        xmargin 30
+
+            grid 3 1:
+                xalign 0.5
+                for i in ["trophy_bronz","trophy_silver","trophy_gold"]:
+                    frame:
+                        background "#0005"
+                        area(0.0, 0.3, 550, 730)
+                        xmargin 30
+                        viewport id "menu_ach_list":
+                            draggable True
+                            mousewheel True
+                            scrollbars "vertical"
+                            #grid 1 много:
+
+
+
+
+
+
     transform blwnfh_ach_char_banners(z, x, y):
         zoom z
         pos(x, y)

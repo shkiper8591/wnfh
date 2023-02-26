@@ -83,9 +83,12 @@ init -2 python:
         "relation_down",
         "relation_neutral",
         "ach_frame",
+        "ach_menu_frame",
+        "ach_menu_frame_lock",
         "trophy_bronz",
         "trophy_silver",
         "trophy_gold",
+        "trophy_platina",
         
         #Тут срез для ачивок в файле blwnfh_achievements_menu
         ] + characters_banners_idle + characters_banners_hover

@@ -39,12 +39,15 @@ init -1 python:
             persistent.blwnfh_ach[ach[0]] = False
     
     ##Это для отображения на странице с ачивками
-    #for ach in blwnfh_ach_list:
-    #    renpy.image("blwnfh_ach_" + ach[1], im.Scale(blwnfh_ACHIEVEMENTS + ach[1] + ".png", 1177, 150))
-    #    if ach[1] not in persistent.blwnfh_ach:
-    #        persistent.blwnfh_ach[ach[1]] = False
-    #
-    #renpy.image("blwnfh_ach_lock", im.Scale(blwnfh_ACHIEVEMENTS + "lock.png", 1177, 150))
+    for ach in blwnfh_ach_list:
+        renpy.image("blwnfh_ach_menu_" + ach[0], im.Composite(
+        (499, 125),
+        (0, 0), im.Scale(blwnfh_gui["banners"]["ach_menu_frame"], 499, 125),
+        (94 , 26 ), im.Scale(blwnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
+        
+        ))
+    
+    renpy.image("blwnfh_ach_lock", im.Scale(blwnfh_gui["banners"]["ach_menu_frame_lock"], 499, 125))
     
     
     ## Призыв ачивок ##

@@ -147,7 +147,7 @@ label blwnfh_day_1:
     $ renpy.pause(1.0, hard=True)
     play music blwnfh_music_list["the_smell_of_mushroom"] fadein 3.0 
     window show
-    
+    ## Поход к умывальникам
     "Выйдя на улицу, я набрал полные легкие свежего, утреннего, воздуха."
     
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
@@ -203,7 +203,7 @@ label blwnfh_day_1:
     scene bg ext_washstand_sunset with sphere_invert_blure_dissolve2
     
     "Я взял банку в руку и уже собирался выгнуться обратно, как неожиданно появилась Славя."
-    
+    ## Разговор со Славей у умывальников
     play music music_list["she_is_kind"] fadein 1.5
     
     show sl laugh sport close:
@@ -321,7 +321,7 @@ label blwnfh_day_1:
     play sound sfx_close_door_1
     play ambience ambience_int_cabin_evening fadein 3
     $ renpy.pause(1.0, hard=True)
-    
+    ## Разговор с ОД в домике
     show mt normal pioneer far at right with dissolve
     
     "Войдя внутрь, я увидел, как Ольга Дмитриевна ходила туда сюда по дому и, в явной спешке, рыскала по шкафам."
@@ -441,7 +441,7 @@ label blwnfh_day_1:
     $ blwnfh_set_time()
     play music music_list["trapped_in_dreams"] fadein 3.5
     window show
-    
+    ## Семён на площади
     "Придя на площадь, я был удивлен тому, что здесь было крайне мало народу."
     "Возможно ещё не все проснулись или умылись. {w}Но в целом, так даже было лучше для меня."
     "Я сел на самую крайнюю от центра лавочку, закрытой от солнца тенью дерева."
@@ -456,7 +456,7 @@ label blwnfh_day_1:
     "Но не прошло и пяти минут, как кто-то подошел и встал передо мной."
     #34 звук шагов
     $ blwnfh_set_name("un", "Голос")
-    
+    ## Прибытие Лены и её подсадка рядом
     un "Ты спишь?"
     me "Нет, готовлюсь полчаса стоять на линейке."
     un "Тогда, ты не против, если я сяду рядом?"
@@ -503,7 +503,7 @@ label blwnfh_day_1:
     "Как только она села, я откинул голову обратно и стал изучать облака."
     "Лена очень притихла, лишь изредка вздыхая."
     "Меня же вновь стал утягивать сон в свои тесные объятия."
-    
+    ## Разговор Лены и Семёна
     un "Семён[wp]"
     
     play music music_list["what_do_you_think_of_me"] fadein 5
@@ -551,7 +551,7 @@ label blwnfh_day_1:
     play sound blwnfh_sfx_list["hrust_vetki"]
     show dv grin pioneer2 close with dissolve
     show un angry2 pioneer close with dspr
-    
+    ## Прибытие Алисы
     dv "Приветик, о чём болтаете?"
     me "Да вот[wp]"
     #me "сидим пердим" 
@@ -569,7 +569,7 @@ label blwnfh_day_1:
         ease 0.3 ycenter 0.5
     with dspr
     play music music_list["always_ready"] fadein 3
-    
+    ## Лена отрывает нос Алисе
     "Довольно резко и неожиданно, Лена схватила Алису за нос."    
     dv "Ты чего творишь?!"
     un "А ты догадайся."
@@ -669,7 +669,7 @@ label blwnfh_day_1:
     th "Похоже, не стоило выбирать чью либо из сторон[wp]"
     
     play music blwnfh_music_list["pleasant_memory"] fadein 1.5
-    
+    ## Разговор Алисы и Семёна
     dv "Спасибо."
     me "Да[wp] Пожалуйста, наверно?"
     
@@ -731,7 +731,7 @@ label blwnfh_day_1:
     
     "Алиса встала с лавочки и ушла в строй."
     "Недовольно вздохнув, я поднялся и пошел за ней."
-    
+    ## Линейка1
     show cg d1_lineika with dissolve
     #play music blwnfh_music_list["distant_banjo"] fadein 1.5
     
@@ -798,7 +798,7 @@ label blwnfh_day_1:
     scene bg int_dining_hall_people_day with slide_up_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 3
     window show
-    
+    ## Сцена в столовой
     "Пришел я в столовую чуть ли не одним из первых."
     "Но несмотря на это, не успел я взять свой завтрак, как все нормальные места уже были заняты."
     
@@ -807,6 +807,7 @@ label blwnfh_day_1:
     "Единственным свободным местом, где сидели хоть немного мне знакомые люди, было рядом с Алисой и Ульяной."
     "Конечно, сидеть с ними было сомнительным удовольствием, но выбора нет."
     ## Стас, поправь Ульяну. Если ты это не сделаешь, то я сожру тебя с говном. 
+    ## Диалог с рыжими
     show chair_l behind us
     show chair_r behind dv
     show us grin pioneer at blwnfh_sit_left_close behind table
@@ -875,7 +876,7 @@ label blwnfh_day_1:
     me "Мдэ[wp]"
     
     "Я вернулся к своему завтраку, как тут же к нам чуть ли не подбежала Ольга Дмитриевна."
-
+    ## Просьба ОД
     show mt normal pioneer behind chair_r:
         xcenter 1.2
         ease 2.0 xcenter 0.9
@@ -996,7 +997,7 @@ label blwnfh_day_1:
     th "Ладно, похоже, придется мне импровизировать по ходу дела."
     
     "Не хотя, я перешагнул за приоткрытые ворота."
-    
+    ## Встреча с Катей
     stop ambience fadeout 0.5
     stop music fadeout 1.5
     scene bg ext_bus with dissolve2
@@ -1059,7 +1060,7 @@ label blwnfh_day_1:
         truecenter
         zoom 1.0
         ease_quart 2.0 zoom 1.5
-    
+    ## Возле входа в клубы
     stop ambience fadeout 0.5
     show bg ext_clubs_day with dissolve2 
     play ambience ambience_camp_center_day fadein 3
@@ -1070,7 +1071,7 @@ label blwnfh_day_1:
     me "Так, вот он наш клуб авиамоделирования, я буквально на минуту к товарищам заскачу."
     
     "Быстренько поднявшись к двери, я вошел во внутрь."
-    
+    ## Разбор полётов в клубах
     stop music fadeout 3
     stop ambience fadeout 0.5
     scene bg int_clubs_male_day with dissolve2
@@ -1129,7 +1130,7 @@ label blwnfh_day_1:
     sv "И думаешь я поверю в такое?"
     
     #34 надо добавить звуки воды и девичий визг !9
-    
+    ## Катю обливают водой
     play music music_list["awakening_power"] fadein 1.5
     
     show sv scared pioneer glasses tablet at center with dspr
@@ -1166,7 +1167,7 @@ label blwnfh_day_1:
     kat "Но спасибо хотя бы, что волосы не намочили."
     me "Зато у нас появился ещё один повод быстрее сходить на склад."
     kat "Угу[wp]"
-    
+    ## Возле входа в клубы 2
     show sv worried pioneer glasses tablet at right with dissolve
     
     "Из клубов к нам вышла Планшетик."
@@ -1200,7 +1201,7 @@ label blwnfh_day_1:
     scene bg int_warehouse_day with dissolve2
     play ambience ambience_int_cabin_day fadein 3
     show sl normal pioneer far at right with dissolve
-    
+    ## На складе со Славей и Катей
     "Мы вошли на склад, но внутри деда не было."
     "Однако, была Славя, которая занималась расстановкой вещей на полках и не обратила внимание на посетителей."
     
@@ -1341,7 +1342,7 @@ label blwnfh_day_1:
     "А спрашивать мне как-то неловко."
     
     scene bg ext_house_of_mt_day with dissolve2
-    
+    ## Сдача Кати вожатой
     "Придя к домику вожатой, мне сразу стало понятно, что где-то меня явно обманули."
     "Ведь Ольга Дмитриевна просто лежала на шезлонге и читала книгу."
     
@@ -1427,7 +1428,7 @@ label blwnfh_day_1:
     play ambience ambience_clubs_inside_day fadein 3
     show el normal pioneer at left with dissolve
     show sh normal pioneer at right with dissolve
-    
+    ## Семён в клубах
     "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
     "Без присутствия вездещуй комсомолки, Шурик и Сергей продолжили работу над своим изделием."
     th "В теории это должен быть самолёт на радиоуправлении."
@@ -1451,6 +1452,7 @@ label blwnfh_day_1:
     sh "Уж лучше сразу в могилу."
     el "Слушай Шурик, а я тут вспомнил."
     el "У нас же в подвале есть радио старое, может чего из него получится достать?"
+    ## Семёна отправляют за радио в подвал
     sh "Мысль. {w}Семён, поди достань радио."
     me "Тю, {w}предложил он, а доставай я."
     sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."  
@@ -1502,7 +1504,7 @@ label blwnfh_day_1:
     "Вот только я не представлял как вытащить радио так, чтобы не повредить его или самого себя."
     
     th "Ну без помощи здесь не обойтись."
-    
+    ## Семён и Шурик притаскивают радио в главное помещение
     me "ШУУУУРИИИК! {w}ПА-МА-ГИ!!!"
     
     "Через несколько секунд послышался звук открытия двери, а вскоре сверху появился сам Шурик."
@@ -1583,7 +1585,7 @@ label blwnfh_day_1:
     me "Да уж, я-то надеялся, что ничего тяжелого таскать сегодня не придется."
     sh "Серый, подай нам тряпку какую-нибудь, чтобы вытерется от грязи."
     el "Да, сейчас."
-    
+    ## Радио рассыпается от попытки разобрать его
     "Сергей достал из ящика стола большую белую тряпку и протянул мне."
     "Я быстренько вытер ей руки, после чего дал Шурику."
     "Он вытер руки и после сразу принялся протирать радио."
@@ -1640,7 +1642,7 @@ label blwnfh_day_1:
     scene bg ext_square_day with dissolve2
     $ blwnfh_set_name("din", "Пионерка")
     window show
-    
+    ## Семён сталкивается с Диной по пути в столовую
     "Я спокойно проходил мимо площади, насвистывая простенькую мелодию."
     "Как неожиданно послышались быстро приближающиеся шаги."
     "Очевидно, кто-то позади меня бежал."
@@ -1709,7 +1711,7 @@ label blwnfh_day_1:
     show kat normal pioneer behind chair_r:
         xcenter 1.4
         ease_quart 5.0 xcenter 0.8
-    
+    ## Семён, Лена и Катя в столовой
     "И я было уже начал обедать, как ко мне подошли Лена и[wp] {w}Катя?"
     
     th "Что ж вам вечно всем от меня надо."
@@ -1825,7 +1827,7 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_day with dissolve2
     play ambience ambience_camp_center_day fadein 3
-    
+    ## Симен решил прилечь на крыльце столовой
     "Выйдя на крыльцо, на меня резко напала дикая усталость и сонливость."
     "Так что мною было решено идти домой, но перед этим я присел на лавочку, немного отдохнуть от обеда." 
     
@@ -1875,7 +1877,7 @@ label blwnfh_day_1:
     "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     
     show un smile pioneer at center with dissolve
-    
+    ## Лена зовёт Семёна погулять когда он идёт домой
     "Я медленно повернулся и увидел перед собой Лену."
     
     th "Ну что опять-то, снова тебе надо что-то перетаскать?"
@@ -1949,7 +1951,7 @@ label blwnfh_day_1:
     with None
     play ambience ambience_camp_center_evening fadein 3
     window show
-    
+    ## Ольга Дмитриевна будит Семёна спящего на шезлонге
     "Я проснулся оттого, что меня кто-то довольно сильно тряс за плечо."
     
     show mt normal pioneer panama with dissolve
@@ -2029,7 +2031,7 @@ label blwnfh_day_1:
     hide mt with dissolve
     "Я же думал продолжить свой сон, но вожатая вытрясла все его остатки из меня."
     "А значит следовало придумать какое-нибудь другое занятие."
-    
+    ## Семён размышляет куда можно пойти
     th "В клубах наверняка уже никого нет, а одному там делать нечего."
     th "Может пойти искать Лену, чтобы позвать её гулять? {w}Хотя не, бред какой-то, я же сам отказался."
     # тут может быть выбор
@@ -2046,7 +2048,7 @@ label blwnfh_day_1:
     $ renpy.pause(1.5)
     play ambience ambience_lake_shore_day fadein 3
     window show
-    
+     
     "Придя, я был рад обнаружить, что здесь никого нет."
     "И не став, как обычно, задаваться вопросами «почему?», я сел под дерево, где было вполне уютно." 
     "А вид, хоть и не представлял из себя что-то экстравагантное, крайне завораживал."
@@ -2070,7 +2072,7 @@ label blwnfh_day_1:
     $ blwnfh_set_name("un", "Голос")
     play music music_list["lets_be_friends"] fadein 5
     window show
-    
+    ## Разговор Семёна и Лены на пляже
     un "Не замерзнешь?"
     
     "Раздался из-за спины вопрос."

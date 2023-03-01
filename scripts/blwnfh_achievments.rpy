@@ -10,16 +10,14 @@ init -1 python:
         #Тэг ачивки   Иконка            Заголовк             Подпись                           Листок         Трофей             Персонаж
         ["payday"    ,"icon_payday"    ,"Конфетный вор"     ,"Было весело"                    ,"leaf_day"    ,"trophy_silver"   ,"kat"],   
         ["bkrr"      ,"icon_bkrr"      ,"Да, именно"        ,"Это отсылка на БКРР"            ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
-        ["alpha-0.1" ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"              ,"leaf_day"    ,"trophy_gold"     ,"kat"],
+        #["alpha-0.1" ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"              ,"leaf_day"    ,"trophy_gold"     ,"kat"],
         ["post"      ,"icon_post"      ,"Груз доставлен"    ,"Почти без повреждений"          ,"leaf_day"    ,"trophy_bronz"    ,"kat"],     
         ["zgdun"     ,"icon_zgdun"     ,"Великий ждун"      ,"Дети уже школу закончили?"      ,"leaf_day"    ,"trophy_gold"     ,"un"],    
         ["alarm"     ,"icon_alarm"     ,"Das Boot"          ,"Доплавался, блин"               ,"leaf_day"    ,"trophy_silver"   ,"un"],
         ["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану" ,"При коммунизме всё будет за..." ,"leaf_day"    ,"trophy_silver"   ,"un"],
         ["handass"   ,"icon_handass"   ,"Рукожоп"           ,"Ну как так-то?"                 ,"leaf_day"    ,"trophy_bronz"    ,"un"],
     ]
-    
-    
-    
+
     if not persistent.blwnfh_ach:
         persistent.blwnfh_ach = dict()
     
@@ -33,23 +31,22 @@ init -1 python:
         (515, 30 ), im.Scale(blwnfh_BANNERS + ach[4] + ".png"  , 45 , 68 ),
         (184, 65 ), im.Scale(blwnfh_BANNERS + ach[5] + ".png"  , 38 , 38 ),
         ))
-        
-        
+
         if ach[0] not in persistent.blwnfh_ach:
             persistent.blwnfh_ach[ach[0]] = False
     
     ##Это для отображения на странице с ачивками
+    import renpy.display.im as im
+
     for ach in blwnfh_ach_list:
         renpy.image("blwnfh_ach_menu_" + ach[0], im.Composite(
-        (499, 125),
-        (0, 0), im.Scale(blwnfh_gui["banners"]["ach_menu_frame"], 499, 125),
-        (94 , 26 ), im.Scale(blwnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
-        
+            (455, 99),
+            (12, 12 ), im.Scale(blwnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
+            (0, 0), im.Scale(blwnfh_gui["banners"]["ach_menu_frame"], 455, 99),
         ))
     
-    renpy.image("blwnfh_ach_lock", im.Scale(blwnfh_gui["banners"]["ach_menu_frame_lock"], 499, 125))
-    
-    
+    renpy.image("blwnfh_ach_lock", im.Scale(blwnfh_gui["banners"]["ach_menu_frame_lock"], 455, 99))
+
     ## Призыв ачивок ##
     
     def blwnfh_get_achievement(ach):
@@ -68,7 +65,7 @@ init -1 python:
             renpy.hide("blwnfh_ach_" + ach)
             renpy.hide("ach_title")
             renpy.hide("ach_signature")
-            
+    
     ## Подсчёт ачивок ##
     
     def blwnfh_check_achievements():

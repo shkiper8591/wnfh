@@ -50,9 +50,6 @@ init -2 python:
         ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
-        "lock",
-        "idle_frame",
-        "hover_frame",
         "back",
         ]}
         
@@ -89,6 +86,7 @@ init -2 python:
         "trophy_silver",
         "trophy_gold",
         "trophy_platina",
+        "trophy_white"
         
         #Тут срез для ачивок в файле blwnfh_achievements_menu
         ] + characters_banners_idle + characters_banners_hover

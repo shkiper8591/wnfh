@@ -365,6 +365,7 @@ init 2:
     $ blwnfh_music_list["internet_inkognito"] = blwnfh_MUSIC + "internet_inkognito - svati.mp3"
     $ blwnfh_music_list["estafeta"] = blwnfh_MUSIC + "estafeta - svati.mp3"
     $ blwnfh_music_list["country_shop"] = blwnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
+    $ blwnfh_music_list["ya_znayu_kto_ti"] = blwnfh_MUSIC + "ya znayu kto ti.mp3"
     
     
     # AMBIENCE Лист

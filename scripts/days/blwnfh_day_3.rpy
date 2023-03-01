@@ -1389,7 +1389,7 @@ label blwnfh_day_3:
     
     me "Приветик ржавая."
     
-    show dv laugh pioneer2 at center close with dissolve
+    show dv laugh pioneer2 close at center with dissolve
     
     "Алиса вышла со сцены и спрыгнув ко мне, легконько стукнула по плечу."
     

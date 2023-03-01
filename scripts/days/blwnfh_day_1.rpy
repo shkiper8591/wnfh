@@ -4,8 +4,8 @@ label blwnfh_day_1_dream:
     $ renpy.pause(1.0)
     $ blwnfh_set_time("prologue")
     $ blwnfh_set_name("voice", "Голос")
+    $ blwnfh_set_name("me", "Я")
     $ blwnfh_set_char_color("voice", "#FFAA00")
-    $ blwhfh_set_name("me", "Я")
     show anim prolog_2 with Dissolve(5.0)
     $ renpy.pause(1.5, hard=True)
     $ blwnfh_set_mode(nvl)
@@ -23,7 +23,7 @@ label blwnfh_day_1_dream:
     
     me "Стой, падла!"
     
-    "Пытался я уже который раз докричаться водителю автобуса или хотя бы пассажирам."
+    "\nПытался я уже который раз докричаться водителю автобуса или хотя бы пассажирам."
     "Но всем было всё равно на медленно отстающего человека, которому позарез надо сесть именно на этот маршрут.\n"
     
     th "Зараза, а мне казалось, что все люди всегда готовы помочь друг другу."
@@ -33,7 +33,7 @@ label blwnfh_day_1_dream:
     
     me "Хвала небесам."
     
-    stop music fadeout 5.0
+    stop music fadeout 4.0
     play sound sfx_bus_interior_moving loop fadein 5.0
     nvl clear
     
@@ -95,7 +95,7 @@ label blwnfh_day_1_dream:
     play music music_list["doomed_to_be_defeated"] fadein 1.0
     
     extend " Вечным сном!"
-     
+    
     "\nНеожиданно, девушка, неизвестно откуда, достала длиннющий такой нож."
     "Я было хотел закричать и позвать на помощь, но даже воздуха набрать не успел, как она тут же нанесла мне с десяток ран[wp]\n" 
     

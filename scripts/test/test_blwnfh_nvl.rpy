@@ -23,6 +23,8 @@ label blwnfh_test_nvl:
     nvl hide
     stop music fadeout 5
     scene black with dissolve2
+    $ blwnfh_set_mode()
+    $ blwnfh_set_name("kat", "Катя")
     $ renpy.pause(2.0, hard=True)
     "Возвращаемся в меню отладки?"
     

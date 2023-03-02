@@ -13,7 +13,7 @@ label blwnfh_test_ach:
     $ blwnfh_get_achievement("payday")
     $ renpy.pause(1.0, hard=True)
     "альфа"
-    $ blwnfh_get_achievement("alpha-0.1")
+    $ blwnfh_get_achievement("alpha")
     $ renpy.pause(1.0, hard=True)
     
     jump blwnfh_test_ach_hui

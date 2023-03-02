@@ -51,9 +51,7 @@ init -2 python:
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
         "back",
-        ]}
-        
-   # achivments_list={pers:{"trophy_gold":[],"trophy_silver":[],"trophy_bronz":[]} for pers in blwnfh_characters.keys()}    
+        ]}  
     # Всплывашки
     characters_banners_idle = [
         "ach_kat_idle",

@@ -29,7 +29,7 @@ init 2:
                 # back
 
             imagebutton:
-                action ShowMenu("blwnfh_menu")
+                action Return()
                 idle blwnfh_gui["achievements"]["back"]
                 hover blwnfh_gui["achievements"]["back"]
                 hover_sound blwnfh_gui["sound"]["plimp"]
@@ -73,27 +73,30 @@ init 2:
                                         at blwnfh_ach_char_banners(0.8, 0.5, 0.5)
                                     frame:
                                         background "#0000"
-                                        area(0.0, 0.92, 288, 100)
-                                        grid 3 1:
+                                        area(0.0, 620, 288, 80)
+                                        grid 2 1:
                                             xalign 0.5
-                                            for i in ["trophy_bronz","trophy_silver","trophy_gold"]:
-                                                frame:
-                                                    background "#0000"
-                                                    area(0.0, 0.0, 90, 50)
-                                                    add blwnfh_gui["banners"][i]:
-                                                        zoom 0.25
-                                                    $ znak = 0
-                                                    $ sum_znak_elem = 0
-                                                    for element in blwnfh_ach_list:
-                                                        if element[5] == i and element[6] == character:  
-                                                            if persistent.blwnfh_ach[element[0]]:
-                                                                $ znak += 1
-                                                            $ sum_znak_elem += 1
-                                                    text "{}/{}".format(str(znak),str(sum_znak_elem)):
-                                                        align(1.0, 0.8)
-                                                        style "blwnfh_title"
-                                                        size 30
-                                                        kerning 1
+                                            frame:
+                                                background "#0000"
+                                                area(0.0, 0.0, 120, 70)
+                                                add blwnfh_gui["banners"]["trophy_white"]:
+                                                    zoom 0.4
+                                                    align(0.6, 0.5)
+                                            frame:
+                                                background "#0000"
+                                                area(0.0, 0.0, 120, 70)
+                                                $ znak = 0
+                                                $ sum_znak_elem = 0
+                                                for element in blwnfh_ach_list:
+                                                    if element[6] == character:  
+                                                        if persistent.blwnfh_ach[element[0]]:
+                                                            $ znak += 1
+                                                        $ sum_znak_elem += 1
+                                                text "{}/{}".format(str(znak),str(sum_znak_elem)):
+                                                    align(0.4, 0.5)
+                                                    style "blwnfh_title"
+                                                    size 60
+                                                    kerning 1
     
     screen blwnfh_achievements_window(character):
         tag menu
@@ -136,10 +139,22 @@ init 2:
                                 background "#0000"
                                 area(0.0, 0.0, 200, 60)
                                 xmargin 5
-                                text "Заголовок":
-                                    style "blwnfh_title"
-                                    size 60
-                                    kerning 1 
+                                if i == "trophy_bronz":
+                                    text "Обычные":
+                                        style "blwnfh_title"
+                                        size 60
+                                        kerning 1
+                                elif i == "trophy_silver":
+                                    text "Особые":
+                                        style "blwnfh_title"
+                                        size 60
+                                        kerning 1
+                                else:
+                                    text "Концовки":
+                                        style "blwnfh_title"
+                                        size 60
+                                        kerning 1
+                                
                             frame:
                                 background "#0000"
                                 area(0.0, 0.0, 200, 60)
@@ -180,11 +195,41 @@ init 2:
                                     if element[5] == trof and element[6] == character:
                                         if persistent.blwnfh_ach[element[0]]:
                                             frame:
+                                                default ach_hovered = False
                                                 background "#0000"
-                                                add "blwnfh_ach_menu_" + element[0]
+                                                area(0.0, 0.0, 460, 111)
+                                                imagebutton:
+                                                    action NullAction()
+                                                    idle "blwnfh_ach_menu_" + element[0]
+                                                    hover "blwnfh_ach_menu_" + element[0]
+                                                    hovered ToggleScreenVariable("ach_hovered")
+                                                    unhovered ToggleScreenVariable("ach_hovered")
+                                                    hover_sound blwnfh_gui["sound"]["plimp"]
+                                                    #zoom 0.98
+                                                frame:
+                                                    background "#0000"
+                                                    area(0.2, 0.0, 340, 99)
+                                                    if ach_hovered:
+                                                        text element[3]:
+                                                            style "blwnfh_title"
+                                                            size 35
+                                                            kerning 1
+                                                            min_width 330
+                                                            text_align 1.0
+                                                            layout "tex"
+                                                    else:
+                                                        text element[2]:
+                                                            style "blwnfh_title"
+                                                            size 35
+                                                            kerning 1
+                                                            min_width 330
+                                                            text_align 1.0
+                                                            layout "tex"
+                                                
                                         else:
                                             frame:
                                                 background "#0000"
+                                                area(0.0, 0.0, 500, 100)
                                                 add "blwnfh_ach_lock"
 
 

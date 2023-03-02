@@ -25,7 +25,7 @@ init 2:
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
                     
-            menu_hovered_action_plimp = Play("sound", blwnfh_gui["sound"]["plimp"])
+
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
         
         default play_text = False
@@ -84,11 +84,11 @@ init 2:
             hover blwnfh_gui["img"]["play"]
             hover_sound blwnfh_gui["sound"]["plimp"]
             hovered ToggleScreenVariable("play_text")
-            unhovered ToggleScreenVariable("play_text")            
+            unhovered ToggleScreenVariable("play_text")
             at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_settings_menu", _transition=dissolve)]
+            action ShowMenu("blwnfh_settings_menu", _transition=dissolve)
             idle blwnfh_gui["img"]["settings"]
             hover blwnfh_gui["img"]["settings"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -97,7 +97,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_gallery_menu")]
+            action ShowMenu("blwnfh_gallery_menu")
             idle blwnfh_gui["img"]["gallery"]
             hover blwnfh_gui["img"]["gallery"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -106,7 +106,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), ShowMenu("blwnfh_achievements")]
+            action ShowMenu("blwnfh_achievements")
             idle blwnfh_gui["img"]["achievements"]
             hover blwnfh_gui["img"]["achievements"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -115,7 +115,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.4875, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
+            action Jump("technical_chocolatki")
             idle blwnfh_gui["img"]["scheme"]
             hover blwnfh_gui["img"]["scheme"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -124,7 +124,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.594270833, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
+            action Jump("technical_chocolatki")
             idle blwnfh_gui["img"]["dlc"]
             hover blwnfh_gui["img"]["dlc"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -133,7 +133,7 @@ init 2:
             at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
         
         imagebutton:
-            action [Hide("blwnfh_menu", transition=dissolve), Jump("technical_chocolatki")]
+            action Jump("technical_chocolatki")
             idle blwnfh_gui["img"]["info"]
             hover blwnfh_gui["img"]["info"]
             hover_sound blwnfh_gui["sound"]["plimp"]
@@ -216,7 +216,7 @@ init 2:
 
 label blwnfh_main:
     scene bg disclaimer with dissolve
-    $ renpy.pause(100)
+    #$ renpy.pause(100)
     jump blwnfh_main_menu
 label blwnfh_main_menu:
     scene bg fon with dissolve

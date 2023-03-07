@@ -42,6 +42,8 @@ init -2 python:
         "settings",
         "test_fon",
         "fon",
+        "gradient",
+        "gradient2",
         "bg",
         "vbar_full",
         "vbar_null",

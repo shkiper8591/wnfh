@@ -1,7 +1,6 @@
 init -2:
     # Шрифты
     $ style.blwnfh_title = Style(style.default)
-    #$ style.blwnfh_title.font = blwnfh_FONTS + "Dymaxion scriptS.ttf"
     $ style.blwnfh_title.font = blwnfh_FONTS + "Sirius Cursiv.ttf"
     $ style.blwnfh_title.color = "#FFF"
     $ style.blwnfh_title.drop_shadow = (2, 2)
@@ -11,6 +10,15 @@ init -2:
     $ style.blwnfh_title.size = 80
     $ style.blwnfh_title.kerning = 2.0
     $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
+    
+    $ style.blwnfh_splashes = Style(style.default)
+    $ style.blwnfh_splashes.font = blwnfh_FONTS + "vcr_osd.ttf"
+    $ style.blwnfh_splashes.color = "#FFFF00"
+    $ style.blwnfh_splashes.drop_shadow = (2, 2)
+    $ style.blwnfh_splashes.drop_shadow_color = "#222"
+    $ style.blwnfh_splashes.text_align = 0.5
+    $ style.blwnfh_splashes.size = 20
+    $ renpy.image("blwnfh_splashes", ParameterizedText(style="blwnfh_splashes", size=64))
 
     $ style.blwnfh_ach_title = Style(style.default)
     $ style.blwnfh_ach_title.font = blwnfh_FONTS + "msjhl.ttc"
@@ -171,3 +179,5 @@ init -2:
     $ style.blwnfh_thought.drop_shadow_color = "#000"
     $ style.blwnfh_thought.text_align = 0.5
     $ renpy.image("blwnfh_thought", ParameterizedText(style="blwnfh_thought", size=40))
+    
+    

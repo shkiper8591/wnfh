@@ -18,7 +18,7 @@ init 2:
         
         # Основные элементы   
         frame:
-            background im.Blur(blwnfh_gui["img"]["fon"], 1.5)
+            background im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5)
             area (0.0, 0.0, 1.0, 1.0)
             #text u"Достижения {size=-4}{k=0.0}(%s / %s){/k}{/size}" % (blwnfh_check_achievements(), len(blwnfh_ach_list)):
             text "Достижения":
@@ -113,7 +113,7 @@ init 2:
 
         # Основные элементы   
         frame:
-            background im.Blur(blwnfh_gui["img"]["fon"], 1.5)
+            background im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5)
             area (0.0, 0.0, 1.0, 1.0)
             text str(blwnfh_characters[character][0]):
                 align(0.5, 0.055)

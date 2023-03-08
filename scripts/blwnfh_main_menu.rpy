@@ -12,11 +12,11 @@ init 2:
         
         
         frame:
-            background im.Blur(blwnfh_gui["img"]["fon"], 1.5)
+            background im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5)
             area(0.0, 0.0, 1.0, 1.0)
-        #frame:
-        #    background blwnfh_gui["img"]["gradient2"] 
-        #    area(0.0, 0.0, 1.0, 1.0)
+        frame:
+            background blwnfh_gui["main_menu"]["gradient2"] 
+            area(0.0, 0.0, 1.0, 1.0)
             
         python:
             blwnfh_posx = .333
@@ -42,21 +42,44 @@ init 2:
                 ["settings"     ,"Настройки"     ,[ShowMenu("blwnfh_settings_menu", _transition=dissolve)]                 ],
                 ["exit"         ,"Выход"         ,[Return()]                                           ],
             ]
+            
+            blwnfh_menu_fotter_button = [
+            
+                ["news"   ,"Новости"  ,[Show("blwnfh_news", transition=Dissolve(1.0)) ]],
+                ["links"  ,"Ссылки"   ,[Jump("technical_chocolatki")] ],
+            ]
 
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
         
+        $ background_color = "#0005"
+        $ button_red =       "#F005"
+        $ button_green =     "#0F05"
+        $ button_blue =      "#00F5"
+        
         frame:
-            background "#0000"
+            background background_color
             area(0.0, 0.0, 1.0, 1.0)
             
             frame:
-                background "#0005"
-                area(0.5, 0.05, 500, 100)
+                background background_color
+                area(0.5, 0.09, 500, 100)
                 xanchor 0.5
+                yanchor 0.5
                 text "Мы не отсюда":
                     style "blwnfh_title"
                     min_width 500
                     text_align 0.5
+            
+            frame:
+                background background_color
+                area(0.1, 0.09, 73, 83)   
+                xanchor 0.5 yanchor 0.5
+                imagebutton:
+                    action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
+                    idle blwnfh_gui["main_menu"]["kit"]
+                    hover blwnfh_gui["main_menu"]["kit"]
+                    hovered menu_hovered_action_cat                       
+                    at blwnfh_mm_kit_hover_atl() 
             
             text blwnfh_splash():
                 style "blwnfh_splashes"
@@ -64,28 +87,110 @@ init 2:
             
             
             frame:
-                background "#0005"
-                area(0.15, 0.6, 400, 800)
+                background background_color
+                area(0.15, 0.58, 400, 800)
                 xanchor 0.5 yanchor 0.5
                 $ lines = 0
                 for button in blwnfh_menu_button:
                     $ lines += 1
-                grid 1 lines:
+                grid 1 lines+1:
                     xalign 0.5
                     for button in blwnfh_menu_button:
                         frame:
-                            background "#0005"
+                            background background_color
                             area(0.0, 0.0, 300, 86)
                             ymargin 3
                             textbutton button[1]:
                                 action [button[2]]
-                                background "#F005"
+                                background button_red
                                 text_style "blwnfh_title"
                                 text_size 60
                                 text_min_width 274
                                 text_text_align 0.0
                                 hover_sound blwnfh_gui["sound"]["plimp"]
                                 at blwnfh_mm_button_hover_atl()
+                    
+                    grid 2 1:
+                        xalign 0.5
+                        for button in blwnfh_menu_fotter_button:
+                            frame:
+                                background background_color
+                                area(0.0, 0.0, 150, 66)
+                                ymargin 3
+                                textbutton button[1]:
+                                    action [button[2]]
+                                    background button_green
+                                    text_style "blwnfh_title"
+                                    text_size 40
+                                    text_min_width 124
+                                    text_text_align 0.0
+                                    hover_sound blwnfh_gui["sound"]["plimp"]
+                                    at blwnfh_mm_button_hover_atl()
+            
+    screen blwnfh_news():
+        frame:
+            background blwnfh_gui["main_menu"]["gradient2"] 
+            area(0.0, 0.0, 1.0, 1.0)
+        frame:
+            background im.Alpha(im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5), 0.1)
+            area(0.0, 0.0, 1.0, 1.0)
+        modal True
+        $ background_color = "#0005"
+        $ button_red =       "#F005"
+        $ button_green =     "#0F05"
+        $ button_blue =      "#00F5"
+        frame:
+            background background_color
+            area(0.6, 0.58, 800, 800)
+            xanchor 0.5 yanchor 0.5
+            at frame_spawn()
+                
+            textbutton "X":
+                action [Hide("blwnfh_news", transition=Dissolve(1.0))]
+                background button_red
+                text_style "blwnfh_title"
+                text_size 80
+                hover_sound blwnfh_gui["sound"]["plimp"]
+            
+            frame:
+                background background_color
+                area(0.5, 0.0, 750, 100)
+                xanchor 0.5
+                text "Новости-хуёвости":
+                    style "blwnfh_title"
+                    min_width 750
+                    text_align 0.5
+            frame:
+                background background_color
+                area(0.5, 0.15, 750, 650)
+                xanchor 0.5
+                viewport id "menu_ach_list":
+                    draggable True
+                    mousewheel True
+                    scrollbars "vertical"
+                    grid 1 13:
+                        text "Я заебался"
+                        text "Я тоже"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                        text "АААААААААААААААААААААААА"
+                    
+                    
+        
+    
+
+    transform frame_spawn():
+        zoom 0.0
+        ease 0.5 zoom 1.2
+        ease 0.2 zoom 1.0
                         
         #default play_text = False
         #default settings_text = False
@@ -252,6 +357,15 @@ init 2:
     transform blwnfh_mm_button_hover_atl(z = 1.0):
         pos(0.0, 0.5)
         anchor(0.0, 0.5)
+        on hover:
+            ease 0.15 zoom (z - 0.15)
+            ease 0.15 zoom (z - 0.02)
+        on idle:
+            ease 0.15 zoom z
+    
+    transform blwnfh_mm_kit_hover_atl(z = 1.0):
+        pos(0.5, 0.5)
+        anchor(0.5, 0.5)
         on hover:
             ease 0.15 zoom (z - 0.15)
             ease 0.15 zoom (z - 0.02)

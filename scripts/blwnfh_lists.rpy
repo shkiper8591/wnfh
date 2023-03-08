@@ -51,6 +51,7 @@ init -2 python:
         "button_2",
         "cg",
         "bg",
+        "fon",
         ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [

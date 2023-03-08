@@ -14,9 +14,9 @@ init 2:
         frame:
             background im.Blur(blwnfh_gui["img"]["fon"], 1.5)
             area(0.0, 0.0, 1.0, 1.0)
-        frame:
-            background blwnfh_gui["img"]["gradient2"] 
-            area(0.0, 0.0, 1.0, 1.0)
+        #frame:
+        #    background blwnfh_gui["img"]["gradient2"] 
+        #    area(0.0, 0.0, 1.0, 1.0)
             
         python:
             blwnfh_posx = .333
@@ -33,7 +33,7 @@ init 2:
             blwnfh_menu_button = [
             
                  #Тег кнопки     #Текст кнопки
-                ["play"         ,"Играть"        ,[Hide("blwnfh_menu", transition=dissolve), Start("blwnfh_day_1_dream")]  ],
+                ["play"         ,"Новая игра"    ,[Hide("blwnfh_menu", transition=dissolve), Start("blwnfh_day_1_dream")]  ],
                 ["saves"        ,"Загрузить"     ,[Jump("technical_chocolatki")]                                           ],
                 ["achievements" ,"Достижения"    ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
                 ["gallery"      ,"Галерея"       ,[Jump("technical_chocolatki")]                                           ],
@@ -50,7 +50,7 @@ init 2:
             area(0.0, 0.0, 1.0, 1.0)
             
             frame:
-                background "#0000"
+                background "#0005"
                 area(0.5, 0.05, 500, 100)
                 xanchor 0.5
                 text "Мы не отсюда":
@@ -64,8 +64,8 @@ init 2:
             
             
             frame:
-                background "#0000"
-                area(0.22, 0.6, 600, 800)
+                background "#0005"
+                area(0.15, 0.6, 400, 800)
                 xanchor 0.5 yanchor 0.5
                 $ lines = 0
                 for button in blwnfh_menu_button:
@@ -74,15 +74,15 @@ init 2:
                     xalign 0.5
                     for button in blwnfh_menu_button:
                         frame:
-                            background "#0000"
-                            area(0.0, 0.0, 500, 86)
+                            background "#0005"
+                            area(0.0, 0.0, 300, 86)
                             ymargin 3
                             textbutton button[1]:
                                 action [button[2]]
-                                background "#0000"
+                                background "#F005"
                                 text_style "blwnfh_title"
                                 text_size 60
-                                text_min_width 474
+                                text_min_width 274
                                 text_text_align 0.0
                                 hover_sound blwnfh_gui["sound"]["plimp"]
                                 at blwnfh_mm_button_hover_atl()

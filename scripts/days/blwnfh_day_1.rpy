@@ -7,11 +7,18 @@ label blwnfh_day_1_dream:
     $ blwnfh_set_name("me", "Я")
     $ blwnfh_set_char_color("voice", "#FFAA00")
     show anim prolog_2 with Dissolve(5.0)
+    play music blwnfh_music_list["the_swarms_of_hades"] fadein 5.0
     $ renpy.pause(1.5, hard=True)
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
-    "Я бегу как можно быстрее[wp] {w}Бегу прям со всех ног за[wp]"
+    "Я уже не могу[wp] {w}Моих сил недостаточно, но я должен продолжать. Продолжать бежать из всех тех сил, что у меня остались."
+    "Мои ноги уже сами бежали, я их давно перестал чувствовать, а ветер, такое ощущение, что уже просто срывал кожу с лица."
+    "Но во чтобы то не стало, мне надо продолжать[wp]"
+    
+    stop music fadeout 1.5
+    
+    extend " Продолжать бежать за[wp]"
     
     play music blwnfh_music_list["ya_znayu_kto_ti"] fadein 2.5
     
@@ -29,11 +36,11 @@ label blwnfh_day_1_dream:
     th "Зараза, а мне казалось, что все люди всегда готовы помочь друг другу."
     
     "\nРазрыв между мной и автобусом становился всё больше, и надежда на успех медленно стала покидать меня."
-    "Однако, всё же меня наконец заметил кто-то из автобуса. {w}Некая рыжеволосая девушка, которая передала сообщение водителю и автобус стал медленно сбрасывать скорость.\n"
+    "Однако, всё же меня наконец заметил кто-то из автобуса. {w}Некая рыжеволосая девушка, которая, по всей видимости, передала сообщение водителю и автобус стал медленно сбрасывать скорость.\n"
     
-    me "Хвала небесам."
+    me "Хвала небесам!"
     
-    stop music fadeout 4.0
+    stop music fadeout 2.0
     play sound sfx_bus_interior_moving loop fadein 5.0
     nvl clear
     
@@ -253,7 +260,7 @@ label blwnfh_day_1:
     me "За банкой зубного порошка нагнулся, а что?"    
     sl "Да так, думала прячешься от кого-то."
     #th "Да, от тебя."
-    me "Хе, от кого же мне прятаться-то"
+    me "Хе, от кого же мне прятаться-то[wp]"
     
     show sl smile2 sport close:
         subpixel True
@@ -1493,7 +1500,7 @@ label blwnfh_day_1:
     
     stop ambience fadeout 0.5
     scene bg int_clubs_male2_night with dissolve2
-    play ambience ambience_medstation_inside_day fadein 3
+    play ambience ambience_clubs_inside_day fadein 3
     
     "Войдя внутрь и включив свет, я тут же громко чихнул из-за пыли."
     #34 звук чиха
@@ -1510,7 +1517,9 @@ label blwnfh_day_1:
     "Сняв с него коробку и открыв его, я спустился в подвал."
     
     #пока нету фона, такая вот заглушка.
+    stop ambience fadeout 2.5
     scene bg black with dissolve2
+    
     #scene bg int_clubs_attic with dissolve2
     
     "Спустившись, я включил тусклую лампу и опешил."

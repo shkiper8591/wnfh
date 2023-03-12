@@ -8,9 +8,7 @@ init 2:
         
         key "screenshot":
             action NullAction()
-        
-        
-        
+
         frame:
             background im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5)
             area(0.0, 0.0, 1.0, 1.0)
@@ -21,7 +19,7 @@ init 2:
         python:
             blwnfh_posx = .333
             blwnfh_posy = .52
-        
+            
             from random import randrange
             
             def menu_img_status(imgf, condition="hover"):
@@ -45,12 +43,24 @@ init 2:
             
             blwnfh_menu_fotter_button = [
             
-                ["news"   ,"Новости"  ,[Show("blwnfh_news", transition=Dissolve(1.0)) ]],
-                ["links"  ,"Ссылки"   ,[Jump("technical_chocolatki")] ],
+                ["news"   ,"Новости"      ,[Show("blwnfh_news", transition=Dissolve(1.0)) ]],
+                ["credits"  ,"Создатели"  ,[Jump("technical_chocolatki")] ],
             ]
-
+            
+            blwnfh_menu_icon = [
+                ["kit"     ,blwnfh_gui["main_menu"]["kit"]                       ,[Show("blwnfh_news", transition=Dissolve(1.0))]   ],
+                ["steam"   ,im.Scale(blwnfh_gui["main_menu"]["steam"], 75, 75)   ,[Jump("technical_chocolatki")]                    ],
+                ["discord" ,im.Scale(blwnfh_gui["main_menu"]["discord"], 75, 75) ,[Jump("technical_chocolatki")]                    ],
+                
+            ]
+            
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
         
+        #$ background_color = "#0000"
+        #$ button_red =       "#0000"
+        #$ button_green =     "#0000"
+        #$ button_blue =      "#0000"
+
         $ background_color = "#0005"
         $ button_red =       "#F005"
         $ button_green =     "#0F05"
@@ -70,16 +80,37 @@ init 2:
                     min_width 500
                     text_align 0.5
             
+            
             frame:
                 background background_color
-                area(0.1, 0.09, 73, 83)   
+                area(0.15, 0.09, 400, 100)
                 xanchor 0.5 yanchor 0.5
-                imagebutton:
-                    action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
-                    idle blwnfh_gui["main_menu"]["kit"]
-                    hover blwnfh_gui["main_menu"]["kit"]
-                    hovered menu_hovered_action_cat                       
-                    at blwnfh_mm_kit_hover_atl() 
+                $ colums = 0
+                for icons in blwnfh_menu_icon:
+                    $ colums += 1
+                grid colums 1:
+                    xalign 0.5
+                    for icons in blwnfh_menu_icon:
+                        frame:
+                            background button_blue
+                            area(0.5, 0.5, 85, 85)   
+                            xanchor 0.5
+                            yanchor 0.5
+                            xmargin 3
+                            imagebutton:
+                                action icons[2]
+                                idle icons[1]
+                                hover icons[1]
+                                hovered menu_hovered_action_cat
+                                at blwnfh_mm_kit_hover_atl()
+            
+            frame:
+                background background_color
+                area(0.9, 0.9, 100, 40)
+                xanchor 0.5 yanchor 0.5
+                text blwnfh_get_usertime():
+                    style "blwnfh_menu"
+                    size 30
             
             text blwnfh_splash():
                 style "blwnfh_splashes"
@@ -135,10 +166,17 @@ init 2:
             background im.Alpha(im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5), 0.1)
             area(0.0, 0.0, 1.0, 1.0)
         modal True
+        
+        #$ background_color = "#0000"
+        #$ button_red =       "#0000"
+        #$ button_green =     "#0000"
+        #$ button_blue =      "#0000"
+
         $ background_color = "#0005"
         $ button_red =       "#F005"
         $ button_green =     "#0F05"
         $ button_blue =      "#00F5"
+        
         frame:
             background background_color
             area(0.6, 0.58, 800, 800)

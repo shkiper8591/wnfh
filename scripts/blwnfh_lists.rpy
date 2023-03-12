@@ -35,6 +35,8 @@ init -2 python:
     # Для главного меню
     blwnfh_gui["main_menu"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
         "kit",
+        "steam",
+        "discord",
         "gradient",
         "gradient2",
         "vbar_full",

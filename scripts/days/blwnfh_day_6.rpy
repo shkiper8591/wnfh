@@ -1639,6 +1639,8 @@ label blwnfh_day_6:
     
     me "Катя! В сторону!"
     
+    show cg d6_me_on_kat1 with dissolve
+    
     "Но она не успела, как и я не успел затормозить и врезался прямо в её спину, так что мы оба упали."
     
     th "Вот надо было мне погнаться за ней, а?"
@@ -1653,6 +1655,9 @@ label blwnfh_day_6:
     "Так что со стороны это могло выглядеть несколько, неправильно."
 
     me "Ты это[wp] как?"
+    
+    show cg d6_me_on_kat2 with dspr
+    
     kat "Вроде нормально, разве что немного в шоке."
     me "Да[wp] Я тоже."
     
@@ -1664,23 +1669,18 @@ label blwnfh_day_6:
     
     "И как только я начал вставать, из дома вышла Алиса."
     
-    show dv normal pioneer at center with dissolve
-    
     dv "Что тут твори[wp]"
-    
-    show dv surprise with dspr
     
     dv "Ох ты ж ё[wp]"
     kat "Привет Алис, а мы тут к тебе идём!"
-    me "Да[wp]"
-    
-    show dv grin with dspr
-    
+    me "Да[wp]"    
+
     dv "А что, обязательно {b}ТАК{/b} лежать на дороге? {w}Вы бы хоть ради приличия там не знаю, в лесок отошли."
     
     "Мы с Катей быстренько переглянулись, и я наконец встал с неё."
     
-    show dv grin pioneer at left with dspr
+    scene bg ext_house_of_dv_day with dissolve
+    show dv grin pioneer at left with dissolve
     show kat shy pioneer at right with dissolve
     
     "А после поднял свою подругу и немного отряхнул её."

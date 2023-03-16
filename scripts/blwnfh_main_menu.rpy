@@ -48,7 +48,7 @@ init 2:
             ]
             
             blwnfh_menu_icon = [
-                ["kit"     ,blwnfh_gui["main_menu"]["kit"]                       ,[Show("blwnfh_news", transition=Dissolve(1.0))]   ],
+                ["kit"     ,blwnfh_gui["main_menu"]["kit"]                       ,[Jump("blwnfh_test")]   ],
                 ["steam"   ,im.Scale(blwnfh_gui["main_menu"]["steam"], 75, 75)   ,[Jump("technical_chocolatki")]                    ],
                 ["discord" ,im.Scale(blwnfh_gui["main_menu"]["discord"], 75, 75) ,[Jump("technical_chocolatki")]                    ],
                 

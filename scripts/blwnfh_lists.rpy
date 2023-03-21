@@ -30,23 +30,30 @@ init -2 python:
     Ну и ссылки сюда же засунул
     """
     
+    
+    
     # Для главного меню
-    blwnfh_gui["img"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
-        "fish",
-        "exit",
-        "info",
-        "dlc",
-        "scheme",
-        "achievements", 
-        "gallery",
-        "settings",
-        "test_fon",
-        "fon",
-        "bg",
+    blwnfh_gui["main_menu"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
+        "kit",
+        "steam",
+        "discord",
+        "gradient",
+        "gradient2",
         "vbar_full",
         "vbar_null",
-        "play",
-        "blank2"
+        "on",
+        "off",
+        "left",
+        "right",
+        "lock",
+        "idle_frame",
+        "hover_frame",
+        "button_1_idle",
+        "button_1_hover",
+        "button_2",
+        "cg",
+        "bg",
+        "fon",
         ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
@@ -93,23 +100,7 @@ init -2 python:
     
     # Для галереи
     blwnfh_gui["gallery"] = {img:(blwnfh_GALLERY + img + ".png") for img in [
-        "left",
-        "right",
-        "lock",
-        "idle_frame",
-        "hover_frame",
         "back",
-        "button_1_idle",
-        "button_1_hover",
-        "button_2",
-        "cg",
-        "bg"
-        ]}
-    
-    # Для меню настроек
-    blwnfh_gui["settings"] = {img:(blwnfh_SETTINGS + img + ".png") for img in [
-        "on",
-        "off"
         ]}
     
     # Звук кнопки

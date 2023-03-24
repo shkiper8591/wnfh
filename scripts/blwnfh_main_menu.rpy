@@ -31,26 +31,26 @@ init 2:
             blwnfh_menu_button = [
             
                  #Тег кнопки     #Текст кнопки
-                ["play"         ,"Новая игра"    ,[Hide("blwnfh_menu", transition=dissolve), Start("blwnfh_day_1_dream")]  ],
+                ["play"         ,"Новая игра"    ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
                 ["saves"        ,"Загрузить"     ,[Jump("technical_chocolatki")]                                           ],
                 ["achievements" ,"Достижения"    ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
                 ["gallery"      ,"Галерея"       ,[Jump("technical_chocolatki")]                                           ],
                 ["sсheme"       ,"Схема"         ,[Jump("technical_chocolatki")]                                           ],
                 ["dlc"          ,"Дополнения"    ,[Jump("technical_chocolatki")]                                           ],
                 ["settings"     ,"Настройки"     ,[ShowMenu("blwnfh_settings_menu", _transition=dissolve)]                 ],
-                ["exit"         ,"Выход"         ,[Return()]                                           ],
+                ["exit"         ,"Выход"         ,[Return()]                                                               ],
             ]
             
             blwnfh_menu_fotter_button = [
             
-                ["news"   ,"Новости"      ,[Show("blwnfh_news", transition=Dissolve(1.0)) ]],
+                ["news"     ,"Новости"    ,[Show("blwnfh_news", transition=Dissolve(1.0)) ]],
                 ["credits"  ,"Создатели"  ,[Jump("technical_chocolatki")] ],
             ]
             
             blwnfh_menu_icon = [
-                ["kit"     ,blwnfh_gui["main_menu"]["kit"]                       ,[Jump("blwnfh_test")]   ],
-                ["steam"   ,im.Scale(blwnfh_gui["main_menu"]["steam"], 75, 75)   ,[Jump("technical_chocolatki")]                    ],
-                ["discord" ,im.Scale(blwnfh_gui["main_menu"]["discord"], 75, 75) ,[Jump("technical_chocolatki")]                    ],
+                ["kit"     ,blwnfh_gui["main_menu"]["kit"]                       ,[Jump("blwnfh_test")]                    ],
+                ["steam"   ,im.Scale(blwnfh_gui["main_menu"]["steam"], 75, 75)   ,[Jump("technical_chocolatki")]           ],
+                ["discord" ,im.Scale(blwnfh_gui["main_menu"]["discord"], 75, 75) ,[Jump("technical_chocolatki")]           ],
                 
             ]
             

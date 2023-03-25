@@ -57,7 +57,7 @@ label blwnfh_day_1_dream:
     
     th "Что, неужели в тридцати градусную жару, от легонького ветерка можно простудится? Едем же не сто шестьдесят в конце концов! {w}Тут дорога такая, что максимум километров сорок будем ехать."
     
-    
+    nvl clear
     
     "\nМысленно посетовав на дурацких пассажиров которым вечно холодно, я стал медленно засыпать под гул мотора.\n"
     
@@ -151,7 +151,7 @@ label blwnfh_day_1:
     scene expression blwnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
-    $ renpy.pause(1.0)
+    $ renpy.pause(3.0, hard=True)
     window show
     
     "Я резко распахнул глаза и привстав, быстро осмотрелся вокруг."
@@ -601,6 +601,7 @@ label blwnfh_day_1:
     show dv grin pioneer2 close:
         xcenter 0.5 ycenter 0.52
     with dissolve
+    ## надо сделать этот звук громче, а то его еле слышно
     play sound blwnfh_sfx_list["hrust_vetki"]
     show dv grin pioneer2 close with dissolve
     show un angry2 pioneer close with dspr
@@ -901,7 +902,7 @@ label blwnfh_day_1:
     me "Продолжу с моделистами моделировать. {w}А что?"
     dv "Да вот[wp]"
     
-    show us laugh pioneer at blwnfh_sit_left_close behind table with dspr
+    show us laugh pioneer at blwnfh_sit_left behind table with dspr
     
     us "На свиданку тебя позвать хочет!"
     
@@ -913,7 +914,7 @@ label blwnfh_day_1:
     
     "Алиса дала Ульяне лёгкий подзатыльник."
     
-    show us upset pioneer at blwnfh_sit_left_close behind table with dspr
+    show us upset pioneer at blwnfh_sit_left behind table with dspr
     
     us "Ой да ладно тебе, пошутить уже немного нельзя?"
     dv "Нет, такие шутки нельзя шутить!"
@@ -926,7 +927,7 @@ label blwnfh_day_1:
     "Застенчивым голосом сказала Алиса."
     "Ульяна же быстро вернулась к своему нормальному состоянию."
     
-    show us normalsmile pioneer at blwnfh_sit_left_close behind table with dspr
+    show us normalsmile pioneer at blwnfh_sit_left behind table with dspr
     
     us "Ну-ну!"
     me "Мдэ[wp]"
@@ -954,7 +955,7 @@ label blwnfh_day_1:
     mt "К нам пополнение приехало и его надо встретить и сопроводить ко мне."
     
     show dv smile pioneer at blwnfh_sit_right behind table with dspr
-    show us smile pioneer at blwnfh_sit_left_close behind table with dspr
+    show us smile pioneer at blwnfh_sit_left behind table with dspr
     
     "Когда она это сказала, Ульяна и Алиса быстренько перекинулись хитрыми взглядами."
     
@@ -976,7 +977,7 @@ label blwnfh_day_1:
     
     show mid d5_breakfast_half tray foods with dspr
     
-    th "А вот такое предложение звучало куда интереснее[wp] {w}Таки ведь надо было с этого и начинать!"
+    th "А вот такое предложение звучало куда интереснее[wp] {w}Таки и надо было с этого начинать!"
     
     me "Ладно, сейчас доем и пойду встречу."
     mt "Спасибо тебе огромное!"
@@ -994,7 +995,7 @@ label blwnfh_day_1:
     
     me "Так дамы, я опаздываю, так что покеда."
     
-    show us dontlike pioneer at blwnfh_sit_left_close behind tableм with dspr 
+    show us dontlike pioneer at blwnfh_sit_left behind tableм with dspr 
     
     "Я встал из-за стола."
     

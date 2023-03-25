@@ -1640,6 +1640,9 @@ label blwnfh_day_2:
     show kat normal pioneer at center with dissolve
     
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
+    
+    show cg d2_me_kat_boathouse with dissolve
+    
     "Мы молчали и просто наслаждались красивыми видами."
     
     #34 сюда цг, где семен и катя стоят, облокотившись на перила на брандвахте

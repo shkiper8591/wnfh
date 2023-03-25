@@ -1,6 +1,7 @@
 label blwnfh_day_6_dream:
     
     scene black
+    $ blwnfh_set_time("prologue")
     $ renpy.pause(1.5, hard=True)
     $ blwnfh_set_name("me", "Я")
     $ blwnfh_set_name("kat", "Незнакомка")

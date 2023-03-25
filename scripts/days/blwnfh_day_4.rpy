@@ -443,7 +443,7 @@ label blwnfh_day_4:
     
     th "Впрочем, может так даже лучше, спать мне в любом случае не дали бы, а так хоть время убью."
     
-    show bg ext_warehouse_day with dissolve
+    show bg ext_warehouse_sunset with dissolve2
     
     "Вскоре я дошел до склада и зайдя за него обнаружил ту самую подсобку."
     "Достав ключ, я уже потянулся открывать её, как по своей неосторожности выронил его и тот упал в густую траву."
@@ -845,7 +845,10 @@ label blwnfh_day_4:
     
     kat "Угу[wp]"
     
+    window hide
     show bg ext_house_of_kat_after_rain_day with dissolve
+    $ blwnfh_set_time()
+    window show
     
     "Выйдя из-за домика, я вспомнил, что надо бы заскочить к себе и забрать фотоаппарат."
     

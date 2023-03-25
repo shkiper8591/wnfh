@@ -34,6 +34,7 @@ init 2:
                 ["red"          , im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
                 ["achievements" , blwnfh_gui["main_menu"]["achievements"]          ,[Jump("technical_chocolatki")]                                           ],
                 ["exit"         , blwnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
+                ["dlc"          , blwnfh_gui["main_menu"]["dlc"]              ,[Jump("technical_chocolatki")]                                           ],
             ]
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
@@ -65,7 +66,7 @@ init 2:
             #        style "blwnfh_menu"
             #        size 30
             
-            frame: # ======================================================= # Выход
+            frame: # ======================================================= # Сплэши
                 background background_color
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
@@ -106,7 +107,7 @@ init 2:
             #                hover_sound blwnfh_gui["sound"]["plimp"]
             #                at blwnfh_mm_button_hover_atl()
                             
-            frame: # ======================================================= # Нижняя панелья
+            frame: # ======================================================= # Нижняя панель
                 background background_color
                 area(0.5, 1.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 1.0
@@ -151,9 +152,25 @@ init 2:
                                 
                 frame: # ======================================================= # Центральный нижний блок
                     background background_color
-                    area(0.5, 1.0, 250, 0.3)
+                    area(0.5, 1.0, 350, 0.3)
                     xanchor 0.5 yanchor 1.0
                     for button in blwnfh_menu_button[8:9]:
+                        frame:
+                            xmargin 5
+                            background button_red
+                            area(0.5, 0.5, 1.0, 1.0)
+                            xanchor 0.5 yanchor 0.5
+                            imagebutton:
+                                action [button[2]]
+                                idle button[1]
+                                hover button[1]
+                                hover_sound blwnfh_gui["sound"]["plimp"]
+                                at blwnfh_mm_button_hover_atl()
+                frame: # ======================================================= # Центральный верхний блок
+                    background background_color
+                    area(0.5, 0.2, 250, 0.4)
+                    xanchor 0.5 yanchor 1.0
+                    for button in blwnfh_menu_button[10:11]:
                         frame:
                             xmargin 5
                             background button_red

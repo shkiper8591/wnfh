@@ -48,6 +48,7 @@ init -2 python:
         "settings",
         "achievements",
         "exit",
+        "dlc",
         ]}
     
     blwnfh_gui["poligon"] = {img:(blwnfh_IMAGES + "hentai/" + img + ".png") for img in [

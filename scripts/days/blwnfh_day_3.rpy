@@ -151,6 +151,9 @@ label blwnfh_day_3:
     "Вожатая застала меня врасплох, но я быстро придумал, что сказать ей."
     
     me "Пакет с банными принадлежности домой нес."
+    
+    show mt normal with dspr
+    
     mt "Так давай скорее!"
     
     stop music fadeout 3
@@ -349,9 +352,13 @@ label blwnfh_day_3:
     "Вздохнув, я покинул клубы."
     
     stop ambience
+    window hide
     scene bg ext_clubs_day with dissolve
+    $ blwnfh_set_time()
     play ambience ambience_camp_center_day
     play music blwnfh_music_list["angus_climbs_the_hill"]
+    $ renpy.pause(1.0)
+    window show
     
     "Похрустев спиной, я отправился в сторону склада."
     
@@ -467,10 +474,10 @@ label blwnfh_day_3:
     me "Тогда я пойду, хорошего дня."
     sl "Пока, и тебе тоже!"
     
-    stop ambience
+    stop ambience fadeout 1.0
     scene bg ext_warehouse_day with dissolve
-    stop music
-    play ambience ambience_camp_center_day
+    stop music fadeout 2.0
+    play ambience ambience_camp_center_day fadein 1.0
     
     "Я покинул склад, и немного расстроенный поплелся обратно в клубы."
     
@@ -630,7 +637,7 @@ label blwnfh_day_3:
     sh "Палку, тряпку и бензин добыть не сложно."
     me "А где ты бензин доставать собрался?"
     
-    show sh normal_smile pioneer with dspr
+    show sh normalsmile pioneer with dspr
     
     sh "Волгу у столовой видел?"
     me "А по шапке не прилетит?"
@@ -1082,7 +1089,7 @@ label blwnfh_day_3:
     
     us "Вот так бы сразу!"
     
-    show us normal_smile with dspr
+    show us normalsmile with dspr
     
     "Встав из-за стола, мы отправились к буфету."
     "Подойдя к нему, Ульяна достала из кармана два небольших пакета."
@@ -1140,7 +1147,7 @@ label blwnfh_day_3:
     "Разумеется, я последовал за ней."
     
     scene bg ext_dining_hall_backroad_day_blwnfh with dissolve2
-    show us fear pioneer close at center with dissolve 
+    show us sad pioneer close at center with dissolve 
     
     "Мы спрятались за столовой, а спустя пару секунд было слышно звук открывающейся двери."
     
@@ -1173,7 +1180,7 @@ label blwnfh_day_3:
     us "Так она же старая, плохо слышит."
     me "Возможно[wp]"
     
-    show us normal_smile with dspr
+    show us normalsmile with dspr
     
     us "Ладно, давай смотреть чего мы смогли поймать."
     
@@ -1245,7 +1252,7 @@ label blwnfh_day_3:
     
     me "Ладно."
     
-    show us normal_smile with dspr
+    show us normalsmile with dspr
     
     us "В общем, я выполняла свое обещание, а теперь потопала лопать добычу!"
     
@@ -1780,8 +1787,8 @@ label blwnfh_day_3:
     
     "Но не успел дойти до середины, как к нам в муз кружок ворвалась Ольга Дмитриевна."
     
-    show mt angry pioneer panama at left with dspr
-    
+    show mt angry pioneer panama at fleft with dspr
+    show dv normal pioneer panama at left with dspr
     mt "Так, что вы тут за иностранные песни распеваете? Ну ка прекратили всё, пока характеристику на вас не написала!"
     
     "Я прекратил играть и отложил гитару в сторону, а после посмотрел на свои пальцы, которые просто ужасно болели."
@@ -1800,12 +1807,12 @@ label blwnfh_day_3:
     
     mi "Правда-правда!"
     
-    show mt normal pioneer panama at left with dspr
+    show mt normal pioneer panama at fleft with dspr
     
     mt "Да-да, ладно, вообще я пришла сюда по другому поводу."
     mt "Вы наверное знаете, что сегодня был открыт кружок журналистики, но на удивление, желающих вступить не оказалось."
     
-    show mt grin pioneer panama at left with dspr
+    show mt grin pioneer panama at fleft with dspr
     
     mt "Так что желающие были назначены и ими будут[wp]"
     
@@ -1820,7 +1827,7 @@ label blwnfh_day_3:
     
     kat "Ольга Дмитриевна, а если мы не хотим?"
     
-    show mt normal pioneer panama at left with dspr
+    show mt normal pioneer panama at fleft with dspr
     
     mt "Так и попросить некого, а вы здесь самые ответственные из незанятых."
     mt "У Мику есть Алиса, так что не заскучает, пока Катя будет работать в журналистике."
@@ -1832,11 +1839,11 @@ label blwnfh_day_3:
     
     mt "Вам никто не запрещает быть в двух и более кружках одновременно, вопрос лишь в уделении времени тому или иному."
     
-    show mt smile pioneer panama at left with dspr
+    show mt smile pioneer panama at fleft with dspr
     
     mt "А ещё у вас будут выходные, тогда и наиграетесь в свою музыку."
     
-    show mt normal pioneer panama at left with dspr
+    show mt normal pioneer panama at fleft with dspr
     
     mt "Ладно, зря времени терять не будем, Катя и Семён, пойдем я вас отведу до рабочего места, а там вам уже устроят экскурсию."
     mt "Потом если захотите вернетесь и доиграете, только пожалуйста не иностранщину."
@@ -2121,7 +2128,7 @@ label blwnfh_day_3:
     scene bg ext_library_sunset with dissolve2
     show kat normal pioneer with dissolve
     play ambience ambience_camp_center_evening fadein 2.5
-    $ renpy.pause(0.5)
+    $ renpy.pause(1.0)
     $ blwnfh_set_time("sunset")
     window show
     

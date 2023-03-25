@@ -3300,12 +3300,14 @@ label blwnfh_day_5:
     me "Всё — потащили."
     
     window hide
-    stop ambience fadeout 3
+    stop ambience fadeout 2
     scene bg ext_stage_big_sunset with dissolve2
-    play ambience ambience_camp_center_evening fadein 3
-    show el normal pioneer at right with dissolve2
-    show sv angry pioneer glasses tablet at left with dissolve2
+    play ambience ambience_camp_center_evening fadein 2
+    show el normal pioneer at right with dissolve
+    show sv angry pioneer glasses tablet at left with dissolve
+    $ blwnfh_set_time("sunset")
     $ renpy.pause(3.0)
+    window show
     
     "Так мы и перетаскали с ним всё обратно на сцену, а кабель договорились оставить завтра на Шурика."
     "Правда, Света по этому поводу стала очень сильно мусолить мне и Серому мозги."

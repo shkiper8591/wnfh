@@ -1732,10 +1732,10 @@ label blwnfh_day_2:
     "Я встал и пошел вслед за Катей."
     
     window hide
-    stop ambience fadeout 0.5
+    stop ambience fadeout 2.0
     stop music fadeout 2
-    scene bg ext_square_sunset with dissolve
-    play ambience ambience_camp_center_evening fadein 3
+    scene bg ext_square_sunset with dissolve2
+    play ambience ambience_camp_center_evening fadein 2
     window show
     
     "Выйдя на площадь Катя мне помахала и удалилась в сторону домиков."

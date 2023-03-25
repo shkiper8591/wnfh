@@ -44,6 +44,10 @@ init -2 python:
         "settings",
         ]}
     
+    blwnfh_gui["poligon"] = {img:(blwnfh_IMAGES + "hentai/" + img + ".png") for img in [
+        "red",
+        ]}
+    
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [
         "back",
         ]}  

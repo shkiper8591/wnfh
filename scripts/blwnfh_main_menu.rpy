@@ -28,13 +28,14 @@ init 2:
             blwnfh_menu_button = [
             
                  #Тег кнопки     #Текст кнопки
-                ["credits"  , blwnfh_gui["main_menu"]["credits"]       ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["galary"   , blwnfh_gui["main_menu"]["galary"]        ,[Jump("technical_chocolatki")]                                           ],
-                ["news"     , blwnfh_gui["main_menu"]["news"]          ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
-                ["play"     , blwnfh_gui["main_menu"]["play"]          ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["saves"    , blwnfh_gui["main_menu"]["saves"]         ,[Jump("technical_chocolatki")]                                           ],
-                ["scheme"   , blwnfh_gui["main_menu"]["scheme"]        ,[Jump("technical_chocolatki")]                                           ],
-                ["settings" , blwnfh_gui["main_menu"]["settings"]      ,[Jump("technical_chocolatki")]                                           ],
+                ["credits"  , blwnfh_gui["main_menu"]["credits"]               ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["galary"   , blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["news"     , blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
+                ["play"     , blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["saves"    , blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
+                ["scheme"   , blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["settings" , blwnfh_gui["main_menu"]["settings"]              ,[Jump("technical_chocolatki")]                                           ],
+                ["red"      , im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
             ]
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
@@ -65,7 +66,22 @@ init 2:
             #    style "blwnfh_splashes"
             #    at blwnfh_splash_anim(0.65, 0.138, -3.0)
             
-            
+            frame: # ======================================================= # Центральный блок
+                background background_color
+                area(0.0, 0.5, 100, 100)
+                xanchor 0.0 yanchor 0.5
+                for button in blwnfh_menu_button[7:8]:
+                    frame:
+                        xmargin 5
+                        background button_blue
+                        area(0.5, 0.5, 1.0, 1.0)
+                        xanchor 0.5 yanchor 0.5
+                        imagebutton:
+                            action [button[2]]
+                            idle button[1]
+                            hover button[1]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_mm_button_hover_atl()
             frame:
                 background background_color
                 area(0.5, 1.0, 1.0, 0.15)

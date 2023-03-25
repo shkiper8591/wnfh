@@ -34,26 +34,14 @@ init -2 python:
     
     # Для главного меню
     blwnfh_gui["main_menu"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
-        "kit",
-        "steam",
-        "discord",
-        "gradient",
-        "gradient2",
-        "vbar_full",
-        "vbar_null",
-        "on",
-        "off",
-        "left",
-        "right",
-        "lock",
-        "idle_frame",
-        "hover_frame",
-        "button_1_idle",
-        "button_1_hover",
-        "button_2",
-        "cg",
-        "bg",
         "fon",
+        "credits",
+        "galary",
+        "news",
+        "play",
+        "saves",
+        "scheme",
+        "settings",
         ]}
     
     blwnfh_gui["achievements"] = {img:(blwnfh_ACHIEVEMENTS + img + ".png") for img in [

@@ -9,12 +9,8 @@ init 2:
         key "screenshot":
             action NullAction()
 
-        frame:
-            background blwnfh_gui["main_menu"]["fon"]
-            area(0.0, 0.0, 1.0, 1.0)
-        #frame:
-        #    background blwnfh_gui["main_menu"]["gradient2"] 
-        #    area(0.0, 0.0, 1.0, 1.0)
+        
+
             
         python:
             from random import randrange
@@ -28,14 +24,16 @@ init 2:
             blwnfh_menu_button = [
             
                  #Тег кнопки     #Текст кнопки
-                ["credits"  , blwnfh_gui["main_menu"]["credits"]               ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["galary"   , blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["news"     , blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
-                ["play"     , blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["saves"    , blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
-                ["scheme"   , blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["settings" , blwnfh_gui["main_menu"]["settings"]              ,[Jump("technical_chocolatki")]                                           ],
-                ["red"      , im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
+                ["credits"      , blwnfh_gui["main_menu"]["credits"]               ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["galary"       , blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["news"         , blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
+                ["play"         , blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["saves"        , blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
+                ["scheme"       , blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["settings"     , blwnfh_gui["main_menu"]["settings"]              ,[Jump("technical_chocolatki")]                                           ],
+                ["red"          , im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
+                ["achievements" , blwnfh_gui["main_menu"]["achievements"]          ,[Jump("technical_chocolatki")]                                           ],
+                ["exit"         , blwnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
             ]
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
@@ -50,8 +48,13 @@ init 2:
         #$ button_green =     "#0F05"
         #$ button_blue =      "#00F5"
         
+        
         frame:
-            background "#0000"
+            background blwnfh_gui["main_menu"]["fon2"]
+            area(0.0, 0.0, 1.0, 1.0)
+            at blwnfh_bg_spawn_atl
+        frame:
+            background blwnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
             
             #frame:
@@ -62,34 +65,55 @@ init 2:
             #        style "blwnfh_menu"
             #        size 30
             
-            #text blwnfh_splash():
-            #    style "blwnfh_splashes"
-            #    at blwnfh_splash_anim(0.65, 0.138, -3.0)
-            
-            frame: # ======================================================= # Центральный блок
+            frame: # ======================================================= # Выход
                 background background_color
-                area(0.0, 0.5, 100, 100)
-                xanchor 0.0 yanchor 0.5
-                for button in blwnfh_menu_button[7:8]:
+                area(0.65, 0.05, 0.45, 50)
+                xanchor 0.5 yanchor 0.0
+                text blwnfh_splash():
+                    style "blwnfh_splashes"
+                    at blwnfh_splash_anim(0.5, 0.0, -3.0)
+            
+            frame: # ======================================================= # Выход
+                background background_color
+                area(0.0, 0.0, 200, 100)
+                xanchor 0.0 yanchor 0.0
+                for button in blwnfh_menu_button[9:10]:
                     frame:
                         xmargin 5
                         background button_blue
-                        area(0.5, 0.5, 1.0, 1.0)
-                        xanchor 0.5 yanchor 0.5
+                        area(0.0, 0.5, 1.0, 1.0)
+                        xanchor 0.0 yanchor 0.5
                         imagebutton:
                             action [button[2]]
                             idle button[1]
                             hover button[1]
                             hover_sound blwnfh_gui["sound"]["plimp"]
                             at blwnfh_mm_button_hover_atl()
-            frame:
+            #frame: # ======================================================= # Амогус
+            #    background background_color
+            #    area(0.0, 0.5, 100, 100)
+            #    xanchor 0.0 yanchor 0.5
+            #    for button in blwnfh_menu_button[7:8]:
+            #        frame:
+            #            xmargin 5
+            #            background button_blue
+            #            area(0.5, 0.5, 1.0, 1.0)
+            #            xanchor 0.5 yanchor 0.5
+            #            imagebutton:
+            #                action [button[2]]
+            #                idle button[1]
+            #                hover button[1]
+            #                hover_sound blwnfh_gui["sound"]["plimp"]
+            #                at blwnfh_mm_button_hover_atl()
+                            
+            frame: # ======================================================= # Нижняя панелья
                 background background_color
-                area(0.5, 1.0, 1.0, 0.15)
+                area(0.5, 1.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 1.0
                 
                 frame: # ======================================================= # Левый блок
                     background background_color
-                    area(0.0, 0.5, 0.42, 0.4)
+                    area(0.0, 0.4, 0.42, 0.4)
                     xanchor 0.0 yanchor 0.5
                     
                     grid 3 1:
@@ -109,10 +133,27 @@ init 2:
                 
                 frame: # ======================================================= # Центральный блок
                     background background_color
-                    area(0.5, 0.5, 250, 0.8)
+                    area(0.5, 0.4, 250, 0.7)
                     xanchor 0.5 yanchor 0.5
-                    xalign 0.5
+                    yalign 0.5
                     for button in blwnfh_menu_button[3:4]:
+                        frame:
+                            xmargin 5
+                            background button_red
+                            area(0.5, 0.5, 1.0, 1.0)
+                            xanchor 0.5 yanchor 0.5
+                            imagebutton:
+                                action [button[2]]
+                                idle button[1]
+                                hover button[1]
+                                hover_sound blwnfh_gui["sound"]["plimp"]
+                                at blwnfh_mm_button_hover_atl()
+                                
+                frame: # ======================================================= # Центральный нижний блок
+                    background background_color
+                    area(0.5, 1.0, 250, 0.3)
+                    xanchor 0.5 yanchor 1.0
+                    for button in blwnfh_menu_button[8:9]:
                         frame:
                             xmargin 5
                             background button_red
@@ -127,7 +168,7 @@ init 2:
                 
                 frame: # ======================================================= # Правый блок
                     background background_color
-                    area(1.0, 0.5, 0.42, 0.4)
+                    area(1.0, 0.4, 0.42, 0.4)
                     xanchor 1.0 yanchor 0.5
                     
                     grid 3 1:
@@ -145,44 +186,6 @@ init 2:
                                     hover_sound blwnfh_gui["sound"]["plimp"]
                                     at blwnfh_mm_button_hover_atl()
 
-                
-                $ lines = 0
-                #for button in blwnfh_menu_button:
-                #    $ lines += 1
-                #grid 1 lines+1:
-                #    xalign 0.5
-                #    for button in blwnfh_menu_button:
-                #        frame:
-                #            background background_color
-                #            area(0.0, 0.0, 300, 86)
-                #            ymargin 3
-                #            textbutton button[1]:
-                #                action [button[2]]
-                #                background button_red
-                #                text_style "blwnfh_title"
-                #                text_size 60
-                #                text_min_width 274
-                #                text_text_align 0.0
-                #                hover_sound blwnfh_gui["sound"]["plimp"]
-                #                at blwnfh_mm_button_hover_atl()
-                #    
-                #    grid 2 1:
-                #        xalign 0.5
-                #        for button in blwnfh_menu_fotter_button:
-                #            frame:
-                #                background background_color
-                #                area(0.0, 0.0, 150, 66)
-                #                ymargin 3
-                #                textbutton button[1]:
-                #                    action [button[2]]
-                #                    background button_green
-                #                    text_style "blwnfh_title"
-                #                    text_size 40
-                #                    text_min_width 124
-                #                    text_text_align 0.0
-                #                    hover_sound blwnfh_gui["sound"]["plimp"]
-                #                    at blwnfh_mm_button_hover_atl()
-            
     screen blwnfh_news():
         frame:
             background blwnfh_gui["main_menu"]["gradient2"] 
@@ -248,175 +251,18 @@ init 2:
                     
                     
         
-    
+    transform blwnfh_bg_spawn_atl():
+        subpixel True
+        truecenter
+        on show:
+            alpha 0.0
+            ease 4.0 alpha 1.0
 
-    transform frame_spawn():
+    transform blwnfh_news_spawn_atl():
         zoom 0.0
         ease 0.5 zoom 1.2
         ease 0.2 zoom 1.0
-                        
-        #default play_text = False
-        #default settings_text = False
-        #default galary_text = False
-        #default achievements_text = False
-        #default scheme_text = False
-        #default dlc_text = False
-        #default info_text = False
-        #default exit_text = False
-        
-        #if play_text:
-        #    text "Играть" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
-        #elif settings_text:
-        #    text "Настройки" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
-        #elif galary_text:
-        #    text "Галерея" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
-        #elif achievements_text:
-        #    text "Достижения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0 
-        #elif scheme_text:
-        #    text "Схема" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
-        #elif dlc_text:
-        #    text "Дополнения" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
-        #elif info_text:
-        #    text "Информация" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
-        #elif exit_text:
-        #    text "Выход" style "blwnfh_menu" size 80 kerning 1 pos (blwnfh_posx, blwnfh_posy) text_align 0.0
-        #else:
-        #    null height 20
-            
-        #text blwnfh_get_usertime():
-        #    align(0.9265625, 0.0844444)
-        #    font blwnfh_FONTS + "msjhl.ttc"
-        #    size 30
-        #
-        #text "Мы не отсюда":
-        #    align(0.5, 0.06)
-        #    style "blwnfh_title"
-        #
-        #text blwnfh_splash():
-        #    font blwnfh_FONTS + "vcr_osd.ttf"
-        #    color "#FFFF00"
-        #    size 20
-        #    at blwnfh_splash_anim(0.65, 0.138, -3.0)
-        #
-        #imagebutton:
-        #    action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_test")]
-        #    idle blwnfh_gui["img"]["fish"]
-        #    hover blwnfh_gui["img"]["fish"]
-        #    hovered menu_hovered_action_cat                       
-        #    at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.0944444, 0.0) 
-        #
-        #imagebutton:
-        #    action [Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]
-        #    idle blwnfh_gui["img"]["play"]
-        #    hover blwnfh_gui["img"]["play"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("play_text")
-        #    unhovered ToggleScreenVariable("play_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.233854167, 0.377777778, 0.0)
-        #
-        #imagebutton:
-        #    action ShowMenu("blwnfh_settings_menu", _transition=dissolve)
-        #    idle blwnfh_gui["img"]["settings"]
-        #    hover blwnfh_gui["img"]["settings"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("settings_text")
-        #    unhovered ToggleScreenVariable("settings_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.088020833, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action ShowMenu("blwnfh_gallery_menu")
-        #    idle blwnfh_gui["img"]["gallery"]
-        #    hover blwnfh_gui["img"]["gallery"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("galary_text")
-        #    unhovered ToggleScreenVariable("galary_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.380208333, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action ShowMenu("blwnfh_achievements")
-        #    idle blwnfh_gui["img"]["achievements"]
-        #    hover blwnfh_gui["img"]["achievements"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("achievements_text")
-        #    unhovered ToggleScreenVariable("achievements_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.4875, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action Jump("technical_chocolatki")
-        #    idle blwnfh_gui["img"]["scheme"]
-        #    hover blwnfh_gui["img"]["scheme"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("scheme_text")
-        #    unhovered ToggleScreenVariable("scheme_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.594270833, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action Jump("technical_chocolatki")
-        #    idle blwnfh_gui["img"]["dlc"]
-        #    hover blwnfh_gui["img"]["dlc"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("dlc_text")
-        #    unhovered ToggleScreenVariable("dlc_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.701041667, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action Jump("technical_chocolatki")
-        #    idle blwnfh_gui["img"]["info"]
-        #    hover blwnfh_gui["img"]["info"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("info_text")
-        #    unhovered ToggleScreenVariable("info_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.808333333, 0.284259259, 0.0)
-        #
-        #imagebutton:
-        #    action Return()
-        #    idle blwnfh_gui["img"]["exit"]
-        #    hover blwnfh_gui["img"]["exit"]
-        #    hover_sound blwnfh_gui["sound"]["plimp"]
-        #    hovered ToggleScreenVariable("exit_text")
-        #    unhovered ToggleScreenVariable("exit_text")
-        #    at blwnfh_menu_pos_atl(1.0, 0.915104167, 0.284259259, 0.0)
-        #
-        #frame:
-        #    background "#0005"
-        #    area(1201, 466, 655, 550)
-        #    
-        #    frame:
-        #        background "#0000"
-        #        left_margin 20
-        #        right_margin 30
-        #        
-        #        
-        #        vbox:
-        #            align(0.5, 0.0)
-        #
-        #            null height 20
-        #
-        #            text u"Новости":
-        #                align(0.5, 0.0)
-        #                style "blwnfh_menu"
-        #
-        #            null height 25
-        #
-        #            viewport:
-        #                id "menu_news"
-        #                draggable True
-        #                mousewheel True
-        #                scrollbars None
-        #                
-        #                text u"{b}alpha 0.1{/b}\n" + "Альфа! Что принесла нам Альфа? НИ#$@ она нам не принесла, только это окошко с новостями, где будут писаться свежие обновления мода. Это создано для тех, кто не следит за группой.":
-        #                    style "blwnfh_news"
-        #                
-        #    vbar:
-        #        value YScrollValue("menu_news")
-        #        bottom_bar Frame(blwnfh_gui["img"]["vbar_full"], 0, 0)
-        #        top_bar Frame(blwnfh_gui["img"]["vbar_null"], 0, 0)
-        #        thumb "null"
-        #        at Transform(alpha=0.74, align=(0.98, 0.5), xzoom=1.5, yzoom=0.92)
-        #    
 
-    
-            
     transform blwnfh_mm_button_hover_atl(z = 1.0):
         pos(0.5, 0.5)
         anchor(0.5, 0.5)
@@ -425,20 +271,7 @@ init 2:
             ease 0.15 zoom (z - 0.02)
         on idle:
             ease 0.15 zoom z
-    
-    transform blwnfh_mm_kit_hover_atl(z = 1.0):
-        pos(0.5, 0.5)
-        anchor(0.5, 0.5)
-        on hover:
-            ease 0.15 zoom (z - 0.15)
-            ease 0.15 zoom (z - 0.02)
-        on idle:
-            ease 0.15 zoom z
-    
-
-
-
-    
+            
     transform blwnfh_splash_anim(x, y, rot):
         block:
             rotate rot
@@ -472,7 +305,7 @@ label blwnfh_main:
     $ renpy.pause(100)
     jump blwnfh_main_menu
 label blwnfh_main_menu:
-    scene bg fon with dissolve
+    scene cg d2_me_kat_boathouse with dissolve
     $ renpy.pause(2)
     $ init_splash()
     call screen blwnfh_menu with dissolve

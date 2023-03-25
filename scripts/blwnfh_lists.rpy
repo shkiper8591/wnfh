@@ -35,6 +35,10 @@ init -2 python:
     # Для главного меню
     blwnfh_gui["main_menu"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
         "fon",
+        "fon2",
+        "logo",
+        "18",
+        "gradient",
         "credits",
         "galary",
         "news",
@@ -42,6 +46,8 @@ init -2 python:
         "saves",
         "scheme",
         "settings",
+        "achievements",
+        "exit",
         ]}
     
     blwnfh_gui["poligon"] = {img:(blwnfh_IMAGES + "hentai/" + img + ".png") for img in [

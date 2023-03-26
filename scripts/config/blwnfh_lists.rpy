@@ -9,12 +9,7 @@ init -2 python:
         return {i[len(path):i.rfind(".")]:i for i in renpy.list_files() if i.startswith(path)}
     
     blwnfh_gui = dict()
-   
-    
-    ## Спсок персонажей ##
-    
-    
-    
+
     """
     Для удобства я разбил список GUI на несколько частей,
     каждая для своего экрана меню.

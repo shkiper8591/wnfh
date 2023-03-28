@@ -1,4 +1,4 @@
-init 1:
+init -2:
     
     # Бежит бежит бежит
     
@@ -281,3 +281,126 @@ init 1:
         choice:
             ease 0.2 alpha 1.0
         repeat
+    
+    # Анимации предметов #
+    
+    transform blwnfh_get_item_atl(pos_x, pos_y):
+        xalign (0.0)
+        pos(pos_x, 0.18)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        pause 1.0
+        ease 1.0 pos(pos_x, pos_y) alpha 1.0
+        pause 3.0
+        ease 1.0 pos(-0.4, pos_y) alpha 0.0
+
+    transform blwnfh_item_icon_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
+        pos(pos_x_start, pos_y_start)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        pause 2.5
+        ease 2.5 pos(pos_x_mid, pos_y_mid) alpha 1.0
+        ease 1.0 pos(pos_x_end, pos_y_end) alpha 0.0
+        
+    # Анимации реакции персонажей #
+        
+    transform blwnfh_get_relation_atl(pos_x, pos_y):
+        xalign (0.0)
+        pos(pos_x, 0.18)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        pause 1.0
+        ease 1.0 pos(pos_x, pos_y) alpha 1.0
+        pause 3.0
+        ease 1.0 pos(-0.4, pos_y) alpha 0.0
+
+    transform blwnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
+        pos(pos_x_start, pos_y_start)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        pause 2.5
+        ease 2.5 pos(pos_x_mid, pos_y_mid) alpha 1.0
+        ease 1.0 pos(pos_x_end, pos_y_end) alpha 0.0
+    
+    ## Анимации меню ##
+    
+    # Главное меню #
+    
+    transform blwnfh_bg_spawn_atl():
+        subpixel True
+        truecenter
+        on show:
+            alpha 0.0
+            ease 4.0 alpha 1.0
+
+    transform blwnfh_news_spawn_atl():
+        zoom 0.0
+        ease 0.5 zoom 1.2
+        ease 0.2 zoom 1.0
+
+    transform blwnfh_mm_button_hover_atl(z = 1.0):
+        pos(0.5, 0.5)
+        anchor(0.5, 0.5)
+        on hover:
+            ease 0.15 zoom (z - 0.15)
+            ease 0.15 zoom (z - 0.02)
+        on idle:
+            ease 0.15 zoom z
+            
+    transform blwnfh_splash_anim(x, y, rot):
+        block:
+            rotate rot
+            pos(x, y)
+            anchor(0.5, 0.5)
+        block:
+            ease 0.25 zoom 1.30
+            ease 0.20 zoom 1.25
+        repeat
+    
+    ## Временное говно ##
+    transform blwnfh_menu_pos_atl(z, x, y, rot):
+        zoom z
+        pos(x, y)
+        anchor(0.5, 0.5)
+        rotate rot
+        blwnfh_menu_hover_atl(z, rot)
+        
+    transform blwnfh_menu_hover_atl(z, rot):
+        on hover:
+            ease 0.1 zoom (z - 0.15) rotate 0.0
+            ease 0.1 zoom (z - 0.02)
+        on idle:
+            ease 0.1 zoom z rotate rot
+    
+    # Меню ачивок #
+    
+    transform blwnfh_ach_char_banners(z, x, y):
+        zoom z
+        pos(x, y)
+        anchor(0.5, 0.55)
+        blwnfh_ach_char_banners_hover(z)
+    transform blwnfh_ach_char_banners_hover(z):
+        on hover:
+            ease 0.1 zoom (z - 0.08)
+            ease 0.1 zoom (z - 0.02)
+        on idle:
+            ease 0.1 zoom z
+            
+    # Меню галереи #
+    
+    transform blwnfh_gallery_item_atl:
+    subpixel True
+    truecenter
+    on hover:
+        ease 0.25 zoom 0.95
+    on idle:
+        ease 0.1 zoom 1.0
+        
+    transform blwnfh_gallery_mode_atl:
+    subpixel True
+    truecenter
+    on hover:
+        ease 0.25 zoom 1.25
+    on idle:
+        ease 0.1 zoom 1.0
+        

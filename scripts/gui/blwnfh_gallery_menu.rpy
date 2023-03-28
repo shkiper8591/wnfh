@@ -61,20 +61,6 @@ init 2:
                         hover_sound blwnfh_gui["sound"]["plimp"]
                         at blwnfh_gallery_mode_atl
 
-    ## Экран меню галереи: ATL
-
-    # Общее
-
-    transform blwnfh_gallery_mode_atl:
-        subpixel True
-        truecenter
-        on hover:
-            ease 0.25 zoom 1.25
-        on idle:
-            ease 0.1 zoom 1.0
-
-    ##    Экран галереи    ##
-
     $ blwnfh_gallery_mode = None
 
     $ blwnfh_gallery_page = 0
@@ -192,18 +178,6 @@ init 2:
                                 else:
                                     add im.FactorScale(blwnfh_gui["gallery"]["button_2"], 1.0):
                                         align(0.5, 0.5)
-
-    ## Экран галереи: ATL
-
-    # Общее
-
-    transform blwnfh_gallery_item_atl:
-        subpixel True
-        truecenter
-        on hover:
-            ease 0.25 zoom 0.95
-        on idle:
-            ease 0.1 zoom 1.0
 
     ##    Экран просмотра элементов галереи    ##
 

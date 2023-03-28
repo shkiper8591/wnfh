@@ -232,22 +232,6 @@ init 2:
                                                 area(0.0, 0.0, 500, 100)
                                                 add "blwnfh_ach_lock"
 
-
-
-
-
-    transform blwnfh_ach_char_banners(z, x, y):
-        zoom z
-        pos(x, y)
-        anchor(0.5, 0.55)
-        blwnfh_ach_char_banners_hover(z)
-    transform blwnfh_ach_char_banners_hover(z):
-        on hover:
-            ease 0.1 zoom (z - 0.08)
-            ease 0.1 zoom (z - 0.02)
-        on idle:
-            ease 0.1 zoom z
-
 label blwnfh_reset:
     $ blwnfh_reset_achievements()
     jump blwnfh_main_menu

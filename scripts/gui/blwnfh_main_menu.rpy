@@ -268,53 +268,7 @@ init 2:
                     
                     
         
-    transform blwnfh_bg_spawn_atl():
-        subpixel True
-        truecenter
-        on show:
-            alpha 0.0
-            ease 4.0 alpha 1.0
-
-    transform blwnfh_news_spawn_atl():
-        zoom 0.0
-        ease 0.5 zoom 1.2
-        ease 0.2 zoom 1.0
-
-    transform blwnfh_mm_button_hover_atl(z = 1.0):
-        pos(0.5, 0.5)
-        anchor(0.5, 0.5)
-        on hover:
-            ease 0.15 zoom (z - 0.15)
-            ease 0.15 zoom (z - 0.02)
-        on idle:
-            ease 0.15 zoom z
-            
-    transform blwnfh_splash_anim(x, y, rot):
-        block:
-            rotate rot
-            pos(x, y)
-            anchor(0.5, 0.5)
-        block:
-            ease 0.25 zoom 1.30
-            ease 0.20 zoom 1.25
-        repeat
     
-    
-    
-    ## Временное говно ##
-    transform blwnfh_menu_pos_atl(z, x, y, rot):
-        zoom z
-        pos(x, y)
-        anchor(0.5, 0.5)
-        rotate rot
-        blwnfh_menu_hover_atl(z, rot)
-        
-    transform blwnfh_menu_hover_atl(z, rot):
-        on hover:
-            ease 0.1 zoom (z - 0.15) rotate 0.0
-            ease 0.1 zoom (z - 0.02)
-        on idle:
-            ease 0.1 zoom z rotate rot
 
 
 label blwnfh_main:

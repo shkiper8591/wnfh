@@ -2636,15 +2636,16 @@ label blwnfh_day_3:
     th "Ого, меня пускают под одеяло, я на такое даже и не рассчитывал."
     
     window hide
+    $ blwnfh_set_time("sunset")
     show cg d3_me_kat_blindage:
-        xanchor 0.0 yanchor 2.0
-        ease 20.0 yanchor 0.0
-        subpixel True
-    with dissolve2
+        xanchor 0.0 yanchor 0.77
+        ease_quad 7.0 yanchor 0.0
+    with Dissolve(4.0)
     $ renpy.pause(2.0)
+    
     window show
     
-    "Не став долго медлить, я аккуратно лег рядом с Катей и повернулся лицом к стене, а к ней спиной, чтобы никак не смущать."
+    "Не став долго медлить, я аккуратно лёг рядом с Катей и повернулся лицом к стене, а к ней спиной, чтобы никак не смущать."
     "Конечно на небольшой кроватке было довольно тесно, так что мы немного касались спинами, но так даже было лучше, хоть немного друг друга грели."
     
     kat "Семён, тебе не холодно?"
@@ -2665,10 +2666,13 @@ label blwnfh_day_3:
     me "Ну, блин, так вот вышло."
     kat "Ладно, я не злюсь, давай засыпать уже понемногу."
     
+    show cg d3_me_kat_blindage2 with dissolve
+    
     "Вновь сомкнув глаза я стал постепенно засыпать."
     "Слушая звуки дождя и треска дров в печи, мне удалось окончательно провалится в сон."
     
-    show blink
-    stop ambience fadeout 3.0
-    stop music fadeout 3.0
+    window hide
+    show black with dissolve2
+    stop ambience fadeout 5.0
+    stop music fadeout 5.0
     jump blwnfh_day_4

@@ -42,5 +42,5 @@ init -3 python:
         return LiveComposite((config.screen_width, config.screen_height), *arg_list)
 
 init -2:
-    image cg d3_me_kat_blindage = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage.png", blwnfh_glow_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
-    image cg d3_me_kat_blindage2 = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2.png", blwnfh_glow_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    image cg d3_me_kat_blindage = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    image cg d3_me_kat_blindage2 = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))

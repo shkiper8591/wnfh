@@ -389,18 +389,18 @@ init -2:
     # Меню галереи #
     
     transform blwnfh_gallery_item_atl:
-    subpixel True
-    truecenter
-    on hover:
-        ease 0.25 zoom 0.95
-    on idle:
-        ease 0.1 zoom 1.0
+        subpixel True
+        truecenter
+        on hover:
+            ease 0.25 zoom 0.95
+        on idle:
+            ease 0.1 zoom 1.0
         
     transform blwnfh_gallery_mode_atl:
-    subpixel True
-    truecenter
-    on hover:
-        ease 0.25 zoom 1.25
-    on idle:
-        ease 0.1 zoom 1.0
+        subpixel True
+        truecenter
+        on hover:
+            ease 0.25 zoom 1.25
+        on idle:
+            ease 0.1 zoom 1.0
         

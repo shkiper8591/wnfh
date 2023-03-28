@@ -637,7 +637,7 @@ label blwnfh_day_3:
     sh "Палку, тряпку и бензин добыть не сложно."
     me "А где ты бензин доставать собрался?"
     
-    show sh normalsmile pioneer with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Волгу у столовой видел?"
     me "А по шапке не прилетит?"
@@ -1788,7 +1788,7 @@ label blwnfh_day_3:
     "Но не успел дойти до середины, как к нам в муз кружок ворвалась Ольга Дмитриевна."
     
     show mt angry pioneer panama at fleft with dspr
-    show dv normal pioneer panama at left with dspr
+    show dv normal pioneer at left with dspr
     mt "Так, что вы тут за иностранные песни распеваете? Ну ка прекратили всё, пока характеристику на вас не написала!"
     
     "Я прекратил играть и отложил гитару в сторону, а после посмотрел на свои пальцы, которые просто ужасно болели."
@@ -2635,7 +2635,14 @@ label blwnfh_day_3:
     kat "Найдется, давай ложись под одеялку за мной."
     th "Ого, меня пускают под одеяло, я на такое даже и не рассчитывал."
     
-    show cg d3_me_kat_blindage with dissolve
+    window hide
+    show cg d3_me_kat_blindage:
+        xanchor 0.0 yanchor 2.0
+        ease 20.0 yanchor 0.0
+        subpixel True
+    with dissolve2
+    $ renpy.pause(2.0)
+    window show
     
     "Не став долго медлить, я аккуратно лег рядом с Катей и повернулся лицом к стене, а к ней спиной, чтобы никак не смущать."
     "Конечно на небольшой кроватке было довольно тесно, так что мы немного касались спинами, но так даже было лучше, хоть немного друг друга грели."

@@ -25,3 +25,22 @@ init -3 python:
 
     blwnfh_make_images("bg", blwnfh_backgrounds)
     blwnfh_make_images("cg", blwnfh_graphics)
+    
+init -3 python:
+    def blwnfh_fast_composite(*args):
+        arg_list = list()
+        for arg in args:
+            arg_list.append((0, 0))
+            arg_list.append(arg)
+        return im.Composite((config.screen_width, config.screen_height), *arg_list)
+
+    def blwnfh_fast_livecomposite(*args):
+        arg_list = list()
+        for arg in args:
+            arg_list.append((0, 0))
+            arg_list.append(arg)
+        return LiveComposite((config.screen_width, config.screen_height), *arg_list)
+
+init -2:
+    image cg d3_me_kat_blindage = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage.png", blwnfh_glow_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    image cg d3_me_kat_blindage2 = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2.png", blwnfh_glow_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))

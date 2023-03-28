@@ -265,3 +265,19 @@ init 1:
         xzoom 1
         pause 0.333
         repeat
+
+    # Огонь #
+
+    transform blwnfh_fire_light_atl(imgf):
+        im.MatrixColor(imgf, im.matrix.brightness(0.17))
+        choice 2:
+            ease 0.4 alpha 0.5
+        choice 2:
+            ease 0.3 alpha 0.75
+        choice 2:
+            ease 0.3 alpha 0.6
+        choice:
+            ease 0.25 alpha 0.9
+        choice:
+            ease 0.2 alpha 1.0
+        repeat

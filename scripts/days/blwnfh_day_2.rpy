@@ -7,7 +7,7 @@ label blwnfh_day_2:
     play ambience ambience_int_cabin_evening fadein 5
     $ renpy.pause(1.5, hard=True)
     window show
-    
+    ## Пробуждение Семёна2
     "Мне приснился странный сон."
     "И он показался мне настолько странным, что я тут же попытался вспомнить все его детали."
     
@@ -45,7 +45,7 @@ label blwnfh_day_2:
     mt "Да, конечно."
     
     hide mt with dissolve
-    
+    ## ОД рассказывают про пиндоса
     "Вожатая встала из-за стола, отвернулась и я стал быстренько одеваться."
     
     mt "Кстати[wp]"
@@ -127,7 +127,7 @@ label blwnfh_day_2:
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["get_to_know_me_better"] fadein 5
-    
+    ## Семён отправляется к умывальникам
     "Выйдя на улицу, я вдохнул свежего воздуха, что дало мне небольшой заряд бодрости."
     "Ещё немного постояв, и полностью насладившись таким прекрасным утром, я пошел в сторону умывальников."
     
@@ -149,7 +149,7 @@ label blwnfh_day_2:
     th "А там же у этим американцев ещё миллион акцентов, диалектов так что фиг разберёшь чего он там сказал[wp]"
     
     scene bg ext_washstand_day with dissolve2
-    
+    ## У умывальников
     "Придя к умывальникам, я обнаружил, что здесь никого нет."
     "Что, в общем-то, меня даже очень радовало. {w}Чтобы дважды подряд никого не встретить у умывальников[wp]"
     "Не теряя ни минуты, я приступил к умыванию." 
@@ -200,7 +200,7 @@ label blwnfh_day_2:
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
     scene bg ext_square_sunset with slide_right_blure_dissolve2
-    
+    ## Семён на площади
     "На площади уже собрался народ, и я встал в строй рядом с Серым." 
     
     show cg d2_lineup with dissolve
@@ -222,7 +222,7 @@ label blwnfh_day_2:
     hide cg d2_lineup with dissolve
     show mt smile pioneer panama at left with dissolve
     show kat normal pioneer at right with dissolve
-    
+    ## Семёна назначают провожатым Кати
     "Я подошел к Ольге Дмитриевне, рядом с которой стояла Катя и держала в руках «бегунок»."
     
     mt "Катя, сегодня Семён выступит твоим провожатым, на время заполнения списка."
@@ -273,7 +273,7 @@ label blwnfh_day_2:
     scene bg int_dining_hall_people_sunset with dissolve2  
     play ambience ambience_dining_hall_full fadein 3
     show kat normal pioneer at center with dissolve
-    
+    ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть." 
     "И пока думал, к нам подошла Лена."
     #34 лена должна появится с анимацией
@@ -359,7 +359,7 @@ label blwnfh_day_2:
     play music music_list["dance_of_fireflies"] fadein 5
     $ renpy.pause(1.0)
     window show
-    
+    ## Семён и Катя отправляются заполнять бегунок
     "Я вышел из столовой, и позвал сидящую на лавочке Катю." 
     "Посмотрев на меня, она неспешно поднялась с лавочки и подошла ко мне."
     
@@ -403,7 +403,7 @@ label blwnfh_day_2:
     #33 звук открытия двери
     play ambience ambience_medstation_inside_day fadein 3
     show kat normal pioneer at center with dissolve
-    
+    ## В клубах
     kat "Но, тут же никого нет[wp] {w}Кто подписывать-то будет?"
     
     "Я мягко отнял у Кати бегунок и, взяв ручку со стола, подписал его."
@@ -425,7 +425,7 @@ label blwnfh_day_2:
     
     scene bg ext_musclub_day with dissolve
     show kat normal pioneer with dissolve
-    
+    ## В музкружке
     "Сократив путь через небольшой пролесок, мы дошли до муз кружка, откуда доносилась музыка на пианино."
     
     # Какая-нибудь пианинко на фоне (может кавер хатсуне мику?)))))))
@@ -557,7 +557,7 @@ label blwnfh_day_2:
     "Мы, преисполняясь хорошим настроением, отправились в сторону медпункта."
     
     scene bg ext_square_day with dissolve2
-    
+    ## Славя докладывает где искать ОД
     "Проходя мимо по площади, нас позади окликнули, и повернувшись увидел Славю."
     "Мы остановились, и она к нам подбежала."
     
@@ -597,7 +597,7 @@ label blwnfh_day_2:
     show cs normal at right with dissolve
     show kat normal pioneer at left with dissolve
     $ blwnfh_set_name("cs","Виола")
-    
+    ## В медпункте
     "В медпункте сидела Виола и заполняла какие-то бумаги."
     "Закончив подписывать, она повернулась к нам, и Катя подошла к ней."
     
@@ -671,7 +671,7 @@ label blwnfh_day_2:
     play ambience ambience_library_day fadein 3
     show mz normal glasses pioneer at left with dissolve
     show kat normal pioneer at right with dissolve
-    
+    ## В библиотеке
     "Женя сидела на своем месте и что самое удивительное — не спала."
     
     mz "Зачем пришли?"
@@ -752,7 +752,7 @@ label blwnfh_day_2:
     scene bg int_house_of_mt_day with dissolve2
     play ambience ambience_int_cabin_day fadein 3
     show mt normal pioneer at center with dissolve
-    
+    ## Сдача бегунка вожатой
     "Ольга Дмитриевна была в домике и вновь подписывала какие-то документы за столом."
     
     show mt normal pioneer close at right with dspr
@@ -839,7 +839,7 @@ label blwnfh_day_2:
     scene bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
     window show
-    
+    ## Обед
     "Возле столовой было немного пионеров, и я с Катей быстренько прошмыгнули в столовую."
     
     stop ambience fadeout 0.5
@@ -929,7 +929,7 @@ label blwnfh_day_2:
     play ambience ambience_camp_center_day fadein 3
     $ renpy.pause(1.5)
     window show
-    
+    ## Шурик в клубах рассказывает план
     "Скоро я уже был перед клубами, откуда доносились звуки работы инструментами."
     
     stop ambience fadeout 0.5
@@ -1042,7 +1042,7 @@ label blwnfh_day_2:
     scene bg ext_musclub_day with dissolve2
     $ renpy.pause(1.0)
     window show
-    
+    ## Семён пришёл в музклуб
     "Сократив путь через пролесок, я уже стоял перед муз кружком, откуда доносилась некая мелодия."
     # тут надо вставить какой-нибудь дуэт скрипки и пианино, хз.   
     "Я подошел к двери и, прежде чем входить, решил немного постоять дабы насладится этой самой музыкой."
@@ -1305,7 +1305,7 @@ label blwnfh_day_2:
     scene bg ext_musclub_day with dissolve
     play ambience ambience_camp_center_day fadein 3
     show dv normal pioneer close at center with dissolve
-    
+    ## Алиса предлагает Семёну поиграть на сцене вечером
     #34 я хуй знает какую тут музыку подставить, так что потом разберемся, когда займемся режиссурой 
     
     "Когда я вышел, Алиса ждала меня немного поодаль от муз кружка, видимо не желая, чтобы нас кто-то мог подслушать."
@@ -1349,7 +1349,7 @@ label blwnfh_day_2:
     show kat grin pioneer at left with dissolve
     show mi grin pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 5
-    
+    ## Семён вернулся в музклуб
     "Войдя, девочки уже встречали меня своими хитрыми взглядами."
     
     mi "О чем разговаривали?"
@@ -1504,7 +1504,7 @@ label blwnfh_day_2:
     show mi normal pioneer at right with dissolve
     $ renpy.pause(1.5)
     window show
-    
+    ## Музыканты заканчивают играть и покидают музклуб
     "Мы вышли из муз кружка и сели на лавочке рядом."
     "После долгого нахождения в муз кружке, свежий уличный воздух будто пьянил."
     "И это несмотря на открытые в помещение окна!"
@@ -1559,7 +1559,7 @@ label blwnfh_day_2:
     show mi normal pioneer at left with dissolve
     $ renpy.pause(1.0)
     window show
-    
+    ## Ужин
     "Войдя в столовую, та уже была почти забита людьми."
     "Лишь пару мест вдалеке столовой, которые мы и заняли, когда взяли подносы с едой."
     
@@ -1638,7 +1638,7 @@ label blwnfh_day_2:
     scene bg ext_pier_sunset with dissolve2
     play music music_list["trapped_in_dreams"]
     show kat normal pioneer at center with dissolve
-    
+    ## Семён и Катя на пристани
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
     
     show cg d2_me_kat_boathouse with dissolve
@@ -1762,7 +1762,7 @@ label blwnfh_day_2:
     play ambience ambience_camp_center_night fadein 3
     $ renpy.pause(1.5)
     window show
-    
+    ## Семён и Алиса идут на сцену
     "Пока я занимался самокопанием и попытками вспомнить что-нибудь из своего прошлого, на лагерь опустилась ночь."
     "Сидя в полном отчаянии вспомнить хоть что-то более внятное, опустил голову и закрыл лицо руками, как услышал, что ко мне кто-то подошел."
     "Опустив руки, я поднял взгляд, и увидел стоящую перед собой Алису."
@@ -1794,7 +1794,7 @@ label blwnfh_day_2:
     
     show bg ext_stage_big_night with dissolve
     show dv normal with dspr
-    
+    ## Семён и Алиса на сцене
     "Мы вышли к сцене, на которую сразу же и забрались."
     "Я сел на краю, а Алиса прошла немного вглубь сцены." 
     "И вскоре возвратилась оттуда с двумя гитарами на перевес."
@@ -1849,7 +1849,7 @@ label blwnfh_day_2:
     show dv laugh with dspr
     
     dv "Ладно!"
-    
+    ## Песня про зайцев!
     stop music fadeout 3
     play music blwnfh_music_list["we_dont_care"] fadein 5
     show cg d2_dv_sem_scene with dspr
@@ -1915,7 +1915,7 @@ label blwnfh_day_2:
     "Одним ловким движением, она забралась на сцену и подошла к нам."
     
     show un laugh pioneer at fright with dissolve
-    
+    ## Лена ловит ночных музыкантов. Алиса сбегает со сцены
     un "Красиво поёте однако, да и играете тоже неплохо."
     dv "А ты чего не спишь?"
     
@@ -1951,7 +1951,7 @@ label blwnfh_day_2:
     "Меня это самою малость удивило и я вопросительно посмотрел на Лену."
     
     show un shy at center with dspr
-    
+    ## Семён с Леной болтают на сцене
     un "Сёмочка, прости что так резко, но[wp]"
     me "Что?"
     un "Может чуть-чуть тут посидим?"
@@ -2050,7 +2050,7 @@ label blwnfh_day_2:
     scene bg ext_houses_night with dissolve2
     $ renpy.pause(1.5)
     window show
-    
+    ## Семён провожает Лену
     "Всю дорогу мы шли молча."
     "Лена шла улыбаясь, то и дело поглядывая на меня, и иногда тихонько хихикая."
     
@@ -2095,7 +2095,7 @@ label blwnfh_day_2:
     un "{i}Всё равно значит[wp]{/i}"
     
     "Пробурчала она себе под нос и отпустила меня." 
-    
+    ## Лена обижается на Семёна
     un "Ладно, дальше я сама дойду."
     me "Так тут немного осталось, давай уж сопровожу до дверей."
     un "Нет, спасибо, так тебе дольше идти надо будет, а отсюда нам одинаково идти до своих домиков."
@@ -2136,7 +2136,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_night with dissolve
     play ambience ambience_int_cabin_night fadein 3
-    
+    ## ОД устраивает Семёну ночной разбор полётов
     "Внутри Ольга Дмитриевна, отведя руки за спину, ходила из одного конца дома в другой."
     "Она обратила на меня внимание только тогда, когда я закрыл за собой дверь."
     
@@ -2196,7 +2196,7 @@ label blwnfh_day_2:
     scene bg int_house_of_mt_night2 with dissolve
     
     "Ольга Дмитриевна погасила свет и я стал медленно засыпать."
-    
+    ## Конец дня
     window hide
     show blink
     $ renpy.pause(2.0, hard=True)

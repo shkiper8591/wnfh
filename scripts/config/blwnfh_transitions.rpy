@@ -120,9 +120,10 @@ init:
     $ santa_barbara_out_blure_dissolve5 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 5.0, 100)
     $ santa_barbara_out_blure_dissolve10 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["santa_barbara_out"]), 10.0, 100)
     
+    # Специальные транзиты
+    $ bibl_entrance = ImageDissolve(im.Tile(blwnfh_gui["transit"]["bibl_entrance"]), 2.0, 30)
     
-    
-    # Эксперементальные кринжлвые транзиты
+    # Эксперементальные кринжовые транзиты
     $ experemental1 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp1"]), 5, 1)
     $ experemental2 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp2"]), 5, 1)
     $ experemental3 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp3"]), 5, 10)

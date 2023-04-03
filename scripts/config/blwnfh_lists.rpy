@@ -141,7 +141,8 @@ init -2 python:
         "exp1",
         "exp2",
         "exp3",
-        "ecstrusion"
+        "ecstrusion",
+        "bibl_entrance"
         ]}
     
     ## Это элементы меню воборов ##

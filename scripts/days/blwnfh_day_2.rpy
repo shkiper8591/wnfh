@@ -599,13 +599,18 @@ label blwnfh_day_2:
     
     "С огромным нежеланием, я распахнул входную дверь и мы вошли в медпункт."
     
+    window hide
+    scene bg ext_aidpost_day at blwnfh_entrance
     stop ambience fadeout 0.5
     stop music fadeout 2
     scene bg int_aidpost_day with dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_medstation_inside_day fadein 3
     show cs normal at right with dissolve
     show kat normal pioneer at left with dissolve
     $ blwnfh_set_name("cs","Виола")
+    window show
+    
     ## В медпункте
     "В медпункте сидела Виола и заполняла какие-то бумаги."
     "Закончив подписывать, она повернулась к нам, и Катя подошла к ней."
@@ -646,11 +651,14 @@ label blwnfh_day_2:
     th "А где там фирменное «давай раздевайся пионер, слушать тебя будем»?"
     th "Хотя[wp] {w}Не-не, лучше не надо."
     
+    window hide
     stop ambience fadeout 0.5
     stop music fadeout 0.5
     scene bg ext_aidpost_day with dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 3
     show kat normal pioneer at center with dissolve
+    window show
     
     me "Что ж, всё прошло куда лучше чем обычно."
     kat "А как обычно всё проходит?"
@@ -664,7 +672,9 @@ label blwnfh_day_2:
     
     "Быстрым и уверенным шагом мы отправились к библиотеке."
     
-    scene bg ext_library_day with dissolve
+    window hide
+    scene bg ext_library_day with slide_right_blure_dissolve2
+    window show
     
     "Библиотека, ровно как и медпункт, одно из тех мест которое я просто не могу терпеть." 
     "А всё из-за ужасного зверя, обитающего там. {w}Нашей библиотекарши Жени."
@@ -675,11 +685,17 @@ label blwnfh_day_2:
     
     "С диким нежеланием, я вошел внутрь библиотеки, и следом за мной Катя."
     
+    window hide
+    #scene bg ext_library_day at blwnfh_entrance(1.0)
     stop ambience fadeout 0.5
-    scene bg int_library_day with dissolve
+    #$ renpy.pause(1.0)
+    scene bg int_library_day with bibl_entrance
+    play sound sfx_close_door_1
     play ambience ambience_library_day fadein 3
     show mz normal glasses pioneer at left with dissolve
     show kat normal pioneer at right with dissolve
+    window show
+    
     ## В библиотеке
     "Женя сидела на своем месте и что самое удивительное — не спала."
     
@@ -724,11 +740,13 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     scene bg ext_library_day with dissolve
+    play sound sfx_close_door_1
     show kat normal pioneer at center with dissolve
     play ambience ambience_camp_center_day fadein 3
     play music music_list["two_glasses_of_melancholy"] fadein 5
     
     me "Какая-то она слишком добрая была."
+    #kat "Очевидно, что кто-то помог ей избавиться от недотраха." 
     kat "А что, обычно злюка?"
     me "Ну[wp] Не то чтобы, просто[wp]"
     me "Ай сложно объяснить."
@@ -750,21 +768,26 @@ label blwnfh_day_2:
     "С заполненным обходным, мы отправились к вожатой."
     
     window hide
-    scene bg ext_house_of_mt_day with dissolve2
+    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
     $ renpy.pause(1.0)
     window show
     
     "Благо идти тут было недалеко, и мы уже скоро были у домика."
     "Мы поднялись по ступенькам к двери, и постучавшись вошли в дом."
     
+    window hide
+    scene bg ext_house_of_mt_day at blwnfh_entrance
     stop ambience fadeout 0.5
-    scene bg int_house_of_mt_day with dissolve2
+    scene bg int_house_of_mt_day with door_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_int_cabin_day fadein 3
-    show mt normal pioneer at center with dissolve
+    window show
+    
     ## Сдача бегунка вожатой
+    
     "Ольга Дмитриевна была в домике и вновь подписывала какие-то документы за столом."
     
-    show mt normal pioneer close at right with dspr
+    show mt normal pioneer close at right with dissolve
     show kat normal pioneer close at left with dissolve
     
     "Мы подошли ближе к вожатой, и Катя торжественно протянула ей заполненный бегунок."

@@ -1,10 +1,12 @@
 init -2:
     
     # Заход в здание
-    transform blwnfh_entrance:
+    transform blwnfh_entrance(x = 0.5):
+        pos(x, 0.5)
+        anchor(x, 0.5)
         subpixel True
-        truecenter
-        zoom 1.0
+        #truecenter
+        #zoom 1.0
         ease_quart 2.0 zoom 1.5
     
     # Бежит бежит бежит

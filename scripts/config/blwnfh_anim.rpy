@@ -1,5 +1,12 @@
 init -2:
     
+    # Заход в здание
+    transform blwnfh_entrance:
+        subpixel True
+        truecenter
+        zoom 1.0
+        ease_quart 2.0 zoom 1.5
+    
     # Бежит бежит бежит
     
     transform blwnfh_running:

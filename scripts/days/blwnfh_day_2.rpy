@@ -418,41 +418,49 @@ label blwnfh_day_2:
     me "Вот и всё, идём дальше."
     
     stop ambience fadeout 0.5
-    scene bg ext_clubs_day with dissolve
+    scene bg ext_clubs_day with dissolve2
     play ambience ambience_camp_center_day fadein 3
     
     "Закрыв клубы, мы направились в сторону муз кружка."
     
-    scene bg ext_musclub_day with dissolve
+    scene bg ext_musclub_day with dissolve2
     show kat normal pioneer with dissolve
     ## В музкружке
     "Сократив путь через небольшой пролесок, мы дошли до муз кружка, откуда доносилась музыка на пианино."
     
     # Какая-нибудь пианинко на фоне (может кавер хатсуне мику?)))))))
     kat "Красиво играет."
-    me "Да, это наша девочка-оркестр. {w}Мику зовут"
+    me "Да, это наша девочка-оркестр. {w}Мику зовут."
     kat "Наверное это о ней мне Лена рассказывала."
     kat "Это же она с длинными аквамариновыми волосами?"
     me "Да-да-да, всё верно."
     me "А ещё, тебе Лена рассказывала, что она очень любит тараторить?"
+    
+    scene bg ext_musclub_verandah_day with dissolve2
+    show kat normal pioneer at left with dissolve
+    
     kat "Вроде как, но я думаю она сильно преувеличивает."
     th "Хо, девочка, как же ты ошибаешься[wp] Как же ошибаешься."
     
     "Я постучался в дверь, и мы вошли внутрь."
     
+    window hide
+    hide kat with dissolve
+    scene bg ext_musclub_verandah_day at blwnfh_entrance
+    scene bg int_musclub_day with dissolve2
+    play sound sfx_close_door_1
     stop ambience fadeout 0.5
     stop music fadeout 0.5
-    show bg int_musclub_day with dissolve
-    #33 звук открытия двери
     play ambience ambience_music_club_day fadein 3
     play music music_list["so_good_to_be_careless"] fadein 5
+    window show
     
     "Войдя внутрь, мы застали Мику играющей на пианино[wp] Или рояле? Неважно в общем."
     "Главное, что это было нисколечки ни удивительно."
     "Но продлилось это не долго, ведь она тут же обратила на нас внимание. А вот это уже было даже удивительно."
     
     show mi normal pioneer at left with dissolve
-    show kat thinking with dspr
+    show kat thinking pioneer at center with dissolve
     
     mi "Приветик, какими судьбами пожаловали к нам, ну то есть ко мне, я тут только одна, но надеюсь скоро будет больше!"
     
@@ -550,6 +558,7 @@ label blwnfh_day_2:
     stop music fadeout 2
     play ambience ambience_camp_center_day fadein 3
     scene bg ext_musclub_day with dissolve
+    play sound sfx_close_door_1
     $ renpy.pause(1.0)
     play music music_list["two_glasses_of_melancholy"] fadein 5
     window show
@@ -558,8 +567,8 @@ label blwnfh_day_2:
     
     scene bg ext_square_day with dissolve2
     ## Славя докладывает где искать ОД
-    "Проходя мимо по площади, нас позади окликнули, и повернувшись увидел Славю."
-    "Мы остановились, и она к нам подбежала."
+    "Проходя мимо по площади, нас позади окликнули."
+    "Мы остановились, и к нам подбежала Славя."
     
     show sl normal pioneer at center with dissolve
     

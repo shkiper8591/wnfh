@@ -220,7 +220,12 @@ init 2:
     $ blwnfh_sfx_list["udarch"] = blwnfh_SFX + "udarch.ogg"
     $ blwnfh_sfx_list["pickup_sound"] = blwnfh_SFX + "pickup sound.ogg"
     $ blwnfh_sfx_list["hrust_vetki"] = blwnfh_SFX + "hrust_vetki.ogg"
-    
+    $ blwnfh_sfx_list["pechka"] = blwnfh_SFX + "furnace_loop.ogg"
+    $ blwnfh_sfx_list["apchhi"] = blwnfh_SFX + "apchhi.mp3"
+    $ blwnfh_sfx_list["oskolki"] = blwnfh_SFX + "oskolki.ogg"
+    $ blwnfh_sfx_list["zastelayut"] = blwnfh_SFX + "bed-sheet-movement.ogg"
+    $ blwnfh_sfx_list["postavilichtoto"] = blwnfh_SFX + "postavilichtoto.ogg"
+    #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист
     $ blwnfh_music_list["technical_chocolatki"] = blwnfh_MUSIC + "technical_chocolatki.mp3"

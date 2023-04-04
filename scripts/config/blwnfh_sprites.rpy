@@ -46,6 +46,7 @@ init 2:
             'sd': {
                 'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1,
             },
+            #Юля идёт нахуй
             #'uv': {
             #    'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
             #},
@@ -54,13 +55,28 @@ init 2:
                 'shakers': 1,
             },
             'left': {
-                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1, 'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1, 'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1, 'd1_breakfast_empty': 1,
+                'd2_breakfast_full': 1, 'd2_breakfast_half': 1, 'd2_breakfast_empty': 1,
+                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1,
+                'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1,
+                'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'right': {
-                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1, 'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1, 'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1, 'd1_breakfast_empty': 1,
+                'd2_breakfast_full': 1, 'd2_breakfast_half': 1, 'd2_breakfast_empty': 1,
+                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1,
+                'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1,
+                'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
             'mid': {
-                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1, 'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1, 'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1, 'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
+                'd1_breakfast_full': 1, 'd1_breakfast_half': 1, 'd1_breakfast_empty': 1,
+                'd2_breakfast_full': 1, 'd2_breakfast_half': 1, 'd2_breakfast_empty': 1,
+                'd3_breakfast_full': 1, 'd3_breakfast_half': 1, 'd3_breakfast_empty': 1,
+                'd4_breakfast_full': 1, 'd4_breakfast_half': 1, 'd4_breakfast_empty': 1,
+                'd5_breakfast_full': 1, 'd5_breakfast_half': 1, 'd5_breakfast_empty': 1,
+                'd6_breakfast_full': 1, 'd6_breakfast_half': 1, 'd6_breakfast_empty': 1,
             },
         }
         

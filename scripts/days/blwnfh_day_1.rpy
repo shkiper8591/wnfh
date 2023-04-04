@@ -1792,14 +1792,17 @@ label blwnfh_day_1:
     show un smile pioneer at go_to_chair_left behind table
     show kat normal pioneer at go_to_chair_right behind chair_r
     $ renpy.pause(1.0, hard=True)
+    
     show chair_r at chair_move_out behind un
     $ renpy.pause(0.3, hard=True)
     show chair_l at chair_move_out behind kat
     $ renpy.pause(0.7, hard=True)
+    
     show un smile pioneer at sit_down_left
     $ renpy.pause(0.3, hard=True)
     show kat normal pioneer at sit_down_right
     $ renpy.pause(1.0, hard=True)
+    
     show chair_l at chair_move_in
     $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_in

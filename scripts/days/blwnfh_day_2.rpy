@@ -804,16 +804,16 @@ label blwnfh_day_2:
     
     show mt smile with dspr
     
-    mt "Молодец, а то у там Мику совсем скучает одна."
+    mt "Молодец, а то там Мику совсем скучает одна."
     me "Ладно, мы теперь свободны?"
-    mt "Да, в целом вы свободны, только обед уже через минут десять."
+    mt "Да, в целом вы свободны, только обед уже через десять минут."
     me "Тогда мы наверное на улице подождём обеда."
-    mt "Угу."
     
-    "Вожатая вернулась к своим бумагам, а мы покинули домик."
+    "Вожатая угукнула и вернулась к своим бумагам, а мы покинули домик."
     
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_day with dissolve
+    play sound sfx_close_door_1
     show kat normal pioneer with dissolve
     play ambience ambience_camp_center_day fadein 3
     
@@ -837,7 +837,7 @@ label blwnfh_day_2:
     
     "Фыркнула она и сложила руки."
     
-    me "Да ладно тебе, я более чем уверен, что у тебя ещё поменяется мнение."
+    me "Да ладно тебе, подружитесь ещё."
     
     "Между нами повисла тишина."
     
@@ -875,30 +875,57 @@ label blwnfh_day_2:
     "Возле столовой было немного пионеров, и я с Катей быстренько прошмыгнули в столовую."
     
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_day with dissolve
+    scene bg int_dining_hall_day with dnr_entrance
     play ambience ambience_dining_hall_empty fadein 3 
     
     "Внутри было почти пусто, лишь пару человек сидели и обедали в гордом одиночестве."
     "Мы подошли к раздаче, и взяв подносы пошли к моему любимому столику."
     
+    show chair_l behind kat 
+    show chair_r behind mi
+    show table
+    show shakers
+    with dissolve
+    
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_day with dissolve2
+    show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 3
     
-    "И как только мы заняли своё место, столовая тут же стала наполнятся людьми, так что через минуту она уже была заполнена."
+    show mid d2_breakfast_full tray spoon foods with dissolve
+    show kat normal pioneer behind chair_r:
+        xcenter -0.2
+        ease_quart 4.0 xcenter 0.15
     
-    show kat normal pioneer at left with dissolve
+    $ renpy.pause(4.0, hard=True)
+    show left d2_breakfast_full tray foods behind shakers with dissolve
+    show chair_l at chair_move_out behind kat
+    $ renpy.pause(0.7, hard=True)
+    show kat normal pioneer at sit_down_left behind table
+    $ renpy.pause(1.0, hard=True)
+    show chair_l at chair_move_in behind kat
+    $ renpy.pause(0.3, hard=True)
+    
+    "И как только мы заняли своё место, столовая тут же стала наполнятся людьми."
+    
+    show mi normal pioneer behind chair_r:
+        xcenter 1.4
+        ease_quart 5.0 xcenter 0.8
     
     "А ещё спустя минуту, к нам подошла Мику."
-    
-    show mi normal pioneer at right with dissolve
-    
+
     mi "Можно к вам сесть, а то я вроде старалась раньше закончить, чтобы успеть место занять, а по итогу опять пришла одна из самых последних."
     
     show kat smile with dspr
     
     kat "Да конечно, садись."
     mi "Спасибо!"
+    
+    show chair_r at chair_move_out behind mi
+    $ renpy.pause(0.3, hard=True)
+    show mi normal pioneer at sit_down_right
+    $ renpy.pause(1.0, hard=True)
+    show chair_r at chair_move_in behind mi
+    show right d6_breakfast_full tray spoon foods behind mid with dissolve
     
     "Мику аккуратно, даже с некоторой грацией села за стол, и стала аккуратно есть."
     "Что нельзя было сказать про меня, ведь за это время, я уже успел немного испачкать форму едой."

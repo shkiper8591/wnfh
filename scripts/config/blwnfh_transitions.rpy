@@ -122,6 +122,7 @@ init:
     
     # Специальные транзиты
     $ bibl_entrance = ImageDissolve(im.Tile(blwnfh_gui["transit"]["bibl_entrance"]), 2.0, 30)
+    $ dnr_entrance = ImageDissolve(im.Tile(blwnfh_gui["transit"]["dnr_entrance"]), 2.0, 30)
     
     # Эксперементальные кринжовые транзиты
     $ experemental1 = ImageDissolve(im.Tile(blwnfh_gui["transit"]["exp1"]), 5, 1)

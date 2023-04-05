@@ -911,8 +911,10 @@ label blwnfh_day_2:
         xcenter 1.4
         ease_quart 5.0 xcenter 0.8
     
+    show mid d2_breakfast_full tray foods with dissolve
+    
     "А ещё спустя минуту, к нам подошла Мику."
-
+    
     mi "Можно к вам сесть, а то я вроде старалась раньше закончить, чтобы успеть место занять, а по итогу опять пришла одна из самых последних."
     
     show kat smile with dspr
@@ -925,9 +927,10 @@ label blwnfh_day_2:
     show mi normal pioneer at sit_down_right
     $ renpy.pause(1.0, hard=True)
     show chair_r at chair_move_in behind mi
-    show right d6_breakfast_full tray spoon foods behind mid with dissolve
+    show right d2_breakfast_full tray spoon foods behind mid with dissolve
     
     "Мику аккуратно, даже с некоторой грацией села за стол, и стала аккуратно есть."
+    show right d2_breakfast_full tray foods behind mid with dissolve
     "Что нельзя было сказать про меня, ведь за это время, я уже успел немного испачкать форму едой."
     
     show kat grin with dspr
@@ -943,12 +946,14 @@ label blwnfh_day_2:
     "Я попытался оттереть пятно рукой, но сделал только хуже, размазав его ещё сильнее, а от моих неудачных попыток девочки ещё сильнее засмеялись."
     "Поняв, что ничего не получится, я грозно фыркнул и обиженно уткнулся в тарелку."
     
+    show mid d2_breakfast_half tray foods with dissolve
     show kat smile with dspr
     show mi normal with dspr
     
     mi "Сенечка, ну не обижайся ты!"
     
     show mi shy with dspr
+    show left d2_breakfast_half tray foods with dissolve
     
     mi "Ой, то есть Семён."
     
@@ -958,6 +963,7 @@ label blwnfh_day_2:
     th "Ну и ну, то Сёмочка, то теперь вот некий Сенечка. {w}Ещё бы Семечкой обозвали, во хохма-то будет!"
     me "Да не обижаюсь я, просто неприятно немного."
     
+    show right d2_breakfast_half tray foods with dissolve
     show mi happy with dspr
     
     mi "Вот и славно, что не обижаешься."
@@ -966,36 +972,67 @@ label blwnfh_day_2:
     show kat normal with dspr
     
     "Мы все уткнулись обратно в свои тарелки."
+    
+    show left d2_breakfast_empty tray foods with dissolve
+    show right d2_breakfast_empty tray foods with dissolve
+    
     "Мику и Катя закончили на удивление быстрее меня, при том, что ел я довольно быстро."
+    
+    show kat normal pioneer at get_up
+    show chair_l at chair_move_out
+    $ renpy.pause(0.5, hard=True)
+    show mi normal pioneer at get_up
+    show chair_r at chair_move_out
+    
+    hide left with dissolve
+    hide right with dissolve
     
     mi "Ладно Семен, мы с Катей пошли в муз кружок. Ты к нам тоже заходи, может даже вместе сыграем, я вот ещё ни разу не играла в трио!"
     me "Обязательно зайду."
+    
+    show mi normal pioneer:
+        ease_quart 4.0 xcenter 1.2
+    show kat normal pioneer behind chair_r:
+        ease_quart 5.0 xcenter 1.2
+    
+    $renpy.pause(2.0, hard=True)
     
     hide mi with dissolve
     hide kat with dissolve
     
     "Девочки ушли, а я, стал в ускоренном темпе доедать."
+    
+    show mid d2_breakfast_empty tray spoon foods with dissolve
+    
     "И спустя минуту наконец-то прикончил свой обед."
+    
+    scene bg int_dining_hall_people_day with dissolve2
+    
     "Встав я направился на выход из столовой."
     "И только лишь ближе к выходу, вспомнил про пятно на моей форме."
     "В грязной форме щеголять не очень хотелось и я попросился на кухню отмыть пятно в раковине."
     "Благо, сегодня поварихи не были злыми и пустили меня."
     "Там я кое-как отмыл пятно, и наконец покинул столовую."
     
-    stop ambience fadeout 2
     window hide
-    scene bg ext_clubs_day with Dissolve(5.0)
+    stop ambience fadeout 2
+    scene bg ext_clubs_day with slide_diagonal_blure_dissolve5
     play ambience ambience_camp_center_day fadein 3
     $ renpy.pause(1.5)
     window show
+   
     ## Шурик в клубах рассказывает план
     "Скоро я уже был перед клубами, откуда доносились звуки работы инструментами."
     
+    window hide
+    scene bg ext_clubs_day at blwnfh_entrance 
     stop ambience fadeout 0.5
-    scene bg int_clubs_male_day with dissolve
+    scene bg int_clubs_male_day with door_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_clubs_inside_day fadein 3 
     show el normal pioneer at left with dissolve
     show sh normal pioneer at right with dissolve
+    window show
     
     "Ребята как обычно над чем-то работали."
     
@@ -1008,7 +1045,7 @@ label blwnfh_day_2:
     show sh serious with dspr
     
     sh "Я тогда в столовой немного не договорил, что можно было бы пойти ночью, когда все спать лягут."
-    me "Ага, чтобы мы там ещё и заблудились? {w}Днём-то ещё хоть как-то можно будет сориентироваться"
+    me "Ага, чтобы мы там ещё и заблудились? {w}Днём-то ещё хоть как-то можно будет сориентироваться."
     sh "Я с Серым хорошо знаем туда дорогу, приходилось пару раз ходить, доски отковыривать, так что не заблудимся."
     me "А что же нам мешает под предлогом добычи досок туда отправится?"
     sh "То, что мы тогда делали это с санкции вожатой и не одни, а ещё с участием вожатого соседнего отряда."
@@ -1019,7 +1056,7 @@ label blwnfh_day_2:
     "Шурик приободрился, как будто ожидая этого вопроса."
     
     sh "Тут-то и начинается самое интересное!"
-    sh "Под старым лагерем есть сооружение, то ли военного пренадзначения, то ли ещё чего."
+    sh "Под старым лагерем есть сооружение, то ли военного назначения, то ли ещё чего."
     sh "Короче говоря бункер старый и давно брошенный."
     
     "Меня, малость удивили такие подробности."
@@ -1052,15 +1089,15 @@ label blwnfh_day_2:
     sh "Всякие же гигантские радио[wp] {w}В худшем случае поломали."
     sh "А если же ты имеешь ввиду марадёров, то не думаю, что в такой глуши они водятся."
     sh "Тем более, тут всегда были люди, следящие за территорией."
-    me "Понятно, нужен в общем план старого лагеря, чтобы не заблудиться там."
+    me "Понятно, думаю нам понадобится план старого лагеря, чтобы не заблудиться там."
     sh "Мне очень интересно, где же ты планы старого здания-то искать собрался?"
     
     "Данный вопрос немного поставил меня в ступор. {w}А ведь действительно, где искать-то?"
     
     me "Ну, в библиотеке например? {w}Или в администрации лагеря где-нибудь."
-    el "В библиотеки их точно быть не может, а в администрации если где-то и завалялось, то так просто нам их не дадут."
+    el "В библиотеке их точно быть не может, а в администрации если где-то и завалялось, то так просто нам их не дадут."
     me "Справедливо[wp]"
-    me "Тогда надо просто хорошо подготовится. {w}Сапоги там хорошие, чтобы не в сандалиях ходить по мусору, а то вдруг гвоздь какой-нибудь. {w}Фонарики мощные взять."
+    me "Тогда надо просто хорошо подготовиться. {w}Сапоги там хорошие, чтобы не в сандалиях ходить по мусору, а то вдруг гвоздь какой-нибудь. {w}Фонарики мощные взять."
     sh "Вот это я поддерживаю."
     
     show el serious with dspr
@@ -1090,6 +1127,7 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     scene bg ext_clubs_day with dissolve
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 3
     
     th "Так, куда можно сходить[wp]"
@@ -1104,6 +1142,7 @@ label blwnfh_day_2:
     ## Семён пришёл в музклуб
     "Сократив путь через пролесок, я уже стоял перед муз кружком, откуда доносилась некая мелодия."
     # тут надо вставить какой-нибудь дуэт скрипки и пианино, хз.   
+    scene bg ext_musclub_verandah_day with sphere_blure_dissolve2
     "Я подошел к двери и, прежде чем входить, решил немного постоять дабы насладится этой самой музыкой."
     
     th "Ну и ну, играют от силы полчаса, а уже успели хорошо сыграться."
@@ -1115,8 +1154,10 @@ label blwnfh_day_2:
     "Вполне насладившись красивой игрой, я постучался и вошел в муз кружок."
     
     window hide
+    scene bg ext_musclub_verandah_day at blwnfh_entrance
     stop ambience fadeout 0.5
-    scene bg int_musclub_day with dissolve2
+    scene bg int_musclub_day with door_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_music_club_day fadein 3
     show kat normal pioneer at left with dissolve
     show mi normal pioneer at right with dissolve

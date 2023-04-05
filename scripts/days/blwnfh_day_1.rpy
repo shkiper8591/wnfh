@@ -1510,7 +1510,9 @@ label blwnfh_day_1:
     sh "Уж лучше сразу в могилу."
     el "Слушай Шурик, а я тут вспомнил."
     el "У нас же в подвале есть радио старое, может чего из него получится достать?"
+    
     ## Семёна отправляют за радио в подвал
+    
     sh "Мысль. {w}Семён, поди достань радио."
     me "Тю, {w}предложил он, а доставай я."
     sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."  
@@ -1761,7 +1763,7 @@ label blwnfh_day_1:
     show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 3
     
-    show mid d6_breakfast_full tray spoon foods with dissolve
+    show mid d4_dinner_full tray spoon foods with dissolve
     
     "Как только я занял своё место, столовая чуть ли не в миг наполнилась пионерами."
     
@@ -1806,26 +1808,26 @@ label blwnfh_day_1:
     show chair_l at chair_move_in
     $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_in
-    show left d6_breakfast_full tray spoon foods behind mid 
-    show right d6_breakfast_full tray spoon foods behind mid 
+    show left d4_dinner_full tray spoon foods behind mid 
+    show right d4_dinner_full tray spoon foods behind mid 
     with dissolve
     window show
     
     "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
     
-    show mid d6_breakfast_full tray foods with dissolve
+    show mid d4_dinner_full tray foods with dissolve
     
     th "Как же давно такие не ел, наверное последний раз лет пять или шесть назад."
     
-    show left d6_breakfast_full tray foods with dissolve
-    show right d6_breakfast_full tray foods with dissolve
+    show left d4_dinner_full tray foods with dissolve
+    show right d4_dinner_full tray foods with dissolve
     
     th "На даче, стоял жаркий летний день и отец наготовил целую кастрюлю этих щей."
     th "Щий? Щей? Супа в общем."
     
     "За своими раздумиями я не обращал внимания на то, что Лена и Катя о чем-то увлечённо болтали."
     
-    show mid d6_breakfast_half tray foods with dissolve
+    show mid d4_dinner_half tray foods with dissolve
     
     "Не знаю почему, но мне стало крайне любопытно о чем же они таком разговаривают."
     
@@ -1839,7 +1841,7 @@ label blwnfh_day_1:
     "И лишь спустя время, Лена взяла на себя инициативу."
     
     show un grin pioneer with dspr
-    show right d6_breakfast_half tray foods with dissolve
+    show right d4_dinner_half tray foods with dissolve
     
     un "Боюсь, {i}Сёмочка{/i}, это не твоё дело."
     th "Сёмочка? {w}Меня так ещё никто не называл тут."
@@ -1848,7 +1850,7 @@ label blwnfh_day_1:
     
     "Ухмыляясь сказал я, полагая, что переиграл её."
     
-    show left d6_breakfast_half tray foods with dissolve
+    show left d4_dinner_half tray foods with dissolve
     show un laugh pioneer with dspr 
     
     un "Тогда у меня для тебя плохие новости!"
@@ -1872,7 +1874,7 @@ label blwnfh_day_1:
     th "А эта новенькая быстро нашла себе друга, не то что я."
     th "Интересно, почему именно с Леной? {w}Хотя учитывая как скромно она себя вела и какая стесняша у нас Тихонова, все вопросы отпадают сами собой."
     
-    show mid d6_breakfast_empty tray spoon foods with dissolve
+    show mid d4_dinner_empty tray spoon foods with dissolve
     
     "За моими размышлениями, суп кончился довольно быстро."
     "Чай тоже держался не долго и был выпит одним залпом."

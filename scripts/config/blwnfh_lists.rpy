@@ -29,8 +29,8 @@ init -2 python:
     
     # Для главного меню
     blwnfh_gui["main_menu"] = {img:(blwnfh_MAIN_MENU + img + ".png") for img in [
-        "fon",
-        "fon2",
+        "mm_bg",
+        "mm_bg2",
         "logo",
         "18",
         "gradient",
@@ -40,10 +40,22 @@ init -2 python:
         "play",
         "saves",
         "scheme",
-        "settings",
+        "preferences",
         "achievements",
         "exit",
         "dlc",
+        ]}
+        
+    blwnfh_gui["settings"] = {img:(blwnfh_SETTINGS + img + ".png") for img in [
+        "return",
+        "base",
+        "pref_title",
+        "bar_full",
+        "bar_null",
+        "htumb",
+        "line",
+        "on",
+        "off",
         ]}
     
     blwnfh_gui["poligon"] = {img:(blwnfh_IMAGES + "hentai/" + img + ".png") for img in [

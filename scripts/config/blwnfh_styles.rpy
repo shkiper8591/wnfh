@@ -50,16 +50,16 @@ init -2:
     $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
     
     $ style.blwnfh_settings = Style(style.default)
-    $ style.blwnfh_settings.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_settings.font = blwnfh_FONTS + "AlumniSansPinstripe-Regular.ttf"
     $ style.blwnfh_settings.color = "#FFF"
     $ style.blwnfh_settings.text_align = 0.0
     $ style.blwnfh_settings.drop_shadow = (2, 2)
     $ style.blwnfh_settings.drop_shadow_color = "#222"
     $ style.blwnfh_settings.text_align = 0.5
     $ style.blwnfh_settings.yalign = 0.5
-    $ style.blwnfh_settings.size = 35
+    $ style.blwnfh_settings.size = 30
     $ style.blwnfh_settings.kerning = 1.0
-    $ renpy.image("blwnfh_settings", ParameterizedText(style="blwnfh_settings", size=64))
+    $ renpy.image("blwnfh_settings", ParameterizedText(style="blwnfh_settings", size=30))
 
     $ style.blwnfh_settings_textbutton = Style(style.default)
     $ style.blwnfh_settings_textbutton.font = blwnfh_FONTS + "msjhl.ttc"

@@ -21,20 +21,20 @@ init 2:
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
             
-            blwnfh_menu_button = [
+            blwnfh_main_menu_button = [
             
-                 #Тег кнопки     #Текст кнопки
-                ["credits"      , blwnfh_gui["main_menu"]["credits"]               ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["galary"       , blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["news"         , blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
-                ["play"         , blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
-                ["saves"        , blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
-                ["scheme"       , blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["settings"     , blwnfh_gui["main_menu"]["settings"]              ,[Jump("technical_chocolatki")]                                           ],
-                ["red"          , im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
-                ["achievements" , blwnfh_gui["main_menu"]["achievements"]          ,[Jump("technical_chocolatki")]                                           ],
-                ["exit"         , blwnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
-                ["dlc"          , blwnfh_gui["main_menu"]["dlc"]                   ,[Jump("technical_chocolatki")]                                           ],
+                 #Тег кнопки     #Изображение кнопки                               #Действие кнопки
+                ["credits"      ,blwnfh_gui["main_menu"]["credits"]               ,[Jump("technical_chocolatki")]                                           ],
+                ["galary"       ,blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["news"         ,blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_news", _transition=dissolve)]                          ],
+                ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
+                ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["preferences"  ,blwnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("blwnfh_preferences", _transition=dissolve)]                   ],
+                ["red"          ,im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
+                ["achievements" ,blwnfh_gui["main_menu"]["achievements"]          ,[Jump("technical_chocolatki")]                                           ],
+                ["exit"         ,blwnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
+                ["dlc"          ,blwnfh_gui["main_menu"]["dlc"]                   ,[Jump("technical_chocolatki")]                                           ],
             ]
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
@@ -51,7 +51,7 @@ init 2:
         
         
         frame:
-            background blwnfh_gui["main_menu"]["fon2"]
+            background blwnfh_gui["main_menu"]["mm_bg2"]
             area(0.0, 0.0, 1.0, 1.0)
             at blwnfh_bg_spawn_atl
         frame:
@@ -78,7 +78,7 @@ init 2:
                 background background_color
                 area(0.0, 0.0, 200, 100)
                 xanchor 0.0 yanchor 0.0
-                for button in blwnfh_menu_button[9:10]:
+                for button in blwnfh_main_menu_button[9:10]:
                     frame:
                         xmargin 5
                         background button_blue
@@ -94,7 +94,7 @@ init 2:
                 background background_color
                 area(0.0, 0.5, 100, 100)
                 xanchor 0.0 yanchor 0.5
-                for button in blwnfh_menu_button[7:8]:
+                for button in blwnfh_main_menu_button[7:8]:
                     frame:
                         xmargin 5
                         background button_blue
@@ -119,7 +119,7 @@ init 2:
                     
                     grid 3 1:
                         xalign 0.5
-                        for button in blwnfh_menu_button[0:3]:
+                        for button in blwnfh_main_menu_button[0:3]:
                             frame:
                                 xmargin 5
                                 background button_red
@@ -137,7 +137,7 @@ init 2:
                     area(0.5, 0.4, 250, 0.7)
                     xanchor 0.5 yanchor 0.5
                     yalign 0.5
-                    for button in blwnfh_menu_button[3:4]:
+                    for button in blwnfh_main_menu_button[3:4]:
                         frame:
                             xmargin 5
                             background button_red
@@ -154,7 +154,7 @@ init 2:
                     background background_color
                     area(0.5, 1.0, 350, 0.3)
                     xanchor 0.5 yanchor 1.0
-                    for button in blwnfh_menu_button[8:9]:
+                    for button in blwnfh_main_menu_button[8:9]:
                         frame:
                             xmargin 5
                             background button_red
@@ -170,7 +170,7 @@ init 2:
                     background background_color
                     area(0.5, 0.2, 250, 0.4)
                     xanchor 0.5 yanchor 1.0
-                    for button in blwnfh_menu_button[10:11]:
+                    for button in blwnfh_main_menu_button[10:11]:
                         frame:
                             xmargin 5
                             background button_red
@@ -190,7 +190,7 @@ init 2:
                     
                     grid 3 1:
                         xalign 0.5
-                        for button in blwnfh_menu_button[4:7]:
+                        for button in blwnfh_main_menu_button[4:7]:
                             frame:
                                 xmargin 5
                                 background button_red
@@ -208,7 +208,7 @@ init 2:
             background blwnfh_gui["main_menu"]["gradient2"] 
             area(0.0, 0.0, 1.0, 1.0)
         frame:
-            background im.Alpha(im.Blur(blwnfh_gui["main_menu"]["fon"], 1.5), 0.1)
+            background im.Alpha(im.Blur(blwnfh_gui["main_menu"]["mm_bg"], 1.5), 0.1)
             area(0.0, 0.0, 1.0, 1.0)
         modal True
         

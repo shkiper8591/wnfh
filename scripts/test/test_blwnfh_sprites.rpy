@@ -16,6 +16,8 @@ label blwnfh_sprites_test:
             jump sd
         "Ульяны":
             jump us
+        "Лены":
+            jump un
 label us:
     "Какую тушку нам нужно просмотреть?"
     
@@ -2791,3 +2793,300 @@ label us_3_sport2_bandage_bant:
     "Удивление3"
     
     show us surp3 with dspr
+    
+label un:
+    "Какую дистанцию мы хотим отсмотреть?"
+    
+    menu:
+        "Normal":
+            jump un_normal
+        "Far":
+            jump un_far
+        "Close":
+            jump un_close
+    
+    "Какую позу мы хотим отсмотреть?"
+
+label un_normal:
+
+    menu:
+        "Первую":
+            jump un_1_normal
+        "Вторую":
+            jump un_2_normal
+        "Третью":
+            jump un_3_normal
+
+label un_1_normal:
+
+    "Поза 1"
+    
+    "Нормальная эмоция"
+    
+    show un apron normal at center with dissolve
+    
+    "Злая"
+    
+    show un angry with dspr
+    
+    "Злая улыбка"
+    
+    show un evil_smile with dspr
+    
+    "Смущение"
+    
+    show un shy with dspr
+
+    "Улыбка"
+    
+    show un smile with dspr
+    
+    "Улыбка_2"
+    
+    show un smile2 with dspr
+    
+label un_2_normal:
+
+    "Поза 2"
+    
+    "Плачь"
+    
+    show un apron cry at center with dissolve
+    
+    "Плачь с улыбкой"
+    
+    show un cry_smile with dspr 
+    
+    "Грусть"
+
+    show un sad with dspr
+    
+    "Испуг"
+    
+    show un scared with dspr
+    
+    "Шок"
+    
+    show un shocked with dspr
+    
+    "Удивление"
+    
+    show un surprise with dspr
+    
+    "Злая2"
+    
+    show un angry2 with dspr
+
+label un_3_normal:
+
+    "Поза 3"
+    
+    "Ухмылка"
+
+    show un apron grin at center with dissolve
+    
+    "Смех"
+
+    show un laugh with dspr
+    
+    "Ярость"
+    
+    show un rage with dspr
+    
+    "Серьёзная"
+    
+    show un serious with dspr
+    
+    "Улыбка_3"
+    
+    show un smile3 with dspr
+    
+label un_far:
+
+    menu:
+        "Первую":
+            jump un_1_far
+        "Вторую":
+            jump un_2_far
+        "Третью":
+            jump un_3_far
+
+label un_1_far:
+
+    "Поза 1"
+    
+    "Нормальная эмоция"
+    
+    show un apron normal far at center with dissolve
+    
+    "Злая"
+    
+    show un angry with dspr
+    
+    "Злая улыбка"
+    
+    show un evil_smile with dspr
+    
+    "Смущение"
+    
+    show un shy with dspr
+
+    "Улыбка"
+    
+    show un smile with dspr
+    
+    "Улыбка_2"
+    
+    show un smile2 with dspr
+    
+label un_2_far:
+
+    "Поза 2"
+    
+    "Плачь"
+    
+    show un apron cry far at center with dissolve
+    
+    "Плачь с улыбкой"
+    
+    show un cry_smile with dspr 
+    
+    "Грусть"
+
+    show un sad with dspr
+    
+    "Испуг"
+    
+    show un scared with dspr
+    
+    "Шок"
+    
+    show un shocked with dspr
+    
+    "Удивление"
+    
+    show un surprise with dspr
+    
+    "Злая2"
+    
+    show un angry2 with dspr
+
+label un_3_far:
+
+    "Поза 3"
+    
+    "Ухмылка"
+
+    show un apron grin far at center with dissolve
+    
+    "Смех"
+
+    show un laugh with dspr
+    
+    "Ярость"
+    
+    show un rage with dspr
+    
+    "Серьёзная"
+    
+    show un serious with dspr
+    
+    "Улыбка_3"
+    
+    show un smile3 with dspr
+    
+label un_close:
+
+    menu:
+        "Первую":
+            jump un_1_close
+        "Вторую":
+            jump un_2_close
+        "Третью":
+            jump un_3_close
+
+label un_1_close:
+
+    "Поза 1"
+    
+    "Нормальная эмоция"
+    
+    show un apron normal close at center with dissolve
+    
+    "Злая"
+    
+    show un angry with dspr
+    
+    "Злая улыбка"
+    
+    show un evil_smile with dspr
+    
+    "Смущение"
+    
+    show un shy with dspr
+
+    "Улыбка"
+    
+    show un smile with dspr
+    
+    "Улыбка_2"
+    
+    show un smile2 with dspr
+    
+label un_2_close:
+
+    "Поза 2"
+    
+    "Плачь"
+    
+    show un apron cry close at center with dissolve
+    
+    "Плачь с улыбкой"
+    
+    show un cry_smile with dspr 
+    
+    "Грусть"
+
+    show un sad with dspr
+    
+    "Испуг"
+    
+    show un scared with dspr
+    
+    "Шок"
+    
+    show un shocked with dspr
+    
+    "Удивление"
+    
+    show un surprise with dspr
+    
+    "Злая2"
+    
+    show un angry2 with dspr
+
+label un_3_close:
+
+    "Поза 3"
+    
+    "Ухмылка"
+
+    show un apron grin close at center with dissolve
+    
+    "Смех"
+
+    show un laugh with dspr
+    
+    "Ярость"
+    
+    show un rage with dspr
+    
+    "Серьёзная"
+    
+    show un serious with dspr
+    
+    "Улыбка_3"
+    
+    show un smile3 with dspr
+    
+    "Кликни чтобы выйти"

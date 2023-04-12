@@ -266,6 +266,10 @@ init 2:
         make_sprites_for('us', 'body', ['mod:body', 'mod:<emotion>'])
         make_sprites_for('us', 'body bant', ['mod:body2', 'mod:<emotion>'])
         
+        # Лена
+        
+        make_sprites_for('un', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
+        
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])
         make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'])

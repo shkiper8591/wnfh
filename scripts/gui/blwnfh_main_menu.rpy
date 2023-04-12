@@ -39,15 +39,15 @@ init 2:
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
         
-        #$ background_color = "#0000"
-        #$ button_red =       "#0000"
-        #$ button_green =     "#0000"
-        #$ button_blue =      "#0000"
+        $ background_color = "#0000"
+        $ button_red =       "#0000"
+        $ button_green =     "#0000"
+        $ button_blue =      "#0000"
 
-        $ background_color = "#0005"
-        $ button_red =       "#F005"
-        $ button_green =     "#0F05"
-        $ button_blue =      "#00F5"
+        #$ background_color = "#0005"
+        #$ button_red =       "#F005"
+        #$ button_green =     "#0F05"
+        #$ button_blue =      "#00F5"
         
         
         frame:

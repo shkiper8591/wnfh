@@ -1771,7 +1771,7 @@ label blwnfh_day_1:
         xcenter 1.2
         ease_quart 4.0 xcenter 0.6
     show kat normal pioneer behind chair_r:
-        xcenter 1.4
+        xcenter 1.4 
         ease_quart 5.0 xcenter 0.8
     ## Семён, Лена и Катя в столовой
     "И я было уже начал обедать, как ко мне подошли Лена и[wp] {w}Катя?"

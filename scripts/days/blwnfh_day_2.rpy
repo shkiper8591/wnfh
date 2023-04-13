@@ -1190,7 +1190,14 @@ label blwnfh_day_2:
     
     "Мику удалилась в подсобку."
     
-    hide mi with dissolve
+    window hide
+    show mi grin behind kat:
+        ease_quart 5.0 xcenter -0.2
+    $ renpy.pause(4.0, hard=True)
+    window show
+
+    show bg int_musclub_day at hpunch
+
     # добавить звуки грохота, визжания кота, и девичий визг. 
     "Но не прошло и десяти секунд, как из подсобки стал доносится грохот и девичий визг."
 
@@ -1203,8 +1210,12 @@ label blwnfh_day_2:
     
     "Вслед за котом, из подсобки выбежала вся взъерошенная и явно злая Мику."
     
-    show mi rage pioneer at right with dissolve
-    
+    window hide
+    show mi rage pioneer behind kat:
+        ease_quart 3.0 xcenter 0.72
+    $ renpy.pause(2.0, hard=True)
+    window show
+
     mi "Где этот дурацкий кот?!"
     me "Во первых не дурацкий, а милый, а во вторых у него имя есть, забыла?"
     mi "Да эта треклятая Селёдка мне всё тут разрушил! Не кот, а ураган целый!" 
@@ -1237,7 +1248,11 @@ label blwnfh_day_2:
     
     "Мику взяла сломанную электрогитару и снова удалилась в подсобку, а я повернулся к Кате, которая во всю игралась с котом."
     
-    hide mi with dissolve
+    window hide
+    show mi upset behind kat:
+        ease_quart 5.0 xcenter -0.2
+    $ renpy.pause(4.0, hard=True)
+    window show
     
     me "Нравится кот?"
     
@@ -1260,7 +1275,11 @@ label blwnfh_day_2:
     "Через пару секунд появилась и Мику с гитарой."
     
     show kat normal with dspr
-    show mi normal pioneer at right with dissolve
+    window hide
+    show mi normal pioneer behind kat:
+        ease_quart 5.0 xcenter 0.72
+    $ renpy.pause(4.0, hard=True)
+    window show
     
     mi "Вот тебе инструмент."
     
@@ -1303,6 +1322,7 @@ label blwnfh_day_2:
     th "Не то чтобы был против, ведь здешняя компания ничем не хуже компании Шурика и Сергея."
     th "Но и бросать товарищей моделистов как-то не хочется."
     # не по пацански как-то даже
+    # Катя лучшая <3
     th "Может как-нибудь более серьезно провалить аккорд? {w}Хотя нужно-ли оно мне это?"
     th "В любом же случае Мику и Катя попробуют меня к себе заманить, так что пути назад нет."
     
@@ -1312,6 +1332,10 @@ label blwnfh_day_2:
     
     "Закончив играть, муз кружок наполнился тихими аплодисментами, и когда они стихли, кто-то другой, в дверях, захлопал в ладоши."
     
+    show kat normal:
+        ease_quart 1.0 xcenter 0.20
+    show mi normal:
+        ease_quart 1.3 xcenter 0.8
     show dv normal pioneer with dissolve
     
     "Подняв взгляд, я увидел, что там стоит Алиса."
@@ -1330,7 +1354,7 @@ label blwnfh_day_2:
     
     dv "Спасибо подруга!"
     
-    "Алиса по-дружески обняла Мику. {w}Я же обратил внимание на то, что Катя как-то заговорщески смотрит на Алису."
+    "Алиса по-дружески обняла Мику. {w}Я же обратил внимание на то, что Катя как-то заговорчески смотрит на Алису."
     "Двачевская видимо уловив этот взгляд, мягко похлопала Катю по плечу."
     
     show dv laugh with dspr
@@ -1374,9 +1398,13 @@ label blwnfh_day_2:
     "От согласия Алисы, Мику вся засияла от радости и стала хлопать в ладоши." 
     
     mi "Ура, наконец-то ты согласилась!"
+
+    window hide
+    show mi grin behind kat:
+        ease_quart 5.0 xcenter -0.2
+    $ renpy.pause(4.0, hard=True)
+    window show
     
-    hide mi with dissolve
-    #34 анимацию того как мику уходит
     "Мику убежала в подсобку, где у нее, похоже, лежал лист с участниками кружка."
     
     me "Алис, а почему ты до этого отказывалась вступать в муз кружок?"
@@ -1386,8 +1414,12 @@ label blwnfh_day_2:
     
     "Вскоре Мику возвратилась к нам."
     
-    show mi normal pioneer at right with dissolve
-    
+    window hide
+    show mi normal pioneer behind kat:
+        ease_quart 5.0 xcenter 0.8
+    $ renpy.pause(4.0, hard=True)
+    window show
+
     mi "Всё Алиса, теперь-то точно не отвертишься, ведь ты полноценный член нашего кружка! {w}И в честь этого вот тебе ключик!"
     
     "Мику протянула Алисе ключ от муз кружка."
@@ -1402,8 +1434,9 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     stop music fadeout 0.5
-    scene bg ext_musclub_day with dissolve
+    scene bg ext_musclub_verandah_day with slide_right_blure_dissolve2
     play ambience ambience_camp_center_day fadein 3
+    play sound sfx_close_door_1
     show dv normal pioneer close at center with dissolve
     ## Алиса предлагает Семёну поиграть на сцене вечером
     #34 я хуй знает какую тут музыку подставить, так что потом разберемся, когда займемся режиссурой 
@@ -1444,11 +1477,13 @@ label blwnfh_day_2:
     "Проводив её взглядом, я вернулся обратно в муз кружок."
     
     stop ambience fadeout 0.5
-    scene bg int_musclub_day with dissolve
+    scene bg int_musclub_day with door_blure_dissolve2
+    play sound sfx_open_door_1
     play ambience ambience_music_club_day fadein 3
     show kat grin pioneer at left with dissolve
     show mi grin pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 5
+    $ renpy.pause(1.0, hard=True)
     ## Семён вернулся в музклуб
     "Войдя, девочки уже встречали меня своими хитрыми взглядами."
     
@@ -1596,7 +1631,8 @@ label blwnfh_day_2:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_music_club_sunset with dissolve
+    scene bg ext_music_club_sunset with slide_right_blure_dissolve2
+    play sound sfx_close_door_1
     $ blwnfh_set_time("sunset")
     play ambience ambience_camp_center_evening fadein 3
     stop music fadeout 3

@@ -1673,7 +1673,7 @@ label blwnfh_day_2:
     "Мику закрыла муз кружок, и мы отправились на площадь, дожидаться горна к ужину."
     
     window hide
-    scene ext_square_sunset with dissolve2
+    scene ext_square_sunset with slide_up_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     
@@ -1689,26 +1689,67 @@ label blwnfh_day_2:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_sunset with dissolve2
+    scene bg int_dining_hall_people_sunset with slide_right_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 3
-    show kat normal pioneer at right with dissolve
-    show mi normal pioneer at left with dissolve
+    # show kat normal pioneer at right with dissolve
+    # show mi normal pioneer at left with dissolve
     $ renpy.pause(1.0)
     window show
     ## Ужин
     "Войдя в столовую, та уже была почти забита людьми."
     "Лишь пару мест вдалеке столовой, которые мы и заняли, когда взяли подносы с едой."
     
-    show kat sad with dspr
+    window hide
+    show chair_l behind mi
+    show chair_r behind kat
+    show table
+    show shakers
+    with dissolve
+    
+    show mid d5_dinner_full tray spoon foods with dissolve
+    show mi normal pioneer behind chair_r:
+        xcenter -0.2
+        ease_quart 4.0 xcenter 0.15
+    show kat normal pioneer behind table:
+        xcenter 1.2
+        ease_quart 3.6 xcenter 0.85
+    
+    $ renpy.pause(4.0, hard=True)
+    show left d5_dinner_full tray spoon foods behind shakers with dissolve
+    show chair_l at chair_move_out behind mi
+    show right d5_dinner_full tray spoon foods behind shakers with dissolve
+    show chair_r at chair_move_out behind kat
+    $ renpy.pause(0.7, hard=True)
+    show mi normal pioneer at sit_down_left behind table
+    $ renpy.pause(0.3, hard=True)
+    show kat normal pioneer at sit_down_right behind table
+    $ renpy.pause(1.0, hard=True)
+    show chair_l at chair_move_in behind mi
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_in behind kat
+    $ renpy.pause(1.0, hard=True)
+    window show
     
     "Но ужин подавали крайне невкусный." 
     "Хотя на вид он был вполне аппетитный: макароны с сыром и сосисками, что может быть ещё вкуснее?"
+    
+    show left d5_dinner_full tray foods behind shakers with dissolve
+    show right d5_dinner_full tray foods behind shakers with dissolve 
+
     "Вот только сыр был какой-то не такой на вкус, сосиски были жесткие, а макароны будто недоварены!"
+
+    show mid d5_dinner_full tray foods with dissolve
+
     "Однако судя по довольному лицу Мику, такая, с позволения сказать, еда – её вполне устраивала и уплетала она эту стрепню куда быстрее меня и Кати."
     
     th "Похоже поварихи тоже иногда пользуются правилом «горячее – сырым не бывает»." 
     th "Только вот укуси меня пчела, но оно не работает, когда тебе надо кормить целую роту пионеров."   
     
+    show left d5_dinner_half tray foods behind shakers with dissolve
+    show mid d5_dinner_half tray foods with dissolve
+    show shakers
+    show right d5_dinner_half tray foods behind shakers with dissolve
+
     "Всё же голод брал своё, и понемногу еда в тарелке заканчивалась."    
     
     window hide
@@ -1716,18 +1757,31 @@ label blwnfh_day_2:
     window show
     
     show kat guilty with dspr
+
+    show left d5_dinner_empty tray foods behind shakers with dissolve
     
     "Мику закончила с едой куда раньше нас, что ни капли нас не удивило."
     
+    show mi normal pioneer at get_up
+    show chair_l at chair_move_out
+    
+    hide left with dissolve
+
     mi "Ладно, пойду я. Приятного отдыха."
     me "И тебе тоже."
     
     "Катя же лишь грустно угукнула, после чего Мику покинула столовую."
     
-    hide mi with dissolve
+    window hide
+    show mi normal pioneer:
+        ease_quart 4.0 xcenter 1.2
+    $ renpy.pause(3.0)
+    window show
+    # Офигевшая, стул не захотела задвигать. Все воепросы к Мику.
     
     "Доедать уже немного подостывшие макароны не было никакого желания."
     "Так что, я просто бросил еду недоеденной и принялся за чай. {w}Правда, который быстро закончился."
+
     
     me "Да уж, ну и фигню на ужин подали."
     kat "Ага[wp]"
@@ -1760,13 +1814,15 @@ label blwnfh_day_2:
     
     "Катя одобрительно кивнула и, тоже бросив свои макароны, мы покинули столовую."
     #34 тут нужна анимация перемещения по локации
+    window hide
     stop ambience fadeout 0.5
-    scene bg ext_dining_hall_away_sunset with dissolve
+    scene bg ext_dining_hall_away_sunset with slide_right_blure_dissolve2
     $ renpy.pause(1.5) 
     scene bg ext_square_sunset with dissolve
     $ renpy.pause(1.5)
     scene bg ext_boathouse_sunset with dissolve
     play ambience ambience_boat_station_day fadein 3
+    window show
     
     "Я оказался прав, на пристани никого не было, а значит никто не помешает спокойно отдохнуть."
     "Мы прошли дальше, на край брандвахты."

@@ -238,6 +238,7 @@ init 2:
     $ blwnfh_sfx_list["oskolki"] = blwnfh_SFX + "oskolki.ogg"
     $ blwnfh_sfx_list["zastelayut"] = blwnfh_SFX + "bed-sheet-movement.ogg"
     $ blwnfh_sfx_list["postavilichtoto"] = blwnfh_SFX + "postavilichtoto.ogg"
+    $ blwnfh_sfx_list["perelistovanie"] = blwnfh_SFX + "perelistovanie.ogg"
     #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист

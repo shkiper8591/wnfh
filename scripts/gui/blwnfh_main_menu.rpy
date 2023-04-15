@@ -27,7 +27,7 @@ init 2:
                 ["credits"      ,blwnfh_gui["main_menu"]["credits"]               ,[Jump("technical_chocolatki")]                                           ],
                 ["galary"       ,blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["news"         ,blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_news", _transition=dissolve)]                          ],
-                ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_day_1_dream")]   ],
+                ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_prologue")]   ],
                 ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
                 ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["preferences"  ,blwnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("blwnfh_preferences", _transition=dissolve)]                   ],

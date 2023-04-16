@@ -1,15 +1,5 @@
 init -2:
     # Шрифты
-    $ style.blwnfh_title = Style(style.default)
-    $ style.blwnfh_title.font = blwnfh_FONTS + "Sirius Cursiv.ttf"
-    $ style.blwnfh_title.color = "#FFF"
-    $ style.blwnfh_title.drop_shadow = (2, 2)
-    $ style.blwnfh_title.drop_shadow_color = "#222"
-    $ style.blwnfh_title.text_align = 0.5
-    $ style.blwnfh_title.yalign = 0.5
-    $ style.blwnfh_title.size = 80
-    $ style.blwnfh_title.kerning = 2.0
-    $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
     
     $ style.blwnfh_splashes = Style(style.default)
     $ style.blwnfh_splashes.font = blwnfh_FONTS + "vcr_osd.ttf"
@@ -20,34 +10,6 @@ init -2:
     $ style.blwnfh_splashes.size = 20
     $ renpy.image("blwnfh_splashes", ParameterizedText(style="blwnfh_splashes", size=64))
 
-    $ style.blwnfh_ach_title = Style(style.default)
-    $ style.blwnfh_ach_title.font = blwnfh_FONTS + "msjhl.ttc"
-    $ style.blwnfh_ach_title.color = "#000"
-    $ style.blwnfh_ach_title.text_align = 0.5
-    $ style.blwnfh_ach_title.yalign = 0.5
-    $ style.blwnfh_ach_title.size = 42
-    $ style.blwnfh_ach_title.kerning = 1.0
-    $ renpy.image("blwnfh_ach_title", ParameterizedText(style="blwnfh_ach_title", size=64))
-    
-    $ style.blwnfh_ach_signature = Style(style.default)
-    $ style.blwnfh_ach_signature.font = blwnfh_FONTS + "msjhl.ttc"
-    $ style.blwnfh_ach_signature.color = "#000"
-    $ style.blwnfh_ach_signature.text_align = 0.5
-    $ style.blwnfh_ach_signature.yalign = 0.5
-    $ style.blwnfh_ach_signature.size = 38
-    $ style.blwnfh_ach_signature.kerning = 1.0
-    $ renpy.image("blwnfh_ach_signature", ParameterizedText(style="blwnfh_ach_signature", size=64))
-    
-    $ style.blwnfh_menu = Style(style.default)
-    $ style.blwnfh_menu.font = blwnfh_FONTS + "msjhl.ttc"
-    $ style.blwnfh_menu.color = "#FFF"
-    $ style.blwnfh_menu.drop_shadow = (2, 2)
-    $ style.blwnfh_menu.drop_shadow_color = "#222"
-    $ style.blwnfh_menu.text_align = 0.5
-    $ style.blwnfh_menu.yalign = 0.5
-    $ style.blwnfh_menu.size = 42
-    $ style.blwnfh_menu.kerning = 1.0
-    $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
     
     $ style.blwnfh_settings = Style(style.default)
     $ style.blwnfh_settings.font = blwnfh_FONTS + "AlumniSansPinstripe-Regular.ttf"
@@ -61,29 +23,20 @@ init -2:
     $ style.blwnfh_settings.kerning = 1.0
     $ renpy.image("blwnfh_settings", ParameterizedText(style="blwnfh_settings", size=30))
 
-    $ style.blwnfh_settings_textbutton = Style(style.default)
-    $ style.blwnfh_settings_textbutton.font = blwnfh_FONTS + "msjhl.ttc"
-    $ style.blwnfh_settings_textbutton.size = 35
-    $ style.blwnfh_settings_textbutton.kerning = 1.0
-    $ style.blwnfh_settings_textbutton.color = "#FFF"
-    $ style.blwnfh_settings_textbutton.text_align = 0.0
-    $ style.blwnfh_settings_textbutton.drop_shadow = (2, 2)
-    $ style.blwnfh_settings_textbutton.drop_shadow_color = "#222"
-    $ style.blwnfh_settings_textbutton.hover_color = "#E6E6E6"
-    $ style.blwnfh_settings_textbutton.selected_color = "#FFF"
-    $ style.blwnfh_settings_textbutton.selected_idle_color = "#FFF"
-    $ style.blwnfh_settings_textbutton.selected_hover_color = "#E6E6E6"
-    $ style.blwnfh_settings_textbutton.insensitive_color = "#FFF"
-      
-    $ style.blwnfh_news = Style(style.default)
-    $ style.blwnfh_news.font = blwnfh_FONTS + "msjhl.ttc"
-    $ style.blwnfh_news.color = "#FFF"
-    $ style.blwnfh_news.drop_shadow = (2, 2)
-    $ style.blwnfh_news.drop_shadow_color = "#222"
-    $ style.blwnfh_news.text_align = 0.0
-    $ style.blwnfh_settings.size = 25
-    $ style.blwnfh_news.kerning = 1.0
-    $ renpy.image("blwnfh_news", ParameterizedText(style="blwnfh_news", size=64))
+    $ style.blwnfh_settings_underwrites = Style(style.default)
+    $ style.blwnfh_settings_underwrites.font = blwnfh_FONTS + "IntroDemo-BlackCAPS.otf"
+    $ style.blwnfh_settings_underwrites.color = "#FFF"
+    $ style.blwnfh_settings_underwrites.text_align = 0.0
+    $ style.blwnfh_settings_underwrites.drop_shadow = (2, 2)
+    $ style.blwnfh_settings_underwrites.drop_shadow_color = "#222"
+    $ style.blwnfh_settings_underwrites.text_align = 0.5
+    $ style.blwnfh_settings_underwrites.yalign = 0.5
+    $ style.blwnfh_settings_underwrites.size = 30
+    $ style.blwnfh_settings_underwrites.kerning = 1.0
+    $ renpy.image("blwnfh_settings_underwrites", ParameterizedText(style="blwnfh_settings_underwrites", size=30))
+
+
+
     
     $ style.blwnfh_choice_day = Style(style.default)
     $ style.blwnfh_choice_day.font = blwnfh_FONTS + "KarloCham-Line.otf"

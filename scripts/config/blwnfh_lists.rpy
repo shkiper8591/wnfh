@@ -56,6 +56,12 @@ init -2 python:
         "line",
         "on",
         "off",
+        "triple_off",
+        "triple_on1",
+        "triple_on2",
+        "hentai",
+        "hentai_off",
+        "hentai_on",
         ]}
     
     blwnfh_gui["poligon"] = {img:(blwnfh_IMAGES + "hentai/" + img + ".png") for img in [
@@ -222,7 +228,9 @@ init 2:
     
     # SFX Лист
     $ blwnfh_sfx_list["ps4_ach"] = blwnfh_SFX + "ps4_ach.ogg"
-    $ blwnfh_sfx_list["plimp"] = blwnfh_SFX + "ps4_ach.ogg"
+    $ blwnfh_sfx_list["plimp"] = blwnfh_SFX + "plimp.ogg"
+    $ blwnfh_sfx_list["plimp2"] = blwnfh_SFX + "plimp2.ogg"
+    $ blwnfh_sfx_list["nya"] = blwnfh_SFX + "nya.ogg"
     $ blwnfh_sfx_list["nos"] = blwnfh_SFX + "nos.ogg"
     $ blwnfh_sfx_list["guitar_hit"] = blwnfh_SFX + "guitar_hit.ogg"
     $ blwnfh_sfx_list["samogonshiki"] = blwnfh_SFX + "samogonshiki.ogg"

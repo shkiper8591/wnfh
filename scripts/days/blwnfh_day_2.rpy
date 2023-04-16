@@ -1827,19 +1827,21 @@ label blwnfh_day_2:
     "Я оказался прав, на пристани никого не было, а значит никто не помешает спокойно отдохнуть."
     "Мы прошли дальше, на край брандвахты."
     
-    scene bg ext_pier_sunset with dissolve2
+    window hide
+    scene bg ext_pier_sunset with sphere_blure_dissolve2
     play music music_list["trapped_in_dreams"]
     show kat normal pioneer at center with dissolve
+    window show
     ## Семён и Катя на пристани
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
     
-    show cg d2_me_kat_boathouse with dissolve
+    show cg d2_me_kat_boathouse with santa_barbara_in_blure_dissolve2
     
     "Мы молчали и просто наслаждались красивыми видами."
     
     #34 сюда цг, где семен и катя стоят, облокотившись на перила на брандвахте
     
-    "Как волны бились о берег, как птицы летали низко на водой, ловя рыбу."
+    "Как волны бились о берег, как птицы летали низко над водой, ловя рыбу."
     "Всё это – очень завораживало."
     
     kat "Красиво[wp]"
@@ -1869,7 +1871,7 @@ label blwnfh_day_2:
     
     th "Интересная всё же эта Катя."
     th "Застенчивая, но при этом хорошо социализируется."
-    th "Скромная, но приезжает сюда в заграничное одежде."
+    th "Скромная, но приезжает сюда в заграничной одежде."
     th "И вся такая из себя[wp] {w}Загадочная чтоли?"
     th "Что-то вот, не так всё просто с ней, это я точно чувствую."
     th "Но вот[wp] {w}Почему не так просто, мне уже сложно ответить[wp]"
@@ -1926,7 +1928,7 @@ label blwnfh_day_2:
     window hide
     stop ambience fadeout 2.0
     stop music fadeout 2
-    scene bg ext_square_sunset with dissolve2
+    scene bg ext_square_sunset with santa_barbara_out_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 2
     window show
     
@@ -1983,6 +1985,7 @@ label blwnfh_day_2:
     
     me "Тебя ждать людей не учили?"
     dv "Не-а."
+    # Мразь
     
     show bg ext_stage_big_night with dissolve
     show dv normal with dspr
@@ -2044,6 +2047,7 @@ label blwnfh_day_2:
     ## Песня про зайцев!
     stop music fadeout 3
     play music blwnfh_music_list["we_dont_care"] fadein 5
+    window hide
     show cg d2_dv_sem_scene with dspr
     $ blwnfh_set_mode(nvl)
     nvl show dissolve2
@@ -2089,11 +2093,13 @@ label blwnfh_day_2:
     "Тут я и Алиса бросились в небольшой такой пляс, попутно быстро играя на гитаре, завершающие аккорды."
     "Отыграв последний аккорд, я свалился на колени, устало положил гитару перед собой и с облегчением выдохнул."
     
+    nvl clear
     nvl hide dissolve2
     $ blwnfh_set_mode()
     stop music fadeout 3
     hide cg d2_dv_sem_scene with dissolve
     show dv laugh with dspr
+    window show
     
     dv "Из тебя бы вышел отличный гитарист, вот как отжигал!"
     me "Ага[wp]"
@@ -2134,6 +2140,8 @@ label blwnfh_day_2:
     dv "Эм[wp] {w}Спокойной ночи!"
     
     hide dv with dissolve
+    show un serious:
+        ease_quart 1.6 xcenter 0.5
     
     "Сказала она и, схватив свою гитару, мигом покинула сцену."
     
@@ -2145,6 +2153,7 @@ label blwnfh_day_2:
     show un shy at center with dspr
     ## Семён с Леной болтают на сцене
     un "Сёмочка, прости что так резко, но[wp]"
+    # Моя Леночка <3
     me "Что?"
     un "Может чуть-чуть тут посидим?"
     
@@ -2221,6 +2230,7 @@ label blwnfh_day_2:
     
     un "Не мог бы ты проводить меня до дома?"
     un "А то мне очень страшно одной идти по темноте."
+    # конечно проводит, куда денется
     
     th "А, то есть вчера тебе было не страшно идти одной?"
     th "Ну ладно, может сегодня особая ночь[wp]"
@@ -2239,7 +2249,7 @@ label blwnfh_day_2:
     me "Угу."
     
     window hide
-    scene bg ext_houses_night with dissolve2
+    scene bg ext_houses_night with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     ## Семён провожает Лену
@@ -2280,6 +2290,7 @@ label blwnfh_day_2:
     
     un "Конечно, если тебе не нравится, то я перестану тебя так звать."
     me "Да не, хочешь зови, мне-то {i}всё равно{/i}[wp]"
+    # взял обидел её, незя так
     
     stop music fadeout 3
     show un normal with dspr
@@ -2314,7 +2325,9 @@ label blwnfh_day_2:
     
     th "Видимо, завтра предстоит тяжелый разговор."
     
-    scene bg ext_house_of_mt_night with dissolve2
+    window hide
+    scene bg ext_house_of_mt_night with slide_right_blure_dissolve2
+    window show
     
     "Выйдя к дому я обратил внимание на горящий свет в окнах."
     
@@ -2325,9 +2338,12 @@ label blwnfh_day_2:
     
     "Поднявшись по ступенькам к двери, я сделал пару вдохов выдохов и тихонько вошел во внутрь."
     
+    window hide
     stop ambience fadeout 0.5
-    scene bg int_house_of_mt_night with dissolve
+    play sound sfx_open_door_1
+    scene bg int_house_of_mt_night with door_blure_dissolve2
     play ambience ambience_int_cabin_night fadein 3
+    window show
     ## ОД устраивает Семёну ночной разбор полётов
     "Внутри Ольга Дмитриевна, отведя руки за спину, ходила из одного конца дома в другой."
     "Она обратила на меня внимание только тогда, когда я закрыл за собой дверь."
@@ -2354,9 +2370,10 @@ label blwnfh_day_2:
     "Моё оправдание звучало крайне нелепо."
     "Нужно было что-то более весомое, но в голову ничего не лезло."
     "И тогда я, как последний скот, попытался приплести сюда Алису."
-    
+    # фу таким быть
+
     th "Не, ну а что? Она скорее всего тоже самое сделала бы на моём месте!"
-    
+
     me "Не знаю, Алиса там например, она же музыку любит вроде."
     mt "Значит вы вместе были?"
     me "Нет, я один."

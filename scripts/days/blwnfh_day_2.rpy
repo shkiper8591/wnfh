@@ -122,7 +122,7 @@ label blwnfh_day_2:
     "Быстро схватив пакет с банными принадлежностями, я стремительно покинул дом."
     
     window hide
-    scene bg ext_house_of_mt_sunset with dspr
+    scene bg ext_house_of_mt_sunset with door_invert_blure_dissolve
     stop ambience fadeout 0.5
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
@@ -148,7 +148,7 @@ label blwnfh_day_2:
     th "А то нам сложно будет общаться, я же по английски ваще не бум-бум."
     th "А там же у этим американцев ещё миллион акцентов, диалектов так что фиг разберёшь чего он там сказал[wp]"
     
-    scene bg ext_washstand_day with dissolve2
+    scene bg ext_washstand_day with slide_down_blure_dissolve2
     ## У умывальников
     "Придя к умывальникам, я обнаружил, что здесь никого нет."
     "Что, в общем-то, меня даже очень радовало. {w}Чтобы дважды подряд никого не встретить у умывальников[wp]"
@@ -175,14 +175,14 @@ label blwnfh_day_2:
     $ renpy.pause(1.0, hard=True)
     
     scene bg ext_house_of_mt_sunset with dissolve2
-    scene bg ext_house_of_mt_sunset:
-        subpixel True
-        truecenter
-        zoom 1.0
-        ease_quart 2.0 zoom 1.5
+    # scene bg ext_house_of_mt_sunset:
+    #     subpixel True
+    #     truecenter
+    #     zoom 1.0
+    #     ease_quart 2.0 zoom 1.5
     
-    scene bg int_house_of_mt_sunset with dissolve2
     play sound sfx_open_door_1
+    scene bg int_house_of_mt_sunset with door_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
     window show
     
@@ -194,7 +194,7 @@ label blwnfh_day_2:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_house_of_mt_sunset with dspr
+    scene bg ext_house_of_mt_sunset with door_invert_blure_dissolve
     play sound sfx_close_door_1
     $ renpy.pause(1.0, hard=True)
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
@@ -269,40 +269,77 @@ label blwnfh_day_2:
     
     "Все голодные пионеры, находящиеся на площади, строем пошли завтракать в столовую."
     
+    window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_sunset with dissolve2  
+    scene bg ext_dining_hall_near_sunset with slide_right_blure_dissolve2
+    $ renpy.pause(1.0)    
+    scene bg int_dining_hall_people_sunset with dnr_entrance  
     play ambience ambience_dining_hall_full fadein 3
     show kat normal pioneer at center with dissolve
+    window show
+    
     ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть." 
-    "И пока думал, к нам подошла Лена."
     #34 лена должна появится с анимацией
-    show un smile pioneer at right with dissolve
+    
+    show un smile pioneer:
+        xcenter 1.2
+        ease_quart 2.0 xcenter 0.72
+
+    "И пока думал, к нам подошла Лена."
     
     un "Семен, я заберу Катю к себе, надеюсь ты не против, а то мне нужно кое что с ней обсудить."
     
+    show un smile pioneer behind kat:
+        ease_quart 1.5 xcenter 0.64
+    
     "Не успев ничего ответить, Лена уже потащила Катю, к себе."
     #34 надо анимацию утаскивания кати
-    hide kat with dissolve
-    hide un with dissolve
+
+    window hide
+    $ renpy.pause(1.0)
+    
+    show un smile pioneer:
+        ease_quart 2.0 xcenter 1.2
+    show kat normal pioneer:
+        ease_quart 2.0 xcenter 1.2
+
+    $ renpy.pause(1.5)
+    window show
     
     "Пожав плечами, я ещё раз окинул столовую взглядом." 
     "И обнаружил свободное место рядом со своими товарищами из клубов."
     "К которым, взяв поднос с едой, я и подошёл."
-    
-    show el normal pioneer at left with dissolve
-    show sh normal pioneer at right with dissolve
+
+    window hide
+    show chair_l behind el
+    show chair_r behind sh
+    show table
+    show shakers
+    show left d2_breakfast_full tray foods behind shakers
+    show el normal pioneer at blwnfh_sit_left behind table
+    show right d2_breakfast_half tray foods behind shakers
+    show sh normal pioneer at blwnfh_sit_right behind table
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show
     
     me "Доброе утро товарищи, есть место свободное?"
     sh "Да, садись."
     
+    show mid d2_breakfast_full tray spoon foods with dissolve
+
     "И усевшись, я только сейчас осмотрел свой завтрак" 
     "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
     
+    show mid d2_breakfast_full tray foods with dspr
+
     me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
     
     "Последние слова я сказал чуть тише."
     
+    show left d2_breakfast_half tray foods behind shakers with dspr
+
     show el sad with dspr 
     show sh upset with dspr
     
@@ -317,6 +354,8 @@ label blwnfh_day_2:
     
     show el normal with dspr
     show sh serious with dspr
+
+    show mid d2_breakfast_half tray foods with dspr
     
     sh "И так, я предлагаю сходить в старый лагерь."
     me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
@@ -331,9 +370,14 @@ label blwnfh_day_2:
     
     show sh normal with dspr
     
+    window hide
+    show mt normal pioneer behind chair_r:
+        xcenter 1.2
+        ease_quart 3.0 xcenter 0.5
+    $ renpy.pause(1.5)
+    window show
+
     "Вскоре она подошла к нам."
-    
-    show mt normal pioneer at center with dspr
     
     mt "Семён, давай скорее доедай и марш на выход, там тебя уже ждут!"
     
@@ -344,17 +388,26 @@ label blwnfh_day_2:
     
     "Как скоро вожатая пришла, также скоро она и ушла."
     
-    hide mt with dissolve
+    window hide
+    show mt normal pioneer behind chair_r:
+        ease_quart 3.0 xcenter 1.2
+    $ renpy.pause(1.5)
+    window show
     
     me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
     sh "Будем ждать."
     
+    show mid d2_breakfast_empty tray foods with dissolve
+
     "Быстренько всё доев, я пошел на выход из столовой."
-    
+
     window hide
+    hide mid d2_breakfast_empty with dissolve
+    $ renpy.pause(1.0)
+
     stop ambience fadeout 0.5
     $ blwnfh_set_time()
-    scene bg ext_dining_hall_near_day with dissolve2
+    scene bg ext_dining_hall_near_day with slide_right_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["dance_of_fireflies"] fadein 5
     $ renpy.pause(1.0)
@@ -397,12 +450,16 @@ label blwnfh_day_2:
     
     "Вскоре мы подошли к клубам, и отворив дверь вошли во внутрь."
     
+    window hide
     stop ambience fadeout 0.5
     #34 крутой переход
-    scene bg int_clubs_male_day with dissolve
+    play sound sfx_open_door_1
+    scene bg int_clubs_male_day with door_blure_dissolve2
     #33 звук открытия двери
     play ambience ambience_medstation_inside_day fadein 3
     show kat normal pioneer at center with dissolve
+    window show
+
     ## В клубах
     kat "Но, тут же никого нет[wp] {w}Кто подписывать-то будет?"
     
@@ -417,14 +474,19 @@ label blwnfh_day_2:
     
     me "Вот и всё, идём дальше."
     
+    window hide
     stop ambience fadeout 0.5
-    scene bg ext_clubs_day with dissolve2
+    scene bg ext_clubs_day with door_invert_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 3
+    window show
     
     "Закрыв клубы, мы направились в сторону муз кружка."
     
-    scene bg ext_musclub_day with dissolve2
+    window hide
+    scene bg ext_musclub_day with slide_left_blure_dissolve2
     show kat normal pioneer with dissolve
+    window show
     ## В музкружке
     "Сократив путь через небольшой пролесок, мы дошли до муз кружка, откуда доносилась музыка на пианино."
     
@@ -436,8 +498,12 @@ label blwnfh_day_2:
     me "Да-да-да, всё верно."
     me "А ещё, тебе Лена рассказывала, что она очень любит тараторить?"
     
-    scene bg ext_musclub_verandah_day with dissolve2
+    window hide
+    hide kat with dissolve
+    $ renpy.pause(1.0)
+    scene bg ext_musclub_verandah_day with santa_barbara_in_blure_dissolve2
     show kat normal pioneer at left with dissolve
+    window show
     
     kat "Вроде как, но я думаю она сильно преувеличивает."
     th "Хо, девочка, как же ты ошибаешься[wp] Как же ошибаешься."
@@ -446,9 +512,8 @@ label blwnfh_day_2:
     
     window hide
     hide kat with dissolve
-    scene bg ext_musclub_verandah_day at blwnfh_entrance
-    scene bg int_musclub_day with dissolve2
-    play sound sfx_close_door_1
+    play sound sfx_open_door_clubs
+    scene bg int_musclub_day with door_blure_dissolve
     stop ambience fadeout 0.5
     stop music fadeout 0.5
     play ambience ambience_music_club_day fadein 3
@@ -518,9 +583,11 @@ label blwnfh_day_2:
     me "Мику, подпишешь Кате обходной?"
     mi "Ну конечно! Давай его сюда!"
     
+    show mi normal:
+        ease_quart 2.5 xcenter -0.2    
+
     "Катя протянула Мику бегунок, и та, элегантно выхватив его из рук, в припрыжку побежала в подсобку."
     
-    hide mi with dissolve
     show kat normal with dspr
     
     me "Ты точно хочешь играть с девочкой-пулеметом?"
@@ -534,9 +601,10 @@ label blwnfh_day_2:
     me "В таком случае желаю тебе удачи и терпения."
     kat "Да ладно, могло быть и хуже."
     
-    "Совсем скоро, музыкантка вернулась из подсобки."
+    show mi normal pioneer:
+        ease_quart 2.0 xcenter 0.28
     
-    show mi normal pioneer at left with dspr
+    "Совсем скоро, музыкантка вернулась из подсобки."
     
     mi "Готово! Теперь ты полноправная участница нашего муз кружка! То есть моего, но теперь будет наш!"
     
@@ -551,21 +619,25 @@ label blwnfh_day_2:
     
     mi "Хорошо, не буду задерживать! А тебя, Катя, тогда жду тут после обеда, договорились?"
     
-    "Катя одобрительно кивнула, и мы покинул кружок."
+    "Катя одобрительно кивнула, и мы покинули кружок."
     
     window hide
     stop ambience fadeout 0.5
     stop music fadeout 2
     play ambience ambience_camp_center_day fadein 3
-    scene bg ext_musclub_day with dissolve
+    scene bg ext_musclub_verandah_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     $ renpy.pause(1.0)
-    play music music_list["two_glasses_of_melancholy"] fadein 5
     window show
     
     "Мы, преисполняясь хорошим настроением, отправились в сторону медпункта."
-    
-    scene bg ext_square_day with dissolve2
+
+    window hide
+    scene bg ext_musclub_day with santa_barbara_out_blure_dissolve2
+    $ renpy.pause(1.0)
+    play music music_list["two_glasses_of_melancholy"] fadein 5
+    scene bg ext_square_day with slide_up_blure_dissolve2
+    window show
     ## Славя докладывает где искать ОД
     "Проходя мимо по площади, нас позади окликнули."
     "Мы остановились, и к нам подбежала Славя."
@@ -582,8 +654,10 @@ label blwnfh_day_2:
     
     "Славя развернулась и ушла в неизвестном направлении, а мы продолжили свой путь."
     
+    window hide
     scene bg ext_aidpost_day with dissolve2
-    
+    window show
+
     "Скоро мы стояли перед зданием медпункта."
     "И прежде чем войти во внутрь, я постучался."
     
@@ -600,11 +674,10 @@ label blwnfh_day_2:
     "С огромным нежеланием, я распахнул входную дверь и мы вошли в медпункт."
     
     window hide
-    scene bg ext_aidpost_day at blwnfh_entrance
     stop ambience fadeout 0.5
     stop music fadeout 2
-    scene bg int_aidpost_day with dissolve2
-    play sound sfx_close_door_1
+    play sound sfx_open_door_1
+    scene bg int_aidpost_day with door_blure_dissolve
     play ambience ambience_medstation_inside_day fadein 3
     show cs normal at right with dissolve
     show kat normal pioneer at left with dissolve
@@ -644,17 +717,24 @@ label blwnfh_day_2:
     cs "А то вы меня отвлекаете от важной работы."
     
     show kat smile with dspr
-    
+    show kat smile:
+        ease_quart 3.0 xcenter 0.6
+
     "Забрав обходной лист, Катя в припрыжку пошла на выход."
+    
     #34 анимацию кати
+    show kat smile:
+        ease_quart 2.0 xcenter 1.2
+    
     th "Вот так вот просто?"
     th "А где там фирменное «давай раздевайся пионер, слушать тебя будем»?"
     th "Хотя[wp] {w}Не-не, лучше не надо."
+    # А жаль(
     
     window hide
     stop ambience fadeout 0.5
     stop music fadeout 0.5
-    scene bg ext_aidpost_day with dissolve2
+    scene bg ext_aidpost_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 3
     show kat normal pioneer at center with dissolve
@@ -689,8 +769,8 @@ label blwnfh_day_2:
     #scene bg ext_library_day at blwnfh_entrance(1.0)
     stop ambience fadeout 0.5
     #$ renpy.pause(1.0)
+    play sound sfx_open_door_1
     scene bg int_library_day with bibl_entrance
-    play sound sfx_close_door_1
     play ambience ambience_library_day fadein 3
     show mz normal glasses pioneer at left with dissolve
     show kat normal pioneer at right with dissolve
@@ -738,13 +818,15 @@ label blwnfh_day_2:
     
     kat "Ладно[wp]"
     
+    window hide
     stop ambience fadeout 0.5
-    scene bg ext_library_day with dissolve
+    scene bg ext_library_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     show kat normal pioneer at center with dissolve
     play ambience ambience_camp_center_day fadein 3
     play music music_list["two_glasses_of_melancholy"] fadein 5
-    
+    window show
+
     me "Какая-то она слишком добрая была."
     #kat "Очевидно, что кто-то помог ей избавиться от недотраха." 
     kat "А что, обычно злюка?"
@@ -768,6 +850,7 @@ label blwnfh_day_2:
     "С заполненным обходным, мы отправились к вожатой."
     
     window hide
+    hide kat with dissolve
     scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
     $ renpy.pause(1.0)
     window show
@@ -776,10 +859,10 @@ label blwnfh_day_2:
     "Мы поднялись по ступенькам к двери, и постучавшись вошли в дом."
     
     window hide
+    play sound sfx_open_door_1
     scene bg ext_house_of_mt_day at blwnfh_entrance
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_day with door_blure_dissolve2
-    play sound sfx_close_door_1
     play ambience ambience_int_cabin_day fadein 3
     window show
     
@@ -811,12 +894,14 @@ label blwnfh_day_2:
     
     "Вожатая угукнула и вернулась к своим бумагам, а мы покинули домик."
     
+    window hide
     stop ambience fadeout 0.5
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_house_of_mt_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     show kat normal pioneer with dissolve
     play ambience ambience_camp_center_day fadein 3
-    
+    window show
+
     "Выйдя, мы сели на крылечке."
     
     me "Ну-с, как тебе лагерь?"
@@ -866,7 +951,7 @@ label blwnfh_day_2:
     
     #34 тут бы какой-нибудь переход плавный или типо такого, хз.
     window hide
-    scene bg ext_dining_hall_away_day with dissolve2
+    scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
     $ renpy.pause(1.0)
     scene bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
@@ -874,13 +959,16 @@ label blwnfh_day_2:
     ## Обед
     "Возле столовой было немного пионеров, и я с Катей быстренько прошмыгнули в столовую."
     
+    window hide
     stop ambience fadeout 0.5
     scene bg int_dining_hall_day with dnr_entrance
     play ambience ambience_dining_hall_empty fadein 3 
-    
+    window show
+
     "Внутри было почти пусто, лишь пару человек сидели и обедали в гордом одиночестве."
     "Мы подошли к раздаче, и взяв подносы пошли к моему любимому столику."
     
+    window hide
     show chair_l behind kat 
     show chair_r behind mi
     show table
@@ -904,6 +992,7 @@ label blwnfh_day_2:
     $ renpy.pause(1.0, hard=True)
     show chair_l at chair_move_in behind kat
     $ renpy.pause(0.3, hard=True)
+    window show
     
     "И как только мы заняли своё место, столовая тут же стала наполнятся людьми."
     
@@ -958,6 +1047,7 @@ label blwnfh_day_2:
     mi "Ой, то есть Семён."
     
     "Я медленно поднял взгляд на Мику, и вопросительно посмотрел на нее и краем глаза заметил, как недалеко сидящая Лена, сверлит презрительным взглядом Мику."
+    # un "Тоби пи@да!"
     "Тут же я перевёл взгляд уже на Лену, от чего та вся засмущалась и вернулась обратно к еде."
     
     th "Ну и ну, то Сёмочка, то теперь вот некий Сенечка. {w}Ещё бы Семечкой обозвали, во хохма-то будет!"
@@ -990,6 +1080,7 @@ label blwnfh_day_2:
     mi "Ладно Семен, мы с Катей пошли в муз кружок. Ты к нам тоже заходи, может даже вместе сыграем, я вот ещё ни разу не играла в трио!"
     me "Обязательно зайду."
     
+    window hide
     show mi normal pioneer:
         ease_quart 4.0 xcenter 1.2
     show kat normal pioneer behind chair_r:
@@ -999,6 +1090,7 @@ label blwnfh_day_2:
     
     hide mi with dissolve
     hide kat with dissolve
+    window show
     
     "Девочки ушли, а я, стал в ускоренном темпе доедать."
     
@@ -1006,8 +1098,10 @@ label blwnfh_day_2:
     
     "И спустя минуту наконец-то прикончил свой обед."
     
+    window hide
     scene bg int_dining_hall_people_day with dissolve2
-    
+    window show
+
     "Встав я направился на выход из столовой."
     "И только лишь ближе к выходу, вспомнил про пятно на моей форме."
     "В грязной форме щеголять не очень хотелось и я попросился на кухню отмыть пятно в раковине."
@@ -1027,8 +1121,8 @@ label blwnfh_day_2:
     window hide
     scene bg ext_clubs_day at blwnfh_entrance 
     stop ambience fadeout 0.5
+    play sound sfx_open_door_1
     scene bg int_clubs_male_day with door_blure_dissolve2
-    play sound sfx_close_door_1
     play ambience ambience_clubs_inside_day fadein 3 
     show el normal pioneer at left with dissolve
     show sh normal pioneer at right with dissolve
@@ -1742,15 +1836,17 @@ label blwnfh_day_2:
 
     "Однако судя по довольному лицу Мику, такая, с позволения сказать, еда – её вполне устраивала и уплетала она эту стрепню куда быстрее меня и Кати."
     
+    show left d5_dinner_half tray foods behind shakers with dissolve
+
     th "Похоже поварихи тоже иногда пользуются правилом «горячее – сырым не бывает»." 
     th "Только вот укуси меня пчела, но оно не работает, когда тебе надо кормить целую роту пионеров."   
     
-    show left d5_dinner_half tray foods behind shakers with dissolve
     show mid d5_dinner_half tray foods with dissolve
     show shakers
-    show right d5_dinner_half tray foods behind shakers with dissolve
 
-    "Всё же голод брал своё, и понемногу еда в тарелке заканчивалась."    
+    "Всё же голод брал своё, и понемногу еда в тарелке заканчивалась."
+
+    show right d5_dinner_half tray foods behind shakers with dissolve   
     
     window hide
     $ renpy.pause(1.5)

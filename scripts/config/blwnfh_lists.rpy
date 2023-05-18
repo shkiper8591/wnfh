@@ -247,6 +247,7 @@ init 2:
     $ blwnfh_sfx_list["zastelayut"] = blwnfh_SFX + "bed-sheet-movement.ogg"
     $ blwnfh_sfx_list["postavilichtoto"] = blwnfh_SFX + "postavilichtoto.ogg"
     $ blwnfh_sfx_list["perelistovanie"] = blwnfh_SFX + "perelistovanie.ogg"
+    $ blwnfh_sfx_list["microphone"] = blwnfh_SFX + "micro.ogg"
     #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист
@@ -375,10 +376,26 @@ init 2:
     $ blwnfh_music_list["estafeta"] = blwnfh_MUSIC + "estafeta - svati.mp3"
     $ blwnfh_music_list["country_shop"] = blwnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
     $ blwnfh_music_list["ya_znayu_kto_ti"] = blwnfh_MUSIC + "ya znayu kto ti.mp3"
+    #$ blwnfh_music_list[""] = blwnfh_MUSIC + ".mp3"
     
     
     # AMBIENCE Лист
-    $ blwnfh_ambience_list["thunder"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"
+    $ blwnfh_ambience_list["thunder1"] = blwnfh_AMBIENCE + "back_ambience_litethunders1.mp3"
+    $ blwnfh_ambience_list["thunder2"] = blwnfh_AMBIENCE + "back_ambience_litethunders2.mp3"
+    $ blwnfh_ambience_list["underwater1"] = blwnfh_AMBIENCE + "ambience_int_silence.mp3"
+    $ blwnfh_ambience_list["underwater2"] = blwnfh_AMBIENCE + "koshmar_water.mp3"
+    $ blwnfh_ambience_list["beach1"] = blwnfh_AMBIENCE + "beach_1_6.mp3"
+    $ blwnfh_ambience_list["beach_children"] = blwnfh_AMBIENCE + "beach_children.mp3"
+    $ blwnfh_ambience_list["water_stream"] = blwnfh_AMBIENCE + "water_stream_closer.mp3"
+    $ blwnfh_ambience_list["water_drop"] = blwnfh_AMBIENCE + "water_drop.mp3"
+    $ blwnfh_ambience_list["rain_night"] = blwnfh_AMBIENCE + "ambience_rain_night.mp3"
+    $ blwnfh_ambience_list["rain"] = blwnfh_AMBIENCE + "rain.mp3"
+    $ blwnfh_ambience_list["rain_in_building"] = blwnfh_AMBIENCE + "rain_in_building.mp3"
+    $ blwnfh_ambience_list["dush"] = blwnfh_AMBIENCE + "ambience_showers.mp3"
+    $ blwnfh_ambience_list["heartbeating"] = blwnfh_AMBIENCE + "heartbeating.mp3"
+    $ blwnfh_ambience_list["skvoznyak"] = blwnfh_AMBIENCE + "skvoznyak.mp3"
+    $ blwnfh_ambience_list["salute"] = blwnfh_AMBIENCE + "ambience_salute.mp3"
+    #$ blwnfh_ambience_list[""] = blwnfh_AMBIENCE + ".mp3"
     
     ## Рандомизация мявков
     $ blwnfh_meow_list = [blwnfh_sfx_list[i] for i in blwnfh_sfx_list.keys() if i.startswith("meow")]

@@ -1,6 +1,42 @@
 label blwnfh_test_anim:
     
-    "да начнётся веселье!"
+    play music music_list["i_want_to_play"] fadein 2.5
+
+    show bg ext_beach_day with dissolve
+
+    "Добро пожаловать в отладку анимаций! Здесь тестируются как анимации спрайтов, так и переходы между фонами."
+    "Так, что мы хотели бы отладить?"
+
+    menu:
+        "Анимации спрайтов":
+            jump spritesanim
+        "Переходы фонов":
+            jump bgtransits 
+
+label spritesanim:
+
+    "Берём Ульянку"
+
+    show us smile pioneer with dissolve
+
+    us "Шо ты собрался делать со мной?"
+    me "Санту барбару."
+
+    show us normal with dspr
+
+    us "Что?"
+
+    scene bg ext_square_day
+    show us dontlike pioneer
+    with santa_barbara_in_dissolve2
+
+    me "Как тебе?"
+    us "Мне не понравилось."
+
+label bgtransits:
+
+    "Транзит santa_barbara"
+    "Да начнётся веселье!"
     
     play music blwnfh_music_list["santa_barbara"] noloop
     scene bg ext_bus with dissolve

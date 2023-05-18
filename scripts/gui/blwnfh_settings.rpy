@@ -300,37 +300,3 @@ init 2:
                                                     kerning 1
                                                     min_width 200
                                                     layout "tex"
-                  
-
-                        
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-screen settings_widget_sukablyat_on_blwnfh():
-    text "Маты будут выглядеть так: блять" xpos 0.653 ypos 0.6:
-        style "blwnfh_settings"
-screen settings_widget_sukablyat_off_blwnfh():
-    text "Выключить матфильтр" xpos 0.653 ypos 0.6:
-        style "blwnfh_settings"   
-screen settings_widget_sukablyat_type_censor_blwnfh():
-    text "Маты будут выглядеть так: @%#$!" xpos 0.653 ypos 0.6:
-        style "blwnfh_settings"
-screen settings_widget_sukablyat_type_change_blwnfh():
-    text "Маты будут выглядеть так: блин" xpos 0.653 ypos 0.6:
-        style "blwnfh_settings"

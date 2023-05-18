@@ -560,7 +560,7 @@ label blwnfh_day_3:
 
     "Я почти дошел до площади, если бы не удар ладонью по спине."
     
-    play music music_list["eat_some_trouble"]
+    play music music_list["eat_some_trouble"] fadein 2.5
     
     "И тут и будучи дураком, было не сложно догадаться, что это была Алиса, так что я ни капельки не удивился, когда повернувшись, увидел её."
     
@@ -683,6 +683,7 @@ label blwnfh_day_3:
     dv "В общем, я тебе передала сообщение, а теперь давай, действуй."
     me "Эх[wp] Ладно."
     
+    stop music fadeout 2.5
     hide dv with dissolve
     
     "Алиса удалилась в сторону музыкального кружка." 
@@ -984,14 +985,14 @@ label blwnfh_day_3:
     
     "Мы дружно отправились в столовую."
     
-    scene bg ext_dining_hall_away_day with dissolve
-    
-    "Вскоре мы пришли к пункту назначения и незамедлительно вошли внутрь."
-    
-    stop ambience fadeout 1.0
-    scene bg int_dining_hall_day with dissolve
-    play ambience ambience_dining_hall_empty fadein 1.5
-    show sh normal pioneer at center with dspr
+    window hide dissolve
+    scene bg ext_dining_hall_away_day with dissolve2
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_day with dissolve2
+    play ambience ambience_dining_hall_empty fadein 2.0
+    show sh normal pioneer at center
+    window show
+    with dissolve
     
     "В столовой было пусто, что впрочем не удивительно, но и Сергея здесь не было."
     
@@ -1008,9 +1009,9 @@ label blwnfh_day_3:
     
     "Шурик не стал упираться, и мы быстренько вышли из столовой."
     
-    stop ambience 
+    stop ambience fadeout 1.0
     scene bg ext_dining_hall_near_day with dissolve
-    play ambience ambience_camp_center_day
+    play ambience ambience_camp_center_day fadein 1.0
     
     me "Так, ну здесь его нет, может он тогда у вас в домике?"
     sh "И что же он там так долго делает?"
@@ -1033,22 +1034,33 @@ label blwnfh_day_3:
     
     me "Не, я обеда подожду, в столовой встретимся."
     
+    show sh normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 1.5 xcenter 1.2
+
     "Шурик только пожал плечами и ушел в сторону короткого пути к клубам."
     
-    hide sh with dissolve
+    hide sh
     
     "Я же отправился на площадь."
     
-    scene bg ext_square_day with dissolve
+    window hide dissolve
+    scene bg ext_square_day with slide_left_blure_dissolve2
+    $ renpy.pause(2.0)
+    window show dissolve
     ## Семён уселся на площади и к нему подошла Ульяна
     "Придя, я сел на скамейку, которая была прикрыта тенью от дерева, и стал ожидать начала обеда."
     "И постепенно меня начало клонить в сон."
-    "Вот только заснуть мне помешала Ульяна."
     
-    show us smile pioneer with dissolve
-    play music music_list["i_want_to_play"]
+    show us smile pioneer:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 3.5 xcenter 0.5
+    $ renpy.pause(3.0, hard=True)
+    "Вот только заснуть мне помешала подошедшая Ульяна."
+
+    play music music_list["i_want_to_play"] fadein 3.0
     
-    us "Семён, чего развалился? Пошли на площадку, в футбол поиграем!"
+    us "Семён, чего развалился? Пошли на поле, в футбол поиграем!"
     
     "Я тяжело вздохнул."
     
@@ -1085,7 +1097,7 @@ label blwnfh_day_3:
     
     me "Скажешь?"
     us "Не за просто так."
-    me "На спортплощадку не пойду."
+    me "В футбол играть не буду."
     
     show us upset with dspr
     
@@ -1155,12 +1167,21 @@ label blwnfh_day_3:
     
     "Я встал со скамейки, немного потянулся и мы отправились в столовую."
     
+    window hide dissolve
     stop ambience fadeout 2.0
-    scene bg int_dining_hall_day with santa_barbara_out_blure_dissolve2
-    show us normal pioneer with dissolve
+    scene bg int_dining_hall_day
+    show us normal pioneer
+    with santa_barbara_out_blure_dissolve2
     play ambience ambience_dining_hall_empty fadein 2.0
+    $ renpy.pause(1.0)
+    window show dissolve
     ## Семён сидит на обеде внимательно выискивая Сергея
-    "Придя одними из первых, Ульяна ускакала куда-то к себе."
+    show us normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 2.0 xcenter -0.4
+    $ renpy.pause(1.0)
+    "Придя одними из первых, Ульяна ускакала к Алисе."
+    hide us
     "Я же занял довольно хорошее место рядом со входом, чтобы отслеживать поступающих пионеров."
     "И вскоре столовая стала потихоньку наполнятся людьми."  
     
@@ -1177,13 +1198,15 @@ label blwnfh_day_3:
     "По такому поводу, я кушал довольно неспеша, ведь мне некуда было торопиться."
     "Со временем, столовая стала опустевать, пока в ней не осталось всего четыре человека."
     
-    stop ambience fadeout 1.5
-    play ambience ambience_dining_hall_empty fadein 1.5
-    show bg int_dining_hall_day with dissolve
+    stop ambience fadeout 2.0
+    play ambience ambience_dining_hall_empty fadein 2.0
+    show bg int_dining_hall_day with dissolve2
     
     "Одновременно с этим, я закончил есть свой обед, а ко мне подошла Ульянка."
     
-    show us smile with dissolve
+    show us smile pioneer:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 2.5 xcenter 0.5
     play music blwnfh_music_list["crimes"] fadein 2.5
     ## Семён и Ульяна идут воровать конфеты
     us "Ну что? Пойдем на дело?"
@@ -1243,8 +1266,8 @@ label blwnfh_day_3:
     "А один стол даже умудрилась перепрыгнуть, чему я был сильно удивлён."
     
     stop music fadeout 3
-    stop ambience fadeout 0.5
-    scene bg ext_dining_hall_near_day with dissolve
+    stop ambience fadeout 1.0
+    scene bg ext_dining_hall_near_day with slide_right_blure_dissolve
     play ambience ambience_camp_center_day fadein 2 
     
     "Уже выйдя из столовой, я вздохнул с облегчением."
@@ -1258,8 +1281,9 @@ label blwnfh_day_3:
     "Главная воровка спрыгнула с крыльца и убежала за столовую."
     "Разумеется, я последовал за ней."
     
-    scene bg ext_dining_hall_backroad_day_blwnfh with dissolve2
-    show us sad pioneer close at center with dissolve 
+    scene bg ext_dining_hall_backroad_day_blwnfh 
+    show us sad pioneer close at center
+    with slide_down_blure_dissolve
     ## Семён и Ульяна успешно украв конфеты прячутся за столовой
     "Мы спрятались за столовой, а спустя пару секунд было слышно звук открывающейся двери."
     
@@ -1290,7 +1314,7 @@ label blwnfh_day_3:
     show us upset with dspr
     
     us "Так она же старая, плохо слышит."
-    me "Возможно[wp]"
+    me "Такое сложно не услышать."
     
     show us normalsmile with dspr
     
@@ -1304,8 +1328,8 @@ label blwnfh_day_3:
     
     show us dontlike with dspr
     
-    us "Какие невкусные? Это Московские вообще-то!"
-    th "Часто слышал про то, что конфеты московские будучи мелким, мама всегда так говорила."
+    us "Почему сразу невкусные?! Это Московские вообще-то!"
+    th "Будучи мелким, часто слышал, что раз конфеты Московские то очень вкусные. {w}Мама всегда так говорила, и она всегда была права."
     me "Спасибо конечно, но вообще я пошёл на это ради информации где Сергей."
     
     stop music fadeout 3.0
@@ -1327,7 +1351,7 @@ label blwnfh_day_3:
 
     show us smile with dspr
     ## Ульяна рассказывает где пропадает Серый
-    us "В общем он с нашей библиотекаршей целовался."
+    us "В общем он в библиотеке с Женей целовался."
     me "Серьёзно?"
     
     show us grin with dspr
@@ -1362,7 +1386,7 @@ label blwnfh_day_3:
     
     "Я пожал плечами."
     
-    me "Ладно."
+    me "Как скажешь."
     
     show us normalsmile with dspr
     
@@ -1370,10 +1394,14 @@ label blwnfh_day_3:
     
     "Ульяна убежала от столовой, примерно в сторону спортплощадки."
     
-    hide us with dissolve
+    show us normalsmile:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 2.0 xcenter -0.4
     
     me "А не слипнется?"
     
+    hide us
+
     "Кинул я ей вдогонку, но кажется моё послание до нее не дошло."
     "Я же потопал в сторону библиотеки, кормить наших любовников."
     
@@ -1433,8 +1461,9 @@ label blwnfh_day_3:
     
     me "Ну, тогда счастливо[wp] {w}Голубки."
     
-    hide mz with dissolve
-    hide el with dissolve
+    hide mz
+    hide el 
+    with dissolve
     
     "Я повернулся к выходу, и уже было переступил за порог, как за мной рыкнула Жена."
     
@@ -1442,8 +1471,9 @@ label blwnfh_day_3:
     
     "Медленно развернувшись обратно, я сделал самую невинную улыбку, которую только мог."
     
-    show mz rage glasses pioneer at left with dspr
-    show el scared pioneer at right with dspr
+    show mz rage glasses pioneer at left 
+    show el scared pioneer at right 
+    with dspr
     
     "Сергей кажется немного был контужен от крайне громкого возгласа Жени, что было видно по его выражению лица."
     
@@ -1481,10 +1511,12 @@ label blwnfh_day_3:
     th "Ладно, пойду сообщу Шурику, что пропажа нашлась и пойду в муз кружок."
     
     # мини таймскип
+    window hide dissolve
     stop ambience fadeout 2.5
     scene bg int_clubs_male_day with door_invert_dissolve2
     play ambience ambience_clubs_inside_day fadein 2.5
-    
+    window show dissolve
+
     "Я пришел в клубы, где всё также был один единственный Шурик."
     "Видимо от скуки, он сортировал инструменты на полках."
     
@@ -1520,12 +1552,12 @@ label blwnfh_day_3:
     
     th "Да уж, путь предстоит мне не близкий."
     
-    window hide
+    window hide dissolve
     scene bg ext_square_day with sphere_invert_dissolve2
-    window show
+    window show dissolve
     
     th "Блин, угораздило же меня согласится сыграть на гитарах[wp]"
-    th "Теперь ещё прилетает ото всех кого только можно[wp]"
+    th "Теперь ещё прилетает от всех кого только можно[wp]"
     th "Ладно, надеюсь гитара будет на месте и с ней всё будет нормально."
     
     scene bg ext_houses_day with dissolve
@@ -1533,7 +1565,7 @@ label blwnfh_day_3:
     th "Конечно, тут вроде нет всяких прям уж таких плохих людей, которых хлебом не корми, дай только всё испортить."
     th "В прочем, я не могу быть уверенным на все сто[wp]"
     th "Эх, лишь бы всё с гитарой было всё хорошо, а то я не хочу появляться в местных моргах."
-    
+
     window hide
     stop ambience fadeout 2.0
     scene bg ext_stage_normal_day with door_invert_blure_dissolve2
@@ -1566,11 +1598,11 @@ label blwnfh_day_3:
     show dv normal with dspr
     
     dv "Понятно."
-    me "А ты здесь чего делаешь."
+    me "А ты здесь чего делаешь?"
     
     show dv angry with dspr
     
-    dv "Выполняю чье-то поручение вместо него!"
+    dv "Выполняю чьё-то поручение вместо него!"
     
     "Довольно грозно рявкнула Алиса и стащила со сцены гитару, которую закинула себе на плечо."
     "Выглядила она довольно грозно, что я даже немного отступил назад."
@@ -1580,7 +1612,7 @@ label blwnfh_day_3:
     "И Алиса тут же залилась хохотом и поставила гитару на землю."
     
     dv "Видел бы ты себя."
-    dv "Большой и сильный мальчишка испугался девчушки с гитарой."
+    dv "Большой и сильный мальчишка испугался небольшой девчушки с гитарой."
     me "Ага, зная твой взрывной характер, от тебя можно ждать всё что угодно."
     
     show dv smile with dspr
@@ -1590,7 +1622,7 @@ label blwnfh_day_3:
     "Двачевская протянула мне гитару."
     
     dv "Ты её понесёшь."
-    me "Как скажешь."
+    me "Без проблем."
     
     "Я принял инструмент."
     
@@ -1639,7 +1671,7 @@ label blwnfh_day_3:
     
     me "Она тебе тоже предлагала пойти на это «дело»?"
     dv "Да достать меня уже успела."
-    dv "«Идём конфетки воровать», «да пойдём». А я всё уходила от этой темы."
+    dv "«Идём конфетки воровать», «да пойдём чего тебе». А я всё уходила от этой темы."
     me "Вот вроде она уже взрослая, а ведёт себя иногда совсем по детски."
     
     show dv smile with dspr 
@@ -1686,12 +1718,13 @@ label blwnfh_day_3:
     
     "Фыркнув и закатив глаза, я постучался и вошёл внутрь."
     
-    stop ambience fadeout 1.5
-    scene bg int_musclub_day with dissolve
-    play ambience ambience_music_club_day fadein 1.5
-    show mi angry pioneer at center with dissolve
-    show kat angry pioneer at right with dissolve
-    show dv normal pioneer2 close at left with dissolve
+    stop ambience fadeout 2.0
+    scene bg int_musclub_day
+    show mi angry pioneer at center
+    show kat angry pioneer at right
+    show dv normal pioneer2 close at left
+    with sphere_invert_blure_dissolve2
+    play ambience ambience_music_club_day fadein 2.0
     #play music music_list["glimmering_coals"]
     ## Внутри музклуба
     
@@ -1822,8 +1855,9 @@ label blwnfh_day_3:
     
     mi "Простите[wp]"
     
-    show kat normal with dspr
-    show mi dontlike with dspr
+    show kat normal 
+    show mi dontlike
+    with dspr
     
     mi "В общем, в следующий раз следи за вещами."
     me "Хорошо, обещаю, что это было в последний раз."
@@ -1837,9 +1871,10 @@ label blwnfh_day_3:
     
     "С насмешкой в голосе сказал я."
     
-    show dv laugh with dspr
-    show mi angry with dspr
-    show kat angry with dspr
+    show dv laugh
+    show mi angry
+    show kat angry
+    with dspr
     
     kat_mi_d "НЕТ!"
     dv "А я да."
@@ -1851,8 +1886,9 @@ label blwnfh_day_3:
     dv "Ну или давайте что-нибудь из сочинения Мику."
     me "И как мне быть? Я-то нот не знаю. {w}Табы ещё более менее воспринимаю только."
     
-    show kat normal with dspr
-    show mi normal with dspr
+    show kat normal
+    show mi normal
+    with dspr
     
     mi "Придумаем что-нибудь."
     
@@ -1875,9 +1911,10 @@ label blwnfh_day_3:
     th "Помню на каком-то сайте услышал шикарный кавер на гитаре, вот и загорелся идеей сам сыграть." 
     th "Ох, как же у меня болели пальцы, когда я наконец это сыграл, надеюсь сейчас такого не будет."
     
-    show mi surprise with dspr
-    show kat surprise with dspr
-    show dv surprise with dspr
+    show mi surprise 
+    show kat surprise 
+    show dv surprise 
+    with dspr
     
     "Я начал играть, песня медленно разгонялась, а девочки перевели на меня удивленные взгляды."
     
@@ -1886,9 +1923,10 @@ label blwnfh_day_3:
     
     "И вот пошли слова. {w}Голос у меня для пения был такой себе, но английский я выговаривал хорошо, ведь почти не его прогуливал."
     
-    show mi happy with dspr
-    show dv normal with dspr
-    show kat confused with dspr
+    show mi happy 
+    show dv normal 
+    show kat confused 
+    with dspr
     
     "Судя по лицам девочек, спокойно слова понимала, кажись только Мику." 
     "Остальные же явно вслушивались, но не понимали, о чем поется."
@@ -1900,7 +1938,10 @@ label blwnfh_day_3:
     
     "Но не успел дойти до середины, как к нам в муз кружок ворвалась Ольга Дмитриевна."
     ## Вожатая врывается в музклуб
-    show mt angry pioneer panama at fleft with dspr
+    show mt angry pioneer panama:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 2.0 xcenter 0.16
+
     show dv normal pioneer at left with dspr
     mt "Так, что вы тут за иностранные песни распеваете? Ну ка прекратили всё, пока характеристику на вас не написала!"
     
@@ -1934,9 +1975,10 @@ label blwnfh_day_3:
     mt "Семён и Катя!"
     th "Боже, ты покинул это место[wp]"
     
-    show mi sad with dspr
-    show kat surprise with dspr
-    show dv surprise with dspr
+    show mi sad
+    show kat surprise 
+    show dv surprise 
+    with dspr
     
     kat "Ольга Дмитриевна, а если мы не хотим?"
     
@@ -1976,8 +2018,9 @@ label blwnfh_day_3:
     
     "Но похоже богу было безразлично на мои мольбы, и мы неумолимо приближались ко входу в библиотеку, пока не оказались прямо перед ним."
     
-    show mt smile pioneer panama at left with dspr
-    show kat normal pioneer at right with dspr
+    show mt smile pioneer panama at left
+    show kat normal pioneer at right 
+    with dspr
     
     mt "Вот мы и пришли, экскурсию по рабочему месту вам проведет Женя."
     me "Ольга Дмитриевна, нам и так известно где находится библиотека, зачем нас было сюда вести?"
@@ -1990,9 +2033,10 @@ label blwnfh_day_3:
     "Вожатая открыла дверь и аккуратно запихнула меня и Катю внутрь, и закрыв дверь помахав нам, удалилась восвояси."
     
     stop ambience fadeout 1.5
-    scene bg int_library_day with dissolve
-    show mz smile glasses pioneer at left with dspr
-    show kat normal pioneer at right with dspr
+    scene bg int_library_day
+    show mz smile glasses pioneer at left
+    show kat normal pioneer at right
+    with door_blure_dissolve2
     play ambience ambience_library_day fadein 2.5
     # play music хуй знает какую тут музыку вставить, на режиссуре решим. 
     ## Женя назначает Семёна и Катю на новое рабочее место в журналистах и проводит брифинг
@@ -2014,10 +2058,11 @@ label blwnfh_day_3:
     
     "Мы ушли в дальнюю часть библиотеке, где был вход в подсобное помещение, куда мы и вошли."
     
-    scene bg int_editorial_day with dissolve
-    show mz normal pioneer glasses at cright with dspr 
-    show kat normal pioneer at fright with dspr
-    show un normal pioneer far at left with dspr
+    scene bg int_editorial_day 
+    show mz normal pioneer glasses at cright 
+    show kat normal pioneer at fright 
+    show un normal pioneer far at left 
+    with dissolve
     
     "Для меня стало совершенно неожиданным, что первым членом кружка журналистики была Лена."
     "Она сидела перед холстом, и что-то рисовала, что меня по правде не сильно-то и интересовало."
@@ -2068,9 +2113,10 @@ label blwnfh_day_3:
     
     "Катя же немного ещё по печатав на машинке, убежала беседовать с Леной."
     
-    show mz normal glasses pioneer at right with dspr 
-    show kat smile far at cleft with dspr
-    show un smile2 far at left with dspr
+    show mz normal glasses pioneer at right
+    show kat smile far at cleft
+    show un smile2 far at left
+    with dspr
     
     "Женя же отошла в дальнию часть комнаты и открыв ящик в столе, что-то оттуда взяла, а позже подошла ко мне."
     
@@ -2113,8 +2159,9 @@ label blwnfh_day_3:
     kat "Можно у тебя там одну книжечку попросить?"
     mz "Конечно, пойдем."
     
-    hide kat with dissolve
-    hide mz with dissolve  
+    hide kat
+    hide mz
+    with dissolve  
     
     "Катя и Женя быстро удалились из подсобки оставив меня и Лену наедине."
     
@@ -2238,8 +2285,9 @@ label blwnfh_day_3:
     
     window hide
     stop ambience fadeout 1.5
-    scene bg ext_library_sunset with dissolve2
-    show kat normal pioneer with dissolve
+    scene bg ext_library_sunset
+    show kat normal pioneer
+    with dissolve2
     play ambience ambience_camp_center_evening fadein 2.5
     $ renpy.pause(1.0)
     $ blwnfh_set_time("sunset")
@@ -2265,7 +2313,9 @@ label blwnfh_day_3:
     "Катя встала рядом со мной, и мы отправились к нашим домикам."
     
     window hide
-    show bg ext_houses_sunset with dissolve2
+    scene bg ext_houses_sunset 
+    show kat smile pioneer
+    with slide_diagonal_blure_dissolve2
     #34 крутой переход?
     play music blwnfh_music_list["church_hill"] fadein 3.5
     $ renpy.pause(1.0)
@@ -2341,9 +2391,10 @@ label blwnfh_day_3:
     
     "Тем временем мы дошли до Катеного домика."
     
-    show bg ext_house_of_kat_sunset with dissolve
-    show kat normal with dspr
-    
+    show bg ext_house_of_kat_sunset 
+    show kat normal
+    with dissolve
+
     kat "Ну вот и пришли."
     me "Тогда до ужина?"
     kat "Да."
@@ -2354,7 +2405,7 @@ label blwnfh_day_3:
     kat "Обязательно."
     me "Ну всё тогда, до встречи."
     
-    hide kat with dspr
+    hide kat with dissolve
     
     "Помахав Кате, та вошла домой, а я пошел к себе."
     
@@ -2460,16 +2511,15 @@ label blwnfh_day_3:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_sunset with dissolve
+    scene bg int_dining_hall_people_sunset 
+    show kat normal pioneer
+    with slide_left_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 1.5
     $ renpy.pause(1.5)
     window show
     ## Ужин
     "Пришли мы одними из самых последних в столовую, но всё же нам удалось занять хорошее место в дальнем углу столовой."
     "Кате хотелось сесть с Мику, но она сидела с неизвестными мне пионерками, да и свободных мест не было."
-    
-    show kat normal pioneer with dspr
-    
     "Усевшись, я осмотрел ужин."
     "Ничего примечательного не было, какие-то не очень аппетитные на вид щи, кусок белого хлеба да чай."
     
@@ -2531,7 +2581,7 @@ label blwnfh_day_3:
     
     "Мы отправились в сторону леса мимо домиков."
     
-    scene bg ext_houses_sunset with dspr
+    scene bg ext_houses_sunset with dissolve
     
     th "Конечно, наверное не самое удачное подобрал я время для гуляний, надо будет успеть нагуляться до захода солнца."
     th "А то даже если близко с лагерем будешь, всё равно заблудишься в соснах и помрешь от холода."
@@ -2543,7 +2593,7 @@ label blwnfh_day_3:
     ## В лесу
     "Вскоре мы вышли на лесную тропу."
     
-    show kat normal pioneer close with dspr
+    show kat normal pioneer close with dissolve
     
     kat "Семён, а у тебя ещё кто-нибудь из родственников увлекается историей? Ну как твой дед."
     me "Нет, отец и мать считают, что нужно не историю учить, а заниматься действительно полезными вещами, там на заводе работать."
@@ -2678,9 +2728,10 @@ label blwnfh_day_3:
     
     th "Хорошо, что лес нас защищает от такого ветра, так бы замерзли куда быстрее."
     
-    show bg ext_polyana_night with dissolve
-    show kat smile with dspr
-    
+    show bg ext_polyana_night 
+    show kat smile 
+    with dissolve
+
     "Проходя мимо небольшой полянки, Катя остановила меня."
     
     kat "Смотри! Там какой-то домик!"
@@ -2695,7 +2746,7 @@ label blwnfh_day_3:
     "Подойдя к землянке, мы вышли в нее, благо дверь была открыта."
     
     show black
-    #34 тут должен быть фон землянки
+    #34 тут должен быть фон землянки. КАТОРОГО СУКА БЛЯТЬ НЕЕЕЕТ!!! УАААААА БИЛЯЯЯЯЯ НАХУЙ СУКА БЛЯТЬ НАХУЙ БЛЯТЬ НАХУЙ СУКА БЛЯТЬ НАХУЙ БЛЯТЬ НАХУЙ СУКА СУКА БЛЯТЬ НАХУЙ УАУАУАУАУАУАУАУАУАУАУАУАУА
     stop music fadeout 2.5
     
     "Внутри было видно целое ничего, так что я временно открыл на распашку дверь, чтобы хоть немного лунного света попало внутрь."

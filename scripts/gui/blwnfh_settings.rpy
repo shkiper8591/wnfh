@@ -8,7 +8,7 @@ init 2:
     $ persistent.mat_filter
     $ persistent.hentai_mod
 
-    $ debag_switch = 1
+    $ debag_switch = 0
     if debag_switch:
         $ background_color = "#0005"
         $ button_red =       "#F005"
@@ -48,15 +48,15 @@ init 2:
             ]
             blwnfh_underwrites = {"skip":[_preferences.skip_unseen,"Прочитанное","Всё"],"font":[persistent.font_size=="large","Обычный","Жирный"]}
             blwnfh_preferences_switch = [
-                 #Тег переключалки   #Текст кнопки        #Вкл.                                                #Выкл.
-                ["fullscreen"       ,"Полный экран"      ,[Preference("display", "fullscreen"),              Play("sound", blwnfh_sfx_list["plimp2"])]   ,  Preference("display", "window")                                                         , _preferences.fullscreen         ],
-                ["autoforward"      ,"Автопереход"       ,[Preference("auto-forward after click", "enable"), Play("sound", blwnfh_sfx_list["plimp2"])]   ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")] , persistent.font_size == "large" ],
-                ["skip"             ,"Пропускать"        ,[Preference("skip", "all"),                        Play("sound", blwnfh_sfx_list["plimp2"])]   ,  Preference("skip", "seen")                                                              , _preferences.skip_unseen        ],
-                ["zalupa1"          ,"Залупа1"           ,[Preference("skip", "all"),                        Play("sound", blwnfh_sfx_list["plimp2"])]   ,  Preference("skip", "seen")                                                              , _preferences.skip_unseen        ],
-                ["font"             ,"Шрифт"             ,[SetField(persistent, "font_size", "large"),       Play("sound", blwnfh_sfx_list["plimp2"])]   ,  SetField(persistent, "font_size", "small")                                              , persistent.font_size == "large" ],
-                ["zalupa2"          ,"Залупа2"           ,[SetField(persistent, "font_size", "large"),       Play("sound", blwnfh_sfx_list["plimp2"])]   ,  SetField(persistent, "font_size", "small")                                              , persistent.font_size == "large" ],                  
-                ["hentai"                                ,[SetField(persistent, "hentai_mod", True),         Play("sound", blwnfh_sfx_list["nya"])]     ,  SetField(persistent, "hentai_mod", False)                                               , persistent.hentai_mod           ], 
-                ["mat_filter"       ,"Мат-фильтр",         SetField(persistent, "mat_filter", 1),     SetField(persistent, "mat_filter", 2),     SetField(persistent, "mat_filter", 0),["Вам пизда - выкл","Вам !$%!@$^@$","Вам плохо будет"]]
+                 #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
+                ["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", blwnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                ["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", blwnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
+                ["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", blwnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
+                ["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", blwnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
+                ["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", blwnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
+                ["lkjmsdl"          ,"Заглушка"                   ,[NullAction(),                                     Play("sound", blwnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction() ],                  
+                ["hentai"                                         ,[SetField(persistent, "hentai_mod", True),         Play("sound", blwnfh_sfx_list["nya"])]              ,  SetField(persistent, "hentai_mod", False)                                                    , persistent.hentai_mod           ], 
+                ["mat_filter"       ,"Мат-фильтр"                 ,SetField(persistent, "mat_filter", 1),             SetField(persistent, "mat_filter", 2)               ,  SetField(persistent, "mat_filter", 0)                                                        , ["Без цензуры","Как-то так: #@!&%","Литератураня замена"]]
             ]
 
             blwnfh_preferences_bar = [
@@ -185,18 +185,19 @@ init 2:
                         area(0.5, 1.0, 420, 120)
                         xanchor 0.5 yanchor 1.0
                         vbox:
-                            pos(0.5, 0.5)
-                            xanchor 0.5 yanchor 0.5
+                            pos(0.5, 1.0)
+                            xanchor 0.5 yanchor 1.0
                             text blwnfh_preferences_switch[7][1]:
                                 style "blwnfh_settings"
-                                pos(0.0, 0.5)
+                                pos(0.5, 1.0)
+                                xanchor 0.5 yanchor 0.5
                                 text_align 0.5
                                 size 50
                                 kerning 1
                                 min_width 200
                                 layout "tex"
                             imagebutton:
-                                pos(0.5, 0.2)
+                                pos(0.5, 0.9)
                                 xanchor 0.5 yanchor 0.5
                                 idle blwnfh_gui["settings"][key_values[persistent.mat_filter]]
                                 hover blwnfh_gui["settings"][key_values[persistent.mat_filter]]

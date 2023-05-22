@@ -43,9 +43,9 @@ label blwnfh_day_5:
     
     "Ещё немного поразглядывав себя и, протерев рукой потихоньку грубеющую бороду, я покинул дом."
     
-    stop ambience fadeout 0.5
-    scene bg ext_house_of_mt_sunset with dissolve
-    play music music_list["dance_of_fireflies"] fadein 3.0
+    stop ambience fadeout 2.0
+    scene bg ext_house_of_mt_sunset with dissolve2
+    play music music_list["dance_of_fireflies"] fadein 3.5
     play ambience ambience_camp_center_evening fadein 2
     ## Семён отправляется в сторону склада
     "Утро хоть и было довольно ранее, на улице было довольно тепло и очень свежо."
@@ -69,10 +69,12 @@ label blwnfh_day_5:
         ease_quart 2.0 zoom 1.5 xcenter 0.72
     $ renpy.pause(2.0)
     
-    stop ambience fadeout 0.5
-    scene bg int_warehouse_day with dissolve
+    stop ambience fadeout 2.0
+    scene bg int_warehouse_day
+    show sd normal forma glasses far
+    with dissolve2
     play ambience ambience_int_cabin_day fadein 2
-    # тут нужен фоновый спрайт завхоза
+    # тут нужен фоновый спрайт завхоза!!!!!!!!!!!!!!!!!!!!!!!!!
     ## Семён на складе. Встреча с завхозом
     "За письменным столом сидел, о ужас, сам завхоз."
     
@@ -80,7 +82,10 @@ label blwnfh_day_5:
     
     me "Доброе утро Сергей Дмитриевич."
     
+    show sd normal forma glasses with dissolve
+
     "Сказал я, подойдя к нему поближе."
+
     "Тот окинул меня полу-презрительным взглядом и вернулся обратно к своим бумагам."
     
     sd "Доброе. {w}Зачем пришел?"
@@ -89,16 +94,17 @@ label blwnfh_day_5:
     
     me "Да мне бы вот, рубашку поменять, а то я эту испачкал."
     
+    show sd normal forma with dspr  
+
     "Сергей Дмитриевич тяжело вздохнул и сложив очки положил их на стол."
     
     sd "Что же вы вечно не бережете форму-то свою."
     
     "Ворча, он встал со своего места и подошел к стеллажу с чистой одеждой."
-    
-    show sd normal forma with dissolve
-    
     "Взяв там новую рубашку он подошел ко мне."
     
+    show sd serious with dspr
+
     sd "Снимай давай, чего стоишь как истукан."
     
     "Я быстро снял рубашку и отдав её, взял чистую и также быстренько одел её."
@@ -107,14 +113,12 @@ label blwnfh_day_5:
     sd "Как же ты так умудрился-то, а?"
     me "Упал."
     
-    show sd serious with dspr
-    
     sd "Упал он, а зашивать теперь кто будет, м?"
     me "Если хотите, давайте я зашью."
     sd "Ещё чего, ты только хуже ещё сделаешь[wp] {w}Завтра Славяну попрошу, она у нас молодец в отличии от тебя."
     me "Как скажете."
     
-    hide sd with dissolve
+    show sd normal forma glasses with dspr
     
     "Не брежно бросив грязную рубашку в таз к другой грязной одежде, Сергей Дмитриевич вернулся обратно за свой стол и сделал запись в журнале."
     
@@ -123,11 +127,15 @@ label blwnfh_day_5:
     
     "Такому заявлению я был крайне удивлен."
     
+    show sd serious forma glasses with dspr 
+
     sd "А вот так! Пионерам растяпам имущество не выдаю!"
     me "Ну Сергей Дмитриевич, ладно вам, может мы как-нибудь сможем договорится?"
     
     "В шутку произнес я."
     "Но завхоз видимо не уловил юмора."
+
+    show sd angry forma glasses with dspr   
     
     sd "Ещё чего, договариватся на базаре будешь! А у меня тут склад с казённым имуществом!"
     
@@ -135,11 +143,16 @@ label blwnfh_day_5:
     
     "Я гордо развернулся на все сто восемьдесят и уже готовился покинуть склад, как Сергей Дмитриевич меня окликнул."
     
+    show sd serious forma glasses with dspr 
+
     sd "А, и пока ты ещё не ушел."
     me "Слушаю."    
     sd "Доложи своему товарищу Александру, что если он мне до конца недели не вернет имущество, которое он взял со склада, я буду жаловаться во все соответствующие инстанции."
     sd "То бишь, вашей вожатой."
     me "Хорошо я ему передам, теперь могу идти?"
+
+    show sd normal forma glasses with dspr 
+
     sd "Да, свободен."
     
     "Стоя у выхода я вспомнил, что хотел поинтересоваться насчёт бритвы, так что развернулся обратно к завхозу."
@@ -154,10 +167,9 @@ label blwnfh_day_5:
     me "Ну как зачем, бриться конечно же."
     sd "Ну-ка подойди сюда."
     
+    show sd normal forma glasses close with dspr     
+
     "Я подчинился просьбе завхоза и подошел к нему."
-    
-    show sd normal forma glasses with dissolve
-    
     "Подойдя, он встал и стал рассматривать моё щетинистое лицо."
     
     sd "Да, побриться пора тебе. {w}Ладно, сейчас выделю тебе станок, только чтобы потом в конце смены вернул!"
@@ -171,9 +183,9 @@ label blwnfh_day_5:
     
     "Без лишних слов я покинул склад."
     
-    stop ambience fadeout 0.5
+    stop ambience fadeout 2.0
     scene bg ext_warehouse_sunset with dissolve2
-    stop music fadeout 3
+    stop music fadeout 3.5
     play ambience ambience_camp_center_evening fadein 2
     ## Семён пошёл домой за умывалками
     "Выйдя на улицу я рассмотрел станок и удивился."
@@ -191,7 +203,7 @@ label blwnfh_day_5:
     th "Как люди вообще живут с большими бородами? Это же кошмар как не удобно. Как спать, как есть?"
     th "А ещё помимо всего, за ней же ведь нужно и ухаживать, чтобы она уж совсем не была бесформенной колючкой."
     
-    scene bg ext_house_of_mt_sunset with dissolve
+    scene bg ext_house_of_mt_sunset with sphere_blure_dissolve2
     $ renpy.pause(0.3)
     scene bg ext_house_of_mt_sunset:
         subpixel True
@@ -202,6 +214,7 @@ label blwnfh_day_5:
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_sunset with dissolve
     play ambience ambience_int_cabin_day fadein 2
+    play sound blwnfh_sfx_list["raschyoska"] fadein 2
     ## Семён дома
     "Когда я пришел домой, Ольга Дмитриевна уже проснулась."
     "И сидя в своей форме на кровати, медленно расчёсывала волосы." 
@@ -213,6 +226,7 @@ label blwnfh_day_5:
     mt "Гляжу моя терапия пошла на пользу тебе, проснулся раньше меня."
     me "Будто я до этого не просыпался раньше вас."
     
+    stop sound fadeout 0.5
     show mt angry with dspr
     
     mt "Зато ночью не шлялся по сценам и не изображал Никулина!"
@@ -296,13 +310,13 @@ label blwnfh_day_5:
     
     "И тут же стремительно ушла."
     
-    th "И как это понимать?"
-    th "Ладно, продолжу свои дела."
+    th "И как это понимать? {w}Ладно, продолжу свои дела."
     
     scene bg ext_washstand2_day with dissolve    
     
     "Я вернулся к своей раковине и достал из кармана бритву."
     "Сняв что-то вроде специального колпачка с лезвия до меня только сейчас дошло:"
+    
     th "Ёмаё, я же не спросил у завхоза, есть ли у него хоть что-то навроде пены для бритья."
     
     me "И как мне быть?"
@@ -331,7 +345,9 @@ label blwnfh_day_5:
     th "Здесь-то меня точно не найдут! {w}А до завтрака моими поисками никто заниматься не будет"
     th "Что в свою очередь значит — можно спокойно посидеть полчаса в тишине да спокойствии."
     
-    show kat normal pioneer with dissolve2
+    show kat normal pioneer:
+        xcenter -1.4 ycenter 0.5
+        ease_quart 2.5 xcenter 0.5
     
     kat "Приветик, а ты чего под деревом делаешь?"
     
@@ -416,8 +432,9 @@ label blwnfh_day_5:
     me "Ничего не обещаю."
     
     stop ambience fadeout 2.0
-    scene bg ext_path_day with slide_diagonal_blure_dissolve2
-    show kat interested pioneer with dissolve
+    scene bg ext_path_day 
+    show kat interested pioneer
+    with slide_diagonal_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
     
     "Мы вышли в пролесок."
@@ -436,9 +453,9 @@ label blwnfh_day_5:
     
     "Тем временем мы вышли к муз кружку."
     
-    stop ambience fadeout 0.51
-    show bg ext_musclub_day with dissolve
-    play ambience ambience_camp_center_day fadein 2.03
+    stop ambience fadeout 2.0
+    show bg ext_musclub_day with dissolve2
+    play ambience ambience_camp_center_day fadein 2.0
     
     "Никакой музыки с его стороны не доносилось."
     
@@ -494,8 +511,6 @@ label blwnfh_day_5:
     
     th "Надо же, все удобства тут организовала себе, постелила подобие матраса, притащила одеяло, подушку и спит."
     th "Интересно, почему именно здесь."
-    
-    
     
     kat "Не удобно вышло как-то[wp] {w}Может пойдем куда-то в другое место?" 
     me "Да[wp]"
@@ -637,6 +652,7 @@ label blwnfh_day_5:
     
     show mi grin pioneer:
         ease_quart 2.0 xcenter -0.2
+    $ renpy.pause(2.0, hard=True)
     hide mi
     
     "Мику выбежала из муз клуба и помчалась в сторону площади, видимо, отметиться у вожатой."
@@ -922,10 +938,8 @@ label blwnfh_day_5:
     show mi normal with dspr
     
     mi "Но думаю вам вполне можно доверять." 
-    
-    th "Я сейчас взорвусь как триста тонн тротила."
-    
-    me "Мику, мы поняли."
+    mi "В общем, надеюсь вы поняли."
+    me "Да, мы поняли."
     
     show mi happy with dspr
     
@@ -975,7 +989,7 @@ label blwnfh_day_5:
     
     show kat normal with dspr
     
-    mi "Как неудобно вышло, вы уж простите меня, что я такая забывчивая, сейчас быстренько открою её вам."
+    mi "Ой, неудобно вышло, вы уж простите меня, что я такая забывчивая, сейчас быстренько открою её вам."
     
     show kat normal pioneer at right:
         ease_quart 2.0 xcenter -0.2
@@ -992,11 +1006,13 @@ label blwnfh_day_5:
     
     show mi upset with dspr
     
-    "Мику на пару секунд серьезно задумалась, видимо вспоминая про что она.."
+    "Мику на пару секунд серьезно задумалась."
     
+    mi "Хм[wp] Дай-ка подумать[wp]"
+
     show mi normal with dspr
     
-    mi "Это песня из Югославии, мне эту кассету один знакомый, как раз оттуда, подарил, и там, насколько я помню с его слов, поется против войн и что надо жить дружнее."
+    mi "О, вспомнила! {w}Это песня из Югославии, мне эту кассету один знакомый, как раз оттуда, подарил, и там, насколько я помню с его слов, поется против войн и что надо жить дружнее."
     me "Понятно, интересные у тебя знакомые."
     
     show mi smile with dspr
@@ -1005,7 +1021,7 @@ label blwnfh_day_5:
     mi "Я когда с папой ездила в Польшу, познакомилась чуть ли не с половиной Варшавы."
     mi "И знаешь, там такие приятные люди, а ещё они все удивлялись тому, что я японка. Вот с некоторыми друзьями и знакомыми мы до сих пор поддерживаем связь."
     me "Ты знаешь польский?"
-    mi "А также знаю японский, английский, немецкий, итальянский, французский и испанский!"
+    mi "А также знаю японский, английский, немецкий, итальянский, французский, испанский и конечно же русский!"
     me "Ого[wp]"
     
     th "Мику у нас оказывается полиглот[wp]"

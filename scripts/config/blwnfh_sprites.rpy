@@ -281,6 +281,11 @@ init 2:
         # Лена
         
         make_sprites_for('un', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
+
+        # Алиса
+
+        make_sprites_for('dv', 'sport', ['es:body', 'mod:sport', 'es:<emotion>'])
+        make_sprites_for('dv', 'sport isolenta', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])

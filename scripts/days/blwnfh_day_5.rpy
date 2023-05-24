@@ -1044,7 +1044,7 @@ label blwnfh_day_5:
     
     play music blwnfh_music_list["strange"] fadein 3
     
-    mi "Ну да, смогу если отец туда снова поедет, стены же уже как два года нету."
+    mi "Ну да, смогу если отец туда снова поедет, стены-то уже как два года нету."
     me "Как это[wp] Нету?"
     
     "Такой ответ, мягко говоря, ввел меня в ступор."
@@ -1067,7 +1067,7 @@ label blwnfh_day_5:
     
     me "Мало ли[wp]"
     
-    "Через силу сказал я, чуть пошатываясь на месте."
+    "Через силу сказал я хватаясь за голову и чуть пошатываясь на месте."
     
     show mi serious at left with dspr
     
@@ -1076,7 +1076,7 @@ label blwnfh_day_5:
     mi "Точно? Может стоит позвать медсестру, она тебя осмотрит, даст таблеточку нужную и всё как рукой снимет."
     mi "У меня самой недавно голова болела, обратилась к ней и, уж не знаю что у неё там за таблетки, но всё мигом прошло и я спокойно вернулась обратно к игре на своих любимых инструментах."
     
-    "От бесконечного потока слов из уст нашей музыкантки, голова заболела ещё сильнее."
+    "От бесконечного потока слов из её уст, голова заболела ещё сильнее."
     
     me "Мику[wp]"
     
@@ -1097,7 +1097,7 @@ label blwnfh_day_5:
     th "Надо будет обязательно найти политическую карту мира."
     th "Так сказать, посмотреть, чего тут успела наворотить моя родина."
     
-    # 34 тут нужен звук грохота
+    play sound blwnfh_sfx_list["pogrom"] fadein 0.5
     
     "И в этот момент из подсобки донесся громкий грохот, от которого Мику немного вскрикнула."
     
@@ -1139,7 +1139,7 @@ label blwnfh_day_5:
     
     show mi normal with dspr
     
-    mi "Пойду поищю ваши инструменты."
+    mi "Пойду принесу ваши инструменты. Заодно посмотрю, что там ты уронила."
     
     show mi normal pioneer:
         ease_quart 3.0 xcenter -0.2
@@ -1354,12 +1354,12 @@ label blwnfh_day_5:
     "Мику недовольно фыркнула и мы направились на выход."
     
     window hide
-    stop ambience fadeout 2
-    scene bg ext_dining_hall_near_day with sphere_blure_dissolve5
-    $ renpy.pause(0.5)
-    show mi normal pioneer at left with dissolve
-    show kat normal pioneer at right with dissolve
-    play ambience ambience_camp_center_day fadein 3
+    stop ambience fadeout 5
+    scene bg ext_dining_hall_near_day
+    show mi normal pioneer at left 
+    show kat normal pioneer at right 
+    with sphere_blure_dissolve5
+    play ambience ambience_camp_center_day fadein 5
     window show
     
     "Быстрым шагом мы дошли до столовой и на удивление не оказались последними."

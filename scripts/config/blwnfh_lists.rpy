@@ -248,6 +248,7 @@ init 2:
     $ blwnfh_sfx_list["postavilichtoto"] = blwnfh_SFX + "postavilichtoto.ogg"
     $ blwnfh_sfx_list["perelistovanie"] = blwnfh_SFX + "perelistovanie.ogg"
     $ blwnfh_sfx_list["microphone"] = blwnfh_SFX + "micro.ogg"
+    $ blwnfh_sfx_list["pogrom"] = blwnfh_SFX + "zvuk-padeniya-na-mebel-i-pogrom.ogg"
     #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист

@@ -346,8 +346,10 @@ label blwnfh_day_5:
     th "Что в свою очередь значит — можно спокойно посидеть полчаса в тишине да спокойствии."
     
     show kat normal pioneer:
-        xcenter -1.4 ycenter 0.5
-        ease_quart 2.5 xcenter 0.5
+        xcenter -1.2 ycenter 0.5
+        ease_quart 3.0 xcenter 0.5
+    $ renpy.pause(3.0, hard=True)
+    show kat normal pioneer at center
     
     kat "Приветик, а ты чего под деревом делаешь?"
     
@@ -1097,11 +1099,10 @@ label blwnfh_day_5:
     th "Надо будет обязательно найти политическую карту мира."
     th "Так сказать, посмотреть, чего тут успела наворотить моя родина."
     
+    show mi scared with dspr
     play sound blwnfh_sfx_list["pogrom"] fadein 0.5
     
     "И в этот момент из подсобки донесся громкий грохот, от которого Мику немного вскрикнула."
-    
-    show mi scared with dspr
     
     mi "Катя, у тебя там всё хорошо?"
     
@@ -1117,7 +1118,7 @@ label blwnfh_day_5:
     kat "Мамальна."
     
     show kat grin pioneer:
-        ease_quart 5.0 xcenter 0.5
+        ease_quart 2.7 xcenter 0.5
         ease_quart 1.5 ycenter 0.58
         ease_quart 0.8 ycenter 0.5
     $ renpy.pause(3.5, hard=True)
@@ -1159,7 +1160,7 @@ label blwnfh_day_5:
     kat "Так там не убирались лет сто!"
     
     show mi normal pioneer:
-        ease_quart 3.0 xcenter 0.28
+        ease_quart 2.0 xcenter 0.28
     
     "Вскоре из подсобки вернулась Мику, с нашими инструментами на перевес."
 
@@ -1367,9 +1368,10 @@ label blwnfh_day_5:
     "За ними мы и прошмыгнули внутрь."
     
     stop ambience fadeout 1.5
-    show bg int_dining_hall_people_day with dissolve
+    show bg int_dining_hall_people_day
+    show mt angry pioneer at center
+    with dissolve
     play ambience ambience_dining_hall_full fadein 2
-    show mt angry pioneer at center with dissolve
     
     "И столкнулись с Ольгой Дмитриевной, которая сразу же обратила на нас внимание."
     
@@ -1879,8 +1881,9 @@ label blwnfh_day_5:
         ease_quart 0.7 xcenter 1.2
     $ renpy.pause(3.9, hard=True)
     stop ambience fadeout 2
-    scene bg ext_path2_day with sphere_blure_dissolve2
-    show sh normal pioneer with dissolve
+    scene bg ext_path2_day
+    show sh normal pioneer 
+    with sphere_blure_dissolve2
     play ambience ambience_forest_day fadein 2 
     
     "Обойдя библиотеку и войдя в зеленку, я сигнализировал Шурику остановиться, дабы немного отдохнуть."
@@ -1910,8 +1913,9 @@ label blwnfh_day_5:
     "Вновь подняв колонку мы пошли дальше."
     
     stop ambience fadeout 1.5
-    scene bg ext_playground_day with dissolve2
-    show sh normal pioneer at left with dissolve
+    scene bg ext_playground_day 
+    show sh normal pioneer at left
+    with dissolve2
     play ambience ambience_soccer_play_background fadein 2
     
     "Вскоре мы вышли на поле."
@@ -1976,8 +1980,9 @@ label blwnfh_day_5:
     
     window hide
     stop ambience fadeout 3
-    scene bg ext_stage_normal_day with sphere_invert_dissolve5
-    show sh normal pioneer with dissolve
+    scene bg ext_stage_normal_day 
+    show sh normal pioneer
+    with sphere_invert_dissolve5
     play ambience ambience_camp_center_day fadein 3
     window show
     
@@ -1997,8 +2002,9 @@ label blwnfh_day_5:
     # Короче говоря, примерно на как фоне с площадью, переоборудованной под танцпол.
     # Ну или тупо заказать новый фон у Ивана например или Насти.
     
-    scene bg ext_playground_day with slide_diagonal_blure_dissolve2
-    show sh normal pioneer with dissolve
+    scene bg ext_playground_day 
+    show sh normal pioneer
+    with slide_diagonal_blure_dissolve2
     
     "К моменту когда мы закончили всё таскать, на поле уже было пусто."
     
@@ -2087,8 +2093,9 @@ label blwnfh_day_5:
     "А время шло предательски медленно."
     "И тут к нам кто-то подошел."
     
-    show sh normal pioneer at right with dissolve
-    show el normal pioneer at left with dissolve
+    show sh normal pioneer at right
+    show el normal pioneer at left 
+    with dissolve
     
     "Мы подняли головы и увидели стоящего рядом Сергея."
 
@@ -2137,8 +2144,9 @@ label blwnfh_day_5:
     
     "Резко выдал я, перебив Шурика."
     
-    show sh normal with dspr
-    show el normal with dspr
+    show sh normal 
+    show el normal 
+    with dspr
     
     "Парни, видимо, немного успокоились."
     
@@ -2249,7 +2257,7 @@ label blwnfh_day_5:
     "Я тут же принялся уничтожать свой обед, пока столовая, тем временем, стала наполнятся пионерами."
 
     stop ambience fadeout 1.0
-    scene bg int_dining_hall_people_day with dissolve
+    scene bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 2.5
     
     "Однако, еда на вкус была такой себе."
@@ -2260,8 +2268,9 @@ label blwnfh_day_5:
     
     "Спустя несколько минут, ко мне подошли Мику и Катя."
     
-    show mi normal pioneer at left with dissolve
-    show kat normal pioneer at right with dissolve
+    show mi normal pioneer at left 
+    show kat normal pioneer at right 
+    with dissolve
     
     th "А вот и наши дежурные."
     
@@ -2269,8 +2278,9 @@ label blwnfh_day_5:
     
     me "А звание дежурного даёт право садиться куда угодно без спроса?"
     
-    show mi shy with dspr
-    show kat shy with dspr
+    show mi shy 
+    show kat shy 
+    with dspr
     
     mi "Ой прости, мы тебя и не заметили."
     kat "Да Семён, извини."
@@ -2285,8 +2295,9 @@ label blwnfh_day_5:
     mi "Ой, наоборот, тише воды, ниже травы."
     me "Да, я понял."
     
-    show mi normal with dspr
-    show kat smile with dspr
+    show mi normal 
+    show kat smile 
+    with dspr
     
     kat "В общем, ты не против нашей компании, верно?"
     me "Нет, только рад буду."
@@ -2304,8 +2315,9 @@ label blwnfh_day_5:
     
     me "Жаль! А выглядите вполне аппетитно."
     
-    show kat normal with dspr
-    show mi normal with dspr
+    show kat normal 
+    show mi normal 
+    with dspr
     
     "Немного похихикав, девушки принялись за свой обед."
     "И на моё удивление, уплетали они его довольно активно."
@@ -2351,7 +2363,7 @@ label blwnfh_day_5:
     
     me "Слушайте, дамы."
     
-    show kat interested
+    show kat interested with dspr
     
     "После такого обращения, подруги вопросительно покосились на меня."
     
@@ -2401,8 +2413,9 @@ label blwnfh_day_5:
     "Сюда также, помимо нас, подтягивались и наши футболисты."
     "Катя и Мику же расположились позади меня."
     
-    show dv normal sport at left with dissolve
-    show us normal sport2 bandage at right with dissolve
+    show dv normal sport isolenta at left 
+    show us normal sport2 bandage at right 
+    with dissolve
     
     dv "Что, занимаете самые лучшие места?"
     me "Не-е-е, у меня и Кати место покруче этих будет."
@@ -2485,7 +2498,7 @@ label blwnfh_day_5:
     dv "Какие вы все серьезные, что пошутить нельзя?"
     dv "Задумалась я и всего-то."
     
-    show dv normal sport:
+    show dv normal sport isolenta:
         xcenter 0.28 ycenter 0.5
     with dspr
     
@@ -2493,7 +2506,7 @@ label blwnfh_day_5:
     kat "Счастливо."
     mi "Удачи тебе!"
     
-    show dv normal sport:
+    show dv normal sport isolenta:
         ease_quart 3.0 xcenter -0.2
     $ renpy.pause(1.0)
     
@@ -2505,18 +2518,28 @@ label blwnfh_day_5:
     "А какие-то занимали места на трибунах."
     "Я даже заметил несколько знакомых лиц, прошедших мимо:"
     #34 может сделать тут анимацию того, как названные ниже персонажи проходят перед семёном?
-    show un normal pioneer with dspr
+    show un normal pioneer:
+        xcenter 1.2 ycenter 0.5
+        ease_quart 6.5 xcenter -0.4
+    $ renpy.pause(6.5, hard=True)    
     
     "Лену."
     
     hide un with dspr
-    show sl normal sport with dspr
+    show sl normal sport:
+        xcenter 1.2 ycenter 0.5
+        ease_quart 6.5 xcenter -0.4
+    $ renpy.pause(6.5, hard=True)
     
     "Славю."
     
     hide sl with dissolve
-    show el normal pioneer at left with dissolve
-    show mz normal glasses pioneer at right with dissolve
+    show el normal pioneer:
+        xcenter 1.2 ycenter 0.5
+        ease_quart 6.5 xcenter -0.4
+    show mz normal glasses pioneer:
+        xcenter 1.4 ycenter 0.5
+        ease_quart 6.5 xcenter -0.4 
     
     "И даже Сергея с Женей."
     
@@ -2529,7 +2552,10 @@ label blwnfh_day_5:
     th "Она тоже участвует?"
     th "Хотя, футболисты в белой форме и с опознавательными знаками, а она просто в чёрной форме."
     
-    show mt smile pioneer panama with dissolve
+    show mt smile pioneer panama:
+        xcenter 1.2 ycenter 0.5
+        ease_quart 3.0 xcenter 0.5
+    $ renpy.pause(1.5, hard=True)
     
     "И, собственно, замыкая сзади вереницу пионеров, шла Ольга Дмитриевна, которая подошла к нам."
     
@@ -2557,10 +2583,16 @@ label blwnfh_day_5:
     
     # переход наверное
     
-    show mt normal pioneer panama at right with dspr
-    show kat normal pioneer at left with dspr
+    show mt normal pioneer panama:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 2.5 xcenter 0.72 
+    show kat normal pioneer:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 2.5 xcenter 0.28
+    with dspr
+    $ renpy.pause(1.5, hard=True)
     
-    "Заняв наше место, мы стали внимательно слушать вожатую."
+    "Заняв наши места, мы стали внимательно слушать вожатую."
     
     mt "Значит так, через несколько минут уже начало."
     mt "Я вам если что просигнализирую помахав с трибун."
@@ -2687,8 +2719,8 @@ label blwnfh_day_5:
     
     nvl clear
     
-    stop ambience fadeout 2
-    play ambience ambience_soccer_play_background fadein 3
+    stop ambience fadeout 3.0
+    play ambience ambience_soccer_play_background fadein 3.0
     
     "\nСразу же после этого, пионер, разогнавшись, со всей силы вдарил по мячу.\n"
     
@@ -2813,19 +2845,19 @@ label blwnfh_day_5:
     "Мы выключили свои микрофоны и я откинулся на спинку стула."
     "И пофигу, что она была крайне неудобная."
     
-    show sl normal sport:
-        xcenter 1.2 ycenter 0.5
-    
     show kat thinking with dspr
     
     kat "Фуух[wp] Устала разговаривать."
     me "Да, есть такое."
     
     show sl normal sport:
+        xcenter 1.2 ycenter 0.5
         ease_quart 2.0 xcenter 0.72 
     show kat normal pioneer:
         ease_quart 2.3 xcenter 0.28
     $ renpy.pause(2.3, hard=True)
+    show kat normal pioneer at left
+    show sl normal sport at right
     
     sl "Ну что, коментаторы, как вы тут?"
     me "Довольно неплохо."
@@ -2845,10 +2877,6 @@ label blwnfh_day_5:
     sl "Интересно."
     sl "Мне нравится следить за порядком, соблюдением правил, все дела."
     
-    th "Ага, знаю я ребят которые тоже любят следить за порядком. {w}И имя им Ка—Гэ—Бэ!"
-    th "Не, ну а что? Выдать ей фирменный кожанный китель, синию фуражку и Тульский Токарев или Наган."
-    th "Получится идеальное дополнение к нашему местному товарищу Сталину в лице Ольги Дмитриевны."
-    
     show kat thinking with dspr
     
     kat "Ну это самое главное, чтобы нравилось."
@@ -2865,8 +2893,9 @@ label blwnfh_day_5:
     sl "И когда я ей показала, что это не так, она недовольно фыркнула и отошла."
     me "Ну это да, мы увидели."
     
-    show sl normal with dspr
-    show kat smile with dspr
+    show sl normal 
+    show kat smile 
+    with dspr
     
     kat "И ещё такой вопрос: как мы вообще? Нас интересно слушать?"
     sl "Да, вполне."
@@ -2889,10 +2918,12 @@ label blwnfh_day_5:
     kat "Хорошо."
     
     show sl normal sport:
-        ease_quart 2.5 xcenter 1.2
+        ease_quart 2.0 xcenter 1.2
     show kat normal pioneer:
-        ease_quart 2.7 xcenter 0.5
-    
+        ease_quart 2.3 xcenter 0.5
+    $ renpy.pause(2.3, hard=True)
+    show kat normal pioneer at center
+
     "Славя ушла и мы снова остались наедине."
     "Я посмотрел на часы. {w}До начала второго тайма оставалось семь минут."
     
@@ -3201,10 +3232,11 @@ label blwnfh_day_5:
     "Тут и дураком быть не надо, чтобы понять одну простую истину." 
     "Сейчас мы будем таскать всю аппаратуру назад[wp] {w}Мать её за ногу."
     
-    show kat normal pioneer at left with dissolve
-    show mt smile pioneer panama with dissolve
-    show sv angry pioneer glasses tablet at right with dissolve
-    show el normal pioneer at fright with dissolve
+    show kat normal pioneer at left
+    show mt smile pioneer panama 
+    show sv angry pioneer glasses tablet at right
+    show el normal pioneer at fright 
+    with dissolve
     
     "Подойдя, вожатая встретила нас легкими овациями."
     
@@ -3239,10 +3271,12 @@ label blwnfh_day_5:
     mt "Какие молодцы, всё верно!"
     sv "Так что вперёд и с песней!"
     #34 тут можно анимацию того как уходят Катя и вожатая за пределы экрана
-    hide kat with dissolve
-    hide mt with dissolve
-    show sv angry pioneer glasses tablet at left with dspr
-    show el normal pioneer at right with dspr
+    hide kat
+    hide mt 
+    with dissolve
+    show sv angry pioneer glasses tablet at left
+    show el normal pioneer at right 
+    with dspr
     
     "И мы все мы разошлись в разные стороны."
     "Вожатая с Катей ушагали с поля. Света же осталась."
@@ -3320,10 +3354,11 @@ label blwnfh_day_5:
     
     window hide
     stop ambience fadeout 2
-    scene bg ext_stage_big_sunset with dissolve2
+    scene bg ext_stage_big_sunset 
+    show el normal pioneer at right 
+    show sv angry pioneer glasses tablet at left 
+    with sphere_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 2
-    show el normal pioneer at right with dissolve
-    show sv angry pioneer glasses tablet at left with dissolve
     $ blwnfh_set_time("sunset")
     $ renpy.pause(3.0)
     window show
@@ -3365,8 +3400,9 @@ label blwnfh_day_5:
     "Единственное свободное место наблюдалось только рядом с нашими футболистками."
     "К которым, взяв поднос с ужином, я и отправился."
     
-    show dv normal pioneer at right with dissolve
-    show us normal pioneer at left with dissolve
+    show dv normal pioneer at right
+    show us normal pioneer at left
+    with dissolve
     
     me "Здарова будущая надежда нашей олимпийской сборной, можно к вам?"
     dv "Да, можно."
@@ -3387,16 +3423,18 @@ label blwnfh_day_5:
     th "Мда, похоже в тишине поужинать не получится."
     th "Что ж, режим абсолютного игнорирования внешних раздражителей — включён."
     
-    show us normal with dspr
-    show dv normal with dspr
+    show us normal
+    show dv normal 
+    with dspr
     
     "Ужин представлял из себя картофельное пюре с рыбной котлетой."
     "Это было вполне съедобно, уж по крайней мере получше того недоразумения на обед."
     "Чай обычный, чёрный, а к нему приличных таких размеров булка из которой немного вытекало повидло, напоминающее клубничное."
     "В общем неплохо, неплохо."
     
-    show dv laugh with dspr
-    show us laugh with dspr
+    show dv laugh 
+    show us laugh 
+    with dspr
     
     "И я бы так и продолжил спокойно есть, если бы не крайне странное обстоятельство."
     "Я такого и неожидал даже, так что пробыл в ступоре какое-то время."
@@ -3435,8 +3473,9 @@ label blwnfh_day_5:
     
     me "Да, я такой, всё дайте теперь спокойно доесть."
     
-    show dv normal with dspr
-    show us normal with dspr
+    show dv normal 
+    show us normal 
+    with dspr
     
     dv "Хорошо."
     
@@ -3447,8 +3486,9 @@ label blwnfh_day_5:
     
     "Сказал я и покинул стол."
     
-    hide us with dissolve
-    hide dv with dissolve
+    hide us
+    hide dv 
+    with dissolve
     
     "Подходя к выходу я осмотрелся вокруг на предмет наличия вожатой."
     "И всё тщательно изучив, мне не удалось её заметить."
@@ -3626,8 +3666,10 @@ label blwnfh_day_5:
     me "Ну-с, тогда спокойной ночи."
     kat "Спокойной[wp]"
     
-    #34 тут надо анимацию кате.
-    hide kat with dissolve
+    show kat normal pioneer:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 2.7 xcenter -0.4
+    $ renpy.pause(1.5, hard=True)
     
     "Катя в припрыжку убежала в соседний домик."
     

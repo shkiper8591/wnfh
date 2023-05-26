@@ -1100,7 +1100,7 @@ label blwnfh_day_5:
     th "Так сказать, посмотреть, чего тут успела наворотить моя родина."
     
     show mi scared with dspr
-    play sound blwnfh_sfx_list["pogrom"] fadein 0.5
+    play sound sfx_brass_drop fadein 0.5
     
     "И в этот момент из подсобки донесся громкий грохот, от которого Мику немного вскрикнула."
     

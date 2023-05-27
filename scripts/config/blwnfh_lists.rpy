@@ -249,6 +249,11 @@ init 2:
     $ blwnfh_sfx_list["perelistovanie"] = blwnfh_SFX + "perelistovanie.ogg"
     $ blwnfh_sfx_list["microphone"] = blwnfh_SFX + "micro.ogg"
     $ blwnfh_sfx_list["pogrom"] = blwnfh_SFX + "zvuk-padeniya-na-mebel-i-pogrom.ogg"
+    $ blwnfh_sfx_list["selyodka_po_steklu"] = blwnfh_SFX + "tryot-po-steklu.ogg"
+    $ blwnfh_sfx_list["stuk_po_steklu"] = blwnfh_SFX + "glazed_knock_x1.ogg"
+    $ blwnfh_sfx_list["vsplesk_vodi"] = blwnfh_SFX + "silnyiy-vsplesk-ot-nyiryaniya-cheloveka.ogg"
+    $ blwnfh_sfx_list["vsplesk_vodi_2"] = blwnfh_SFX + "mgnovennyiy-nezametnyiy-vsplesk.ogg"
+    $ blwnfh_sfx_list["vsplesk_vodi_3"] = blwnfh_SFX + "kratkiy-tyajelyiy-vsplesk-vodyi.ogg"
     #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист

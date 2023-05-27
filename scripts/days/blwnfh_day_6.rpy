@@ -205,6 +205,8 @@ label blwnfh_day_6:
     "Как будто умоляя впустить его."
     
     me "Ну ладно, чуть-чуть можно[wp] Наверно."
+
+    play sound sfx_open_window
     
     "Приоткрыв окно, я впустил кота внутрь."
     
@@ -4670,15 +4672,25 @@ label blwnfh_day_6:
     me "Ах вот как значит[wp]"
     me "Шурик, зажимаем!"
     
-    show sh normal with dspr
-    show kat scared with dspr
+    show sh normal
+    show kat scared 
+    with dspr
     
     "Мой товарищ кивнул мне и мы стали медленно наступать на Катю."
     "Она разумеется попятилась назад, заходя в угол."
     "Но, похоже, ей стало ясно к чему всё это идёт."
     # надо сделать так чтобы Шурик и Катя поменялись местами анимацией, а не вот так вот
-    show kat happy at left with dspr
-    show sh normal at right with dspr
+    show kat happy pioneer:
+        xcenter 0.72 ycenter 0.5
+        ease_quart 2.0 xcenter 0.28
+    with dspr
+    show sh normal pioneer:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 2.0 xcenter 0.72
+    with dspr
+    $ renpy.pause(2.0, hard=True)
+    show kat happy pioneer at left
+    show sh normal pioneer at right
     
     "И Катя, резко, пулей стартанула в противоположную сторону, пробежав мимо Шурика."
     "Он, конечно, попытался схватить её, но реакции не хватило."
@@ -4784,13 +4796,13 @@ label blwnfh_day_6:
     kat "И то верно."
     me "Тогда, отправляемся!"
     ## Ребята отправляются к столовой
-    window hide
+    window hide dissolve
     stop ambience fadeout 0.5
     $ blwnfh_set_time("sunset")
     show bg ext_clubs_sunset with dissolve2
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0)
-    window show
+    window show dissolve
     
     "Покинув здание, Шурик стал возиться с треклятым дверным замком."
     
@@ -4799,8 +4811,9 @@ label blwnfh_day_6:
     
     "Пожав плечами, мы с Катей отправились в сторону столовой."
     
-    scene bg ext_square_sunset with dissolve
-    show kat normal pioneer with dissolve
+    scene bg ext_square_sunset
+    show kat normal pioneer 
+    with dissolve2
     
     me "Ну, как тебе клубы? Как Шурик?"
     
@@ -4822,14 +4835,19 @@ label blwnfh_day_6:
     kat "Только музыка и писательство."
     me "Хе, ну это понятно."
     
-    show kat normal with dspr
-    show bg ext_dining_hall_away_sunset with dissolve
+    show kat normal
+    show bg ext_dining_hall_away_sunset 
+    with dissolve
     
     "Скоро мы прибыли к столовой, на крыльце которой уже несколько пионеров ожидали ужина."
     
     show kat normal pioneer at left with dspr
-    show sh normal pioneer at right with dissolve
-    
+    show sh normal pioneer:
+        xcenter 1.2 ycenter 0.5
+        ease_quart 2.0 xcenter 0.72
+    $ renpy.pause(2.0, hard=True)
+    show sh normal pioneer at right
+
     "А спустя немного времени подоспел и сам Шурик."
     
     sh "Вот и я."
@@ -4853,19 +4871,26 @@ label blwnfh_day_6:
     
     # тут надо анимацию того, как катя убегает за экран или что-то типо такого. Короче анимацию того как она заходит в столовку сюда!!!
     
-    hide kat with dissolve
+    show kat joy pioneer:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 2.0 xcenter -0.4
+    $ renpy.pause(1.0, hard=True)
     
     sh "Задорная девчушка[wp] {w}Повезло тебе с ней."
     me "А?"
     
-    hide sh with dissolve
+    show sh normal pioneer:
+        xcenter 0.72 ycenter 0.5
+        ease_quart 2.5 xcenter -0.4
+    $ renpy.pause(1.0, hard=True)
     
     "Шурик похлопал меня по плечу и тоже ушел."
     
-    window hide
-    stop ambience fadeout 0.5
-    scene bg int_dining_hall_sunset with dissolve2
-    play ambience ambience_dining_hall_empty fadein 3
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_sunset with sphere_blure_dissolve2
+    play ambience ambience_dining_hall_empty fadein 2.0
+    window show dissolve
     $ renpy.pause(1.0)
     
     "Войдя внутрь я взял поднос с раздачи и сел рядом с Катей, которая махала мне, обозначая своё положение."
@@ -4893,14 +4918,15 @@ label blwnfh_day_6:
     
     show kat upset with dspr
     
-    window hide
-    stop ambience fadeout 1.5
-    show bg int_dining_hall_people_sunset with dissolve2
-    show kat normal with dissolve
+    window hide dissolve
+    stop ambience fadeout 2.0
+    show bg int_dining_hall_people_sunset
+    show kat normal 
+    with dissolve2
     ## где-то тут надо поочередное съедание ужина у Семёна. 
-    play ambience ambience_dining_hall_full fadein 3
+    play ambience ambience_dining_hall_full fadein 2.0
     $ renpy.pause(1.5) 
-    window show
+    window show dissolve
     
     "Столовая постепенно наполнилась людьми под завязку."
     "Я же почти уничтожил свой ужин, остался только морс."
@@ -4936,7 +4962,7 @@ label blwnfh_day_6:
     
     "Он кивнул и я отправился на выход."
     
-    window hide
+    window hide dissolve
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_sunset with dissolve2
     play ambience ambience_camp_center_evening fadein 3
@@ -4950,15 +4976,20 @@ label blwnfh_day_6:
     th "Думаю, из него точно можно что-нибудь придумать."
     th "И надеюсь это не растянется на полчаса."
     
-    show sh normal pioneer with dissolve
+    show sh normal pioneer:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 2.5 xcenter 0.5
+    $ renpy.pause(1.5, hard=True)
     
     sh "Всё, потопали."
     me "Есть!"
     
-    window hide
-    show bg ext_clubs_sunset with dissolve
+    window hide dissolve
+    scene bg ext_clubs_sunset
+    show sh normal pioneer
+    with slide_left_blure_dissolve2
     $ renpy.pause(1.0)
-    window show
+    window show dissolve
     ## Семён с Шуриком отправляются в клубы заделывать дыру в полу
     "Придя к клубам, началась уже классическая война с замком."
     
@@ -4967,6 +4998,7 @@ label blwnfh_day_6:
     "Он с трудом проворачивал ключ."
     
     show sh surprise with dspr
+    play sound sfx_click_3
     
     "И в один момент, раздался легкий треск. {w}Это сломался ключ."
     
@@ -4981,6 +5013,8 @@ label blwnfh_day_6:
     
     sh "Ладно, другой план."
     
+    play sound blwnfh_sfx_list["vibili_steklo"]
+
     "Выдал он и резким ударом локтя выбил окно в двери."
     "И дотянувшись рукой до замка открыл клубы изнутри."
     
@@ -4988,16 +5022,13 @@ label blwnfh_day_6:
     
     sh "Милости прошу."
     
-    window hide
-    stop ambience fadeout 0.5
+    stop ambience fadeout 2.0
     show bg int_clubs_male_sunset with dissolve2
-    play ambience ambience_int_cabin_evening fadein 3
-    $ renpy.pause(1.0)
-    window show 
+    play ambience ambience_int_cabin_evening fadein 2
     
     me "Так, я надеюсь ты придумал чем собрался заделивать отверстие?"
     
-    show sh normal_smile pioneer with dissolve
+    show sh normal_smile pioneer with dspr
     
     sh "Ну конечно!"
     
@@ -5020,23 +5051,25 @@ label blwnfh_day_6:
     th "Так сломанная табуретка[wp] Сломанная табуретка."
     
     "Я подошёл к столу и взял её."
-    
-    scene bg int_clubs_male2_notaburet with dissolve
+
+    play sound blwnfh_sfx_list["pickup_sound"]
+    scene bg int_clubs_male2_notaburet with dspr
     
     me "Прости подруга, у тебя была великая задача."
     me "Но теперь тебя пустят на пол."
-    
-    window hide
-    $ renpy.pause(1.0, hard=True)
-    scene bg int_clubs_male_sunset with dissolve
-    show sh normal at left with dissolve
-    window show
-    
+
+    scene bg int_clubs_male_sunset
+    show sh normal at left 
+    with dissolve2
+
     me "Вот твой табурет."
     sh "А-ага[wp] Пока я тут готовлю инструменты, отломай ей ножки."
     me "Угу."
     
     "Я положил сей предмет на рабочий стол."
+    
+    play sound sfx_break_cupboard
+
     "И достав из ящика молоток, стал добивать табурет."
     "Вскоре от бедной табуреточки осталась одна деревянная пластина."
 
@@ -5052,25 +5085,20 @@ label blwnfh_day_6:
     sh "Если хочешь, то почини дверь."
     me "Я пожалуй пойду."
     
-    show sh normal with dissolve
+    show sh normal with dspr
     
     sh "Счастливо."
     me "И тебе не хворать."
-    
-    window hide
-    stop ambience fadeout 0.5
+
+    stop ambience fadeout 2.0
     scene bg ext_clubs_sunset with dissolve2
-    play ambience ambience_camp_center_evening fadein 3
-    $ renpy.pause(1.0)
-    window show 
+    play ambience ambience_camp_center_evening fadein 2.0
     ## Семён отправляется к пристани
     th "А теперь к более важным делам."
     
     "Начав насвистывать простенькую мелодию, я быстрым шагом отправился к лодочной станции."
-    
-    window hide
+   
     scene bg ext_square_sunset with dissolve2
-    $ renpy.pause(1.0)
     window show
     $ blwnfh_set_name("un", "Голос")
     ## По пути к пристани Семён отшивает Лену
@@ -5096,15 +5124,15 @@ label blwnfh_day_6:
     th "Вот и поговорили[wp] {w}Блин[wp]"
     
     window hide
-    stop ambience fadeout 1
-    scene bg ext_boathouse_sunset with dissolve2
-    play ambience ambience_boat_station_day fadein 3
+    stop ambience fadeout 2.0
+    scene bg ext_boathouse_sunset 
+    show kat normal pioneer
+    with sphere_blure_dissolve2
+    play ambience ambience_boat_station_day fadein 2.0
     $ renpy.pause(1.0)
     window show
     ## Семён приходит на пристань где его уже ждёт Катя
     "Катя уже была тут и сидела рядом с нашей лодкой."
-    
-    show kat normal pioneer with dissolve
     
     me "А вот и я."
     
@@ -5138,12 +5166,13 @@ label blwnfh_day_6:
     "Она, оперевшись на неё, спустилась и заняла своё место в корме."
     "Я расположился по удобнее и вставив вёсла на свои места, мы отчалили."
     
-    window hide
-    stop ambience fadeout 2.5
-    show cg d6_me_kat_boat_curious with Dissolve(5.0)
-    play ambience ambience_lake_shore_evening fadein 3.5
-    $ renpy.pause(0.5)
-    window show
+    window hide dissolve
+    stop ambience fadeout 2.0
+    show cg d6_me_kat_boat_curious with slide_diagonal_blure_dissolve2
+    play ambience ambience_lake_shore_evening fadein 2.0
+    play music blwnfh_music_list["dance_of_the_moonlight_jellies"] fadein 5.0
+    $ renpy.pause(1.5)
+    window show dissolve
     ## Катя и Семён отчаливают на остров
     "Катя радостно осматривалась вокруг, будто она первый раз в жизне плавает на лодке."
     
@@ -5214,6 +5243,8 @@ label blwnfh_day_6:
     
     me "Остров невезения!"
     ## Семён поёт "Остров невезения"
+    # тут надо минус "Остров невезения", а пока его нет, то да.
+    # stop music fadeout 3.5
     show cg d6_me_kat_boat_surprise with dspr
     
     kat "М?"
@@ -5275,6 +5306,8 @@ label blwnfh_day_6:
     
     "А тем временем руки уже чуть ли не отваливались от всей этой гребли."
     
+    stop sound fadeout 3.5
+
     th "Да когда ж мы приплывём-то?!"
     
     "Я собирался уже повернуться и посмотреть, как Катя вскочила и крикнула."
@@ -5282,11 +5315,13 @@ label blwnfh_day_6:
     kat "Приплыли!"
     me "Наконец-то."
     
+    play sound sfx_boat_impact
+
     "Наше судно стукнулось о землю."
     
-    window hide
+    window hide dissolve
     scene bg ext_island_sunset with dissolve2
-    $ renpy.pause(1.5)
+    window show dissolve
     ## Катя и Семён приплывают на остров
     "Катя аккуратно выпрыгнула из лодки и пошла изучать новые земли."
     "Я же, покинув лодку, кое-как затащил её на берег."
@@ -5377,12 +5412,11 @@ label blwnfh_day_6:
     
     hide kat with dissolve
     
-    window hide
-    stop ambience fadeout 0.5
+    window hide dissolve
+    stop ambience fadeout 2.0
     scene bg ext_island_forest_sunset with dissolve2 
-    play ambience ambience_forest_evening fadein 3
-    $ renpy.pause(1.5)
-    window show
+    play ambience ambience_forest_evening fadein 2.0
+    window show dissolve
     ## Семён отправляется искать нужную ему палку
     "Бродя по лесу и собирая ветки, я также внимательно осматривал хоть сколько-то большие коряги."
     "Но не простые, а рогатины, на которые можно поставить удочку."
@@ -5396,13 +5430,13 @@ label blwnfh_day_6:
     
     #надо бы расширить тут блуждания Семёна по лесу, но если честно — лень. 
     
-    window hide
-    stop ambience fadeout 0.5
-    scene bg ext_island_otherside_sunset with dissolve2
-    show kat normal pioneer at right with dissolve
-    play ambience ambience_lake_shore_evening fadein 3
-    $ renpy.pause(1.5)
-    window show
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg ext_island_otherside_sunset
+    show kat normal pioneer at right 
+    with sphere_invert_blure_dissolve2
+    play ambience ambience_lake_shore_evening fadein 2.0
+    window show dissolve
     ## Семён выходит на берег где расположилась Катя
     "На берегу я и встретил Катю, которая сидела на расстеленном одеяле."
     "И как обычно, она просто смотрела на воду."
@@ -5619,13 +5653,19 @@ label blwnfh_day_6:
     
     kat "Угу."
     
-    hide kat with dissolve
-    
+    show kat normal pioneer:
+        xcenter 0.72 ycenter 0.5
+        ease_quart 2.5 xcenter -0.4
+    $ renpy.pause(1.5, hard=True)
+
     "Катя ушла в лес, а я уже очистил одного карася и сразу же приступил к другому."
     "Но у этой рыбёхи чешуя была как-то[wp] Твёрже чтоле?"
     "В общем, чистилась она хуже предыдущей, но для чудо-ножа это не было серьёзной помехой." 
     
-    show kat normal pioneer at right with dissolve
+    show kat normal pioneer:
+        ease_quart 2.5 xcenter 0.72
+    $ renpy.pause(2.5, hard=True)
+    show kat normal pioneer at right 
     
     "Вскоре Катя возвратилась." 
     
@@ -5637,7 +5677,7 @@ label blwnfh_day_6:
     
     "Сделав так, Катя снова села рядом, но в этот раз ещё ближе ко мне."
     
-    show kat interested
+    show kat interested with dspr
     
     kat "А это сложно?"
     me "Сложно что?"
@@ -5827,13 +5867,13 @@ label blwnfh_day_6:
     me "Не, я уже сильно устал."
     kat "Вижу[wp]"
     
-    window hide
-    stop ambience fadeout 0.5
+    window hide dissolve
+    stop ambience fadeout 2.0
     $ blwnfh_set_time("night")
-    show anim stars_1 with dissolve2
-    play ambience ambience_lake_shore_night fadein 3
+    show anim stars_1 with slide_up_blure_dissolve2
+    play ambience ambience_lake_shore_night fadein 2.0
     $ renpy.pause(1.5)
-    window show
+    window show dissolve
     ## Катя и Семён просто лежат на одеяле и болтают
     "Ночь медленно опустилась."
     "Мы закончили есть рыбу, и просто сидели."
@@ -5854,11 +5894,11 @@ label blwnfh_day_6:
     kat "Тебе действительно интересно?"
     me "Да, очень."
     
-    window hide
+    window hide dissolve
     play music blwnfh_music_list["proximity"] fadein 5
     $ renpy.pause(1.0)
     $ blwnfh_set_mode(nvl)
-    nvl show
+    nvl show dissolve
     
     "Она повернулась ко мне лицом."
     
@@ -5880,8 +5920,9 @@ label blwnfh_day_6:
     me "Ты так думаешь?"
     kat "Я в этом абсолютно уверена.\n"
     
-    scene bg ext_island_otherside_night with dissolve2
-    show kat pockerface pioneer shirt loose close with dissolve
+    scene bg ext_island_otherside_night
+    show kat pockerface pioneer shirt loose close 
+    with dissolve2
     
     nvl clear
     
@@ -5976,12 +6017,12 @@ label blwnfh_day_6:
     
     nvl hide
     $ blwnfh_set_mode()
-    stop music fadeout 5
+    stop music fadeout 5.0
     $ renpy.pause(1.0)
     window show
     
     "Моему счастью просто не было предела."
-    "Я никогда до этого не испытывал чего-то подобного и не думал, что когда-либо испытаю." #Разве? Чувак так то лоб 25+ лет. В школе что-нибудь, да было.
+    "Я никогда до этого не испытывал чего-то подобного и не думал, что когда-либо испытаю."
     
     th "Да[wp] Это место определенно идёт мне на пользу[wp]"
     
@@ -5989,7 +6030,7 @@ label blwnfh_day_6:
     
     kat "Это же[wp]"
     
-    play music music_list["door_to_nightmare"] fadein 3
+    play music music_list["door_to_nightmare"] fadein 3.5
     
     "Катя, судя по звуку, что-то взяла позади меня и после высвободилась из моих объятий сев передомной."
     "Когда я посмотрел, что же она там такого нашла, у меня чуть сердце не остановилось."
@@ -6015,11 +6056,11 @@ label blwnfh_day_6:
     
     kat "Настоящий[wp]"
     
-    stop music fadeout 5
+    stop music fadeout 5.0
     
     "Катя выпустила телефон из рук и буквально зависла."
     
-    play music music_list["orchid"] fadein 5
+    play music music_list["orchid"] fadein 5.0
     
     "В её глазах был виден ужас, будто она прошла через самое страшное на свете."
     "Жизнь в этих чудесных глазах — погасла."
@@ -6050,16 +6091,16 @@ label blwnfh_day_6:
     "Небольшая искорка, которой теперь нельзя было дать потухнуть."
     "Я крепко-крепко обнял Катю."
     
-    window hide
-    stop music fadeout 5
+    window hide dissolve
+    stop music fadeout 5.0
     $ renpy.pause(1.0)
-    window show
+    window show dissolve
     
     "Однако, всё было тщетно, у меня ничего не выходило."
     "Я уже просто обнимал Катю, а на глазах проступали слёзы."
     "Но неожиданно, почувствовал на спине мягкое прикосновение."
     
-    play music music_list["drown"] fadein 5
+    play music music_list["drown"] fadein 5.0
     
     me "Катя?"
     
@@ -6080,7 +6121,7 @@ label blwnfh_day_6:
     me "Почему молчала?"
     kat "Я кое-что вспомнила."
     
-    stop music fadeout 5
+    stop music fadeout 5.0
     
     "Она выдержала небольшую паузу."
     ## Катя вспоминает кто она. Конец дня и мода

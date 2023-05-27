@@ -254,6 +254,7 @@ init 2:
     $ blwnfh_sfx_list["vsplesk_vodi"] = blwnfh_SFX + "silnyiy-vsplesk-ot-nyiryaniya-cheloveka.ogg"
     $ blwnfh_sfx_list["vsplesk_vodi_2"] = blwnfh_SFX + "mgnovennyiy-nezametnyiy-vsplesk.ogg"
     $ blwnfh_sfx_list["vsplesk_vodi_3"] = blwnfh_SFX + "kratkiy-tyajelyiy-vsplesk-vodyi.ogg"
+    $ blwnfh_sfx_list["vibili_steklo"] = blwnfh_SFX + "vibili steklo.ogg"
     #$ blwnfh_sfx_list[""] = blwnfh_SFX + ".ogg"
     
     # MUSIC Лист

@@ -2688,7 +2688,7 @@ label blwnfh_day_4:
     
     show mi smile pioneer:
         ease_quart 2.0 xcenter 0.28
-    $ renpy.pause(2.0 hard=True)
+    $ renpy.pause(2.0, hard=True)
     show mi smile pioneer at left
     
     "Вскоре Мику возвратилась с пледом, который был в клетку голубого цвета, в одной руке, а в другой у нее была небольшая корзинка, видимо, с разными вкусностями."

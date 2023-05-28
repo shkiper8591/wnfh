@@ -1288,7 +1288,7 @@ label blwnfh_day_3:
     "Главная воровка спрыгнула с крыльца и убежала за столовую."
     "Разумеется, я последовал за ней."
     
-    scene bg ext_dining_hall_backroad_day_blwnfh 
+    scene bg ext_dining_hall_backroad_day 
     show us sad pioneer close at center
     with slide_down_blure_dissolve
     ## Семён и Ульяна успешно украв конфеты прячутся за столовой
@@ -1949,7 +1949,10 @@ label blwnfh_day_3:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.0 xcenter 0.16
 
-    show dv normal pioneer at left with dspr
+    show dv normal pioneer:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 1.0 xcenter 0.35
+    
     mt "Так, что вы тут за иностранные песни распеваете? Ну ка прекратили всё, пока характеристику на вас не написала!"
     
     "Я прекратил играть и отложил гитару в сторону, а после посмотрел на свои пальцы, которые просто ужасно болели."
@@ -1968,12 +1971,12 @@ label blwnfh_day_3:
     
     mi "Правда-правда!"
     
-    show mt normal pioneer panama at fleft with dspr
+    show mt normal pioneer panama with dspr
     
     mt "Да-да, ладно, вообще я пришла сюда по другому поводу."
     mt "Вы наверное знаете, что сегодня был открыт кружок журналистики, но на удивление, желающих вступить не оказалось."
     
-    show mt grin pioneer panama at fleft with dspr
+    show mt grin pioneer panama with dspr
     
     mt "Так что желающие были назначены и ими будут[wp]"
     
@@ -1989,7 +1992,7 @@ label blwnfh_day_3:
     
     kat "Ольга Дмитриевна, а если мы не хотим?"
     
-    show mt normal pioneer panama at fleft with dspr
+    show mt normal pioneer panama with dspr
     
     mt "Так и попросить некого, а вы здесь самые ответственные из незанятых."
     mt "У Мику есть Алиса, так что не заскучает, пока Катя будет работать в журналистике."
@@ -2001,11 +2004,11 @@ label blwnfh_day_3:
     
     mt "Вам никто не запрещает быть в двух и более кружках одновременно, вопрос лишь в уделении времени тому или иному."
     
-    show mt smile pioneer panama at fleft with dspr
+    show mt smile pioneer panama with dspr
     
     mt "А ещё у вас будут выходные, тогда и наиграетесь в свою музыку."
     
-    show mt normal pioneer panama at fleft with dspr
+    show mt normal pioneer panama with dspr
     
     mt "Ладно, зря времени терять не будем, Катя и Семён, пойдем я вас отведу до рабочего места, а там вам уже устроят экскурсию."
     mt "Потом если захотите вернетесь и доиграете, только пожалуйста не иностранщину."

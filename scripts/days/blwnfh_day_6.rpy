@@ -79,9 +79,9 @@ label blwnfh_day_6:
     th "Что это вообще такое?"
     
     window hide
-    scene bg int_house_of_mt_sunset
-    show unblink
-    with None
+    show cg d6_mt_volosbl with dissolve2
+    #show unblink
+    #with None
     stop music fadeout 3.5
     $ renpy.pause(1.5, hard=True)
     window show
@@ -3759,7 +3759,7 @@ label blwnfh_day_6:
     stop ambience fadeout 2.0
     scene bg ext_boathouse_day
     show kat normal pioneer
-     with dissolve
+    with dissolve
     play ambience ambience_boat_station_day fadein 2.0
     ## Катя и Семён прибыли на пристань
     "Спустя несколько минут мы вышли на лодочную станцию."

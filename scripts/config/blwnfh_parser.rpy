@@ -44,3 +44,4 @@ init -3 python:
 init -2:
     image cg d3_me_kat_blindage = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
     image cg d3_me_kat_blindage2 = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    image cg d6_mt_volosbl = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d6_mt_volosbl.jpg", blwnfh_wakeup_dark(blwnfh_IMAGES + "cg/d6_mt_volosbl.jpg"))

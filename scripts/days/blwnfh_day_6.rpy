@@ -79,9 +79,9 @@ label blwnfh_day_6:
     th "Что это вообще такое?"
     
     window hide
-    show cg d6_mt_volosbl with dissolve2
-    #show unblink
-    #with None
+    scene expression blwnfh_wakeup("cg d6_mt_volosbl")
+    show unblink
+    with None
     stop music fadeout 3.5
     $ renpy.pause(1.5, hard=True)
     window show

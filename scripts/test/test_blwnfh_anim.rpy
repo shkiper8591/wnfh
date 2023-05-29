@@ -2,7 +2,7 @@ label blwnfh_test_anim:
     
     play music music_list["i_want_to_play"] fadein 2.5
 
-    show bg ext_beach_day with dissolve
+    scene bg ext_beach_day with dissolve
 
     "Добро пожаловать в отладку анимаций! Здесь тестируются как анимации спрайтов, так и переходы между фонами."
     "Так, что мы хотели бы отладить?"
@@ -11,7 +11,29 @@ label blwnfh_test_anim:
         "Анимации спрайтов":
             jump spritesanim
         "Переходы фонов":
-            jump bgtransits 
+            jump bgtransits
+        "Анимации для ЦГ":
+            jump cganim
+
+label cganim:
+    
+    "Пример ванильной цг"
+
+    scene cg d3_dv_scene_1
+
+    "Работает"
+    "Пример модовой ЦГ"
+    scene cg d2_dv_sem_scene
+    "Работает?"
+    "Ещё пример"
+    scene expression blwnfh_wakeup("cg d6_mt_volosbl")
+    show unblink
+    with None
+
+    "У-ля-ля"
+    "Ну всё, насмотрелся и хватит, съебал-ка в... Ну скажем..."
+    "4-й день"
+    jump blwnfh_day_4
 
 label spritesanim:
 

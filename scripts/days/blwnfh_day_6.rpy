@@ -410,14 +410,14 @@ label blwnfh_day_6:
     $ blwnfh_set_time()
     scene bg ext_houses_day with slide_left_blure_dissolve2
     $ renpy.pause(1.5)
-    scene bg ext_washstand_day with slide_right_blure_dissolve2
+    scene bg ext_washstand_day 
+    show us calml pioneer
+    with slide_right_blure_dissolve2
     play ambience ambience_day_countryside_ambience fadein 2.0
     $ renpy.pause(1.0)
     window show
     ## Семён встречает у умывальников Ульяну
     "Придя к умывальникам, я, на своё удивление, увидел здесь Ульяну."
-    
-    show us calml pioneer with dissolve
     
     me "А ты чего не на линейке?"
     
@@ -1128,9 +1128,10 @@ label blwnfh_day_6:
     scene bg ext_dining_hall_near_day with santa_barbara_in_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 2.0
-    scene bg int_dining_hall_people_day with santa_barbara_in_blure_dissolve2
+    scene bg int_dining_hall_people_day
+    show mi normal pioneer
+    with santa_barbara_in_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 2.0
-    show mi normal pioneer with dissolve
     window show dissolve
     ## Завтрак6
     "Как и предполагалось, шансов попасть в столовую не в час пик был нулевой."
@@ -1511,7 +1512,7 @@ label blwnfh_day_6:
         parallel:
             ease 1.0 rotate 0.0
     $ renpy.pause(1.0, hard=True)
-    show kat obida pioneer at right
+    show kat obida pioneer
 
     "Катя протянула мне руку и, взяв её, я поставил пионерку на ноги."
     "Ульяна же каким-то хитрым взглядом смотрела на меня."
@@ -1615,7 +1616,7 @@ label blwnfh_day_6:
         xcenter 0.28 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     $ renpy.pause(1.0, hard=True)
-    
+
     "Ульяна ушла дальше на поле к своим товарищам."
     
     me "Ну что? К Алисе?"
@@ -1811,7 +1812,7 @@ label blwnfh_day_6:
     
     window hide dissolve
     stop ambience fadeout 5.0
-    scene bg int_editorial_day 
+    scene bg int_editorial_day_bumaga 
     show kat normal pioneer
     with slide_up_blure_dissolve5
     play ambience ambience_library_day fadein 5.0

@@ -947,7 +947,7 @@ label blwnfh_day_6:
     $ renpy.music.set_pause(True, channel='music')
     stop ambience fadeout 3
     show black with dspr
-    play ambience blwnfh_ambience_list["thunder"] fadein 2
+    play ambience blwnfh_ambience_list["thunder1"] fadein 2
     $ renpy.pause (2.5, hard=True)
     window show
     
@@ -1484,9 +1484,9 @@ label blwnfh_day_6:
     show kat normal pioneer:
         subpixel True
         parallel:
-            ease 1.0 xcenter 0.76 ycenter 0.90
+            ease 1.0 xcenter 0.76 ycenter 1.5
         parallel:
-            ease 1.0 rotate 23.0
+            ease 1.0 rotate 90.0
     "Катя посмотрела на Ульяну и плюхнулась на землю."
     
     th "М-да Кать[wp] Да ты лохушка, её тут даже не было."
@@ -1611,8 +1611,8 @@ label blwnfh_day_6:
     us "Эх, ладно."
     us "Дома она должна быть, но может уже ушла, не знаю."
     me "Хорошо, спасибо."
-    
-    show us normal pioneer:
+
+    show us normal:
         xcenter 0.28 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     $ renpy.pause(1.0, hard=True)
@@ -1667,7 +1667,7 @@ label blwnfh_day_6:
     "Это немного мешало бегать, но не в этом крылась главная проблема."
     "Проблема заключался в том, что этот «золотой» фотоаппарат я мог разбить вдребезги."
     "И ещё я тоже заодно мог разбиться."
-    "Однако, останавливаться и давать заднию было поздно."
+    "Однако, останавливаться и давать заднюю было поздно."
     "Ведь я уже практически дышал Кате в спину."
     
     th "Так Семён, просто будь чуть осторожнее и следи за дорогой."
@@ -2421,7 +2421,7 @@ label blwnfh_day_6:
     
     stop ambience fadeout 1.0
     scene bg ext_underwater with dissolve
-    play blwnfh_ambience_list["underwater2"] fadein 1.0
+    play ambience blwnfh_ambience_list["underwater2"] fadein 1.0
     play sound blwnfh_sfx_list["vsplesk_vodi"] fadein 0.5
     
     "И Катя не обманула, вода действительно была хороша."
@@ -2466,7 +2466,7 @@ label blwnfh_day_6:
     play sound blwnfh_sfx_list["vsplesk_vodi_2"]
     stop ambience fadeout 0.5
     scene bg ext_underwater with dspr
-    play blwnfh_ambience_list["underwater2"] fadein 0.5
+    play ambience blwnfh_ambience_list["underwater2"] fadein 0.5
     
     "Уже под водой я схватил её за ноги и потянул вниз."
     "Вот только, для меня стало некоторой неожиданность, что она начнёт так сильно бултыхаться."
@@ -2509,7 +2509,7 @@ label blwnfh_day_6:
     stop ambience fadeout 1.0
     play sound blwnfh_sfx_list["vsplesk_vodi_3"] fadein 0.5
     scene bg ext_underwater with dissolve
-    play blwnfh_ambience_list["underwater2"] fadein 1.0
+    play ambience blwnfh_ambience_list["underwater2"] fadein 1.0
     
     "Спустившись на пару метров, я малость расслабился."
     
@@ -2686,7 +2686,7 @@ label blwnfh_day_6:
     show cs normal:
         xcenter 0.5 ycenter 0.5
         ease_quart 3.0 xcenter 1.2 
-    $ renpy(1.5, hard=True)
+    $ renpy.pause(1.5, hard=True)
 
     ## Семён и Катя остаются одни на пляже
     me "Ну, и чертовка она, а?"
@@ -2834,7 +2834,7 @@ label blwnfh_day_6:
     "Стоп. {w}Рассерженная вожатая?"
     "Я медленно поднял на неё свой взгляд."
     
-    show mt angry pioneer at right
+    show mt angry pioneer
 
     mt "Семён, ты ничего не забыл?"
     me "Нет, я всё помню, а что?."
@@ -4199,7 +4199,7 @@ label blwnfh_day_6:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
-    show sh normal pioneer at left
+    show sh normal pioneer
     
     sh "Да-да, кто к нам пожаловал?"
     sh "О, привет Семён и[wp]"
@@ -4212,7 +4212,7 @@ label blwnfh_day_6:
     me "Девушке интересно чем мы тут занимаемся."
     me "Не поможешь провести экскурсию?"
     
-    show sh normal_smile pioneer at left with dspr
+    show sh normal_smile pioneer with dspr
     
     sh "Конечно же помогу!"
     sh "И так, с чего мы начнём?"
@@ -4390,7 +4390,7 @@ label blwnfh_day_6:
     
     show kat thinking with dspr
     
-    kat "Кстати, а где вам самолётик на радиоуправлении?"
+    kat "Кстати, а где ваш самолётик на радиоуправлении?"
     sh "Он в подсобке."
     
     show sh upset with dspr
@@ -4400,7 +4400,7 @@ label blwnfh_day_6:
     show kat happy with dspr
     
     kat "То есть, творческого беспорядка?"
-    sh "В данном случае именно бардак."
+    sh "В данном случае именно бардака."
     
     show sh normal
     show kat normal 
@@ -4516,7 +4516,7 @@ label blwnfh_day_6:
         ease_quart 2.0 xcenter 0.28
     with dspr 
     $ renpy.pause(2.0, hard=True)
-    show sh normal pioneer at left
+    show sh normal pioneer
 
     "А наш товарищ Шурик возвратился из подсобки."
     
@@ -4690,8 +4690,8 @@ label blwnfh_day_6:
         ease_quart 2.0 xcenter 0.72
     with dspr
     $ renpy.pause(2.0, hard=True)
-    show kat happy pioneer at left
-    show sh normal pioneer at right
+    show kat happy pioneer
+    show sh normal pioneer
     
     "И Катя, резко, пулей стартанула в противоположную сторону, пробежав мимо Шурика."
     "Он, конечно, попытался схватить её, но реакции не хватило."
@@ -4847,7 +4847,7 @@ label blwnfh_day_6:
         xcenter 1.2 ycenter 0.5
         ease_quart 2.0 xcenter 0.72
     $ renpy.pause(2.0, hard=True)
-    show sh normal pioneer at right
+    show sh normal pioneer
 
     "А спустя немного времени подоспел и сам Шурик."
     
@@ -5666,7 +5666,7 @@ label blwnfh_day_6:
     show kat normal pioneer:
         ease_quart 2.5 xcenter 0.72
     $ renpy.pause(2.5, hard=True)
-    show kat normal pioneer at right 
+    show kat normal pioneer
     
     "Вскоре Катя возвратилась." 
     

@@ -3242,7 +3242,9 @@ label blwnfh_day_5:
     "Тут и дураком быть не надо, чтобы понять одну простую истину." 
     "Сейчас мы будем таскать всю аппаратуру назад[wp] {w}Мать её за ногу."
     
-    show kat normal pioneer at left
+    show kat normal pioneer:
+        ease_quart 2.3 xcenter 0.28
+    $ renpy.pause(2.0, hard=True)
     show mt smile pioneer panama 
     show sv angry pioneer glasses tablet at right
     show el normal pioneer at fright 
@@ -3304,7 +3306,7 @@ label blwnfh_day_5:
     
     me "А ты чего осталась?"
     
-    show sv happy pioneer glasses tablet at left with dspr
+    show sv happy pioneer glasses tablet with dspr
     
     sv "А мне поручено проконтролировать вас."
     

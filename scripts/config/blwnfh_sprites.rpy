@@ -17,7 +17,7 @@ init 2:
                 'cry': 1, 'scared': 1, 'shocked': 1, 'surprise': 1, 'grin': 2, 'guilty': 3, 'shy': 3, 'sad': 3, 'laugh': 4, 'normal': 4, 'smile': 4, 'angry': 5, 'rage': 5,
             },
             'mz': {
-                'bukal': 1, 'normal': 1, 'laugh': 1, 'amazed': 1, 'fun': 1,  'hope': 1, 'sad': 1, 'sceptic': 1, 'smile2': 2, 'cry': 2, 'shyangry': 2,'angry': 2, 'rage': 2, 'confused': 3, 'excitement': 3, 'shy': 3, 'smile': 3,
+                'amazed': 1, 'bukal': 1, 'fun': 1, 'hope': 1, 'laugh': 1, 'normal': 1, 'sad': 1, 'sceptic': 1, 'angry': 2, 'cry': 2, 'rage': 2, 'shyangry': 2, 'smile': 2, 'confused': 3, 'excitement': 3, 'shy': 3,
             },
             'mt': {
                 'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1, 'angry': 2, 'rage': 2, 'grin': 3, 'laugh': 3,
@@ -242,14 +242,10 @@ init 2:
         
         ## Новые старые спрайты
         # Женя
-        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'es:<emotion>'])
-        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
-        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'es:<emotion>', 'es:glasses'])
-        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
-        make_sprites_for('mz', 'body', ['mod:body', 'es:<emotion>'])
-        make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
-        make_sprites_for('mz', 'body glasses', ['mod:body', 'es:<emotion>', 'es:glasses'])
-        make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'es:glasses'], exclude=('normal', 'bukal', 'laugh', 'shy', 'smile'))
+        make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'mod:glasses'])
+        make_sprites_for('mz', 'body', ['mod:body', 'mod:<emotion>'])
+        make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'mod:glasses'])
         
         # Оля
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distances = ['normal'])

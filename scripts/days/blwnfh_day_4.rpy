@@ -830,7 +830,7 @@ label blwnfh_day_4:
         xcenter 1.2 ycenter 0.5
         ease_quart 2.0 xcenter 0.5
     $ renpy.pause(2.0, hard=True)
-    show kat normal pioneer at center
+    show kat normal pioneer
     
     kat "Ну там немножко осталось, но теперь там не так хорошо видно грязь, а поэтому лучше сходи и поменяй сегодня рубашку."
     me "Та это понятно."
@@ -860,7 +860,7 @@ label blwnfh_day_4:
     
     "Выходя из-за спины, Катя похлопала мне по спине, от чего мне болью прострелило до самого мозга."
     
-    show kat happy pioneer at center with dspr
+    show kat happy pioneer with dspr
     
     me "КАТЯЯЯ!"
     kat "А вот нечего было надо мной прикалываться."
@@ -869,19 +869,19 @@ label blwnfh_day_4:
     
     me "Знаешь, мои шутки не делали больно."
     
-    show kat confused pioneer at center with dspr
+    show kat confused pioneer with dspr
     
     kat "Ой, а я тебе больно сделала?"
     me "Нет, совсем нет, было очень даже приятно."
     
     "С нескрываемым сарказмом сказал я."
     
-    show kat upset pioneer at center with dspr
+    show kat upset pioneer with dspr
     
     kat "Прости[wp] Пожалуйста."
     me "Прощаю, только давай уже скорее пойдем в библиотеку и отметимся."
     
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer with dspr
     
     kat "Угу[wp]"
     
@@ -918,7 +918,7 @@ label blwnfh_day_4:
     kat "Вот и пришли."
     me "Ага, теперь бы выжить, а то Женя не оставит нам шансов."
     
-    show kat confused pioneer at center with dspr
+    show kat confused pioneer with dspr
     
     kat "Думаю, всё будет не так плохо, как ты говоришь."
     me "А вот давай сейчас и узнаем."
@@ -1273,7 +1273,7 @@ label blwnfh_day_4:
     "Я громко окликнул Ульянку и та, обнаружив меня, что-то сказала своим товарищам по команде и быстро подбежала к нам."
     
     show us normal sport2:
-        xcenter -0.4 ycenter 0.5
+        xcenter -0.4
         ease_quart 3.0 xcenter 0.5
     $ renpy.pause(1.5, hard=True)
     ## Берут интервью у Ульяны
@@ -1282,7 +1282,7 @@ label blwnfh_day_4:
     
     "Шутливо-ироничным голосом проговорил я, еле сдерживая смех." 
     
-    show us laugh sport2 at center 
+    show us laugh sport2
     show kat smile pioneer at right 
     with dspr
     
@@ -1303,11 +1303,11 @@ label blwnfh_day_4:
     
     us "А то всё походы на пятьдесят метров от лагеря да танцы какие-то дурацкие."
     
-    show us grin sport2 at center with dspr
+    show us grin sport2 with dspr
     
     us "К тому же мне наконец удастся отыграться в полную силу, а то когда просто играем, всё идёт ради веселья, а не победы."
     
-    show us normal sport2 at center with dspr
+    show us normal sport2 with dspr
     
     us "Думаю это всё, что я хотела бы сказать на данный счёт."
     
@@ -1315,21 +1315,22 @@ label blwnfh_day_4:
     
     me "Хорошо, следующий вопрос: Как проходят ваши тренировки?"
     
-    show us grin sport2 at center with dspr
+    show us grin sport2 with dspr
     
     us "Я активно тренирую свою команду самыми суровыми, но зато крайне эффективными методами, так что у противоположной команды не будет ни единого шанса на победу."
     dv "Это ещё почему же у нас не будет шанса на победу?"
     
     show dv normal sport:
-        xcenter 1.2 ycenter 0.5
-        ease_quart 2.0 xcenter 0.72
+        xcenter 1.2
+        ease_quart 2.0 xcenter 0.55
     show us normal sport2:
-        xcenter 0.5 ycenter 0.5
+        xcenter 0.5
         ease_quart 2.0 xcenter 0.28
     with dspr
     $ renpy.pause(2.0, hard=True)
-    show dv normal sport at right
-    show us normal sport2 at left
+
+    show dv normal sport
+    show us normal sport2
     
     "Неожиданно вклинилась Алиса."
     
@@ -1371,13 +1372,11 @@ label blwnfh_day_4:
     show kat normal pioneer with dspr
     
     show dv grin sport:
-        xcenter 0.28 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     show us normal sport2:
-        xcenter 0.72 ycenter 0.5
         ease_quart 1.5 xcenter 0.5
     $ renpy.pause(1.5, hard=True)
-    show us normal sport2 at center
+    show us normal sport2
     
     "Алиса оставила нас, уйдя к воротам."
     
@@ -1497,15 +1496,18 @@ label blwnfh_day_4:
     "Оставив Алису, мы направились к небольшой толпе участников, которая видимо была командой Ульяны, ибо она играла вместе с ними."
     
     window hide dissolve
+    show black with dissolve2
+    show kat at center behind black
     $ renpy.pause(2.0)
+    hide black with dissolve2
     window show dissolve
     
-    "Спустя примерно час, меня уже стало доставать задавать однотипные вопросы и слышать примерно одинаковые вопросы." 
+    "Спустя примерно час, меня уже стало доставать задавать однотипные вопросы и слышать примерно одинаковые ответы." 
     "Так что, когда допросил последнего пионера и сделав его фотографию, я решил, что с меня хватит."
     
     me "Всё, мне надоело, пошли уже обратно в библиотеку, думаю набранного материала нам более чем хватит."
     ## Катя и Семён решают возвращаться в библиотеку
-    show kat thinking pioneer at right with dspr
+    show kat thinking pioneer with dspr
     
     kat "Ты уверен? Может ещё пособирать интервью?"
     me "Ну такими темпами мы тут до вечера просидеть можем собирая интервью, только беда в том, что толку мало в этом, поскольку ответы будут примерно одинаковые."
@@ -1551,7 +1553,7 @@ label blwnfh_day_4:
     scene bg int_library_day 
     show mz normal glasses pioneer at left 
     show el normal pioneer at right 
-    with door_invert_blure_dissolve2
+    with bibl_entrance
     play ambience ambience_library_day fadein 2.0
     ## Семён в библиотеке натыкается на Сергея с Женей
     "На входе я встретил о чем-то разговаривающих Женю и Сергея."
@@ -1672,16 +1674,16 @@ label blwnfh_day_4:
         xcenter 1.2 ycenter 0.5
         ease_quart 1.5 xcenter 0.72
     $ renpy.pause(1.5, hard=True)
-    show kat confused pioneer at left
-    show mz rage glasses pioneer at center
-    show el normal pioneer at right
+    show kat confused pioneer
+    show mz rage glasses pioneer
+    show el normal pioneer
     
     mz "Ты что, всё это время сидел здесь и подслушивал?!"
     me "Ну[wp] Так[wp] Чуть-чуть, нельзя?"
     
     "Я попытался сделать самую добрую улыбку на свете, чтобы хоть немного смягчить ситуацию."
     
-    show mz angry glasses pioneer at left with dspr
+    show mz angry glasses pioneer with dspr
     
     mz "В таком случае мне очень интересно, что же ты услышал?"
     me "О ваших делах и то, что Серый рассказал тебе, что не следовало рассказывать."
@@ -1697,7 +1699,7 @@ label blwnfh_day_4:
     kat "О чём вы?"
     mz "Да этот дурак узнал, что я с Сережей через пару дней на остров поплывем."
     
-    show mz amazed glasses pioneer at left
+    show mz amazed glasses pioneer
     show el scared 
     with dspr
     
@@ -1717,7 +1719,7 @@ label blwnfh_day_4:
     kat "Ну пожалуйста!"
     el "Нет и всё, у нас к тому же есть санкция вожатой."
     
-    show mz bukal glasses pioneer at left with dspr
+    show mz bukal glasses pioneer with dspr
     
     mz "Сереж, я проговорилась, значит и мне решать."
     el "Ох, ну и каков же твой вердикт?"
@@ -1732,7 +1734,7 @@ label blwnfh_day_4:
     kat "Вот только[wp]"
     kat "А мне что, самой грести придется?"
     
-    show mz laugh glasses pioneer at left with dspr
+    show mz laugh glasses pioneer with dspr
     
     "Женя рассмеялась."
     
@@ -1742,7 +1744,7 @@ label blwnfh_day_4:
     
     kat "А как же, я не умею[wp]"
     
-    show mz bukal glasses pioneer at left with dspr 
+    show mz bukal glasses pioneer with dspr 
     
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     
@@ -1790,10 +1792,11 @@ label blwnfh_day_4:
     me "По делам ушла, как ты перед библиотекой например."
     
     show kat shy with dspr
-    
     kat "Наверное."
-    
-    show kat normal with dspr 
+
+    scene bg int_editorial_day_bumaga
+    show kat wr wr_normal background
+    with dspr 
     
     "Катя села за своё рабочее место, и я, сняв фотоаппарат и положив его на стол, сел рядом с ней."
     "Она подготовила печатную машинку вставив бумагу на место и положила руки на клавиши." 
@@ -1809,8 +1812,10 @@ label blwnfh_day_4:
     
     "Встав со своих мест, мы покинули подсобку."
     
-    show bg int_library_day with dissolve
-    
+    scene bg int_library_day
+    show kat smile pioneer
+    with dissolve
+
     "В библиотеке уже никого не было, так что мы здесь задерживаться не стали."
     
     window hide dissolve
@@ -1945,7 +1950,7 @@ label blwnfh_day_4:
     
     mt "Тогда иди бери своих товарищей в охапку и идите в кружок! Нечего тут валяться и бездельничать!"
     
-    show mt angry pioneer:
+    show mt angry pioneer panama:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     show kat normal pioneer:
@@ -1955,8 +1960,8 @@ label blwnfh_day_4:
         xcenter 1.2 ycenter 0.5
         ease_quart 2.5 xcenter 0.72
     $ renpy.pause(2.5, hard=True)
-    show un normal pioneer at right
-    show kat normal pioneer at left
+    show un normal pioneer
+    show kat normal pioneer
 
     "Рявкнув, Ольга Дмитриевна удалилась от столовой, и сразу же после этого вышли Катя и Лена."
     
@@ -2240,19 +2245,19 @@ label blwnfh_day_4:
     
     show mz bukal glasses pioneer far with dspr
     
-    "Она вернулась обратно к Дине и протянула ей книгу."
+    "Она вернулась обратно к Алисе и протянула ей книгу."
     "После чего села за своё рабочее место и сделала запись в журнал."
     
-    din "Наконец-то, блин."
+    dv "Наконец-то, блин."
     mz "Если и эту книгу мне испоганишь мало того, что больше не получишь."
     mz "Так и ещё заставлю тебя новые, такие же книги возвращать."
-    din "Да-да-да."
+    dv "Да-да-да."
     
     # дина исчезает
     
     show mz angry glasses pioneer far with dspr
     
-    "Диана покинула библиотеку, также громко хлопнув дверью."
+    "Алиса покинула библиотеку, также громко хлопнув дверью."
     "Женя от злости сжала кулаки и прорычала."
     
     show mz rage glasses pioneer far with dspr
@@ -2286,7 +2291,7 @@ label blwnfh_day_4:
     
     "Я быстрым шагом направился в подсобку."
     ## Семён уходит в подсобку
-    scene bg int_editorial_day
+    scene bg int_editorial_day_bumaga
     show un dr_normal_wk dr background
     show kat wr_normal_wk wr background
     with dissolve2
@@ -2350,7 +2355,9 @@ label blwnfh_day_4:
     
     "Катя схватила готовые листы и весело выбежала из подсобки."
     
-    hide kat with dissolve
+    show bg int_editorial_day
+    hide kat
+    with dissolve
     
     "Как только она вышла, я устало упал головой на стол."
     
@@ -2605,7 +2612,7 @@ label blwnfh_day_4:
         xcenter -0.5 ycenter 0.5
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
-    show mi normal pioneer at left
+    show mi normal pioneer
 
     "Вскоре Мику возвратилась с гитарой."
     
@@ -2689,7 +2696,7 @@ label blwnfh_day_4:
     show mi smile pioneer:
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
-    show mi smile pioneer at left
+    show mi smile pioneer
     
     "Вскоре Мику возвратилась с пледом, который был в клетку голубого цвета, в одной руке, а в другой у нее была небольшая корзинка, видимо, с разными вкусностями."
     
@@ -2701,8 +2708,8 @@ label blwnfh_day_4:
     mi "Это хорошо."
     mi "Ладно, хватит сидеть, пойдемте уже, а то времени-то у нас не то чтобы много."
     
-    "Я встал и помогя Кате поднятся с пола, мы вышли из муз кружка."
-    "Мику аккуратно положила всё добро н пол, и закрыла муз кружок на ключ, без всяких проблем. {w}Похоже Мику тоже известна тактика Слави, с аккуратным отношением к замку."
+    "Я помог Кате поднятся с пола, мы вышли из муз кружка."
+    "Мику аккуратно положила всё добро на пол, и закрыла муз кружок на ключ, без всяких проблем. {w}Похоже Мику тоже известна тактика Слави, с аккуратным отношением к замку."
     
     mi "Ну, в путь!"
     
@@ -3057,8 +3064,8 @@ label blwnfh_day_4:
         ease_quart 2.0 xcenter 0.84
     $ renpy.pause(1.0, hard=True)
     scene bg int_dining_hall_people_sunset 
-    show kat normal pioneer
-    show mi normal pioneer
+    show kat normal pioneer at right
+    show mi normal pioneer at left
     with dissolve2
 
     "В столовой уже было битком и найти место казалось крайне трудновыполнимой задачей."

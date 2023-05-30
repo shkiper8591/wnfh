@@ -347,9 +347,9 @@ label blwnfh_day_5:
     
     show kat normal pioneer:
         xcenter -1.2 ycenter 0.5
-        ease_quart 3.0 xcenter 0.5
+        ease_quart 3.0 xalign 0.5
     $ renpy.pause(3.0, hard=True)
-    show kat normal pioneer at center
+    show kat normal pioneer
     
     kat "Приветик, а ты чего под деревом делаешь?"
     
@@ -492,7 +492,7 @@ label blwnfh_day_5:
     
     "Восстановив равновесие, я вошел внутрь."
     
-    window hide
+    window hide dissolve
     show bg ext_musclub_verandah_day:
         subpixel True
         truecenter
@@ -500,11 +500,12 @@ label blwnfh_day_5:
         ease_quart 1.5 zoom 1.5 xcenter 0.4
     $ renpy.pause(1.5)
     stop ambience fadeout 0.5
-    scene bg int_musclub_day with dissolve2
+    scene bg int_musclub_day
+    show kat surprise pioneer at right
+    with dissolve2
     play ambience ambience_music_club_day fadein 2
-    show kat surprise pioneer at right with dissolve
     play music music_list["so_good_to_be_careless"] fadein 3
-    window show
+    window show dissolve
     
     kat "Ой[wp]"
     
@@ -994,8 +995,9 @@ label blwnfh_day_5:
     mi "Ой, неудобно вышло, вы уж простите меня, что я такая забывчивая, сейчас быстренько открою её вам."
     
     show kat normal pioneer at right:
-        ease_quart 2.0 xcenter -0.2
+        ease_quart 2.0 xcenter -0.4
     $ renpy.pause(2.0, hard=True)
+    hide kat
     
     "Мику достала из под рубашки небольшой ключик на веревке и открыла подсобку, в которую мигом же удалилась Катя."
     
@@ -1071,7 +1073,7 @@ label blwnfh_day_5:
     
     "Через силу сказал я хватаясь за голову и чуть пошатываясь на месте."
     
-    show mi serious at left with dspr
+    show mi serious with dspr
     
     mi "Семён, с тобой всё в порядке?"
     me "Да-да, просто[wp] {w}Голова чуточку разболелась."
@@ -1082,7 +1084,7 @@ label blwnfh_day_5:
     
     me "Мику[wp]"
     
-    show mi shy pioneer at left with dspr
+    show mi shy pioneer with dspr
     
     mi "Прости[wp]"
     
@@ -1118,6 +1120,7 @@ label blwnfh_day_5:
     kat "Мамальна."
     
     show kat grin pioneer:
+        xcenter -0.4 ycenter 0.5
         ease_quart 2.7 xcenter 0.5
         ease_quart 1.5 ycenter 0.58
         ease_quart 0.8 ycenter 0.5
@@ -1204,9 +1207,9 @@ label blwnfh_day_5:
     mi "Ага, спасибо."
     
     show mi normal pioneer:
-        ease_quart 3.0 xcenter -0.2
+        ease_quart 3.0 xcenter -0.4
     show kat normal pioneer:
-        ease_quart 2.5 xcenter -0.2
+        ease_quart 2.5 xcenter -0.4
     
     "Мику взяла свою постель и вместе с Катей они удалились в подсобку."
     
@@ -1254,17 +1257,15 @@ label blwnfh_day_5:
     
     $ blwnfh_set_mode()
     
-    show mi normal pioneer:
-        ease_quart 2.5 xcenter -0.2
-    show kat normal pioneer:
-        ease_quart 3.0 xcenter -0.2
-    
     "Закончив играть, я заметил, что девушки выглядывая из подсобки смотрят на меня."
     
     show mi normal pioneer:
         ease_quart 2.5 xcenter 0.28
     show kat normal pioneer:
         ease_quart 3.0 xcenter 0.72
+    $ renpy.pause(3.0, hard=True)
+    show mi normal pioneer
+    show kat normal pioneer
     
     "Видимо поняв, что их обнаружили, они вышли оттуда."
     
@@ -1296,8 +1297,9 @@ label blwnfh_day_5:
     me "И что, так точно попали? Не бывает такого."
     me "Да и[wp] {w}Ай, что я вам доказать-то пытаюсь."
     
-    show kat normal with dspr
-    show mi normal with dspr
+    show kat normal
+    show mi normal 
+    with dspr
     
     "Я отмахнулся рукой и отложил гитару в сторону."
     
@@ -1354,14 +1356,14 @@ label blwnfh_day_5:
     
     "Мику недовольно фыркнула и мы направились на выход."
     
-    window hide
+    window hide dissolve
     stop ambience fadeout 5
     scene bg ext_dining_hall_near_day
     show mi normal pioneer at left 
     show kat normal pioneer at right 
     with sphere_blure_dissolve5
     play ambience ambience_camp_center_day fadein 5
-    window show
+    window show dissolve
     
     "Быстрым шагом мы дошли до столовой и на удивление не оказались последними."
     "Перед нами в столовую вошли ещё несколько незнакомых мне пионеров."
@@ -1415,8 +1417,8 @@ label blwnfh_day_5:
     th "Солидный списочек хотя, могло быть и хуже." 
     th "Главное чтобы оборудование не весило под пол тонны."
     
-    show mt normal pioneer with dissolve
-    
+    show mt normal pioneer with dspr
+
     mt "Кстати говоря, ты будешь кого-то звать с собой комментировать?"
     
     "Куда более мягким и добрым голосом сказала вожатая."
@@ -1630,6 +1632,8 @@ label blwnfh_day_5:
     show kat grin pioneer:
         ease_quart 1.8 xcenter 1.28
     $ renpy.pause(1.8, hard=True)
+    hide kat
+    hide mi
     
     "Они взяли тряпки и быстро разошлись по разным углам, а я недоумевающим взглядом проводил обоих."
     "Постояв ещё пару секунд я взял ведро и понес его в центр столовой."
@@ -1716,7 +1720,7 @@ label blwnfh_day_5:
     stop ambience fadeout 3
     scene bg int_clubs_male_day with dissolve2
     show el normal pioneer:
-        xcenter -0.2 ycenter 0.5
+        xcenter -0.4 ycenter 0.5
     play ambience ambience_int_cabin_day fadein 3
     
     "Дверь в подсобку была приоткрыта, а оттуда доносился какой-то шорох."
@@ -1731,7 +1735,7 @@ label blwnfh_day_5:
     
     el "Снова привет Шу[wp]" 
     
-    show el grin with dspr
+    show el grin pioneer with dspr
     
     el "А, это ты Семён, тогда доброе утро."
     me "Ага, доброе."
@@ -1818,14 +1822,14 @@ label blwnfh_day_5:
     
     "Собравшись с силами, я быстрым шагом отправился в путь."
     
-    window hide
+    window hide dissolve
     scene bg ext_stage_big_day with sphere_dissolve5
-    window show
+    window show dissolve
     
     "Сократив в некоторых местах, очень скоро я уже стоял у сцены."
     "На которой возился товарищ Александр." 
     
-    scene bg ext_stage_normal_day with dissolve
+    scene bg ext_stage_normal_day with dissolve2
     
     "Подойдя ближе, я скинул рядом со сценой кабеля и взобрался на нее."
     
@@ -2203,7 +2207,7 @@ label blwnfh_day_5:
     th "В прочем, всё что можно было обдумать, обдуманно по несколько десятков раз."
     th "Значит остается последняя стадия безумия: рассказывать анекдоты самому себе."
     th "И тут незамедлительно вспоминается один прекрасный анекдот:"
-
+    hide sh
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -2239,11 +2243,11 @@ label blwnfh_day_5:
     
     "Я встал и быстрым шагом отправился в столовую."
     
-    window hide
-    stop ambience fadeout 0.5
+    window hide dissolve
+    stop ambience fadeout 5.0
     scene bg int_dining_hall_day with slide_up_dissolve5
     play ambience ambience_dining_hall_empty fadein 5.0
-    window show
+    window show dissolve
     
     "В столовой было пусто, даже наши дежурные куда-то запропастились."
     "Взяв поднос я занял своё обыденное место в дальнем углу."
@@ -2256,9 +2260,9 @@ label blwnfh_day_5:
     
     "Я тут же принялся уничтожать свой обед, пока столовая, тем временем, стала наполнятся пионерами."
 
-    stop ambience fadeout 1.0
+    stop ambience fadeout 2.0
     scene bg int_dining_hall_people_day with dissolve2
-    play ambience ambience_dining_hall_full fadein 2.5
+    play ambience ambience_dining_hall_full fadein 2.0
     
     "Однако, еда на вкус была такой себе."
     "Макароны были явно недосолённы, мясо было каким-то чёрвствым."
@@ -2400,9 +2404,9 @@ label blwnfh_day_5:
     "Недовольно пробурчала Катя, которая уже вышла из-за стола."
     "Мы согласно покивали и взяли курс на выход из столовой."
     
-    stop ambience fadeout 1.0
-    show bg ext_dining_hall_near_day with dissolve
-    play ambience ambience_camp_center_day fadein 1.0
+    stop ambience fadeout 2.0
+    show bg ext_dining_hall_near_day with dissolve2
+    play ambience ambience_camp_center_day fadein 2.0
     
     "Покинув её пределы, я встал на крыльце и сделал глубокий вдох."
     "После почти получаса нахождения в замкнутом помещении, мне просто был необходим этот глоток свежего воздуха."
@@ -2466,7 +2470,7 @@ label blwnfh_day_5:
     mi "Мы очень верим в это!"
     
     show us normal sport2 bandage:
-        ease_quart 3.0 xcenter -0.2
+        ease_quart 3.0 xcenter -0.4
     show dv normal with dspr
     
     "Ульянка весело ускакала на дальний конец футбольного поля."
@@ -2518,20 +2522,22 @@ label blwnfh_day_5:
     "А какие-то занимали места на трибунах."
     "Я даже заметил несколько знакомых лиц, прошедших мимо:"
     #34 может сделать тут анимацию того, как названные ниже персонажи проходят перед семёном?
+    "Лену."
+
     show un normal pioneer:
         xcenter 1.2 ycenter 0.5
         ease_quart 6.5 xcenter -0.4
     $ renpy.pause(6.5, hard=True)    
     
-    "Лену."
-    
+    "Славю."
+
     hide un with dspr
     show sl normal sport:
         xcenter 1.2 ycenter 0.5
         ease_quart 6.5 xcenter -0.4
     $ renpy.pause(6.5, hard=True)
     
-    "Славю."
+    "И даже Сергея с Женей."
     
     hide sl with dissolve
     show el normal pioneer:
@@ -2540,11 +2546,10 @@ label blwnfh_day_5:
     show mz normal glasses pioneer:
         xcenter 1.4 ycenter 0.5
         ease_quart 6.5 xcenter -0.4 
-    
-    "И даже Сергея с Женей."
-    
-    hide el with dissolve
-    hide mz with dissolve
+    $ renpy.pause(6.5, hard=True)
+    hide el
+    hide mz
+    with dissolve
     
     "Из всех мимо прошедших, меня заинтересовала Славя."
     "А всё потому что она была в спортивной форме."
@@ -2556,7 +2561,7 @@ label blwnfh_day_5:
         xcenter 1.2 ycenter 0.5
         ease_quart 3.0 xcenter 0.5
     $ renpy.pause(1.5, hard=True)
-    
+
     "И, собственно, замыкая сзади вереницу пионеров, шла Ольга Дмитриевна, которая подошла к нам."
     
     show mt normal pioneer panama with dspr
@@ -2590,8 +2595,10 @@ label blwnfh_day_5:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.28
     with dspr
-    $ renpy.pause(1.5, hard=True)
-    
+    $ renpy.pause(2.5, hard=True)
+    show mt normal pioneer panama
+    show kat normal pioneer
+
     "Заняв наши места, мы стали внимательно слушать вожатую."
     
     mt "Значит так, через несколько минут уже начало."
@@ -2628,9 +2635,16 @@ label blwnfh_day_5:
     
     mt "Отлично, тогда я побежала и да прибудет с вами сила."
     
-    #34 надо анимацию того как ОД сваливает и Катя перемещается в центр экрана
-    hide mt with dissolve
-    show kat normal pioneer with dspr
+    show mt grin pioneer panama:
+        xcenter 0.72 ycenter 0.5
+        ease_quart 2.5 xcenter 1.2
+    show kat normal pioneer:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 2.5 xcenter 0.5
+    with dspr
+    $ renpy.pause(2.5, hard=True)
+    show kat normal pioneer
+    hide mt
     
     me "Честно, я немного волнуюсь."
     
@@ -2679,7 +2693,6 @@ label blwnfh_day_5:
     "Включив микрофон, я начал вещать."
     
     #34 тут надо арт где Катя и Семён сидят за столом комментаторском + нужна какая-нибудь бодренькая музычка.
-    hide kat with dissolve
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -2856,8 +2869,8 @@ label blwnfh_day_5:
     show kat normal pioneer:
         ease_quart 2.3 xcenter 0.28
     $ renpy.pause(2.3, hard=True)
-    show kat normal pioneer at left
-    show sl normal sport at right
+    show kat normal pioneer
+    show sl normal sport
     
     sl "Ну что, коментаторы, как вы тут?"
     me "Довольно неплохо."
@@ -2922,13 +2935,11 @@ label blwnfh_day_5:
     show kat normal pioneer:
         ease_quart 2.3 xcenter 0.5
     $ renpy.pause(2.3, hard=True)
-    show kat normal pioneer at center
+    show kat normal pioneer
+    hide sl
 
     "Славя ушла и мы снова остались наедине."
     "Я посмотрел на часы. {w}До начала второго тайма оставалось семь минут."
-    
-    hide sl
-    
     "Семь минут, на протяжении которых себя надо было чем-то занять[wp]"
     
     me "Кать, а какой у тебя любимый сухофрукт?"
@@ -3046,7 +3057,6 @@ label blwnfh_day_5:
     
     "Тем временем перерыв подходил к концу."
     
-    hide kat with dissolve
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -3270,14 +3280,25 @@ label blwnfh_day_5:
     
     mt "Какие молодцы, всё верно!"
     sv "Так что вперёд и с песней!"
-    #34 тут можно анимацию того как уходят Катя и вожатая за пределы экрана
-    hide kat
-    hide mt 
-    with dissolve
-    show sv angry pioneer glasses tablet at left
-    show el normal pioneer at right 
-    with dspr
     
+    show mt grin pioneer panama:
+        xcenter 0.5 ycenter 0.5
+        ease_quart 2.5 xcenter -0.4
+    show kat normal pioneer:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 2.5 xcenter -0.4
+    show sv angry pioneer glasses tablet:
+        xcenter 0.72 ycenter 0.5
+        ease_quart 3.0 xcenter 0.28
+    show el normal pioneer at right:
+        xcenter 0.84 ycenter 0.5
+        ease_quart 3.0 xcenter 0.72 
+    $ renpy.pause(3.0, hard=True)
+    show el normal pioneer
+    show sv angry pioneer glasses tablet
+    hide kat
+    hide mt
+
     "И мы все мы разошлись в разные стороны."
     "Вожатая с Катей ушагали с поля. Света же осталась."
     

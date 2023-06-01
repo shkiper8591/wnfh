@@ -28,7 +28,7 @@ init 2:
                 ["galary"       ,blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["news"         ,blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_news", _transition=dissolve)]                          ],
                 ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_prologue")]   ],
-                ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[Jump("technical_chocolatki")]                                           ],
+                ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[ShowMenu("blwnfh_load_screen", _transition=dissolve)]                                           ],
                 ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["preferences"  ,blwnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("blwnfh_preferences", _transition=dissolve)]                   ],
                 ["red"          ,im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],

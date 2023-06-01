@@ -518,7 +518,7 @@ label blwnfh_day_4:
     "Она протянула мне метлу, взяв которую, мы быстрым шагом отправились на площадь."
     
     play music music_list["my_daily_life"] fadein 3.5
-    scene bg ext_square_sunset 
+    scene bg ext_lenin_square_sunset 
     show sl normal pioneer 
     with sphere_invert_dissolve2
     ## Семён со Славей на площади убираются
@@ -1272,23 +1272,23 @@ label blwnfh_day_4:
     
     "Я громко окликнул Ульянку и та, обнаружив меня, что-то сказала своим товарищам по команде и быстро подбежала к нам."
     
-    show us normal sport2:
+    show usw normal sport2:
         xcenter -0.4
         ease_quart 3.0 xcenter 0.5
     $ renpy.pause(1.5, hard=True)
     ## Берут интервью у Ульяны
-    us "Приветик, чего звали?"
+    usw "Приветик, чего звали?"
     me "Здравствуй Ульяна, я и моя коллега прибыли к вам из известного и многоуважаемого кружка журналистики пионерлагеря «Совёнок», чтобы взять у вас интервью по поводу завтрашнего матча, разрешите задать вам пару вопросов?"
     
     "Шутливо-ироничным голосом проговорил я, еле сдерживая смех." 
     
-    show us laugh sport2
+    show usw laugh sport2
     show kat smile pioneer at right 
     with dspr
     
     "Ульяна и Катя оценили мою шутку, и если моя «коллега» лишь тихонько похихикала, то наша спортсменка звонко так рассмеялась."
     
-    us "Конечно же я разрешаю столь уважаемым товарищам задать мне пару вопросов, но только пару! Я всё же очень занятая!"
+    usw "Конечно же я разрешаю столь уважаемым товарищам задать мне пару вопросов, но только пару! Я всё же очень занятая!"
     
     show kat normal pioneer at right with dspr
     
@@ -1297,63 +1297,63 @@ label blwnfh_day_4:
     "Катя приготовила блокнот с карандашом, и я приступил к вопросам."
     
     me "И так, первый вопрос: Какое ваше общее мнение о грядущем матче?"
-    us "О, я крайне рада, что директор лагеря решил провести такое мероприятие!"
+    usw "О, я крайне рада, что директор лагеря решил провести такое мероприятие!"
     
-    show us upset with dspr
+    show usw upset with dspr
     
-    us "А то всё походы на пятьдесят метров от лагеря да танцы какие-то дурацкие."
+    usw "А то всё походы на пятьдесят метров от лагеря да танцы какие-то дурацкие."
     
-    show us grin sport2 with dspr
+    show usw grin sport2 with dspr
     
-    us "К тому же мне наконец удастся отыграться в полную силу, а то когда просто играем, всё идёт ради веселья, а не победы."
+    usw "К тому же мне наконец удастся отыграться в полную силу, а то когда просто играем, всё идёт ради веселья, а не победы."
     
-    show us normal sport2 with dspr
+    show usw normal sport2 with dspr
     
-    us "Думаю это всё, что я хотела бы сказать на данный счёт."
+    usw "Думаю это всё, что я хотела бы сказать на данный счёт."
     
     "Катя сделала запись в блокноте и кивнула мне, давая знак продолжать."
     
     me "Хорошо, следующий вопрос: Как проходят ваши тренировки?"
     
-    show us grin sport2 with dspr
+    show usw grin sport2 with dspr
     
-    us "Я активно тренирую свою команду самыми суровыми, но зато крайне эффективными методами, так что у противоположной команды не будет ни единого шанса на победу."
+    usw "Я активно тренирую свою команду самыми суровыми, но зато крайне эффективными методами, так что у противоположной команды не будет ни единого шанса на победу."
     dv "Это ещё почему же у нас не будет шанса на победу?"
     
     show dv normal sport:
         xcenter 1.2
         ease_quart 2.0 xcenter 0.55
-    show us normal sport2:
+    show usw normal sport2:
         xcenter 0.5
         ease_quart 2.0 xcenter 0.28
     with dspr
     $ renpy.pause(2.0, hard=True)
 
     show dv normal sport
-    show us normal sport2
+    show usw normal sport2
     
     "Неожиданно вклинилась Алиса."
     
-    show us surp1 sport2 with dspr
+    show usw surp1 sport2 with dspr
     
-    us "А почему же он у вас должен быть?"
+    usw "А почему же он у вас должен быть?"
     
     show dv laugh sport with dspr
     
     dv "Потому-что я на воротах стою, дурында, тебе ни за что меня не пробить."
     
-    show us laugh sport2 with dspr
+    show usw laugh sport2 with dspr
     
-    us "Ну это мы ещё посмотрим!"
+    usw "Ну это мы ещё посмотрим!"
     dv "А чего смотреть? Всё и так очевидно, ты и твоя команда – проиграют."
     
-    show us angry sport2 with dspr
+    show usw angry sport2 with dspr
     
-    us "Ну-ну! Я тебе на поле покажу ещё, на что способна!"
+    usw "Ну-ну! Я тебе на поле покажу ещё, на что способна!"
     dv "Ой боюсь-боюсь."
     me "Так, Двачевская, не мешайте работе журналистов."
     
-    show us normal sport2
+    show usw normal sport2
     show dv normal sport 
     with dspr
     
@@ -1373,44 +1373,44 @@ label blwnfh_day_4:
     
     show dv grin sport:
         ease_quart 2.0 xcenter -0.4
-    show us normal sport2:
+    show usw normal sport2:
         ease_quart 1.5 xcenter 0.5
     $ renpy.pause(1.5, hard=True)
-    show us normal sport2
+    show usw normal sport2
     
     "Алиса оставила нас, уйдя к воротам."
     
     me "Так, у тебя есть ещё что рассказать про свои тренировки?"
     
     hide dv
-    show us grin sport2 with dspr
+    show usw grin sport2 with dspr
     
     "На мой вопрос, Ульяна сделала хитрое лицо и отрицательно замотала головой."
     
-    us "Есть, только говорить об этом не буду! {w}Так сказать, секрет, о котором, может быть, после матча расскажу." 
+    usw "Есть, только говорить об этом не буду! {w}Так сказать, секрет, о котором, может быть, после матча расскажу." 
     me "Ладно, тогда сразу финальный вопрос: какую роль занимаешь на поле?"
-    us "Я атакующий."
+    usw "Я атакующий."
     me "Всё?"
-    us "Да."
+    usw "Да."
     me "Коротко, но и такой ответ мы принимаем."
     me "Спасибо за то, что дала нам интервью, нам было очень интересно слушать твои ответы."
-    us "А мне было очень интересно отвечать на ваши вопросы. {w}Ну всё, пока!"
+    usw "А мне было очень интересно отвечать на ваши вопросы. {w}Ну всё, пока!"
     me "Подожди."
     
-    show us sad sport2 at center with dspr
+    show usw sad sport2 at center with dspr
     
-    us "Что-то ещё?"
+    usw "Что-то ещё?"
     me "Прежде чем ты уйдешь, позволь мне сделать фотографию тебя."
-    us "Только быстро, ладно?"
+    usw "Только быстро, ладно?"
     me "Постараюсь, а теперь встань нормально и улыбнись."
     
-    show us normalsmile sport2 at center with dspr
+    show usw normalsmile sport2 at center with dspr
     
     "Ульяна последовала моему указанию и я, вскинув полароид, сделал фотографию, которая вскоре начала выезжать из фотоаппарата."
     
     me "Вот теперь можешь идти."
     
-    show us normalsmile sport2:
+    show usw normalsmile sport2:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     $ renpy.pause(1.0, hard=True)
@@ -1418,7 +1418,7 @@ label blwnfh_day_4:
     "Ульяна радостно ускакала обратно к своей команде на поле."
     "Вытащив фотографию и помохав ею, я протянул её Кате."
     
-    hide us
+    hide usw
 
     me "Положи её куда-нибудь к себе, у тебя её будет безопаснее хранить, чем у меня."
     
@@ -2449,7 +2449,7 @@ label blwnfh_day_4:
     scene bg ext_library_day with dissolve
     play ambience ambience_camp_center_day fadein 1.0
     $ renpy.pause(0.5)
-    scene bg ext_square_day with dissolve
+    scene bg ext_lenin_square_day with dissolve
     $ renpy.pause(0.5)
     #34 переходы
     ## Семён оставляет Катю и забегает в клубы
@@ -3025,7 +3025,7 @@ label blwnfh_day_4:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    scene bg ext_square_sunset
+    scene bg ext_lenin_square_sunset
     show mi normal pioneer at left
     show kat normal pioneer at right 
     with slide_right_dissolve2
@@ -3154,7 +3154,7 @@ label blwnfh_day_4:
     stop ambience fadeout 2.5
     scene bg ext_dining_hall_away_sunset with dissolve
     $ renpy.pause(1.0)
-    scene bg ext_square_sunset with dissolve
+    scene bg ext_lenin_square_sunset with dissolve
     $ renpy.pause(1.0)
     scene bg ext_houses_sunset with dissolve
     $ renpy.pause(1.0)

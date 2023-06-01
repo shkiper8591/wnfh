@@ -199,7 +199,7 @@ label blwnfh_day_2:
     $ renpy.pause(1.0, hard=True)
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
-    scene bg ext_square_sunset with slide_right_blure_dissolve2
+    scene bg ext_lenin_square_sunset with slide_right_blure_dissolve2
     ## Семён на площади
     "На площади уже собрался народ, и я встал в строй рядом с Серым." 
     
@@ -636,7 +636,7 @@ label blwnfh_day_2:
     scene bg ext_musclub_day with santa_barbara_out_blure_dissolve2
     $ renpy.pause(1.0)
     play music music_list["two_glasses_of_melancholy"] fadein 5
-    scene bg ext_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
     window show
     ## Славя докладывает где искать ОД
     "Проходя мимо по площади, нас позади окликнули."
@@ -1767,7 +1767,7 @@ label blwnfh_day_2:
     "Мику закрыла муз кружок, и мы отправились на площадь, дожидаться горна к ужину."
     
     window hide
-    scene ext_square_sunset with slide_up_blure_dissolve2
+    scene ext_lenin_square_sunset with slide_up_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     
@@ -1914,7 +1914,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_away_sunset with slide_right_blure_dissolve2
     $ renpy.pause(1.5) 
-    scene bg ext_square_sunset with dissolve
+    scene bg ext_lenin_square_sunset with dissolve
     $ renpy.pause(1.5)
     scene bg ext_boathouse_sunset with dissolve
     play ambience ambience_boat_station_day fadein 3
@@ -2024,7 +2024,7 @@ label blwnfh_day_2:
     window hide
     stop ambience fadeout 2.0
     stop music fadeout 2
-    scene bg ext_square_sunset with santa_barbara_out_blure_dissolve2
+    scene bg ext_lenin_square_sunset with santa_barbara_out_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 2
     window show
     
@@ -2047,7 +2047,7 @@ label blwnfh_day_2:
     window hide
     stop music fadeout 3
     stop ambience fadeout 0.5 
-    scene bg ext_square_night with dissolve2
+    scene bg ext_lenin_square_night with dissolve2
     $ blwnfh_set_time("night")
     play ambience ambience_camp_center_night fadein 3
     $ renpy.pause(1.5)

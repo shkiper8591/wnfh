@@ -190,7 +190,7 @@ label blwnfh_day_3:
     $ renpy.pause(1.0)
     scene bg ext_houses_sunset with slide_left_blure_dissolve
     $ renpy.pause(1.0)
-    scene bg ext_square_sunset with slide_up_blure_dissolve
+    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve
     play music music_list["silhouette_in_sunset"] fadein 5
     show mt pioneer normal with dissolve
     window show
@@ -373,7 +373,7 @@ label blwnfh_day_3:
     
     scene bg ext_dining_hall_away_sunset with slide_left_blure_dissolve2
     $ renpy.pause(1.5, hard=True)
-    scene bg ext_square_sunset with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve2
     $ renpy.pause(1.5, hard=True)
     scene bg ext_clubs_sunset with slide_up_blure_dissolve2
     
@@ -423,7 +423,7 @@ label blwnfh_day_3:
     ## Семён отправился на склад
     "Похрустев спиной, я отправился в сторону склада."
     
-    scene bg ext_square_day with slide_right_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_right_blure_dissolve2
     window show
     
     "Проходя мимо площади, мне повезло встретился со Славей, которая как мне показалось шла тоже в сторону склада."
@@ -754,7 +754,7 @@ label blwnfh_day_3:
     "Сделав глубокий вдох и выдох, я поплелся в сторону медпункта."
     
     window hide
-    scene bg ext_square_day with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_left_blure_dissolve2
     window show
 
     th "Боже, пусть всё пройдет нормально, и Виола не будет чудить, спокойно даст мне немного медикаментов, и я уйду с миром."
@@ -1045,14 +1045,14 @@ label blwnfh_day_3:
     "Я же отправился на площадь."
     
     window hide dissolve
-    scene bg ext_square_day with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_left_blure_dissolve2
     $ renpy.pause(2.0)
     window show dissolve
     ## Семён уселся на площади и к нему подошла Ульяна
     "Придя, я сел на скамейку, которая была прикрыта тенью от дерева, и стал ожидать начала обеда."
     "И постепенно меня начало клонить в сон."
     
-    show us smile pioneer:
+    show usw smile pioneer:
         xcenter -0.4 ycenter 0.5
         ease_quart 3.5 xcenter 0.5
     $ renpy.pause(3.0, hard=True)
@@ -1060,79 +1060,79 @@ label blwnfh_day_3:
 
     play music music_list["i_want_to_play"] fadein 3.0
     
-    us "Семён, чего развалился? Пошли на поле, в футбол поиграем!"
+    usw "Семён, чего развалился? Пошли на поле, в футбол поиграем!"
     
     "Я тяжело вздохнул."
     
     me "Уля, уже скоро обед, ну какой футбол?"
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Самый обычный, в котором я выигрываю, а ты проигрываешь!" 
+    usw "Самый обычный, в котором я выигрываю, а ты проигрываешь!" 
     me "Нет уж, проигрывать сегодня я не заинтересован."
     
-    show us laugh2 with dspr
+    show usw laugh2 with dspr
     
-    us "Ладно, понятно всё с тобой."
+    usw "Ладно, понятно всё с тобой."
     
-    show us normalsmile with dspr
+    show usw normalsmile with dspr
     
-    us "Тогда я пойду дальше к столовой."
+    usw "Тогда я пойду дальше к столовой."
     me "А, кстати, постой!"
     
-    show us normal with dspr
+    show usw normal with dspr
     
     "Ульяна, уже повернувшись в сторону столовой, вновь развернулась ко мне."
     
-    us "Что?"
+    usw "Что?"
     me "А ты случаем не знаешь где Сергей?"
     
     th "Конечно, глупо спрашивать такое у неё, ведь ей-то откуда знать, но[wp] Мало ли[wp]"
     
-    show us smile with dspr
+    show usw smile with dspr
     
-    us "Знаю!"
+    usw "Знаю!"
 
     "Бодро выдала она, чем сильно удивила меня."
     
     me "Скажешь?"
-    us "Не за просто так."
+    usw "Не за просто так."
     me "В футбол играть не буду."
     
-    show us upset with dspr
+    show usw upset with dspr
     
-    us "Да я это уже поняла." 
+    usw "Да я это уже поняла." 
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "У меня есть другое предложение."
+    usw "У меня есть другое предложение."
     me "И какое же?"
     
-    show us smile with dspr
+    show usw smile with dspr
     
     "Улька бросила на меня свой ехидный взгляд и хитро потирала ручки." 
     ## Ульяна предлагает воровство конфет
-    us "Да вот, мы с Алисой тут чаепитие запланировали вечерком[wp]"
-    us "Но у нас нет конфет[wp]"
+    usw "Да вот, мы с Алисой тут чаепитие запланировали вечерком[wp]"
+    usw "Но у нас нет конфет[wp]"
     me "Понятно, ты стесняешься попросить конфет, хорошо я возьму."
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Да подожди ты! Куда вперёд паровоза прёшь?!"
+    usw "Да подожди ты! Куда вперёд паровоза прёшь?!"
     
     "Озлобленно выдала она."
     
     me "Ладно-ладно."
     
-    show us smile with dspr
+    show usw smile with dspr
     
-    us "Так вот, конфет нет, но просить если просить их в буфете, то дадут слишком мало!"
-    us "Да и к тому же, так неинтересно."
+    usw "Так вот, конфет нет, но просить если просить их в буфете, то дадут слишком мало!"
+    usw "Да и к тому же, так неинтересно."
     me "О, только не говори мне, что[wp]"
     
-    show us laugh with dspr
+    show usw laugh with dspr
     
-    us "Поэтому я собираюсь украсть конфеты и ты мне в этом поможешь!"
+    usw "Поэтому я собираюсь украсть конфеты и ты мне в этом поможешь!"
     
     "Ввязываться, в такую детскую шалость мне не очень хотелось."
     "Ведь мне может прилететь как от вожатой, так и от Галины Петровны."
@@ -1144,22 +1144,22 @@ label blwnfh_day_3:
     stop music fadeout 3.0
     
     me "Ох, ладно, я согласен."
-    us "Отлично!"
+    usw "Отлично!"
     me "Но только с одним условием."
     
-    show us normal with dspr
+    show usw normal with dspr
     
-    us "И каким же?"
+    usw "И каким же?"
     me "Только если он не придёт в столовую."
     
-    show us surp1 with dspr
+    show usw surp1 with dspr
     
-    us "Так он и не придёт!"
+    usw "Так он и не придёт!"
     me "Откуда же такая уверенность?"
     
-    show us upset with dspr
+    show usw upset with dspr
     
-    us "А этого я уже не могу сказать."
+    usw "А этого я уже не могу сказать."
     
     play sound sfx_dinner_horn_processed
     
@@ -1170,18 +1170,18 @@ label blwnfh_day_3:
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg int_dining_hall_day
-    show us normal pioneer
+    show usw normal pioneer
     with santa_barbara_out_blure_dissolve2
     play ambience ambience_dining_hall_empty fadein 2.0
     $ renpy.pause(1.0)
     window show dissolve
     ## Семён сидит на обеде внимательно выискивая Сергея
-    show us normal pioneer:
+    show usw normal pioneer:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     $ renpy.pause(1.0)
     "Придя одними из первых, Ульяна ускакала к Алисе."
-    hide us
+    hide usw
     "Я же занял довольно хорошее место рядом со входом, чтобы отслеживать поступающих пионеров."
     "И вскоре столовая стала потихоньку наполнятся людьми."  
     
@@ -1204,36 +1204,36 @@ label blwnfh_day_3:
     
     "Одновременно с этим, я закончил есть свой обед, а ко мне подошла Ульянка."
     
-    show us smile pioneer:
+    show usw smile pioneer:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.5
     play music blwnfh_music_list["crimes"] fadein 2.5
     ## Семён и Ульяна идут воровать конфеты
-    us "Ну что? Пойдем на дело?"
+    usw "Ну что? Пойдем на дело?"
     
     "Я немного усмехнулся."
     
     me "Ты мелкое хулиганство называешь «делом»?"
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Да, зануда!"
+    usw "Да, зануда!"
     me "Ой, ладно тебе, пойдем уже, а то времени немного."
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Вот так бы сразу!"
+    usw "Вот так бы сразу!"
     
-    show us normalsmile with dspr
+    show usw normalsmile with dspr
     
     "Встав из-за стола, мы отправились к буфету."
     "Подойдя к нему, Ульяна достала из кармана два небольших пакета."
     
     th "Видимо она намерена ограбить столовую на серьезную сумму конфеток."
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "У тебя клешня большая, ты и воруешь."
+    usw "У тебя клешня большая, ты и воруешь."
     
     "Сказала она шёпотом."
     
@@ -1242,9 +1242,9 @@ label blwnfh_day_3:
     
     "Также тихо ответил я."
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Ты меня прекрасно понял, так что давай, работай."
+    usw "Ты меня прекрасно понял, так что давай, работай."
     
     show cg d3_me_us_crime with dissolve
     
@@ -1252,7 +1252,7 @@ label blwnfh_day_3:
     "Делал я всё быстро, так что конфеты иногда выпадали, но Ульяна словно волк из игры, где он ловил яйца, подставляла пакет." 
     "Решив немного ускорить дело, я подключил к работе вторую руку и за один заход заполнил пакет."
     
-    us "Теперь другой."
+    usw "Теперь другой."
     
     "Она завернула пакет, положила его на стол рядом и подготовила уже следующий. Его я наполнил за три захода."
     "Управились мы чуть больше чем за минуту, но создали море шума, на который вышло древнее зло – Галина Петровна." 
@@ -1260,10 +1260,10 @@ label blwnfh_day_3:
     gp "Вот же мелкие вредители. Зина! У нас конфеты воруют!"
 
     hide cg d3_me_us_crime
-    show us fear
+    show usw fear
     with dspr
 
-    us "Вот холера! Нас раскрыли!"
+    usw "Вот холера! Нас раскрыли!"
 
     ## Семён и Ульяна убегают из столовой с конфетами
     "В спешке завернув этот и забрав первый пакет, мы стали быстро удирать из столовой."
@@ -1279,17 +1279,17 @@ label blwnfh_day_3:
     
     "Уже выйдя из столовой, я вздохнул с облегчением."
     
-    us "Дурак, потом вздыхать будешь, надо прятаться!"
+    usw "Дурак, потом вздыхать будешь, надо прятаться!"
     
     "И Ульяна была права, ведь было чётко слышно как кто-то быстро шагал к выходу."
     
-    us "Сюда!"
+    usw "Сюда!"
     
     "Главная воровка спрыгнула с крыльца и убежала за столовую."
     "Разумеется, я последовал за ней."
     
     scene bg ext_dining_hall_backroad_day 
-    show us sad pioneer close at center
+    show usw sad pioneer close at center
     with slide_down_blure_dissolve
     ## Семён и Ульяна успешно украв конфеты прячутся за столовой
     "Мы спрятались за столовой, а спустя пару секунд было слышно звук открывающейся двери."
@@ -1308,9 +1308,9 @@ label blwnfh_day_3:
     "Отлипли мы от стены только тогда, когда повариха закрыла за собой дверь."
     
     play music blwnfh_music_list["crimes_2"] fadein 3.0
-    show us laugh2 with dspr
+    show usw laugh2 with dspr
     
-    us "Это было весело!"
+    usw "Это было весело!"
     
     # тут дать достижение "конфетный вор"
     
@@ -1318,96 +1318,96 @@ label blwnfh_day_3:
     
     me "Не кричала бы ты так, а то Галина Петровна нас услышит."
     
-    show us upset with dspr
+    show usw upset with dspr
     
-    us "Так она же старая, плохо слышит."
+    usw "Так она же старая, плохо слышит."
     me "Такое сложно не услышать."
     
-    show us normalsmile with dspr
+    show usw normalsmile with dspr
     
-    us "Ладно, давай смотреть чего мы смогли поймать."
+    usw "Ладно, давай смотреть чего мы смогли поймать."
     
     "Ульяна раскрыла один пакет и стала рассматривать конфеты."
     "Вскоре она протянула его мне."
     
-    us "Вот, это тебе, так сказать, доля."
+    usw "Вот, это тебе, так сказать, доля."
     me "О как, наверное самые невкусные конфеты мне отдала."
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Почему сразу невкусные?! Это Московские вообще-то!"
+    usw "Почему сразу невкусные?! Это Московские вообще-то!"
     th "Будучи мелким, часто слышал, что раз конфеты Московские то очень вкусные. {w}Мама всегда так говорила, и она всегда была права."
     me "Спасибо конечно, но вообще я пошёл на это ради информации где Сергей."
     
     stop music fadeout 3.0
-    show us normal with dspr
+    show usw normal with dspr
     
-    us "А ты уверен, что хочешь знать где он?"
+    usw "А ты уверен, что хочешь знать где он?"
     me "Да, в конце концов он на обед не явился, может с голоду помирает."
     me "А так хотя бы конфет ему отнесу."
     th "В конце концов, не думаю что там что-то плохое."
     th "Да и какие вообще могут быть сомнения? Если бы с ним случилось что-то действительно плохое Ульяна, какой бы она не была, не стала втягивать меня в эту детскую шалость."
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Ну тогда уж лучше присядь на что-нибудь, ведь то, что ты сейчас услышишь, заставит упасть."
+    usw "Ну тогда уж лучше присядь на что-нибудь, ведь то, что ты сейчас услышишь, заставит упасть."
     
     "Я осмотрелся и не найдя на что можно присесть, просто сел на корточки."
     
     me "Давай выкладывай, не тяни."
 
-    show us smile with dspr
+    show usw smile with dspr
     ## Ульяна рассказывает где пропадает Серый
-    us "В общем он в библиотеке с Женей целовался."
+    usw "В общем он в библиотеке с Женей целовался."
     me "Серьёзно?"
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Серьёзнее некуда."
+    usw "Серьёзнее некуда."
     
     "Я медленно встал обратно."
     
     me "Эта информация не стоила воровства конфет."
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Ой да ладно тебе, подурачиться уже немного нельзя?"
+    usw "Ой да ладно тебе, подурачиться уже немного нельзя?"
     
-    show us normal with dspr
+    show usw normal with dspr
     
-    us "Я с этими тренировками уже вся устала, хочется развеяться немного."
+    usw "Я с этими тренировками уже вся устала, хочется развеяться немного."
     me "Какими ещё тренировками?"
     
-    show us laugh2 with dspr
+    show usw laugh2 with dspr
     
-    us "А у нас скоро[wp]"
+    usw "А у нас скоро[wp]"
     
     "Начала весёлым голосом Ульянка."
     
-    show us shy with dspr
+    show usw shy with dspr
     
     "Но тут же прервалась."
     
-    us "Ой, чуть не проговорилась."
-    us "Неважно! Забудь."
+    usw "Ой, чуть не проговорилась."
+    usw "Неважно! Забудь."
     
     "Я пожал плечами."
     
     me "Как скажешь."
     
-    show us normalsmile with dspr
+    show usw normalsmile with dspr
     
-    us "В общем, я выполняла свое обещание, а теперь потопала лопать добычу!"
+    usw "В общем, я выполняла свое обещание, а теперь потопала лопать добычу!"
     
     "Ульяна убежала от столовой, примерно в сторону спортплощадки."
     
-    show us normalsmile:
+    show usw normalsmile:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.0 xcenter -0.4
     
     me "А не слипнется?"
     
-    hide us
+    hide usw
 
     "Кинул я ей вдогонку, но кажется моё послание до нее не дошло."
     "Я же потопал в сторону библиотеки, кормить наших любовников."
@@ -1560,7 +1560,7 @@ label blwnfh_day_3:
     th "Да уж, путь предстоит мне не близкий."
     
     window hide dissolve
-    scene bg ext_square_day with sphere_invert_dissolve2
+    scene bg ext_lenin_square_day with sphere_invert_dissolve2
     window show dissolve
     
     th "Блин, угораздило же меня согласится сыграть на гитарах[wp]"
@@ -1697,7 +1697,7 @@ label blwnfh_day_3:
     window hide
     scene bg ext_houses_day with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
-    scene bg ext_square_day with slide_diagonal_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
     scene bg ext_musclub_day with slide_diagonal_blure_dissolve2
     show dv normal pioneer2 with dissolve 

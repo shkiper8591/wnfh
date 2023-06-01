@@ -28,7 +28,7 @@ init 2:
             'un': {
                 'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
             },
-            'us': {
+            'usw': {
                 'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
             },
             'cs': {
@@ -259,20 +259,20 @@ init 2:
         make_sprites_for('mt', 'body panama', ['es:body', 'es:<emotion>', 'es:panama'])
         
         # Ульяна
-        make_sprites_for('us', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
-        make_sprites_for('us', 'pioneer bant', ['mod:body2', 'mod:pioneer', 'mod:<emotion>'])
-        make_sprites_for('us', 'dress', ['mod:body', 'mod:dress', 'mod:<emotion>'])
-        make_sprites_for('us', 'dress bant', ['mod:body2', 'mod:dress', 'mod:<emotion>'])
-        make_sprites_for('us', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
-        make_sprites_for('us', 'swim bant', ['mod:body2', 'mod:swim', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport bant', ['mod:body2', 'mod:sport', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport2', ['mod:body', 'mod:sport2', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport2 bant', ['mod:body2', 'mod:sport2', 'mod:<emotion>'])
-        make_sprites_for('us', 'sport2 bandage', ['mod:body', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
-        make_sprites_for('us', 'sport2 bant bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
-        make_sprites_for('us', 'body', ['mod:body', 'mod:<emotion>'])
-        make_sprites_for('us', 'body bant', ['mod:body2', 'mod:<emotion>'])
+        make_sprites_for('usw', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('usw', 'pioneer bant', ['mod:body2', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('usw', 'dress', ['mod:body', 'mod:dress', 'mod:<emotion>'])
+        make_sprites_for('usw', 'dress bant', ['mod:body2', 'mod:dress', 'mod:<emotion>'])
+        make_sprites_for('usw', 'swim', ['mod:body', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('usw', 'swim bant', ['mod:body2', 'mod:swim', 'mod:<emotion>'])
+        make_sprites_for('usw', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('usw', 'sport bant', ['mod:body2', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('usw', 'sport2', ['mod:body', 'mod:sport2', 'mod:<emotion>'])
+        make_sprites_for('usw', 'sport2 bant', ['mod:body2', 'mod:sport2', 'mod:<emotion>'])
+        make_sprites_for('usw', 'sport2 bandage', ['mod:body', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
+        make_sprites_for('usw', 'sport2 bant bandage', ['mod:body2', 'mod:sport2', 'mod:<emotion>', 'mod:bandage'])
+        make_sprites_for('usw', 'body', ['mod:body', 'mod:<emotion>'])
+        make_sprites_for('usw', 'body bant', ['mod:body2', 'mod:<emotion>'])
         
         # Лена
         

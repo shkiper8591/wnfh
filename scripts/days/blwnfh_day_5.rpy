@@ -1944,42 +1944,42 @@ label blwnfh_day_5:
     sh "Каждый будет говорить из своей колонки."
     me "Ясненько."
     
-    show us surp1 sport at right with dissolve
+    show usw surp1 sport at right with dissolve
     
     "Тут, вся запыхавшись, к нам подбежала Ульянка."
     
-    us "Ого, как вы это смогли дотащить?! {w}Она же неподъемная!"
+    usw "Ого, как вы это смогли дотащить?! {w}Она же неподъемная!"
     
     "Она удивлённым взглядом смотрела на нас и на колонку."
     "А после чего, видимо пытаясь доказать свою правоту, попыталась сдвинуть сей квадрат с места."
     "И словно как в каких-то мультиках, она бегала вокруг колонки, давя то на одну, то на другую сторону."
     "Естественно у нее ничего не получилось и вскоре Ульяна сдалась."
     
-    show us sad with dspr
+    show usw sad with dspr
     
-    us "Фу-у-ух[wp]"
+    usw "Фу-у-ух[wp]"
     me "Ну а чё ты хотела, сорок девять тонн!"
     
-    show us smile with dspr
+    show usw smile with dspr
     
-    us "Кому лапшу на уши вешаешь, вам ни за что такой вес не поднять."
+    usw "Кому лапшу на уши вешаешь, вам ни за что такой вес не поднять."
     me "Так мы же Гераклы с Шуриком, чё нам какая-то лёгонькая коробочка."
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Лёгонькая говоришь?"
-    us "А чего ж тогда с вас двоих пот течёт ручьем?"
+    usw "Лёгонькая говоришь?"
+    usw "А чего ж тогда с вас двоих пот течёт ручьем?"
     me "Жарко просто."
     
-    show us laugh2 with dspr
+    show usw laugh2 with dspr
     
-    us "Ну-ну!"
+    usw "Ну-ну!"
     sh "Семён, это конечно всё очень смешно и весело, но нам надо нести вторую колонку."
     me "Да, пойдем."
     
-    show us normalsmile with dspr
+    show usw normalsmile with dspr
     
-    us "Ещё увидимся!"
+    usw "Ещё увидимся!"
     me "Несомненно."
     
     window hide
@@ -2418,26 +2418,26 @@ label blwnfh_day_5:
     "Катя и Мику же расположились позади меня."
     
     show dv normal sport isolenta at left 
-    show us normal sport2 bandage at right 
+    show usw normal sport2 bandage at right 
     with dissolve
     
     dv "Что, занимаете самые лучшие места?"
     me "Не-е-е, у меня и Кати место покруче этих будет."
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "Да? И какое-же?"
+    usw "Да? И какое-же?"
     me "За столом коментатора!"
     me "Будем мы объявлять на всё поле успехи и провалы ваши."
     
-    show us surp1 with dspr
+    show usw surp1 with dspr
     
-    us "Ого! И правда отличное вам местечко досталось[wp]"
+    usw "Ого! И правда отличное вам местечко досталось[wp]"
     
-    show us laugh with dspr
+    show usw laugh with dspr
     
-    us "Только вы это, давайте лучше провалы Алисы освещайте."
-    us "А если успехи, то только мои!"
+    usw "Только вы это, давайте лучше провалы Алисы освещайте."
+    usw "А если успехи, то только мои!"
     kat "Нет Ульяна, мы так делать не будем."
     
     "Донеслось откуда-то из-за спины."
@@ -2448,35 +2448,35 @@ label blwnfh_day_5:
     
     dv "А ещё у тебя не будет ни одного успешного момента за весь матч."
     
-    show us dontlike with dspr
+    show usw dontlike with dspr
     
-    us "Да ну вас, ты-то, Семён, на моей стороне?"
+    usw "Да ну вас, ты-то, Семён, на моей стороне?"
     me "Прости уж, но я не могу с ними не согласится."
     me "Ну разве что насчёт слов Алисы сомневаюсь."
 
-    show us upset with dspr
+    show usw upset with dspr
     
-    us "Ну и ладно, я и так победю."
+    usw "Ну и ладно, я и так победю."
     
-    show us calml sport2 bandage at right with dspr
+    show usw calml sport2 bandage at right with dspr
     
-    us "Побежду. {w}Побе[wp]"
+    usw "Побежду. {w}Побе[wp]"
     
-    show us grin sport2 bandage:
+    show usw grin sport2 bandage:
         xcenter 0.72 ycenter 0.5
     with dspr
     
-    us "Выиграю короче!"
+    usw "Выиграю короче!"
     mi "Мы очень верим в это!"
     
-    show us normal sport2 bandage:
+    show usw normal sport2 bandage:
         ease_quart 3.0 xcenter -0.4
     show dv normal with dspr
     
     "Ульянка весело ускакала на дальний конец футбольного поля."
     "Алиса же осталась, и как-то странно изучала меня и Катю взглядом."
     
-    hide us
+    hide usw
     
     me "Что-то не так?"
     dv "Да нет, всё нормально."
@@ -3424,29 +3424,29 @@ label blwnfh_day_5:
     "К которым, взяв поднос с ужином, я и отправился."
     
     show dv normal pioneer at right
-    show us normal pioneer at left
+    show usw normal pioneer at left
     with dissolve
     
     me "Здарова будущая надежда нашей олимпийской сборной, можно к вам?"
     dv "Да, можно."
     me "Благодарю."
     
-    show us calml with dspr
+    show usw calml with dspr
     
-    us "А с каких это пор, голос проигравших стал иметь значение?"
+    usw "А с каких это пор, голос проигравших стал иметь значение?"
     
     show dv angry with dspr
     
     dv "А с каких это пор, мелким вообще давали право голоса?"
     
-    show us grin with dspr
+    show usw grin with dspr
     
-    us "А вот с таких!"
+    usw "А вот с таких!"
     
     th "Мда, похоже в тишине поужинать не получится."
     th "Что ж, режим абсолютного игнорирования внешних раздражителей — включён."
     
-    show us normal
+    show usw normal
     show dv normal 
     with dspr
     
@@ -3456,7 +3456,7 @@ label blwnfh_day_5:
     "В общем неплохо, неплохо."
     
     show dv laugh 
-    show us laugh 
+    show usw laugh 
     with dspr
     
     "И я бы так и продолжил спокойно есть, если бы не крайне странное обстоятельство."
@@ -3473,9 +3473,9 @@ label blwnfh_day_5:
 
     me "Так что вы хотели?"
     
-    show us normal with dspr
+    show usw normal with dspr
     
-    us "Почему «вы» сразу? Это всё она."
+    usw "Почему «вы» сразу? Это всё она."
     dv "Да, я просто хотела поинтересоваться, пойдешь ли ты сейчас в музклуб?"
     me "А, нет, не пойду, меня вожатая сегодня делами максимально загрузила за один только прогул линейки."
     me "И сейчас я пойду убираться у нас в доме."
@@ -3486,9 +3486,9 @@ label blwnfh_day_5:
     dv "Но зато теперь будешь знать, что бывает с теми, кто прогуливает!"
     dv "Мы вот с Ульянкой ни одной линейки не пропустили."
     
-    show us smile with dspr
+    show usw smile with dspr
     
-    us "Да-да!"
+    usw "Да-да!"
     me "Что ж, сочувствую вам, что впустую тратити своё время."
     dv "Ой, какая ты редиска." 
     
@@ -3497,7 +3497,7 @@ label blwnfh_day_5:
     me "Да, я такой, всё дайте теперь спокойно доесть."
     
     show dv normal 
-    show us normal 
+    show usw normal 
     with dspr
     
     dv "Хорошо."
@@ -3509,7 +3509,7 @@ label blwnfh_day_5:
     
     "Сказал я и покинул стол."
     
-    hide us
+    hide usw
     hide dv 
     with dissolve
     
@@ -3554,7 +3554,7 @@ label blwnfh_day_5:
     me "Всё, я пошел."
     
     stop ambience fadeout 2.0
-    scene bg ext_square_sunset with santa_barbara_out_dissolve2
+    scene bg ext_lenin_square_sunset with santa_barbara_out_dissolve2
     play ambience ambience_camp_center_evening fadein 2.0
     
     "Я кое-как ковылял домой."

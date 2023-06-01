@@ -496,7 +496,7 @@ label blwnfh_day_1:
     window hide
     scene bg ext_houses_day with slide_left_blure_dissolve2
     $ renpy.pause(2.0, hard=True)
-    scene bg ext_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
     $ renpy.pause(2.0)
     $ blwnfh_set_time()
     play music music_list["trapped_in_dreams"] fadein 3.5
@@ -530,7 +530,7 @@ label blwnfh_day_1:
     "А даме, так уж повелось, отказывать нельзя."
     
     $ blwnfh_set_name("un", "Лена")
-    scene bg ext_square_day
+    scene bg ext_lenin_square_day
     show un smile pioneer at center
     show unblink
     with None
@@ -570,7 +570,7 @@ label blwnfh_day_1:
     
     th "Видно не судьба мне ещё немного поспать сегодня."
     
-    scene bg ext_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
     
     "Я опустил голову и перевел свой взгляд на нее."
     
@@ -869,9 +869,9 @@ label blwnfh_day_1:
     "Конечно, сидеть с ними было сомнительным удовольствием, но выбора нет."
     ## Стас, поправь Ульяну. Если ты это не сделаешь, то я сожру тебя с говном. 
     ## Диалог с рыжими
-    show chair_l behind us
+    show chair_l behind usw
     show chair_r behind dv
-    show us grin pioneer at blwnfh_sit_left behind table
+    show usw grin pioneer at blwnfh_sit_left behind table
     show dv normal pioneer at blwnfh_sit_right behind table
     show table
     show shakers
@@ -884,7 +884,7 @@ label blwnfh_day_1:
     
     me "Можно к вам сесть?"
     dv "Да, можно."
-    us "Конечно!"
+    usw "Конечно!"
     
     show mid d5_breakfast_full tray spoon foods
     with dissolve
@@ -896,7 +896,7 @@ label blwnfh_day_1:
     "Усевшись за стол, я бегло изучий свой завтрак."
     
     me "Что это такое?"
-    us "Овсянка, сэр!"
+    usw "Овсянка, сэр!"
     me "Сколько можно подавать эту овсянку чёртову?"
     dv "Скажи спасибо, что наполнение другое."
     
@@ -909,9 +909,9 @@ label blwnfh_day_1:
     me "Продолжу с моделистами моделировать. {w}А что?"
     dv "Да вот[wp]"
     
-    show us laugh pioneer at blwnfh_sit_left behind table with dspr
+    show usw laugh pioneer at blwnfh_sit_left behind table with dspr
     
-    us "На свиданку тебя позвать хочет!"
+    usw "На свиданку тебя позвать хочет!"
     
     "Довольно громко выдала Ульяна, от чего некоторые пионеры поблизости странно покосились на нас."
     
@@ -921,9 +921,9 @@ label blwnfh_day_1:
     
     "Алиса дала Ульяне лёгкий подзатыльник."
     
-    show us upset pioneer at blwnfh_sit_left behind table with dspr
+    show usw upset pioneer at blwnfh_sit_left behind table with dspr
     
-    us "Ой да ладно тебе, пошутить уже немного нельзя?"
+    usw "Ой да ладно тебе, пошутить уже немного нельзя?"
     dv "Нет, такие шутки нельзя шутить!"
     
     show dv shy pioneer at blwnfh_sit_right behind table with dspr
@@ -934,9 +934,9 @@ label blwnfh_day_1:
     "Застенчивым голосом сказала Алиса."
     "Ульяна же быстро вернулась к своему нормальному состоянию."
     
-    show us normalsmile pioneer at blwnfh_sit_left behind table with dspr
+    show usw normalsmile pioneer at blwnfh_sit_left behind table with dspr
     
-    us "Ну-ну!"
+    usw "Ну-ну!"
     me "Мдэ[wp]"
     
     "Я вернулся к своему завтраку, как тут же к нам чуть ли не подбежала Ольга Дмитриевна."
@@ -962,7 +962,7 @@ label blwnfh_day_1:
     mt "К нам пополнение приехало и его надо встретить и сопроводить ко мне."
     
     show dv smile pioneer at blwnfh_sit_right behind table with dspr
-    show us smile pioneer at blwnfh_sit_left behind table with dspr
+    show usw smile pioneer at blwnfh_sit_left behind table with dspr
     
     "Когда она это сказала, Ульяна и Алиса быстренько перекинулись хитрыми взглядами."
     
@@ -1002,11 +1002,11 @@ label blwnfh_day_1:
     
     me "Так дамы, я опаздываю, так что покеда."
     
-    show us dontlike pioneer at blwnfh_sit_left behind tableм with dspr 
+    show usw dontlike pioneer at blwnfh_sit_left behind tableм with dspr 
     
     "Я встал из-за стола."
     
-    us "Эй, а убирать за тобой кто будет?"
+    usw "Эй, а убирать за тобой кто будет?"
     # тут можно добавить выбор с тем что убирать поднос за собой или нет !7
     "Недовольным голосом сказала Ульянка."
     
@@ -1028,7 +1028,7 @@ label blwnfh_day_1:
     
     $ renpy.pause(1)
     
-    scene bg ext_square_day with dissolve2
+    scene bg ext_lenin_square_day with dissolve2
     window show
     
     "Покинув территорию столовой, я отправился напрямую к остановке."
@@ -1768,50 +1768,50 @@ label blwnfh_day_1:
     "Провозившись так около полутара или двух минут, мне всё же удалось закрыть дверь."
     "Положив ключ под лавку в специальную выемку, я отправился в столовую."
     
-    window hide
-    scene bg ext_square_day with slide_left_blure_dissolve2
-    $ blwnfh_set_name("din", "Пионерка")
-    window show
-    ## Семён сталкивается с Диной по пути в столовую
-    "Я спокойно проходил мимо площади, насвистывая простенькую мелодию."
-    "Как неожиданно послышались быстро приближающиеся шаги."
-    "Очевидно, кто-то позади меня бежал."
+    #window hide
+    #scene bg ext_lenin_square_day with slide_left_blure_dissolve2
+    #$ blwnfh_set_name("din", "Пионерка")
+    #window show
+    ### Семён сталкивается с Диной по пути в столовую
+    #"Я спокойно проходил мимо площади, насвистывая простенькую мелодию."
+    #"Как неожиданно послышались быстро приближающиеся шаги."
+    #"Очевидно, кто-то позади меня бежал."
+    #
+    #din "Прочь с дороги!"
+    #me "А?"
+    #
+    #"Я повернулся назад и тут же в меня врезалась пионерка."
+    #
+    #play sound sfx_chair_fall
+    #show bg ext_lenin_square_day at hpunch
+    #
+    #"Меня она сшибла с ног, а сама, чудом, смогла устоять на ногах."
+    #
+    #me "Блин, а нельзя было оббежать?"
+    #din "Нет, ты сам вышел на дорогу и встал как истукан."
+    #
+    #"Встав на ноги я оглядел её."
+    #"Это была наша местная бунтарка из соседнего отряда[wp] Кажется её зовут Дина."
+    #"И ещё она примерно на полгода младше меня."
+    #
+    #$ blwnfh_set_name("din", "Дина")
+    #
+    #me "Ты[wp] Дина, верно?"
+    #din "А кто же ещё!"
+    #me "Будь осторожнее в следующий раз."
+    #din "А ты внимательнее."
+    #
+    #th "Она меня передразнить пытается?"
+    #
+    #me "Я серьёзно. Ты же чуть не разбилась."
+    #din "Бла-бла, короче покеда, я не хочу опаздывать на обед."
+    #
+    #"Пионерка убежала в сторону столовой."
+    #"Я же сначала отряхнулся и только после этого продолжил свой путь."
     
-    din "Прочь с дороги!"
-    me "А?"
-    
-    "Я повернулся назад и тут же в меня врезалась пионерка."
-
-    play sound sfx_chair_fall
-    show bg ext_square_day at hpunch
-    
-    "Меня она сшибла с ног, а сама, чудом, смогла устоять на ногах."
-    
-    me "Блин, а нельзя было оббежать?"
-    din "Нет, ты сам вышел на дорогу и встал как истукан."
-    
-    "Встав на ноги я оглядел её."
-    "Это была наша местная бунтарка из соседнего отряда[wp] Кажется её зовут Дина."
-    "И ещё она примерно на полгода младше меня."
-    
-    $ blwnfh_set_name("din", "Дина")
-    
-    me "Ты[wp] Дина, верно?"
-    din "А кто же ещё!"
-    me "Будь осторожнее в следующий раз."
-    din "А ты внимательнее."
-    
-    th "Она меня передразнить пытается?"
-    
-    me "Я серьёзно. Ты же чуть не разбилась."
-    din "Бла-бла, короче покеда, я не хочу опаздывать на обед."
-    
-    "Пионерка убежала в сторону столовой."
-    "Я же сначала отряхнулся и только после этого продолжил свой путь."
-    
-    window hide
+    window hide dissolve
     scene bg ext_dining_hall_away_day with slide_right_blure_dissolve2
-    window show
+    window show dissolve
     
     "Прибыв на место, к моему удивлению, здесь всё ещё толпилось достаточно много пионеров."
     "От чего появлялась хоть и небольшая, но надежда, занять отличное место в глубине столовой и посидеть в гордом одиночестве."
@@ -2013,7 +2013,7 @@ label blwnfh_day_1:
     
     # переход
     window hide
-    scene bg ext_square_day with dissolve2
+    scene bg ext_lenin_square_day with dissolve2
     $ renpy.pause(1.5)
     window show
     
@@ -2356,7 +2356,7 @@ label blwnfh_day_1:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_square_night with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_night with slide_left_blure_dissolve2
     play ambience ambience_camp_center_night fadein 3
     window show
     

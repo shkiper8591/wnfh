@@ -2,11 +2,11 @@ init 2:
     screen blwnfh_load_screen:
         python:
             style.blwnfh_save_load_button = Style(style.button)
-            style.blwnfh_save_load_button.background = blwnfh_gui["saves"]["load_button_idle"]
-            style.blwnfh_save_load_button.hover_background = blwnfh_gui["saves"]["load_button_hover"]
-            style.blwnfh_save_load_button.selected_background = blwnfh_gui["saves"]["load_button_selected"]
-            style.blwnfh_save_load_button.selected_hover_background = blwnfh_gui["saves"]["load_button_selected"]
-            style.blwnfh_save_load_button.selected_idle_background = blwnfh_gui["saves"]["load_button_selected"]
+            style.blwnfh_save_load_button.background = blwnfh_gui["save_load"]["load_button_idle"]
+            style.blwnfh_save_load_button.hover_background = blwnfh_gui["save_load"]["load_button_hover"]
+            style.blwnfh_save_load_button.selected_background = blwnfh_gui["save_load"]["load_button_selected"]
+            style.blwnfh_save_load_button.selected_hover_background = blwnfh_gui["save_load"]["load_button_selected"]
+            style.blwnfh_save_load_button.selected_idle_background = blwnfh_gui["save_load"]["load_button_selected"]
             
         modal True tag menu
         window:
@@ -15,8 +15,8 @@ init 2:
                 area(0.5, 0.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 0.0
                 imagebutton:
-                    idle blwnfh_gui["saves"]["settings_idle"]
-                    hover blwnfh_gui["saves"]["settings_hover"]
+                    idle blwnfh_gui["save_load"]["settings_idle"]
+                    hover blwnfh_gui["save_load"]["settings_hover"]
                     xalign 0.1 yalign 0.08
                     action ShowMenu('blwnfh_preferences')
 
@@ -30,20 +30,20 @@ init 2:
                 xanchor 0.5 yanchor 1.0
 
                 imagebutton:
-                    idle blwnfh_gui["saves"]["back_idle"]
-                    hover blwnfh_gui["saves"]["back_hover"]
+                    idle blwnfh_gui["save_load"]["back_idle"]
+                    hover blwnfh_gui["save_load"]["back_hover"]
                     xalign 0.015 yalign 0.92
                     action Return()
     
                 imagebutton:
-                    idle blwnfh_gui["saves"]["load_game_idle"]
-                    hover blwnfh_gui["saves"]["load_game_hover"]
+                    idle blwnfh_gui["save_load"]["load_game_idle"]
+                    hover blwnfh_gui["save_load"]["load_game_hover"]
                     xalign 0.5 yalign 0.92
                     action (FunctionCallback(on_load_callback, selected_slot), FileLoad(selected_slot))
     
                 imagebutton:
-                    idle blwnfh_gui["saves"]["delete_idle"]
-                    hover blwnfh_gui["saves"]["delete_hover"]
+                    idle blwnfh_gui["save_load"]["delete_idle"]
+                    hover blwnfh_gui["save_load"]["delete_hover"]
                     xalign 0.97 yalign 0.92
                     action FileDelete(selected_slot)
     
@@ -56,8 +56,8 @@ init 2:
                                 background background_color
                                 area(0.0, 0.0, 50, 85)
                                 imagebutton:
-                                    idle blwnfh_gui["saves"]["auto_idle"]
-                                    hover blwnfh_gui["saves"]["auto_hover"]
+                                    idle blwnfh_gui["save_load"]["auto_idle"]
+                                    hover blwnfh_gui["save_load"]["auto_hover"]
                                     action (FilePage("auto"), SetVariable("selected_slot", False))
 
                         else:
@@ -65,8 +65,8 @@ init 2:
                                 background background_color
                                 area(0.0, 0.0, 50, 85)
                                 imagebutton:
-                                    idle blwnfh_gui["saves"][str(i) + "_idle"]
-                                    hover blwnfh_gui["saves"][str(i) + "_hover"]
+                                    idle blwnfh_gui["save_load"][str(i) + "_idle"]
+                                    hover blwnfh_gui["save_load"][str(i) + "_hover"]
                                     action (FilePage(i), SetVariable("selected_slot", False))
 
             grid 4 3: # ======================================================= # Сетка сейвов

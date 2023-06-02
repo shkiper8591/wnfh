@@ -47,7 +47,7 @@ init -2 python:
         ]}
     
     # Для главного меню
-    blwnfh_gui["saves"] = {img:(blwnfh_SAVES + img + ".png") for img in [
+    blwnfh_gui["save_load"] = {img:(blwnfh_SAVELOAD + img + ".png") for img in [
         "back_idle",
         "back_hover",
         "delete_idle",

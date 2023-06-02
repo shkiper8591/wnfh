@@ -18,7 +18,7 @@ init -4 python:
     blwnfh_BANNERS = blwnfh_IMAGES + "gui/banners/"
     blwnfh_MAIN_MENU = blwnfh_IMAGES + "gui/main_menu/"
     blwnfh_GALLERY = blwnfh_IMAGES + "gui/gallery/"
-    blwnfh_SAVES = blwnfh_IMAGES + "gui/saves/"
+    blwnfh_SAVELOAD = blwnfh_IMAGES + "gui/save_load/"
     blwnfh_SETTINGS = blwnfh_IMAGES + "gui/settings/"
     blwnfh_TRANSITIONS = blwnfh_IMAGES + "transitions/"
     blwnfh_CHOICE = blwnfh_IMAGES + "gui/choice/"

@@ -70,21 +70,17 @@ label blwnfh_day_5:
     
     stop ambience fadeout 2.0
     scene bg int_warehouse_day
-    show sd normal forma glasses far
+    show sd wh_normal_glasses at background
     with dissolve2
     play ambience ambience_int_cabin_day fadein 2
-    # тут нужен фоновый спрайт завхоза!!!!!!!!!!!!!!!!!!!!!!!!!
     ## Семён на складе. Встреча с завхозом
     "За письменным столом сидел, о ужас, сам завхоз."
     
     th "Видимо, сегодня ему похорошело."
     
     me "Доброе утро Сергей Дмитриевич."
-    
-    show sd normal forma glasses with dissolve
 
     "Сказал я, подойдя к нему поближе."
-
     "Тот окинул меня полу-презрительным взглядом и вернулся обратно к своим бумагам."
     
     sd "Доброе. {w}Зачем пришел?"
@@ -93,31 +89,32 @@ label blwnfh_day_5:
     
     me "Да мне бы вот, рубашку поменять, а то я эту испачкал."
     
-    show sd normal forma with dspr  
+    show sd wh_angry with dspr  
 
     "Сергей Дмитриевич тяжело вздохнул и сложив очки положил их на стол."
     
     sd "Что же вы вечно не бережете форму-то свою."
     
+    show sd serious forma with dspr
+
     "Ворча, он встал со своего места и подошел к стеллажу с чистой одеждой."
     "Взяв там новую рубашку он подошел ко мне."
     
-    show sd serious with dspr
-
     sd "Снимай давай, чего стоишь как истукан."
     
     "Я быстро снял рубашку и отдав её, взял чистую и также быстренько одел её."
     "Сергей Дмитриевич осмотрел пятно на рубашке и, по всей видимости, заметил, что она там ещё к тому же и немного порвалась."
     
+    show sd normal with dspr
+
     sd "Как же ты так умудрился-то, а?"
     me "Упал."
-    
     sd "Упал он, а зашивать теперь кто будет, м?"
     me "Если хотите, давайте я зашью."
     sd "Ещё чего, ты только хуже ещё сделаешь[wp] {w}Завтра Славяну попрошу, она у нас молодец в отличии от тебя."
     me "Как скажете."
     
-    show sd normal forma glasses with dspr
+    show sd wh_normal_glasses with dspr
     
     "Не брежно бросив грязную рубашку в таз к другой грязной одежде, Сергей Дмитриевич вернулся обратно за свой стол и сделал запись в журнале."
     
@@ -126,7 +123,7 @@ label blwnfh_day_5:
     
     "Такому заявлению я был крайне удивлен."
     
-    show sd serious forma glasses with dspr 
+    show sd wh_angry_glasses with dspr 
 
     sd "А вот так! Пионерам растяпам имущество не выдаю!"
     me "Ну Сергей Дмитриевич, ладно вам, может мы как-нибудь сможем договорится?"
@@ -134,30 +131,25 @@ label blwnfh_day_5:
     "В шутку произнес я."
     "Но завхоз видимо не уловил юмора."
 
-    show sd angry forma glasses with dspr   
-    
     sd "Ещё чего, договариватся на базаре будешь! А у меня тут склад с казённым имуществом!"
     
     th "Ну и чёрт с вами."
     
     "Я гордо развернулся на все сто восемьдесят и уже готовился покинуть склад, как Сергей Дмитриевич меня окликнул."
     
-    show sd serious forma glasses with dspr 
+    show sd wh_normal_glasses with dspr 
 
     sd "А, и пока ты ещё не ушел."
     me "Слушаю."    
     sd "Доложи своему товарищу Александру, что если он мне до конца недели не вернет имущество, которое он взял со склада, я буду жаловаться во все соответствующие инстанции."
     sd "То бишь, вашей вожатой."
     me "Хорошо я ему передам, теперь могу идти?"
-
-    show sd normal forma glasses with dspr 
-
     sd "Да, свободен."
     
     "Стоя у выхода я вспомнил, что хотел поинтересоваться насчёт бритвы, так что развернулся обратно к завхозу."
     
     me "Аэм, Сергей Дмитриевич."
-    sd "Ну что ещё?"
+    sd "Что ещё?"
     me "А у вас случаем бритвы не найдется?"
     
     "Старик вновь отвлекся от записей в журнал и вздохнув повернулся ко мне."
@@ -165,10 +157,11 @@ label blwnfh_day_5:
     sd "А тебе зачем?"
     me "Ну как зачем, бриться конечно же."
     sd "Ну-ка подойди сюда."
-    
-    show sd normal forma glasses close with dspr     
 
     "Я подчинился просьбе завхоза и подошел к нему."
+
+    show sd normal forma glasses close with dspr 
+
     "Подойдя, он встал и стал рассматривать моё щетинистое лицо."
     
     sd "Да, побриться пора тебе. {w}Ладно, сейчас выделю тебе станок, только чтобы потом в конце смены вернул!"
@@ -216,8 +209,7 @@ label blwnfh_day_5:
     play sound blwnfh_sfx_list["raschyoska"] fadein 2
     ## Семён дома
     "Когда я пришел домой, Ольга Дмитриевна уже проснулась."
-    "И сидя в своей форме на кровати, медленно расчёсывала волосы." 
-    #34 тут надо звук расчёсывания, наверное.
+    "И сидя в своей форме на кровати, медленно расчёсывала волосы."
     me "Доброе утро[wp]"
     
     show mt smile pioneer with dissolve
@@ -285,9 +277,9 @@ label blwnfh_day_5:
     "Вода была немного теплее обычного, а значит, что впервые за несколько дней можно будет нормально умыться, без боли и страданий."
     "К чему я собственно и приступил."
     
-    #34 тут надо звук воды
-    
+    play sound sfx_open_water_sink
     $ renpy.pause(1.0)
+    play sound sfx_water_sink_stream loop fadein 1.0
     
     "За умыванием, я не сразу заметил, что ко мне подошла Лена."
     
@@ -328,6 +320,7 @@ label blwnfh_day_5:
     window hide
     scene bg ext_washstand_day with dissolve2
     $ renpy.pause(1.5)
+    play sound sfx_close_water_sink
     window show
     
     "Закончил я бриться довольно быстро и, на моё удивление без сильного дискомфорта, даже не поранился ни разу."
@@ -502,6 +495,7 @@ label blwnfh_day_5:
     scene bg int_musclub_day
     show kat surprise pioneer at right
     with dissolve2
+    play sound sfx_close_door_campus_1
     play ambience ambience_music_club_day fadein 2
     play music music_list["so_good_to_be_careless"] fadein 3
     window show dissolve
@@ -997,7 +991,8 @@ label blwnfh_day_5:
         ease_quart 2.0 xcenter -0.4
     $ renpy.pause(2.0, hard=True)
     hide kat
-    
+    play sound sfx_unlock_medpunkt_door
+
     "Мику достала из под рубашки небольшой ключик на веревке и открыла подсобку, в которую мигом же удалилась Катя."
     
     me "Мику, можно задать тебе вопрос один?"
@@ -1633,8 +1628,8 @@ label blwnfh_day_5:
     show kat grin pioneer:
         ease_quart 1.8 xcenter 1.28
     $ renpy.pause(1.8, hard=True)
-    show kat dnr dnr_cleaning
-    show mi dnr dnr_cleaning
+    show kat dnr_cleaning
+    show mi dnr_cleaning
     with dspr
     
     "Они взяли тряпки и быстро разошлись по разным углам, а я недоумевающим взглядом проводил обоих."

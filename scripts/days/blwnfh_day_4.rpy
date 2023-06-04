@@ -2735,9 +2735,7 @@ label blwnfh_day_4:
     window hide dissolve
     stop music fadeout 3.5
     stop ambience fadeout 2.0
-    scene bg ext_path_day
-    show mi normal pioneer far at left
-    show kat smile pioneer close at right 
+    scene d4_me_kat_mi_in_forest
     with sphere_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
     $ renpy.pause(1.5, hard=True)
@@ -2749,7 +2747,6 @@ label blwnfh_day_4:
     "Иногда Мику останавливалась, махая нам рукой и крича чтобы мы ускорились, но ни у меня, ни у Кати не было желания так спешить."
     "Мы просто наслаждались прогулкой, и видимо поняв это, Мику подождала нас и шла вместе с нами, напевая какую-то песню"
     
-    show mi normal with dspr
     # сюда какую бы нибудь а капеллу темы приключения из The Stanley Parable
     
     "Песня, которую напевала Мику, мне показалась крайне знакомой, но я всё никак не мог вспомнить, где же я её слышал."
@@ -2761,10 +2758,10 @@ label blwnfh_day_4:
     
     "Я пожал плечами, и ушел в свои мысли, пока девочки о чем-то активно разговаривали. {w}Кажется, это было как-то связано с музыкой."
     "Вскоре мы вышли на некое поле."
-    
-    show bg ext_meadow_day with dissolve
-    #stop ambience fadeout 3.0
-    # вставить эмбиент ветра в летнем поле.
+
+    stop ambience fadeout 2.0
+    scene bg ext_meadow_day with door_blure_dissolve2
+    play ambience blwnfh_ambience_list["veter_v_pole"] fadein 2.0 
     play music blwnfh_music_list["outskirts"] fadein 3.5
     ## Пикник на поляне
     "Вид создавался крайне живописный. Поле высокой травы, которую волнами колыхал ветер, а с водоема поблизости доносились звуки чаек."
@@ -2792,9 +2789,16 @@ label blwnfh_day_4:
     me "Вот и дружит только с Алисой из-за общих интересов, с Леной потому что живут в одном домике, и вот с тобой."
     kat "А ещё с тобой."
     
-    hide cg d4_mi_on_meadow with dissolve
+    hide cg d4_mi_on_meadow
+    show kat smile pioneer at right 
+    with dissolve
     
-    "В один момент Мику нырнула куда-то в траву, так что мы не сразу поняли, что произошло, пока она не выглянула и не позвала нас."
+    "В один момент Мику нырнула куда-то в траву, так что мы не сразу поняли, что произошло, пока она не выглянула."
+
+    show mi normal pioneer at right with dissolve
+
+    mi "Чего вы стоите столбом, давайте сюда скорее, здесь о-о-очень уютненько!"
+
     "Она сидела в небольшом кругу утрамбованной травы, где я расстелил плед и поставил корзинку, содержимое которой я подсмотрел."
     "Ничего интересного там не было, как мне казалось изначально, всего булки, кефир и пара яблок."
     "Такой пикник, нормального ужина заменить не сможет, но уж лучше, чем ничего."

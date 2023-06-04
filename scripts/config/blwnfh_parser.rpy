@@ -42,7 +42,8 @@ init -3 python:
         return LiveComposite((config.screen_width, config.screen_height), *arg_list)
 
 init -2:
-    image bg int_editorial_day_bumaga = blwnfh_fast_composite(im.Scale(blwnfh_IMAGES + "bg/int_editorial_day.jpg", config.screen_width, config.screen_height), im.Scale(blwnfh_OTHER + "int_editorial_day_bumaga.png", config.screen_width, config.screen_height))
+    image bg int_dining_hall_day_vedro = blwnfh_fast_composite(im.Scale(blwnfh_IMAGES + "bg/int_dining_hall_day.jpg", config.screen_width, config.screen_height), im.Scale(blwnfh_OTHER + "vedro.png", config.screen_width, config.screen_height))
+    image bg int_editorial_day_bumaga = blwnfh_fast_composite(im.Scale(blwnfh_IMAGES + "bg/int_editorial_day.jpg", config.screen_width, config.screen_height), im.Scale(blwnfh_OTHER + "bumaga.png", config.screen_width, config.screen_height))
     image cg d3_me_kat_blindage = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
     image cg d3_me_kat_blindage2 = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
     #image cg d6_mt_volosbl = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d6_mt_volosbl.png", blwnfh_wakeup_dark(blwnfh_IMAGES + "cg/d6_mt_volosbl.png"))

@@ -441,6 +441,7 @@ init 2:
     $ blwnfh_ambience_list["heartbeating"] = blwnfh_AMBIENCE + "heartbeating.mp3"
     $ blwnfh_ambience_list["skvoznyak"] = blwnfh_AMBIENCE + "skvoznyak.mp3"
     $ blwnfh_ambience_list["salute"] = blwnfh_AMBIENCE + "ambience_salute.mp3"
+    $ blwnfh_ambience_list["veter_v_pole"] = blwnfh_AMBIENCE + "veter-v-pole.mp3"
     #$ blwnfh_ambience_list[""] = blwnfh_AMBIENCE + ".mp3"
     
     ## Рандомизация мявков

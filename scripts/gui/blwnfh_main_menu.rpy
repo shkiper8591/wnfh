@@ -27,32 +27,18 @@ init 2:
                 ["credits"      ,blwnfh_gui["main_menu"]["credits"]               ,[Jump("technical_chocolatki")]                                           ],
                 ["galary"       ,blwnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["news"         ,blwnfh_gui["main_menu"]["news"]                  ,[ShowMenu("blwnfh_news", _transition=dissolve)]                          ],
-                ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_prologue")]   ],
-                ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[ShowMenu("blwnfh_load_screen", _transition=dissolve)]                                           ],
+                ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_prologue")]      ],
+                ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[ShowMenu("blwnfh_load_screen", _transition=dissolve)]                   ],
                 ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
                 ["preferences"  ,blwnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("blwnfh_preferences", _transition=dissolve)]                   ],
                 ["red"          ,im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
-                ["achievements" ,blwnfh_gui["main_menu"]["achievements"]          ,[Jump("technical_chocolatki")]                                           ],
+                ["achievements" ,blwnfh_gui["main_menu"]["achievements"]          ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],
                 ["exit"         ,blwnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
                 ["dlc"          ,blwnfh_gui["main_menu"]["dlc"]                   ,[Jump("technical_chocolatki")]                                           ],
             ]
        
             menu_hovered_action_cat = Play("sound", blwnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
-        
 
-        #$ debag_switch = 1
-        #if debag_switch:
-        #    $ background_color = "#0005"
-        #    $ button_red =       "#F005"
-        #    $ button_green =     "#0F05"
-        #    $ button_blue =      "#00F5" 
-        #else:
-        #    $ background_color = "#0000"
-        #    $ button_red =       "#0000"
-        #    $ button_green =     "#0000"
-        #    $ button_blue =      "#0000"
-        
-        
         frame:
             background blwnfh_gui["main_menu"]["mm_bg2"]
             area(0.0, 0.0, 1.0, 1.0)

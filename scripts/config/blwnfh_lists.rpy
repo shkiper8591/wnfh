@@ -117,6 +117,8 @@ init -2 python:
         "ach_us_idle",
         "ach_dv_idle",
         "ach_sl_idle",
+        "ach_sv_idle",
+        "ach_mt_idle",
         "ach_me_idle"
         ]
     characters_banners_hover = [
@@ -126,6 +128,8 @@ init -2 python:
         "ach_us_hover",
         "ach_dv_hover",
         "ach_sl_hover",
+        "ach_sv_hover",
+        "ach_mt_hover",
         "ach_me_hover",
     ]
     blwnfh_gui["banners"] = {img:(blwnfh_BANNERS + img + ".png") for img in [

@@ -1,6 +1,45 @@
 init -2:
     # Шрифты
+    $ style.blwnfh_title = Style(style.default)
+    $ style.blwnfh_title.font = blwnfh_FONTS + "Sirius Cursiv.ttf"
+    $ style.blwnfh_title.color = "#FFF"
+    $ style.blwnfh_title.drop_shadow = (2, 2)
+    $ style.blwnfh_title.drop_shadow_color = "#222"
+    $ style.blwnfh_title.text_align = 0.5
+    $ style.blwnfh_title.yalign = 0.5
+    $ style.blwnfh_title.size = 80
+    $ style.blwnfh_title.kerning = 2.0
+    $ renpy.image("blwnfh_title", ParameterizedText(style="blwnfh_title", size=64))
+
+    $ style.blwnfh_ach_title = Style(style.default)
+    $ style.blwnfh_ach_title.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_ach_title.color = "#000"
+    $ style.blwnfh_ach_title.text_align = 0.5
+    $ style.blwnfh_ach_title.yalign = 0.5
+    $ style.blwnfh_ach_title.size = 42
+    $ style.blwnfh_ach_title.kerning = 1.0
+    $ renpy.image("blwnfh_ach_title", ParameterizedText(style="blwnfh_ach_title", size=64))
     
+    $ style.blwnfh_ach_signature = Style(style.default)
+    $ style.blwnfh_ach_signature.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_ach_signature.color = "#000"
+    $ style.blwnfh_ach_signature.text_align = 0.5
+    $ style.blwnfh_ach_signature.yalign = 0.5
+    $ style.blwnfh_ach_signature.size = 38
+    $ style.blwnfh_ach_signature.kerning = 1.0
+    $ renpy.image("blwnfh_ach_signature", ParameterizedText(style="blwnfh_ach_signature", size=64))
+    
+    $ style.blwnfh_menu = Style(style.default)
+    $ style.blwnfh_menu.font = blwnfh_FONTS + "msjhl.ttc"
+    $ style.blwnfh_menu.color = "#FFF"
+    $ style.blwnfh_menu.drop_shadow = (2, 2)
+    $ style.blwnfh_menu.drop_shadow_color = "#222"
+    $ style.blwnfh_menu.text_align = 0.5
+    $ style.blwnfh_menu.yalign = 0.5
+    $ style.blwnfh_menu.size = 42
+    $ style.blwnfh_menu.kerning = 1.0
+    $ renpy.image("blwnfh_menu", ParameterizedText(style="blwnfh_menu", size=64))
+
     $ style.blwnfh_splashes = Style(style.default)
     $ style.blwnfh_splashes.font = blwnfh_FONTS + "vcr_osd.ttf"
     $ style.blwnfh_splashes.color = "#FFFF00"

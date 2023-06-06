@@ -890,7 +890,7 @@ label blwnfh_day_5:
     window show
     show kat scared with dspr
     stop music fadeout 1.0
-    play sound $ blwnfh_sfx_list["stop_magnitofon"]
+    play sound blwnfh_sfx_list["stop_magnitofon"]
 
     "Так и сидели мы, слушая AC/DC, пока между нами не прошла медленно тонкая женская рука."
     "Она нажала на кнопку стоп на проигрывателе, а я с Катей испуганно обернулись назад."

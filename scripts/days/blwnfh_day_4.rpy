@@ -2762,7 +2762,7 @@ label blwnfh_day_4:
     stop ambience fadeout 2.0
     scene bg ext_meadow_day with door_blure_dissolve2
     play ambience blwnfh_ambience_list["veter_v_pole"] fadein 2.0 
-    play music blwnfh_music_list["outskirts"] fadein 3.5
+    play music blwnfh_music_list["schabernack"] fadein 3.5
     ## Пикник на поляне
     "Вид создавался крайне живописный. Поле высокой травы, которую волнами колыхал ветер, а с водоема поблизости доносились звуки чаек."
     "Мику явно нас не обманула, назвав это место красивым."
@@ -2788,11 +2788,13 @@ label blwnfh_day_4:
     me "Ей же как иностранке сложно выстраивать отношения с кем-нибудь."
     me "Вот и дружит только с Алисой из-за общих интересов, с Леной потому что живут в одном домике, и вот с тобой."
     kat "А ещё с тобой."
-    
+
+    stop music fadeout 2.5
     hide cg d4_mi_on_meadow
     show kat smile pioneer at right 
     with dissolve
-    
+    play music blwnfh_music_list["outskirts"] fadein 3.5
+
     "В один момент Мику нырнула куда-то в траву, так что мы не сразу поняли, что произошло, пока она не выглянула."
 
     show mi normal pioneer at right with dissolve

@@ -2671,8 +2671,8 @@ label blwnfh_day_5:
     show kat normal with dspr
     
     "Включив микрофон, я начал вещать."
-    #Тут надо музыку какую-то очень весёлую такую и задорную. Но я хз какую. Ничего на примете нет, так что да.
     #34 тут надо арт где Катя и Семён сидят за столом комментаторском + нужна какая-нибудь бодренькая музычка.
+    play music blwnfh_music_list["candy_store"] fadein 3.5
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -2842,7 +2842,8 @@ label blwnfh_day_5:
     show kat normal pioneer:
         xcenter 0.5 ycenter 0.5
     with dissolve
-    
+    stop music fadeout 3.5
+
     "Мы выключили свои микрофоны и я откинулся на спинку стула."
     "И пофигу, что она была крайне неудобная."
     
@@ -3045,6 +3046,7 @@ label blwnfh_day_5:
     
     "Тем временем перерыв подходил к концу."
     
+    play music blwnfh_music_list["candy_store"] fadein 3.5
     $ blwnfh_set_mode(nvl)
     nvl show dissolve
     
@@ -3223,7 +3225,8 @@ label blwnfh_day_5:
     
     nvl hide dissolve
     $ blwnfh_set_mode()
-    
+    stop music fadeout 3.5
+
     "Выключив микрофоны, мы встали из-за стола и отправились к трибунам."
     "Народ оттуда уже активно уходил и только лишь Ольга Дмитриевна, Сергей и[wp]"
     "Эх, упаси господь, Света."

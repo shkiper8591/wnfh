@@ -762,7 +762,7 @@ label blwnfh_day_6:
     usw "Однако, мне правда надо бежать, если уж не на линейку, то на склад."
     me "Ну, беги, задерживать не буду."
     
-    stop fadeout 3.5
+    stop music fadeout 3.5
     show usw normal pioneer:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.5 xcenter -0.4
@@ -1317,7 +1317,7 @@ label blwnfh_day_6:
     scene bg ext_lenin_square_day
     show kat normal pioneer 
     with sphere_invert_blure_dissolve2
-    ambience ambience_camp_center_day fadein 2.0
+    play ambience ambience_camp_center_day fadein 2.0
     ## Катя насильно вытаскивает Семёна из столовой
     "Протащив меня за собой значительное расстояние, Катя отпустила меня только на площади."
     "Оттуда мы уже продолжили идти медленным шагом."
@@ -2621,7 +2621,7 @@ label blwnfh_day_6:
     
     "Спасательница мне так сильно надавила на грудь, что чуть не выдавила все лёгкие."
     
-    stop music fadeot 2.0
+    stop music fadeout 2.0
     scene bg ext_beach_day
     show kat scared swim loose at left
     show un smile pioneer close at right
@@ -4241,7 +4241,7 @@ label blwnfh_day_6:
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
     show sh normal pioneer
-    blwnfh_music_list["tropicala"] fadein 2.0
+    play music blwnfh_music_list["tropicala"] fadein 2.0
     
     sh "Да-да, кто к нам пожаловал?"
     sh "О, привет Семён и[wp]"
@@ -4596,7 +4596,7 @@ label blwnfh_day_6:
     sh "Но самую-то главную работу, по сути, сделала Екатерина."
     me "Эт да."
     
-    play music play music music_list["always_ready"] fadein 3.5
+    play music music_list["always_ready"] fadein 3.5
     show kat interested with dspr
     ## Катя находит водку
     kat "Так, товарищи!"
@@ -5653,7 +5653,7 @@ label blwnfh_day_6:
     "Я окружил будущее место для костра камнями, что валялись рядом."
     "И стал складывать маленькие веточки."
 
-    play sound play sound sfx_forest_fireplace loop fadein 5.0
+    play sound sfx_forest_fireplace loop fadein 5.0
 
     "Подложив под них бумагу, я поджёг всё это."
     "Огонь стал потихоньку разгораться."

@@ -959,7 +959,7 @@ label blwnfh_day_4:
     show mz angry glasses pioneer at left with dspr
     
     mz "Хорошо, прощаю, но только один раз!"
-    mz "Если и в следующий раз опоздаете – пеняйте на себя"
+    mz "Если и в следующий раз опоздаете – пеняйте на себя."
     
     show kat happy pioneer at right with dspr
     
@@ -969,15 +969,16 @@ label blwnfh_day_4:
     
     mz "Ладно, идите пока на своё рабочее место, я сейчас кое-что доделаю и приду к вам."
     
-    "Мы с Катей кивнули и удалились в подсобку"
+    "Мы с Катей кивнули и удалились в подсобку."
     
     scene bg int_editorial_day
     play sound sfx_open_dooor_campus_2
-    show un normal pioneer at left
+    show un dr_normal_wk dr background
     show kat normal pioneer at right 
     with door_blure_dissolve2
     ## В подсобке34
     "В подсобке мы встретили Лену, которая уже что-то рисовала на холсте, по всей видимости, в своё удовольствие."
+    show un dr_normal dr background with dspr
     th "Вот чёрт, лучше бы это она вместо нас опоздала."
     
     kat "Доброе утро Лена, как дела?"
@@ -994,7 +995,7 @@ label blwnfh_day_4:
     #34 фоновые спрайты?
     kat "А ты просто так рисуешь?"
     
-    show un grin pioneer at left with dspr
+    show un dr_serious dr background with dspr
     
     un "Ну конечно, темы иллюстрации для газеты у меня нету." 
     un "Вот и рисую, пока вы где-то пропали, коротаю время, так сказать."

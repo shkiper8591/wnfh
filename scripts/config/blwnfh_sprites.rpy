@@ -14,40 +14,68 @@ init 2:
 
         emotion_to_pose = {
             'dv': {
-                'cry': 1, 'scared': 1, 'shocked': 1, 'surprise': 1, 'grin': 2, 'guilty': 3, 'shy': 3, 'sad': 3, 'laugh': 4, 'normal': 4, 'smile': 4, 'angry': 5, 'rage': 5,
+                'cry': 1, 'scared': 1, 'shocked': 1, 'surprise': 1,
+                'grin': 2,
+                'guilty': 3, 'shy': 3, 'sad': 3,
+                'laugh': 4, 'normal': 4, 'smile': 4,
+                'angry': 5, 'rage': 5,
             },
             'mz': {
-                'amazed': 1, 'bukal': 1, 'fun': 1, 'hope': 1, 'laugh': 1, 'normal': 1, 'sad': 1, 'sceptic': 1, 'angry': 2, 'cry': 2, 'rage': 2, 'shyangry': 2, 'smile': 2, 'confused': 3, 'excitement': 3, 'shy': 3,
+                'amazed': 1, 'bukal': 1, 'fun': 1, 'hope': 1, 'laugh': 1, 'normal': 1, 'sad': 1, 'sceptic': 1,
+                'angry': 2, 'cry': 2, 'rage': 2, 'shyangry': 2, 'smile': 2,
+                'confused': 3, 'excitement': 3, 'shy': 3,
             },
             'mt': {
-                'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1, 'angry': 2, 'rage': 2, 'grin': 3, 'laugh': 3,
+                'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1,
+                'angry': 2, 'rage': 2,
+                'grin': 3, 'laugh': 3,
+                'mt_4_dc_reading': 4, 'dc_smotrit': 4,
             },
             'sh': {
-                'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1, 'cry': 2, 'normal_smile': 2, 'rage': 2, 'normal': 3, 'serious': 3, 'surprise': 3,
+                'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1,
+                'cry': 2, 'normal_smile': 2, 'rage': 2,
+                'normal': 3, 'serious': 3, 'surprise': 3,
             },
             'un': {
-                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3, 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
+                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1,
+                'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2,
+                'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
+                'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
             },
             'usw': {
-                'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
+                'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1,
+                'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2,
+                'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
             },
             'cs': {
                 'normal': 1, 'shy': 1, 'smile': 1,
             },
             'mi': {
-                'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3, 
+                'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1,
+                'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'smile': 2,
+                'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
+                'dnr_cleaning': 4,
             },
             'kat': {
-                'confused': 1, 'cry': 1, 'smilecry': 1, 'interested': 1, 'normal': 1, 'pockerface': 1, 'sad': 1, 'serious': 1, 'smile': 1, 'joy': 1, 'guilty': 2, 'horny': 2, 'scared': 2, 'shy': 2, 'surprise': 2, 'angry': 3, 'rage': 3, 'grin': 3, 'laugh': 3, 'smile2': 3, 'happy': 4, 'obida': 4, 'thinking': 4, 'upset': 4, 'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5,
+                'confused': 1, 'cry': 1, 'smilecry': 1, 'interested': 1, 'normal': 1, 'pockerface': 1, 'sad': 1, 'serious': 1, 'smile': 1, 'joy': 1,
+                'guilty': 2, 'horny': 2, 'scared': 2, 'shy': 2, 'surprise': 2,
+                'angry': 3, 'rage': 3, 'grin': 3, 'laugh': 3, 'smile2': 3,
+                'happy': 4, 'obida': 4, 'thinking': 4, 'upset': 4,
+                'wr_normal': 5, 'wr_normal_wk': 5, 'wr_smile': 5, 
+                'dnr_cleaning': 6,
             },
             'sv': {
                 'angry': 1, 'happy': 1, 'scared': 1, 'worried': 1,
             },
             'sd': {
-                'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1, 'wh_normal': 2, 'wh_normal_glasses': 2, 'wh_angry': 2,
+                'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1,
+                'wh_normal': 2, 'wh_normal_glasses': 2, 'wh_angry': 2, 'wh_angry_glasses': 2,
             },
             'sl': {
-                'normal': 1, 'serious': 1, 'smile': 1, 'happy': 2, 'laugh': 2, 'shy': 2, 'smile2': 2, 'angry': 3, 'sad': 3, 'surprise': 3, 'scared': 4, 'tender': 4,
+                'normal': 1, 'serious': 1, 'smile': 1,
+                'happy': 2, 'laugh': 2, 'shy': 2, 'smile2': 2, 'angry': 3,
+                'sad': 3, 'surprise': 3, 'scared': 4, 'tender': 4,
+                'wh_normal': 5, 'wh_smotrit': 5, 'wh_snizu': 5, 'wh_snizu2': 5, 'wh_tyanetsa': 5,
             },
             #Юля идёт нахуй
             #'uv': {
@@ -287,14 +315,14 @@ init 2:
         make_sprites_for('dv', 'sport isolenta', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
         
         ## Фоновые спрайты
-        make_sprites_for('un', 'dr', ['mod:dr'])
-        make_sprites_for('kat', 'wr', ['mod:wr'])
-        make_sprites_for('kat', 'dnr', ['mod:dnr'])
-        make_sprites_for('mi', 'dnr', ['mod:dnr'])
-        make_sprites_for('sl', 'wh', ['mod:wh'])
-        make_sprites_for('sd', 'wh', ['mod:wh'])
-        make_sprites_for('mt', 'dc', ['mod:dc'])
-        #make_sprites_for('', '', ['mod:', 'mod<emotion>'])
+        make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])
+        make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'])
+        make_sprites_for('kat', 'dnr', ['mod:<emotion>'])
+        make_sprites_for('mi', 'dnr', ['mod:<emotion>'])
+        make_sprites_for('sl', 'wh', ['mod:<emotion>'])
+        make_sprites_for('sd', 'wh', ['mod:<emotion>'])
+        make_sprites_for('mt', 'dc', ['mod:<emotion>'])
+        #make_sprites_for('', '', ['mod:', 'mod:<emotion>'])
         
         
         #make_sprites_for('dv', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])

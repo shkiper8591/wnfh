@@ -5934,13 +5934,16 @@ label blwnfh_day_6:
     window hide dissolve
     stop ambience fadeout 2.0
     $ blwnfh_set_time("night")
-    show anim stars_1 with slide_up_blure_dissolve2
+    scene cg d6_ending:
+        xanchor 0.5 yanchor 0.5
+        xpos 0.5
+    with dissolve
     play ambience ambience_lake_shore_night fadein 2.0
     $ renpy.pause(1.5)
     window show dissolve
-    ## Катя и Семён просто лежат на одеяле и болтают
+    
     "Ночь медленно опустилась."
-    "Мы закончили есть рыбу, и просто сидели."
+    "Мы закончили есть рыбу, и просто отдыхали."
     "Я лежал и изучал звёзды, а Катя[wp] Катя изучала воду[wp] Снова."
     
     th "Полагаю, идеальнее момента нет."
@@ -5984,8 +5987,6 @@ label blwnfh_day_6:
     me "Ты так думаешь?"
     kat "Я в этом абсолютно уверена.\n"
     
-    scene bg ext_island_otherside_night
-    show kat pockerface pioneer shirt loose close 
     with dissolve2
     
     nvl clear
@@ -5996,13 +5997,10 @@ label blwnfh_day_6:
     
     me "Что, снова?"
     
-    show kat sad with dspr
-    
     kat "Семён[wp]"
     kat "Я назвала тебя другом[wp] Но это неправда[wp]"
     kat "Ты для меня[wp]\n"
     
-    show kat cry with dspr
     
     "По её щеке пробежала слеза.\n"
     
@@ -6026,8 +6024,6 @@ label blwnfh_day_6:
     
     th "Может это судьба? Может она действительно «та самая»?"
     th "И она ради меня пошла на такой отчаянный шаг[wp] Жизнь спасла[wp] {w}И при этом чуть сама не погибла."
-    
-    show kat smilecry with dspr
     
     "\nЯ взглянул на заплаканное личико Кати и обнял ещё сильнее. После чего у неё на лице появилась лёгкая улыбка.\n"
     
@@ -6061,9 +6057,7 @@ label blwnfh_day_6:
     # Эта пауза здесь не просто так
     "Катя аккуратно отстранилась, крепко обняла и положила голову на моё плечо."
     "Я погладил её мягкие, розовые волосы.\n"
-    
-    show kat smile with dspr
-    
+
     kat "Спасибо тебе."
     me "За что?"
     kat "За всё. {w}За то, что согласился отвезти меня сюда, за то, что накормил меня самой вкусной рыбой на свете, за то, что ухаживал за мной, принося еду домой."
@@ -6071,8 +6065,7 @@ label blwnfh_day_6:
     kat "Ещё тогда, в землянке[wp] {w}Ты готов был спать на холодной земле лишь бы я была в тепле и комфорте."
     kat "И, даже когда я смогла тебя уломать лечь на кровать, ты занял самый краешек, стараясь не задевать меня."
     me "Вот только, насколько мне не изменяет память, я тогда проснулся в чьих-то объятиях.\n"
-    
-    show kat shy with dspr
+
     
     "Она тихо усмехнулась.\n"
     
@@ -6089,9 +6082,7 @@ label blwnfh_day_6:
     "Я никогда до этого не испытывал чего-то подобного и не думал, что когда-либо испытаю."
     
     th "Да[wp] Это место определенно идёт мне на пользу[wp]"
-    
-    show kat surprise with dspr
-    
+
     kat "Это же[wp]"
     
     play music music_list["door_to_nightmare"] fadein 3.5
@@ -6106,8 +6097,6 @@ label blwnfh_day_6:
     ## Катя обнаружила телефон
     me "Кать это[wp]"
     kat "Телефон[wp]"
-    
-    show kat pockerface with dspr
     
     "Закончила она за меня."
     
@@ -6190,3 +6179,10 @@ label blwnfh_day_6:
     "Она выдержала небольшую паузу."
     ## Катя вспоминает кто она. Конец дня и мода
     kat "Я вспоминила, что {b}{i}мы не отсюда{/i}{/b}"
+    window hide
+    show cg d6_ending:
+        xanchor 0.5 yanchor 0.5
+        ease_quart 10.0 ypos 1.0
+    $ renpy.pause(10.0, hard=True)
+    show to be continued with dissolve2
+    $ renpy.pause(100.0, hard=True)

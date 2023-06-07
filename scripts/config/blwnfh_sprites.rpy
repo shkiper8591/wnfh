@@ -447,6 +447,7 @@ init 2:
         #make_sprites_for('us', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         #make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
     
+    image to be continued = blwnfh_OTHER + "to_be_continued.png"
     ## Юля
     image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
     ## Я не ебу как это по-русски нормально назвать

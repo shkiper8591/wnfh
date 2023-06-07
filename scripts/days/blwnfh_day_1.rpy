@@ -626,7 +626,7 @@ label blwnfh_day_1:
     un "Ну погоди тогда[wp]"
     
     show dv surprise pioneer2 close with dspr
-    show un evil_smile pioneer close:
+    show un normal pioneer close:
         ease 0.3 ycenter 0.5
     with dspr
     play music music_list["always_ready"] fadein 3
@@ -635,12 +635,14 @@ label blwnfh_day_1:
     dv "Ты чего творишь?!"
     un "А ты догадайся."
     
-    show un evil_smile pioneer close:
-        ease 0.3 xcenter 0.7
-        ease 0.7 xcenter 0.75
-    show dv surprise pioneer2 close:
-        ease 0.3 xcenter 0.49
-        ease 0.7 xcenter 0.55
+    show cg d1_un_dv_otrivaet_nos with dissolve
+
+    #show un evil_smile pioneer close:
+    #    ease 0.3 xcenter 0.7
+    #    ease 0.7 xcenter 0.75
+    #show dv surprise pioneer2 close:
+    #    ease 0.3 xcenter 0.49
+    #    ease 0.7 xcenter 0.55
         
     "Спустя секунду Лена, стала тянуть нос Алисы на себя."
     
@@ -650,8 +652,8 @@ label blwnfh_day_1:
     dv "Ай, ай, ай! Дурочка ты чего?! Остановись!"
     un "Я дурочка? {w}А может ты?"
     
-    show dv surprise pioneer2 close:
-        ease 0.5 xcenter 0.53
+    #show dv surprise pioneer2 close:
+    #    ease 0.5 xcenter 0.53
     
     dv "Ленка, ну хватит!"
     
@@ -660,12 +662,12 @@ label blwnfh_day_1:
     
     un "Нет, не хватит!"
     
-    show un evil_smile pioneer close:
-        ease 0.3 xcenter 0.7
-        ease 0.7 xcenter 0.75
-    show dv surprise pioneer2 close:
-        ease 0.3 xcenter 0.53
-        ease 0.7 xcenter 0.55
+    #show un evil_smile pioneer close:
+    #    ease 0.3 xcenter 0.7
+    #    ease 0.7 xcenter 0.75
+    #show dv surprise pioneer2 close:
+    #    ease 0.3 xcenter 0.53
+    #    ease 0.7 xcenter 0.55
     
     un "Будешь знать, что бывает когда суешь нос в чужие разговоры!"
     dv "Семён, помоги пожалуйста!"
@@ -681,9 +683,9 @@ label blwnfh_day_1:
     
     "Я потянулся к Лененной руке, чтобы наконец остановить её."
     
+    hide cg d1_un_dv_otrivaet_nos with dissolve
     stop music fadeout 3
     
-    # тут надо сделать анимацию падения алисы
     "Но в этот самый момент, Лена отпустила Алису и та свалилась на землю."
 
     play sound sfx_body_bump
@@ -1221,9 +1223,7 @@ label blwnfh_day_1:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_clubs_day with door_invert_blure_dissolve
-    play sound sfx_close_door_1
-    show kat scared casual shirt at center with dissolve
+    scene cg d1_me_kat_shtrafniye with dissolve2
     play ambience ambience_camp_center_day fadein 3
     window show
 
@@ -1241,8 +1241,11 @@ label blwnfh_day_1:
     me "Лагерные традиции."
     kat "Ужасные традиции[wp]"
     
+
     stop music fadeout 3
-    show kat upset casual shirt with dspr
+    scene ext_clubs_day
+    show kat upset casual shirt at center
+    with dissolve
     
     kat "Но спасибо хотя бы, что волосы не намочили."
     me "Зато у нас появился ещё один повод быстрее сходить на склад."

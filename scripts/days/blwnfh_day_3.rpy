@@ -1010,7 +1010,7 @@ label blwnfh_day_3:
     "Шурик не стал упираться, и мы быстренько вышли из столовой."
     
     stop ambience fadeout 1.0
-    scene bg ext_dining_hall_near_day with dissolve
+    show bg ext_dining_hall_near_day with dissolve
     play ambience ambience_camp_center_day fadein 1.0
     
     me "Так, ну здесь его нет, может он тогда у вас в домике?"
@@ -1037,6 +1037,7 @@ label blwnfh_day_3:
     show sh normal pioneer:
         xcenter 0.5 ycenter 0.5
         ease_quart 1.5 xcenter 1.2
+    $ renpy.pause(0.75)
 
     "Шурик только пожал плечами и ушел в сторону короткого пути к клубам."
     
@@ -1056,6 +1057,7 @@ label blwnfh_day_3:
         xcenter -0.4 ycenter 0.5
         ease_quart 3.5 xcenter 0.5
     $ renpy.pause(3.0, hard=True)
+    show usw smile pioneer
     "Вот только заснуть мне помешала подошедшая Ульяна."
 
     play music music_list["i_want_to_play"] fadein 3.0
@@ -1207,6 +1209,8 @@ label blwnfh_day_3:
     show usw smile pioneer:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.5
+    $ renpy.pause(2.5, hard=True)
+    show usw smile pioneer
     play music blwnfh_music_list["crimes"] fadein 2.5
     ## Семён и Ульяна идут воровать конфеты
     usw "Ну что? Пойдем на дело?"

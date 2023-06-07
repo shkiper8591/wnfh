@@ -1038,13 +1038,15 @@ label blwnfh_day_4:
     "И пока мы все ждём Женю, чтобы не стоять как дурак посреди помещения, я сел на табуретку между девочками."
     "Но как только я сел, тут же пришла наша начальница, которая сходу начала громко говорить."
     
-    show mz normal pioneer glasses far:
+    show mz normal pioneer glasses:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.28
+    $ renpy.pause(2.5)
+    show mz normal pioneer glasses
     
     mz "И так товарищи пионеры, сегодня[wp]"
     
-    show mz angry pioneer glasses far with dspr
+    show mz angry pioneer glasses with dspr
     ## Женя устраивает разбор полётов Кате за еду
     "Женя прервалась, уставившись злым взглядом на Катю."
     
@@ -1054,7 +1056,7 @@ label blwnfh_day_4:
     
     "Катя явно не ожидала такого наезда со стороны Жени и аж малость поперхнулась едой."
     
-    show mz rage pioneer glasses far with dspr
+    show mz rage pioneer glasses with dspr
     
     mz "Мало того что опаздываете, так и ещё едите в неположенном для этого месте!"
     
@@ -1092,7 +1094,7 @@ label blwnfh_day_4:
     me "Довела девчонку до слёз!"
     me "Ещё небось стыдно должно быть ей, а не тебе, да?"
     
-    show mz shyangry pioneer glasses far with dspr
+    show mz shyangry pioneer glasses with dspr
     
     "Женя ничего не ответила и лишь стыдливо отвела взгляд."
     "Я же стал искать какой-нибудь платок, чтобы вытереть лицо Кати."
@@ -1122,13 +1124,13 @@ label blwnfh_day_4:
     mz "Кать, я волнуюсь не зря, ведь у меня такая ответственность следить за чистотой в библиотеке."
     mz "И мне не хочется чтобы вы её загадили[wp]"
     
-    show mz shyangry pioneer glasses far with dspr
+    show mz shyangry pioneer glasses with dspr
     
     mz "Поэтому и взъелась так[wp]"
     me "Жень, ты вроде хотела нам что-то сказать."
     
     show kat normal pioneer
-    show mz normal pioneer glasses far
+    show mz normal pioneer glasses
     with dspr
     ## Брифинг журналистам
     mz "Да, попрошу минуту внимания."
@@ -1152,17 +1154,17 @@ label blwnfh_day_4:
     
     "Я поднял руку, чтобы задать этот вопрос Жене."
     
-    show mz bukal pioneer glasses far with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Все вопросы после того как я договорю."
     
     "Вздохнув, я опустил руку обратно."
     
-    show mz normal pioneer glasses far with dspr
+    show mz normal pioneer glasses with dspr
     
     mz "Соответственно, вам придется сходить на площадку, задать участникам несколько вопросов, записать их и на основе этого написать статью."
     
-    show mz bukal pioneer glasses far with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Теперь можно задавать вопросы."
     
@@ -1174,22 +1176,23 @@ label blwnfh_day_4:
     
     me "Когда должна выйти будет эта новость-то? До матча или после?"
     
-    show mz smile pioneer glasses far with dspr
+    show mz smile pioneer glasses with dspr
     
     mz "Молодец что спросил, совсем забыла добавить, что ваша работа будет делиться на две части."
     mz "Первая часть должна выйти сегодня и будет представлять из себя небольшую новость, где будет рассказано про завтрашний матч, а именно: интервью с участниками, процесс подготовки и ваши прогнозы по итогам матча."
     mz "Вторая часть выйдет через день после матча, где вы возьмете опять интервью у победителей и проигравших, и подведёте итоги матча."
     
-    show mz bukal pioneer glasses far with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Всё, теперь точно я закончила, так что можете приступать к работе."
     
-    show mz bukal pioneer glasses far:
+    show mz bukal pioneer glasses:
         xcenter 0.28 ycenter 0.5
         ease_quart 2.5 xcenter -0.4
+    $ renpy.pause(1.0)
 
     "Женя быстро покинула подсобку."
-    hide mz with dissolve
+    hide mz
     
     th "Наконец-то она свалила, зараза такая."
     
@@ -2108,7 +2111,7 @@ label blwnfh_day_4:
     mz "Вот Серёжа и предложил альтернативу."
     me "Понятно[wp]"
     
-    show mz smile2 pioneer glasses with dspr
+    show mz smile pioneer glasses with dspr
     
     mz "А вы почему захотели?"
     
@@ -2120,7 +2123,7 @@ label blwnfh_day_4:
     mz "Отлично, а то этот островок мы уже себе «забронировали»."
     me "Буду иметь ввиду."
     
-    show mz smile pioneer glasses with dspr
+    show mz excitement pioneer glasses with dspr
     
     "Женя оглядела меня хитрым взглядом."
     
@@ -2295,7 +2298,7 @@ label blwnfh_day_4:
     
     "Проорала на всю библиотеку Женя."
     
-    show mz smile2 pioneer glasses far with dspr
+    show mz smile pioneer glasses far with dspr
     
     "И почти сразу же, она сделала несколько вдохов-выдохов."
     

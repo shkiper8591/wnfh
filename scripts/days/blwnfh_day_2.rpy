@@ -1768,7 +1768,7 @@ label blwnfh_day_2:
     "Мику закрыла муз кружок, и мы отправились на площадь, дожидаться горна к ужину."
     
     window hide
-    scene ext_lenin_square_sunset with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     

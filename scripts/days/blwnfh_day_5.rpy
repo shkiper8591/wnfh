@@ -436,7 +436,7 @@ label blwnfh_day_5:
     show kat interested pioneer
     with slide_diagonal_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
-    play musis blwnfh_music_list["warm_evening"] fadein 3.5
+    play music blwnfh_music_list["warm_evening"] fadein 3.5
 
     "Мы вышли в пролесок."
     "На протяжении пути, что нами был пройден, Катя с большим любопытством разглядывает моё лицо."
@@ -2764,16 +2764,18 @@ label blwnfh_day_5:
     
     "Ульяна вдарила по мячу со всей силы, надеясь пробить защиту Алисы."
 
-    hide nvl dissolve
+    $ blwnfh_set_mode()
+    $ renpy.pause(0.01)
+    window hide
     show cg d5_dv_football with dissolve
-    $ renpy.pause(1.5)
+    $ renpy.pause(2.5)
     hide cg d5_dv_football with dissolve
-    show nvl dissolve
+    $ blwnfh_set_mode(nvl)
 
     "Однако, Алиса успела поймать мяч, чему крайне была недовольна Ульяна.\n"
     
-    kat "Похоже Ульянена попытка прорыва потерпела неудачу.\n"
-    me "И она явно не рада этому."
+    kat "Похоже Ульянена попытка прорыва потерпела неудачу."
+    me "И она явно не рада этому.\n"
 
     "Алиса вернула мяч в игру, кинув его своему сокоманднику."
     "Ульяна сразу же попыталась забрать мяч себе, но её соперник отдал пас другому своему товарищу."

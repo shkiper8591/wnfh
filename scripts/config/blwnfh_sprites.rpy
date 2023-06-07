@@ -29,7 +29,7 @@ init 2:
                 'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1,
                 'angry': 2, 'rage': 2,
                 'grin': 3, 'laugh': 3,
-                'mt_4_dc_reading': 4, 'dc_smotrit': 4,
+                'dc_reading': 4, 'dc_smotrit': 4,
             },
             'sh': {
                 'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1,

@@ -989,7 +989,7 @@ label blwnfh_day_4:
     kat "А что рисуешь?"
     un "Подойди да посмотри."
     
-    show kat normal with dspr
+    show kat normal far at cright with dspr
     
     "Катя подошла к холсту и стала рассматривать его."
     #34 фоновые спрайты?
@@ -1002,46 +1002,49 @@ label blwnfh_day_4:
     
     "Я посмотрел на холст."
     
-    show un surprise pioneer at left with dspr
+    show un dr_normal dr background with dspr
     
     "Это был всё тот же рисунок, что и вчера."
     "Только сейчас он выглядел более законченным."
     
     kat "Красиво рисуешь."
     
-    show un shy pioneer at left with dspr
+    show un dr_shy_normal dr background with dspr
     
     un "Спасибо[wp]"
     
     "Катя уселась на своё рабочее место и развернула пакет с едой."
     "Достав оттуда всё содержимое она положила булки на сам пакет и компот рядом."
     
-    show kat smile with dspr
+    show un dr_normal_wk dr background
+    show bg int_editorial_day_bumaga
+    show kat wr_smile wr background at center
+    with dspr
     
     "Она взяла одну булку и протянула её Лене."
     
     kat "Будешь?"
     
-    show un smile2 pioneer at left with dspr
+    show un dr_smile dr background with dspr
     
-    me "Пожалуй откажусь."
-    
-    show kat happy pioneer at right with dspr
+    un "Пожалуй откажусь."
     
     kat "Ну, значит мне больше достанется."
     
     "Катя принялась активно уплетать свой небольшой завтрак, а Лена отвернулся обратно к холсту."
     
-    show un normal pioneer at left with dspr
+    show un dr_normal_wk dr background with dspr
     
     "И пока мы все ждём Женю, чтобы не стоять как дурак посреди помещения, я сел на табуретку между девочками."
     "Но как только я сел, тут же пришла наша начальница, которая сходу начала громко говорить."
     
-    show mz normal glasses pioneer far at center with dissolve
+    show mz normal glasses pioneer far:
+        xcenter -0.4 ycenter 0.5
+        ease_quart 2.5 xcenter 0.28
     
     mz "И так товарищи пионеры, сегодня[wp]"
     
-    show mz angry glasses pioneer far at center with dspr
+    show mz angry glasses pioneer far with dspr
     ## Женя устраивает разбор полётов Кате за еду
     "Женя прервалась, уставившись злым взглядом на Катю."
     
@@ -1051,7 +1054,7 @@ label blwnfh_day_4:
     
     "Катя явно не ожидала такого наезда со стороны Жени и аж малость поперхнулась едой."
     
-    show mz rage glasses pioneer far at center with dspr
+    show mz rage glasses pioneer far with dspr
     
     mz "Мало того что опаздываете, так и ещё едите в неположенном для этого месте!"
     
@@ -1089,7 +1092,7 @@ label blwnfh_day_4:
     me "Довела девчонку до слёз!"
     me "Ещё небось стыдно должно быть ей, а не тебе, да?"
     
-    show mz shyangry glasses pioneer far at center with dspr
+    show mz shyangry glasses pioneer far with dspr
     
     "Женя ничего не ответила и лишь стыдливо отвела взгляд."
     "Я же стал искать какой-нибудь платок, чтобы вытереть лицо Кати."
@@ -1109,7 +1112,7 @@ label blwnfh_day_4:
     
     th "Не может быть, Женя просит прощения[wp] {w}Сегодня пойдет снег?"
     
-    show kat happy pioneer at right with dspr
+    show kat happy pioneer with dspr
     
     kat "Конечно же тебя прощаю."
     # kat "Я же не такая сучка как ты"
@@ -1119,19 +1122,21 @@ label blwnfh_day_4:
     mz "Кать, я волнуюсь не зря, ведь у меня такая ответственность следить за чистотой в библиотеке."
     mz "И мне не хочется чтобы вы её загадили[wp]"
     
-    show mz shyangry pioneer glasses far at center with dspr
+    show mz shyangry pioneer glasses far with dspr
     
     mz "Поэтому и взъелась так[wp]"
     me "Жень, ты вроде хотела нам что-то сказать."
     
-    show kat normal pioneer at right
-    show mz normal glasses pioneer far at center 
+    show kat normal pioneer
+    show mz normal glasses pioneer far
     with dspr
     ## Брифинг журналистам
     mz "Да, попрошу минуту внимания."
     
     "Катя отложила булку в сторону и вся была во внимании."
     "Лена также, аккуратно положив все свои принадлежности, повернулась к Жене."
+
+    show un dr_normal dr background with dspr
     
     #mz "Значит так, собаки, я вам принесла тему для вашей первой небольшой работы и в благородство играть не буду, которая предназначена, так сказать, набить вам ебала, чтобы со следующей недели вы начали работать по 72 часа в сутки."
     mz "Значит так, я вам принесла тему для вашей первой небольшой работы."
@@ -1147,17 +1152,17 @@ label blwnfh_day_4:
     
     "Я поднял руку, чтобы задать этот вопрос Жене."
     
-    show mz bukal glasses pioneer far at center with dspr
+    show mz bukal glasses pioneer far with dspr
     
     mz "Все вопросы после того как я договорю."
     
     "Вздохнув, я опустил руку обратно."
     
-    show mz normal glasses pioneer far at center with dspr
+    show mz normal glasses pioneer far with dspr
     
     mz "Соответственно, вам придется сходить на площадку, задать участникам несколько вопросов, записать их и на основе этого написать статью."
     
-    show mz bukal glasses pioneer far at center with dspr
+    show mz bukal glasses pioneer far with dspr
     
     mz "Теперь можно задавать вопросы."
     
@@ -1169,56 +1174,59 @@ label blwnfh_day_4:
     
     me "Когда должна выйти будет эта новость-то? До матча или после?"
     
-    show mz smile glasses pioneer far at center with dspr
+    show mz smile glasses pioneer far with dspr
     
     mz "Молодец что спросил, совсем забыла добавить, что ваша работа будет делиться на две части."
     mz "Первая часть должна выйти сегодня и будет представлять из себя небольшую новость, где будет рассказано про завтрашний матч, а именно: интервью с участниками, процесс подготовки и ваши прогнозы по итогам матча."
     mz "Вторая часть выйдет через день после матча, где вы возьмете опять интервью у победителей и проигравших, и подведёте итоги матча."
     
-    show mz bukal glasses pioneer far at center with dspr
+    show mz bukal glasses pioneer far with dspr
     
     mz "Всё, теперь точно я закончила, так что можете приступать к работе."
     
-    hide mz with dissolve
-    
+    show mz bukal glasses pioneer far:
+        xcenter 0.28 ycenter 0.5
+        ease_quart 2.5 xcenter -0.4
+
     "Женя быстро покинула подсобку."
+    hide mz with dissolve
     
     th "Наконец-то она свалила, зараза такая."
     
-    show kat happy pioneer at right with dspr
+    show kat happy pioneer with dspr
     
     kat "Ну что, товарищи, приступим?"
     me "К чему?"
     
-    show kat normal pioneer at right with dspr
+    show kat normal pioneer with dspr
     
     kat "Ну как к чему, надо составить вопросы, которые будем задавать участникам матча."
     me "Та я тебя умоляю, зачем всё это, импровизация наше всё."
     me "Да и к тому же, чего там надо такого спрашивать?"
     kat "Лен, а ты что думаешь?"
     
-    show un shy pioneer at left with dspr
+    show un dr_smile dr background with dspr
     
     un "Ой, даже не знаю, возможно {i}Семён{/i} прав."
     
-    show kat obida pioneer at right with dspr
+    show kat obida pioneer with dspr
     
     "Катя надула щёки."
     
     kat "Скучные вы."
     
-    show un normal pioneer at left with dspr
+    show un dr_normal_wk dr background with dspr
     
     me "Возможно, но без лишней траты времени на вопросы мы быстрее начнем, а значит и быстрее законим."
     me "А это в свою очередь значит, что можно будет потратить больше времени на музыку."
     
-    show kat thinking pioneer at right with dspr
+    show kat thinking pioneer with dspr
     
     kat "В целом[wp] {w}Да, звучит неплохо."
     me "Ну тогда всё, идем все на спортплощадку наверное[wp]"
     me "Думаю перед матчем наши спортсмены будут проводить финальную тренировку или что-то в таком духе."
     
-    show kat normal pioneer at right with dspr
+    show kat normal pioneer with dspr
     
     kat "Да, давайте."
     un "Я пожалуй не пойду."
@@ -1227,7 +1235,7 @@ label blwnfh_day_4:
     
     kat "Почему?"
     
-    show un shy pioneer at left with dspr
+    show un dr_normal dr background with dspr
     
     un "А что я там делать буду?"
     un "Только мешаться."
@@ -1237,7 +1245,7 @@ label blwnfh_day_4:
     kat "Ну какой мешаться, наоборот же поможешь!"
     kat "Может у тебя вопросы какие-нибудь интересные будут."
     
-    show un normal with dspr
+    show un dr_normal_wk dr background with dspr
     
     un "Сомневаюсь."
     
@@ -1247,7 +1255,7 @@ label blwnfh_day_4:
     me "Кать не хочет человек и не надо."
     me "Давай пойдем уже скорее."
     
-    show kat guilty pioneer at right with dspr
+    show kat guilty pioneer with dspr
     
     "Катя грустно опустила голову и угукнула."
     "И когда она взяла блокнот с карандашом, мы покинули подсобку."
@@ -2100,7 +2108,7 @@ label blwnfh_day_4:
     mz "Вот Серёжа и предложил альтернативу."
     me "Понятно[wp]"
     
-    show mz smile2 glasses pioneer with dspr
+    show mz smile2 pioneer glasses with dspr
     
     mz "А вы почему захотели?"
     
@@ -2112,7 +2120,7 @@ label blwnfh_day_4:
     mz "Отлично, а то этот островок мы уже себе «забронировали»."
     me "Буду иметь ввиду."
     
-    show mz smile glasses pioneer with dspr
+    show mz smile pioneer glasses with dspr
     
     "Женя оглядела меня хитрым взглядом."
     
@@ -2132,7 +2140,7 @@ label blwnfh_day_4:
     mz "А значит точно понравилась!"
     me "Та ну тебя."
     
-    show mz bukal glasses pioneer with dspr
+    show mz bukal pioneer glasses with dspr
     
     "В библиотеке повисло молчание, а библиотекарша смотрела на меня своим полу-презрительным взглядом."
     
@@ -2148,7 +2156,7 @@ label blwnfh_day_4:
     "Постепенно книги первой полки наконец были протерты и выставлены в алфавитном порядке."
     "Мы же сразу перешли к следующей партии книг."
     
-    show mz normal glasses pioneer with dspr 
+    show mz normal pioneer glasses with dspr 
     
     mz "Хорошая мелодия."
     me "Угу[wp]"
@@ -2160,45 +2168,45 @@ label blwnfh_day_4:
     ## В библиотеку врывается Дина/Алиса
     "Но договорить я не успел, так как в этот момент в библиотеку громко вломилась Дина."
     
-    show mz rage glasses pioneer with dspr
+    show mz rage pioneer glasses with dspr
     
-    mz "Сколько раз я говорила не хлопать дверьми?!"
-    din "А кому не всё равно?"
-    mz "Ну-ка вон из библиотеки! У нас тут уборка!"
-    din "Сама бы рада уйти отсюда."
-    din "Но я не уйду пока не получу книгу."
-    mz "Ты меня слушаешь? У-БОР-КА!"
-    din "А ты меня слушаешь?"
-    
-    show mz angry glasses pioneer with dspr
-    
-    mz "Так, Семён, ты пока один тут поработай."
-    me "Ага."
-    
-    show mz angry glasses pioneer far with dspr
-    
-    "Женя резко встала и с грозным видом направилась к Дине."
-    "Подойдя к бунтарке у них завязалась перепалка."
-    "Похоже, ни одна из сторон не хотела слушать друг друга."
-    
-    th "Конечно, наверное стоило бы их разнять но[wp]"
-    th "Чем быстрее я разберусь с книжками, тем быстрее освобожусь."
-    
-    show kat confused pioneer close at right with dissolve
-    
-    kat "Что тут творится?"
-    
-    "Тихо спросила Катя."
-    
-    me "Женя и Дина спорят о чём-то."
-    
-    show kat interested with dspr
-    
-    kat "Дина? Кто это."
-    me "Она из другого отряда, который примерно на полгода помладше нас."
-    kat "Хм, не видела её ни разу."
-    kat "А о чём они спорят?"
-    me "Не знаю, не слушал их особо."
+    #mz "Сколько раз я говорила не хлопать дверьми?!"
+    #din "А кому не всё равно?"
+    #mz "Ну-ка вон из библиотеки! У нас тут уборка!"
+    #din "Сама бы рада уйти отсюда."
+    #din "Но я не уйду пока не получу книгу."
+    #mz "Ты меня слушаешь? У-БОР-КА!"
+    #din "А ты меня слушаешь?"
+    #
+    #show mz angry pioneer glasses with dspr
+    #
+    #mz "Так, Семён, ты пока один тут поработай."
+    #me "Ага."
+    #
+    #show mz angry pioneer glasses far with dspr
+    #
+    #"Женя резко встала и с грозным видом направилась к Дине."
+    #"Подойдя к бунтарке у них завязалась перепалка."
+    #"Похоже, ни одна из сторон не хотела слушать друг друга."
+    #
+    #th "Конечно, наверное стоило бы их разнять но[wp]"
+    #th "Чем быстрее я разберусь с книжками, тем быстрее освобожусь."
+    #
+    #show kat confused pioneer close at right with dissolve
+    #
+    #kat "Что тут творится?"
+    #
+    #"Тихо спросила Катя."
+    #
+    #me "Женя и Дина спорят о чём-то."
+    #
+    #show kat interested with dspr
+    #
+    #kat "Дина? Кто это."
+    #me "Она из другого отряда, который примерно на полгода помладше нас."
+    #kat "Хм, не видела её ни разу."
+    #kat "А о чём они спорят?"
+    #me "Не знаю, не слушал их особо."
     
     show kat thinking with dspr
     
@@ -2225,7 +2233,7 @@ label blwnfh_day_4:
     
     window hide
     stop music fadeout 3
-    show mz bukal glasses pioneer far with dspr
+    show mz bukal pioneer glasses far with dspr
     $ renpy.pause(2.0)
     window show
     
@@ -2736,7 +2744,7 @@ label blwnfh_day_4:
     window hide dissolve
     stop music fadeout 3.5
     stop ambience fadeout 2.0
-    scene d4_me_kat_mi_in_forest
+    scene cg d4_me_kat_mi_in_forest
     with sphere_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
     $ renpy.pause(1.5, hard=True)
@@ -2798,7 +2806,7 @@ label blwnfh_day_4:
 
     "В один момент Мику нырнула куда-то в траву, так что мы не сразу поняли, что произошло, пока она не выглянула."
 
-    show mi normal pioneer at right with dissolve
+    show mi normal pioneer at left with dissolve
 
     mi "Чего вы стоите столбом, давайте сюда скорее, здесь о-о-очень уютненько!"
 

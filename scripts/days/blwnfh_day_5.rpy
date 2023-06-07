@@ -2537,7 +2537,7 @@ label blwnfh_day_5:
     show el normal pioneer:
         xcenter 1.2 ycenter 0.5
         ease_quart 6.5 xcenter -0.4
-    show mz normal glasses pioneer:
+    show mz normal pioneer glasses:
         xcenter 1.4 ycenter 0.5
         ease_quart 6.5 xcenter -0.4 
     $ renpy.pause(6.5, hard=True)

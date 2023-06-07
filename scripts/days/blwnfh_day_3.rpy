@@ -211,7 +211,7 @@ label blwnfh_day_3:
     
     show mt pioneer smile:
         ease_quart 1.0 xcenter 0.72
-    show mz normal glasses pioneer at left with dissolve
+    show mz normal pioneer glasses at left with dissolve
     
     mz "Товарищи пионеры! Я и Ольга Дмитриевна, хотим торжественно заявить, что сегодня свою работу начинают кружок журналистики."
     
@@ -1440,7 +1440,7 @@ label blwnfh_day_3:
     
     "Я стал медленно подходить к полке."
     
-    show mz bukal glasses pioneer at left with dspr
+    show mz bukal pioneer glasses at left with dspr
     
     "Как из-за неё вышла Женя."
     "Вид у нее был довольно усталый."
@@ -1457,7 +1457,7 @@ label blwnfh_day_3:
     me "О как, а чего на обед не пришли?"
     mz "Так дело было, вот и не пошли."
     
-    show mz smile glasses pioneer at left with dspr
+    show mz smile pioneer glasses at left with dspr
     
     mz "Да и ещё Серёжа принес с собой еды, так что не голодные."
     me "А я волновался что вы тут от голоду помираете, конфет даже вам принес."
@@ -1481,7 +1481,7 @@ label blwnfh_day_3:
     
     "Медленно развернувшись обратно, я сделал самую невинную улыбку, которую только мог."
     
-    show mz rage glasses pioneer at left 
+    show mz rage pioneer glasses at left 
     show el scared pioneer at right 
     with dspr
     
@@ -1491,7 +1491,7 @@ label blwnfh_day_3:
     
     el "Семён, мне кажется ты всё не так понял."
     
-    show mz angry glasses pioneer at left with dspr
+    show mz angry pioneer glasses at left with dspr
     
     mz "Совсем не так!"
     
@@ -2047,7 +2047,7 @@ label blwnfh_day_3:
     
     stop ambience fadeout 1.5
     scene bg int_library_day
-    show mz smile glasses pioneer at left
+    show mz smile pioneer glasses at left
     show kat normal pioneer at right
     with door_blure_dissolve2
     play ambience ambience_library_day fadein 2.5
@@ -2120,13 +2120,13 @@ label blwnfh_day_3:
     mz "Так что нужно использовать по максимуму то что есть."
     kat "Ладненько, постараюсь не сильно увлекаться."
     
-    show mz bukal glasses pioneer at cright with dspr
+    show mz bukal pioneer glasses at cright with dspr
     
     mz "Так, всё, инструктаж проведен."
     
     "Катя же немного ещё по печатав на машинке, убежала беседовать с Леной."
     
-    show mz normal glasses pioneer at right
+    show mz normal pioneer glasses at right
     show kat smile far at cleft
     show un smile2 far at left
     with dspr
@@ -2147,7 +2147,7 @@ label blwnfh_day_3:
     mz "Значит тоже знаешь, что штука дорогая, так что если сломаешь, можешь сразу в гроб."
     me "Да, и это знаю."
     
-    show mz bukal glasses pioneer at center with dspr
+    show mz bukal pioneer glasses at center with dspr
     
     mz "Тогда не крути его в руках, а повесь на шею и отнеси его домой."
     me "А чехла никакого нету?"
@@ -2281,7 +2281,7 @@ label blwnfh_day_3:
     
     "Тут к нам пришла Женя в не самом добром настроении."
     
-    show mz angry glasses pioneer at right with dspr
+    show mz angry pioneer glasses at right with dspr
     
     mz "Вы что тут у меня устраиваете?!"
     mz "Почему пионерка рыдает? Ну-ка пошли вон все отсюда!"

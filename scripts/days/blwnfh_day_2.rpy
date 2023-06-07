@@ -772,8 +772,9 @@ label blwnfh_day_2:
     play sound sfx_open_door_1
     scene bg int_library_day with bibl_entrance
     play ambience ambience_library_day fadein 3
-    show mz normal glasses pioneer at left with dissolve
-    show kat normal pioneer at right with dissolve
+    show mz normal pioneer glasses at left
+    show kat normal pioneer at right 
+    with dissolve
     window show
     
     ## В библиотеке
@@ -782,7 +783,7 @@ label blwnfh_day_2:
     mz "Зачем пришли?"
     me "Да вот, новенькой обходный лист подписать надо."
     
-    show mz bukal glasses pioneer at left with dspr
+    show mz bukal pioneer glasses at left with dspr
     
     mz "Хорошо, давайте сюда."
     

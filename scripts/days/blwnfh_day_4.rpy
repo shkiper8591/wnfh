@@ -947,7 +947,7 @@ label blwnfh_day_4:
     
     "Добродушным голосом сказала Катя."
     
-    show mz rage glasses pioneer at left with dissolve
+    show mz rage pioneer glasses at left with dissolve
     
     mz "Явились не запылились!"
     mz "Вам не стыдно, в первый же день работы кружка опаздывать на полчаса?!"
@@ -956,7 +956,7 @@ label blwnfh_day_4:
     
     kat "Прости, так вот вышло[wp]"
     
-    show mz angry glasses pioneer at left with dspr
+    show mz angry pioneer glasses at left with dspr
     
     mz "Хорошо, прощаю, но только один раз!"
     mz "Если и в следующий раз опоздаете – пеняйте на себя."
@@ -965,7 +965,7 @@ label blwnfh_day_4:
     
     kat "Спасибо тебе огромное! В следующий раз точно придем вовремя!"
     
-    show mz bukal glasses pioneer at left with dspr
+    show mz bukal pioneer glasses at left with dspr
     
     mz "Ладно, идите пока на своё рабочее место, я сейчас кое-что доделаю и приду к вам."
     
@@ -1038,13 +1038,13 @@ label blwnfh_day_4:
     "И пока мы все ждём Женю, чтобы не стоять как дурак посреди помещения, я сел на табуретку между девочками."
     "Но как только я сел, тут же пришла наша начальница, которая сходу начала громко говорить."
     
-    show mz normal glasses pioneer far:
+    show mz normal pioneer glasses far:
         xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.28
     
     mz "И так товарищи пионеры, сегодня[wp]"
     
-    show mz angry glasses pioneer far with dspr
+    show mz angry pioneer glasses far with dspr
     ## Женя устраивает разбор полётов Кате за еду
     "Женя прервалась, уставившись злым взглядом на Катю."
     
@@ -1054,7 +1054,7 @@ label blwnfh_day_4:
     
     "Катя явно не ожидала такого наезда со стороны Жени и аж малость поперхнулась едой."
     
-    show mz rage glasses pioneer far with dspr
+    show mz rage pioneer glasses far with dspr
     
     mz "Мало того что опаздываете, так и ещё едите в неположенном для этого месте!"
     
@@ -1092,7 +1092,7 @@ label blwnfh_day_4:
     me "Довела девчонку до слёз!"
     me "Ещё небось стыдно должно быть ей, а не тебе, да?"
     
-    show mz shyangry glasses pioneer far with dspr
+    show mz shyangry pioneer glasses far with dspr
     
     "Женя ничего не ответила и лишь стыдливо отвела взгляд."
     "Я же стал искать какой-нибудь платок, чтобы вытереть лицо Кати."
@@ -1128,7 +1128,7 @@ label blwnfh_day_4:
     me "Жень, ты вроде хотела нам что-то сказать."
     
     show kat normal pioneer
-    show mz normal glasses pioneer far
+    show mz normal pioneer glasses far
     with dspr
     ## Брифинг журналистам
     mz "Да, попрошу минуту внимания."
@@ -1152,17 +1152,17 @@ label blwnfh_day_4:
     
     "Я поднял руку, чтобы задать этот вопрос Жене."
     
-    show mz bukal glasses pioneer far with dspr
+    show mz bukal pioneer glasses far with dspr
     
     mz "Все вопросы после того как я договорю."
     
     "Вздохнув, я опустил руку обратно."
     
-    show mz normal glasses pioneer far with dspr
+    show mz normal pioneer glasses far with dspr
     
     mz "Соответственно, вам придется сходить на площадку, задать участникам несколько вопросов, записать их и на основе этого написать статью."
     
-    show mz bukal glasses pioneer far with dspr
+    show mz bukal pioneer glasses far with dspr
     
     mz "Теперь можно задавать вопросы."
     
@@ -1174,17 +1174,17 @@ label blwnfh_day_4:
     
     me "Когда должна выйти будет эта новость-то? До матча или после?"
     
-    show mz smile glasses pioneer far with dspr
+    show mz smile pioneer glasses far with dspr
     
     mz "Молодец что спросил, совсем забыла добавить, что ваша работа будет делиться на две части."
     mz "Первая часть должна выйти сегодня и будет представлять из себя небольшую новость, где будет рассказано про завтрашний матч, а именно: интервью с участниками, процесс подготовки и ваши прогнозы по итогам матча."
     mz "Вторая часть выйдет через день после матча, где вы возьмете опять интервью у победителей и проигравших, и подведёте итоги матча."
     
-    show mz bukal glasses pioneer far with dspr
+    show mz bukal pioneer glasses far with dspr
     
     mz "Всё, теперь точно я закончила, так что можете приступать к работе."
     
-    show mz bukal glasses pioneer far:
+    show mz bukal pioneer glasses far:
         xcenter 0.28 ycenter 0.5
         ease_quart 2.5 xcenter -0.4
 
@@ -1571,7 +1571,7 @@ label blwnfh_day_4:
     
     stop ambience fadeout 2.0
     scene bg int_library_day 
-    show mz normal glasses pioneer at left 
+    show mz normal pioneer glasses at left 
     show el normal pioneer at right 
     with bibl_entrance
     play sound sfx_open_door_1
@@ -1607,7 +1607,7 @@ label blwnfh_day_4:
     
     el "А вот это уже хорошие вести!"
     
-    show mz bukal glasses pioneer at left with dspr
+    show mz bukal pioneer glasses at left with dspr
     
     mz "Вы бы лучше книжки читали, а не занимались ерундой."
     me "Ладно[wp] Вы кстати, о чём тут разговаривали?"
@@ -1688,7 +1688,7 @@ label blwnfh_day_4:
     
     show kat confused pioneer:
         ease_quart 1.5 xcenter 0.28 
-    show mz rage glasses pioneer:
+    show mz rage pioneer glasses:
         xcenter 1.2 ycenter 0.5
         ease_quart 1.5 xcenter 0.5
     show el normal pioneer:
@@ -1704,7 +1704,7 @@ label blwnfh_day_4:
     
     "Я попытался сделать самую добрую улыбку на свете, чтобы хоть немного смягчить ситуацию."
     
-    show mz angry glasses pioneer with dspr
+    show mz angry pioneer glasses with dspr
     
     mz "В таком случае мне очень интересно, что же ты услышал?"
     me "О ваших делах и то, что Серый рассказал тебе, что не следовало рассказывать."
@@ -1720,7 +1720,7 @@ label blwnfh_day_4:
     kat "О чём вы?"
     mz "Да этот дурак узнал, что я с Сережей через пару дней на остров поплывем."
     
-    show mz amazed glasses pioneer
+    show mz amazed pioneer glasses
     show el scared 
     with dspr
     
@@ -1740,7 +1740,7 @@ label blwnfh_day_4:
     kat "Ну пожалуйста!"
     el "Нет и всё, у нас к тому же есть санкция вожатой."
     
-    show mz bukal glasses pioneer with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Сереж, я проговорилась, значит и мне решать."
     el "Ох, ну и каков же твой вердикт?"
@@ -1755,7 +1755,7 @@ label blwnfh_day_4:
     kat "Вот только[wp]"
     kat "А мне что, самой грести придется?"
     
-    show mz laugh glasses pioneer with dspr
+    show mz laugh pioneer glasses with dspr
     
     "Женя рассмеялась."
     
@@ -1765,7 +1765,7 @@ label blwnfh_day_4:
     
     kat "А как же, я не умею[wp]"
     
-    show mz bukal glasses pioneer with dspr 
+    show mz bukal pioneer glasses with dspr 
     
     "Все здесь присутствующие медленно перевели свои взгляды на меня."
     
@@ -2009,7 +2009,7 @@ label blwnfh_day_4:
     "Не обращая на нее особого внимания, мы двинулись в подсобку."
     "Уже почти у самого входа на наше рабочее место, начальница меня окликнула и я, оставив своих подруг, подошел к ней."
     
-    show mz normal glasses pioneer with dissolve
+    show mz normal pioneer glasses with dissolve
     
     me "Слушаю."
     mz "Семён, будь так добр помочь мне прибраться в библиотеке."
@@ -2021,18 +2021,18 @@ label blwnfh_day_4:
     mz "У нее есть Лена, так что не пропадет."
     me "А может попросишь Сергея? Ты же явно помнишь, что было в прошлый раз."
     
-    show mz bukal glasses pioneer with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Помню, но Сережа занят, а ты нет, да и до тебя ближе."
     
-    show mz smile glasses pioneer with dspr
+    show mz smile pioneer glasses with dspr
     
     me "Ладно, давай помогу[wp]"
     mz "Отлично, только постарайся в этот раз не наваливаться всем весом на полки и не переворачивать мне всю библиотеку."
     mz "И может быть я прощу тебя за тот инцидент."
     th "Не то чтобы мне было прям нужно твоё прощение, но учитывая твоё нынешнее господствующее положение надо мной, то с начальством лучше дружить, чем ссорится."
     
-    show mz normal glasses pioneer with dspr
+    show mz normal pioneer glasses with dspr
     
     me "А что делать-то надо?"
     mz "Та всё тоже самое, протереть книги, полки и полы."
@@ -2068,24 +2068,24 @@ label blwnfh_day_4:
     mz "Ничем таким особенным."
     me "А если конкретнее?"
     
-    show mz bukal glasses pioneer with dspr
+    show mz bukal pioneer glasses with dspr
     
     mz "Разведём костер, пожарим на нем картошки, полюбуемся видами Волги, а потом домой."
     me "Хе, откуда ж вы бульбу достанете?"
     
-    show mz smile glasses pioneer with dspr
+    show mz smile pioneer glasses with dspr
     
     mz "Этот вопрос к Сереже." 
     mz "Он говорил, что знает где её можно достать."
     
-    show mz normal glasses pioneer with dspr
+    show mz normal pioneer glasses with dspr
     
     mz "А чего ты это так интересуешься?"
     me "Да вот, от скуки."
     
     "Она тихонько усмехнулась."
     
-    show mz excitement glasses pioneer with dspr
+    show mz excitement pioneer glasses with dspr
     
     mz "От скуки говоришь[wp]."
     mz "Ну, а вы тогда, чем будете на острове заниматься?"
@@ -2165,48 +2165,55 @@ label blwnfh_day_4:
     me "И не потому что я[wp]"
     
     # нужно вставить спрайт дины
-    ## В библиотеку врывается Дина/Алиса
-    "Но договорить я не успел, так как в этот момент в библиотеку громко вломилась Дина."
+    ## В библиотеку врывается Алиса
+    "Но договорить я не успел, так как в этот момент в библиотеку громко вломилась Алиса."
     
     show mz rage pioneer glasses with dspr
     
-    #mz "Сколько раз я говорила не хлопать дверьми?!"
-    #din "А кому не всё равно?"
-    #mz "Ну-ка вон из библиотеки! У нас тут уборка!"
-    #din "Сама бы рада уйти отсюда."
-    #din "Но я не уйду пока не получу книгу."
-    #mz "Ты меня слушаешь? У-БОР-КА!"
-    #din "А ты меня слушаешь?"
-    #
-    #show mz angry pioneer glasses with dspr
-    #
-    #mz "Так, Семён, ты пока один тут поработай."
-    #me "Ага."
-    #
-    #show mz angry pioneer glasses far with dspr
-    #
-    #"Женя резко встала и с грозным видом направилась к Дине."
-    #"Подойдя к бунтарке у них завязалась перепалка."
-    #"Похоже, ни одна из сторон не хотела слушать друг друга."
-    #
-    #th "Конечно, наверное стоило бы их разнять но[wp]"
-    #th "Чем быстрее я разберусь с книжками, тем быстрее освобожусь."
-    #
-    #show kat confused pioneer close at right with dissolve
-    #
-    #kat "Что тут творится?"
-    #
-    #"Тихо спросила Катя."
-    #
-    #me "Женя и Дина спорят о чём-то."
-    #
-    #show kat interested with dspr
-    #
-    #kat "Дина? Кто это."
-    #me "Она из другого отряда, который примерно на полгода помладше нас."
-    #kat "Хм, не видела её ни разу."
-    #kat "А о чём они спорят?"
-    #me "Не знаю, не слушал их особо."
+    mz "Сколько раз я говорила не хлопать дверьми?!"
+    dv "А кому не всё равно?"
+    mz "Ну-ка вон из библиотеки! У нас тут уборка!"
+    dv "Сама бы рада уйти отсюда."
+    dv "Но я не уйду пока не получу книгу."
+    mz "Ты меня слушаешь? У-БОР-КА!"
+    dv "А ты меня слушаешь?"
+    
+    show mz angry pioneer glasses with dspr
+    
+    mz "Так, Семён, ты пока один тут поработай."
+    me "Ага."
+    
+    show mz angry pioneer glasses far with dspr
+    
+    "Женя резко встала и с грозным видом направилась к Алисе."
+    "Подойдя к бунтарке у них завязалась перепалка."
+    "Похоже, ни одна из сторон не хотела слушать друг друга."
+    
+    th "Конечно, наверное стоило бы их разнять но[wp]"
+    th "Чем быстрее я разберусь с книжками, тем быстрее освобожусь."
+    
+    show kat confused pioneer close at right with dissolve
+    
+    kat "Что тут творится?"
+    
+    "Тихо спросила Катя."
+    
+    me "Женя и Алиса спорят о чём-то."
+    
+    show kat interested with dspr
+    
+    kat "Ёмаё, как же они громко ругаются."
+    kat "Мы с Леной думали, что там кого-то убивают, вот и вышла проведать."
+    me "Мне кажется они недалеко от того, чтобы начать убивать друг друга."
+    kat "Так может их разнять?"
+    me "Не, я не хочу попасть под перекрёстный огонь."
+    me "К тому же они вряд ли до такого докатятся."
+
+    "Катя грустно вздохнула."
+
+    kat "Ох[wp] Надеюсь[wp]"
+    kat "А о чём они ругаются-то?"
+    me "Не знаю, не слушал их особо."
     
     show kat thinking with dspr
     
@@ -2244,7 +2251,7 @@ label blwnfh_day_4:
     
     "Наконец, похоже, библиотекарша решила сдаться и подошла к книжной полке."
     
-    show mz bukal glasses pioneer with dspr
+    show mz bukal pioneer glasses with dspr
     
     "Там она долго что-то высматривала, но так и не могла найти."
     
@@ -2267,7 +2274,7 @@ label blwnfh_day_4:
     
     mz "В следующий раз либо думай куда ставишь книгу, либо память напрягай получше."
     
-    show mz bukal glasses pioneer far with dspr
+    show mz bukal pioneer glasses far with dspr
     
     "Она вернулась обратно к Алисе и протянула ей книгу."
     "После чего села за своё рабочее место и сделала запись в журнал."
@@ -2279,34 +2286,34 @@ label blwnfh_day_4:
     
     # дина исчезает
     
-    show mz angry glasses pioneer far with dspr
+    show mz angry pioneer glasses far with dspr
     
     "Алиса покинула библиотеку, также громко хлопнув дверью."
     "Женя от злости сжала кулаки и прорычала."
     
-    show mz rage glasses pioneer far with dspr
+    show mz rage pioneer glasses far with dspr
     
     mz "КАК ЖЕ ОНА БЕСИТ!"
     
     "Проорала на всю библиотеку Женя."
     
-    show mz smile2 glasses pioneer far with dspr
+    show mz smile2 pioneer glasses far with dspr
     
     "И почти сразу же, она сделала несколько вдохов-выдохов."
     
     mz "Спокойствие, только спокойствие."
     
-    show mz normal glasses pioneer with dspr
+    show mz normal pioneer glasses with dspr
     
     "Немного успокоившись, Жена встала из-за стола и вернулась ко мне."
     
-    show mz amazed glasses pioneer with dspr
+    show mz amazed pioneer glasses with dspr
     
     mz "Ого[wp] Ты почти закончил."
     me "Старался[wp]"
     me "Надеюсь, я этим самым заслужил прощения? {w}Ну, за свою «неаккуратность» прошлую?"
     
-    show mz fun glasses pioneer with dspr
+    show mz fun pioneer glasses with dspr
     
     mz "Да, ты вполне заслужил прощения, без тебя бы трудилась тут часа три."
     me "Вот и славно."

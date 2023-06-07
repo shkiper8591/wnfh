@@ -2077,8 +2077,8 @@ label blwnfh_day_3:
     
     scene bg int_editorial_day 
     show mz normal pioneer glasses at cright 
-    show kat normal pioneer at fright 
-    show un normal pioneer far at left 
+    show kat normal pioneer at fright behind mz
+    show un normal pioneer far at left behind mz
     with dissolve
     
     "Для меня стало совершенно неожиданным, что первым членом кружка журналистики была Лена."
@@ -2131,8 +2131,8 @@ label blwnfh_day_3:
     "Катя же немного ещё по печатав на машинке, убежала беседовать с Леной."
     
     show mz normal pioneer glasses at right
-    show kat smile far at cleft
-    show un smile2 far at left
+    show kat smile far at cleft behind mz
+    show un smile2 far at left behind mz
     with dspr
     
     "Женя же отошла в дальнию часть комнаты и открыв ящик в столе, что-то оттуда взяла, а позже подошла ко мне."
@@ -2461,7 +2461,7 @@ label blwnfh_day_3:
     scene bg int_house_of_mt_sunset
     show kat scared pioneer
     show unblink 
-    with none
+    with None
     ## Семёна будит Катя
     "Проснувшись, я, широко распахнув глаза, резко дёрнулся и вскочил."
     "Только спустя пару секунд понял, что передо мной стоит крайне перепуганная Катя."
@@ -2742,7 +2742,7 @@ label blwnfh_day_3:
     
     "Подойдя к землянке, мы вышли в нее, благо дверь была открыта."
     
-    show int_blindage_night
+    show bg int_blindage_night with dissolve2
     #34 тут должен быть нормальный фон землянки.
     stop music fadeout 2.5
     
@@ -2771,7 +2771,7 @@ label blwnfh_day_3:
     "Осмотрев печку, я нашел на ней спички, а под кроватью удалось обнаружить немного дров и хвороста."
     "Всё это незамедлительно полетело в печь, которую разжечь удалось только с четвертой попытки, ибо спички оказались на редкость хреновыми, да и я не шибко умел с ними обращаться."
     
-    scene int_blindage_stove_night with dspr
+    scene bg int_blindage_stove_night with dspr
     
     "Растопив печь, я плотно закрыл дверь землянки."
     

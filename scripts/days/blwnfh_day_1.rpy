@@ -1332,6 +1332,8 @@ label blwnfh_day_1:
     
     sl "Но мы тебя сейчас быстренько переоденем и всю твою одежду на сушку."
     
+    hide sl with dspr
+    $ renpy.pause(0.25)
     show sl wh_tyanetsa wh background with dspr
     
     "Славя отошла обратно к стеллажу и потянулась наверх за формой." 

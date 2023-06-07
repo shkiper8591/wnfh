@@ -459,7 +459,7 @@ label blwnfh_day_6:
     me "Вот как."
     
     show usw dontlike with dspr
-    
+    play sound sfx_close_water_sink
     usw "Это всё Двачевская виновата!"
     me "И в чём же она виновата?"
     
@@ -5104,7 +5104,7 @@ label blwnfh_day_6:
     "Я подошёл к столу и взял её."
 
     play sound blwnfh_sfx_list["pickup_sound"]
-    scene bg int_clubs_male2_notaburet with dspr
+    scene bg int_clubs_male2_notaburet
     
     me "Прости подруга, у тебя была великая задача."
     me "Но теперь тебя пустят на пол."

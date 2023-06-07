@@ -70,7 +70,7 @@ label blwnfh_day_5:
     
     stop ambience fadeout 2.0
     scene bg int_warehouse_day
-    show sd wh_normal_glasses at background
+    show sd wh_normal_glasses wh background
     with dissolve2
     play ambience ambience_int_cabin_day fadein 2
     ## Семён на складе. Встреча с завхозом
@@ -89,12 +89,14 @@ label blwnfh_day_5:
     
     me "Да мне бы вот, рубашку поменять, а то я эту испачкал."
     
-    show sd wh_angry with dspr  
+    show sd wh_angry wh background with dspr  
 
     "Сергей Дмитриевич тяжело вздохнул и сложив очки положил их на стол."
     
     sd "Что же вы вечно не бережете форму-то свою."
     
+    hide sd with dspr
+    $ renpy.pause(0.25)
     show sd serious forma with dspr
 
     "Ворча, он встал со своего места и подошел к стеллажу с чистой одеждой."
@@ -114,7 +116,7 @@ label blwnfh_day_5:
     sd "Ещё чего, ты только хуже ещё сделаешь[wp] {w}Завтра Славяну попрошу, она у нас молодец в отличии от тебя."
     me "Как скажете."
     
-    show sd wh_normal_glasses with dspr
+    show sd wh_normal_glasses wh background with dspr
     
     "Не брежно бросив грязную рубашку в таз к другой грязной одежде, Сергей Дмитриевич вернулся обратно за свой стол и сделал запись в журнале."
     
@@ -123,7 +125,7 @@ label blwnfh_day_5:
     
     "Такому заявлению я был крайне удивлен."
     
-    show sd wh_angry_glasses with dspr 
+    show sd wh_angry_glasses wh background with dspr 
 
     sd "А вот так! Пионерам растяпам имущество не выдаю!"
     me "Ну Сергей Дмитриевич, ладно вам, может мы как-нибудь сможем договорится?"
@@ -137,7 +139,7 @@ label blwnfh_day_5:
     
     "Я гордо развернулся на все сто восемьдесят и уже готовился покинуть склад, как Сергей Дмитриевич меня окликнул."
     
-    show sd wh_normal_glasses with dspr 
+    show sd wh_normal_glasses wh background with dspr 
 
     sd "А, и пока ты ещё не ушел."
     me "Слушаю."    
@@ -160,6 +162,8 @@ label blwnfh_day_5:
 
     "Я подчинился просьбе завхоза и подошел к нему."
 
+    hide sd with dspr
+    $ renpy.pause(0.25)
     show sd normal forma glasses close with dspr 
 
     "Подойдя, он встал и стал рассматривать моё щетинистое лицо."
@@ -337,8 +341,9 @@ label blwnfh_day_5:
     th "Здесь-то меня точно не найдут! {w}А до завтрака моими поисками никто заниматься не будет"
     th "Что в свою очередь значит — можно спокойно посидеть полчаса в тишине да спокойствии."
     
+    play music music_list["she_is_kind"] fadein 3.5
     show kat normal pioneer:
-        xcenter -1.2 ycenter 0.5
+        xcenter -0.4 ycenter 0.5
         ease_quart 3.0 xalign 0.5
     $ renpy.pause(3.0, hard=True)
     show kat normal pioneer
@@ -425,12 +430,14 @@ label blwnfh_day_5:
     kat "Хорошо, только постарайся в этот раз не заблудится."
     me "Ничего не обещаю."
     
+    stop music fadeout 2.5
     stop ambience fadeout 2.0
     scene bg ext_path_day 
     show kat interested pioneer
     with slide_diagonal_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
-    
+    play musis blwnfh_music_list["warm_evening"] fadein 3.5
+
     "Мы вышли в пролесок."
     "На протяжении пути, что нами был пройден, Катя с большим любопытством разглядывает моё лицо."
     "И когда меня стало это уже реально смущать, она сказала:"
@@ -483,7 +490,7 @@ label blwnfh_day_5:
     me "Куда так летишь, блин."
     
     "Восстановив равновесие, я вошел внутрь."
-    
+    stop music fadeout 2.5
     window hide dissolve
     show bg ext_musclub_verandah_day:
         subpixel True
@@ -1254,8 +1261,10 @@ label blwnfh_day_5:
     "Закончив играть, я заметил, что девушки выглядывая из подсобки смотрят на меня."
     
     show mi normal pioneer:
+        xcenter -0.4 ycenter 0.5
         ease_quart 2.5 xcenter 0.28
     show kat normal pioneer:
+        xcenter -0.4 ycenter 0.5
         ease_quart 3.0 xcenter 0.72
     $ renpy.pause(3.0, hard=True)
     show mi normal pioneer
@@ -1531,7 +1540,8 @@ label blwnfh_day_5:
     show mi normal pioneer:
         xcenter -0.2 ycenter 0.5
     show bg int_dining_hall_day with Dissolve(5.0)
-    play ambience ambience_dining_hall_empty fadein 5
+    play ambience ambience_dining_hall_empty fadein 5.0
+    play music music_list["silhouette_in_sunset"] fadein 5.0
     
     "Спустя время, столовая опустела и к нам подошла Мику."
     
@@ -1586,7 +1596,7 @@ label blwnfh_day_5:
     show mi normal pioneer:
         ease_quart 2.09 xcenter 0.28
     
-    show int_dining_hall_day_vedro with dspr
+    show bg int_dining_hall_day_vedro with dspr
 
     "Вскоре возвратилась Мику с ведром воды наперевес, которое поставила на стол."
     
@@ -1615,12 +1625,15 @@ label blwnfh_day_5:
     show kat grin pioneer:
         ease_quart 1.8 xcenter 1.28
     $ renpy.pause(1.8, hard=True)
-    show kat dnr_cleaning
-    show mi dnr_cleaning
+    hide kat
+    hide mi
+    $ renpy.pause(0.10)
+    show kat dnr_cleaning dnr background
+    show mi dnr_cleaning dnr background
     with dissolve
     
     "Они взяли тряпки и быстро разошлись по разным углам, а я недоумевающим взглядом проводил обоих."
-    "Отнеся ведро в центр и взяв тряпку, я вскоре пришел в свой угол." 
+    "Взяв тряпку, я вскоре пошел в свой угол столовой." 
     "И будучи самым «везучим» человеком на свете, мне достался самый грязный участок столовой."
     "В прочем, везде нужно искать плюсы. {w}Чем дольше я буду убираться, тем дольше смогу уйти в свои мысли. {w}Главное не увлечься сильно этим, как на площади." 
     "Все мои мысли были забиты одной информацией, которая не давала мне покоя."
@@ -1671,6 +1684,7 @@ label blwnfh_day_5:
     
     "Я помохал девушкам на прощание, что они совсем не заметили, и удалился из столовой."
     
+    stop music fadeout 3.0
     stop ambience fadeout 2
     scene bg ext_dining_hall_near_day with dissolve
     play ambience ambience_camp_center_day fadein 2

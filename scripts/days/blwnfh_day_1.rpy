@@ -812,15 +812,8 @@ label blwnfh_day_1:
     th "Да уж, так себе весть[wp] {w}Так и знал ведь, что надо было вчера основательно так помыться!"
     th "Зато хотя бы голову помыл, правда, этого хватит на пару дней."
     
-    mt "А мыться ледяной водой я вам запрещаю!" 
-    mt "Не хватало чтобы вы ещё что-то себе отморозили или простыли[wp]"
-    mz "Ольга Дмитриевна, и что, нам реально ходить неделю без горячей воды?"
-    mz "И ладно ещё мы, девушки, но парни же воняют через день!"
-    el "Эй! Ничего мы не воняем!"
-    mz "Да?! Я тебя отсюда чувствую!"
-    
-    th "Начинается."
-    
+    "Тем временем недовольный гогот пионеров усиливался."
+
     # mt "Дрессированные пионеры. ПОЗАКРЫВАВЫ ПИЗДАКИ!!!!"
     mt "Ну-ка хватит!"
     mt "В общем, вы всё услышали. Хотите воду кипятите в чайниках, хотите на кострах, только уберите за собой."
@@ -1283,9 +1276,10 @@ label blwnfh_day_1:
     window hide
     stop ambience fadeout 0.5
     play sound sfx_open_door_1
-    scene bg int_warehouse_day with door_blure_dissolve
+    scene bg int_warehouse_day
+    show sl wh_snizu wh background
+    with door_blure_dissolve
     play ambience ambience_int_cabin_day fadein 3
-    show sl normal pioneer far at right with dissolve
     window show
     ## На складе со Славей и Катей
     "Мы вошли на склад, но внутри деда не было."
@@ -1295,23 +1289,28 @@ label blwnfh_day_1:
     
     "Сказал я, постучав о дверь."
     #34 звук стука о дерево
+    show sl wh_snizu2 wh background with dspr 
+
     sl "Ой, я сейчас."
-    
+
+    show sl wh_snizu wh background with dspr
+
     "Она положила что-то на полку и подошла ко мне."
-    
-    show sl normal pioneer far at right with dspr
+    hide sl with dspr
+    $ renpy.pause(0.25)
+    show sl normal pioneer at right with dspr
     
     sl "Привет снова."
     me "Привет, а где завхоз?"
     
-    show sl sad pioneer far at right with dspr
+    show sl sad with dspr
     
     sl "Сергею Дмитриевичу сегодня плохо и я его подменяю."
     
     "Грустно проговорила Славя."
     "Меня же такие вести, как бы это плохо не звучало, нисказанно обрадовали."
     
-    show sl normal pioneer far at right with dspr
+    show sl normal with dspr
     
     sl "А тебе зачем?"
     me "Да вот, нам бы новенькую переодеть в форму."
@@ -1323,17 +1322,17 @@ label blwnfh_day_1:
     with dissolve
     "Катя медленно вышла из-за меня к Славе."
     
-    show sl surprise pioneer far at right with dspr
+    show sl surprise with dspr
     
     sl "А чего она вся мокрая?"
     me "Ей неповезло встретится с двумя рыжими террористками."
     sl "Бедная[wp]"
     
-    show sl normal pioneer far at right with dspr
+    show sl normal with dspr
     
     sl "Но мы тебя сейчас быстренько переоденем и всю твою одежду на сушку."
     
-    show sl normal pioneer far at right with dspr
+    show sl wh_tyanetsa wh background with dspr
     
     "Славя отошла обратно к стеллажу и потянулась наверх за формой." 
     
@@ -1349,7 +1348,9 @@ label blwnfh_day_1:
     
     "Взяв в руки комплект формы, Славя спустилась и подошла к Кате."
     
-    show sl normal pioneer far at right with dspr
+    hide sl with dspr
+    $ renpy.pause(0.25)
+    show sl normal pioneer at right with dspr
     
     sl "Вот тебе, свежая, только недавно с сушки сняла."
     
@@ -1360,7 +1361,7 @@ label blwnfh_day_1:
     kat "А мне что, прямо перед {i}ним{/i} переодеваться?"
     # ну да, а почему бы и нет
     
-    show sl shy pioneer far at right with dspr
+    show sl shy with dspr
     
     sl "Ой, Семён, не мог бы ты выйти?"
     me "Да, конечно."
@@ -1435,7 +1436,9 @@ label blwnfh_day_1:
     "А спрашивать мне как-то неловко."
     
     window hide
-    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
+    scene bg ext_house_of_mt_day
+    show mt dc_reading dc background
+    with slide_left_blure_dissolve2
     window show
     ## Сдача Кати вожатой
     "Придя к домику вожатой, мне сразу стало понятно, что где-то меня явно обманули."
@@ -1448,13 +1451,18 @@ label blwnfh_day_1:
     
     "Мы подошли к Ольге Дмитриевне."
     
-    show mt normal pioneer at right with dissolve
-    show kat normal pioneer at left with dissolve
-    
     me "А вот и мы."
-    
+
+    show mt dc_smotrit dc background with dspr
+
+    mt "Ой, как вы быстро."
+    mt "Всё-таки не зря я доверилась тебе, Семён."
+    me "Спасибо, наверное?"
+
     "Вожатая быстренько закрыла книгу и встала с шезлонга."
-    #34 звук шлепка книги
+    
+    hide mt with dspr  
+    $ renpy.pause(0.25)
     show mt smile pioneer at right with dspr
     
     mt "Спасибо огромное Семён, прям[wp]"
@@ -1521,10 +1529,11 @@ label blwnfh_day_1:
     stop ambience fadeout 0.5
     scene bg ext_clubs_day with santa_barbara_in_blure_dissolve2
     play sound sfx_open_door_1
-    scene bg int_clubs_male_day with door_blure_dissolve2
+    scene bg int_clubs_male_day 
+    show el normal pioneer at left
+    show sh normal pioneer at right
+    with door_blure_dissolve2
     play ambience ambience_clubs_inside_day fadein 3
-    show el normal pioneer at left with dissolve
-    show sh normal pioneer at right with dissolve
     window show
     ## Семён в клубах
     "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
@@ -1562,12 +1571,12 @@ label blwnfh_day_1:
     window hide
     stop ambience fadeout 0.5
     scene bg int_clubs_male2_night_nolight with slide_left_blure_dissolve2
-    scene bg int_clubs_male2_night with dissolve2
+    scene bg int_clubs_male2_night with dspr
     play ambience ambience_clubs_inside_day fadein 3
     window show
+    play sound blwnfh_sfx_list["apchhi"]
 
     "Войдя внутрь и включив свет, я тут же громко чихнул из-за пыли."
-    #34 звук чиха
     
     sh "Будь здоров!"
     

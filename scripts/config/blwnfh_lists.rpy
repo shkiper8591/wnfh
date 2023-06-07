@@ -428,6 +428,8 @@ init 2:
     $ blwnfh_music_list["country_shop"] = blwnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
     $ blwnfh_music_list["ya_znayu_kto_ti"] = blwnfh_MUSIC + "ya znayu kto ti.mp3"
     $ blwnfh_music_list["candy_store"] = blwnfh_MUSIC + "Candy_store.mp3"
+    $ blwnfh_music_list["hide_and_seek"] = blwnfh_MUSIC + "Sergey Eybog - Hide and Seek.mp3"
+    $ blwnfh_music_list["warm_evening"] = blwnfh_MUSIC + "Sergey Eybog - Warm Evening.mp3"
     #$ blwnfh_music_list[""] = blwnfh_MUSIC + ".mp3"
     
     

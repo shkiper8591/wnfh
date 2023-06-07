@@ -315,13 +315,13 @@ init 2:
         make_sprites_for('dv', 'sport isolenta', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
         
         ## Фоновые спрайты
-        make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'])
-        make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'])
-        make_sprites_for('kat', 'dnr', ['mod:<emotion>'])
-        make_sprites_for('mi', 'dnr', ['mod:<emotion>'])
-        make_sprites_for('sl', 'wh', ['mod:<emotion>'])
-        make_sprites_for('sd', 'wh', ['mod:<emotion>'])
-        make_sprites_for('mt', 'dc', ['mod:<emotion>'])
+        make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'], distances=['background'])
+        make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'], distances=['background'])
+        make_sprites_for('kat', 'dnr', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('mi', 'dnr', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('sl', 'wh', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('sd', 'wh', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('mt', 'dc', ['mod:<emotion>'], distances=['background'])
         #make_sprites_for('', '', ['mod:', 'mod:<emotion>'])
         
         

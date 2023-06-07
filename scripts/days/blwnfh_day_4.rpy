@@ -3101,18 +3101,27 @@ label blwnfh_day_4:
     
     show mt normal pioneer panama:
         xcenter 0.5 ycenter 0.5
-        ease_quart 2.0 xcenter 0.84
+        ease_quart 2.0 xcenter 1.2
     $ renpy.pause(1.0, hard=True)
     scene bg int_dining_hall_people_sunset 
-    show kat normal pioneer at right
-    show mi normal pioneer at left
     with dissolve2
 
     "В столовой уже было битком и найти место казалось крайне трудновыполнимой задачей."
     "Но Мику всё же смогла отыскать места, которые мы заняли, после того как взяли себе подносы с едой."
     
+    show chair_l behind mi
+    show chair_r behind kat
+    show table
+    show shakers
+    show left d5_dinner_full tray foods behind shakers
+    show mi normal pioneer at blwnfh_sit_left behind table
+    show right d5_dinner_full tray foods behind shakers
+    show kat normal pioneer at blwnfh_sit_right behind table
+    show mid d5_dinner_full tray foods
+    with dissolve
+
     me "Тааакс, что у нас сегодня подают на ужин."
-    # Стас тут надо поставить ужин 4-го дня
+
     "Я стал рассматривать свой поднос, на котором было: тарелка с пюре и котлетой, булка с каким-то темнокрасным повидло и черный чай."
     
     th "Неплохой сегодня ужин, осталось только снять пробу на вкус."
@@ -3120,14 +3129,13 @@ label blwnfh_day_4:
     "Погрузив первую ложку с картошкой и куском котлеты в рот, я убедился в том, что ужин обещает быть хорошим и принялся быстро его уплетать."
     
     show kat confused
-    show mi serious 
+    show mi serious
+    show mid d5_dinner_half tray foods
     with dspr
-    
+
     "Ел я с такой скоростью, что иногда видел, как девочки смотрят на меня своими удивлёнными взглядами."
-    
-    window hide dissolve
-    $ renpy.pause(1.5)
-    window show dissolve
+
+    show mid d5_dinner_empty tray foods with dissolve
 
     "Вскоре основное блюдо закончилась и я принялся за чай с булкой, которая как оказалось была с очень вкусным клубничным повидло."
     "Однако нету добра без худа и чай оказался крайне приторным и без слез пить его было невозможно."
@@ -3139,12 +3147,14 @@ label blwnfh_day_4:
     me "Мику, а ты чего так плохо ешь?"
     
     show mi upset with dspr
-    
+    show left d5_dinner_half tray foods behind shakers
+
     mi "Да вот не знаю, похоже пикником аппетит испортила себе."
     me "Плохо[wp]"
     me "Ну если ты не будешь, может я доем?"
     
     show mi grin with dspr
+    show right d5_dinner_half tray foods behind shakers
     
     mi "А чего ты это решил, что я не буду? Вроде ничего такого не говорила."
     me "Предположил, раз уж ты аппетит себе испортила, а то я просто не наелся как-то."
@@ -3154,18 +3164,15 @@ label blwnfh_day_4:
     "Тут я неожиданно для себя заметил краем глаза Лену, которая только вошла в столовую."
     "Такое серьезное опоздание для столь пунктуальной девушки, показалось мне довольно странным."
     
-    show un normal pioneer far with dissolve
+    show un normal pioneer far behind chair_l:
+        xcenter -0.2 ycenter 0.5
+        ease_quart 8.0 xcenter 1.2
     
     "Когда она проходила мимо, я заметил, что стало причиной для опоздания."
     "Лицо Лены было измазано в краске." 
     
     th "Рисовала значит, ну тогда не удивительно."
     me "Лен, у тебя на левой щеке немного краски."
-    
-    show un normal pioneer far:
-        xcenter 0.5 ycenter 0.5
-        ease_quart 2.0 xcenter 1.2
-    $ renpy.pause(1.0, hard=True)
 
     "Она демонстративно прошла мимо и усевшись за соседний стол, вытерла краску платком."
     "Конечно, полностью оттереть у нее не получилось, но теперь это было не так заметно."

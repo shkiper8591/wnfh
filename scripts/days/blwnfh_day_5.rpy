@@ -1443,15 +1443,33 @@ label blwnfh_day_5:
     hide mt with dissolve
     
     "Мы ушли к раздаче, где взяли подносы с едой."
+
+    show kat smile behind chair_r:
+        xcenter 0.72
+        ease_quart 2.0 xcenter 0.85
+
     "Ищя место, мы хотели сесть рядом с Мику, но она сидела со своими, видимо, подругами и мест рядом не было."
     "Зато пара свободных мест были рядом с Леной, к которой мы и подошли."
     
-    show un normal pioneer at left with dissolve
-    show kat smile with dspr
+    show chair_l behind un
+    show chair_r behind kat
+    show table
+    show shakers
+
+    show un normal pioneer at blwnfh_sit_left behind table with dissolve
+    show left d6_breakfast_full tray foods behind shakers
+    
     
     kat "Можно к тебе?"
     un "Да, конечно."
-    
+
+    show chair_r behind kat at chair_move_out
+    show kat smile at sit_down_right
+    show right d6_breakfast_full tray foods behind shakers with dissolve
+    $ renpy.pause(2.0, hard=True)
+    show chair_r at chair_move_in
+    show right d6_breakfast_full tray foods behind shakers with dissolve
+
     "Грустно сказала она и мы сели за столик."
     #34 надо спрайт завтрака!!!!
     show kat confused with dspr
@@ -1463,11 +1481,13 @@ label blwnfh_day_5:
     un "Да вот, спалось плохо, из-за Мику переживала[wp] {w}Она же вчера ночью так и не явилась домой."
     
     show kat smile2 with dspr
-    
+    show left d6_breakfast_half tray foods behind shakers
+
     kat "А она у себя в муз клубе спала."
     
     show un shy with dspr
-    
+    show mid d6_breakfast_half tray foods behind shakers
+
     un "Вот оно что[wp] А я всё думала, где же она[wp]"
     un "А как вы узнали, что она спала в музыкальном клубе?"
     
@@ -1476,20 +1496,29 @@ label blwnfh_day_5:
     kat "Мы[wp] Встретили её там[wp] Спящую."
     
     show un smile with dspr
-    
+    show right d6_breakfast_half tray foods behind shakers
+
     un "Забавная ситуация[wp]"
     
     show un normal with dspr
-    
+
     un "Ну теперь-то ясно, чего вас не было на линейке."
     
     "И в этот момент, Лена просто встала из-за стола взяв поднос с едой."
     
+    show un normal pioneer at get_up
+    show chair_l at chair_move_out
+
     un "Ладно, я пойду, приятного аппетита."
+
+    hide left with dissolve
+    show un normal pioneer behind chair_r:
+        xcenter 0.28
+        ease_quart 4.0 xcenter 1.2
+
     kat "Спасибо." 
     
-    show un normal pioneer behind kat:
-        ease_quart 3.0 xcenter 1.28
+    
     $ renpy.pause(3.0)
     hide un
     
@@ -1537,7 +1566,7 @@ label blwnfh_day_5:
     # мини таймскип
     
     stop ambience fadeout 3
-    show mi normal pioneer:
+    show mi normal pioneer behind chair_l:
         xcenter -0.2 ycenter 0.5
     show bg int_dining_hall_day with Dissolve(5.0)
     play ambience ambience_dining_hall_empty fadein 5.0
@@ -1575,12 +1604,18 @@ label blwnfh_day_5:
     mi "Но в целом было вкусно! Да и я люблю когда чуть-чуть пересолёно."
     
     show kat thinking with dspr
-    
+    hide chair_r
+    hide chair_l
+    hide table
+    hide shakers
+    hide right
+    hide mid
+    with dissolve
+    show kat normal at get_up
+
     "Мы с Катей переглянулись и пожали плечами."
-    
+
     me "Ладно, давайте начнём убираться."
-    
-    show kat normal with dspr
     
     mi "Да, сейчас я принесу ведро с тряпками и приступим."
     
@@ -2246,6 +2281,13 @@ label blwnfh_day_5:
     "В столовой было пусто, даже наши дежурные куда-то запропастились."
     "Взяв поднос я занял своё обыденное место в дальнем углу."
 
+    show chair_r behind table
+    show chair_l behind table
+    show table
+    show shakers
+    show mid d6_dinner_full tray spoon foods
+    with dissolve
+
     th "Тэк-с, шо тут нам подают на обед?"
     
     "Обеденный паёк состоял из макарон с кусочками мяса в подливке, чёрного чая и четырех курабье."
@@ -2255,9 +2297,10 @@ label blwnfh_day_5:
     "Я тут же принялся уничтожать свой обед, пока столовая, тем временем, стала наполнятся пионерами."
 
     stop ambience fadeout 2.0
-    scene bg int_dining_hall_people_day with dissolve2
+    show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 2.0
-    
+    show mid d6_dinner_full tray foods
+
     "Однако, еда на вкус была такой себе."
     "Макароны были явно недосолённы, мясо было каким-то чёрвствым."
     "И лишь подливка спасала всю ситуацию, придавая еде хоть немного съедобности."
@@ -2266,11 +2309,27 @@ label blwnfh_day_5:
     
     "Спустя несколько минут, ко мне подошли Мику и Катя."
     
-    show mi normal pioneer at left 
-    show kat normal pioneer at right 
+    show mi normal pioneer behind chair_r:
+        xcenter -1.2
+        ease_quart 2.0 xcenter 0.35
+    show kat normal pioneer behind chair_r:
+        xcenter -1.4
+        ease_quart 2.0 xcenter 0.85
     with dissolve
     
     th "А вот и наши дежурные."
+
+    show chair_r at chair_move_out behind kat
+    $ renpy.pause(0.5, hard=True)
+    show chair_l at chair_move_out behind mi
+    show mi normal pioneer at sit_down_left
+    show kat normal pioneer at sit_down_right
+    $ renpy.pause(1.0, hard=True)
+    show chair_r at chair_move_in
+    show chair_l at chair_move_in
+    show left d6_dinner_full tray foods behind shakers
+    show right d6_dinner_full tray foods behind shakers
+    with dissolve
     
     "Они просто сели со мной за стол, даже ничего не сказав." 
     
@@ -2289,7 +2348,8 @@ label blwnfh_day_5:
     mi "Просто ты вот сидишь тише травы, ниже воды[wp]"
     
     show mi upset with dspr
-    
+    show mid d6_dinner_half tray foods
+
     mi "Ой, наоборот, тише воды, ниже травы."
     me "Да, я понял."
     
@@ -2324,7 +2384,12 @@ label blwnfh_day_5:
     window hide
     $ renpy.pause(2.0)
     window show
-    
+    show mid d6_dinner_empty tray foods
+    show left d6_dinner_empty tray foods
+    show right d6_dinner_empty tray foods
+    with dissolve
+
+
     "С момента начала обеда прошло около десяти минут."
     "Я и мои подруги уже всё съели."
     "Они о чем-то разговаривали, а я же просто наблюдал за пионерами в столовой."

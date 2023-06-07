@@ -2529,7 +2529,13 @@ label blwnfh_day_3:
     window hide
     stop ambience fadeout 0.5
     scene bg int_dining_hall_people_sunset 
-    show kat normal pioneer
+    show chair_l
+    show chair_r
+    show table
+    show shakers
+    show left d4_dinner_full tray foods behind shakers
+    show mid d4_dinner_full tray foods
+    show kat normal pioneer at blwnfh_sit_left behind table
     with slide_left_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 1.5
     $ renpy.pause(1.5)
@@ -2544,6 +2550,8 @@ label blwnfh_day_3:
     
     "Я отхлебнул щей и несмотря на их не самый привлекательный вид, на вкус они оказались более чем вкусные."
     
+    show mid d4_dinner_half tray foods with dissolve
+
     th "Но похоже какое бы плохое настроение не было, если умеешь хорошо готовить, ты всё также хорошо сготовишь. {w}Наверное это единственная хорошая черта у наших поварих."
     
     "Быстро закончив с ужином и запив всё чаем я посмотрел на Катю, которая только съела половину тарелки."
@@ -2551,7 +2559,8 @@ label blwnfh_day_3:
     me "А ты вот чем-то ещё интересуешься помимо музыки?"
     
     show kat happy with dspr
-    
+    show left d4_dinner_half tray foods behind shakers with dissolve
+
     kat "Помимо музыки я обожаю историю!"
     kat "Особенно мне нравится история средневековья, там столько разных интересных интриг и хитросплетений, что диву даешься."
     me "Да знаю."
@@ -2563,18 +2572,22 @@ label blwnfh_day_3:
     me "А когда я уже подрос, мы часто с ним обсуждали некоторые исторические моменты и не редко спорили."
     
     show kat normal with dspr
-    
+    show mid d4_dinner_empty tray foods with dissolve
+
     kat "Ух ты, весело."
     
     "К этому моменту Катя наконец доела ужин и аккуратно встала из-за стола."
     
+    show left d4_dinner_empty tray foods behind shakers with dissolve
+
     kat "Ну что, пойдем гулять?"
     me "Пойдем[wp]" 
     
     "Мы покинули столовую."
     
     stop ambience fadeout 1.5
-    show bg ext_dining_hall_near_sunset with dissolve2
+    scene bg ext_dining_hall_near_sunset with dissolve2
+    show kat normal pioneer at center with dissolve
     play ambience ambience_camp_center_evening fadein 1.5           
     play music blwnfh_music_list["the_bridge"]
     ## Семён с Катей отправились в лес

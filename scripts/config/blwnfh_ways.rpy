@@ -2,7 +2,7 @@ init -4 python:
 
     ## Тут лежат пути к файлам ##
     
-    blwnfh_ROOT = "mods/blwnfh/"
+    blwnfh_ROOT = "blwnfh/"
     
     blwnfh_FONTS = blwnfh_ROOT + "fonts/"
     

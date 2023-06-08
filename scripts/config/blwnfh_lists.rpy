@@ -1,5 +1,6 @@
 init 1000 python:
-    config.developer = True
+    if debag_switch:
+        config.developer = True
 
 init -2 python:
 

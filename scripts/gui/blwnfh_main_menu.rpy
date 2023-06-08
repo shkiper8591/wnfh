@@ -78,21 +78,23 @@ init 2:
                         hover blwnfh_main_menu_button[9][1]
                         hover_sound blwnfh_gui["sound"]["plimp"]
                         at blwnfh_mm_button_hover_atl()
-            frame: # ======================================================= # Амогус
-                background background_color
-                area(0.0, 0.5, 100, 100)
-                xanchor 0.0 yanchor 0.5
-                frame:
-                    xmargin 5
-                    background button_blue
-                    area(0.5, 0.5, 1.0, 1.0)
-                    xanchor 0.5 yanchor 0.5
-                    imagebutton:
-                        action blwnfh_main_menu_button[7][2]
-                        idle blwnfh_main_menu_button[7][1]
-                        hover blwnfh_main_menu_button[7][1]
-                        hover_sound blwnfh_gui["sound"]["plimp"]
-                        at blwnfh_mm_button_hover_atl()
+
+            if debag_switch:
+                frame: # ======================================================= # Амогус
+                    background background_color
+                    area(0.0, 0.5, 100, 100)
+                    xanchor 0.0 yanchor 0.5
+                    frame:
+                        xmargin 5
+                        background button_blue
+                        area(0.5, 0.5, 1.0, 1.0)
+                        xanchor 0.5 yanchor 0.5
+                        imagebutton:
+                            action blwnfh_main_menu_button[7][2]
+                            idle blwnfh_main_menu_button[7][1]
+                            hover blwnfh_main_menu_button[7][1]
+                            hover_sound blwnfh_gui["sound"]["plimp"]
+                            at blwnfh_mm_button_hover_atl()
                             
             frame: # ======================================================= # Нижняя панель
                 background background_color

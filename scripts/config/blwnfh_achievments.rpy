@@ -8,14 +8,14 @@ init -1 python:
     
     blwnfh_ach_list = [
         #Тэг ачивки   Иконка            Заголовк             Подпись                             Листок         Трофей             Персонаж
-        ["payday"    ,"icon_payday"    ,"Конфетный вор"     ,"Было весело"                      ,"leaf_day"    ,"trophy_silver"   ,"kat"],   
-        ["bkrr"      ,"icon_bkrr"      ,"Да, именно"        ,"Это отсылка на БКРР"              ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
-        ["alpha"     ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"                ,"leaf_day"    ,"trophy_gold"     ,"kat"],
+        ["payday"    ,"icon_payday"    ,"Конфетный вор"     ,"Было весело"                      ,"leaf_day"    ,"trophy_silver"   ,"usw"],   
+        #["bkrr"      ,"icon_bkrr"      ,"Да, именно"        ,"Это отсылка на БКРР"              ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
+        #["alpha"     ,"icon_alpha-0.1" ,"Первопроходец"     ,"Version alpha-0.1"                ,"leaf_day"    ,"trophy_gold"     ,"kat"],
         ["post"      ,"icon_post"      ,"Груз доставлен"    ,"Почти без повреждений"            ,"leaf_day"    ,"trophy_bronz"    ,"kat"],     
-        ["zgdun"     ,"icon_zgdun"     ,"Великий ждун"      ,"Дети уже школу закончили?"        ,"leaf_day"    ,"trophy_gold"     ,"kat"],    
+        #["zgdun"     ,"icon_zgdun"     ,"Великий ждун"      ,"Дети уже школу закончили?"        ,"leaf_day"    ,"trophy_gold"     ,"kat"],    
         ["alarm"     ,"icon_alarm"     ,"Das Boot"          ,"Доплавался, блин"                 ,"leaf_day"    ,"trophy_silver"   ,"kat"],
-        ["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану" ,"При коммунизме всё будет заебись" ,"leaf_day"    ,"trophy_silver"   ,"kat"],
-        ["handass"   ,"icon_handass"   ,"Рукожоп"           ,"Ну как так-то?"                   ,"leaf_day"    ,"trophy_bronz"    ,"kat"],
+        #["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану" ,"При коммунизме всё будет заебись" ,"leaf_day"    ,"trophy_silver"   ,"kat"],
+        #["handass"   ,"icon_handass"   ,"Рукожоп"           ,"Ну как так-то?"                   ,"leaf_day"    ,"trophy_bronz"    ,"kat"],
     ]
 
     if not persistent.blwnfh_ach:

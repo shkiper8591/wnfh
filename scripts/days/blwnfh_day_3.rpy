@@ -1270,7 +1270,9 @@ label blwnfh_day_3:
     usw "Вот холера! Нас раскрыли!"
 
     ## Семён и Ульяна убегают из столовой с конфетами
-
+    
+    $blwnfh_get_achievement("payday")
+    $ renpy.pause(1.0, hard=True)
     show cg d3_me_us_runinng_away with dissolve
 
     "В спешке завернув этот и забрав первый пакет, мы стали быстро удирать из столовой."

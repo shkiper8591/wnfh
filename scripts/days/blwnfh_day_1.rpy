@@ -1456,6 +1456,8 @@ label blwnfh_day_1:
     
     me "А вот и мы."
 
+    $ blwnfh_get_achievement("post")
+    $ renpy.pause(1.0, hard=True)
     show mt dc_smotrit dc background with dspr
 
     mt "Ой, как вы быстро."

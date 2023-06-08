@@ -35,11 +35,11 @@ init 2:
                 action Return()
 
             # achievements
-            
-            #imagebutton:
-            #    action [Hide("blwnfh_achievements", transition=dissolve), Jump("blwnfh_reset")]
-            #    idle blwnfh_gui["banners"]["relation_up"]
-            #    hover blwnfh_gui["banners"]["relation_down"]
+            if debag_switch:
+                imagebutton:
+                    action [Hide("blwnfh_achievements", transition=dissolve), Jump("blwnfh_reset")]
+                    idle blwnfh_gui["banners"]["relation_up"]
+                    hover blwnfh_gui["banners"]["relation_down"]
             
             frame:
                 background "#0005"

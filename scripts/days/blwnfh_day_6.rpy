@@ -222,7 +222,7 @@ label blwnfh_day_6:
     show cg d6_me_selyodka with dspr
 
     me "Пуфыстый."
-    
+
     "Кот от такой акции невиданной щедрости аж лег на спину, открывая своё пузо."
 
     me "Шо, хочешь чтобы тебе и пузико почесали?"
@@ -2547,6 +2547,8 @@ label blwnfh_day_6:
     #АЛЯЯЯЯЯЯЯЯЯЯЯРМ!!!!!! https://www.youtube.com/watch?v=Dm-uif8SYYs
     "Прокричал я во всю глотку и резко погрузился под воду."
     
+    $ blwnfh_get_achievement("alarm")
+    $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 1.0
     play sound blwnfh_sfx_list["vsplesk_vodi_3"] fadein 0.5
     scene bg ext_underwater with dissolve

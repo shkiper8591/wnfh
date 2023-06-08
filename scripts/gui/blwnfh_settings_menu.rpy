@@ -5,8 +5,8 @@ init 2:
     $ global button_blue
     $ global debag_switch
     $ global button_purpl
-    $ persistent.mat_filter
-    $ persistent.hentai_mod
+    $ persistent.mat_filter = 1
+    $ persistent.hentai_mod = False
 
     $ debag_switch = 0
     if debag_switch:

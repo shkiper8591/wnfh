@@ -8,6 +8,18 @@ init 2:
     $ persistent.mat_filter = 1
     $ persistent.hentai_mod = False
 
+    #init:
+    #$ filters["widget__filename"] = u"Текущая строка by wladgoose"
+    #
+    #python early:
+    #    def widget__filename():
+    #        import os
+    #        def editoverlay():
+    #            fullfn, line = renpy.get_filename_line()
+    #            ui.button(clicked=None, xpos=config.screen_width, xanchor=1.0, ypos=2, xpadding=6, xminimum=200)
+    #            ui.text("%s:%d" % (os.path.basename(fullfn), line), style="button_text", size=14)
+    #        config.overlay_functions.append(editoverlay)
+
     $ debag_switch = 1
     if debag_switch:
         $ background_color = "#0005"

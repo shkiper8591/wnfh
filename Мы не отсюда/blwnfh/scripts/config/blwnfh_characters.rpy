@@ -81,7 +81,7 @@ init -3 python:
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
-    for i in [("kat", "mi", "day", adv), ("kat", "un", "day", adv), ("me", "dv", "night", nvl), ("me", "el", "sunset", adv), ("me", "kat", "day", adv)]:
+    for i in [("kat", "mi", "day", adv), ("kat", "un", "day", adv), ("me", "dv", "night", nvl), ("me", "el", "sunset", adv), ("me", "kat", "day", adv), ("me", "el", "night", adv)]:
         blwnfh_double_char_define(i[0], i[1], i[2], i[3])
     
     ## Функции для переобувания в воздухе ##

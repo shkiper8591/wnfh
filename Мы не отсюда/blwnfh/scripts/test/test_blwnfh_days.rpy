@@ -15,5 +15,7 @@ label blwnfh_test_days:
             jump blwnfh_day_5
         "День 6":
             jump blwnfh_day_6
+        "День 6.5":
+            jump blwnfh_day_6_continue
         "Вернутся в меню отладки":
             jump blwnfh_test_main_menu 

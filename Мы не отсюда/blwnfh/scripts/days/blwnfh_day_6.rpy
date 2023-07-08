@@ -6186,5 +6186,7 @@ label blwnfh_day_6:
         xanchor 0.5 yanchor 0.5
         ease_quart 10.0 ypos 1.0
     $ renpy.pause(10.0, hard=True)
-    show to be continued with dissolve2
-    $ renpy.pause(100.0, hard=True)
+    #show to be continued with dissolve2
+    #$ renpy.pause(100.0, hard=True)
+
+    jump blwnfh_day_6_continue

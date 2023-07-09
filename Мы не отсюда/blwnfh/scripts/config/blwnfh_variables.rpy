@@ -7,3 +7,8 @@ init -1:
     $ d6c_videl_seregu        =       None
     $ d6c_videl_jeny          =       None
     $ d6c_pomog_jene          =       None
+    $ d6c_katya_prosnulas     =       None
+
+    # love point
+
+    $ mz_lp      =       0

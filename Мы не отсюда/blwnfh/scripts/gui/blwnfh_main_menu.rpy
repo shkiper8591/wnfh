@@ -29,7 +29,7 @@ init 2:
                 ["news"         ,blwnfh_gui["main_menu"]["news"]                  ,[Jump("technical_chocolatki")]                          ],
                 ["play"         ,blwnfh_gui["main_menu"]["play"]                  ,[Hide("blwnfh_menu", transition=dissolve), Jump("blwnfh_prologue")]      ],
                 ["saves"        ,blwnfh_gui["main_menu"]["saves"]                 ,[ShowMenu("blwnfh_load_screen", _transition=dissolve)]                   ],
-                ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
+                ["scheme"       ,blwnfh_gui["main_menu"]["scheme"]                ,[ShowMenu("blwnfh_schematic", _transition=dissolve)]                     ],
                 ["preferences"  ,blwnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("blwnfh_preferences", _transition=dissolve)]                   ],
                 ["red"          ,im.Scale(blwnfh_gui["poligon"]["red"], 100, 100) ,[Jump("blwnfh_test")]                                                    ],
                 ["achievements" ,blwnfh_gui["main_menu"]["achievements"]          ,[ShowMenu("blwnfh_achievements", _transition=dissolve)]                  ],

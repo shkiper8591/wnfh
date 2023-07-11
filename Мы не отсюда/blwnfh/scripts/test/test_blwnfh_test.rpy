@@ -79,8 +79,8 @@ label blwnfh_test_drop_variables:
             $ d6c_mz_videl_jeny          =       None
             $ d6c_mz_pomog_jene          =       None
             $ d6c_kat_katya_prosipalas   =       None
-        "Переменные сброшены! Кликни чтобы вернутся в тест меню."
-        jump blwnfh_test_main_menu
+    "Переменные сброшены! Кликни чтобы вернутся в тест меню."
+    jump blwnfh_test_main_menu
 
 label blwnfh_test_drop_lp:
 
@@ -95,5 +95,5 @@ label blwnfh_test_drop_lp:
             $ us_lp      =       0
             $ mi_lp      =       0
             $ mz_lp      =       0
-        "Лавпоинты сброшены! Кликни чтобы вернутся в тест меню."
-        jump blwnfh_test_main_menu
+    "Лавпоинты сброшены! Кликни чтобы вернутся в тест меню."
+    jump blwnfh_test_main_menu

@@ -1,8 +1,8 @@
 init -1:
     
-    # переменные d1                      
+    # переменные d1
 
-
+    $ d1_sl_probejka             =       None
 
     # переменные d2 
 
@@ -32,3 +32,4 @@ init -1:
     $ us_lp      =       0
     $ mi_lp      =       0
     $ mz_lp      =       0
+    $ sl_lp      =       0

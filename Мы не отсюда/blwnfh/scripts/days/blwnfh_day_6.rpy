@@ -3541,7 +3541,7 @@ label blwnfh_day_6:
     "Ну и я за ними тоже пошел, не стоять же мне здесь одному, верно?"
     
     stop ambience fadeout 2.0
-    scene bg int_musclub_day_wnfh
+    scene bg int_musclub_day
     show mi normal pioneer far at left
     show kat smile pioneer far at right 
     with dissolve2

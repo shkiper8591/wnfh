@@ -1141,7 +1141,7 @@ label d1_sl_otkaz:
     
     $ renpy.pause(1)
     
-    scene bg ext_lenin_square_day with dissolve2
+    scene bg ext_lenin_square_day_wnfh with dissolve2
     window show
     
     "Покинув территорию столовой, я отправился напрямую к остановке."
@@ -2148,7 +2148,7 @@ label d1_sl_otkaz:
     
     # переход
     window hide
-    scene bg ext_lenin_square_day with dissolve2
+    scene bg ext_lenin_square_day_wnfh with dissolve2
     $ renpy.pause(1.5)
     window show
     
@@ -2491,7 +2491,7 @@ label d1_sl_otkaz:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_lenin_square_night with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_night_wnfh with slide_left_blure_dissolve2
     play ambience ambience_camp_center_night fadein 3
     window show
     
@@ -2504,7 +2504,7 @@ label d1_sl_otkaz:
     th "А тут[wp]"
     
     window hide
-    scene bg ext_houses_night with slide_up_blure_dissolve2 
+    scene bg ext_houses_night_wnfh with slide_up_blure_dissolve2 
     window show
 
     th "Не верю я, что это просто так[wp]"

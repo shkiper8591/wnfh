@@ -10,6 +10,8 @@ label blwnfh_day_6_continue:
     window show
     with dissolve2
 
+    "АТТЕНТИОН! ВЫ ВХОДИТЕ В ЗОНУ БЕДСТВИЯ ПОЛОМАННЫХ СКРИПТОВ! ВЪЕЗД СТРОГО НА СВОЙ СТРАХ И РИСК! ВЫ БЫЛИ ПРЕДУПРЕЖДЕНЫ!"
+
     kat "Я вспоминила, что {b}{i}мы не отсюда{/i}{/b}"
 
     "Сказала Катя еле слышимым голосом[wp]"
@@ -172,7 +174,7 @@ label d6c_go_forest_zabil:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    call d6c_go_forest_2
+    call d6c_sobiraet_veshi
 
 label d6c_go_forest_sprosil:
     
@@ -281,9 +283,9 @@ label d6c_sobiraet_veshi:
     play ambience ambience_lake_shore_night fadein 3.5
     window show dissolve
 
-    if d6c_videl_seregu:
+    if d6c_videl_seregu = True:
         th "Да уж, неловко получилось с Серым[wp] Благо, мы не пересеклись за весь день[wp] {w}Хотя это довольно странно."
-    elif d6c_poshel_po_beregu:
+    elif d6c_poshel_po_beregu = True:
         th "Блин, вообще интересно, как так вышло, что мы тут все на острове расположились и даже не знали об этом[wp] Хотя, я и Катя не шумели особо, вот и вышло так."
     else:
         th "Интересно, кто же всё-таки там был, в лесу. Может бабайка? Ну ладно, неважно, надо скорее собираться."

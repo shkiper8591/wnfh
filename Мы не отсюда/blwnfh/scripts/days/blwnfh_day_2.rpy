@@ -199,7 +199,7 @@ label blwnfh_day_2:
     $ renpy.pause(1.0, hard=True)
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
-    scene bg ext_lenin_square_sunset with slide_right_blure_dissolve2
+    scene bg ext_lenin_square_sunset_wnfh with slide_right_blure_dissolve2
     ## Семён на площади
     "На площади уже собрался народ, и я встал в строй рядом с Серым." 
     
@@ -273,7 +273,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_sunset with slide_right_blure_dissolve2
     $ renpy.pause(1.0)    
-    scene bg int_dining_hall_people_sunset with dnr_entrance  
+    scene bg int_dining_hall_people_sunset_wnfh with dnr_entrance  
     play ambience ambience_dining_hall_full fadein 3
     show kat normal pioneer at center with dissolve
     window show
@@ -500,7 +500,7 @@ label blwnfh_day_2:
     window hide
     hide kat with dissolve
     $ renpy.pause(1.0)
-    scene bg ext_musclub_verandah_day with santa_barbara_in_blure_dissolve2
+    scene bg ext_musclub_verandah_day_wnfh with santa_barbara_in_blure_dissolve2
     show kat normal pioneer at left with dissolve
     window show
     
@@ -1235,7 +1235,7 @@ label blwnfh_day_2:
     ## Семён пришёл в музклуб
     "Сократив путь через пролесок, я уже стоял перед муз кружком, откуда доносилась некая мелодия."
     # тут надо вставить какой-нибудь дуэт скрипки и пианино, хз.   
-    scene bg ext_musclub_verandah_day with sphere_blure_dissolve2
+    scene bg ext_musclub_verandah_day_wnfh with sphere_blure_dissolve2
     "Я подошел к двери и, прежде чем входить, решил немного постоять дабы насладится этой самой музыкой."
     
     th "Ну и ну, играют от силы полчаса, а уже успели хорошо сыграться."
@@ -2143,7 +2143,7 @@ label blwnfh_day_2:
     stop music fadeout 3
     play music blwnfh_music_list["we_dont_care"] fadein 5
     window hide
-    show cg d2_dv_sem_scene with dspr
+    show cg d2_dv_sem_scene_wnfh with dspr
     $ blwnfh_set_mode(nvl)
     nvl show dissolve2
     
@@ -2192,7 +2192,7 @@ label blwnfh_day_2:
     nvl hide dissolve2
     $ blwnfh_set_mode()
     stop music fadeout 3
-    hide cg d2_dv_sem_scene with dissolve
+    hide cg d2_dv_sem_scene_wnfh with dissolve
     show dv laugh with dspr
     window show
     
@@ -2344,7 +2344,7 @@ label blwnfh_day_2:
     me "Угу."
     
     window hide
-    scene bg ext_houses_night with slide_diagonal_blure_dissolve2
+    scene bg ext_houses_night_wnfh with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     ## Семён провожает Лену

@@ -1569,7 +1569,7 @@ label blwnfh_day_3:
     th "Да уж, путь предстоит мне не близкий."
     
     window hide dissolve
-    scene bg ext_lenin_square_day with sphere_invert_dissolve2
+    scene bg ext_lenin_square_day_wnfh with sphere_invert_dissolve2
     window show dissolve
     
     th "Блин, угораздило же меня согласится сыграть на гитарах[wp]"
@@ -1722,7 +1722,7 @@ label blwnfh_day_3:
     
     dv "Ну или они так коротают время."
     
-    show bg ext_musclub_verandah_day with dissolve
+    show bg ext_musclub_verandah_day_wnfh with dissolve
     
     "Мы подошли ближе и музыка притихла."
     
@@ -2304,7 +2304,7 @@ label blwnfh_day_3:
     
     window hide
     stop ambience fadeout 1.5
-    scene bg ext_library_sunset
+    scene bg ext_library_sunset_wnfh
     show kat normal pioneer
     with dissolve2
     play ambience ambience_camp_center_evening fadein 2.5
@@ -2813,7 +2813,7 @@ label blwnfh_day_3:
     
     window hide
     $ blwnfh_set_time("sunset")
-    show cg d3_me_kat_blindage:
+    show cg d3_me_kat_blindage_wnfh:
         xanchor 0.0 yanchor 0.77
         ease_quad 7.0 yanchor 0.0
     with Dissolve(4.0)

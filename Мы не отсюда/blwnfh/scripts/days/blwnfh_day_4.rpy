@@ -12,7 +12,7 @@ label blwnfh_day_4:
     
     "Мне виделся чудесный сон, где я гуляю по лесу с девушкой. {w}Как жаль, что на самом интересном месте, птичье пение меня выбили из сна."
     
-    scene bg int_blindage_sunset
+    scene bg int_blindage_sunset_wnfh
     show unblink
     with None 
     
@@ -72,7 +72,7 @@ label blwnfh_day_4:
     
     "Пробыв на улице ещё немного, я понял одну вещь – мне очень холодно, так что быстренько вернулся обратно в землянку."
     
-    scene bg int_blindage_sunset
+    scene bg int_blindage_sunset_wnfh
     show kat guilty pioneer close at center
     with dissolve
     
@@ -466,7 +466,7 @@ label blwnfh_day_4:
     
     th "Впрочем, может так даже лучше, спать мне в любом случае не дали бы, а так хоть время убью."
     
-    show bg ext_warehouse_sunset with dissolve2
+    show bg ext_warehouse_sunset_wnfh with dissolve2
     ## Семён у склада
     "Вскоре я дошел до склада и зайдя за него обнаружил ту самую подсобку."
     "Достав ключ, я уже потянулся открывать её, как по своей неосторожности выронил его и тот упал в густую траву."
@@ -524,7 +524,7 @@ label blwnfh_day_4:
     "Она протянула мне метлу, взяв которую, мы быстрым шагом отправились на площадь."
     
     play music music_list["my_daily_life"] fadein 3.5
-    scene bg ext_lenin_square_sunset 
+    scene bg ext_lenin_square_sunset_wnfh 
     show sl normal pioneer 
     with sphere_invert_dissolve2
     ## Семён со Славей на площади убираются
@@ -651,7 +651,7 @@ label blwnfh_day_4:
     "Звук горна к еде ознаменовал конец мучительно долгой линейки, и все пионеры медленно поплелись к столовой."
     
     stop ambience fadeout 2.0
-    scene bg int_dining_hall_people_sunset with santa_barbara_in_blure_dissolve2
+    scene bg int_dining_hall_people_sunset_wnfh with santa_barbara_in_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 2.0
     
     "Взяв поднос с едой, я занял место недалеко от выхода из столовой."
@@ -669,7 +669,7 @@ label blwnfh_day_4:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    scene bg ext_house_of_kat_after_rain_sunset with slide_left_blure_dissolve2
+    scene bg ext_house_of_kat_after_rain_sunset_wnfh with slide_left_blure_dissolve2
     play ambience ambience_camp_center_day fadein 2.0
     #34 крутой переход
     play music blwnfh_music_list["lori_m"] fadein 3.0
@@ -686,7 +686,7 @@ label blwnfh_day_4:
     "Но сейчас в этом никак я убедиться не мог, ибо занавески на дверях мне так просто не откроются, так что был один вариант, хоть и он немного[wp] Рискованный."
     "Зайти за дом Кати, понадеявшись, что окно открыто и посмотреть в него, дома ли она. {w}И если она спит, оставить ей на столике пакет с едой, после чего тактично свалить в библиотеку."
     
-    scene bg ext_after_house with slide_left_blure_dissolve
+    scene bg ext_after_house_wnfh with slide_left_blure_dissolve
 
     "Так и порешав, я приступил к выполнению своего плана зайдя за домик."
     "И сразу можно сказать мне повезло, ибо окно у Кати было открыто нараспашку. {w}Единственная беда, за домом у нее было что-то вроде оврага, из-за чего я не мог просто немного встать на носки и посмотреть внутрь."
@@ -695,7 +695,7 @@ label blwnfh_day_4:
     "Подняв взгляд, для изучения комнаты, произошло то, чего я никак не мог ожидать."
     ## Семён лезет в окно к Кате и падает
     play music music_list["revenga"] fadein 2.0
-    show cg d4_kat_in_window with sphere_blure_dissolve2
+    show cg d4_kat_in_window_wnfh with sphere_blure_dissolve2
     
     "Передо мной стояла полуголая Катя, которая прикрывалась только одной рубашкой." 
     "Но самым главным было то, что она смотрела прямо на меня удивлённо-смущенным взглядом."
@@ -709,7 +709,7 @@ label blwnfh_day_4:
     "Столь неожиданная встреча, шокировала не одну только Катю, но и меня."
     "Мне не удалось удержаться за подоконник и я с грохотом свалился вниз."
     
-    hide cg d4_kat_in_window with slide_down_blure_dissolve2
+    hide cg d4_kat_in_window_wnfh with slide_down_blure_dissolve2
     play sound sfx_bush_body_fall
     stop music fadeout 2.5
     
@@ -895,7 +895,7 @@ label blwnfh_day_4:
     kat "Угу[wp]"
     
     window hide dissolve
-    show bg ext_house_of_kat_after_rain_day with dissolve
+    show bg ext_house_of_kat_after_rain_day_wnfh with dissolve
     $ blwnfh_set_time()
     window show dissolve
     ## Семён и Катя отправляются в библиотеку
@@ -971,7 +971,7 @@ label blwnfh_day_4:
     
     "Мы с Катей кивнули и удалились в подсобку."
     
-    scene bg int_editorial_day
+    scene bg int_editorial_day_wnfh
     play sound sfx_open_dooor_campus_2
     show un dr_normal_wk dr background
     show kat normal pioneer at right 
@@ -1017,7 +1017,7 @@ label blwnfh_day_4:
     "Достав оттуда всё содержимое она положила булки на сам пакет и компот рядом."
     
     show un dr_normal_wk dr background
-    show bg int_editorial_day_bumaga
+    show bg int_editorial_day_bumaga_wnfh
     show kat wr_smile wr background at center
     with dspr
     
@@ -1802,7 +1802,7 @@ label blwnfh_day_4:
     
     "Мы оставили наших «голубков» одних и удалились в подсобку."
     
-    scene bg int_editorial_day
+    scene bg int_editorial_day_wnfh
     play sound sfx_open_dooor_campus_2
     show kat normal pioneer
     with dissolve2
@@ -1819,7 +1819,7 @@ label blwnfh_day_4:
     show kat shy with dspr
     kat "Наверное."
 
-    scene bg int_editorial_day_bumaga
+    scene bg int_editorial_day_bumaga_wnfh
     show kat wr wr_normal background
     with dspr 
     
@@ -2323,7 +2323,7 @@ label blwnfh_day_4:
     
     "Я быстрым шагом направился в подсобку."
     ## Семён уходит в подсобку
-    scene bg int_editorial_day_bumaga
+    scene bg int_editorial_day_bumaga_wnfh
     play sound sfx_open_dooor_campus_1
     show un dr_normal_wk dr background
     show kat wr_normal_wk wr background
@@ -2388,7 +2388,7 @@ label blwnfh_day_4:
     
     "Катя схватила готовые листы и весело выбежала из подсобки."
     
-    show bg int_editorial_day
+    show bg int_editorial_day_wnfh
     hide kat
     with dissolve
     
@@ -2482,7 +2482,7 @@ label blwnfh_day_4:
     scene bg ext_library_day with dissolve
     play ambience ambience_camp_center_day fadein 1.0
     $ renpy.pause(0.5)
-    scene bg ext_lenin_square_day with dissolve
+    scene bg ext_lenin_square_day_wnfh with dissolve
     $ renpy.pause(0.5)
     ## Семён оставляет Катю и забегает в клубы
     "И лишь на распутье я остановился." 
@@ -2572,7 +2572,7 @@ label blwnfh_day_4:
     
     scene ext_musclub_day with dissolve2
     $ renpy.pause(1.0)
-    scene bg ext_musclub_verandah_day with dissolve2
+    scene bg ext_musclub_verandah_day_wnfh with dissolve2
     ## Семён у музклуба
     "Поднявшись на крыльцо, я заметил одну странную вещь."
     "Из муз кружка совсем не доносилась музыка."
@@ -2752,7 +2752,7 @@ label blwnfh_day_4:
     window hide dissolve
     stop music fadeout 3.5
     stop ambience fadeout 2.0
-    scene cg d4_me_kat_mi_in_forest
+    scene cg d4_me_kat_mi_in_forest_wnfh
     with sphere_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
     $ renpy.pause(1.5, hard=True)
@@ -2777,7 +2777,7 @@ label blwnfh_day_4:
     "Вскоре мы вышли на некое поле."
 
     stop ambience fadeout 2.0
-    scene bg ext_meadow_day with door_blure_dissolve2
+    scene bg ext_meadow_day_wnfh with door_blure_dissolve2
     play ambience blwnfh_ambience_list["veter_v_pole"] fadein 2.0 
     play music blwnfh_music_list["schabernack"] fadein 3.5
     ## Пикник на поляне
@@ -2789,7 +2789,7 @@ label blwnfh_day_4:
     me "О как[wp]"
     
     window hide dissolve
-    show cg d4_mi_on_meadow with dissolve
+    show cg d4_mi_on_meadow_wnfh with dissolve
     $ renpy.pause(2.0)
     window show dissolve
 
@@ -2807,7 +2807,7 @@ label blwnfh_day_4:
     kat "А ещё с тобой."
 
     stop music fadeout 2.5
-    hide cg d4_mi_on_meadow
+    hide cg d4_mi_on_meadow_wnfh
     show kat smile pioneer at right 
     with dissolve
     play music blwnfh_music_list["outskirts"] fadein 3.5
@@ -3103,7 +3103,7 @@ label blwnfh_day_4:
         xcenter 0.5 ycenter 0.5
         ease_quart 2.0 xcenter 1.2
     $ renpy.pause(1.0, hard=True)
-    scene bg int_dining_hall_people_sunset 
+    scene bg int_dining_hall_people_sunset_wnfh 
     with dissolve2
 
     "В столовой уже было битком и найти место казалось крайне трудновыполнимой задачей."
@@ -3201,7 +3201,7 @@ label blwnfh_day_4:
     stop ambience fadeout 2.5
     scene bg ext_dining_hall_away_sunset with dissolve
     $ renpy.pause(1.0)
-    scene bg ext_lenin_square_sunset with dissolve
+    scene bg ext_lenin_square_sunset_wnfh with dissolve
     $ renpy.pause(1.0)
     scene bg ext_houses_sunset with dissolve
     $ renpy.pause(1.0)

@@ -148,7 +148,7 @@ label blwnfh_day_2:
     th "А то нам сложно будет общаться, я же по английски ваще не бум-бум."
     th "А там же у этим американцев ещё миллион акцентов, диалектов так что фиг разберёшь чего он там сказал[wp]"
     
-    scene bg ext_washstand_day with slide_down_blure_dissolve2
+    scene bg ext_washstand_sunset_wnfh with slide_down_blure_dissolve2
     ## У умывальников
     "Придя к умывальникам, я обнаружил, что здесь никого нет."
     "Что, в общем-то, меня даже очень радовало. {w}Чтобы дважды подряд никого не встретить у умывальников[wp]"
@@ -219,7 +219,7 @@ label blwnfh_day_2:
     
     "Из моих раздумий о утконосах, меня выбила Ольга Дмитриевна, громко позвав к себе."
     
-    hide cg d2_lineup with dissolve
+    hide cg d2_lineika_wnfh with dissolve
     show mt smile pioneer panama at left with dissolve
     show kat normal pioneer at right with dissolve
     ## Семёна назначают провожатым Кати
@@ -280,7 +280,6 @@ label blwnfh_day_2:
     
     ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть." 
-    #34 лена должна появится с анимацией
     
     show un smile pioneer:
         xcenter 1.2
@@ -625,7 +624,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     stop music fadeout 2
     play ambience ambience_camp_center_day fadein 3
-    scene bg ext_musclub_verandah_day with door_invert_blure_dissolve
+    scene bg ext_musclub_verandah_day_wnfh with door_invert_blure_dissolve
     play sound sfx_close_door_1
     $ renpy.pause(1.0)
     window show
@@ -636,7 +635,7 @@ label blwnfh_day_2:
     scene bg ext_musclub_day with santa_barbara_out_blure_dissolve2
     $ renpy.pause(1.0)
     play music music_list["two_glasses_of_melancholy"] fadein 5
-    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
     window show
     ## Славя докладывает где искать ОД
     "Проходя мимо по площади, нас позади окликнули."
@@ -722,7 +721,6 @@ label blwnfh_day_2:
 
     "Забрав обходной лист, Катя в припрыжку пошла на выход."
     
-    #34 анимацию кати
     show kat smile:
         ease_quart 2.0 xcenter 1.2
     
@@ -1249,7 +1247,7 @@ label blwnfh_day_2:
     "Вполне насладившись красивой игрой, я постучался и вошел в муз кружок."
     
     window hide
-    scene bg ext_musclub_verandah_day at blwnfh_entrance
+    scene bg ext_musclub_verandah_day_wnfh at blwnfh_entrance
     stop ambience fadeout 0.5
     scene bg int_musclub_day with door_blure_dissolve2
     play sound sfx_close_door_1
@@ -1529,7 +1527,7 @@ label blwnfh_day_2:
     
     stop ambience fadeout 0.5
     stop music fadeout 0.5
-    scene bg ext_musclub_verandah_day with slide_right_blure_dissolve2
+    scene bg ext_musclub_verandah_day_wnfh with slide_right_blure_dissolve2
     play ambience ambience_camp_center_day fadein 3
     play sound sfx_close_door_1
     show dv normal pioneer close at center with dissolve
@@ -1726,7 +1724,7 @@ label blwnfh_day_2:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg ext_music_club_sunset with slide_right_blure_dissolve2
+    scene bg ext_music_club_sunset_wnfh with slide_right_blure_dissolve2
     play sound sfx_close_door_1
     $ blwnfh_set_time("sunset")
     play ambience ambience_camp_center_evening fadein 3
@@ -1768,7 +1766,7 @@ label blwnfh_day_2:
     "Мику закрыла муз кружок, и мы отправились на площадь, дожидаться горна к ужину."
     
     window hide
-    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_sunset_wnfh with slide_up_blure_dissolve2
     $ renpy.pause(1.5)
     window show
     
@@ -1784,7 +1782,7 @@ label blwnfh_day_2:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_sunset with slide_right_blure_dissolve2
+    scene bg int_dining_hall_people_sunset_wnfh with slide_right_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 3
     # show kat normal pioneer at right with dissolve
     # show mi normal pioneer at left with dissolve
@@ -1915,7 +1913,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_away_sunset with slide_right_blure_dissolve2
     $ renpy.pause(1.5) 
-    scene bg ext_lenin_square_sunset with dissolve
+    scene bg ext_lenin_square_sunset_wnfh with dissolve
     $ renpy.pause(1.5)
     scene bg ext_boathouse_sunset with dissolve
     play ambience ambience_boat_station_day fadein 3
@@ -1925,14 +1923,14 @@ label blwnfh_day_2:
     "Мы прошли дальше, на край брандвахты."
     
     window hide
-    scene bg ext_pier_sunset with sphere_blure_dissolve2
+    scene bg ext_pier_sunset_wnfh with sphere_blure_dissolve2
     play music music_list["trapped_in_dreams"]
     show kat normal pioneer at center with dissolve
     window show
     ## Семён и Катя на пристани
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
     
-    show cg d2_me_kat_boathouse with santa_barbara_in_blure_dissolve2
+    show cg d2_me_kat_boathouse_wnfh with santa_barbara_in_blure_dissolve2
     
     "Мы молчали и просто наслаждались красивыми видами."
     
@@ -2025,7 +2023,7 @@ label blwnfh_day_2:
     window hide
     stop ambience fadeout 2.0
     stop music fadeout 2
-    scene bg ext_lenin_square_sunset with santa_barbara_out_blure_dissolve2
+    scene bg ext_lenin_square_sunset_wnfh with santa_barbara_out_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 2
     window show
     
@@ -2048,7 +2046,7 @@ label blwnfh_day_2:
     window hide
     stop music fadeout 3
     stop ambience fadeout 0.5 
-    scene bg ext_lenin_square_night with dissolve2
+    scene bg ext_lenin_square_night_wnfh with dissolve2
     $ blwnfh_set_time("night")
     play ambience ambience_camp_center_night fadein 3
     $ renpy.pause(1.5)

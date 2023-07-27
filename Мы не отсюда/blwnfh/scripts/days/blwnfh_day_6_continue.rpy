@@ -4,7 +4,7 @@ label blwnfh_day_6_continue:
     play ambience ambience_lake_shore_night fadein 7.5
     play music music_list["drown"] fadein 7.5
     $ renpy.pause(1.5, hard=True)
-    scene bg ext_island_otherside_night
+    scene bg ext_island_otherside_night_wnfh
     show kat pockerface pioneer shirt loose:
         xcenter 0.5 ycenter 0.5
     window show
@@ -68,7 +68,7 @@ label d6c_go_forest:
 
     stop ambience fadeout 3.5
     window hide dissolve
-    scene bg ext_forest_new_night with dissolve2 
+    scene bg ext_forest_new_night_wnfh with dissolve2 
     window show dissolve
     play ambience ambience_forest_night fadein 3.5
 
@@ -115,7 +115,7 @@ label d6c_pogrujaet_katyu:
 
 label d6c_go_forest_no_serega:
 
-    scene bg ext_forest_new_night with dissolve2
+    scene bg ext_forest_new_night_wnfh with dissolve2
     play ambience ambience_forest_night fadein 3.5
     window show dissolve
 
@@ -131,7 +131,7 @@ label d6c_go_forest_no_serega:
     
 label d6c_go_forest_3:
 
-    scene bg ext_forest_new_night with dissolve2 
+    scene bg ext_forest_new_night_wnfh with dissolve2 
     window show dissolve
     play ambience ambience_forest_night fadein 3.5
 
@@ -277,7 +277,7 @@ label d6c_go_forest_sprosil:
     
 label d6c_sobiraet_veshi:
 
-    scene bg ext_island_otherside_night with dissolve2
+    scene bg ext_island_otherside_night_wnfh with dissolve2
     play ambience ambience_lake_shore_night fadein 3.5
     window show dissolve
 
@@ -435,7 +435,7 @@ label d6c_mz_pomosh:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    scene bg ext_forest_new_night with dissolve2
+    scene bg ext_forest_new_night_wnfh with dissolve2
     play ambience ambience_forest_night fadein 3.5
     window show dissolve
     $ d6c_videl_seregu = True
@@ -502,7 +502,7 @@ label d6c_mz_pomosh:
 
 label d6c_go_coast_2:
 
-    scene bg ext_island_otherside_night 
+    scene bg ext_island_otherside_night_wnfh 
     show el normal pioneer at left
     with dissolve2
     play ambience ambience_lake_shore_night fadein 3.5
@@ -610,7 +610,7 @@ label d6c_otplitie:
     "Теперь всё было готово к отплытию и, загрузив всё в лодку, я спихнул её в воду."
     "А после запрыгнув на борт, принялся тихонько грести обратно в лагерь."
 
-    show cg d6c_boat_night with dissolve2
+    show cg d6c_boat_night_wnfh with dissolve2
 
     "Грести было тяжелее обычного. Наверное, всё же, сказывалась моя усталость и сонливость."
     "Ещё и море волновалось, пусть и не сильно."

@@ -39,7 +39,7 @@ label blwnfh_day_3:
     ## Катя выходит из домика
     "Пройдя немного вперед, буквально из соседнего домика, который стоял всего в паре метров, вышла Катя."
      
-    scene bg ext_house_of_kat_sunset with slide_right_blure_dissolve
+    scene bg ext_house_of_kat_sunset_wnfh with slide_right_blure_dissolve
     show kat pioneer sad far with dissolve
     window show
     
@@ -111,7 +111,7 @@ label blwnfh_day_3:
     
     window hide
     hide kat with dissolve
-    scene bg ext_washstand_day with slide_down_blure_dissolve2
+    scene bg ext_washstand_sunset_wnfh with slide_down_blure_dissolve2
     window show
     ## Семён и Катя у умывальников
     "Прибыв к умывальникам, мы приступили к водным процедурам."
@@ -190,7 +190,7 @@ label blwnfh_day_3:
     $ renpy.pause(1.0)
     scene bg ext_houses_sunset with slide_left_blure_dissolve
     $ renpy.pause(1.0)
-    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve
+    scene bg ext_lenin_square_sunset_wnfh with slide_up_blure_dissolve
     play music music_list["silhouette_in_sunset"] fadein 5
     show mt pioneer normal with dissolve
     window show
@@ -259,7 +259,7 @@ label blwnfh_day_3:
     $ renpy.pause(1.0)
     scene bg ext_dining_hall_near_sunset with santa_barbara_in_blure_dissolve2
     $ renpy.pause(1.0)
-    scene bg int_dining_hall_people_sunset with dnr_entrance
+    scene bg int_dining_hall_people_sunset_wnfh with dnr_entrance
     play ambience ambience_dining_hall_full fadein 3
     $ renpy.pause(1.5)
     window show
@@ -281,7 +281,7 @@ label blwnfh_day_3:
     $ renpy.pause(1.0, hard=True)
     window show
     
-    play music music_list["so_good_to_be_careless"]
+    play music music_list["so_good_to_be_careless"] fadein 3.5
     
     me "Можно к вам?"
     kat "Да, садись."
@@ -373,9 +373,9 @@ label blwnfh_day_3:
     
     scene bg ext_dining_hall_away_sunset with slide_left_blure_dissolve2
     $ renpy.pause(1.5, hard=True)
-    scene bg ext_lenin_square_sunset with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_sunset_wnfh with slide_up_blure_dissolve2
     $ renpy.pause(1.5, hard=True)
-    scene bg ext_clubs_sunset with slide_up_blure_dissolve2
+    scene bg ext_clubs_sunset_wnfh with slide_up_blure_dissolve2
     
     "Вскоре я прибыл к нужному месту, куда и вошел."
     
@@ -423,7 +423,7 @@ label blwnfh_day_3:
     ## Семён отправился на склад
     "Похрустев спиной, я отправился в сторону склада."
     
-    scene bg ext_lenin_square_day with slide_right_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_right_blure_dissolve2
     window show
     
     "Проходя мимо площади, мне повезло встретился со Славей, которая как мне показалось шла тоже в сторону склада."
@@ -485,7 +485,7 @@ label blwnfh_day_3:
     
     ## Семён со Славей у склада
     window hide
-    scene bg ext_warehouse_day with slide_up_blure_dissolve2
+    scene bg ext_warehouse_day_wnfh with slide_up_blure_dissolve2
     show sl normal pioneer with dissolve
     window show
     
@@ -523,7 +523,7 @@ label blwnfh_day_3:
     window hide
     stop ambience fadeout 0.5
     play sound sfx_open_door_1
-    scene bg int_warehouse_day with door_blure_dissolve
+    scene bg int_warehouse_day_wnfh with door_blure_dissolve
     play ambience ambience_int_cabin_evening fadein 3
     show sl normal pioneer with dissolve
     window show
@@ -546,7 +546,7 @@ label blwnfh_day_3:
     
     window hide
     stop ambience fadeout 1.0
-    scene bg ext_warehouse_day with door_invert_blure_dissolve
+    scene bg ext_warehouse_day_wnfh with door_invert_blure_dissolve
     play sound sfx_close_door_1
     stop music fadeout 2.0
     play ambience ambience_camp_center_day fadein 1.0
@@ -754,7 +754,7 @@ label blwnfh_day_3:
     "Сделав глубокий вдох и выдох, я поплелся в сторону медпункта."
     
     window hide
-    scene bg ext_lenin_square_day with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_left_blure_dissolve2
     window show
 
     th "Боже, пусть всё пройдет нормально, и Виола не будет чудить, спокойно даст мне немного медикаментов, и я уйду с миром."
@@ -1019,7 +1019,7 @@ label blwnfh_day_3:
     sh "Ладно, в любом случае проверить стоит."
     
     # таймскип
-    scene bg ext_house_of_el_day with dissolve
+    scene bg ext_house_of_el_day_wnfh with dissolve
     
     "Вскоре мы стояли перед их общим домиком."
     "Шурик подошел к двери и дёрнул за ручку, но та оказалась закрыта, тогда он посмотрел через окно в двери."
@@ -1046,7 +1046,7 @@ label blwnfh_day_3:
     "Я же отправился на площадь."
     
     window hide dissolve
-    scene bg ext_lenin_square_day with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_left_blure_dissolve2
     $ renpy.pause(2.0)
     window show dissolve
     ## Семён уселся на площади и к нему подошла Ульяна
@@ -1250,7 +1250,7 @@ label blwnfh_day_3:
     
     usw "Ты меня прекрасно понял, так что давай, работай."
     
-    show cg d3_me_us_crime with dissolve
+    show cg d3_me_us_crime_wnfh with dissolve
     
     "Она подготовила пакет раскрыв его, а я, выждав момент, забурился рукой в большую и глубокую стеклянную тарелку и за пару быстрых заходов наполнил уже половину пакета."
     "Делал я всё быстро, так что конфеты иногда выпадали, но Ульяна словно волк из игры, где он ловил яйца, подставляла пакет." 
@@ -1273,7 +1273,7 @@ label blwnfh_day_3:
     
     $blwnfh_get_achievement("payday")
     $ renpy.pause(1.0, hard=True)
-    show cg d3_me_us_runinng_away with dissolve
+    show cg d3_me_us_runinng_away_wnfh with dissolve
 
     "В спешке завернув этот и забрав первый пакет, мы стали быстро удирать из столовой."
     "Вот только преодолеть расстояние от одного конца столовки до другого, за очень короткий промежуток времени, крайне сложная задача."
@@ -1297,7 +1297,7 @@ label blwnfh_day_3:
     "Главная воровка спрыгнула с крыльца и убежала за столовую."
     "Разумеется, я последовал за ней."
     
-    scene bg ext_dining_hall_backroad_day 
+    scene bg ext_dining_hall_backroad_day_wnfh 
     show usw sad pioneer close at center
     with slide_down_blure_dissolve
     ## Семён и Ульяна успешно украв конфеты прячутся за столовой
@@ -1706,7 +1706,7 @@ label blwnfh_day_3:
     window hide
     scene bg ext_houses_day with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
-    scene bg ext_lenin_square_day with slide_diagonal_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_diagonal_blure_dissolve2
     $ renpy.pause(1.0, hard=True)
     scene bg ext_musclub_day with slide_diagonal_blure_dissolve2
     show dv normal pioneer2 with dissolve 
@@ -2077,7 +2077,7 @@ label blwnfh_day_3:
     
     "Мы ушли в дальнюю часть библиотеке, где был вход в подсобное помещение, куда мы и вошли."
     
-    scene bg int_editorial_day 
+    scene bg int_editorial_day_wnfh
     show mz normal pioneer glasses at cright 
     show kat normal pioneer at fright behind mz
     show un normal pioneer far at left behind mz
@@ -2410,7 +2410,7 @@ label blwnfh_day_3:
     
     "Тем временем мы дошли до Катеного домика."
     
-    show bg ext_house_of_kat_sunset 
+    show bg ext_house_of_kat_sunset_wnfh 
     show kat normal
     with dissolve
 
@@ -2530,7 +2530,7 @@ label blwnfh_day_3:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_people_sunset 
+    scene bg int_dining_hall_people_sunset_wnfh 
     show chair_l
     show chair_r
     show table
@@ -2657,7 +2657,7 @@ label blwnfh_day_3:
     me "Но да не будем о плохом, давай вот поговорим[wp] О животных."
     me "Какие животные тебе нравятся?"
     
-    show cg d3_me_kat_walking with dissolve
+    show cg d3_me_kat_walking_wnfh with dissolve
     
     "После моего вопроса, Катя заметно приободрилась. {w}Видимо она умеет быстро отгонять все негативные мысли. {w}Полезное качество, мне бы такое."
     
@@ -2695,7 +2695,7 @@ label blwnfh_day_3:
     kat "Жалко конечно, особенно птичек, они же ничего сделали, но и Стёпку понять можно, он всё же хыщник."
     kat "А мышей я не люблю."
     
-    hide cg d3_me_kat_walking with dissolve
+    hide cg d3_me_kat_walking_wnfh with dissolve
 
     th "Вот как, значит огромные и страшные крысы тебе нравятся, а маленькие и милые мышки нет? Волшебно, просто волшебно."
     
@@ -2757,7 +2757,7 @@ label blwnfh_day_3:
     
     "Подойдя к землянке, мы вышли в нее, благо дверь была открыта."
     
-    show bg int_blindage_night with dissolve2
+    show bg int_blindage_night_wnfh with dissolve2
     #34 тут должен быть нормальный фон землянки.
     stop music fadeout 2.5
     
@@ -2786,7 +2786,7 @@ label blwnfh_day_3:
     "Осмотрев печку, я нашел на ней спички, а под кроватью удалось обнаружить немного дров и хвороста."
     "Всё это незамедлительно полетело в печь, которую разжечь удалось только с четвертой попытки, ибо спички оказались на редкость хреновыми, да и я не шибко умел с ними обращаться."
     
-    scene bg int_blindage_stove_night with dspr
+    scene bg int_blindage_stove_night_wnfh with dspr
     
     "Растопив печь, я плотно закрыл дверь землянки."
     
@@ -2842,7 +2842,7 @@ label blwnfh_day_3:
     me "Ну, блин, так вот вышло."
     kat "Ладно, я не злюсь, давай засыпать уже понемногу."
     
-    show cg d3_me_kat_blindage2 with dissolve
+    show cg d3_me_kat_blindage2_wnfh with dissolve
     
     "Вновь сомкнув глаза я стал постепенно засыпать."
     "Слушая звуки дождя и треска дров в печи, мне удалось окончательно провалится в сон."

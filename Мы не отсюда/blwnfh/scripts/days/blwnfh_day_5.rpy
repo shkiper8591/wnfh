@@ -56,12 +56,12 @@ label blwnfh_day_5:
     th "Конечно, последнее время Славя его подменяет, но никто не отменят тот факт, что всё может измениться и Сергей Дмитриевич вновь выйдет на работу."
     th "А с этим вредным дедом хочется пересекаться ещё меньше чем с вожатой."
     
-    scene bg ext_warehouse_day_opendoor with slide_left_blure_dissolve2
+    scene bg ext_warehouse_day_opendoor_wnfh with slide_left_blure_dissolve2
     #34 тут надо найти поставить фон с приоткрытой дверью на склад. ЛИБО ЖЕ ХЕХЕХЕХХЕХЕ. СДЕЛАТЬ СВОЙ ФОН СКЛАДА СНАРУЖИ УХАХАХУАХУАХУХАУХАУХАУХАХУХАУ
     "Подойдя к складу, я заметил, что дверь была немного приоткрыта и это было хорошей новостью."
     "Тем не менее, прежде чем войти, я постучался и только после вошел внутрь."
     
-    scene bg ext_warehouse_day_opendoor:
+    scene bg ext_warehouse_day_opendoor_wnfh:
         subpixel True
         truecenter
         zoom 1.0
@@ -69,7 +69,7 @@ label blwnfh_day_5:
     $ renpy.pause(2.0)
     
     stop ambience fadeout 2.0
-    scene bg int_warehouse_day
+    scene bg int_warehouse_day_wnfh
     show sd wh_normal_glasses wh background
     with dissolve2
     play ambience ambience_int_cabin_day fadein 2
@@ -180,7 +180,7 @@ label blwnfh_day_5:
     "Без лишних слов я покинул склад."
     
     stop ambience fadeout 2.0
-    scene bg ext_warehouse_sunset with dissolve2
+    scene bg ext_warehouse_sunset_wnfh with dissolve2
     stop music fadeout 3.5
     play ambience ambience_camp_center_evening fadein 2
     ## Семён пошёл домой за умывалками
@@ -474,7 +474,7 @@ label blwnfh_day_5:
     
     "Я усмехнулся и мы подошли ближе к муз кружку." 
     
-    show bg ext_musclub_verandah_day with dissolve
+    show bg ext_musclub_verandah_day_wnfh with dissolve
     
     "Поднявшись на крыльцо, Катя заметила, что дверца была приоткрыта."
     
@@ -492,7 +492,7 @@ label blwnfh_day_5:
     "Восстановив равновесие, я вошел внутрь."
     stop music fadeout 2.5
     window hide dissolve
-    show bg ext_musclub_verandah_day:
+    show bg ext_musclub_verandah_day_wnfh:
         subpixel True
         truecenter
         zoom 1.0
@@ -1631,7 +1631,7 @@ label blwnfh_day_5:
     show mi normal pioneer:
         ease_quart 2.09 xcenter 0.28
     
-    show bg int_dining_hall_day_vedro with dspr
+    show bg int_dining_hall_day_vedro_wnfh with dspr
 
     "Вскоре возвратилась Мику с ведром воды наперевес, которое поставила на стол."
     
@@ -1852,7 +1852,7 @@ label blwnfh_day_5:
     "Собравшись с силами, я быстрым шагом отправился в путь."
     
     window hide dissolve
-    scene bg ext_stage_big_day with sphere_dissolve5
+    scene bg ext_stage_big_day_wnfh with sphere_dissolve5
     window show dissolve
     
     "Сократив в некоторых местах, очень скоро я уже стоял у сцены."
@@ -2832,9 +2832,9 @@ label blwnfh_day_5:
     $ blwnfh_set_mode()
     $ renpy.pause(0.01)
     window hide
-    show cg d5_dv_football with dissolve
+    show cg d5_dv_football_wnfh with dissolve
     $ renpy.pause(2.5)
-    hide cg d5_dv_football with dissolve
+    hide cg d5_dv_football_wnfh with dissolve
     $ blwnfh_set_mode(nvl)
 
     "Однако, Алиса успела поймать мяч, чему крайне была недовольна Ульяна.\n"
@@ -3449,7 +3449,7 @@ label blwnfh_day_5:
     
     window hide
     stop ambience fadeout 2
-    scene bg ext_stage_big_sunset 
+    scene bg ext_stage_big_sunset_wnfh 
     show el normal pioneer at right 
     show sv angry pioneer glasses tablet at left 
     with sphere_blure_dissolve2
@@ -3487,7 +3487,7 @@ label blwnfh_day_5:
     
     window hide
     stop ambience fadeout 3
-    scene bg int_dining_hall_people_sunset with door_dissolve5
+    scene bg int_dining_hall_people_sunset_wnfh with door_dissolve5
     play ambience ambience_dining_hall_full fadein 3
     
     "Пришел я в столовую немного позже самого горна."
@@ -3626,7 +3626,7 @@ label blwnfh_day_5:
     me "Всё, я пошел."
     
     stop ambience fadeout 2.0
-    scene bg ext_lenin_square_sunset with santa_barbara_out_dissolve2
+    scene bg ext_lenin_square_sunset_wnfh with santa_barbara_out_dissolve2
     play ambience ambience_camp_center_evening fadein 2.0
     
     "Я кое-как ковылял домой."

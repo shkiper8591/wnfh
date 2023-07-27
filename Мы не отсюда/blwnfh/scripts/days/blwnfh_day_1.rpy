@@ -219,14 +219,14 @@ label blwnfh_day_1:
     "За своими размышлениями, я и не заметил как подошел к умывальникам."
     
     window hide
-    scene bg ext_washstand_sunset with slide_down_blure_dissolve2
+    scene bg ext_washstand_sunset_wnfh with slide_down_blure_dissolve2
     window show
 
     "Здесь никого не было, что было хорошо."
     th "Люблю умываться в одиночестве."
     
     window hide
-    scene bg ext_washstand2_sunset with sphere_blure_dissolve2
+    scene bg ext_washstand2_sunset_wnfh with sphere_blure_dissolve2
     window show
 
     "Подойдя к ближайшему умывальнику, я спокойно снял с себя рубашку, всё равно я тут один, так почему бы ещё немного не всполоснуться."
@@ -254,7 +254,7 @@ label blwnfh_day_1:
     "Я нагнулся к земле, спрятавшись за умывальником."
     "И в этот же момент послышалось, что кто-то пришёл."
     
-    scene bg ext_washstand_sunset with sphere_invert_blure_dissolve2
+    scene bg ext_washstand_sunset_wnfh with sphere_invert_blure_dissolve2
     
     "Я взял банку в руку и уже собирался выгнуться обратно, как неожиданно появилась Славя."
     ## Разговор со Славей у умывальников
@@ -383,7 +383,7 @@ label d1_sl_probejka:
     
     play sound sfx_head_heartbeat
     
-    scene bg ext_square_sunset at fatigue
+    scene bg ext_lenin_square_sunset_wnfh at fatigue
     
     me "А ты… {w}Отлично бегаешь."
     
@@ -393,7 +393,7 @@ label d1_sl_probejka:
     
     "Славя же лишь бросила на меня недоумевающий взгляд и остановилась."
     
-    scene bg ext_square_sunset with dissolve
+    scene bg ext_lenin_square_sunset_wnfh with dissolve
     
     show sl surprise sport at center with dspr
     
@@ -614,7 +614,7 @@ label d1_sl_otkaz:
     window hide
     scene bg ext_houses_day with slide_left_blure_dissolve2
     $ renpy.pause(2.0, hard=True)
-    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
     $ renpy.pause(2.0)
     $ blwnfh_set_time()
     play music music_list["trapped_in_dreams"] fadein 3.5
@@ -648,7 +648,7 @@ label d1_sl_otkaz:
     "А даме, так уж повелось, отказывать нельзя."
     
     $ blwnfh_set_name("un", "Лена")
-    scene bg ext_lenin_square_day
+    scene bg ext_lenin_square_day_wnfh
     show un smile pioneer at center
     show unblink
     with None
@@ -676,7 +676,7 @@ label d1_sl_otkaz:
     "Я немного отодвинулся к краю лавки и Лена села рядом."
 
     hide un with dissolve
-    scene bg ext_sky with slide_down_blure_dissolve2
+    scene bg ext_sky_wnfh with slide_down_blure_dissolve2
     
     "Как только она села, я откинул голову обратно и стал изучать облака."
     "Лена очень притихла, лишь изредка вздыхая."
@@ -688,7 +688,7 @@ label d1_sl_otkaz:
     
     th "Видно не судьба мне ещё немного поспать сегодня."
     
-    scene bg ext_lenin_square_day with slide_up_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
     
     "Я опустил голову и перевел свой взгляд на нее."
     
@@ -753,7 +753,7 @@ label d1_sl_otkaz:
     dv "Ты чего творишь?!"
     un "А ты догадайся."
     
-    show cg d1_un_dv_otrivaet_nos with dissolve
+    show cg d1_un_dv_otrivaet_nos_wnfh with dissolve
 
     #show un evil_smile pioneer close:
     #    ease 0.3 xcenter 0.7
@@ -801,7 +801,7 @@ label d1_sl_otkaz:
     
     "Я потянулся к Лененной руке, чтобы наконец остановить её."
     
-    hide cg d1_un_dv_otrivaet_nos with dissolve
+    hide cg d1_un_dv_otrivaet_nos_wnfh with dissolve
     stop music fadeout 3
     
     "Но в этот самый момент, Лена отпустила Алису и та свалилась на землю."
@@ -913,7 +913,7 @@ label d1_sl_otkaz:
     "Алиса встала с лавочки и ушла в строй."
     "Недовольно вздохнув, я поднялся и пошел за ней."
     ## Линейка1
-    show cg d1_lineika with dissolve
+    show cg d1_lineika_wnfh with dissolve
     #play music blwnfh_music_list["distant_banjo"] fadein 1.5
     
     "Когда все пионеры построились, Ольга Дмитриевна начала вещать свою стандартную программу."
@@ -954,7 +954,7 @@ label d1_sl_otkaz:
     "Даже вот сейчас, она у меня немного побаливает."
     "А посему, я очистил свой разум от ненужных мыслей и полностью ушел в себя, не концентрируясь ни на одной конкретной."
     
-    hide cg d1_lineika with dissolve
+    hide cg d1_lineika_wnfh with dissolve
     window hide
     $ renpy.pause(1.0)
     window show
@@ -1260,13 +1260,13 @@ label d1_sl_otkaz:
     stop music fadeout 3
     stop ambience fadeout 0.5
     play sound sfx_open_door_1
-    scene bg int_clubs_male_day with door_blure_dissolve
+    scene bg int_clubs_male_day 
+    show sh upset pioneer at right 
+    show el normal pioneer at fleft 
+    show sv angry pioneer glasses tablet at center
+    with door_blure_dissolve
     play ambience ambience_clubs_inside_day fadein 3
     play music blwnfh_music_list["razbor_poletov"] fadein 2.5
-    
-    show sh upset pioneer at right with dissolve
-    show el normal pioneer at fleft with dissolve
-    show sv angry pioneer glasses tablet at center with dissolve
     window show
 
     "В клубе, что не удивительно, находились Сергей и Шурик."
@@ -1334,7 +1334,7 @@ label d1_sl_otkaz:
     
     window hide
     stop ambience fadeout 0.5
-    scene cg d1_me_kat_shtrafniye with dissolve2
+    scene cg d1_me_kat_shtrafniye_wnfh with dissolve2
     play ambience ambience_camp_center_day fadein 3
     window show
 
@@ -1383,7 +1383,7 @@ label d1_sl_otkaz:
     "Я схватил Катю за плечо и быстренько повёл её прочь отсюда."
     
     window hide
-    scene bg ext_warehouse_day with slide_left_blure_dissolve
+    scene bg ext_warehouse_day_wnfh with slide_left_blure_dissolve
     $ renpy.pause(1.0)
     window show
     
@@ -1394,7 +1394,7 @@ label d1_sl_otkaz:
     window hide
     stop ambience fadeout 0.5
     play sound sfx_open_door_1
-    scene bg int_warehouse_day
+    scene bg int_warehouse_day_wnfh
     show sl wh_snizu wh background
     with door_blure_dissolve
     play ambience ambience_int_cabin_day fadein 3
@@ -1489,7 +1489,7 @@ label d1_sl_otkaz:
     window hide
     stop music fadeout 3
     stop ambience fadeout 0.5
-    scene bg ext_warehouse_day with door_invert_blure_dissolve
+    scene bg ext_warehouse_day_wnfh with door_invert_blure_dissolve
     play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 3
     window show
@@ -1829,7 +1829,7 @@ label d1_sl_otkaz:
     "Он вытер руки и после сразу принялся протирать радио."
     "Под толстенными слоями пыли пряталось полностью убитое и проржавевшее радио. {w}Так что были {b}большие{/b} сомнения в том, что из него можно достать хоть что-то полезное."
 
-    show cg d1_me_sh_el_radio1 with dissolve
+    show cg d1_me_sh_el_radio1_wnfh with dissolve
 
     "Закончив протирать, Шурик сел за стол и взялся за отвертку."
     "Поднеся её к винту, тот стал его пытаться откручивать. Но тот всё не поддавался."
@@ -1845,14 +1845,14 @@ label d1_sl_otkaz:
 
     "Шурик, приложив больше усилий действительно стал прокручивать винт."
 
-    show cg d1_me_sh_el_radio2 with dspr
+    show cg d1_me_sh_el_radio2_wnfh with dspr
 
     "Вот только сразу же после этого, радио, издав предсмертных хрип, просто развалилось."
     "От такого стечения обстоятельств, Шурик прибывал в легком удивлении."
 
     me "М-да, сила есть, ума не надо."
 
-    hide cg d1_me_sh_el_radio2 with dissolve
+    hide cg d1_me_sh_el_radio2_wnfh with dissolve
 
     "Поправив очки, Шурик, стал разгребать груды мусора."
     
@@ -1879,8 +1879,9 @@ label d1_sl_otkaz:
     
     "Сказал он и кинул мне ключи, которые я и поймал."
     
-    hide sh with dissolve
-    hide el with dissolve
+    hide sh
+    hide el 
+    with dissolve
     
     "И Шурик с Серым быстро покинули клубы."
     

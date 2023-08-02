@@ -280,7 +280,7 @@ label blwnfh_day_4:
     ## Катя и Семён идут по домам
     "Шли мы в ускоренном темпе, из-за подгоняющего нас холода, так что скоро уже стояли перед домиком Кати."
     
-    show bg ext_house_of_kat_after_rain_sunset with dissolve
+    show bg ext_house_of_kat_after_rain_sunset_wnfh with dissolve
     show kat joy with dspr
     
     kat "Наконец-то, убежище от холода."
@@ -3065,7 +3065,7 @@ label blwnfh_day_4:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    scene bg ext_lenin_square_sunset
+    scene bg ext_lenin_square_sunset_wnfh
     show mi normal pioneer at left
     show kat normal pioneer at right 
     with slide_right_dissolve2

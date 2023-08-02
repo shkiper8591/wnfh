@@ -261,11 +261,11 @@ init 2:
 
 
 label wnfh_main:
-    scene bg disclaimer with dissolve
+    scene bg disclaimer_wnfh with dissolve
     $ renpy.pause(100)
     jump wnfh_main_menu
 label wnfh_main_menu:
-    scene cg d2_me_kat_boathouse with dissolve
+    scene cg d2_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
     $ init_splash()
     call screen wnfh_menu with dissolve

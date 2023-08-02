@@ -24,17 +24,17 @@ init 2:
             wnfh_main_menu_button = [
             
                  #Тег кнопки     #Изображение кнопки                               #Действие кнопки
-                ["credits"      ,wnfh_gui["main_menu"]["credits"]               ,[Jump("technical_chocolatki")]                                           ],
-                ["galary"       ,wnfh_gui["main_menu"]["galary"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["news"         ,wnfh_gui["main_menu"]["news"]                  ,[Jump("technical_chocolatki")]                          ],
-                ["play"         ,wnfh_gui["main_menu"]["play"]                  ,[Hide("wnfh_menu", transition=dissolve), Jump("wnfh_prologue")]      ],
-                ["saves"        ,wnfh_gui["main_menu"]["saves"]                 ,[ShowMenu("wnfh_load_screen", _transition=dissolve)]                   ],
-                ["scheme"       ,wnfh_gui["main_menu"]["scheme"]                ,[Jump("technical_chocolatki")]                                           ],
-                ["preferences"  ,wnfh_gui["main_menu"]["preferences"]           ,[ShowMenu("wnfh_preferences", _transition=dissolve)]                   ],
-                ["red"          ,im.Scale(wnfh_gui["poligon"]["red"], 100, 100) ,[Jump("wnfh_test")]                                                    ],
-                ["achievements" ,wnfh_gui["main_menu"]["achievements"]          ,[ShowMenu("wnfh_achievements", _transition=dissolve)]                  ],
-                ["exit"         ,wnfh_gui["main_menu"]["exit"]                  ,[Return()]                                                               ],
-                ["dlc"          ,wnfh_gui["main_menu"]["dlc"]                   ,[Jump("technical_chocolatki")]                                           ],
+                ["credits"      ,wnfh_gui["main_menu"]["credits"]                 ,[Jump("technical_chocolatki")]                                           ],
+                ["galary"       ,wnfh_gui["main_menu"]["galary"]                  ,[Jump("technical_chocolatki")]                                           ],
+                ["news"         ,wnfh_gui["main_menu"]["news"]                    ,[Jump("technical_chocolatki")]                                           ],
+                ["play"         ,wnfh_gui["main_menu"]["play"]                    ,[Hide("wnfh_menu", transition=dissolve), Jump("wnfh_prologue")]          ],
+                ["saves"        ,wnfh_gui["main_menu"]["saves"]                   ,[ShowMenu("wnfh_load_screen", _transition=dissolve)]                     ],
+                ["scheme"       ,wnfh_gui["main_menu"]["scheme"]                  ,[ShowMenu("blwnfh_schematic", _transition=dissolve)]                     ],
+                ["preferences"  ,wnfh_gui["main_menu"]["preferences"]             ,[ShowMenu("wnfh_preferences", _transition=dissolve)]                     ],
+                ["red"          ,im.Scale(wnfh_gui["poligon"]["red"], 100, 100)   ,[Jump("wnfh_test")]                                                      ],
+                ["achievements" ,wnfh_gui["main_menu"]["achievements"]            ,[ShowMenu("wnfh_achievements", _transition=dissolve)]                    ],
+                ["exit"         ,wnfh_gui["main_menu"]["exit"]                    ,[Return()]                                                               ],
+                ["dlc"          ,wnfh_gui["main_menu"]["dlc"]                     ,[Jump("technical_chocolatki")]                                           ],
             ]
        
             menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")

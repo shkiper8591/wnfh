@@ -3,9 +3,9 @@ init python:
     ## Генератор названий для сохранений ##
     
     # Название мода для сохранений
-    blwnfh_title = [u"Мы не отсюда"]
+    wnfh_title = [u"Мы не отсюда"]
     
-    def blwnfh_set_savename(day):
+    def wnfh_set_savename(day):
         chapters_list = {1:[1, 2], 2:[3, 4, 5, 6], 3:[7, 8, 9, 10], 4:[11, 12, 13, 14], 5:["Тест"]}
         
         for n,i in enumerate(chapters_list.values()):
@@ -23,7 +23,7 @@ init python:
             roman_chapter = "IV"
         else:
             roman_chapter = "Тестовая"
-        title = blwnfh_title[0] + "\n"
+        title = wnfh_title[0] + "\n"
         if day in range(0, 15):
             save_name = title + "Глава " + str(roman_chapter) + ". " + u"День № " + str(day)
         else:

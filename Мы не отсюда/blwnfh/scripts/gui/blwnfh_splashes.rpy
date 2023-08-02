@@ -73,6 +73,6 @@ init python:
             "Самолетов под водой больше, чем подводных лодок в небе",
             "Rock and Stone!"
             ])
-    def blwnfh_splash():
+    def wnfh_splash():
         global spl
         return spl

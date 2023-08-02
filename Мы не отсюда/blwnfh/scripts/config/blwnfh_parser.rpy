@@ -8,33 +8,33 @@ init -3 python:
     Хоть самому блять берись и делай гайды
     """
     
-    def blwnfh_parse_folder(key):
+    def wnfh_parse_folder(key):
         r = []
         for path in renpy.list_files():
-            if path.startswith(blwnfh_IMAGES + key + "/"):
+            if path.startswith(wnfh_IMAGES + key + "/"):
                 r.append((path.split("/")[-1].split(".")[0], path))
         return r
 
-    def blwnfh_make_images(key, r):
+    def wnfh_make_images(key, r):
         for i in r:
             name, path = i
             renpy.image(key + " " + name, path)
 
-    blwnfh_backgrounds = blwnfh_parse_folder("bg")
-    blwnfh_graphics = blwnfh_parse_folder("cg")
+    wnfh_backgrounds = wnfh_parse_folder("bg")
+    wnfh_graphics = wnfh_parse_folder("cg")
 
-    blwnfh_make_images("bg", blwnfh_backgrounds)
-    blwnfh_make_images("cg", blwnfh_graphics)
+    wnfh_make_images("bg", wnfh_backgrounds)
+    wnfh_make_images("cg", wnfh_graphics)
     
 init -3 python:
-    def blwnfh_fast_composite(*args):
+    def wnfh_fast_composite(*args):
         arg_list = list()
         for arg in args:
             arg_list.append((0, 0))
             arg_list.append(arg)
         return im.Composite((config.screen_width, config.screen_height), *arg_list)
 
-    def blwnfh_fast_livecomposite(*args):
+    def wnfh_fast_livecomposite(*args):
         arg_list = list()
         for arg in args:
             arg_list.append((0, 0))
@@ -42,8 +42,8 @@ init -3 python:
         return LiveComposite((config.screen_width, config.screen_height), *arg_list)
 
 init -2:
-    image bg int_dining_hall_day_vedro_wnfh = blwnfh_fast_composite(im.Scale(blwnfh_ES_IMAGES + "bg/int_dining_hall_day.jpg", config.screen_width, config.screen_height), im.Scale(blwnfh_OTHER + "vedro.png", config.screen_width, config.screen_height))
-    image bg int_editorial_day_bumaga_wnfh = blwnfh_fast_composite(im.Scale(blwnfh_IMAGES + "bg/int_editorial_day_wnfh.jpg", config.screen_width, config.screen_height), im.Scale(blwnfh_OTHER + "bumaga.png", config.screen_width, config.screen_height))
-    image cg d3_me_kat_blindage_wnfh = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage_wnfh.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
-    image cg d3_me_kat_blindage2_wnfh = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d3_me_kat_blindage2_wnfh.png", blwnfh_fire_light_atl(blwnfh_OTHER + "d3_me_kat_blindage_light.png"))
-    #image cg d6_mt_volosbl = blwnfh_fast_livecomposite(blwnfh_IMAGES + "cg/d6_mt_volosbl.png", blwnfh_wakeup_dark(blwnfh_IMAGES + "cg/d6_mt_volosbl.png"))
+    image bg int_dining_hall_day_vedro_wnfh = wnfh_fast_composite(im.Scale(wnfh_ES_IMAGES + "bg/int_dining_hall_day.jpg", config.screen_width, config.screen_height), im.Scale(wnfh_OTHER + "vedro.png", config.screen_width, config.screen_height))
+    image bg int_editorial_day_bumaga_wnfh = wnfh_fast_composite(im.Scale(wnfh_IMAGES + "bg/int_editorial_day_wnfh.jpg", config.screen_width, config.screen_height), im.Scale(wnfh_OTHER + "bumaga.png", config.screen_width, config.screen_height))
+    image cg d3_me_kat_blindage_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d3_me_kat_blindage_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    image cg d3_me_kat_blindage2_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d3_me_kat_blindage2_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d3_me_kat_blindage_light.png"))
+    #image cg d6_mt_volosbl = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d6_mt_volosbl.png", wnfh_wakeup_dark(wnfh_IMAGES + "cg/d6_mt_volosbl.png"))

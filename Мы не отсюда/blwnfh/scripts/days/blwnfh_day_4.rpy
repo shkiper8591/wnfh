@@ -1,9 +1,9 @@
-label blwnfh_day_4:
-    $ blwnfh_new_chapter(4)
-    $ blwnfh_set_time("sunset")
+label wnfh_day_4:
+    $ wnfh_new_chapter(4)
+    $ wnfh_set_time("sunset")
     scene black
     play ambience ambience_day_countryside_ambience fadein 3
-    play music blwnfh_music_list["waking_up_2"] fadein 5
+    play music wnfh_music_list["waking_up_2"] fadein 5
     $ renpy.pause(1.0, hard=True)
     window show
     ## Пробуждение Семёна в землянке
@@ -127,7 +127,7 @@ label blwnfh_day_4:
     
     "Сказал я и повел за собой Катю на тропу."
     
-    play music blwnfh_music_list["greggs_woods"]
+    play music wnfh_music_list["greggs_woods"]
     show bg ext_path_sunset with dissolve2
     
     "Катя шла за мной ели-ели, попутно подхватывая одеяло, которое так и норовило спасть с нее, из-за чего, то сильно пачкалось снизу."
@@ -672,8 +672,8 @@ label blwnfh_day_4:
     scene bg ext_house_of_kat_after_rain_sunset_wnfh with slide_left_blure_dissolve2
     play ambience ambience_camp_center_day fadein 2.0
     #34 крутой переход
-    play music blwnfh_music_list["lori_m"] fadein 3.0
-    $ blwnfh_set_time()
+    play music wnfh_music_list["lori_m"] fadein 3.0
+    $ wnfh_set_time()
     $ renpy.pause(1.5)
     window show
     ## Семён у домика Кати
@@ -827,7 +827,7 @@ label blwnfh_day_4:
     me "Чёрт побери, хотя бы грязь поможешь стереть? {w}Пожалуйста."
     kat "Да, сейчас."
 
-    play sound blwnfh_sfx_list["otryahivanie"]
+    play sound wnfh_sfx_list["otryahivanie"]
     
     "Катя принялась быстрыми и резкими движениями одной руки оттирать мне рубашку."
     
@@ -896,7 +896,7 @@ label blwnfh_day_4:
     
     window hide dissolve
     show bg ext_house_of_kat_after_rain_day_wnfh with dissolve
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     window show dissolve
     ## Семён и Катя отправляются в библиотеку
     "Выйдя из-за домика, я вспомнил, что надо бы заскочить к себе и забрать фотоаппарат."
@@ -2147,7 +2147,7 @@ label blwnfh_day_4:
     
     "В библиотеке повисло молчание, а библиотекарша смотрела на меня своим полу-презрительным взглядом."
     
-    play music blwnfh_music_list["international"] noloop fadein 5
+    play music wnfh_music_list["international"] noloop fadein 5
     
     "Но тишина была нарушена Женей, решившая включить радио где крутили разные патриотические песни."
     "И преисполняясь духом коммунизма, работа шла куда эффективнее."
@@ -2778,8 +2778,8 @@ label blwnfh_day_4:
 
     stop ambience fadeout 2.0
     scene bg ext_meadow_day_wnfh with door_blure_dissolve2
-    play ambience blwnfh_ambience_list["veter_v_pole"] fadein 2.0 
-    play music blwnfh_music_list["schabernack"] fadein 3.5
+    play ambience wnfh_ambience_list["veter_v_pole"] fadein 2.0 
+    play music wnfh_music_list["schabernack"] fadein 3.5
     ## Пикник на поляне
     "Вид создавался крайне живописный. Поле высокой травы, которую волнами колыхал ветер, а с водоема поблизости доносились звуки чаек."
     "Мику явно нас не обманула, назвав это место красивым."
@@ -2810,7 +2810,7 @@ label blwnfh_day_4:
     hide cg d4_mi_on_meadow_wnfh
     show kat smile pioneer at right 
     with dissolve
-    play music blwnfh_music_list["outskirts"] fadein 3.5
+    play music wnfh_music_list["outskirts"] fadein 3.5
 
     "В один момент Мику нырнула куда-то в траву, так что мы не сразу поняли, что произошло, пока она не выглянула."
 
@@ -3048,7 +3048,7 @@ label blwnfh_day_4:
     show kat normal pioneer at right 
     with dissolve2
     play ambience ambience_forest_evening fadein 2.0
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     $ renpy.pause(1.0)
     window show dissolve
     ## Музыканты возвращаются обратно в лагерь
@@ -3114,9 +3114,9 @@ label blwnfh_day_4:
     show table
     show shakers
     show left d5_dinner_full tray foods behind shakers
-    show mi normal pioneer at blwnfh_sit_left behind table
+    show mi normal pioneer at wnfh_sit_left behind table
     show right d5_dinner_full tray foods behind shakers
-    show kat normal pioneer at blwnfh_sit_right behind table
+    show kat normal pioneer at wnfh_sit_right behind table
     show mid d5_dinner_full tray foods
     with dissolve
 
@@ -3266,4 +3266,4 @@ label blwnfh_day_4:
     show blink
     stop ambience fadeout 3.5
     $ renpy.pause(2.0, hard=True)
-    jump blwnfh_day_5
+    jump wnfh_day_5

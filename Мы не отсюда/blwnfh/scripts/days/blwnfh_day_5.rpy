@@ -1,9 +1,9 @@
-label blwnfh_day_5:
-    $ blwnfh_new_chapter(5)
-    $ blwnfh_set_time("sunset")
+label wnfh_day_5:
+    $ wnfh_new_chapter(5)
+    $ wnfh_set_time("sunset")
     $ renpy.pause(1.0)
     play ambience ambience_int_cabin_evening fadein 3
-    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    scene expression wnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
     $ renpy.pause(1.5, hard=True)
@@ -210,7 +210,7 @@ label blwnfh_day_5:
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_sunset with dissolve
     play ambience ambience_int_cabin_day fadein 2
-    play sound blwnfh_sfx_list["raschyoska"] fadein 2
+    play sound wnfh_sfx_list["raschyoska"] fadein 2
     ## Семён дома
     "Когда я пришел домой, Ольга Дмитриевна уже проснулась."
     "И сидя в своей форме на кровати, медленно расчёсывала волосы."
@@ -266,7 +266,7 @@ label blwnfh_day_5:
     stop ambience fadeout 1.5
     scene bg ext_washstand_day with sphere_invert_blure_dissolve2
     play ambience ambience_camp_center_day fadein 2
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     show un normal pioneer far with dissolve
     $ renpy.pause(1.5)
     window show
@@ -436,7 +436,7 @@ label blwnfh_day_5:
     show kat interested pioneer
     with slide_diagonal_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
-    play music blwnfh_music_list["warm_evening"] fadein 3.5
+    play music wnfh_music_list["warm_evening"] fadein 3.5
 
     "Мы вышли в пролесок."
     "На протяжении пути, что нами был пройден, Катя с большим любопытством разглядывает моё лицо."
@@ -772,7 +772,7 @@ label blwnfh_day_5:
     
     "В самом же «японце» уже была вставлена кассета, которую чисто из интереса и включил."
     
-    play music blwnfh_music_list["ratne_igre"] noloop fadein 3
+    play music wnfh_music_list["ratne_igre"] noloop fadein 3
     
     "И всё помещение залил звук синтезатора, а немного после и электрогитары."
     "Мне сразу стало понятно, что это некий технорок."
@@ -864,7 +864,7 @@ label blwnfh_day_5:
     
     me "А теперь ваша любимая мелодия группы ЭйсиДиси!"
     
-    play music blwnfh_music_list["back_in_black"] noloop fadein 3
+    play music wnfh_music_list["back_in_black"] noloop fadein 3
     
     "Я тут же вставил кассету в проигрыватель и включил его."
     
@@ -897,7 +897,7 @@ label blwnfh_day_5:
     window show
     show kat scared with dspr
     stop music fadeout 1.0
-    play sound blwnfh_sfx_list["stop_magnitofon"]
+    play sound wnfh_sfx_list["stop_magnitofon"]
 
     "Так и сидели мы, слушая AC/DC, пока между нами не прошла медленно тонкая женская рука."
     "Она нажала на кнопку стоп на проигрывателе, а я с Катей испуганно обернулись назад."
@@ -1047,7 +1047,7 @@ label blwnfh_day_5:
     
     show mi upset with dspr
     
-    play music blwnfh_music_list["strange"] fadein 3
+    play music wnfh_music_list["strange"] fadein 3
     
     mi "Ну да, смогу если отец туда снова поедет, стены-то уже как два года нету."
     me "Как это[wp] Нету?"
@@ -1235,7 +1235,7 @@ label blwnfh_day_5:
     
     "Немного потупившись, вспоминая слова, я начал играть."
     #34 тут нужна гитарная версия песни самогонщиков, андерстенд?
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     me "Без каких либо особенных затрат, создан этот самогонный аппарат"
@@ -1246,7 +1246,7 @@ label blwnfh_day_5:
     me "Лечь под этот электронный агрегат" 
     me "Чтобы, капал самогон мне в рот, днём и ночью, круглый год!\n"
     
-    play sound blwnfh_sfx_list["samogonshiki"]
+    play sound wnfh_sfx_list["samogonshiki"]
     
     "И тут, прямо как в фильме, из подсобки проиграла труба."
     "Очевидно, что это была Мику или Катя, решившие немного мне подыграть.\n"
@@ -1256,7 +1256,7 @@ label blwnfh_day_5:
     me "Просидеть мы сможем без забот, за решёткой, круглый год!"
     me "За решёткой, круглый год!"
     
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     
     "Закончив играть, я заметил, что девушки выглядывая из подсобки смотрят на меня."
     
@@ -1456,7 +1456,7 @@ label blwnfh_day_5:
     show table
     show shakers
 
-    show un normal pioneer at blwnfh_sit_left behind table with dissolve
+    show un normal pioneer at wnfh_sit_left behind table with dissolve
     show left d6_breakfast_full tray foods behind shakers
     
     
@@ -2237,7 +2237,7 @@ label blwnfh_day_5:
     th "Значит остается последняя стадия безумия: рассказывать анекдоты самому себе."
     th "И тут незамедлительно вспоминается один прекрасный анекдот:"
     hide sh
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     th "Жил был мужик и было у него три дочери."
@@ -2255,7 +2255,7 @@ label blwnfh_day_5:
     th "Тут жаба говорит ей, человеческим голосом: «крепко меня заколдовали — придется отсосать»."
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     
     "Рассмеявшись чуть ли не во весь голос от сие шутки, я чуть не упал со стула."
     "Отпустило меня только минут через пять."
@@ -2751,8 +2751,8 @@ label blwnfh_day_5:
     
     "Включив микрофон, я начал вещать."
     #34 тут надо арт где Катя и Семён сидят за столом комментаторском + нужна какая-нибудь бодренькая музычка.
-    play music blwnfh_music_list["candy_store"] fadein 3.5
-    $ blwnfh_set_mode(nvl)
+    play music wnfh_music_list["candy_store"] fadein 3.5
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     me "Приветствуем вас товарищи на футбольном матче."
@@ -2829,13 +2829,13 @@ label blwnfh_day_5:
     
     "Ульяна вдарила по мячу со всей силы, надеясь пробить защиту Алисы."
 
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     $ renpy.pause(0.01)
     window hide
     show cg d5_dv_football_wnfh with dissolve
     $ renpy.pause(2.5)
     hide cg d5_dv_football_wnfh with dissolve
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
 
     "Однако, Алиса успела поймать мяч, чему крайне была недовольна Ульяна.\n"
     
@@ -2919,7 +2919,7 @@ label blwnfh_day_5:
     me "Ладно, мы вернемся к вам через пятнадцать минут, а пока — перерыв."
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     show kat normal pioneer:
         xcenter 0.5 ycenter 0.5
     with dissolve
@@ -3127,8 +3127,8 @@ label blwnfh_day_5:
     
     "Тем временем перерыв подходил к концу."
     
-    play music blwnfh_music_list["candy_store"] fadein 3.5
-    $ blwnfh_set_mode(nvl)
+    play music wnfh_music_list["candy_store"] fadein 3.5
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     "\nФутболисты возвращались на поле, а трибуна вновь наполнялась пионерами."
@@ -3305,7 +3305,7 @@ label blwnfh_day_5:
     me "До скорох встреч."
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop music fadeout 3.5
 
     "Выключив микрофоны, мы встали из-за стола и отправились к трибунам."
@@ -3454,7 +3454,7 @@ label blwnfh_day_5:
     show sv angry pioneer glasses tablet at left 
     with sphere_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 2
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     $ renpy.pause(3.0)
     window show
     
@@ -3796,4 +3796,4 @@ label blwnfh_day_5:
     show blink
     stop ambience fadeout 1.5
     $ renpy.pause(1.5, hard=True)
-    jump blwnfh_day_6_dream
+    jump wnfh_day_6_dream

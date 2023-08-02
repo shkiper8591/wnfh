@@ -1,10 +1,10 @@
-label blwnfh_prologue:
+label wnfh_prologue:
 
     scene black
     $ renpy.pause(3.0, hard=True)
-    $ blwnfh_set_time("prologue")
-    play music blwnfh_music_list["schoneweide"] fadein 2.5
-    play sound blwnfh_sfx_list["perelistovanie"]
+    $ wnfh_set_time("prologue")
+    play music wnfh_music_list["schoneweide"] fadein 2.5
+    play sound wnfh_sfx_list["perelistovanie"]
     $ renpy.pause(2.5, hard=True)
     window show dissolve
     
@@ -41,7 +41,7 @@ label prologue_dlinnee:
     
     show anim prolog_2 with dissolve
     window hide dissolve
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
 
     "{space=40}Меня зовут Семён. Семён Персунов. Я обычный парень лет восемнадцати, гордый житель города[wp]\n"
@@ -172,7 +172,7 @@ label prologue_dlinnee:
     "Разумеется у меня возник к ней вопрос, что она тут делает. {w}Так, у нас завязался небольшой диалог."
 
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     window show dissolve
 
     me "Ты чего тут сидишь? Время к ночи уже близится[wp]"
@@ -215,7 +215,7 @@ label prologue_dlinnee:
     scene black
     window hide
     with dissolve2
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
 
     "Собственно, на этом и закончились все интересные события, впроть до наступления третьего дня."
@@ -229,7 +229,7 @@ label prologue_dlinnee:
     "Однако, уборкой получившийся беглам было назвать сложно, половина полок было перевёрнуто, а библиотека стала похожа на место авиакатастрофы, так что из библиотеки меня гнали ссаными тряпками. Но хоть что-то хорошее в этом есть, под суматоху мне удалось выкрасть эту тетрадь и ручку."
 
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     scene bg int_house_of_mt_night with dissolve2
     window show dissolve
 
@@ -248,7 +248,7 @@ label prologue_dlinnee:
     scene black with Dissolve(5.0)
     stop music fadeout 5.0
     $ renpy.pause(1.5, hard=True)
-    jump blwnfh_day_1_dream
+    jump wnfh_day_1_dream
 
 label prologue_koroche:
 
@@ -259,7 +259,7 @@ label prologue_koroche:
 
     show anim prolog_2 with dissolve
     window hide dissolve
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
 
     "Зовут меня Персунов Семён. Парень 18-и лет. Необъяснимым образом попал в некий пионерлагерь «Совёнок», что находится, вроде как, в СССР."
@@ -274,7 +274,7 @@ label prologue_koroche:
 
     hide anim prolog_2
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     window show
     show bg int_house_of_mt_night
     with dissolve2
@@ -305,4 +305,4 @@ label prologue_koroche:
     scene black with Dissolve(5.0)
     stop music fadeout 5.0
     $ renpy.pause(1.5, hard=True)
-    jump blwnfh_day_1_dream
+    jump wnfh_day_1_dream

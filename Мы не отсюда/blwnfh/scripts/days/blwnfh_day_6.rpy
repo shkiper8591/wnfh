@@ -1,13 +1,13 @@
-label blwnfh_day_6_dream:
+label wnfh_day_6_dream:
     
     scene black
-    $ blwnfh_set_time("prologue")
+    $ wnfh_set_time("prologue")
     $ renpy.pause(1.5, hard=True)
-    $ blwnfh_set_name("me", "Я")
-    $ blwnfh_set_name("kat", "Незнакомка")
+    $ wnfh_set_name("me", "Я")
+    $ wnfh_set_name("kat", "Незнакомка")
     play ambience ambience_cold_wind_loop fadein 5
     show anim prolog_2 with Dissolve(5.0)
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     ## Сон Д6
     # надо бы расширить этот сон
@@ -38,18 +38,18 @@ label blwnfh_day_6_dream:
     kat "Семён, ты веришь в Бога?"
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop ambience fadeout 0.5
     scene black with dissolve2
     
-label blwnfh_day_6:
-    $ blwnfh_new_chapter(6)
-    $ blwnfh_set_time("sunset")
-    $ blwnfh_set_name("kat", "Катя")
-    $ blwnfh_set_name("me", "Семён")
-    play music blwnfh_music_list["waking_up"] fadein 5.0
+label wnfh_day_6:
+    $ wnfh_new_chapter(6)
+    $ wnfh_set_time("sunset")
+    $ wnfh_set_name("kat", "Катя")
+    $ wnfh_set_name("me", "Семён")
+    play music wnfh_music_list["waking_up"] fadein 5.0
     play ambience ambience_int_cabin_evening fadein 5.0
-    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    scene expression wnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
     ## Пробуждение Семёна6
@@ -68,7 +68,7 @@ label blwnfh_day_6:
     window hide
     show blink
     $ renpy.pause(2.5, hard=True)
-    play sound blwnfh_sfx_list["raschyoska"] fadein 1
+    play sound wnfh_sfx_list["raschyoska"] fadein 1
     scene black
     window show
     
@@ -79,7 +79,7 @@ label blwnfh_day_6:
     th "Что это вообще такое?"
     
     window hide
-    scene expression blwnfh_wakeup("cg d6_mt_volosbl_wnfh")
+    scene expression wnfh_wakeup("cg d6_mt_volosbl_wnfh")
     show unblink
     with None
     stop music fadeout 3.5
@@ -150,7 +150,7 @@ label blwnfh_day_6:
     th "Мощно всё таки я утомился."
     
     play music music_list["orchid"] fadein 3.5
-    play sound blwnfh_sfx_list["selyodka_po_steklu"] loop fadein 0.5
+    play sound wnfh_sfx_list["selyodka_po_steklu"] loop fadein 0.5
     ## Семён встречает Селёдку
     "И тут, как в каком-нибудь хоррор фильме, послышалось как кто-то тёрся в окно."
     "Звук был не громкий, но крайне раздражающий. Как тиканье часов посреди ночи."
@@ -178,7 +178,7 @@ label blwnfh_day_6:
 
     "Раздражительный звук на время прекратился."
 
-    play sound blwnfh_sfx_list["selyodka_po_steklu"] loop fadein 0.5
+    play sound wnfh_sfx_list["selyodka_po_steklu"] loop fadein 0.5
 
     "Облегченно вздохнув я только собрался лечь обратно, как это снова продолжилось."
 
@@ -195,7 +195,7 @@ label blwnfh_day_6:
     
     me "О, блохастик, давно не видились."
 
-    play sound blwnfh_sfx_list["stuk_po_steklu"]
+    play sound wnfh_sfx_list["stuk_po_steklu"]
     
     "Кот постучал в окно своей лапой."
     
@@ -214,7 +214,7 @@ label blwnfh_day_6:
     
     "Приоткрыв окно, я впустил кота внутрь."
     
-    play sound blwnfh_sfx_list["murchanie"] fadein 1.0
+    play sound wnfh_sfx_list["murchanie"] fadein 1.0
     
     "Тот спрыгнул с подоконника на пол и стал терется об мои ноги, при этом громко мурлыкая."
     "Я спустился к нему и стал гладить."
@@ -365,7 +365,7 @@ label blwnfh_day_6:
 
     me "Так ты меня лечить пришел?"
     
-    play sound blwnfh_sfx_list["meow_yes"]
+    play sound wnfh_sfx_list["meow_yes"]
     
     "Селёдка коротко мявкнул, суетясь у меня на животе, организуя себя более удобное место."
     
@@ -377,7 +377,7 @@ label blwnfh_day_6:
     me "Тебя вожатая послала, чтобы ты меня вылечил и она могла меня отправить на какую-нибудь тяжелую работу."
     me "Я раскусил тебя, не так ли?"
 
-    play sound blwnfh_sfx_list["meow_no"]
+    play sound wnfh_sfx_list["meow_no"]
     
     "Кот от такого наезда открыл глаза и поднял на меня свою морду, после чего протяжно мяукнул."
     
@@ -417,7 +417,7 @@ label blwnfh_day_6:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     scene bg ext_houses_day with slide_left_blure_dissolve2
     $ renpy.pause(1.5)
     scene bg ext_washstand_day 
@@ -939,7 +939,7 @@ label blwnfh_day_6:
     
     th "Что? А такое разве было?"
     
-    play music blwnfh_music_list["major_grom"]
+    play music wnfh_music_list["major_grom"]
     ## Майор Гром
     ## Нужно что-то придумать с этой сценой...
     me "Эм[wp]"
@@ -961,13 +961,13 @@ label blwnfh_day_6:
     "Вскрикнула Мику и, невесь откуда достав гитару, ударила ей мне по голове."
     
     window hide
-    scene cg d6_guitar_hit_wnfh with blwnfh_fade(1.0)
+    scene cg d6_guitar_hit_wnfh with wnfh_fade(1.0)
     $ renpy.pause(3.50, hard=True)
-    play sound blwnfh_sfx_list["guitar_hit"]
+    play sound wnfh_sfx_list["guitar_hit"]
     $ renpy.music.set_pause(True, channel='music')
     stop ambience fadeout 3
     show black with dspr
-    play ambience blwnfh_ambience_list["thunder1"] fadein 2
+    play ambience wnfh_ambience_list["thunder1"] fadein 2
     $ renpy.pause (2.5, hard=True)
     window show
     
@@ -1512,7 +1512,7 @@ label blwnfh_day_6:
     
     usw "Приветик, меня ждёте, да?"
     
-    play sound blwnfh_sfx_list["udarch"]
+    play sound wnfh_sfx_list["udarch"]
     show kat normal pioneer:
         subpixel True
         parallel:
@@ -1674,7 +1674,7 @@ label blwnfh_day_6:
     
     kat "А ты догони меня для начала!"
     
-    play music blwnfh_music_list["sport2"] fadein 2.5
+    play music wnfh_music_list["sport2"] fadein 2.5
     show kat joy pioneer:
         xcenter 0.72 ycenter 0.5
         ease_quart 1.5 xcenter 1.2
@@ -1720,7 +1720,7 @@ label blwnfh_day_6:
     
     me "Катя! В сторону!"
     
-    play music blwnfh_music_list["northern_waters"] fadein 3.5
+    play music wnfh_music_list["northern_waters"] fadein 3.5
     show cg d6_me_on_kat1_wnfh with dissolve2
     ## Семён сваливает Катю и падает на неё
     "Но она не успела, как и я не успел затормозить и врезался прямо в её спину, так что мы оба упали."
@@ -1915,10 +1915,10 @@ label blwnfh_day_6:
     show anim prolog_1 with dissolve2
     ## Кринге сон Семёна
     $ renpy.pause(1.5)
-    $ blwnfh_set_mode(nvl)
-    $ blwnfh_set_name("me", "Я")
-    $ blwnfh_set_name("voice", "Стражник")
-    play music blwnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
+    $ wnfh_set_mode(nvl)
+    $ wnfh_set_name("me", "Я")
+    $ wnfh_set_name("voice", "Стражник")
+    play music wnfh_music_list["the_hole_at_the_center_of_everything"] fadein 5
     nvl show dissolve
     #34 звук противного скрипа 
     # нужен ли этот сон...
@@ -1977,7 +1977,7 @@ label blwnfh_day_6:
     
     nvl clear
     
-    $ blwnfh_set_name("voice", "Паук")
+    $ wnfh_set_name("voice", "Паук")
     
     voice "Семён[wp]"
     
@@ -1990,10 +1990,10 @@ label blwnfh_day_6:
     me "Да что?!"
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop music fadeout 1.5
-    $ blwnfh_set_name("me", "Семён")
-    $ blwnfh_set_name("voice","Голос")
+    $ wnfh_set_name("me", "Семён")
+    $ wnfh_set_name("voice","Голос")
     scene bg int_editorial_day_wnfh
     show un normal pioneer at left
     show kat serious pioneer at right
@@ -2462,8 +2462,8 @@ label blwnfh_day_6:
     stop music fadeout 2.0
     stop ambience fadeout 1.0
     scene bg ext_underwater_wnfh with dissolve
-    play ambience blwnfh_ambience_list["underwater2"] fadein 1.0
-    play sound blwnfh_sfx_list["vsplesk_vodi"] fadein 0.5
+    play ambience wnfh_ambience_list["underwater2"] fadein 1.0
+    play sound wnfh_sfx_list["vsplesk_vodi"] fadein 0.5
     
     "И Катя не обманула, вода действительно была хороша."
     "Разве что мутная, но отплыв на пару метров от берега, она была чуть ли не кристально чистой."
@@ -2504,10 +2504,10 @@ label blwnfh_day_6:
     
     "Девушка резко обернулась, а я в этот момент нырнул под воду."
     
-    play sound blwnfh_sfx_list["vsplesk_vodi_2"]
+    play sound wnfh_sfx_list["vsplesk_vodi_2"]
     stop ambience fadeout 0.5
     scene bg ext_underwater_wnfh with dspr
-    play ambience blwnfh_ambience_list["underwater2"] fadein 0.5
+    play ambience wnfh_ambience_list["underwater2"] fadein 0.5
     
     "Уже под водой я схватил её за ноги и потянул вниз."
     "Вот только, для меня стало некоторой неожиданность, что она начнёт так сильно бултыхаться."
@@ -2547,12 +2547,12 @@ label blwnfh_day_6:
     #АЛЯЯЯЯЯЯЯЯЯЯЯРМ!!!!!! https://www.youtube.com/watch?v=Dm-uif8SYYs
     "Прокричал я во всю глотку и резко погрузился под воду."
     
-    $ blwnfh_get_achievement("alarm")
+    $ wnfh_get_achievement("alarm")
     $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 1.0
-    play sound blwnfh_sfx_list["vsplesk_vodi_3"] fadein 0.5
+    play sound wnfh_sfx_list["vsplesk_vodi_3"] fadein 0.5
     scene bg ext_underwater_wnfh with dissolve
-    play ambience blwnfh_ambience_list["underwater2"] fadein 1.0
+    play ambience wnfh_ambience_list["underwater2"] fadein 1.0
     
     "Спустившись на пару метров, я малость расслабился."
     
@@ -2579,10 +2579,10 @@ label blwnfh_day_6:
     show blink
     $ renpy.pause (3.5)
     scene black
-    play music blwnfh_music_list["sharkle_dream"] fadein 3.5
+    play music wnfh_music_list["sharkle_dream"] fadein 3.5
     play ambience ambience_lake_shore_day fadein 5
-    $ blwnfh_set_name("cs", "Голос")
-    $ blwnfh_set_name("un", "Голос")
+    $ wnfh_set_name("cs", "Голос")
+    $ wnfh_set_name("un", "Голос")
     window show
     ## Семён чуть не утонул
     th "Что происходит? Я умер?"
@@ -2620,7 +2620,7 @@ label blwnfh_day_6:
     
     th "О, этот я голос узнаю из тысяч."
     
-    $ blwnfh_set_name("un", "Лена") 
+    $ wnfh_set_name("un", "Лена") 
     
     cs "Давайте-давайте, быстрее!"
     
@@ -2643,7 +2643,7 @@ label blwnfh_day_6:
     
     "Распахнув глаза и откашлив воду, я стал жадно глотать воздух."
     
-    $ blwnfh_set_name("cs", "Виола")
+    $ wnfh_set_name("cs", "Виола")
     
     cs "Очнулся."
     
@@ -2732,7 +2732,7 @@ label blwnfh_day_6:
         xcenter 0.5 ycenter 0.5
         ease_quart 3.0 xcenter 1.2 
     $ renpy.pause(1.5, hard=True)
-    play music blwnfh_music_list["rain"] fadein 3.5
+    play music wnfh_music_list["rain"] fadein 3.5
 
     ## Семён и Катя остаются одни на пляже
     me "Ну, и чертовка она, а?"
@@ -2932,7 +2932,7 @@ label blwnfh_day_6:
     me "Оставь надежду, всяк сюда входящий."
     
     stop ambience fadeout 2
-    play music blwnfh_music_list["distant_banjo"] fadein 3.5
+    play music wnfh_music_list["distant_banjo"] fadein 3.5
     scene bg int_house_of_mt_day
     show mt normal pioneer 
     with dissolve2
@@ -4253,7 +4253,7 @@ label blwnfh_day_6:
         ease_quart 2.0 xcenter 0.28
     $ renpy.pause(2.0, hard=True)
     show sh normal pioneer
-    play music blwnfh_music_list["tropicala"] fadein 2.0
+    play music wnfh_music_list["tropicala"] fadein 2.0
     
     sh "Да-да, кто к нам пожаловал?"
     sh "О, привет Семён и[wp]"
@@ -4348,7 +4348,7 @@ label blwnfh_day_6:
     "Очевидно, Катя на сей раз слушала что говорит Шурик."
     "И потянулась к магнитофону, на котором ткнула кнопку воспроизведения."
     ## Катя случайно включает "сломанный" магнитофон
-    play music blwnfh_music_list["the_cars_you_might_think"] noloop fadein 3.0
+    play music wnfh_music_list["the_cars_you_might_think"] noloop fadein 3.0
     
     show sh surprise with dspr
     
@@ -4856,7 +4856,7 @@ label blwnfh_day_6:
     ## Ребята отправляются к столовой
     window hide dissolve
     stop ambience fadeout 0.5
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     show bg ext_clubs_sunset_wnfh with dissolve2
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0)
@@ -5071,7 +5071,7 @@ label blwnfh_day_6:
     
     sh "Ладно, другой план."
     
-    play sound blwnfh_sfx_list["vibili_steklo"]
+    play sound wnfh_sfx_list["vibili_steklo"]
 
     "Выдал он и резким ударом локтя выбил окно в двери."
     "И дотянувшись рукой до замка открыл клубы изнутри."
@@ -5110,7 +5110,7 @@ label blwnfh_day_6:
     
     "Я подошёл к столу и взял её."
 
-    play sound blwnfh_sfx_list["pickup_sound"]
+    play sound wnfh_sfx_list["pickup_sound"]
     scene bg int_clubs_male2_notaburet_wnfh
     
     me "Прости подруга, у тебя была великая задача."
@@ -5158,7 +5158,7 @@ label blwnfh_day_6:
    
     scene bg ext_lenin_square_sunset_wnfh with dissolve2
     window show
-    $ blwnfh_set_name("un", "Голос")
+    $ wnfh_set_name("un", "Голос")
     ## По пути к пристани Семён отшивает Лену
     "И уже почти дойдя до нужного мне места, из-за спины послышался голос." 
     
@@ -5228,7 +5228,7 @@ label blwnfh_day_6:
     stop ambience fadeout 2.0
     show cg d6_me_kat_boat_curious_wnfh with slide_diagonal_blure_dissolve2
     play ambience ambience_lake_shore_evening fadein 2.0
-    play music blwnfh_music_list["dance_of_the_moonlight_jellies"] fadein 5.0
+    play music wnfh_music_list["dance_of_the_moonlight_jellies"] fadein 5.0
     $ renpy.pause(1.5)
     window show dissolve
     ## Катя и Семён отчаливают на остров
@@ -5309,7 +5309,7 @@ label blwnfh_day_6:
     
     window hide
     $ renpy.pause(1.0)
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show 
     
     me "Весь покрытый зеленью, абсолютно весь\nОстров невезения в океане есть\nОстров невезения в океане есть\nВесь покрытый зеленью, абсолютно весь!\n"
@@ -5350,7 +5350,7 @@ label blwnfh_day_6:
     "Но в любом случае было очень и очень весело! Катя вон от веселья вся чуть ли не сияла, сидя с широченной такой улыбкой. А значит со своей задачей я справился более чем."
     
     nvl hide
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     window show
     
     kat "Ха-ха-ха, забавная песенка."
@@ -5566,7 +5566,7 @@ label blwnfh_day_6:
     me "Но учитывая, что у нас приманки толковой нет, только одна муха несчастная."
     me "То наверное будем долго ждать."
     
-    play music blwnfh_music_list["big_fish"] fadein 3.5
+    play music wnfh_music_list["big_fish"] fadein 3.5
 
     "Сказал я и ту же секунду, поплавок начал бешенно дёргаться."
     
@@ -5935,7 +5935,7 @@ label blwnfh_day_6:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    $ blwnfh_set_time("night")
+    $ wnfh_set_time("night")
     scene cg d6_ending_wnfh:
         xanchor 0.5 yanchor 0.5
         xpos 0.5
@@ -5964,9 +5964,9 @@ label blwnfh_day_6:
     me "Да, очень."
     
     window hide dissolve
-    play music blwnfh_music_list["proximity"] fadein 5
+    play music wnfh_music_list["proximity"] fadein 5
     $ renpy.pause(1.0)
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     "Она повернулась ко мне лицом."
@@ -6075,7 +6075,7 @@ label blwnfh_day_6:
     kat "В общем, спасибо тебе, что всегда был рядом со мной."
     
     nvl hide
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop music fadeout 5.0
     $ renpy.pause(1.0)
     window show
@@ -6189,4 +6189,4 @@ label blwnfh_day_6:
     #show to be continued with dissolve2
     #$ renpy.pause(100.0, hard=True)
 
-    jump blwnfh_day_6_continue
+    jump wnfh_day_6_continue

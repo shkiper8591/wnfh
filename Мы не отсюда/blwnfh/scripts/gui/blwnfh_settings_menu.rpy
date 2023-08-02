@@ -22,11 +22,11 @@ init 2:
         $ button_blue =      "#0000"
         $ button_purpl =     "#0000"
 
-    screen blwnfh_preferences():
+    screen wnfh_preferences():
         modal True tag menu
-        $ bar_full = Frame(blwnfh_gui["settings"]["bar_full"], 73, 73)
-        $ bar_null = Frame(blwnfh_gui["settings"]["bar_null"], 73, 73)
-        $ htumb    = blwnfh_gui["settings"]["htumb"]
+        $ bar_full = Frame(wnfh_gui["settings"]["bar_full"], 73, 73)
+        $ bar_null = Frame(wnfh_gui["settings"]["bar_null"], 73, 73)
+        $ htumb    = wnfh_gui["settings"]["htumb"]
         key "game_menu":
             action NullAction()
         
@@ -40,26 +40,26 @@ init 2:
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
                     
-            blwnfh_preferences_button = [
+            wnfh_preferences_button = [
                 
                  #Тег кнопки    #Изображение кнопки                               #Действие кнопки
-                ["return"      ,blwnfh_gui["settings"]["return"]               ,[Return()]                                           ],
+                ["return"      ,wnfh_gui["settings"]["return"]               ,[Return()]                                           ],
                 
             ]
-            blwnfh_underwrites = {"skip":[_preferences.skip_unseen,"Прочитанное","Всё"],"font":[persistent.font_size=="large","Обычный","Жирный"]}
-            blwnfh_preferences_switch = [
+            wnfh_underwrites = {"skip":[_preferences.skip_unseen,"Прочитанное","Всё"],"font":[persistent.font_size=="large","Обычный","Жирный"]}
+            wnfh_preferences_switch = [
                  #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
-                ["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", blwnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
-                ["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", blwnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
-                ["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", blwnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
-                ["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", blwnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
-                ["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", blwnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
-                ["lkjmsdl"          ,"Заглушка"                   ,[NullAction(),                                     Play("sound", blwnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction() ],                  
-                ["hentai"                                         ,[SetField(persistent, "hentai_mod", True),         Play("sound", blwnfh_sfx_list["nya"])]              ,  SetField(persistent, "hentai_mod", False)                                                    , persistent.hentai_mod           ], 
+                ["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                ["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
+                ["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
+                ["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
+                ["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
+                ["lkjmsdl"          ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction() ],                  
+                ["hentai"                                         ,[SetField(persistent, "hentai_mod", True),         Play("sound", wnfh_sfx_list["nya"])]              ,  SetField(persistent, "hentai_mod", False)                                                    , persistent.hentai_mod           ], 
                 ["mat_filter"       ,"Мат-фильтр"                 ,SetField(persistent, "mat_filter", 1),             SetField(persistent, "mat_filter", 2)               ,  SetField(persistent, "mat_filter", 0)                                                        , ["Без цензуры","Как-то так: #@!&%","Литератураня замена"]]
             ]
 
-            blwnfh_preferences_bar = [
+            wnfh_preferences_bar = [
                 
                  #Тег бара           #Название бара                       #Действие
                 ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
@@ -74,10 +74,10 @@ init 2:
         
         
         frame:
-            background im.MatrixColor(im.Blur(blwnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
+            background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
             area(0.0, 0.0, 1.0, 1.0)
         frame:
-            background blwnfh_gui["settings"]["base"]
+            background wnfh_gui["settings"]["base"]
             area(0.5, 0.0, 1461, 1080)
             xanchor 0.5
             
@@ -96,13 +96,13 @@ init 2:
                         area(0.0, 0.5, 1.0, 1.0)
                         xanchor 0.0 yanchor 0.5
                         imagebutton:
-                            action blwnfh_preferences_button[0][2]
-                            idle blwnfh_preferences_button[0][1]
-                            hover blwnfh_preferences_button[0][1]
-                            hover_sound blwnfh_gui["sound"]["plimp"]
-                            at blwnfh_mm_button_hover_atl()
+                            action wnfh_preferences_button[0][2]
+                            idle wnfh_preferences_button[0][1]
+                            hover wnfh_preferences_button[0][1]
+                            hover_sound wnfh_gui["sound"]["plimp"]
+                            at wnfh_mm_button_hover_atl()
                                 
-                add blwnfh_gui["settings"]["pref_title"]:
+                add wnfh_gui["settings"]["pref_title"]:
                     pos(0.5, 0.0)
                     xanchor 0.5
             
@@ -111,7 +111,7 @@ init 2:
                 area(0.5, 0.16, 1.0, 0.84)
                 xanchor 0.5
                 grid 1 3:
-                    for bar in blwnfh_preferences_bar[0:3]:
+                    for bar in wnfh_preferences_bar[0:3]:
                         frame:
                             background background_color
                             area(0.0, 0.0, 1.0, 120)
@@ -121,13 +121,13 @@ init 2:
                                 yanchor 0.5
                                 text bar[1]:
                                     pos(0.5, 0.5)
-                                    style "blwnfh_settings"
+                                    style "wnfh_settings"
                                     xanchor 0.5
                                     size 70
                                     kerning 1
                                     min_width 200
                                     layout "tex"
-                                    #action Play("sound", blwnfh_gui["sound"]["plimp"]) 
+                                    #action Play("sound", wnfh_gui["sound"]["plimp"]) 
                             frame:
                                 background button_green
                                 area(0.95, 0.5, 0.75, 0.8)
@@ -139,13 +139,13 @@ init 2:
                                     hover_thumb htumb
                                     xmaximum 1.0 ymaximum 73 yanchor 0.5 ypos 0.5
                                 
-                add blwnfh_gui["settings"]["line"]:
+                add wnfh_gui["settings"]["line"]:
                     pos(0.5, 0.41)
                     xanchor 0.5
                 grid 1 2:
                     pos(0.5, 0.42)
                     xanchor 0.5
-                    for bar in blwnfh_preferences_bar[3:5]:
+                    for bar in wnfh_preferences_bar[3:5]:
                         frame:
                             background background_color
                             area(0.0, 0.0, 1.0, 120)
@@ -155,7 +155,7 @@ init 2:
                                 yanchor 0.5
                                 text bar[1]:
                                     pos(0.5, 0.5)
-                                    style "blwnfh_settings"
+                                    style "wnfh_settings"
                                     xanchor 0.5
                                     size 50
                                     kerning 1
@@ -171,7 +171,7 @@ init 2:
                                     thumb htumb
                                     hover_thumb htumb
                                     xmaximum 1.0 ymaximum 73 yanchor 0.5 ypos 0.5
-                add blwnfh_gui["settings"]["line"]:
+                add wnfh_gui["settings"]["line"]:
                     pos(0.5, 0.695)
                     xanchor 0.5
 
@@ -187,8 +187,8 @@ init 2:
                         vbox:
                             pos(0.5, 1.0)
                             xanchor 0.5 yanchor 1.0
-                            text blwnfh_preferences_switch[7][1]:
-                                style "blwnfh_settings"
+                            text wnfh_preferences_switch[7][1]:
+                                style "wnfh_settings"
                                 pos(0.5, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 text_align 0.5
@@ -199,11 +199,11 @@ init 2:
                             imagebutton:
                                 pos(0.5, 0.9)
                                 xanchor 0.5 yanchor 0.5
-                                idle blwnfh_gui["settings"][key_values[persistent.mat_filter]]
-                                hover blwnfh_gui["settings"][key_values[persistent.mat_filter]]
-                                action blwnfh_preferences_switch[7][2+persistent.mat_filter]
-                            text blwnfh_preferences_switch[7][5][persistent.mat_filter]:
-                                style "blwnfh_settings_underwrites"
+                                idle wnfh_gui["settings"][key_values[persistent.mat_filter]]
+                                hover wnfh_gui["settings"][key_values[persistent.mat_filter]]
+                                action wnfh_preferences_switch[7][2+persistent.mat_filter]
+                            text wnfh_preferences_switch[7][5][persistent.mat_filter]:
+                                style "wnfh_settings_underwrites"
                                 pos(0.5, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 text_align 0.5
@@ -220,21 +220,21 @@ init 2:
                         vbox:
                             pos(0.5, 0.5)
                             xanchor 0.5 yanchor 0.5
-                            add blwnfh_gui["settings"]["hentai"]
-                            if blwnfh_preferences_switch[6][3]: #Выкл
+                            add wnfh_gui["settings"]["hentai"]
+                            if wnfh_preferences_switch[6][3]: #Выкл
                                 imagebutton:
                                     pos(0.5, 0.2)
                                     xanchor 0.5 yanchor 0.5
-                                    idle im.Scale(blwnfh_gui["settings"]["hentai_on"], 112, 64)
-                                    hover im.Scale(blwnfh_gui["settings"]["hentai_on"], 112, 64)
-                                    action blwnfh_preferences_switch[6][2]
-                            if not blwnfh_preferences_switch[6][3]: #Вкл
+                                    idle im.Scale(wnfh_gui["settings"]["hentai_on"], 112, 64)
+                                    hover im.Scale(wnfh_gui["settings"]["hentai_on"], 112, 64)
+                                    action wnfh_preferences_switch[6][2]
+                            if not wnfh_preferences_switch[6][3]: #Вкл
                                 imagebutton:
                                     pos(0.5, 0.2)
                                     xanchor 0.5 yanchor 0.5
-                                    idle im.Scale(blwnfh_gui["settings"]["hentai_off"], 112, 64)
-                                    hover im.Scale(blwnfh_gui["settings"]["hentai_off"], 112, 64)
-                                    action blwnfh_preferences_switch[6][1]
+                                    idle im.Scale(wnfh_gui["settings"]["hentai_off"], 112, 64)
+                                    hover im.Scale(wnfh_gui["settings"]["hentai_off"], 112, 64)
+                                    action wnfh_preferences_switch[6][1]
 
                     grid 2 3: # ==================================================== Кнопки
                         pos (0.5, 0.5)
@@ -245,25 +245,25 @@ init 2:
                                 background background_color
                                 area(0.0, 0.0, 500, 80)
                                 xanchor 0.0 yanchor 0.0
-                                #for switch in blwnfh_preferences_switch[0:1]:
+                                #for switch in wnfh_preferences_switch[0:1]:
                                 frame:
                                     background button_blue
                                     area(1.0, 0.5, 100, 1.0)
                                     xanchor 1.0 yanchor 0.5
-                                    if blwnfh_preferences_switch[i][4]: #Выкл
+                                    if wnfh_preferences_switch[i][4]: #Выкл
                                         imagebutton:
                                             pos(0.5, 0.5)
                                             xanchor 0.5 yanchor 0.5
-                                            idle blwnfh_gui["settings"]["on"]
-                                            hover blwnfh_gui["settings"]["on"]
-                                            action blwnfh_preferences_switch[i][3]
-                                    if not blwnfh_preferences_switch[i][4]: #Вкл
+                                            idle wnfh_gui["settings"]["on"]
+                                            hover wnfh_gui["settings"]["on"]
+                                            action wnfh_preferences_switch[i][3]
+                                    if not wnfh_preferences_switch[i][4]: #Вкл
                                         imagebutton:
                                             pos(0.5, 0.5)
                                             xanchor 0.5 yanchor 0.5
-                                            idle blwnfh_gui["settings"]["off"]
-                                            hover blwnfh_gui["settings"]["off"]
-                                            action blwnfh_preferences_switch[i][2]
+                                            idle wnfh_gui["settings"]["off"]
+                                            hover wnfh_gui["settings"]["off"]
+                                            action wnfh_preferences_switch[i][2]
                                 frame:
                                     background button_red
                                     area(0.0, 0.5, 380, 1.0)
@@ -277,8 +277,8 @@ init 2:
                                             area(0.0, 0.0, 350, 30)
                                             xanchor 0.0 yanchor 0.0
                                         
-                                            text blwnfh_preferences_switch[i][1]:
-                                                style "blwnfh_settings"
+                                            text wnfh_preferences_switch[i][1]:
+                                                style "wnfh_settings"
                                                 pos(0.5, 0.5)
                                                 xanchor 0.5
                                                 text_align 0.5
@@ -286,13 +286,13 @@ init 2:
                                                 kerning 1
                                                 min_width 200
                                                 layout "tex"
-                                        if blwnfh_preferences_switch[i][0] in blwnfh_underwrites.keys():
+                                        if wnfh_preferences_switch[i][0] in wnfh_underwrites.keys():
                                             frame:
                                                 background button_green
                                                 area(0.0, 0.0, 350, 30)
                                                 xanchor 0.0 yanchor 0.0
-                                                text blwnfh_underwrites[blwnfh_preferences_switch[i][0]][int(blwnfh_underwrites[blwnfh_preferences_switch[i][0]][0])+1]:
-                                                    style "blwnfh_settings_underwrites"
+                                                text wnfh_underwrites[wnfh_preferences_switch[i][0]][int(wnfh_underwrites[wnfh_preferences_switch[i][0]][0])+1]:
+                                                    style "wnfh_settings_underwrites"
                                                     pos(0.5, 1.0)
                                                     xanchor 0.5 yanchor 0.5
                                                     text_align 0.5

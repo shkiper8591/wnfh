@@ -1,8 +1,8 @@
-label blwnfh_day_2:
+label wnfh_day_2:
     
-    $ blwnfh_new_chapter(2)
-    $ blwnfh_set_name("kat", "Катя")
-    $ blwnfh_set_time("sunset")
+    $ wnfh_new_chapter(2)
+    $ wnfh_set_name("kat", "Катя")
+    $ wnfh_set_time("sunset")
     scene black
     play ambience ambience_int_cabin_evening fadein 5
     $ renpy.pause(1.5, hard=True)
@@ -14,7 +14,7 @@ label blwnfh_day_2:
     th "Кажется, мне приснился кто-то[wp] {w}Но вот кто?"
     th "Впрочем, имеет ли это какое-то значение сейчас?"
     
-    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    scene expression wnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
     
@@ -316,9 +316,9 @@ label blwnfh_day_2:
     show table
     show shakers
     show left d2_breakfast_full tray foods behind shakers
-    show el normal pioneer at blwnfh_sit_left behind table
+    show el normal pioneer at wnfh_sit_left behind table
     show right d2_breakfast_half tray foods behind shakers
-    show sh normal pioneer at blwnfh_sit_right behind table
+    show sh normal pioneer at wnfh_sit_right behind table
     with dissolve
     $ renpy.pause(1.0, hard=True)
     window show
@@ -405,7 +405,7 @@ label blwnfh_day_2:
     $ renpy.pause(1.0)
 
     stop ambience fadeout 0.5
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     scene bg ext_dining_hall_near_day with slide_right_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["dance_of_fireflies"] fadein 5
@@ -662,7 +662,7 @@ label blwnfh_day_2:
     
     th "Пожалуйста, пусть тебя не будет на месте, прошу, прошу!"
     
-    $ blwnfh_set_name("cs","Голос")
+    $ wnfh_set_name("cs","Голос")
     
     cs "Войдите!"
     
@@ -680,7 +680,7 @@ label blwnfh_day_2:
     play ambience ambience_medstation_inside_day fadein 3
     show cs normal at right with dissolve
     show kat normal pioneer at left with dissolve
-    $ blwnfh_set_name("cs","Виола")
+    $ wnfh_set_name("cs","Виола")
     window show
     
     ## В медпункте
@@ -764,7 +764,7 @@ label blwnfh_day_2:
     "С диким нежеланием, я вошел внутрь библиотеки, и следом за мной Катя."
     
     window hide
-    #scene bg ext_library_day at blwnfh_entrance(1.0)
+    #scene bg ext_library_day at wnfh_entrance(1.0)
     stop ambience fadeout 0.5
     #$ renpy.pause(1.0)
     play sound sfx_open_door_1
@@ -859,7 +859,7 @@ label blwnfh_day_2:
     
     window hide
     play sound sfx_open_door_1
-    scene bg ext_house_of_mt_day at blwnfh_entrance
+    scene bg ext_house_of_mt_day at wnfh_entrance
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_day with door_blure_dissolve2
     play ambience ambience_int_cabin_day fadein 3
@@ -1118,7 +1118,7 @@ label blwnfh_day_2:
     "Скоро я уже был перед клубами, откуда доносились звуки работы инструментами."
     
     window hide
-    scene bg ext_clubs_day at blwnfh_entrance 
+    scene bg ext_clubs_day at wnfh_entrance 
     stop ambience fadeout 0.5
     play sound sfx_open_door_1
     scene bg int_clubs_male_day with door_blure_dissolve2
@@ -1247,7 +1247,7 @@ label blwnfh_day_2:
     "Вполне насладившись красивой игрой, я постучался и вошел в муз кружок."
     
     window hide
-    scene bg ext_musclub_verandah_day_wnfh at blwnfh_entrance
+    scene bg ext_musclub_verandah_day_wnfh at wnfh_entrance
     stop ambience fadeout 0.5
     scene bg int_musclub_day with door_blure_dissolve2
     play sound sfx_close_door_1
@@ -1726,7 +1726,7 @@ label blwnfh_day_2:
     stop ambience fadeout 0.5
     scene bg ext_music_club_sunset_wnfh with slide_right_blure_dissolve2
     play sound sfx_close_door_1
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     play ambience ambience_camp_center_evening fadein 3
     stop music fadeout 3
     show kat normal pioneer at left with dissolve
@@ -2047,7 +2047,7 @@ label blwnfh_day_2:
     stop music fadeout 3
     stop ambience fadeout 0.5 
     scene bg ext_lenin_square_night_wnfh with dissolve2
-    $ blwnfh_set_time("night")
+    $ wnfh_set_time("night")
     play ambience ambience_camp_center_night fadein 3
     $ renpy.pause(1.5)
     window show
@@ -2141,10 +2141,10 @@ label blwnfh_day_2:
     dv "Ладно!"
     ## Песня про зайцев!
     stop music fadeout 3
-    play music blwnfh_music_list["we_dont_care"] fadein 5
+    play music wnfh_music_list["we_dont_care"] fadein 5
     window hide
     show cg d2_dv_sem_scene_wnfh with dspr
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve2
     
     "Мы схватились по увереннее за гитары и первым играть начал я, а Алиса за мной."
@@ -2190,7 +2190,7 @@ label blwnfh_day_2:
     
     nvl clear
     nvl hide dissolve2
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop music fadeout 3
     hide cg d2_dv_sem_scene_wnfh with dissolve
     show dv laugh with dspr
@@ -2504,4 +2504,4 @@ label blwnfh_day_2:
     window hide
     show blink
     $ renpy.pause(2.0, hard=True)
-    jump blwnfh_day_3
+    jump wnfh_day_3

@@ -1,7 +1,7 @@
 init -2:
     
     # Заход в здание
-    transform blwnfh_entrance(x = 0.5):
+    transform wnfh_entrance(x = 0.5):
         pos(x, 0.5)
         anchor(x, 0.5)
         subpixel True
@@ -11,7 +11,7 @@ init -2:
     
     # Бежит бежит бежит
     
-    transform blwnfh_running:
+    transform wnfh_running:
         truecenter
         zoom 1.25
         parallel:
@@ -41,13 +41,13 @@ init -2:
     
     # Размещение спрайтов на экране (сидя)
 
-    transform blwnfh_sit_left:
+    transform wnfh_sit_left:
         xalign 0.28
         xanchor 0.5
         yanchor 0.0
         ypos 0.09
 
-    transform blwnfh_sit_right:
+    transform wnfh_sit_right:
         xalign 0.72
         xanchor 0.5
         yanchor 0.0
@@ -55,13 +55,13 @@ init -2:
         
     # Для персонажей невысокого роста и для дистанции close
 
-    transform blwnfh_sit_left_close:
+    transform wnfh_sit_left_close:
         xalign 0.28
         xanchor 0.5
         yanchor 0.0
         ypos 0.02
 
-    transform blwnfh_sit_right_close:
+    transform wnfh_sit_right_close:
         xalign 0.72
         xanchor 0.5
         yanchor 0.0
@@ -142,7 +142,7 @@ init -2:
         
     # Эффект двоения в глазах
 
-    transform blwnfh_doubvis(imgn, z=1.1, zt=1.0, t=1.0):
+    transform wnfh_doubvis(imgn, z=1.1, zt=1.0, t=1.0):
         contains:
             ImageReference(imgn)
             truecenter
@@ -162,7 +162,7 @@ init -2:
             pause zt
             linear t xpos 0.51 alpha 0.2 zoom (z + 0.05)
 
-    transform blwnfh_doubvis_vert(imgn, z=1.1, zt=1.0, t=1.0, first=39, second=11):
+    transform wnfh_doubvis_vert(imgn, z=1.1, zt=1.0, t=1.0, first=39, second=11):
         contains:
             ImageReference(imgn)
             truecenter
@@ -196,7 +196,7 @@ init -2:
     
     # Эффект для моментов пробуждения
 
-    transform blwnfh_wakeup(imgn):
+    transform wnfh_wakeup(imgn):
         contains:
             ImageReference(imgn)
         contains:
@@ -212,7 +212,7 @@ init -2:
             zoom 1.075
             ease 5.0 alpha 0.0 zoom 1.0
 
-    transform blwnfh_wakeup_dark(imgn):
+    transform wnfh_wakeup_dark(imgn):
         contains:
             ImageReference(imgn)
         contains:
@@ -230,28 +230,28 @@ init -2:
     
     # Анимации получения ачивментов и предметов
 
-    transform blwnfh_get_achievement_atl:
+    transform wnfh_get_achievement_atl:
         pos(-0.4, 0.15)
         anchor(0.0, 0.5)
         ease 1.0 pos(0.0, 0.15)
         pause 3.0
         ease 1.0 pos(-0.4, 0.15)
     
-    transform blwnfh_get_ach_title_atl(x_pos=0.095, y_pos=0.131):
+    transform wnfh_get_ach_title_atl(x_pos=0.095, y_pos=0.131):
         pos(x_pos-0.4, y_pos)
         anchor(0.0, 0.5)
         ease 1.0 pos(x_pos, y_pos)
         pause 3.0
         ease 1.0 pos(x_pos-0.4, y_pos)
         
-    transform blwnfh_get_ach_signature_atl(x_pos=0.119, y_pos=0.17):
+    transform wnfh_get_ach_signature_atl(x_pos=0.119, y_pos=0.17):
         pos(x_pos-0.4, y_pos)
         anchor(0.0, 0.5)
         ease 1.0 pos(x_pos, y_pos)
         pause 3.0
         ease 1.0 pos(x_pos-0.4, y_pos)
         
-    transform blwnfh_get_item_atl:
+    transform wnfh_get_item_atl:
         pos(-0.1, 0.75)
         anchor(0.0, 0.5)
         alpha 0.0
@@ -259,7 +259,7 @@ init -2:
         pause 3.0
         ease 1.0 pos(-0.1, 0.75) alpha 0.0
     
-    transform blwnfh_get_table_atl:
+    transform wnfh_get_table_atl:
         pos(-0.4, 0.15)
         anchor(0.0, 0.5)
         alpha 0.0
@@ -267,7 +267,7 @@ init -2:
         pause 4.0
         ease 1.0 pos(-0.4, 0.15) alpha 0.0
 
-    transform blwnfh_technical_chocolatki:
+    transform wnfh_technical_chocolatki:
         xpos 0.25
         xzoom -1
         pause 0.333
@@ -277,7 +277,7 @@ init -2:
 
     # Огонь #
 
-    transform blwnfh_fire_light_atl(imgf):
+    transform wnfh_fire_light_atl(imgf):
         im.MatrixColor(imgf, im.matrix.brightness(0.17))
         choice 2:
             ease 0.4 alpha 0.5
@@ -293,7 +293,7 @@ init -2:
     
     # Анимации предметов #
     
-    transform blwnfh_get_item_atl(pos_x, pos_y):
+    transform wnfh_get_item_atl(pos_x, pos_y):
         xalign (0.0)
         pos(pos_x, 0.18)
         anchor(0.0, 0.5)
@@ -303,7 +303,7 @@ init -2:
         pause 3.0
         ease 1.0 pos(-0.4, pos_y) alpha 0.0
 
-    transform blwnfh_item_icon_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
+    transform wnfh_item_icon_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
         pos(pos_x_start, pos_y_start)
         anchor(0.0, 0.5)
         alpha 0.0
@@ -313,7 +313,7 @@ init -2:
         
     # Анимации реакции персонажей #
         
-    transform blwnfh_get_relation_atl(pos_x, pos_y):
+    transform wnfh_get_relation_atl(pos_x, pos_y):
         xalign (0.0)
         pos(pos_x, 0.18)
         anchor(0.0, 0.5)
@@ -323,7 +323,7 @@ init -2:
         pause 3.0
         ease 1.0 pos(-0.4, pos_y) alpha 0.0
 
-    transform blwnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
+    transform wnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
         pos(pos_x_start, pos_y_start)
         anchor(0.0, 0.5)
         alpha 0.0
@@ -335,19 +335,19 @@ init -2:
     
     # Главное меню #
     
-    transform blwnfh_bg_spawn_atl():
+    transform wnfh_bg_spawn_atl():
         subpixel True
         truecenter
         on show:
             alpha 0.0
             ease 4.0 alpha 1.0
 
-    transform blwnfh_news_spawn_atl():
+    transform wnfh_news_spawn_atl():
         zoom 0.0
         ease 0.5 zoom 1.2
         ease 0.2 zoom 1.0
 
-    transform blwnfh_mm_button_hover_atl(z = 1.0):
+    transform wnfh_mm_button_hover_atl(z = 1.0):
         pos(0.5, 0.5)
         anchor(0.5, 0.5)
         on hover:
@@ -356,7 +356,7 @@ init -2:
         on idle:
             ease 0.15 zoom z
             
-    transform blwnfh_splash_anim(x, y, rot):
+    transform wnfh_splash_anim(x, y, rot):
         block:
             rotate rot
             pos(x, y)
@@ -367,14 +367,14 @@ init -2:
         repeat
     
     ## Временное говно ##
-    transform blwnfh_menu_pos_atl(z, x, y, rot):
+    transform wnfh_menu_pos_atl(z, x, y, rot):
         zoom z
         pos(x, y)
         anchor(0.5, 0.5)
         rotate rot
-        blwnfh_menu_hover_atl(z, rot)
+        wnfh_menu_hover_atl(z, rot)
         
-    transform blwnfh_menu_hover_atl(z, rot):
+    transform wnfh_menu_hover_atl(z, rot):
         on hover:
             ease 0.1 zoom (z - 0.15) rotate 0.0
             ease 0.1 zoom (z - 0.02)
@@ -383,12 +383,12 @@ init -2:
     
     # Меню ачивок #
     
-    transform blwnfh_ach_char_banners(z, x, y):
+    transform wnfh_ach_char_banners(z, x, y):
         zoom z
         pos(x, y)
         anchor(0.5, 0.55)
-        blwnfh_ach_char_banners_hover(z)
-    transform blwnfh_ach_char_banners_hover(z):
+        wnfh_ach_char_banners_hover(z)
+    transform wnfh_ach_char_banners_hover(z):
         on hover:
             ease 0.1 zoom (z - 0.08)
             ease 0.1 zoom (z - 0.02)
@@ -397,7 +397,7 @@ init -2:
             
     # Меню галереи #
     
-    transform blwnfh_gallery_item_atl:
+    transform wnfh_gallery_item_atl:
         subpixel True
         truecenter
         on hover:
@@ -405,7 +405,7 @@ init -2:
         on idle:
             ease 0.1 zoom 1.0
         
-    transform blwnfh_gallery_mode_atl:
+    transform wnfh_gallery_mode_atl:
         subpixel True
         truecenter
         on hover:

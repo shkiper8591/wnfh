@@ -1,15 +1,15 @@
-label blwnfh_day_1_dream:
+label wnfh_day_1_dream:
     
     scene black
     $ renpy.pause(1.0)
-    $ blwnfh_set_time("prologue")
-    $ blwnfh_set_name("voice", "Голос")
-    $ blwnfh_set_name("me", "Я")
-    $ blwnfh_set_char_color("voice", "#FFAA00")
+    $ wnfh_set_time("prologue")
+    $ wnfh_set_name("voice", "Голос")
+    $ wnfh_set_name("me", "Я")
+    $ wnfh_set_char_color("voice", "#FFAA00")
     show anim prolog_2 with Dissolve(5.0)
-    play music blwnfh_music_list["the_swarms_of_hades"] fadein 5.0
+    play music wnfh_music_list["the_swarms_of_hades"] fadein 5.0
     $ renpy.pause(1.5, hard=True)
-    $ blwnfh_set_mode(nvl)
+    $ wnfh_set_mode(nvl)
     nvl show dissolve
     
     "Я уже не могу[wp] {w}Моих сил недостаточно, но я должен продолжать"
@@ -20,7 +20,7 @@ label blwnfh_day_1_dream:
     
     extend " Продолжать бежать[wp]"
     
-    play music blwnfh_music_list["ya_znayu_kto_ti"] fadein 2.5
+    play music wnfh_music_list["ya_znayu_kto_ti"] fadein 2.5
     
     "[wp]За чёртовым автобусом на который я не успел!\n"
     
@@ -47,7 +47,7 @@ label blwnfh_day_1_dream:
     
     "Не успели двери полностью открытья, как я пулей залетел в автобус и движение продолжилось."
     
-    play music blwnfh_music_list["crows_end"] fadein 5.0 
+    play music wnfh_music_list["crows_end"] fadein 5.0 
     
     "Свободных мест не было и меня посадили как раз рядом с той самой девушкой."
     "Она даже освободила мне место у окна, за что я ей был очень признателен."
@@ -120,35 +120,35 @@ label blwnfh_day_1_dream:
     "Этот удар был фатальным и я наконец-таки вырубился."
     
     nvl hide dissolve
-    $ blwnfh_set_mode()
+    $ wnfh_set_mode()
     stop sound fadeout 5.0
     stop music fadeout 5.0
     scene black with Dissolve(5.0)
     $ renpy.pause(1.0, hard=True)
-    jump blwnfh_intro
+    jump wnfh_intro
 
-label blwnfh_intro:
+label wnfh_intro:
 
     scene black with fade3
     
-    $ renpy.movie_cutscene(blwnfh_video_list["intro"], delay = 10.0)
+    $ renpy.movie_cutscene(wnfh_video_list["intro"], delay = 10.0)
     
     scene black
     
-    $ renpy.movie_cutscene(blwnfh_video_list["pegi"], delay = 3.0)
-    jump blwnfh_day_1
+    $ renpy.movie_cutscene(wnfh_video_list["pegi"], delay = 3.0)
+    jump wnfh_day_1
 
-label blwnfh_day_1:
+label wnfh_day_1:
     
-    $ blwnfh_new_chapter(1)
-    $ blwnfh_set_name("el", "Сергей")
-    $ blwnfh_set_name("me", "Семён")
+    $ wnfh_new_chapter(1)
+    $ wnfh_set_name("el", "Сергей")
+    $ wnfh_set_name("me", "Семён")
     scene black
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     $ renpy.pause(1.5, hard=True)
-    play music blwnfh_music_list["waking_up"] fadein 5
+    play music wnfh_music_list["waking_up"] fadein 5
     play ambience ambience_int_cabin_evening fadein 3
-    scene expression blwnfh_wakeup("int_house_of_mt_sunset")
+    scene expression wnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
     $ renpy.pause(3.0, hard=True)
@@ -199,7 +199,7 @@ label blwnfh_day_1:
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0, hard=True)
-    play music blwnfh_music_list["the_smell_of_mushroom"] fadein 3.0 
+    play music wnfh_music_list["the_smell_of_mushroom"] fadein 3.0 
     window show
     ## Поход к умывальникам
     "Стоило выти на улицу как лёгкие заполнил свежий утренний воздух, что невольно натолкнуло на хоромые мысли"
@@ -493,7 +493,7 @@ label d1_sl_otkaz:
     
     scene bg int_house_of_mt_sunset with dissolve2
     stop ambience fadeout 0.5
-    play music blwnfh_music_list["distant_banjo"] fadein 2.5
+    play music wnfh_music_list["distant_banjo"] fadein 2.5
     play sound sfx_close_door_1
     play ambience ambience_int_cabin_evening fadein 3
     $ renpy.pause(1.0, hard=True)
@@ -616,7 +616,7 @@ label d1_sl_otkaz:
     $ renpy.pause(2.0, hard=True)
     scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
     $ renpy.pause(2.0)
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     play music music_list["trapped_in_dreams"] fadein 3.5
     window show
     ## Семён на площади
@@ -633,7 +633,7 @@ label d1_sl_otkaz:
     "Медленно, но верно, я стал засыпать и уже откинул голову назад."
     "Но не прошло и пяти минут, как кто-то подошел и встал передо мной."
     #34 звук шагов
-    $ blwnfh_set_name("un", "Голос")
+    $ wnfh_set_name("un", "Голос")
     ## Прибытие Лены и её подсадка рядом
     un "Ты спишь?"
     me "Нет, готовлюсь полчаса стоять на линейке."
@@ -647,7 +647,7 @@ label d1_sl_otkaz:
     "Но судя по крайне знакомому голосу, передо мной стояла девушка."
     "А даме, так уж повелось, отказывать нельзя."
     
-    $ blwnfh_set_name("un", "Лена")
+    $ wnfh_set_name("un", "Лена")
     scene bg ext_lenin_square_day_wnfh
     show un smile pioneer at center
     show unblink
@@ -727,7 +727,7 @@ label d1_sl_otkaz:
         xcenter 0.5 ycenter 0.52
     with dissolve
     ## надо сделать этот звук громче, а то его еле слышно
-    play sound blwnfh_sfx_list["hrust_vetki"]
+    play sound wnfh_sfx_list["hrust_vetki"]
     show dv grin pioneer2 close with dissolve
     show un angry2 pioneer close with dspr
     ## Прибытие Алисы
@@ -766,7 +766,7 @@ label d1_sl_otkaz:
     
     th "Почему всякая такая хрень происходит когда я хочу побыть один?"
     
-    #play sound blwnfh_sfx_list["nos"]
+    #play sound wnfh_sfx_list["nos"]
     dv "Ай, ай, ай! Дурочка ты чего?! Остановись!"
     un "Я дурочка? {w}А может ты?"
     
@@ -849,7 +849,7 @@ label d1_sl_otkaz:
     
     th "Похоже, не стоило выбирать чью либо из сторон[wp]"
     
-    play music blwnfh_music_list["pleasant_memory"] fadein 1.5
+    play music wnfh_music_list["pleasant_memory"] fadein 1.5
     ## Разговор Алисы и Семёна
     dv "Спасибо."
     me "Да[wp] Пожалуйста, наверно?"
@@ -914,7 +914,7 @@ label d1_sl_otkaz:
     "Недовольно вздохнув, я поднялся и пошел за ней."
     ## Линейка1
     show cg d1_lineika_wnfh with dissolve
-    #play music blwnfh_music_list["distant_banjo"] fadein 1.5
+    #play music wnfh_music_list["distant_banjo"] fadein 1.5
     
     "Когда все пионеры построились, Ольга Дмитриевна начала вещать свою стандартную программу."
     "Заунылое вступление, пересчитывание пионеров и так далее."
@@ -984,8 +984,8 @@ label d1_sl_otkaz:
     ## Диалог с рыжими
     show chair_l behind usw
     show chair_r behind dv
-    show usw grin pioneer at blwnfh_sit_left behind table
-    show dv normal pioneer at blwnfh_sit_right behind table
+    show usw grin pioneer at wnfh_sit_left behind table
+    show dv normal pioneer at wnfh_sit_right behind table
     show table
     show shakers
     show left d5_breakfast_full tray foods behind shakers
@@ -1022,24 +1022,24 @@ label d1_sl_otkaz:
     me "Продолжу с моделистами моделировать. {w}А что?"
     dv "Да вот[wp]"
     
-    show usw laugh pioneer at blwnfh_sit_left behind table with dspr
+    show usw laugh pioneer at wnfh_sit_left behind table with dspr
     
     usw "На свиданку тебя позвать хочет!"
     
     "Довольно громко выдала Ульяна, от чего некоторые пионеры поблизости странно покосились на нас."
     
-    show dv angry pioneer at blwnfh_sit_right behind table with dspr
+    show dv angry pioneer at wnfh_sit_right behind table with dspr
     
     dv "Да я тебе щас!"
     
     "Алиса дала Ульяне лёгкий подзатыльник."
     
-    show usw upset pioneer at blwnfh_sit_left behind table with dspr
+    show usw upset pioneer at wnfh_sit_left behind table with dspr
     
     usw "Ой да ладно тебе, пошутить уже немного нельзя?"
     dv "Нет, такие шутки нельзя шутить!"
     
-    show dv shy pioneer at blwnfh_sit_right behind table with dspr
+    show dv shy pioneer at wnfh_sit_right behind table with dspr
     
     dv "Я вовсе не собиралась его куда-то звать."
     dv "А просто поинтересовалась по дружески."
@@ -1047,7 +1047,7 @@ label d1_sl_otkaz:
     "Застенчивым голосом сказала Алиса."
     "Ульяна же быстро вернулась к своему нормальному состоянию."
     
-    show usw normalsmile pioneer at blwnfh_sit_left behind table with dspr
+    show usw normalsmile pioneer at wnfh_sit_left behind table with dspr
     
     usw "Ну-ну!"
     me "Мдэ[wp]"
@@ -1074,8 +1074,8 @@ label d1_sl_otkaz:
     
     mt "К нам пополнение приехало и его надо встретить и сопроводить ко мне."
     
-    show dv smile pioneer at blwnfh_sit_right behind table with dspr
-    show usw smile pioneer at blwnfh_sit_left behind table with dspr
+    show dv smile pioneer at wnfh_sit_right behind table with dspr
+    show usw smile pioneer at wnfh_sit_left behind table with dspr
     
     "Когда она это сказала, Ульяна и Алиса быстренько перекинулись хитрыми взглядами."
     
@@ -1115,7 +1115,7 @@ label d1_sl_otkaz:
     
     me "Так дамы, я опаздываю, так что покеда."
     
-    show usw dontlike pioneer at blwnfh_sit_left behind tableм with dspr 
+    show usw dontlike pioneer at wnfh_sit_left behind tableм with dspr 
     
     "Я встал из-за стола."
     
@@ -1159,7 +1159,7 @@ label d1_sl_otkaz:
     
     window hide
     scene bg ext_clubs_day with slide_up_blure_dissolve2
-    play music blwnfh_music_list["trevoga_1"] fadein 1.5 
+    play music wnfh_music_list["trevoga_1"] fadein 1.5 
     window show
 
     "Подходя к воротам, я резко остановился."
@@ -1185,7 +1185,7 @@ label d1_sl_otkaz:
     stop music fadeout 1.5
     scene bg ext_bus with slide_right_blure_dissolve
     play ambience ambience_camp_entrance_day fadein 3
-    $ blwnfh_set_name("kat", "Новенькая")
+    $ wnfh_set_name("kat", "Новенькая")
     window show
 
     "И был приятно удивлен, когда не увидел перед собой орду пионеров."
@@ -1196,7 +1196,7 @@ label d1_sl_otkaz:
     # тут потом можно будет вставить сцену, когда чел будет переигрывать, семён кароче узнает катю, но не поймет откуда он её знает, в общем типа как в 7дл, но в как в 7дл, но ты понял ок, да?
     # а ещё если ты не прочитаешь этот комент, у тебя отвалится комп через 5 минут.
     
-    #play music blwnfh_music_list["kate_orchestra"] fadein 3
+    #play music wnfh_music_list["kate_orchestra"] fadein 3
     
     "Одета она была немного не по советским формальностям: джинсы, какая-то модная футболка, кеды, явно заграничные."
     "Разве что рубашка на ней и чёрный рюкзак на спине, выглядели совершенно обычно."
@@ -1218,7 +1218,7 @@ label d1_sl_otkaz:
     
     me "Ну-с, тогда будем знакомы, я Семён, главный мальчик на побегушках сия лагеря."
     
-    $ blwnfh_set_name("kat", "Катя")
+    $ wnfh_set_name("kat", "Катя")
     
     kat "А я[wp] Я Катя."
     
@@ -1266,7 +1266,7 @@ label d1_sl_otkaz:
     show sv angry pioneer glasses tablet at center
     with door_blure_dissolve
     play ambience ambience_clubs_inside_day fadein 3
-    play music blwnfh_music_list["razbor_poletov"] fadein 2.5
+    play music wnfh_music_list["razbor_poletov"] fadein 2.5
     window show
 
     "В клубе, что не удивительно, находились Сергей и Шурик."
@@ -1573,7 +1573,7 @@ label d1_sl_otkaz:
     
     me "А вот и мы."
 
-    $ blwnfh_get_achievement("post")
+    $ wnfh_get_achievement("post")
     $ renpy.pause(1.0, hard=True)
     show mt dc_smotrit dc background with dspr
 
@@ -1696,7 +1696,7 @@ label d1_sl_otkaz:
     scene bg int_clubs_male2_night with dspr
     play ambience ambience_clubs_inside_day fadein 3
     window show
-    play sound blwnfh_sfx_list["apchhi"]
+    play sound wnfh_sfx_list["apchhi"]
 
     "Войдя внутрь и включив свет, я тут же громко чихнул из-за пыли."
     
@@ -1905,7 +1905,7 @@ label d1_sl_otkaz:
     
     #window hide
     #scene bg ext_lenin_square_day with slide_left_blure_dissolve2
-    #$ blwnfh_set_name("din", "Пионерка")
+    #$ wnfh_set_name("din", "Пионерка")
     #window show
     ### Семён сталкивается с Диной по пути в столовую
     #"Я спокойно проходил мимо площади, насвистывая простенькую мелодию."
@@ -1929,7 +1929,7 @@ label d1_sl_otkaz:
     #"Это была наша местная бунтарка из соседнего отряда[wp] Кажется её зовут Дина."
     #"И ещё она примерно на полгода младше меня."
     #
-    #$ blwnfh_set_name("din", "Дина")
+    #$ wnfh_set_name("din", "Дина")
     #
     #me "Ты[wp] Дина, верно?"
     #din "А кто же ещё!"
@@ -2222,7 +2222,7 @@ label d1_sl_otkaz:
     
     show blink
     stop ambience fadeout 3.5
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     $ renpy.pause(3.5, hard=True)
     scene bg ext_house_of_mt_sunset
     show unblink
@@ -2335,7 +2335,7 @@ label d1_sl_otkaz:
     
     window hide
     stop ambience fadeout 3
-    $ blwnfh_set_time("night")
+    $ wnfh_set_time("night")
     scene bg ext_beach_night with Dissolve(5.0)
     $ renpy.pause(1.5)
     play ambience ambience_lake_shore_night fadein 5
@@ -2347,7 +2347,7 @@ label d1_sl_otkaz:
     
     window hide
     $ renpy.pause(1.5)
-    $ blwnfh_set_name("un", "Голос")
+    $ wnfh_set_name("un", "Голос")
     play music music_list["lets_be_friends"] fadein 5
     window show
     ## Разговор Семёна и Лены на пляже
@@ -2365,7 +2365,7 @@ label d1_sl_otkaz:
     
     show un smile2 pioneer close with dissolve
     
-    $ blwnfh_set_name("un", "Лена")
+    $ wnfh_set_name("un", "Лена")
     
     un "Как ты догадался?"
     # me "У тебя прекрасный голос, его сложно не отлечить."
@@ -2521,7 +2521,7 @@ label d1_sl_otkaz:
     "А плохо то, что не видно не зги, как бы ноги не переломать"
     
     window hide
-    $ blwnfh_set_volume("sound", 0.3)
+    $ wnfh_set_volume("sound", 0.3)
     play sound sfx_open_door_1
     scene bg int_house_of_mt_night2 with door_blure_dissolve2
     stop ambience fadeout 1
@@ -2540,4 +2540,4 @@ label d1_sl_otkaz:
     window hide
     $ renpy.pause(1.5, hard=True)
     
-    jump blwnfh_day_2
+    jump wnfh_day_2

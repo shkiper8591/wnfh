@@ -1,6 +1,6 @@
-label blwnfh_day_6_continue:
+label wnfh_day_6_continue:
     
-    $ blwnfh_set_time("night")
+    $ wnfh_set_time("night")
     play ambience ambience_lake_shore_night fadein 7.5
     play music music_list["drown"] fadein 7.5
     $ renpy.pause(1.5, hard=True)
@@ -141,12 +141,12 @@ label d6c_go_forest_3:
     "И даже не знаю из-за того, что я уже проходил здесь или того, что не несу на себе ценный груз."
     "В прочем, это не имело значения и я просто шёл вперёд."
 
-    play sound blwnfh_sfx_list["hrust_vetki"]
+    play sound wnfh_sfx_list["hrust_vetki"]
 
     "Как неожиданно где-то позади раздался хруст ветки."
     "Меня это малость напугало, но я не придал этому значения и не остановился."
 
-    play sound blwnfh_sfx_list["hrust_vetki"]
+    play sound wnfh_sfx_list["hrust_vetki"]
 
     "И тут же звук раздался ещё раз."
     "Теперь меня это напрягло и появилось ощущение, что сзади кто-то есть."
@@ -189,7 +189,7 @@ label d6c_go_forest_sprosil:
 
     "Сразу же после своих слов, я вновь прислушался. {w}Подозрительный звук исчез."
 
-    $ blwnfh_set_name("voice", "???")
+    $ wnfh_set_name("voice", "???")
 
     voice "С-Семён?"
 
@@ -605,7 +605,7 @@ label d6c_go_coast_ne_vidal:
     
 label d6c_otplitie:
     
-    play music blwnfh_music_list["mystery"] fadein 7.5
+    play music wnfh_music_list["mystery"] fadein 7.5
     scene bg ext_island_night with dissolve2
     window show dissolve
 

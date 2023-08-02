@@ -1,6 +1,6 @@
-label blwnfh_day_3:
-    $ blwnfh_new_chapter(3)
-    $ blwnfh_set_time("sunset")
+label wnfh_day_3:
+    $ wnfh_new_chapter(3)
+    $ wnfh_set_time("sunset")
     scene black
     $ renpy.pause(1.5, hard=True)
     play ambience ambience_int_cabin_evening fadein 3
@@ -274,9 +274,9 @@ label blwnfh_day_3:
     show table
     show shakers
     show left d3_breakfast_full tray foods behind shakers
-    show kat normal pioneer at blwnfh_sit_left behind table
+    show kat normal pioneer at wnfh_sit_left behind table
     show right d3_breakfast_full tray foods behind shakers
-    show mi normal pioneer at blwnfh_sit_right behind table
+    show mi normal pioneer at wnfh_sit_right behind table
     with dissolve
     $ renpy.pause(1.0, hard=True)
     window show
@@ -416,9 +416,9 @@ label blwnfh_day_3:
     window hide
     scene bg ext_clubs_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     play ambience ambience_camp_center_day
-    play music blwnfh_music_list["angus_climbs_the_hill"]
+    play music wnfh_music_list["angus_climbs_the_hill"]
     $ renpy.pause(1.0)
     ## Семён отправился на склад
     "Похрустев спиной, я отправился в сторону склада."
@@ -743,7 +743,7 @@ label blwnfh_day_3:
     scene bg ext_clubs_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     play ambience ambience_camp_center_day
-    play music blwnfh_music_list["lori_m"]
+    play music wnfh_music_list["lori_m"]
     window show
     ## Семён отправился в медпункт за медикаментами
     
@@ -1211,7 +1211,7 @@ label blwnfh_day_3:
         ease_quart 2.5 xcenter 0.5
     $ renpy.pause(2.5, hard=True)
     show usw smile pioneer
-    play music blwnfh_music_list["crimes"] fadein 2.5
+    play music wnfh_music_list["crimes"] fadein 2.5
     ## Семён и Ульяна идут воровать конфеты
     usw "Ну что? Пойдем на дело?"
     
@@ -1271,7 +1271,7 @@ label blwnfh_day_3:
 
     ## Семён и Ульяна убегают из столовой с конфетами
     
-    $blwnfh_get_achievement("payday")
+    $wnfh_get_achievement("payday")
     $ renpy.pause(1.0, hard=True)
     show cg d3_me_us_runinng_away_wnfh with dissolve
 
@@ -1316,7 +1316,7 @@ label blwnfh_day_3:
     "Громко фыркнув, за ней последовала и Галя."
     "Отлипли мы от стены только тогда, когда повариха закрыла за собой дверь."
     
-    play music blwnfh_music_list["crimes_2"] fadein 3.0
+    play music wnfh_music_list["crimes_2"] fadein 3.0
     show usw laugh2 with dspr
     
     usw "Это было весело!"
@@ -1436,7 +1436,7 @@ label blwnfh_day_3:
     stop ambience fadeout 2.5
     scene bg int_library_day with dissolve
     play ambience ambience_library_day fadein 2.5
-    play music blwnfh_music_list["library_investigations"] fadein 3.0
+    play music wnfh_music_list["library_investigations"] fadein 3.0
     
     "Внутри на входе мною никто не был обнаружен."
     "Да и в самой библиотеке было крайне тихо."
@@ -2309,7 +2309,7 @@ label blwnfh_day_3:
     with dissolve2
     play ambience ambience_camp_center_evening fadein 2.5
     $ renpy.pause(1.0)
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     window show
     
     "Тем временем солнце близилось к горизонту."
@@ -2336,7 +2336,7 @@ label blwnfh_day_3:
     show kat smile pioneer
     with slide_diagonal_blure_dissolve2
     #34 крутой переход?
-    play music blwnfh_music_list["church_hill"] fadein 3.5
+    play music wnfh_music_list["church_hill"] fadein 3.5
     $ renpy.pause(1.0)
     window show
     ## Катя и Семён идут вместе до своих домиков
@@ -2472,7 +2472,7 @@ label blwnfh_day_3:
     kat "Т-Ты в порядке?"
     me "Да так, во сне испугался."
     
-    play music blwnfh_music_list["maes_house_2"]
+    play music wnfh_music_list["maes_house_2"]
     
     "Немного отдышавшись ответил я."
     
@@ -2537,7 +2537,7 @@ label blwnfh_day_3:
     show shakers
     show left d4_dinner_full tray foods behind shakers
     show mid d4_dinner_full tray foods
-    show kat normal pioneer at blwnfh_sit_left behind table
+    show kat normal pioneer at wnfh_sit_left behind table
     with slide_left_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 1.5
     $ renpy.pause(1.5)
@@ -2591,7 +2591,7 @@ label blwnfh_day_3:
     scene bg ext_dining_hall_near_sunset with dissolve2
     show kat normal pioneer at center with dissolve
     play ambience ambience_camp_center_evening fadein 1.5           
-    play music blwnfh_music_list["the_bridge"]
+    play music wnfh_music_list["the_bridge"]
     ## Семён с Катей отправились в лес
     kat "Мы пойдем в какое-то определенное место или просто будет бродить по лесу?"
     me "Я думаю, просто ходить, без какой-то определенной цели."
@@ -2704,8 +2704,8 @@ label blwnfh_day_3:
     stop music fadeout 3.5
     show bg ext_path_night with dissolve2
     play ambience ambience_forest_night fadein 2.5
-    play music blwnfh_music_list["lost_woods"] fadein 5
-    $ blwnfh_set_time("night")
+    play music wnfh_music_list["lost_woods"] fadein 5
+    $ wnfh_set_time("night")
     $ renpy.pause(2.0)
     window show
     ## В лесу наступает ночь
@@ -2790,7 +2790,7 @@ label blwnfh_day_3:
     
     "Растопив печь, я плотно закрыл дверь землянки."
     
-    play music blwnfh_music_list["fireflies_on_the_porch"] fadein 3.5
+    play music wnfh_music_list["fireflies_on_the_porch"] fadein 3.5
     
     "Постепенно, землянка стала заливаться треском горящих дров и теплом."
     "Я повернулся к Кате и та, плотно завернувшись под одеяло, широко раскрыв глаза наблюдала за мной."
@@ -2812,7 +2812,7 @@ label blwnfh_day_3:
     th "Ого, меня пускают под одеяло, я на такое даже и не рассчитывал."
     
     window hide
-    $ blwnfh_set_time("sunset")
+    $ wnfh_set_time("sunset")
     show cg d3_me_kat_blindage_wnfh:
         xanchor 0.0 yanchor 0.77
         ease_quad 7.0 yanchor 0.0
@@ -2851,4 +2851,4 @@ label blwnfh_day_3:
     show black with dissolve2
     stop ambience fadeout 5.0
     stop music fadeout 5.0
-    jump blwnfh_day_4
+    jump wnfh_day_4

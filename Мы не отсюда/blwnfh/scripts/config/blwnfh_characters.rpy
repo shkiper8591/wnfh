@@ -3,7 +3,7 @@ init -265 python:
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
 
 init -3 python:
-    blwnfh_characters = {
+    wnfh_characters = {
         # персонажи оригинала
         "narrator":[None, None],     #Рассказчик
         "th":[None, None],           #Мысля Семёна
@@ -37,10 +37,10 @@ init -3 python:
         #"sht":[u"Штайнер", "#"],
     }
     
-    #renpy.image("blwnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
-    #renpy.image("blwnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
+    #renpy.image("wnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
+    #renpy.image("wnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 
-    def blwnfh_chars_define(kind=adv):
+    def wnfh_chars_define(kind=adv):
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
@@ -50,7 +50,7 @@ init -3 python:
             ctc = "ctc_animation"
         what_color = "#FFDD7D"
         drop_shadow = (2, 2)
-        for i, j in blwnfh_characters.items():
+        for i, j in wnfh_characters.items():
             if i == "narrator":
                 gl[i] = Character(None, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
             elif i == "th":
@@ -59,11 +59,11 @@ init -3 python:
                 gl[i] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                #gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=blwnfh_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                #gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=blwnfh_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                #gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=wnfh_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                #gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=wnfh_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
     ## Спизженные из БКРР парные персонажи и модернизированные для работы с NVL
-    def blwnfh_double_char_define(first, second, time_of_day, kind=adv):
+    def wnfh_double_char_define(first, second, time_of_day, kind=adv):
         colors = {
             "day":"#80A055",
             "sunset":"#CDAF69",
@@ -78,19 +78,19 @@ init -3 python:
             ctc = "ctc_animation"
         what_color = "#FFDD7D"
         drop_shadow = (2, 2)
-        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (blwnfh_characters[first][1], blwnfh_characters[first][0], colors[time_of_day], blwnfh_characters[second][1], blwnfh_characters[second][0])
+        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], colors[time_of_day], wnfh_characters[second][1], wnfh_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
     for i in [("kat", "mi", "day", adv), ("kat", "un", "day", adv), ("me", "dv", "night", nvl), ("me", "el", "sunset", adv), ("me", "kat", "day", adv), ("me", "el", "night", adv)]:
-        blwnfh_double_char_define(i[0], i[1], i[2], i[3])
+        wnfh_double_char_define(i[0], i[1], i[2], i[3])
     
     ## Функции для переобувания в воздухе ##
     # Переименование персонажа
-    def blwnfh_set_name(name, value):
-        blwnfh_characters[name][0] = value
-        blwnfh_chars_define()
+    def wnfh_set_name(name, value):
+        wnfh_characters[name][0] = value
+        wnfh_chars_define()
     
     # Смена цвета персонажа
-    def blwnfh_set_char_color(name, value):
-        blwnfh_characters[name][1] = value
-        blwnfh_chars_define()
+    def wnfh_set_char_color(name, value):
+        wnfh_characters[name][1] = value
+        wnfh_chars_define()

@@ -1,5 +1,5 @@
 init python:
-    blwnfh_tint = {
+    wnfh_tint = {
             "sunset":im.matrix.tint(0.94, 0.82, 1.0),
             "night":im.matrix.tint(0.63, 0.78, 0.82)
         }
@@ -139,8 +139,8 @@ init 2:
             renpy.image(
                 full_sprite_name,
                 ConditionSwitch(
-                    "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, blwnfh_tint["sunset"]),
-                    "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, blwnfh_tint["night"]),
+                    "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, wnfh_tint["sunset"]),
+                    "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, wnfh_tint["night"]),
                     True, composite_image,
                 )
             )
@@ -178,7 +178,7 @@ init 2:
                 pose = emotion_to_pose[character][emotion]
 
                 for distance in distances:
-                    # Получаем название спрайта, например dv angry blwnfh_sport far
+                    # Получаем название спрайта, например dv angry wnfh_sport far
                     full_sprite_name = '%s %s %s' % (character, emotion, sprite_name)
                     if not sprite_name:
                         full_sprite_name = '%s %s' % (character, emotion)  # Не у всех есть одежда
@@ -191,7 +191,7 @@ init 2:
                     image_parts = [distance_to_position[distance]]
                     for layer in layers:
                         source, file_name = layer.split(':')
-                        base_path = blwnfh_IMAGES if source == 'mod' else blwnfh_ES_IMAGES
+                        base_path = wnfh_IMAGES if source == 'mod' else wnfh_ES_IMAGES
                         if default:
                             image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
                                 distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
@@ -447,15 +447,15 @@ init 2:
         #make_sprites_for('us', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         #make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
     
-    image to be continued = blwnfh_OTHER + "to_be_continued.png"
+    image to be continued = wnfh_OTHER + "to_be_continued.png"
     ## Юля
-    image technical chocolatki = blwnfh_OTHER + "technical_chocolatki.png"
+    image technical chocolatki = wnfh_OTHER + "technical_chocolatki.png"
     ## Я не ебу как это по-русски нормально назвать
-    image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "shakers.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "shakers.png")
+    image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "shakers.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "shakers.png", wnfh_tint["night"]), True, wnfh_OTHER + "shakers.png")
     ## Стол
-    image table = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "table.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "table.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "table.png")
+    image table = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "table.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "table.png", wnfh_tint["night"]), True, wnfh_OTHER + "table.png")
     ## Стул
-    image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(blwnfh_OTHER + "chair.png", blwnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(blwnfh_OTHER + "chair.png", blwnfh_tint["night"]), True, blwnfh_OTHER + "chair.png")
+    image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "chair.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "chair.png", wnfh_tint["night"]), True, wnfh_OTHER + "chair.png")
     image chair_l:
         "chair"
         left

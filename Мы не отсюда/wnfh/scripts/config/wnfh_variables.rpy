@@ -3,6 +3,8 @@ init -1:
     # переменные d1
 
     $ d1_sl_probejka             =       None
+    $ d1_un_zavtrak_s_lenoy      =       None
+    $ d1_un_no1                  =       None
 
     # переменные d2 
 

@@ -33,3 +33,7 @@ init -1:
     $ mi_lp      =       0
     $ mz_lp      =       0
     $ sl_lp      =       0
+
+    # TESTTESTTESTTESTTESTESTTESTTEST
+
+    $ wnfh_test_variable = None

@@ -1,20 +1,22 @@
-label blwnfh_test_music:
+label wnfh_test_music:
     
     "Что конкретно мы хотим протестировать?"
     
     menu:
         "Музыку со всплывашкой?":
-            jump blwnfh_brbrbrbr
-        "Или просто музыку?":
-            jump blwnfh_justmusic
+            jump wnfh_brbrbrbr
+        "Просто музыку?":
+            jump wnfh_justmusic
+        "Звуки?":
+            jump wnfh_sfx_test
         "Вернутся назад":
             jump blwnfh_test_main_menu
 
-label blwnfh_brbrbrbr:
+label wnfh_brbrbrbr:
     
     scene bg ext_sky with dissolve2
-    play music blwnfh_music_list["angus_climbs_the_hill"] fadein 3
-    $ blwnfh_get_relation("void", "Alec Holowka - Angus Climbs the Hill", "None")
+    play music wnfh_music_list["angus_climbs_the_hill"] fadein 3
+    #$ blwnfh_get_relation("void", "Alec Holowka - Angus Climbs the Hill", "None")
     $ renpy.pause(1.0)
     stop music fadeout 2
     
@@ -25,15 +27,15 @@ label blwnfh_brbrbrbr:
     
         "Вернутся в меню отладки":
             jump blwnfh_test_main_menu 
-        "Вернутся к выбору типа музыки":    
-            jump blwnfh_test_music            
+        "Вернутся к выбору типа теста":    
+            jump wnfh_test_music            
 
-label blwnfh_justmusic:
+label wnfh_justmusic:
 
     "Тест музыки."
     "Три. {w}Два. {w}Один."
     
-    play music blwnfh_music_list["the_cars_you_might_think"] noloop
+    play music wnfh_music_list["the_cars_you_might_think"] noloop
     
     "ткни чтобы остановить музыку."
     
@@ -43,5 +45,26 @@ label blwnfh_justmusic:
         
         "Вернутся в меню отладки":
             jump blwnfh_test_main_menu
-        "Вернутся к выбору типа музыки":    
-            jump blwnfh_test_music
+        "Вернутся к выбору типа теста":    
+            jump wnfh_test_music
+
+label wnfh_sfx_test:
+
+    "Тест звуков."
+    "Два горна одновременно на разных дорожках с задержкой в 0.1"
+
+
+    $ wnfh_set_volume(channel="sound", value=0.5)
+    $ wnfh_set_volume(channel="sound2", value=0.5)
+    play sound sfx_dinner_horn_processed
+    $ renpy.pause (0.1)
+    play sound2 sfx_dinner_horn_processed
+
+    "Тест начался."
+
+    menu: 
+        
+        "Вернутся в меню отладки":
+            jump blwnfh_test_main_menu
+        "Вернутся к выбору типа теста":    
+            jump wnfh_test_music

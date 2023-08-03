@@ -13,9 +13,9 @@ label technical_chocolatki:
 
 
 
-label blwnfh_test:
-    $ blwnfh_new_chapter("Тест")
-    $ blwnfh_set_time()
+label wnfh_test:
+    $ wnfh_new_chapter("Тест")
+    $ wnfh_set_time()
     scene black
     
     "Добро пожаловать в полигон!"
@@ -31,8 +31,8 @@ label blwnfh_test_main_menu:
             jump blwnfh_test_anim
         "Спрайты?":
             jump blwnfh_sprites_test
-        "Музыку?":
-            jump blwnfh_test_music
+        "Музыку и звуки?":
+            jump wnfh_test_music
         "Цензуру?":
             jump blwnfh_test_matyki
         "NVL?":

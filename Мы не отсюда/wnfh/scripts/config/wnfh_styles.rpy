@@ -78,7 +78,7 @@ init -2:
 
     
     $ style.wnfh_choice_day = Style(style.default)
-    $ style.wnfh_choice_day.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_day.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_day.color = "#E2C778"
     $ style.wnfh_choice_day.drop_shadow = (3, 3)
     $ style.wnfh_choice_day.drop_shadow_color = "#000"
@@ -89,7 +89,7 @@ init -2:
     $ renpy.image("wnfh_choice_day", ParameterizedText(style="wnfh_choice_day", size=40))
     
     $ style.wnfh_choice_sunset = Style(style.default)
-    $ style.wnfh_choice_sunset.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_sunset.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_sunset.color = "#DCD168"
     $ style.wnfh_choice_sunset.drop_shadow = (3, 3)
     $ style.wnfh_choice_sunset.drop_shadow_color = "#000"
@@ -100,7 +100,7 @@ init -2:
     $ renpy.image("wnfh_choice_sunset", ParameterizedText(style="wnfh_choice_sunset", size=40))
     
     $ style.wnfh_choice_night = Style(style.default)
-    $ style.wnfh_choice_night.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_night.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_night.color = "#3CCFA2"
     $ style.wnfh_choice_night.drop_shadow = (3, 3)
     $ style.wnfh_choice_night.drop_shadow_color = "#000"
@@ -111,7 +111,7 @@ init -2:
     $ renpy.image("wnfh_choice_night", ParameterizedText(style="wnfh_choice_night", size=40))
     
     $ style.wnfh_choice_prologue = Style(style.default)
-    $ style.wnfh_choice_prologue.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_prologue.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_prologue.color = "#98D8DA"
     $ style.wnfh_choice_prologue.drop_shadow = (3, 3)
     $ style.wnfh_choice_prologue.drop_shadow_color = "#000"
@@ -123,7 +123,7 @@ init -2:
     
     
     $ style.wnfh_choice_text_day = Style(style.default)
-    $ style.wnfh_choice_text_day.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_text_day.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_text_day.color = "#E2C778"
     $ style.wnfh_choice_text_day.drop_shadow = (3, 3)
     $ style.wnfh_choice_text_day.drop_shadow_color = "#000"
@@ -134,7 +134,7 @@ init -2:
     $ renpy.image("wnfh_choice_text_day", ParameterizedText(style="wnfh_choice_text_day", size=40))
     
     $ style.wnfh_choice_text_sunset = Style(style.default)
-    $ style.wnfh_choice_text_sunset.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_text_sunset.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_text_sunset.color = "#DCD168"
     $ style.wnfh_choice_text_sunset.drop_shadow = (3, 3)
     $ style.wnfh_choice_text_sunset.drop_shadow_color = "#000"
@@ -145,7 +145,7 @@ init -2:
     $ renpy.image("wnfh_choice_text_sunset", ParameterizedText(style="wnfh_choice_text_sunset", size=40))
     
     $ style.wnfh_choice_text_night = Style(style.default)
-    $ style.wnfh_choice_text_night.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_text_night.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_text_night.color = "#3CCFA2"
     $ style.wnfh_choice_text_night.drop_shadow = (3, 3)
     $ style.wnfh_choice_text_night.drop_shadow_color = "#000"
@@ -156,7 +156,7 @@ init -2:
     $ renpy.image("wnfh_choice_text_night", ParameterizedText(style="wnfh_choice_text_night", size=40))
     
     $ style.wnfh_choice_text_prologue = Style(style.default)
-    $ style.wnfh_choice_text_prologue.font = wnfh_FONTS + "KarloCham-Line.otf"
+    $ style.wnfh_choice_text_prologue.font = wnfh_FONTS + "IntroDemo-BlackCAPS.otf"
     $ style.wnfh_choice_text_prologue.color = "#98D8DA"
     $ style.wnfh_choice_text_prologue.drop_shadow = (3, 3)
     $ style.wnfh_choice_text_prologue.drop_shadow_color = "#000"

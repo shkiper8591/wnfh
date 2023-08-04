@@ -2,43 +2,32 @@ label blwnfh_test_choice:
     "Тест выборов и переменных."
 
     
-    menu:
-        "Получаем переменную.":
-            $ wnfh_test_variable = True
-        "Или не получаем.":
-            $ wnfh_test_variable = False
-
-    if wnfh_test_variable:
-        "И идём творить всякое."
-        "Ну всякое, понимаешь?"
-        "Уничтожение галактики там."
-        "Хотя это скучно."
-    else:
-        "Без переменной линия вашей истории оканчивается здесь."
-        "Загрузитесь с последнего сохранения или живите в мире который и сам создали."
-        "Понял?"
-
+    $ wnfh_set_time("night")
     
     
-    #call screen blwnfh_triple_choice("dv", "mi", "un", "Какой-то текст", "Какой-то текст", "Какой-то текст", "Алиса", "Мику", "Лена", "blwnfh_dv", "blwnfh_mi", "blwnfh_un", "day") with sphere_blure_dissolve2
-    #
-    #label blwnfh_dv:
-    #    show dv normal pioneer at center with dspr
-    #    dv "Го бухать"
-    #    hide dv with dspr
-    #    jump blwnfh_continue_2
-    #    
-    #label blwnfh_mi:
-    #    show mi normal pioneer at center with dspr
-    #    mi "лфдтивлтЛтщвЗ nAJ NND OB oJQDS JNPaweh pAMP WFJHASjpSNQponl aspsanmwQJDHFNPSJDwjfasndcnmfn"
-    #    hide mi with dspr
-    #    jump blwnfh_continue_2
-    #
-    #label blwnfh_un:
-    #    show un normal pioneer at center with dspr
-    #    un "Привет"
-    #    hide un with dspr
-    #    jump blwnfh_continue_2
+    call screen wnfh_choice(
+        ["dv", "Алиса","Какой-то текст", "blwnfh_dv"],
+        ["mi", "Мику", "Какой-то текст", "blwnfh_mi"],
+        ["un", "Лена", "Какой-то текст", "blwnfh_un"],
+        ) with sphere_blure_dissolve2
+    
+    label blwnfh_dv:
+        show dv normal pioneer at center with dspr
+        dv "Го бухать"
+        hide dv with dspr
+        jump blwnfh_continue_2
+        
+    label blwnfh_mi:
+        show mi normal pioneer at center with dspr
+        mi "лфдтивлтЛтщвЗ nAJ NND OB oJQDS JNPaweh pAMP WFJHASjpSNQponl aspsanmwQJDHFNPSJDwjfasndcnmfn"
+        hide mi with dspr
+        jump blwnfh_continue_2
+    
+    label blwnfh_un:
+        show un normal pioneer at center with dspr
+        un "Привет"
+        hide un with dspr
+        jump blwnfh_continue_2
         
 
         

@@ -4,155 +4,86 @@ init 2:
     #    timer 1 repeat True action If(wnfh_time > 0, SetVariable("wnfh_time", wnfh_time-1.0), (SetVariable("wnfh_silence_points", wnfh_silence_points+1), (Hide("wnfh_timer", dissolve), Jump(lose_label))))
     #    bar value wnfh_time range wnfh_time_range left_bar wnfh_u_path + "wnfh_baro_left.png" right_bar wnfh_u_path + "wnfh_baro_right.png" thumb wnfh_a_path + "wnfh_fireflyes.png" thumb_offset 19 align (.5, .9) xmaximum 668 ymaximum 40 at wnfh_smooth_map
 
-    screen wnfh_double_choice(button_1, button_2, text_1, text_2, variant_1, variant_2, label_1, label_2, timeset):
+    screen wnfh_choice(*args):
         modal True tag menu
-        python:
-            if timeset == "day":
-                button_tint_color = "#fff"
-                
-            elif timeset == "sunset":
-                button_tint_color = "#fff"
-                
-            elif timeset == "night":
-                button_tint_color = "#A8A8A8"
-                
-            elif timeset == "prologue":
-                button_tint_color = "#A8A8A8"
-            
-            if timeset == "day":
-                line_tint_color = "#E2C778"
-                
-            elif timeset == "sunset":
-                line_tint_color = "#DCD168"
-                
-            elif timeset == "night":
-                line_tint_color = "#3CCFA2"
-                
-            elif timeset == "prologue":
-                line_tint_color = "#98D8DA"
-        
-        default wnfh_screen_1 = False
-        default wnfh_screen_2 = False
-        
-        add wnfh_gui["choice"]["vignette"]
-    
-        if wnfh_screen_1:
-            add (wnfh_gui["choice"]["2_flang_" + button_1])
-            text text_1 style "wnfh_choice_text_" + timeset align (.1, .7)
-    
-        else:
-            null height 20
-    
-        if wnfh_screen_2:
-            add (wnfh_gui["choice"]["2_flang_" + button_2]) xzoom -1 yzoom -1
-            text text_2 style "wnfh_choice_text_" + timeset align (.9, .7)
-    
-        else:
-            null height 20
-    
-        textbutton variant_1:
-            text_style "wnfh_choice_" + timeset
-            background None align (.25, .5)
-            hover_sound wnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("wnfh_screen_1")
-            unhovered ToggleScreenVariable("wnfh_screen_1")
-            action (Hide("wnfh_choice_0", dissolve), Jump(label_1))
-            
-        textbutton variant_2:
-            text_style "wnfh_choice_" + timeset
-            background None align (.75, .5)
-            hover_sound wnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("wnfh_screen_2")
-            unhovered ToggleScreenVariable("wnfh_screen_2")
-            action (Hide("wnfh_choice_0", dissolve), Jump(label_2))
-        
-        add (wnfh_gui["choice"]["line_2"]) matrixcolor TintMatrix(line_tint_color)
-        
-
-        #use wnfh_timer(s1)
-        
-    screen wnfh_triple_choice(button_1, button_2, button_3, text_1, text_2, text_3, variant_1, variant_2, variant_3, label_1, label_2, label_3, timeset):
-        modal True tag menu
-        python:
-            if timeset == "day":
-                button_tint_color = "#fff"
-                
-            elif timeset == "sunset":
-                button_tint_color = "#fff"
-                
-            elif timeset == "night":
-                button_tint_color = "#A8A8A8"
-                
-            elif timeset == "prologue":
-                button_tint_color = "#A8A8A8"
-            
-            if timeset == "day":
-                line_tint_color = "#E2C778"
-                
-            elif timeset == "sunset":
-                line_tint_color = "#DCD168"
-                
-            elif timeset == "night":
-                line_tint_color = "#3CCFA2"
-                
-            elif timeset == "prologue":
-                line_tint_color = "#98D8DA"
-        
-        #E2C778 день
-        #DCD168 вечер
-        #3CCFA2 ночь
-        #98D8DA пролог
-    
         default wnfh_screen_1 = False
         default wnfh_screen_2 = False
         default wnfh_screen_3 = False
-    
-        add wnfh_gui["choice"]["vignette"]
+        default wnfh_screen_4 = False
         
-        if wnfh_screen_1:
-            add (wnfh_gui["choice"]["3_flang_" + button_1]) matrixcolor TintMatrix(button_tint_color)
-            text text_1 style "wnfh_choice_text_" + timeset align (.05, .1)
-    
-        else:
-            null height 20
-    
-        if wnfh_screen_2:
-            add (wnfh_gui["choice"]["3_flang_" + button_2]) xzoom -1 matrixcolor TintMatrix(button_tint_color)
-            text text_2 style "wnfh_choice_text_" + timeset align (.95, .1)
-    
-        else:
-            null height 20
-            
-        if wnfh_screen_3:
-            add (wnfh_gui["choice"]["3_mid_" + button_3]) matrixcolor TintMatrix(button_tint_color)
-            text text_3 style "wnfh_choice_text_" + timeset align (.5, .85)
-    
-        else:
-            null height 20
-    
-        textbutton variant_1:
-            text_style "wnfh_choice_" + timeset #Стиль текста
-            background None align (.2, .45) #Положение заголовка
-            hover_sound wnfh_gui["sound"]["plimp"] #Звук наведения
-            hovered ToggleScreenVariable("wnfh_screen_1")
-            unhovered ToggleScreenVariable("wnfh_screen_1")
-            action (Hide("wnfh_choice_0", dissolve), Jump(label_1)) #Действие
-            
-        textbutton variant_2:
-            text_style "wnfh_choice_" + timeset
-            background None align (.8, .45)
-            hover_sound wnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("wnfh_screen_2")
-            unhovered ToggleScreenVariable("wnfh_screen_2")
-            action (Hide("wnfh_choice_0", dissolve), Jump(label_2))
-            
-        textbutton variant_3:
-            text_style "wnfh_choice_" + timeset
-            background None align (.5, .65)
-            hover_sound wnfh_gui["sound"]["plimp"]
-            hovered ToggleScreenVariable("wnfh_screen_3")
-            unhovered ToggleScreenVariable("wnfh_screen_3")
-            action (Hide("wnfh_choice_0", dissolve), Jump(label_3))
+        python:
 
-        add (wnfh_gui["choice"]["line_3"]) matrixcolor TintMatrix(line_tint_color)
-        #use wnfh_timer(s1)
+
+            wnfh_choice_tint_color = {
+                #timeset    #цветокор кнопок #палка
+                "day":      ["#FFF"         ,"#E2C778"],
+                "sunset":   ["#FFF"         ,"#DCD168"],
+                "night":    ["#A8A8A8"      ,"#3CCFA2"],
+                "prologue": ["#A8A8A8"      ,"#98D8DA"],
+            }
+            wnfh_screen_variable = [
+                wnfh_screen_1,
+                wnfh_screen_2,
+                wnfh_screen_3,
+                wnfh_screen_4
+            ]
+            wnfh_screen_variable_string=[
+               "wnfh_screen_1",
+               "wnfh_screen_2",
+               "wnfh_screen_3",
+               "wnfh_screen_4",
+            ]
+            wnfh_screen_cordinates={
+                "1":[[0.1, 0.7]],
+                "2":[[(0.1, 0.7), (1, 1), (0.25, 0.5),"flang"], [(0.9, 0.7), (-1,-1), (0.75,0.5),"flang"]],
+                "3":[[(0.05, 0.1), (1, 1), (0.2, 0.45),"flang"], [(0.95, 0.1), (-1, 1), (0.8,0.45),"flang"], [(0.5, 0.85), (1, 1), (0.5,0.65),"mid"]],
+                "4":[[0.1, 0.7],[0.9,0.7],[0.1, 0.7],[0.9,0.7]],
+                "5":[],
+            }
+            
+
+        add (wnfh_gui["choice"]["line_" + str(len(args))]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+        for i in range(len(args)):
+            if wnfh_screen_variable[i]:
+                add (wnfh_gui["choice"][str(len(args)) + "_" + wnfh_screen_cordinates[str(len(args))][i][3] + "_" + args[i][0]]) xzoom wnfh_screen_cordinates[str(len(args))][i][1][0] yzoom wnfh_screen_cordinates[str(len(args))][i][1][1]
+                text args[i][2]:
+                    style "wnfh_choice_text_" + persistent.timeofday
+                    align (wnfh_screen_cordinates[str(len(args))][i][0][0], wnfh_screen_cordinates[str(len(args))][i][0][1])
+            else:
+                null height 20
+
+            textbutton args[i][1]:
+                text_style "wnfh_choice_" + persistent.timeofday
+                background None align (wnfh_screen_cordinates[str(len(args))][i][2][0], wnfh_screen_cordinates[str(len(args))][i][2][1])
+                hover_sound wnfh_gui["sound"]["plimp"] 
+                hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                action (Hide("wnfh_choice_0", dissolve), Jump(args[i][3]))
+
+
+        
+            #if wnfh_screen_2:
+            #    add (wnfh_gui["choice"]["2_flang_" + args[4]]) xzoom -1 yzoom -1
+            #    text args[6]:
+            #        style "wnfh_choice_text_" + persistent.timeofday
+            #        align (.9, .7)
+            #else:
+            #    null height 20
+            for j in range(4):
+                pass 
+
+        
+
+        #add wnfh_gui["choice"]["vignette"]
+
+        
+            
+        #textbutton args[5]:
+        #    text_style "wnfh_choice_" + persistent.timeofday
+        #    background None align (.75, .5)
+        #    hover_sound wnfh_gui["sound"]["plimp"]
+        #    hovered ToggleScreenVariable("wnfh_screen_2")
+        #    unhovered ToggleScreenVariable("wnfh_screen_2")
+        #    action (Hide("wnfh_choice_0", dissolve), Jump(args[7]))
+        
+        

@@ -1209,6 +1209,7 @@ label d1_zavtrak:
             $ un_lp += 1
         "Сесть с рыжими.":
             jump d1_dv_usw_zavtrak
+            $ d1_un_zavtrak_s_lenoy = False
 
 label d1_un_zavtrak:
     # мне короче лень ставить завтраки, у тебя, Стас, в этом опыта больше, ты и ставь. Got it?
@@ -1250,7 +1251,7 @@ label d1_un_zavtrak:
         show un sad pioneer with dspr
 
         un "Бедный, что-то ты себя совсем не бережёшь[wp]"
-        un "То спину надорвёшь помогая мне перетащить вещи, то вот[wp]"
+        un "То спину надрываешь помогая мне перетащить вещи, то вот[wp]"
         me "Да пустяки. {w}Но в следующий раз передай своим родителям, что пусть снаряжают чемоданы полегче."
 
         show un laugh pioneer with dspr
@@ -1389,6 +1390,7 @@ label d1_un_zavtrak:
     "Вожатая умчалась куда-то в своём направлении также быстро, как и пришла сюда."
     "Я же ускорил темпы поедания завтрака."
 
+    stop music fadeout 3.5
     show un smile pioneer with dspr
 
     un "Я бы могла сходить с тобой за компанию, если хочешь."
@@ -1399,6 +1401,7 @@ label d1_un_zavtrak:
             $ d1_un_no1 = True
         "Да, давай.":
             $ un_lp += 1
+            $ d1_un_no1 = False
 
     if d1_un_no1:
 
@@ -1626,22 +1629,312 @@ label d1_dv_usw_zavtrak:
    
 label d1_me_meet_kat_w_un:
 
-label d1_me_meet_kat_alone:
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg ext_dining_hall_near_day
+    show un smile pioneer 
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 2.0
+    play music music_list["timid_girl"] fadein 3.5
+    $ renpy.pause(1)
+    show bg ext_dining_hall_away_day with dissolve2 
+    $ renpy.pause(1)
+    show bg ext_lenin_square_day_wnfh with dissolve2
+    window show dissolve    
+
+    "Выйдя из столовой и пройдя до площади, до меня дошла одна мысль."
+
+    th "Подождите-ка, Ольга Дмитриевна сказала встретить пополнение, но не сказала сколько этого самого пополнения!"
+    th "А если там толпа? Хотя, вряд ли конечно, всё же свободных домиков осталось не так уж и много. Но тем не менее!"
+    th "И если там много пионеров, то мы, даже вдвоём, крайне маловероятно справимся."
+    th "Значит нужно обдумать план действий."
+
+    "Я медленно остановился."
+
+    show un shy pioneer with dspr
+
+    un "Семён, что-то случилось?"
+    me "А? Да, нет."
+
+    show un smile2 pioneer with dspr
+
+    un "Так да или нет?"
+    me "Нет, просто задумался."
+    me "Что если там большая толпа пионеров, как нам с ними управляться?"
+
+    show un laugh pioneer with dspr
+
+    "Лена рассмеялась."
+
+    un "Так нам и не нужно с ними управляться, просто сопроводить к Ольге Дмитриевной?"
+    me "Да, но их же придётся как-то организовать, чтобы сопроводить, верно?"
+
+    show un smile3 pioneer with dspr
+
+    un "Сомневаюсь, что там особо большое пополнение."
+    un "Может три или четыре пионера максимум."
+    un "Мест свободных мало осталось же."
+
+    "Рассуждение Лены успокоило меня по этому поводу."
+
+    me "Ну хорошо."
+    un "Вот и всё, идём скорее, нас небось уже ждут."
+    me "Да, ты права."
+
+    "В ускоренном темпе, мы отправились на остановку."
+
+    window hide dissolve
+    stop ambience fadeout 2.0
+    stop music fadeout 3.5
+    scene bg ext_bus
+    show un smile pioneer at right
+    show kat normal casual shirt far at left
+    with santa_barbara_out_blure_dissolve2
+    play ambience ambience_camp_entrance_day fadein 2.0
+    window show dissolve
+    $ wnfh_set_name("kat", "Новенькая")
+
+    "Скоро мы пришли в пункт назначения."
+
+    show un surprise pioneer at right with dspr
+
+    "И были малость удивлены, обнаружить здесь только одного пионера. {w}Вернее пионерку."
+    "Которая ещё была одета мягко говоря не по советским формальностям."
+    "Джинсы, модная футболка с принтом. Только рубашка особо не выделялась."
+
+    th "Может дочка какого-нибудь члена партии? Вот и достал всё лучшее из-за границы."
+
+    "Но Лену, похоже, совсем не смущал внешний вид новенькой."
+
+    un "Только одна? Странно."
+    me "А не странно ли она одета?"
+    un "О чём ты?"
+    me "Ну[wp]"
+
+    show kat surprise casual shirt far at left with dspr 
+
+    kat "Ой! П-Привет."
+
+    "Не успел я договорить, как новенькая окликнула нас, помахав рукой."
+
+    show un smile pioneer at right with dspr
+
+    un "Здраствуй, я так понимаю ты у нас то самое пополнение."
+    kat "П-Получается, что так."
+
+    "Стеснясь и немного запинаясь говорила она."
+
+    th "Ещё одна стесняша в лагере, чудно."
+
+    show kat normal casual shirt at left with dspr
+
+    "Новенькая подошла ближе к нам."
+
+    me "А с тобой в автобусе больше никого не было?"
+
+    show kat confused casual shirt at left with dspr
+
+    kat "Н-Нет, я одна приехала."
+    me "Интересно."
+    un "Ну да неважно. Тебя как зовут?"
+
+    $ wnfh_set_name("kat", "Катя")
+
+    kat "Катя."
+    #kat "Но друзья зовут меня БМ-13"
+    show un laugh pioneer at right with dspr
+
+    un "Чудесное имя, а я Лена. Но если мы станем подругами, сможешь звать меня Ленкой."
+
+    show kat smile casual shirt at left with dspr
+
+    "Слова Лены испытывали на новенькую какое-то особое влияние."
+    "Было видно, что она стала более уверенная в себе и даже улыбалась."
+
+    kat "Хорошо, а[wp] ты?"
+    me "Семён. Главный парень на побегушках в этом лагере."
+
+    show kat thinking casual shirt at left with dspr
+
+    kat "Поняла[wp]"
+
+    if d1_sl_probejka:
+
+        kat "Что с тобой случилось?"
+        me "Несчастный случай."
+        kat "Кошмар."
+
+    show un smile3 pioneer at right with dspr
+
+    un "Ну не будем задерживаться здесь."
+    un "Лучше сопроводим тебя к нашей вожатой."
+
+    show kat happy casual shirt at left with dspr
+    show un smile pioneer at right with dspr
+
+    kat "Да, давайте." 
+
+    stop ambience fadeout 2.0
+    show bg ext_clubs_day with dissolve2
+    play ambience ambience_camp_center_day fadein 2.0
+
+    "Вернувшись на территорию лагеря и проходя мимо клубов, я вспомнил, что надо бы зайти и предупредить Шурика, что я немного задержусь."
+
+    me "Товарищи, мне надо на минутку забежать в клуб."
+
+    show un normal pioneer at right with dspr
+
+    un "А это подождать не может?"
+    me "Нет."
+
+    "Сказал я и мигом отправился в клуб."
 
     window hide
-    stop music fadeout 1.0
-    stop ambience fadeout 0.5
+    stop ambience fadeout 2.0
+    scene bg int_clubs_male_day
+    show sh normal pioneer cright
+    show el sad pioneer at fright
+    show sv angry pioneer glasses tablet at left
+    with door_blure_dissolve2
+    play ambience ambience_int_cabin_evening fadein 2.0
+
+    "И как только я зашел, так сразу мне захотелось выйти."
+    "Ведь внутри была Света, которая как обычно песочила мозги моим товарищам."
+    "Благо, она стояла ко мне спиной."
+    "А ещё, она видимо была очень увлечена процессом и не услышала как я вошёл."
+
+    sv "[wp]Сколько можно заниматься вот этими[wp]"
+
+    "Говорила она указывая взглядом на авиамодели."
+
+    sv "Вот этим вот."
+    sv "Нет бы чем-то полезным заняться для лагерной жизни."
+
+    "Шурик тяжело вздохнул. В его взгляде читалась сильная усталость от этого диалога."
+
+    sh "Свет[wp]"
+    sv "Светлана Александровна."
+    sh "Да, Светлана Александровна, если это единственная причина по которой Вы нас попросили побыстрее закончить с завтраком."
+    sh "То мне нечего Вам сказать на этот счёт, разве то, что мы вообще-то всегда готовы и участвуем в лагерной жизне!"
+    sh "Но поскольку, Ваше высочество постоянно занято непонятно чем, Вы не замечаете нашей дейятельности, без которой, поверьте уж, здесь, в лагере, было бы тяжко."
+
+    th "Ахренеть, вот это он вырыл себе могилу просто титанических масштабов."
+
+    "Однако, вместо ожидаемых криков и угроз, что весь наш состав будет отправлен на некие лагерные исправительные работы, Планшетик лишь грозно хмыкнула."
+
+    #sv "Я тебя услышала, либерал"
+    sv "Тоже мне, пионеры."
+
+    show sv scared pioneer glasses tablet at left with dspr
+
+    "Она резко развернулась и врезалась в меня и упала."
+
+    sv "Ау[wp]"
+
+    show sv angry pioneer glasses tablet at left with dspr
+
+    "Я попытался ей помочь встать, но она лишь отодвинула мои руки."
+
+    sv "Ещё один явился."
+    me "Да вот, хотел сказать Шурику что буду в клубах чуть позже."
+    sv "И по какому этому поводу?"
+    sv "А хотя без разницы, всё равно мне на ваш клуб."
+    me "Как скажешь."
+    
+    hide sv with dissolve
+    show el normal pioneer at fright with dspr
+
+    "Света покинула клубы, громко хлопнув дверью."
+
+    me "Ну, думаю ты слышал Шурик, я сегодня позже приду."
+    sh "Да без проблем. Только особо ненадолго, ладно? Ты нам нужен сегодня."
+    me "Так точно."
+
+    stop ambience fadeout 2.0
+    scene bg ext_clubs_day
+    show un serious pioneer at cright
+    show kat sad casual shirt at fright
+    show sv angry pioneer glasses tablet at left
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 2.0
+
+    "Выйдя на улицу я стал свидетелем другого спора Светы, но уже с Леной."
+
+    th "Да уж Света, быстрый поиск целей у тебя."
+
+    un "Нет уж, мы сами справимся."
+    sv "Да чего вы справитесь, вы хоть знаете где вожатая?"
+    un "С этим как-то да разберёмся."
+
+    th "Ладно, это конечно всё весело, но время поджимает."
+
+    me "Так, Светка, всё дай другим тоже поучаствовать в лагерной жизни."
+    sv "Как ты меня назвал?"
+    me "Всё, пока-пока."
+
+    show un shy pioneer at cright with dspr
+
+    "Я рефлекторно схватил Лену за запястье, а она взяла Катю, и такой цепочкой мы быстренько ушли прочь."
+
+    scene bg ext_lenin_square_day_wnfh
+    show un shy pioneer at right
+    show kat normal at left
+    with dissolve2
+
+    "Выйдя на площадь я отпустил Лену."
+    "Света же нас особо и не преследовала, оставшись далеко позади."
+
+    me "Фух, пронесло."
+    un "Д-Да, молодец, быстро сработал."
+    me "Ага, спасибо."
+
+    show un normal pioneer at right with dspr
+
+    me "Но Света была права, где нам вожатую-то найти?"
+    un "Может она у себя в домике?"
+    me "Или может в адмнистрации[wp]"
+
+    show kat serious casual shirt at left with dspr
+
+    un "Или в столовой."
+    me "Ну там вряд ли, скорее уж в спортзале."
+
+    show kat rage casual shirt at left with dspr
+    show un scared pioneer at right with dspr
+
+    kat "Да определитесь вы уже!"
+
+    "Неожиданно и грозно рявкнула Катя, что мы аж с Леной перепугались."
+
+    show kat angry casual shirt at left with dspr
+
+    kat "Слушать вас невозможно, тоже мне сопроводители."
+
+    show un shy pioneer at right with dspr
+
+    un "И-Извини."
+    me "Ладно, давай у домика проверим."
+    un "Согласна."
+
+    show kat obida casual shirt at left with dspr
+
+    kat "Наконец-то[wp]"
+
+    jump d1_me_kat_sdacha_kati
+
+label d1_me_meet_kat_alone:
+
+    window hide dissolve
+    stop music fadeout 3.5
+    stop ambience fadeout 2.0
     scene bg ext_dining_hall_near_day with dissolve2
-    play ambience ambience_camp_center_day fadein 3
+    play ambience ambience_camp_center_day fadein 2.0
     #play music music_list["timid_girl"] fadein 3
     $ renpy.pause(1)
-    
     scene bg ext_dining_hall_away_day with dissolve2 
-    
     $ renpy.pause(1)
-    
     scene bg ext_lenin_square_day_wnfh with dissolve2
-    window show
+    window show dissolve
     
     "Покинув территорию столовой, я отправился напрямую к остановке."
     
@@ -1666,6 +1959,8 @@ label d1_me_meet_kat_alone:
     th "Стоп[wp] {w}Пополнение[wp] {w}Но она не сказала сколько именно людей!"
     th "А если там огромная группа пионеров?!"
     th "Блин, вообще об этом не подумал, когда соглашался! {w}Я же с ними вообще никак не управлюсь."
+    if d1_un_no1:
+        th "Сейчас бы помощь Лены не помешала бы, вдвоём же куда проще управится."
     th "Чёрт побери, думай, Семён, думай, что же тебе делать."
     
     "Я стал усердно чесать затылок и пытаться придумать, что же мне делать."
@@ -1675,6 +1970,8 @@ label d1_me_meet_kat_alone:
     th "Да и опять же это я смогу нарваться на серьёзный разбор полётов от Ольги."
     th "Может тогда просто сказать куда идти? Лагерь же небольшой и планировка простая, заблудится очень сложно."
     th "Хотя, я тут однажды умудрился заплутать[wp]"
+    if d1_un_no1:
+        th "Ну и возвращаться к Лене тоже не вариант, больше времени потеряю."
     th "Ладно, похоже, придется мне импровизировать по ходу дела."
     
     "Не хотя, я перешагнул за приоткрытые ворота."
@@ -1851,7 +2148,6 @@ label d1_me_meet_kat_alone:
     me "Лагерные традиции."
     kat "Ужасные традиции[wp]"
     
-
     stop music fadeout 3
     scene ext_clubs_day
     show kat upset casual shirt at center
@@ -2054,111 +2350,203 @@ label d1_me_meet_kat_alone:
     "Мотив звучал до невозможного знакомо но, я никак не мог понять, что же это за песня."
     "А спрашивать мне как-то неловко."
     
-    window hide
-    scene bg ext_house_of_mt_day
-    show mt dc_reading dc background
-    with slide_left_blure_dissolve2
-    window show
-    ## Сдача Кати вожатой
-    "Придя к домику вожатой, мне сразу стало понятно, что где-то меня явно обманули."
-    "Ведь Ольга Дмитриевна просто лежала на шезлонге и читала книгу."
-    
-    th "Вот вы значит какая, пионера отправляете выполнять свою работу, под предлогом что не успеваете."
-    th "А сама лежит на расслабоне и не парится. {w}Созревает вопрос: для чего нужно так торопиться, чтобы не успеть забрать новенькую?"
-    th "Хотя у меня на это ушло что-то около получаса[wp]"
-    th "Ладно, чёрт с ней, быть может действительно что-то срочное было, а я тут жалуюсь." 
-    
-    "Мы подошли к Ольге Дмитриевне."
-    
-    me "А вот и мы."
+label d1_me_kat_sdacha_kati:
 
-    $ wnfh_get_achievement("post")
-    $ renpy.pause(1.0, hard=True)
-    show mt dc_smotrit dc background with dspr
+    if d1_un_no1 = False:
+        window hide dissolve
+        scene bg ext_house_of_mt_day
+        show mt dc_reading dc background
+        with slide_left_blure_dissolve2
+        window show dissolve
+        ## Сдача Кати вожатой
+        "Придя к домику вожатой, мне сразу стало понятно, что где-то меня явно обманули."
+        "Ведь Ольга Дмитриевна просто лежала на шезлонге и читала книгу."
+        
+        th "Вот вы значит какая, пионера отправляете выполнять свою работу, под предлогом что не успеваете."
+        th "А сама лежит на расслабоне и не парится. {w}Созревает вопрос: для чего нужно так торопиться, чтобы не успеть забрать новенькую?"
+        th "Хотя у меня на это ушло что-то около получаса[wp]"
+        th "Ладно, чёрт с ней, быть может действительно что-то срочное было, а я тут жалуюсь." 
+        
+        "Мы подошли к Ольге Дмитриевне."
+        
+        me "А вот и мы."
+    
+        $ wnfh_get_achievement("post")
+        $ renpy.pause(1.0, hard=True)
+        show mt dc_smotrit dc background with dspr
+    
+        mt "Ой, как вы быстро."
+        mt "Всё-таки не зря я доверилась тебе, Семён."
+        me "Спасибо, наверное?"
+    
+        "Вожатая быстренько закрыла книгу и встала с шезлонга."
+    
+        hide mt with dspr  
+        $ renpy.pause(0.25)
+        show mt smile pioneer at right with dspr
+        
+        mt "Спасибо огромное Семён, прям[wp]"
+        
+        "Неожиданно, вожатая оборвалась."
+        
+        show mt surprise with dspr 
+        
+        mt "Подожди, а где ещё один пионер?"
+        me "Ещё? На остановке никого кроме новенькой не было."
+        kat "Да, я одна приехала."
+        
+        show mt normal pioneer at right with dspr
+        
+        mt "Странно[wp] {w}Видимо, в адмнистрации что-то напутали[wp]"
+        mt "Ладно, потом разберусь с этим."
+        
+        show mt smile with dspr
+        
+        mt "Ты уж прости меня, что встретила тебя не лично, дела были."
+        kat "Ничего, всё нормально."
+        mt "Так, а где твоя одежда в которой ты приехала?"
+        kat "На сушке, только рюкзак сухой более менее."
+        
+        show mt surprise pioneer at right with dspr
+        
+        mt "Всмысле на сушке?"
+        me "Ей Алиса с Ульяной штрафные прописали."
+        
+        show mt normal pioneer at right with dspr
+        
+        mt "То одно, то другое чёрт побери."
+        
+        "Тихо прошипела вожатая."
+        
+        mt "Знала я что перед ними нельзя ничего говорить."
+        mt "Ну я им сегодня задам, как только мы тут закончим."
+        me "Можете не беспокоиться, ими уже Планшетик собирается заняться."
+        
+        show mt angry pioneer at right with dspr
+        
+        mt "И тебе сейчас задам! {w}Какой ещё «планшетик»?!"
+        mt "Уже что с вами только не делали, лишь бы вы так её не называли!"
+        me "Ладно-ладно, извините."
+        me "{b}Света{/b} говорила что займётся ими."
+        mt "Последний раз прощаю."
+        
+        th "А вот это я уже сколько раз слышал мм[wp] {w}Миллионером мог стать, если получал бы по рублю."
+        
+        show mt normal pioneer at right with dspr
+        
+        "Ольга Дмитриевна страдальчески вздохнула."
+        
+        me "Так, а я вам больше не нужен?"
+        mt "Да, ты свободен."
+        me "Тогда пока."
+        
+        "Сказал я Кате и отправился обратно в клубы."
+    else:
+        window hide dissolve
+        scene bg ext_house_of_mt_day
+        show mt dc_reading dc background
+        show un normal pioneer at cleft
+        show kat serious casual at fleft
+        with slide_left_blure_dissolve2
+        window show dissolve
 
-    mt "Ой, как вы быстро."
-    mt "Всё-таки не зря я доверилась тебе, Семён."
-    me "Спасибо, наверное?"
+        "Вожатая действительно была у себя дома."
+        "Вернее, у дома. Она лежала на шезлонге и читала какую-то книгу."
+        "От чего у меня сразу закрались мысли, что где-то нас обманули и никаких серьёзных дел ни у кого не было."
+        "Хотя, кто знает[wp] Кто знает[w]"
 
-    "Вожатая быстренько закрыла книгу и встала с шезлонга."
+        me "Здраствуйте Ольга Дмитриевна, мы забрали ваше пополнение."
 
-    hide mt with dspr  
-    $ renpy.pause(0.25)
-    show mt smile pioneer at right with dspr
-    
-    mt "Спасибо огромное Семён, прям[wp]"
-    
-    "Неожиданно, вожатая оборвалась."
-    
-    show mt surprise with dspr 
-    
-    mt "Подожди, а где ещё один пионер?"
-    me "Ещё? На остановке никого кроме новенькой не было."
-    kat "Да, я одна приехала."
-    
-    show mt normal pioneer at right with dspr
-    
-    mt "Странно[wp] {w}Видимо, в адмнистрации что-то напутали[wp]"
-    mt "Ладно, потом разберусь с этим."
-    
-    show mt smile with dspr
-    
-    mt "Ты уж прости меня, что встретила тебя не лично, дела были."
-    kat "Ничего, всё нормально."
-    mt "Так, а где твоя одежда в которой ты приехала?"
-    kat "На сушке, только рюкзак сухой более менее."
-    
-    show mt surprise pioneer at right with dspr
-    
-    mt "Всмысле на сушке?"
-    me "Ей Алиса с Ульяной штрафные прописали."
-    
-    show mt normal pioneer at right with dspr
-    
-    mt "То одно, то другое чёрт побери."
-    
-    "Тихо прошипела вожатая."
-    
-    mt "Знала я что перед ними нельзя ничего говорить."
-    mt "Ну я им сегодня задам, как только мы тут закончим."
-    me "Можете не беспокоиться, ими уже Планшетик собирается заняться."
-    
-    show mt angry pioneer at right with dspr
-    
-    mt "И тебе сейчас задам! {w}Какой ещё «планшетик»?!"
-    mt "Уже что с вами только не делали, лишь бы вы так её не называли!"
-    me "Ладно-ладно, извините."
-    me "{b}Света{/b} говорила что займётся ими."
-    mt "Последний раз прощаю."
-    
-    th "А вот это я уже сколько раз слышал мм[wp] {w}Миллионером мог стать, если получал бы по рублю."
-    
-    show mt normal pioneer at right with dspr
-    
-    "Ольга Дмитриевна страдальчески вздохнула."
-    
-    me "Так, а я вам больше не нужен?"
-    mt "Да, ты свободен."
-    me "Тогда пока."
-    
-    "Сказал я Кате и отправился обратно в клубы."
-    
-    ## тут можно достижение какое-нибудь дать "груз доставлен" или что-то в таком роде, желательно конечно шуточное
-    # таймскип
-    
-    window hide
-    stop ambience fadeout 0.5
+        $ wnfh_get_achievement("post")
+        $ renpy.pause(1.0, hard=True)
+        show mt dc_smotrit dc background with dspr
+
+        mt "Вы достаточно быстро."
+        mt "Хотя, я так полагаю это всё благодаря товарищу Тихоновой."
+
+        show un shy pioneer at cleft with dspr
+
+        un "Н-Нет, Семён тоже активное участье принимал."
+        mt "Да? Ну хорошо, хорошо[wp]"
+
+        show mt smile pioneer at right with dspr
+
+        "Вожатая закрыла книгу и встала с шезлонга."
+
+        mt "И так, где они."
+
+        show un surprise pioneer at cleft with dspr
+
+        un "О-Они? Тут только[wp] Одна Катя."
+
+        show mt surprise pioneer at right with dspr
+
+        mt "Как одна?"
+
+        show kat normal at cleft
+        show un surprise pioneer at fleft 
+        with dspr
+
+        "Катя вышла вперёд."
+
+        kat "Я только одна приехала."
+
+        show mt normal pioneer at right with dspr
+
+        mt "Чудеса, а мне говорили, что будет двое."
+
+        show mt sad pioneer at right
+        show un smile pioneer at fleft 
+        with dspr
+
+        mt "Ох, простите ребята, что напрягла вас."
+        mt "С одним пионером-то я успела управиться."
+
+        show un smile2 pioneer at fleft with dspr
+
+        me "Всё нормально, вы нас особо не напрягли."
+        un "Это правда-правда."
+        mt "Ну хорошо, тогда можете идти, дальше я тут сама справлюсь."
+
+        hide mt
+        hide kat
+        with dissolve
+        show un smile pioneer at center with dspr
+
+        "Мы отошли на небольшое расстояние от домика."        
+
+        me "Ну-с[wp] Мне надо бежать в клубы."
+
+        show un shy pioneer at center with dspr
+
+        un "С-Семён."
+        me "М?"
+
+        show un smile pioneer at center with dspr
+
+        un "А хотя не важно, иди по своим делам."
+
+        "Я помахал на прощание Лене и удалился в клубы."
+
+label d1_male_clubs:
+
+    window hide dissolve
+    stop ambience fadeout 2.0
     scene bg ext_clubs_day with santa_barbara_in_blure_dissolve2
     play sound sfx_open_door_1
     scene bg int_clubs_male_day 
     show el normal pioneer at left
     show sh normal pioneer at right
     with door_blure_dissolve2
-    play ambience ambience_clubs_inside_day fadein 3
-    window show
+    play ambience ambience_clubs_inside_day fadein 2.0
+    window show dissolve
     ## Семён в клубах
-    "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
-    "Без присутствия вездещуй комсомолки, Шурик и Сергей продолжили работу над своим изделием."
+
+    if d1_un_no1 = False:
+        "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
+        "Без присутствия вездещуй комсомолки, Шурик и Сергей продолжили работу над своим изделием."
+    else:
+        "К моему возвращению, мои товарищи уже усердно продолжали работу над своим изделием."
     th "В теории это должен быть самолёт на радиоуправлении."
     th "Вот только[wp] Больно уж сложно это оказалось."
     th "С самим самолётом проблем нет, а вот с управлением[wp] {w}Беда полная."

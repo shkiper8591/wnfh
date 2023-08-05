@@ -2,13 +2,13 @@ label blwnfh_test_choice:
     "Тест выборов и переменных."
 
     
-    $ wnfh_set_time("night")
+    $ wnfh_set_time("sunset")
     
     
     call screen wnfh_choice(
-        ["dv", "Алиса","Какой-то текст", "blwnfh_dv"],
-        ["mi", "Мику", "Какой-то текст", "blwnfh_mi"],
-        ["un", "Лена", "Какой-то текст", "blwnfh_un"],
+        ["sl", "Пробежаться","А почему нет?", "blwnfh_dv"],
+        ["sl", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi"],
+        ["sl", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un"],
         ) with sphere_blure_dissolve2
     
     label blwnfh_dv:

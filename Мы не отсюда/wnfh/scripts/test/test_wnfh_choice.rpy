@@ -6,14 +6,16 @@ label blwnfh_test_choice:
     
     
     call screen wnfh_choice(
-        ["sl", "Пробежаться","А почему нет?", "blwnfh_dv"],
-        ["sl", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi"],
-        ["sl", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un"],
+        ["dv", "Пробежаться","А почему нет?", "blwnfh_dv"],
+        ["mi", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi"],
+        ["un", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un"],
         ) with sphere_blure_dissolve2
     
     label blwnfh_dv:
         show dv normal pioneer at center with dspr
         dv "Го бухать"
+        $ wnfh_Data.write("test3",{"first":"fgfgf","\ndfdfdff":"dfsdfsdf"})
+        dv "Гgdfgdfg"
         hide dv with dspr
         jump blwnfh_continue_2
         

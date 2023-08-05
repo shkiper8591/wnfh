@@ -303,17 +303,17 @@ label wnfh_day_1:
     
     sl "Хочешь, прямо сейчас со мной пробежаться?"
     
-    menu:
-        "Да, давай.":
-            $ sl_lp += 1
-            $ d1_sl_probejka = True
-            jump d1_sl_probejka
-        "Нет, не хочу.":
-            $ sl_lp -= 1
-            $ d1_sl_probejka = False
-            jump d1_sl_otkaz
+    window hide dissolve
+    call screen wnfh_choice(
+        ["sl", "Пробежаться.", "Спорт это жизнь.", "d1_sl_probejka"],
+        ["sl", "Отказаться.", "Мне сейчас не до бега.", "d1_sl_otkaz"]
+        ) with dissolve2
 
 label d1_sl_probejka:
+
+    window show dissolve
+    $ d1_sl_probejka = True
+    $ sl_lp += 1
 
     th "Говорят, по утрам полезно спортом заниматься."
     me "Да, почему бы и нет, пробежусь немного."
@@ -639,6 +639,10 @@ label d1_sl_probejka:
     jump d1_zavtrak
 
 label d1_sl_otkaz:
+    
+    window show dissolve
+    $ d1_sl_probejka = False
+    $ sl_lp -= 1
 
     show sl surprise sport close with dspr
 
@@ -1202,18 +1206,17 @@ label d1_zavtrak:
     "Единственным свободным местом, где сидели хоть немного мне знакомые люди, было рядом с Алисой и Ульяной."
     "А ещё одно местечко было рядом с Леной."
 
-    menu:
-        "Сесть с Леной.":
-            jump d1_un_zavtrak
-            $ d1_un_zavtrak_s_lenoy = True
-            $ un_lp += 1
-        "Сесть с рыжими.":
-            jump d1_dv_usw_zavtrak
-            $ d1_un_zavtrak_s_lenoy = False
+    window hide dissolve
+    call screen wnfh_choice(
+        ["un", "Сесть с Леной.", "Тихо посидеть с тихоней.": d1_un_zavtrak],
+        ["dv", "Сесть с рыжими.", "С ними должно быть весело." d1_dv_usw_zavtrak]
+        ) with dissolve2
 
 label d1_un_zavtrak:
     # мне короче лень ставить завтраки, у тебя, Стас, в этом опыта больше, ты и ставь. Got it?
-
+    window show dissolve
+    $ d1_un_zavtrak_s_lenoy = True
+    $ un_lp += 1
     th "Думаю, лучше посидеть с главной скромностью всея лагеря."
     th "А то Алиса с Ульяной страшное комбо, они же достанут меня своими шутками."
     if d1_sl_probejka:
@@ -1395,62 +1398,67 @@ label d1_un_zavtrak:
 
     un "Я бы могла сходить с тобой за компанию, если хочешь."
 
-    menu:
-        "Нет, не стоит.":
-            $ un_lp -= 1
-            $ d1_un_no1 = True
-        "Да, давай.":
-            $ un_lp += 1
-            $ d1_un_no1 = False
+    window hide dissolve
+    call screen wnfh_choice(
+        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d1_un_no_2_lbl"],
+        ["un", "Да, давай.", "В компании будет проще.", "d1_un_yes_2_lbl"]
+        ) with dissolve2
 
-    if d1_un_no1:
+label d1_un_no_2_lbl:
+    window show dissolve
+    $ un_lp -= 1
+    $ d1_un_no1 = True
 
-        me "Думаю я сам уж справлюсь, а тебя напрягать особо не хочется."
+    me "Думаю я сам уж справлюсь, а тебя напрягать особо не хочется."
 
-        show un normal pioneer with dspr
+    show un normal pioneer with dspr
 
-        "Она грустно вздохнула."
-        
-        un "Ну ладно." 
+    "Она грустно вздохнула."
+    
+    un "Ну ладно." 
 
-        "Менее чем за минуту я управлися с овсянкой, а чай прикончил и вовсе за один глоток."
+    "Менее чем за минуту я управлися с овсянкой, а чай прикончил и вовсе за один глоток."
 
-        me "Ну всё, я помчался."
-        un "Удачи тебе."
-        me "Ага, спасибо, тебе тоже."
+    me "Ну всё, я помчался."
+    un "Удачи тебе."
+    me "Ага, спасибо, тебе тоже."
 
-        jump d1_me_meet_kat_alone
+    jump d1_me_meet_kat_alone
 
-    else:
+label d1_un_yes_2_lbl:
+    window show dissolve
+    $ un_lp += 1
+    $ d1_un_no1 = False
 
-        me "Думаю, вместе будет веселее."
-        un "Я вот тоже так считаю."
+    me "Думаю, вместе будет веселее."
+    un "Я вот тоже так считаю."
 
-        "Радостным голосом сказала она."
+    "Радостным голосом сказала она."
 
-        me "Только тебе следует поторопится."
-        me "Я вот за непродолжительное время уже почти всё съел, а тебя ещё полтарелки."
-        un "Да[wp] {w}Не хочу я овсянку эту, сколько можно её уже подавать."
-        me "Зато наполнение другое, хе-хе."
+    me "Только тебе следует поторопится."
+    me "Я вот за непродолжительное время уже почти всё съел, а тебя ещё полтарелки."
+    un "Да[wp] {w}Не хочу я овсянку эту, сколько можно её уже подавать."
+    me "Зато наполнение другое, хе-хе."
 
-        "Лена отодвинула тарелку с кашей в сторону и стала медленно потягивать чай."
-        "Я же съел всё чуть менее чем за минуту, а подостывший чай и вовсе выпил за один глоток."
+    "Лена отодвинула тарелку с кашей в сторону и стала медленно потягивать чай."
+    "Я же съел всё чуть менее чем за минуту, а подостывший чай и вовсе выпил за один глоток."
 
-        show un shocked pioneer with dspr
+    show un shocked pioneer with dspr
 
-        un "В-Вау."
-        me "Что?"
-        un "Ты хотя бы вкус успел почувствовать?"
-        me "Не знаю, да и неважно, давай скорее разберёмся с пополнением и всё."
+    un "В-Вау."
+    me "Что?"
+    un "Ты хотя бы вкус успел почувствовать?"
+    me "Не знаю, да и неважно, давай скорее разберёмся с пополнением и всё."
 
-        show un smile pioneer with dspr
+    show un smile pioneer with dspr
 
-        un "Согласна."
+    un "Согласна."
 
-        jump d1_me_meet_kat_w_un
+    jump d1_me_meet_kat_w_un
 
 label d1_dv_usw_zavtrak:
-
+    window show dissolve
+    $ d1_un_zavtrak_s_lenoy = False
     th "Конечно, сидеть с ними было сомнительным удовольствием, ибо они те ещё любители колких шуток."
     th "Но куда уж деваться, Алиса единственная здесь человек которым есть о чём поговорить и, которую я могу назвать другом."
     ## Стас, поправь Ульяну. Если ты это не сделаешь, то я сожру тебя с говном. 
@@ -1780,7 +1788,7 @@ label d1_me_meet_kat_w_un:
 
     "Вернувшись на территорию лагеря и проходя мимо клубов, я вспомнил, что надо бы зайти и предупредить Шурика, что я немного задержусь."
 
-    me "Товарищи, мне надо на минутку забежать в клуб."
+    me "Так извините, но мне надо на минутку забежать в клуб."
 
     show un normal pioneer at right with dspr
 
@@ -2524,9 +2532,65 @@ label d1_me_kat_sdacha_kati:
 
         show un smile pioneer at center with dspr
 
-        un "А хотя не важно, иди по своим делам."
+        un "А хотя неважно, иди по своим делам."
 
-        "Я помахал на прощание Лене и удалился в клубы."
+        th "Интересно, чего это она прервалась. Надо бы поинтересоваться."
+
+        window hide dissolve
+        call screen wnfh_choice(
+            ["un", "Спросить", "Может узнаю что она хочет?", "d1_un_sprosil"]
+            ["un", "Неважно", "Наверное это действительно неважно", "d1_un_ne_sprosil"]
+            ) with dissolve2
+
+label d1_un_sprosil:
+    
+    window show dissolve
+    $ d1_un_sprosil = True
+
+    me "Да говори, что ты хотела?"
+
+    show un shy pioneer at center with dspr
+
+    un "Ну, я[wp]"
+
+    show un smile2 pioneer at center with dspr
+
+    un "Не хотел бы ты погулять после обеда?"
+    me "Ох[wp]"
+
+    window hide dissolve 
+    call screen wnfh_choice(
+        ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl"],        
+        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl"],
+        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral1"]
+        ) with dissolve2
+
+label d1_un_yes_1_lbl:
+
+    $ un_lp += 1
+    $ d1_un_yes1 = True
+
+    show un 
+
+label d1_un_no_1_lbl:
+
+    $ un_lp -= 1
+    $ d1_un_yes1 = False
+
+label d1_un_neutral1_lbl:
+
+    $ d1_un_yes1 = False
+
+label d1_un_ne_sprosil:
+    
+    window show dissolve
+    $ d1_un_sprosil = False
+    
+    th "Впрочем, потом может узнаю, а пока меня ждут дела."
+
+    "Я помахал Лене на прощание и пошёл в клубы."
+
+    jump d1_male_clubs
 
 label d1_male_clubs:
 
@@ -2573,16 +2637,21 @@ label d1_male_clubs:
     
     sh "Мысль. {w}Семён, поди достань радио."
     me "Тю, {w}предложил он, а доставай я."
-    sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."  
+    sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."
+
+        if d1_sl_probejka:
+            me "А ты видишь какой я побитый? Мне вообще положен недельный отдых!"
+            sh "Раз дышишь, значит ничего тебе не надо."
+            sh "Давай, Семён, раз в полгода что-то просим тебя сделать."  
     
     "Тяжело вздохнув, я пошел в соседнее помещение, где был и вход на чердак."
     
-    window hide
+    window hide dissolve
     stop ambience fadeout 0.5
     scene bg int_clubs_male2_night_nolight with slide_left_blure_dissolve2
     scene bg int_clubs_male2_night with dspr
     play ambience ambience_clubs_inside_day fadein 3
-    window show
+    window show dissolve
     play sound wnfh_sfx_list["apchhi"]
 
     "Войдя внутрь и включив свет, я тут же громко чихнул из-за пыли."
@@ -2831,6 +2900,8 @@ label d1_male_clubs:
     #"Пионерка убежала в сторону столовой."
     #"Я же сначала отряхнулся и только после этого продолжил свой путь."
     
+label d1_obed:
+
     window hide dissolve
     scene bg ext_dining_hall_away_day with slide_right_blure_dissolve2
     window show dissolve
@@ -2874,14 +2945,58 @@ label d1_male_clubs:
     ## Семён, Лена и Катя в столовой
     "И я было уже начал обедать, как ко мне подошли Лена и[wp] {w}Катя?"
     
-    th "Что ж вам вечно всем от меня надо."
+    th "Ну да, так просто одному пообедать никогда не выходит."
     
-    show un shy pioneer with dspr
+    show un shy pioneer behind chair_r with dspr
     
     un "Можно мы к тебе сядем?"
     
-    th "Нет блин, не можно!"
-    
+    window hide dissolve
+    call screen wnfh_choice(
+        ["un", "Можно.", "Ладно, пусть садятся.", "d1_obed_me_w_un_kat"],
+        ["neutral", "Не можно", "Хочу поесть один", "d1_obed_me_alone"]
+        ) with dissolve2
+
+label d1_obed_me_alone:
+
+    window show dissolve
+    $ d1_un_no2 = True
+    $ un_lp -= 1
+    $ kat_lp -= 1
+
+    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
+
+    me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
+
+    if un_lp <=0:
+
+        show un normal pioneer behind chair_r with dspr
+
+        un "Правда?"
+
+        "Она посмотрела в сторону."
+        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
+
+        un "Ну хорошо. {w}Пойдём Кать, тут занято."
+
+        show un normal pioneer behind chair_r chair_l:
+            ease_quart 4.0 xcenter -0.6
+        show kat normal pioneer behind chair_r chair_l:
+            ease_quart 5.0 xcenter -0.6
+
+        th "Зараза[wp]"
+
+    if un_lp >=1:
+
+
+
+
+label d1_obed_me_w_un_kat:
+
+    window show dissolve
+    $ d1_un_no1 = False
+    $ un_lp += 1
+    $ kat_lp += 1
     me "Да конечно, садитесь."
     
     show un smile pioneer with dspr

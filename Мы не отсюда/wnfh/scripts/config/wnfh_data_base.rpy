@@ -7,10 +7,17 @@ init -10 python :
             self.load(self.location)
         def load(self, location):
             if os.path.exists(location):
-                self.load()
+                self.open_f()
             else:
                 self.BD_INIT_MODULE = {}
             return True
-        def BD_INIT_MODULE(self):
+        def open_f(self):
             self.BD_INIT_MODULE = json.load(open(self.location,"r"))
-        
+
+        def convert(self):
+            try:
+                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"))
+                return True
+            except:
+                return False
+       #def write(self,key,value):

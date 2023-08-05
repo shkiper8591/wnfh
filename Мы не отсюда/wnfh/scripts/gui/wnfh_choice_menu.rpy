@@ -7,6 +7,8 @@ init 2:
         default wnfh_screen_4 = False
         
         python:
+            def add_to_bd(data):
+                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияение на персонажей":data[0][4]})
             wnfh_choice_tint_color = {
                 #timeset    #цветокор кнопок #палка
                 "day":      ["#FFF"         ,"#E2C778"],
@@ -34,25 +36,22 @@ init 2:
                 "5":[],
             }  
 
-        add (wnfh_gui["choice"]["line_" + str(len(args))]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-        for i in range(len(args)):
+        add (wnfh_gui["choice"]["line_" + str(len(args)-1)]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+        for i in range(len(args)-1):
             if wnfh_screen_variable[i]:
-                add (wnfh_gui["choice"][str(len(args)) + "_" + wnfh_screen_cordinates[str(len(args))][i][3] + "_" + args[i][0]]) xzoom wnfh_screen_cordinates[str(len(args))][i][1][0] yzoom wnfh_screen_cordinates[str(len(args))][i][1][1]
+                add (wnfh_gui["choice"][str(len(args)-1) + "_" + wnfh_screen_cordinates[str(len(args)-1)][i][3] + "_" + args[i][0]]) xzoom wnfh_screen_cordinates[str(len(args)-1)][i][1][0] yzoom wnfh_screen_cordinates[str(len(args)-1)][i][1][1]
                 text args[i][2]:
                     style "wnfh_choice_text_" + persistent.timeofday
-                    align (wnfh_screen_cordinates[str(len(args))][i][0][0], wnfh_screen_cordinates[str(len(args))][i][0][1])
+                    align (wnfh_screen_cordinates[str(len(args)-1)][i][0][0], wnfh_screen_cordinates[str(len(args)-1)][i][0][1])
             else:
                 null height 20
 
             textbutton args[i][1]:
                 text_style "wnfh_choice_" + persistent.timeofday
-                background None align (wnfh_screen_cordinates[str(len(args))][i][2][0], wnfh_screen_cordinates[str(len(args))][i][2][1])
+                background None align (wnfh_screen_cordinates[str(len(args)-1)][i][2][0], wnfh_screen_cordinates[str(len(args)-1)][i][2][1])
                 hover_sound wnfh_gui["sound"]["plimp"] 
                 hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
                 unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
-                action (Hide("wnfh_choice_0", dissolve), Jump(args[i][3]))
-
-            for j in range(4):
-                pass 
+                action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd,[args[i],args[len(args)-1],i]),Jump(args[i][3]))
 
         #add wnfh_gui["choice"]["vignette"]

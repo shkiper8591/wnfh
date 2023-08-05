@@ -16,7 +16,7 @@ init -10 python :
 
         def dumpdb(self):
             try:
-                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"))
+                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
                 return True
             except:
                 return False

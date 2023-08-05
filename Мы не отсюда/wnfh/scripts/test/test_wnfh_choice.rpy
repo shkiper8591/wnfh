@@ -6,16 +6,15 @@ label blwnfh_test_choice:
     
     
     call screen wnfh_choice(
-        ["dv", "Пробежаться","А почему нет?", "blwnfh_dv"],
-        ["mi", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi"],
-        ["un", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un"],
+        ["dv", "Пробежаться","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
+        ["mi", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
+        ["un", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un",{"dv":3,"mi":-3}],
+        ["d1_choise3","Выбор пробежаться ли на XX"]
         ) with sphere_blure_dissolve2
     
     label blwnfh_dv:
         show dv normal pioneer at center with dspr
-        dv "Го бухать"
-        $ wnfh_Data.write("test3",{"first":"fgfgf","\ndfdfdff":"dfsdfsdf"})
-        dv "Гgdfgdfg"
+        dv "Го бухать"     
         hide dv with dspr
         jump blwnfh_continue_2
         
@@ -30,12 +29,33 @@ label blwnfh_test_choice:
         un "Привет"
         hide un with dspr
         jump blwnfh_continue_2
-        
+
 
         
-    
-#label blwnfh_continue_3:
-    
+
+label blwnfh_continue_2:
+    call screen wnfh_choice(
+      ["kat", "Второй тест","А почему нет?", "blwnfh_kat",{"dv":3,"mi":-3}],
+      ["sl", "Второй тест 2", "Нафиг оно мне надо?", "blwnfh_sl",{"dv":3,"mi":-3}],
+      ["d1_choise4","Пример названия 2"]
+      ) with sphere_blure_dissolve2
+    label blwnfh_kat:
+        show kat normal pioneer at center with dspr
+        if wnfh_Data.get("d1_choise3")["Влияение на персонажей"]["dv"] == 3:
+            kat  "Да"
+        else:
+            kat  "Нет"
+        hide kat with dspr
+        jump blwnfh_conti
+    label blwnfh_sl:
+        show sl normal pioneer at center with dspr
+        if wnfh_Data.get("Пример названия 2")["номер выбора"] == 1:
+            sl  "Первый"
+        elif wnfh_Data.get("Пример названия 2")["номер выбора"] == 2:
+            sl  "Второй"
+        sl "лфдтивлтЛтщвЗ nAJ NND OB oJQDS JNPaweh pAMP WFJHASjpSNQponl aspsanmwQJDHFNPSJDwjfasndcnmfn"
+        hide sl with dspr
+        jump blwnfh_conti
     #$ persistent.sprite_time = "night"
     #$ night_time()
     #

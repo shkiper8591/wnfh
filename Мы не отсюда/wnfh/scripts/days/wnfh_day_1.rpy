@@ -2639,10 +2639,10 @@ label d1_male_clubs:
     me "Тю, {w}предложил он, а доставай я."
     sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."
 
-        if d1_sl_probejka:
-            me "А ты видишь какой я побитый? Мне вообще положен недельный отдых!"
-            sh "Раз дышишь, значит ничего тебе не надо."
-            sh "Давай, Семён, раз в полгода что-то просим тебя сделать."  
+    if d1_sl_probejka:
+        me "А ты видишь какой я побитый? Мне вообще положен недельный отдых!"
+        sh "Раз дышишь, значит ничего тебе не надо."
+        sh "Давай, Семён, раз в полгода что-то просим тебя сделать."  
     
     "Тяжело вздохнув, я пошел в соседнее помещение, где был и вход на чердак."
     
@@ -2979,14 +2979,15 @@ label d1_obed_me_alone:
 
         un "Ну хорошо. {w}Пойдём Кать, тут занято."
 
-        show un normal pioneer behind chair_r chair_l:
+        show un normal pioneer behind chair_r, chair_l:
             ease_quart 4.0 xcenter -0.6
-        show kat normal pioneer behind chair_r chair_l:
+        show kat normal pioneer behind chair_r, chair_l:
             ease_quart 5.0 xcenter -0.6
 
         th "Зараза[wp]"
 
     if un_lp >=1:
+        pass
 
 
 

@@ -34,6 +34,36 @@ init -10 python :
            except KeyError:
                #print("Не было найдено значений" + str(key))
                return False
+         def getChoice_result_number(self , key):
+           try:
+               return self.BD_INIT_MODULE[key]["Выбранно"]
+           except KeyError:
+               #print("Не было найдено значений" + str(key))
+               return False
+         def getChoice_result_text(self , key):
+           try:
+               return self.BD_INIT_MODULE[key]["Текст выбора"]
+           except KeyError:
+               #print("Не было найдено значений" + str(key))
+               return False
+        def getChoice_text(self , key):
+           try:
+               return self.BD_INIT_MODULE[key]["Название выбора"]
+           except KeyError:
+               #print("Не было найдено значений" + str(key))
+               return False
+       def getChoice_result_points(self , key):
+           try:
+               return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
+           except KeyError:
+               #print("Не было найдено значений" + str(key))
+               return False
+        def getChoice_result_points(self , key, person):
+           try:
+               return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]
+           except KeyError:
+               #print("Не было найдено значений" + str(key))
+               return False
         def delete(self , key):
            if not key in self.db:
                return False

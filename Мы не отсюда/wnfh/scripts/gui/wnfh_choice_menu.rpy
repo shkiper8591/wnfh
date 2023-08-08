@@ -8,7 +8,7 @@ init 2:
         
         python:
             def add_to_bd(data):
-                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияение на персонажей":data[0][4]})
+                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4],"Цепь выборов":wnfh_Data.get(str(data[1][0]))["Цепь выборов"]})
             wnfh_choice_tint_color = {
                 #timeset    #цветокор кнопок #палка
                 "day":      ["#FFF"         ,"#E2C778"],

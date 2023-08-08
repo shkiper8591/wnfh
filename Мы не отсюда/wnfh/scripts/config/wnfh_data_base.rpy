@@ -16,11 +16,10 @@ init -10 python :
 
         def dumpdb(self):
             try:
-                json.dump(self.BD_INIT_MODULE, open("game/wnfh/scripts/database.json", "w+"),ensure_ascii=False,indent=4)
+                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
                 return True
             except:
-                renpy.quit(relaunch=False, status=0)
-                #return False
+                return False
         def write(self , key , value):
             try:
                 self.BD_INIT_MODULE[str(key)] = value

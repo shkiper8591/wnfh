@@ -3,41 +3,41 @@ label blwnfh_test_ach:
     scene bg ext_square_day with dissolve2
     $ renpy.pause(1.0, hard=True)
     #"..."
-    #$ blwnfh_reset_achievements()
-    #$ blwnfh_get_achievement("payday")
+    #$ wnfh_reset_achievements()
+    #$ wnfh_get_achievement("payday")
     #$ renpy.pause(1.0, hard=True)
     
     
     
-    "вор"
-    $ blwnfh_get_achievement("payday")
+    "spirt"
+    $ wnfh_get_achievement("spirt")
     $ renpy.pause(1.0, hard=True)
     "альфа"
-    $ blwnfh_get_achievement("alpha")
+    $ wnfh_get_achievement("alpha")
     $ renpy.pause(1.0, hard=True)
     
-    jump blwnfh_test_ach_hui
+    jump wnfh_test_ach_hui
     
-label blwnfh_test_ach_hui:
+label wnfh_test_ach_hui:
     "бкрр"
-    $ blwnfh_get_achievement("bkrr")
+    $ wnfh_get_achievement("bkrr")
     $ renpy.pause(1.0, hard=True)
     
     "почта россии"
-    $ blwnfh_get_achievement("post")
+    $ wnfh_get_achievement("post")
     $ renpy.pause(1.0, hard=True)
     "ждун"
-    $ blwnfh_get_achievement("zgdun")
+    $ wnfh_get_achievement("zgdun")
     $ renpy.pause(1.0, hard=True)
     "заебись"
-    $ blwnfh_get_achievement("zaebist")
+    $ wnfh_get_achievement("zaebist")
     $ renpy.pause(1.0, hard=True)
     "рукожоп"
-    $ blwnfh_get_achievement("handass")
+    $ wnfh_get_achievement("handass")
     $ renpy.pause(1.0, hard=True)
     
     "==="
-    $ blwnfh_get_achievement("alarm")
+    $ wnfh_get_achievement("alarm")
     $ renpy.pause(1.0, hard=True)
     "Возвращаемся в меню отладки?"
     
@@ -46,4 +46,4 @@ label blwnfh_test_ach_hui:
     menu: 
     
         "Да":
-            jump blwnfh_test_main_menu
+            jump wnfh_test_main_menu

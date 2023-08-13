@@ -11,6 +11,8 @@ init -10 python :
             else:
                 self.BD_INIT_MODULE = {}
             return True
+        def load_json(self):
+            return json.load(open(self.location,"r"))
         def open_f(self):
             self.BD_INIT_MODULE = json.load(open(self.location,"r"))
 
@@ -34,30 +36,63 @@ init -10 python :
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+        """
+        Описание:
+        wnfh_Data.getChoice_result_number("1d_3")
+        Возвращает номер выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения -2
+        """
         def getChoice_result_number(self , key):
             try:
                 return self.BD_INIT_MODULE[key]["Выбранно"]
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+        """
+        Описание:
+        wnfh_Data.getChoice_result_text("1d_3")
+        Возвращает текст выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения "Сбежать"
+        """
         def getChoice_result_text(self , key):
             try:
                 return self.BD_INIT_MODULE[key]["Текст выбора"]
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+        """
+        Описание:
+        wnfh_Data.getChoice_text("1d_3")
+        Возвращает заголовок выбора в выборе под состемным названием 1d_3 прим. Что же нам делать?
+        """
         def getChoice_text(self , key):
             try:
                 return self.BD_INIT_MODULE[key]["Название выбора"]
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+        """
+        Описание:
+        wnfh_Data.getChoice_result_number("1d_3")
+        Возвращает номер выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения -2
+        """
         def getChoice_result_points(self , key):
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+        """
+        Описание:
+        wnfh_Data.getChoice_result_points():
+        -----------------------------------
+        1) wnfh_Data.getChoice_result_points(("1d_3"))
+        Возвращает лавпойнты характерные выбору прим:
+        {
+        "uv":3
+        "ls":-2
+        }
+        2)wnfh_Data.getChoice_result_points(("1d_3","uv"))
+        возвращает число лавпойнтов персонажа uv характерные выбору прим. 3
+        """
         def getChoice_result_points(self , key, person):
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]

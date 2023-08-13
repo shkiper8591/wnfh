@@ -49,7 +49,7 @@ label blwnfh_continue_2:
         jump blwnfh_conti
     label blwnfh_sl:
         show sl normal pioneer at center with dspr
-        if wnfh_Data.get("Пример названия 2")["номер выбора"] == 1:
+        if getChoice_result_number("d1_choise4") == 1:
             sl  "Первый"
         elif wnfh_Data.get("Пример названия 2")["номер выбора"] == 2:
             sl  "Второй"

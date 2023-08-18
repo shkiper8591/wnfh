@@ -2559,18 +2559,80 @@ label d1_un_sprosil:
     window hide dissolve 
     call screen wnfh_choice(
         ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl", {"un":1}],        
-        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl"{"un":-1}],
+        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl", {"un":-1}],
         ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral1_lbl"],
         ["d1_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 
 label d1_un_yes_1_lbl:
 
-    show un 
+    show un laugh pioneer at center with dspr
+
+    un "Замечательно!"
+
+    show un smile pioneer at center with dspr
+
+    un "А то скучновато всё же одной постоянно гулять по лагерю."
+    me "А как же Мику? Почему её не позовешь гулять? Соседки как-никак."
+
+    show un smile2 pioneer at center with dspr
+
+    un "А ты поди оторви её от музыки, я посмотрю на тебя."
+    me "Понял."
+
+    show un smile3 pioneer at center with dspr
+
+    un "Ну чтож, после обеда встретимся на площади."
+    me "А сейчас ты куда?"
+
+    show un grin pioneer at center with dspr
+
+    un "По делам."
+    me "Понятно, ну в таком случае до встречи."
+
+    show un smile pioneer at center with dspr
+
+    un "Да, пока."
+
+    "Помахав на прощание Лене, я отправился в клубы."
+
+    jump d1_male_clubs
 
 label d1_un_no_1_lbl:
 
+    show un sad pioneer at center with dspr
+
+    un "Оу[wp]"
+    me "Прости, дела просто есть на сегодня."
+
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+        me "Да и в таком йодовом состоянии не очень хочется гулять."
+        un "Да[wp]"
+
+    show un shy pioneer at center with dspr
+
+    un "Ну ладно, тогда я пойду."
+    me "Давай, пока."
+
+    hide un with dissolve2
+
+    "Лена удалилась в сторону домиков."
+    "И немного постояв на месте, я отправился в клубы."
+
+    jump d1_male_clubs
+
 label d1_un_neutral1_lbl:
+
+    show un normal pioneer at center with dspr
+
+    me "До обеда ещё далеко, много чего может случится. {w}Дел там навалить на меня."
+    un "Ладно, тогда после обеда подойду к тебе."
+    me "Хорошо, договорились."
+    un "Угу[wp]"
+
+    "Помахав Лене на прощание, я отправился в клубы."
+
+    jump d1_male_clubs
 
 label d1_un_ne_sprosil:
     
@@ -2596,7 +2658,7 @@ label d1_male_clubs:
     window show dissolve
     ## Семён в клубах
 
-    if d1_un_no1 = False:
+    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1:
         "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
         "Без присутствия вездещуй комсомолки, Шурик и Сергей продолжили работу над своим изделием."
     else:
@@ -2629,7 +2691,7 @@ label d1_male_clubs:
     me "Тю, {w}предложил он, а доставай я."
     sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."
 
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         me "А ты видишь какой я побитый? Мне вообще положен недельный отдых!"
         sh "Раз дышишь, значит ничего тебе не надо."
         sh "Давай, Семён, раз в полгода что-то просим тебя сделать."  
@@ -2943,51 +3005,42 @@ label d1_obed:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Можно.", "Ладно, пусть садятся.", "d1_obed_me_w_un_kat"],
-        ["neutral", "Не можно", "Хочу поесть один", "d1_obed_me_alone"]
+        ["un", "Можно.", "Ладно, пусть садятся.", "d1_obed_me_w_un_kat", {"kat":1, "un":1}],
+        #["neutral", "Не можно", "Хочу поесть один", "d1_obed_me_alone", {"kat":-1, "un":-1}],
+        ["d1_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
         ) with dissolve2
 
-label d1_obed_me_alone:
-
-    window show dissolve
-    $ d1_un_no2 = True
-    $ un_lp -= 1
-    $ kat_lp -= 1
-
-    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
-
-    me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
-
-    if un_lp <=0:
-
-        show un normal pioneer behind chair_r with dspr
-
-        un "Правда?"
-
-        "Она посмотрела в сторону."
-        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
-
-        un "Ну хорошо. {w}Пойдём Кать, тут занято."
-
-        show un normal pioneer behind chair_r, chair_l:
-            ease_quart 4.0 xcenter -0.6
-        show kat normal pioneer behind chair_r, chair_l:
-            ease_quart 5.0 xcenter -0.6
-
-        th "Зараза[wp]"
-
-    if un_lp >=1:
-        pass
-
-
-
+#label d1_obed_me_alone:
+#
+#    window show dissolve
+#
+#    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
+#
+#    me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
+#
+#
+#        show un normal pioneer behind chair_r with dspr
+#
+#        un "Правда?"
+#
+#        "Она посмотрела в сторону."
+#        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
+#
+#        un "Ну хорошо. {w}Пойдём Кать, тут занято."
+#
+#        show un normal pioneer behind chair_r, chair_l:
+#            ease_quart 4.0 xcenter -0.6
+#        show kat normal pioneer behind chair_r, chair_l:
+#            ease_quart 5.0 xcenter -0.6
+#
+#        th "Зараза[wp]"
+#
+#    if un_lp >=1:
 
 label d1_obed_me_w_un_kat:
 
     window show dissolve
-    $ d1_un_no1 = False
-    $ un_lp += 1
-    $ kat_lp += 1
+
     me "Да конечно, садитесь."
     
     show un smile pioneer with dspr
@@ -3047,6 +3100,8 @@ label d1_obed_me_w_un_kat:
     show un grin pioneer with dspr
     show right d4_dinner_half tray foods with dissolve
     
+    # тут бы тоже вставить проверку ЛП
+
     un "Боюсь, {i}Сёмочка{/i}, это не твоё дело."
     th "Сёмочка? {w}Меня так ещё никто не называл тут."
     un "Так, о разных девичьих темах, которые тебе парню, не понять."
@@ -3138,32 +3193,75 @@ label d1_obed_me_w_un_kat:
         ease 2.0 zoom 0.7 alpha 0.0
     
     "Вожатая удалилась обратно в столовую, а я, встав с лавки, медленно поплелся к дому."
-    
-    # переход
+
     window hide
     scene bg ext_lenin_square_day_wnfh with dissolve2
     $ renpy.pause(1.5)
     window show
-    
-    "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
-    
-    show un smile pioneer at center with dissolve
     ## Лена зовёт Семёна погулять когда он идёт домой
-    "Я медленно повернулся и увидел перед собой Лену."
+    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 1:
+
+        "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
+        show un smile pioneer at center with dissolve
+        "Я медленно повернулся и увидел перед собой Лену."
+
+        un "Ну что, готов погулять?"
+
+        "Я тяжело вздохнул, всё же обед был довольно плотненький и я был одной ногой во сне."
+        "Но и откзываться уже было поздно."
+
+        me "Всегда готов."
+
+        show un laugh pioneer at center with dspr
+
+        un "Ура-ура!"
+
+        jump d1_un_progulka
+
+label d1_un_progulka:
+
+    "Лена резко подхватила меня под руку."
+
+    show un smile2 pioneer at center with dspr
+
+    un "И так, куда бы нам пойти~"
+    me "А тут много мест куда можно пойти?"
+
+    show un smile3 pioneer at center with dspr
+
+    "Она засмеялась."
+
+    un "Конечно! Когда один гуляешь, можно много интересных мест найти!"
+    me "Ну, веди тогда."
+
+    "Зашагав, мы отправились в случайное направление."
+
+    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
     
-    th "Ну что опять-то, снова тебе надо что-то перетаскать?"
-    
+        "placeholder"
+
+    else:
+
     me "Да?"
     un "Привет ещё раз."
-    me "Ага, давно не видились[wp] {w}Ты что-то хотела?"
+    me "Ага, давно не видились[wp]"
     
     show un shy with dspr
     
     "После моего вопроса, Лена вся замялась, видимо не решаясь ответить."
     
     un "Д-Да[wp]"
-    un "Сёмочка, ты бы не хотел бы немного прогуляться?"
-    un "А то сегодня такая погода отличная, так и хочется гулять, но вот только не с кем совсем[wp]"
+    un "Сёмочка, так что, ты надумал прогуляться?"
+    un "А то сегодня такая погода отличная[wp]"
+
+    call screen wnfh_choice(
+        ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
+        ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
+        ["d1_choice_n7", "Лена вновь предлагает погулять"]
+        ) with sphere_blure_dissolve2
+
+label d1_un_no_3_lbl:
+    
     me "Ох, Лен, я бы рад[wp]"
     
     show un grin with dspr

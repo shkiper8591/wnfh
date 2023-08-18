@@ -305,15 +305,14 @@ label wnfh_day_1:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["sl", "Пробежаться.", "Спорт это жизнь.", "d1_sl_probejka"],
-        ["sl", "Отказаться.", "Мне сейчас не до бега.", "d1_sl_otkaz"]
-        ) with dissolve2
+        ["sl", "Пробежаться.", "Спорт это жизнь.", "d1_sl_probejka", {"sl":2}],
+        ["sl", "Отказаться.", "Мне сейчас не до бега.", "d1_sl_otkaz", {"sl":-1}],
+        ["d1_choice_n1", "Выбор пробежаться со Славей"]
+        ) with sphere_blure_dissolve2
 
 label d1_sl_probejka:
 
     window show dissolve
-    $ d1_sl_probejka = True
-    $ sl_lp += 1
 
     th "Говорят, по утрам полезно спортом заниматься."
     me "Да, почему бы и нет, пробежусь немного."
@@ -641,8 +640,6 @@ label d1_sl_probejka:
 label d1_sl_otkaz:
     
     window show dissolve
-    $ d1_sl_probejka = False
-    $ sl_lp -= 1
 
     show sl surprise sport close with dspr
 
@@ -1195,7 +1192,7 @@ label d1_zavtrak:
     play ambience ambience_dining_hall_full fadein 2.0
     window show dissolve
     ## Сцена в столовой
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         "Пришел я в столовую немного припозднившись, но всё равно ещё оставалось достаточно мест."
     else:
         "Пришел я в столовую чуть ли не одним из первых."
@@ -1208,18 +1205,19 @@ label d1_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Сесть с Леной.", "Тихо посидеть с тихоней.": d1_un_zavtrak],
-        ["dv", "Сесть с рыжими.", "С ними должно быть весело." d1_dv_usw_zavtrak]
-        ) with dissolve2
+        ["un", "Сесть с Леной.", "Тихо посидеть с тихоней.", "d1_un_zavtrak", {"un":1}],
+        ["dv", "Сесть с рыжими.", "С ними должно быть весело.", "d1_dv_usw_zav", {"dv":1,"usw":1}],
+        ["d1_choice_n2", "С кем сесть в столовой. Завтрак. Д1"]
+        ) with sphere_blure_dissolve2
 
 label d1_un_zavtrak:
     # мне короче лень ставить завтраки, у тебя, Стас, в этом опыта больше, ты и ставь. Got it?
     window show dissolve
-    $ d1_un_zavtrak_s_lenoy = True
-    $ un_lp += 1
     th "Думаю, лучше посидеть с главной скромностью всея лагеря."
     th "А то Алиса с Ульяной страшное комбо, они же достанут меня своими шутками."
-    if d1_sl_probejka:
+
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+
         th "Особенно пока я в таком побитом состоянии и весь обмазан йодом."
     
     show un normal pioneer at center with dissolve
@@ -1237,7 +1235,7 @@ label d1_un_zavtrak:
     th "Видимо, я её немного напугал свои неожиданным вопросом."
 
     me "Спасибки."
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         me "Доброе утро кстати."
         
         show un smile pioneer with dspr
@@ -1353,7 +1351,7 @@ label d1_un_zavtrak:
 
     "Говорила она слегка запыхавшись."
 
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         show mt surprise pioneer behind chair_r
 
         mt "Ох, мне конечно Славя говорила, что ты упал, но чтобы всё настолько серьёзно[w]"
@@ -1400,14 +1398,13 @@ label d1_un_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d1_un_no_2_lbl"],
-        ["un", "Да, давай.", "В компании будет проще.", "d1_un_yes_2_lbl"]
-        ) with dissolve2
+        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d1_un_no_2_lbl", {"un":-1}],
+        ["un", "Да, давай.", "В компании будет проще.", "d1_un_yes_2_lbl", {"un":1}],
+        ["d1_choice_n3", "Пойти встречать с Леной"]
+        ) with sphere_blure_dissolve2
 
 label d1_un_no_2_lbl:
     window show dissolve
-    $ un_lp -= 1
-    $ d1_un_no1 = True
 
     me "Думаю я сам уж справлюсь, а тебя напрягать особо не хочется."
 
@@ -1427,8 +1424,6 @@ label d1_un_no_2_lbl:
 
 label d1_un_yes_2_lbl:
     window show dissolve
-    $ un_lp += 1
-    $ d1_un_no1 = False
 
     me "Думаю, вместе будет веселее."
     un "Я вот тоже так считаю."
@@ -1458,7 +1453,7 @@ label d1_un_yes_2_lbl:
 
 label d1_dv_usw_zavtrak:
     window show dissolve
-    $ d1_un_zavtrak_s_lenoy = False
+
     th "Конечно, сидеть с ними было сомнительным удовольствием, ибо они те ещё любители колких шуток."
     th "Но куда уж деваться, Алиса единственная здесь человек которым есть о чём поговорить и, которую я могу назвать другом."
     ## Стас, поправь Ульяну. Если ты это не сделаешь, то я сожру тебя с говном. 
@@ -1495,7 +1490,7 @@ label d1_dv_usw_zavtrak:
     
     "Грустно угукнув и закончив анализ пищи, я принялся с большой скоростью уплетать свой завтрак."
 
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         usw "Семён, а ты в чём весь?"
         me "В йоде."
         show usw surp2 pioneer at wnfh_sit_left behind table with dspr
@@ -1555,7 +1550,7 @@ label d1_dv_usw_zavtrak:
 
     "Говорила она малость запыхавшись."
 
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
         show mt surprise pioneer behind chair_r
 
         mt "Ох, мне конечно Славя говорила, что ты упал, но чтобы всё настолько серьёзно[w]"
@@ -1766,7 +1761,9 @@ label d1_me_meet_kat_w_un:
 
     kat "Поняла[wp]"
 
-    if d1_sl_probejka:
+    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+
+        "Новенькая бегло посмотрела на мои ранения."
 
         kat "Что с тобой случилось?"
         me "Несчастный случай."
@@ -1967,7 +1964,7 @@ label d1_me_meet_kat_alone:
     th "Стоп[wp] {w}Пополнение[wp] {w}Но она не сказала сколько именно людей!"
     th "А если там огромная группа пионеров?!"
     th "Блин, вообще об этом не подумал, когда соглашался! {w}Я же с ними вообще никак не управлюсь."
-    if d1_un_no1:
+    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1: 
         th "Сейчас бы помощь Лены не помешала бы, вдвоём же куда проще управится."
     th "Чёрт побери, думай, Семён, думай, что же тебе делать."
     
@@ -1978,7 +1975,7 @@ label d1_me_meet_kat_alone:
     th "Да и опять же это я смогу нарваться на серьёзный разбор полётов от Ольги."
     th "Может тогда просто сказать куда идти? Лагерь же небольшой и планировка простая, заблудится очень сложно."
     th "Хотя, я тут однажды умудрился заплутать[wp]"
-    if d1_un_no1:
+    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1:
         th "Ну и возвращаться к Лене тоже не вариант, больше времени потеряю."
     th "Ладно, похоже, придется мне импровизировать по ходу дела."
     
@@ -2360,7 +2357,7 @@ label d1_me_meet_kat_alone:
     
 label d1_me_kat_sdacha_kati:
 
-    if d1_un_no1 = False:
+    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 2:
         window hide dissolve
         scene bg ext_house_of_mt_day
         show mt dc_reading dc background
@@ -2540,7 +2537,8 @@ label d1_me_kat_sdacha_kati:
         call screen wnfh_choice(
             ["un", "Спросить", "Может узнаю что она хочет?", "d1_un_sprosil"]
             ["un", "Неважно", "Наверное это действительно неважно", "d1_un_ne_sprosil"]
-            ) with dissolve2
+            ["d1_choice_n4", "Переспросить Лену"]
+            ) with sphere_blure_dissolve2
 
 label d1_un_sprosil:
     
@@ -2560,31 +2558,23 @@ label d1_un_sprosil:
 
     window hide dissolve 
     call screen wnfh_choice(
-        ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl"],        
-        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl"],
-        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral1"]
+        ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl", {"un":1}],        
+        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl"{"un":-1}],
+        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral1_lbl"],
+        ["d1_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 
 label d1_un_yes_1_lbl:
-
-    $ un_lp += 1
-    $ d1_un_yes1 = True
 
     show un 
 
 label d1_un_no_1_lbl:
 
-    $ un_lp -= 1
-    $ d1_un_yes1 = False
-
 label d1_un_neutral1_lbl:
-
-    $ d1_un_yes1 = False
 
 label d1_un_ne_sprosil:
     
     window show dissolve
-    $ d1_un_sprosil = False
     
     th "Впрочем, потом может узнаю, а пока меня ждут дела."
 

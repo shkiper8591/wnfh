@@ -99,6 +99,17 @@ init -10 python :
             except KeyError:
                 #print("Не было найдено значений" + str(key))
                 return False
+
+        def getChoice_points_sum(self, person):
+            try:
+                sum=0
+                for index,data in enumerate(list(wnfh_Data.load_json())):
+                    sum+=self.BD_INIT_MODULE[data]["Влияние на персонажей"][person]
+                return sum
+            except KeyError:
+                #print("Не было найдено значений" + str(key))
+                return False
+        
         def delete(self , key):
             if not key in self.db:
                 return False

@@ -1,6 +1,6 @@
 init -265 python:
     # Нормальные троеточия
-    wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+    wp = "{w=-.25}.{w=-.25}.{w=-.25}." 
 
 init -3 python:
     wnfh_characters = {

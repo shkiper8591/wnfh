@@ -4,7 +4,6 @@ label blwnfh_test_choice:
     
     $ wnfh_set_time("sunset")
     
-    
     call screen wnfh_choice(
         ["dv", "Пробежаться","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
         ["mi", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
@@ -14,7 +13,7 @@ label blwnfh_test_choice:
     
     label blwnfh_dv:
         show dv normal pioneer at center with dspr
-        dv "Го бухать"     
+        dv "го бухать"  
         hide dv with dspr
         jump blwnfh_continue_2
         
@@ -49,7 +48,7 @@ label blwnfh_continue_2:
         jump blwnfh_conti
     label blwnfh_sl:
         show sl normal pioneer at center with dspr
-        if getChoice_result_number("d1_choise4") == 1:
+        if wnfh_Data.getChoice_result_number("d1_choise4") == 1:
             sl  "Первый"
         elif wnfh_Data.get("Пример названия 2")["номер выбора"] == 2:
             sl  "Второй"

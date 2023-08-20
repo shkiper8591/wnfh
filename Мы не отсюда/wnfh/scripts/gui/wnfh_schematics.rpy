@@ -22,16 +22,26 @@ init 2:
             area(0.0, 0.0, 1.0, 1.0)
             #at wnfh_bg_spawn_atl
             for index,data in enumerate(list(wnfh_Data.load_json())):
+                if str(data).find("key") >0:
             #   while(true):
             #       for key_map in wnfh_Data.get(data)["Цепь выборов"]
             #for index, data in enumerate(len(wnfh_Data.load_json()),start=1)
-                frame:
-                    background "#AAA"
-                    area(310*index+1,400 , 300,150 )
-                    grid 1 3:
-                        text str(data)
-                        text wnfh_Data.getChoice_text(data)
-                        text wnfh_Data.getChoice_result_text(data)                   
+                    frame:
+                        background "#AAA"
+                        area(310*index+1,400 , 300,150 )
+                        grid 1 1:
+                            text str(wnfh_Data.get(data))
+                else:
+                    frame:
+                        background "#AAA"
+                        area(310*index+1,400 , 300,150 )
+                        grid 1 4:
+                            text str(data)
+                            text str(wnfh_Data.getChoice_points_sum('dv'))
+                            text str(wnfh_Data.getChoice_text(data))
+                            text str(wnfh_Data.getChoice_result_text(data))
+
+
             frame: # ======================================================= # Выход
                 background background_color
                 area(0.0, 0.0, 200, 100)

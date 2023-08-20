@@ -3235,12 +3235,14 @@ label d1_un_progulka:
     me "Ну, веди тогда."
 
     "Зашагав, мы отправились в случайное направление."
-
+    if True:
+        pass
     elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
     
         "placeholder"
 
     else:
+        pass
 
     me "Да?"
     un "Привет ещё раз."

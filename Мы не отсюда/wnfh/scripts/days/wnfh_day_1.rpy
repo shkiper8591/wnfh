@@ -3295,7 +3295,7 @@ label d1_un_progulka:
 
     "Зашагав, мы отправились в случайное направление."
 
-    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
+    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
     
         "И медленно ковыляя, я вышел на площадь."
         
@@ -3327,7 +3327,7 @@ label d1_un_progulka:
 
         "После этого замечания, я опустил руки на землю."
 
-        show un shy pioneer at center close with dissolve
+        show un shy pioneer close at center with dissolve
 
         "Она подошла ко мне ближе и я поднял взгляд на неё."
 
@@ -3336,7 +3336,7 @@ label d1_un_progulka:
         un "Тогда может к медсестре сходишь?"
         me "Ага, были бы ещё силы подняться."
 
-        show un sad pioneer at center close with dspr
+        show un sad pioneer close at center with dspr
 
         un "Ох, бедный[wp]"
 
@@ -3344,7 +3344,7 @@ label d1_un_progulka:
 
         me "Думаешь тебе хватит сил меня поднять на ноги?"
 
-        show un smile pioneer at center close with dspr
+        show un smile pioneer close at center with dspr
 
         un "А ты проверь."
         me "На ладно."
@@ -3353,22 +3353,22 @@ label d1_un_progulka:
 
         me "Так ты сильная! Зачем я вчера тяжести твои таскал?"
 
-        show un laugh pioneer at center close with dspr
+        show un laugh pioneer close at center with dspr
 
         un "Я может и сильная, но ни капли не выносливая."
 
-        show un smile3 pioneer at center close with dspr
+        show un smile3 pioneer close at center with dspr
 
         un "А ещё каждый себя уважающий мужчина должен помогать даме."
         me "Эво как. Ну хорошо, запомню."
         me "Спасибо кстати, дальше я уж сам дойду."
 
-        show un serious pioneer at center close with dspr
+        show un serious pioneer close at center with dspr
 
         un "Нет уж, свалишься где-нибудь по пути и всё."
         un "А сегодня солнце жарит сильно. Останешься на свету и всё, помрёшь."
 
-        show un grin pioneer at center close with dspr
+        show un grin pioneer close at center with dspr
 
         "Лена резко подхватила меня за руку."
 
@@ -3383,31 +3383,31 @@ label d1_un_progulka:
         ["d1_choice_n7", "Лена хочет помочь Семёну дойти до медпункта"]
         ) with sphere_blure_dissolve2
 
-    else:
+    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 3:
 
-    "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
-
-    show un smile pioneer at center with dissolve
-
-    "Я медленно повернулся и увидел перед собой Лену."
-
-    me "Да?"
-    un "Привет ещё раз."
-    me "Ага, давно не видились[wp]"
+        "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     
-    show un shy with dspr
+        show un smile pioneer at center with dissolve
     
-    "После моего вопроса, Лена вся замялась, видимо не решаясь ответить."
+        "Я медленно повернулся и увидел перед собой Лену."
     
-    un "Д-Да[wp]"
-    un "Сёмочка, так что, ты надумал прогуляться?"
-    un "А то сегодня такая погода отличная[wp]"
-
-    call screen wnfh_choice(
-        ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
-        ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
-        ["d1_choice_optional_1", "Лена вновь предлагает погулять. Только в случае отказа в первом предложении погулять."]
-        ) with sphere_blure_dissolve2
+        me "Да?"
+        un "Привет ещё раз."
+        me "Ага, давно не видились[wp]"
+        
+        show un shy with dspr
+        
+        "После моего вопроса, Лена вся замялась, видимо не решаясь ответить."
+        
+        un "Д-Да[wp]"
+        un "Сёмочка, так что, ты надумал прогуляться?"
+        un "А то сегодня такая погода отличная[wp]"
+    
+        call screen wnfh_choice(
+            ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
+            ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
+            ["d1_choice_optional_1", "Лена вновь предлагает погулять. Только в случае отказа в первом предложении погулять."]
+            ) with sphere_blure_dissolve2
 
 label d1_un_no_3_lbl:
     
@@ -3447,7 +3447,7 @@ label d1_un_no_3_lbl:
 
 label d1_un_no_4_lbl:
 
-    show un shy pioneer at center close with dspr
+    show un shy pioneer close at center with dspr
 
     "Я мягко и аккуратно вытащил свою руку из захвата."
 
@@ -3457,7 +3457,7 @@ label d1_un_no_4_lbl:
 
     me "Так что, со мной ничего плохого не случится и отводить меня, как маленького, не нужно."
 
-    show un normal pioneer at center close with dspr
+    show un normal pioneer close at center with dspr
 
     "Она сделала глубокий вдох."
 
@@ -3476,7 +3476,7 @@ label d1_un_yes_3_lbl:
 
     me "Ну ладно, веди вперёд."
 
-    show un smile2 pioneer at center close with dspr
+    show un smile2 pioneer close at center with dspr
 
     "Лена сделала шаг и[wp] {w}Повела меня в другую сторону от медпункта."
 
@@ -3489,24 +3489,24 @@ label d1_un_yes_3_lbl:
 
     me "А нельзя было сразу сказать?"
 
-    show un smile3 pioneer at center close with dspr
+    show un smile3 pioneer close at center with dspr
 
     un "Нет, иначе это не было бы так интересно."
     me "Шутница, блин."
 
-    show un grin pioneer at center close with dspr
+    show un grin pioneer close at center with dspr
 
     un "А ты как думал? Я такая вот."
 
     show bg ext_houses_day 
-    show un smile pioneer at center close with dspr
+    show un smile pioneer close at center with dspr
     with dissolve2
 
     "Неспеша мы вышли к домикам."
 
     me "Я так понимаю, тебя часто беспокоят головные боли, раз таблетки с собой привезла."
 
-    show un shy pioneer at center close with dspr
+    show un shy pioneer close at center with dspr
 
     un "Да, в последнее время напала прям."
     un "Хотя казалось бы, в пионерлагере-то уж чего голове болеть." 

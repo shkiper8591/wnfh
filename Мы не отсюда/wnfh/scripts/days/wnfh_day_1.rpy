@@ -1312,7 +1312,7 @@ label d1_un_zavtrak:
 
         show un sad pioneer with dspr
 
-        un "Я-Я[w] Н-Не хочу говорить об этом[wp] По крайней мере не сейчас"
+        un "Я-Я{w} Н-Не хочу говорить об этом[wp] По крайней мере не сейчас"
         
         show un smile pioneer with dspr
 
@@ -1797,7 +1797,7 @@ label d1_me_meet_kat_w_un:
     window hide
     stop ambience fadeout 2.0
     scene bg int_clubs_male_day
-    show sh normal pioneer cright
+    show sh normal pioneer at cright
     show el sad pioneer at fright
     show sv angry pioneer glasses tablet at left
     with door_blure_dissolve2
@@ -1883,7 +1883,7 @@ label d1_me_meet_kat_w_un:
 
     scene bg ext_lenin_square_day_wnfh
     show un shy pioneer at right
-    show kat normal at left
+    show kat normal casual shirt at left
     with dissolve2
 
     "Выйдя на площадь я отпустил Лену."
@@ -2559,8 +2559,8 @@ label d1_un_sprosil:
     window hide dissolve 
     call screen wnfh_choice(
         ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl", {"un":1}],        
-        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_2_lbl", {"un":-1}],
-        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral1_lbl"],
+        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_1_lbl", {"un":-1}],
+        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral_1_lbl"],
         ["d1_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 
@@ -3006,36 +3006,88 @@ label d1_obed:
     window hide dissolve
     call screen wnfh_choice(
         ["un", "Можно.", "Ладно, пусть садятся.", "d1_obed_me_w_un_kat", {"kat":1, "un":1}],
-        #["neutral", "Не можно", "Хочу поесть один", "d1_obed_me_alone", {"kat":-1, "un":-1}],
+        ["neutral", "Не можно", "Хочется поесть одному", "d1_obed_me_alone", {"kat":-1, "un":-1}],
         ["d1_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
         ) with dissolve2
 
-#label d1_obed_me_alone:
-#
-#    window show dissolve
-#
-#    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
-#
-#    me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
-#
-#
-#        show un normal pioneer behind chair_r with dspr
-#
-#        un "Правда?"
-#
-#        "Она посмотрела в сторону."
-#        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
-#
-#        un "Ну хорошо. {w}Пойдём Кать, тут занято."
-#
-#        show un normal pioneer behind chair_r, chair_l:
-#            ease_quart 4.0 xcenter -0.6
-#        show kat normal pioneer behind chair_r, chair_l:
-#            ease_quart 5.0 xcenter -0.6
-#
-#        th "Зараза[wp]"
-#
-#    if un_lp >=1:
+label d1_obed_me_alone:
+
+    window show dissolve
+
+    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
+
+    if wnfh_Data.getChoice_points_sum("un") <= 0: 
+
+        me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
+
+        show un normal pioneer behind chair_r with dspr
+
+        un "Правда?"
+
+        "Она посмотрела в сторону."
+        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
+
+        un "Ну хорошо. {w}Пойдём Кать, тут [b]занято[/b]."
+
+        show un normal pioneer behind chair_r, chair_l:
+            ease_quart 4.0 xcenter -0.6
+        show kat normal pioneer behind chair_r, chair_l:
+            ease_quart 5.0 xcenter -0.6
+
+        "Лена напоследок бросила на меня недовольный взгляд и девушки ушли."
+
+        th "Зараза[wp]"
+        hide un
+        hide kat
+        "С малость подпорченным настроением, я принялся уплетать обед."
+        "И быстро расправившись с ним, я незамедлительно покинул пределы столовой."
+
+        jump d1_posle_obeda
+
+    elif wnfh_Data.getChoice_points_sum("un") == 1:
+
+        me "Простите, тут сейчас занято[wp] Да[wp]"
+
+        show un normal pioneer behind chair_r with dspr
+
+        "Лена посмотрела на меня, потом на Катю, после чего пожала плечами."
+
+        un "Что ж, ну ладно. {w}Пойдём Кать, здесь занято."
+
+        hide un
+        hide kat
+        with dissolve
+
+        "Катя грустно угукнула и девушки удалились вглубь столовой."
+        "Когда они ушли, я принялся уплетать свой обед."
+        "И закончив с ним, я быстренько отправился на выход из столовой."
+
+        jump d1_posle_obeda
+
+    else:
+
+        me "Извините дамы, но тут занято моими товарищами."
+        me "Просто они пока отлучились по делам."
+
+        show un smile pioneer behind chair_r with dspr
+
+        "Лена слегка улыбнулась."
+
+        un "Ой, это ты нас извини."
+
+        show un grin pioneer behind chair_r with dspr
+
+        un "Ну-с, ладно тогда, не будем мешать. {w}Приятного аппетита!"
+        me "Спасибо большое."
+
+        hide un
+        hide kat
+        with dissolve
+
+        "Девушки удалились куда-то вглубь столовой, а я принялся за свой обед."
+        "С которым довольно быстро расправился, после чего направился на выход из столовой."
+
+        jump d1_posle_obeda
 
 label d1_obed_me_w_un_kat:
 
@@ -3147,6 +3199,8 @@ label d1_obed_me_w_un_kat:
     scene bg int_dining_hall_people_day with dissolve
     
     "Встав из-за стола, я быстренько отнёс поднос и покинул пределы столовой."
+
+label d1_posle_obeda:
     
     window hide
     stop ambience fadeout 0.5
@@ -3172,7 +3226,7 @@ label d1_obed_me_w_un_kat:
     $ renpy.pause(1.0)
     window show
     
-    "Но, поспал я максимум минут десять, как меня стали трясти за плечо."
+    "Но, поспал я максимум пару минут, как меня стали трясти за плечо."
     
     scene bg ext_dining_hall_near_day
     show mt normal pioneer panama
@@ -3196,10 +3250,15 @@ label d1_obed_me_w_un_kat:
 
     window hide
     scene bg ext_lenin_square_day_wnfh with dissolve2
-    $ renpy.pause(1.5)
-    window show
     ## Лена зовёт Семёна погулять когда он идёт домой
+    if wnfh_Data.getChoice_result_number("d1_choice_n6") == 2:
+
+        $ renpy.pause(1.5, hard=True)
+        jump d1_me_doma
+
     if wnfh_Data.getChoice_result_number("d1_choice_n5") == 1:
+
+        window show
 
         "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
         show un smile pioneer at center with dissolve
@@ -3231,18 +3290,106 @@ label d1_un_progulka:
 
     "Она засмеялась."
 
-    un "Конечно! Когда один гуляешь, можно много интересных мест найти!"
-    me "Ну, веди тогда."
+    un "Конечно! Я вот когда одна гуляла, много интересных мест видела!"
+    me "Хех, ну, веди тогда."
 
     "Зашагав, мы отправились в случайное направление."
-    if True:
-        pass
+
     elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
     
-        "placeholder"
+        "И медленно ковыляя, я вышел на площадь."
+        
+        th "Ох, давненько я так не наедался, чтобы чуть ли не на ходу засыпать."
+        th "А мне ещё идти и идти[wp] {w}Зараза[wp]"
+        th "Нельзя было придумать электросамокаты ещё в восьмидесятых?"
+
+        "И тут же мои размышления прервала головная боль."
+        "Схватившись за голову, я опёрся спиной на Ленина."
+
+        th "Холера блин, достала эта постоянная головная боль."
+        th "Наверное стоит дойти до медпункта[wp]"
+
+        "Я попытался оторваться от памятника. Но усталость с сильной болью напрочь лишили меня сил, и я стал просто сползать вниз, пока не плюхнулся на землю."
+
+        th "Это место точно пытается меня убить и довольно жестоким образом."
+        th "А поэтому нужно вставать! {w}Но боже, как же мне хреново[wp]"
+
+        "Я постарался подняться на ноги, но сил совсем не было."
+
+        me "Сука[wp]"
+
+        "Тихо пробуднил я себе под нос, опустив голову вниз."
+        "В это время по площади кто-то шёл, и остановился прямо напротив меня."
+
+        un "Семён? Ты чего тут валяешься?"
+        me "Отдыхаю[wp]"
+        un "Держась руками за голову?"
+
+        "После этого замечания, я опустил руки на землю."
+
+        show un shy pioneer at center close with dissolve
+
+        "Она подошла ко мне ближе и я поднял взгляд на неё."
+
+        un "У тебя болезненный вид. Что случилось?"
+        me "Голова ужасно сильно разболелась."
+        un "Тогда может к медсестре сходишь?"
+        me "Ага, были бы ещё силы подняться."
+
+        show un sad pioneer at center close with dspr
+
+        un "Ох, бедный[wp]"
+
+        "Лена протянула мне руку на которую, я посмотрел с некоторым недоверием."
+
+        me "Думаешь тебе хватит сил меня поднять на ноги?"
+
+        show un smile pioneer at center close with dspr
+
+        un "А ты проверь."
+        me "На ладно."
+
+        "Как только я взял Лену за руку, так та меня за секунду подняла, чему я был крайне удивлён."
+
+        me "Так ты сильная! Зачем я вчера тяжести твои таскал?"
+
+        show un laugh pioneer at center close with dspr
+
+        un "Я может и сильная, но ни капли не выносливая."
+
+        show un smile3 pioneer at center close with dspr
+
+        un "А ещё каждый себя уважающий мужчина должен помогать даме."
+        me "Эво как. Ну хорошо, запомню."
+        me "Спасибо кстати, дальше я уж сам дойду."
+
+        show un serious pioneer at center close with dspr
+
+        un "Нет уж, свалишься где-нибудь по пути и всё."
+        un "А сегодня солнце жарит сильно. Останешься на свету и всё, помрёшь."
+
+        show un grin pioneer at center close with dspr
+
+        "Лена резко подхватила меня за руку."
+
+        un "Поэтому я тебя отведу."
+
+        "Я посмотрел на Лену, а потом посмотрел на медпункт, который был в десяти метрах."
+        "Затем снова посмотрел на её довольное лицо."
+
+        call screen wnfh_choice(
+        ["un", "Ну ладно", "Пусть отведёт меня, если так хочет", "d1_un_yes_3_lbl", {"un":1}],
+        ["neutral", "Сам дойду", "Уж с этим я как-то сам справлюсь.", "d1_un_no_4_lbl", {"un":-1}],
+        ["d1_choice_n7", "Лена хочет помочь Семёну дойти до медпункта"]
+        ) with sphere_blure_dissolve2
 
     else:
-        pass
+
+    "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
+
+    show un smile pioneer at center with dissolve
+
+    "Я медленно повернулся и увидел перед собой Лену."
 
     me "Да?"
     un "Привет ещё раз."
@@ -3259,7 +3406,7 @@ label d1_un_progulka:
     call screen wnfh_choice(
         ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
         ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
-        ["d1_choice_n7", "Лена вновь предлагает погулять"]
+        ["d1_choice_optional_1", "Лена вновь предлагает погулять. Только в случае отказа в первом предложении погулять."]
         ) with sphere_blure_dissolve2
 
 label d1_un_no_3_lbl:
@@ -3295,7 +3442,82 @@ label d1_un_no_3_lbl:
     
     "Она, обогнав меня, грустно ушла вперед к домикам."
     "Я же вздохнув ещё раз, продолжил свой путь к мягкой постели."
+
+    jump d1_me_doma
+
+label d1_un_no_4_lbl:
+
+    show un shy pioneer at center close with dspr
+
+    "Я мягко и аккуратно вытащил свою руку из захвата."
+
+    me "Лен, тут пройти вот, десять или пятнадцать метров."
+
+    "Сказал я и указал на здание медпункта перед нами."
+
+    me "Так что, со мной ничего плохого не случится и отводить меня, как маленького, не нужно."
+
+    show un normal pioneer at center close with dspr
+
+    "Она сделала глубокий вдох."
+
+    un "Хорошо."
+
+    hide un with dissolve
+
+    "Коротко сказала она и ушла в сторону домиков."
+    "А я пошел в медпункт, всё же головная боль никуда не делась."
+
+    jump d1_me_v_medpunkte
+
+label d1_un_yes_3_lbl:
+
+    "Я глубоко вздохнул."
+
+    me "Ну ладно, веди вперёд."
+
+    show un smile2 pioneer at center close with dspr
+
+    "Лена сделала шаг и[wp] {w}Повела меня в другую сторону от медпункта."
+
+    me "Аэ[wp] Лен, медпункт как бы[wp]"
+    un "Я знаю где он находится."
+    un "А ещё я знаю, что у Виолы нет средств от головной боли."
+    un "Зато их есть у меня."
+
+    "Задорным голосом разговаривала Лена."
+
+    me "А нельзя было сразу сказать?"
+
+    show un smile3 pioneer at center close with dspr
+
+    un "Нет, иначе это не было бы так интересно."
+    me "Шутница, блин."
+
+    show un grin pioneer at center close with dspr
+
+    un "А ты как думал? Я такая вот."
+
+    show bg ext_houses_day 
+    show un smile pioneer at center close with dspr
+    with dissolve2
+
+    "Неспеша мы вышли к домикам."
+
+    me "Я так понимаю, тебя часто беспокоят головные боли, раз таблетки с собой привезла."
+
+    show un shy pioneer at center close with dspr
+
+    un "Да, в последнее время напала прям."
+    un "Хотя казалось бы, в пионерлагере-то уж чего голове болеть." 
+    un "Свежий волжский воздух, много солнца, занятие спортом[wp]"
+
+label d1_me_v_medpunkte:
+
+    "placeholder"
     
+label d1_me_doma:
+
     window hide
     scene bg ext_houses_day with slide_down_blure_dissolve2
     $ renpy.pause(2.0)
@@ -3309,7 +3531,13 @@ label d1_un_no_3_lbl:
     th "Подниматься по ступенькам, потом ещё дверь открывать[wp]"
     
     "Лень и сонливость оказались сильнее, так что я решил лечь на шезлонге."
-    "Расположившись на котором по удобнее, тут же уснул."
+
+    if wnfh_Data.getChoice_result_number("d1_choice_n6") == 2:
+
+        th "Кажется, я о чём-то забыл[wp] Но вот хоть убейте не помню[wp]"
+        th "Ну ладно, значит не так это и было важно, верно?"
+
+    "Расположившись на месте поудобнее, я тут же уснул."
     
     window hide
     

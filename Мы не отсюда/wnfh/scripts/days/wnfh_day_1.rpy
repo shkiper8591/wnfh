@@ -362,7 +362,8 @@ label d1_sl_probejka:
     
     # Бежит #
     
-    scene bg ext_path_sunset at running
+    scene bg ext_path_sunset
+    # тут надо прикол, типа семён бежит. Но он сломан, а главные кодовый чинила ты Стас.
     # может тут надо цг? 
     "Мы выбежали на небольшой пролесок."
     "И мне бежать по пересеченной местности, было не очень просто. Тем более, в обычной пионерской форме."
@@ -3434,9 +3435,16 @@ label d1_un_progulka:
     un "Конечно! Я вот когда одна гуляла, много интересных мест видела!"
     me "Хех, ну, веди тогда."
 
-    "Зашагав, мы отправились в случайное направление."
+    "Зашагав, Лена повела нас куда-то в неизвестное мне направление."
 
-    
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg ext_path3_day_wnfh
+    show un smile pioneer at right
+    with sphere_blure_dissolve2
+    play ambience ambience_forest_day fadein 2.0
+    $ renpy.pause(0.5)
+    window show dissolve
 
 label d1_un_no_3_lbl:
     
@@ -3695,7 +3703,7 @@ label d1_un_yes_3_lbl:
     $ renpy.pause(2.0)
     $ wnfh_set_time("sunset")
     play ambience ambience_medstation_inside_night fadein 2.0
-    play sound sfx_medpunkt_door_open
+    play sound sfx_close_door_1
     scene bg int_aidpost_sunset_wnfh
     show cs smile far at center
     show unblink
@@ -3711,7 +3719,57 @@ label d1_un_yes_3_lbl:
 
     "Подойдя к своему рабочему месту, она посмотрела на меня."
 
-    cs "О, ты проснулся."
+    cs "О, ты наконец проснулся."
+    me "Да[wp]"
+
+    "Виола положила пакет на край стола ближе ко мне, и села рядом."
+
+    cs "Ну как ты, лучше себя чувствуешь?"
+    me "Определённо[wp]"
+    me "Кстати, сколько времени?"
+    cs "Только начался седьмой час."
+    me "Седьмой?! Это же получается я проспал поесть!"
+
+    "Медсестра звонко рассмеялась на всё помещение."
+
+    cs "Я гляжу тебя только это и волнует."
+    me "Ну знаете ли! Остаток дня голодным ходить не очень весело."
+
+    show cs normal at center with dspr
+
+    cs "Не беспокойся по этому поводу."
+    me "Почему это?"
+
+    "Виола взяла пакет со стола и протянула его мне."
+    "Я приподнялся и взял его в руки." 
+
+    cs "Одна неравнодушная девушка передала тебе немного еды."
+    me "Лена чтоле?"
+
+    show cs smile at center with dspr
+
+    cs "Отлично, солнце не расплавило тебе мозги, значит жить будешь."
+
+    "Она немного усмехнулась с собственной шутки."
+
+    me "Очень смешно."
+    cs "Что ж, ладно, давай шустренько поужинал и освобождай помещение."
+
+    "To be continued"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 label d1_me_v_medpunkte:
 

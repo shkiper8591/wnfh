@@ -359,6 +359,11 @@ init 2:
     $ wnfh_music_list["hide_and_seek"] = wnfh_MUSIC + "Sergey Eybog - Hide and Seek.mp3"
     $ wnfh_music_list["warm_evening"] = wnfh_MUSIC + "Sergey Eybog - Warm Evening.mp3"
     $ wnfh_music_list["paranoid"] = wnfh_MUSIC + "Black Sabbath - Paranoid.mp3"
+    $ wnfh_music_list["rainy_day"] = wnfh_MUSIC + "Alec Holowka - Rainy Day.mp3"
+    $ wnfh_music_list["god"] = wnfh_MUSIC + "Alec Holowka - God.mp3"
+    $ wnfh_music_list["lost_man"] = wnfh_MUSIC + "_Blacksmith_ - The Lost Man.mp3"
+    $ wnfh_music_list["old_manor"] = wnfh_MUSIC + "_Blacksmith_ - The Old Manor.mp3"
+    $ wnfh_music_list["hill_camp"] = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

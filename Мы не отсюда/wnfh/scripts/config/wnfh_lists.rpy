@@ -364,6 +364,7 @@ init 2:
     $ wnfh_music_list["lost_man"] = wnfh_MUSIC + "_Blacksmith_ - The Lost Man.mp3"
     $ wnfh_music_list["old_manor"] = wnfh_MUSIC + "_Blacksmith_ - The Old Manor.mp3"
     $ wnfh_music_list["hill_camp"] = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp.mp3"
+    $ wnfh_music_list["friends_of_the_deceased_moon"] = wnfh_MUSIC + "_Blacksmith_ - Friends of the Deceased Moon.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

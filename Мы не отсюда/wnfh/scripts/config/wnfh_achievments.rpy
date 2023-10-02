@@ -10,13 +10,13 @@ init -1 python:
         #Тэг ачивки   Иконка            Заголовк             Подпись                             Листок         Трофей             Персонаж
         ["payday"    ,"icon_payday"    ,"Конфетный вор"         ,"Было весело"                       ,"leaf_day"    ,"trophy_silver"   ,"usw"],
         ["spirt"     ,"icon_spirt"     ,"Где мне найти спирт?"  ,"Живая вода" ,"leaf_day"    ,"trophy_silver"   ,"usw"],   
-        #["bkrr"      ,"icon_bkrr"      ,"Да, именно"           ,"Это отсылка на БКРР"              ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
-        #["alpha"     ,"icon_alpha-0.1" ,"Первопроходец"        ,"Version alpha-0.1"                ,"leaf_day"    ,"trophy_gold"     ,"kat"],
+        ["bkrr"      ,"icon_bkrr"      ,"Да, именно"           ,"Это отсылка на БКРР"              ,"leaf_sunset" ,"trophy_bronz"    ,"kat"],     
+        ["alpha"     ,"icon_alpha-0.1" ,"Первопроходец"        ,"Version alpha-0.1"                ,"leaf_day"    ,"trophy_gold"     ,"kat"],
         ["post"      ,"icon_post"      ,"Груз доставлен"        ,"Почти без повреждений"             ,"leaf_day"    ,"trophy_bronz"    ,"kat"],     
-        #["zgdun"     ,"icon_zgdun"     ,"Великий ждун"         ,"Дети уже школу закончили?"        ,"leaf_day"    ,"trophy_gold"     ,"kat"],    
+        ["zgdun"     ,"icon_zgdun"     ,"Великий ждун"         ,"Дети уже школу закончили?"        ,"leaf_day"    ,"trophy_gold"     ,"kat"],    
         ["alarm"     ,"icon_alarm"     ,"Das Boot"              ,"Доплавался, блин"                  ,"leaf_day"    ,"trophy_silver"   ,"kat"],
-        #["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану"    ,"При коммунизме всё будет заебись" ,"leaf_day"    ,"trophy_silver"   ,"kat"],
-        #["handass"   ,"icon_handass"   ,"Рукожоп"              ,"Ну как так-то?"                   ,"leaf_day"    ,"trophy_bronz"    ,"kat"],
+        ["zaebist"   ,"icon_zaebist"   ,"Всё идёт по плану"    ,"При коммунизме всё будет заебись" ,"leaf_day"    ,"trophy_silver"   ,"kat"],
+        ["handass"   ,"icon_handass"   ,"Рукожоп"              ,"Ну как так-то?"                   ,"leaf_night"    ,"trophy_bronz"    ,"kat"],
     ]
 
     if not persistent.wnfh_ach:
@@ -26,15 +26,28 @@ init -1 python:
     
     for ach in wnfh_ach_list:
         renpy.image("wnfh_ach_" + ach[0], im.Composite(
-        (600, 125),
-        (0  , 0  ), im.Scale(wnfh_gui["banners"]["ach_frame"], 600, 125),
-        (94 , 26 ), im.Scale(wnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
-        (515, 30 ), im.Scale(wnfh_BANNERS + ach[4] + ".png"  , 45 , 68 ),
-        (184, 65 ), im.Scale(wnfh_BANNERS + ach[5] + ".png"  , 38 , 38 ),
+        (590, 100),
+        #(0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_2"], 590, 100), im.matrix.tint(0.0, 0.0, 0.0)),
+        #(0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_1"], 590, 100), im.matrix.tint(0.7, 0.788, 0.49)),
+        #(0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_2"], 590, 100), im.matrix.tint(0.08, 0.039, 0.043)),
+        #(0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_1"], 590, 100), im.matrix.tint(0.8784, 0.8117, 0.49)),
+        (0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_2"], 590, 100), im.matrix.tint(0.0, 0.0392, 0.12549)),
+        (0  , 0  ), im.MatrixColor(im.Scale(wnfh_gui["banners"]["ach_frame_1_1"], 590, 100), im.matrix.tint(0.494, 0.8078, 0.6705)),
+        (94 , 12 ), im.Scale(wnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
+        (515, 15 ), im.Scale(wnfh_BANNERS + ach[4] + ".png"  , 45 , 68 ),
+        (184, 50 ), im.Scale(wnfh_BANNERS + ach[5] + ".png"  , 38 , 38 ),
         ))
 
-        if ach[0] not in persistent.wnfh_ach:
-            persistent.wnfh_ach[ach[0]] = False
+        #renpy.image("wnfh_ach_" + ach[0], im.Composite(
+        #(600, 125),
+        #(0  , 0  ), im.Scale(wnfh_gui["banners"]["ach_frame"], 600, 125),
+        #(94 , 26 ), im.Scale(wnfh_BANNERS + ach[1] + ".png"  , 75 , 75 ),
+        #(515, 30 ), im.Scale(wnfh_BANNERS + ach[4] + ".png"  , 45 , 68 ),
+        #(184, 65 ), im.Scale(wnfh_BANNERS + ach[5] + ".png"  , 38 , 38 ),
+        #))
+        #
+        #if ach[0] not in persistent.wnfh_ach:
+        #    persistent.wnfh_ach[ach[0]] = False
     
     ##Это для отображения на странице с ачивками
     import renpy.display.im as im

@@ -1,5 +1,5 @@
 label technical_chocolatki:
-    $ blwnfh_set_time()
+    $ wnfh_set_time()
     scene bg int_clubs_male_day
     show technical chocolatki at blwnfh_technical_chocolatki
     show el grin pioneer at blwnfh_technical_chocolatki:
@@ -20,9 +20,9 @@ label wnfh_test:
     
     "Добро пожаловать в полигон!"
     "Что мы хотим отладить?"
-    jump blwnfh_test_main_menu
+    jump wnfh_test_main_menu
 
-label blwnfh_test_main_menu:
+label wnfh_test_main_menu:
 
     scene black
     
@@ -48,7 +48,7 @@ label blwnfh_test_main_menu:
         "Сбросить все лавпоинты":
             jump blwnfh_test_drop_lp
         "Покинуть меню отладки":
-            jump blwnfh_main_menu
+            jump wnfh_main_menu
 
 label blwnfh_test_sprites:
     
@@ -80,7 +80,7 @@ label blwnfh_test_drop_variables:
             $ d6c_mz_pomog_jene          =       None
             $ d6c_kat_katya_prosipalas   =       None
     "Переменные сброшены! Кликни чтобы вернутся в тест меню."
-    jump blwnfh_test_main_menu
+    jump wnfh_test_main_menu
 
 label blwnfh_test_drop_lp:
 
@@ -96,4 +96,4 @@ label blwnfh_test_drop_lp:
             $ mi_lp      =       0
             $ mz_lp      =       0
     "Лавпоинты сброшены! Кликни чтобы вернутся в тест меню."
-    jump blwnfh_test_main_menu
+    jump wnfh_test_main_menu

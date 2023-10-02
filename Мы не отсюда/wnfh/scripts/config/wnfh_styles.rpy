@@ -12,18 +12,22 @@ init -2:
     $ renpy.image("wnfh_title", ParameterizedText(style="wnfh_title", size=64))
 
     $ style.wnfh_ach_title = Style(style.default)
-    $ style.wnfh_ach_title.font = wnfh_FONTS + "msjhl.ttc"
-    $ style.wnfh_ach_title.color = "#000"
+    #$ style.wnfh_ach_title.font = wnfh_FONTS + "msjhl.ttc"
+    $ style.wnfh_ach_title.color = "#7ECEAB"
     $ style.wnfh_ach_title.text_align = 0.5
+    $ style.wnfh_ach_title.drop_shadow = (3, 3)
+    $ style.wnfh_ach_title.drop_shadow_color = "#000"
     $ style.wnfh_ach_title.yalign = 0.5
     $ style.wnfh_ach_title.size = 42
     $ style.wnfh_ach_title.kerning = 1.0
     $ renpy.image("wnfh_ach_title", ParameterizedText(style="wnfh_ach_title", size=64))
     
     $ style.wnfh_ach_signature = Style(style.default)
-    $ style.wnfh_ach_signature.font = wnfh_FONTS + "msjhl.ttc"
-    $ style.wnfh_ach_signature.color = "#000"
+    #$ style.wnfh_ach_signature.font = wnfh_FONTS + "msjhl.ttc"
+    $ style.wnfh_ach_signature.color = "#7ECEAB"
     $ style.wnfh_ach_signature.text_align = 0.5
+    $ style.wnfh_ach_signature.drop_shadow = (3, 3)
+    $ style.wnfh_ach_signature.drop_shadow_color = "#000"
     $ style.wnfh_ach_signature.yalign = 0.5
     $ style.wnfh_ach_signature.size = 38
     $ style.wnfh_ach_signature.kerning = 1.0

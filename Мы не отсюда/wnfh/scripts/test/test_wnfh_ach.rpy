@@ -1,6 +1,6 @@
 label blwnfh_test_ach:
-
-    scene bg ext_square_day with dissolve2
+    $ wnfh_set_time("night")
+    scene bg ext_square_night with dissolve2
     $ renpy.pause(1.0, hard=True)
     #"..."
     #$ wnfh_reset_achievements()
@@ -8,17 +8,13 @@ label blwnfh_test_ach:
     #$ renpy.pause(1.0, hard=True)
     
     
-    
+    window show
     "spirt"
     $ wnfh_get_achievement("spirt")
     $ renpy.pause(1.0, hard=True)
     "альфа"
     $ wnfh_get_achievement("alpha")
     $ renpy.pause(1.0, hard=True)
-    
-    jump wnfh_test_ach_hui
-    
-label wnfh_test_ach_hui:
     "бкрр"
     $ wnfh_get_achievement("bkrr")
     $ renpy.pause(1.0, hard=True)

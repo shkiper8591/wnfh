@@ -28,11 +28,11 @@ init 2:
             def add_to_bd(data):
                 wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4]})
             wnfh_choice_tint_color = {
-                #timeset    #цветокор кнопок #палка
-                "day":      ["#E2C778", "#b4c97d"], 
-                "sunset":   ["#DCD168", "#e0cf7d"],
-                "night":    ["#3CCFA2", "#7eceab"],
-                "prologue": ["#98D8DA", "#bee8e9"], 
+                #timeset      #текст     #рамки     #фон
+                "day":      ["#E2C778", "#B4C97D", "#000000"], 
+                "sunset":   ["#DCD168", "#E0CF7D", "#150A0B"],
+                "night":    ["#3CCFA2", "#7ECEAB", "#000A20"],
+                "prologue": ["#98D8DA", "#BEE8E9", "#000A20"], 
             }
             wnfh_screen_variable = [
                 wnfh_screen_1,
@@ -97,7 +97,7 @@ init 2:
         
         
         frame:
-            background background_color
+            background #0000
             area(0.5, 0.5, 0.7, 0.8)
             xanchor 0.5 yanchor 0.5
             #grid 1 len(args)-1:
@@ -106,7 +106,7 @@ init 2:
                 spacing -6
                 for i in range(len(args)-1):
                     frame:
-                        background background_color
+                        background #0000
                         area(0.5, 0.5, 1.0, 80)
                         xanchor 0.5 yanchor 0.5
                         
@@ -114,6 +114,7 @@ init 2:
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                             xalign 0.5 yanchor 1.0
                         add (wnfh_gui["choice"]["bg"]):
+                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
                             xalign 0.5
                         if wnfh_screen_variable[i]:
                             add (wnfh_gui["choice"]["gradient"]):

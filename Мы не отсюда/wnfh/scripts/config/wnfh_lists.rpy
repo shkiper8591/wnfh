@@ -140,6 +140,8 @@ init -2 python:
         "relation_down",
         "relation_neutral",
         "ach_frame",
+        "ach_frame_1_1",
+        "ach_frame_1_2",
         "ach_menu_frame",
         "ach_menu_frame_lock",
         "trophy_bronz",

@@ -249,6 +249,9 @@ init -2 python:
         "line_3_sunset",
         "line_3_night",
         "line_3_prologue",
+        "bg",
+        "line",
+        "gradient"
         ]}
 
 init 2:

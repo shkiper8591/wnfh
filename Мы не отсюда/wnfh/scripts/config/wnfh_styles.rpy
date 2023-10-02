@@ -84,7 +84,7 @@ init -2:
     $ style.wnfh_choice_day.drop_shadow_color = "#000"
     $ style.wnfh_choice_day.text_align = 0.5
     $ style.wnfh_choice_day.yalign = 0.5
-    $ style.wnfh_choice_day.size = 64
+    $ style.wnfh_choice_day.size = 30
     $ style.wnfh_choice_day.kerning = 1.0
     $ renpy.image("wnfh_choice_day", ParameterizedText(style="wnfh_choice_day", size=40))
     
@@ -95,7 +95,7 @@ init -2:
     $ style.wnfh_choice_sunset.drop_shadow_color = "#000"
     $ style.wnfh_choice_sunset.text_align = 0.5
     $ style.wnfh_choice_sunset.yalign = 0.5
-    $ style.wnfh_choice_sunset.size = 64
+    $ style.wnfh_choice_sunset.size = 30
     $ style.wnfh_choice_sunset.kerning = 1.0
     $ renpy.image("wnfh_choice_sunset", ParameterizedText(style="wnfh_choice_sunset", size=40))
     
@@ -106,7 +106,7 @@ init -2:
     $ style.wnfh_choice_night.drop_shadow_color = "#000"
     $ style.wnfh_choice_night.text_align = 0.5
     $ style.wnfh_choice_night.yalign = 0.5
-    $ style.wnfh_choice_night.size = 64
+    $ style.wnfh_choice_night.size = 30
     $ style.wnfh_choice_night.kerning = 1.0
     $ renpy.image("wnfh_choice_night", ParameterizedText(style="wnfh_choice_night", size=40))
     
@@ -117,7 +117,7 @@ init -2:
     $ style.wnfh_choice_prologue.drop_shadow_color = "#000"
     $ style.wnfh_choice_prologue.text_align = 0.5
     $ style.wnfh_choice_prologue.yalign = 0.5
-    $ style.wnfh_choice_prologue.size = 64
+    $ style.wnfh_choice_prologue.size = 30
     $ style.wnfh_choice_prologue.kerning = 1.0
     $ renpy.image("wnfh_choice_prologue", ParameterizedText(style="wnfh_choice_prologue", size=40))
     

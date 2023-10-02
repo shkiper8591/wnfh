@@ -2,12 +2,18 @@ label blwnfh_test_choice:
     "Тест выборов и переменных."
 
     
-    $ wnfh_set_time("sunset")
-    
+    $ wnfh_set_time("night")
+    scene bg ext_houses_night_wnfh with dissolve2
     call screen wnfh_choice(
-        ["dv", "Пробежаться","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
-        ["mi", "Отказаться", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
-        ["un", "Сбежать нахуй", "Тоже своего рода бег", "blwnfh_un",{"dv":3,"mi":-3}],
+        ["dv", "Алиса","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
+        ["mi", "Мику", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
+        ["un", "Лена", "Тоже своего рода бег", "blwnfh_un",{"dv":3,"mi":-3}],
+        ["sl", "Славя","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
+        ["usw", "Ульяна", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
+        ["mt", "Ольга Дмитриевна", "Тоже своего рода бег", "blwnfh_un",{"dv":3,"mi":-3}],
+        ["mz", "Женя","А почему нет?", "blwnfh_dv",{"dv":3,"mi":-3}],
+        ["cs", "Виола", "Нафиг оно мне надо?", "blwnfh_mi",{"dv":3,"mi":-3}],
+        ["sh", "Шурик", "Тоже своего рода бег", "blwnfh_un",{"dv":3,"mi":-3}],
         ["d1_choise3","Выбор пробежаться ли на XX"]
         ) with sphere_blure_dissolve2
     

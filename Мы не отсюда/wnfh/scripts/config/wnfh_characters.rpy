@@ -35,6 +35,7 @@ init -3 python:
         #"part":[u"Партизан", "#"],
         #"kr":[u"Крестьянин", "#"],
         #"sht":[u"Штайнер", "#"],
+        "neutral":[u"Костыль ебаный", "#BCBCBC"],
     }
     
     #renpy.image("wnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))

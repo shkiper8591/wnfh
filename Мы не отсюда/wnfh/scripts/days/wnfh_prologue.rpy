@@ -19,12 +19,11 @@ label wnfh_prologue:
     me "Подлиннее или может покороче?"
 
     window hide
-
-    menu:
-        "Подлиннее":
-            jump prologue_dlinnee
-        "Покороче":
-            jump prologue_koroche
+    call screen wnfh_choice(
+        ["neutral", "Подлиннее", "Короткий пролог", "prologue_dlinnee", {"un":1}],
+        ["neutral", "Покороче", "Длинный пролог", "prologue_koroche", {"un":-1}],
+        ["p_choice_n1", "Выбор длинности пролога"]
+        ) with sphere_blure_dissolve2
 
 label prologue_dlinnee:
 

@@ -29,9 +29,9 @@ init 2:
                 wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4]})
             wnfh_choice_tint_color = {
                 #timeset      #текст     #рамки     #фон
-                "day":      ["#E2C778", "#B4C97D", "#000000"], 
-                "sunset":   ["#DCD168", "#E0CF7D", "#150A0B"],
-                "night":    ["#3CCFA2", "#7ECEAB", "#000A20"],
+                "day":      ["#FFDD7D", "#80A055", "#000000"], 
+                "sunset":   ["#DCD168", "#CDAF69", "#150A0B"],
+                "night":    ["#3CCFA2", "#36B198", "#000A20"],
                 "prologue": ["#98D8DA", "#BEE8E9", "#000A20"], 
             }
             wnfh_screen_variable = [

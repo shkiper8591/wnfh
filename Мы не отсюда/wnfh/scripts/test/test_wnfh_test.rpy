@@ -43,10 +43,6 @@ label wnfh_test_main_menu:
             jump blwnfh_test_ach
         "Дни?":    
             jump blwnfh_test_days
-        "Сбросить все переменные":
-            jump blwnfh_test_drop_variables
-        "Сбросить все лавпоинты":
-            jump blwnfh_test_drop_lp
         "Покинуть меню отладки":
             jump wnfh_main_menu
 
@@ -64,36 +60,5 @@ label blwnfh_test_sprites:
         "Вернутся назад.":
             jump blwnfh_test_main_menu
 
-label blwnfh_test_drop_variables:
-
-    "Это действие нельзя будет отменить. Вы уверены?"
-
-    menu:
-        "Нет":
-            jump blwnfh_test_main_menu
-        "Да":
-            $ d6c_me_poshel_v_les        =       None
-            $ d6c_me_poshel_po_beregu    =       None
-            $ d6c_me_sovral              =       None
-            $ d6c_el_videl_seregu        =       None
-            $ d6c_mz_videl_jeny          =       None
-            $ d6c_mz_pomog_jene          =       None
-            $ d6c_kat_katya_prosipalas   =       None
-    "Переменные сброшены! Кликни чтобы вернутся в тест меню."
-    jump wnfh_test_main_menu
-
-label blwnfh_test_drop_lp:
-
-    "Это действие нельзя будет отменить. Вы уверены?"
-    menu:
-        "Нет":
-            jump blwnfh_test_main_menu
-        "Да":
-            $ kat_lp     =       0
-            $ dv_lp      =       0
-            $ un_lp      =       0
-            $ us_lp      =       0
-            $ mi_lp      =       0
-            $ mz_lp      =       0
-    "Лавпоинты сброшены! Кликни чтобы вернутся в тест меню."
+    "База Данных сброшена! Кликни чтобы вернутся в тест меню."
     jump wnfh_test_main_menu

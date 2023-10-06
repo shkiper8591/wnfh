@@ -20,8 +20,8 @@ label wnfh_prologue:
 
     window hide
     call screen wnfh_choice(
-        ["neutral", "Подлиннее", "Короткий пролог", "prologue_dlinnee", None],
-        ["neutral", "Покороче", "Длинный пролог", "prologue_koroche", None],
+        ["neutral", "Подлиннее", "Короткий пролог", "prologue_dlinnee", {"neutral": 0}],
+        ["neutral", "Покороче", "Длинный пролог", "prologue_koroche", {"neutral": 0}],
         ["p_choice_n1", "Выбор длинности пролога"]
         ) with sphere_blure_dissolve2
 

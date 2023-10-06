@@ -93,7 +93,7 @@ init -10 python :
         2)wnfh_Data.getChoice_result_points(("1d_3","uv"))
         возвращает число лавпойнтов персонажа uv характерные выбору прим. 3
         """
-        def getChoice_result_points(self , key, person):
+        def getChoice_result_points(self, key, person):
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]
             except KeyError:
@@ -102,9 +102,9 @@ init -10 python :
 
         def getChoice_points_sum(self, person):
             try:
-                sum=0
-                for index,data in enumerate(list(wnfh_Data.load_json())):
-                    sum+=self.BD_INIT_MODULE[data]["Влияние на персонажей"][person]
+                sum = 0
+                for index, data in enumerate(list(wnfh_Data.load_json())):
+                    sum += self.BD_INIT_MODULE[data]["Влияние на персонажей"][person]
                 return sum
             except KeyError:
                 #print("Не было найдено значений" + str(key))

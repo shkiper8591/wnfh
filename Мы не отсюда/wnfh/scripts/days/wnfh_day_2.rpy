@@ -281,7 +281,7 @@ label wnfh_day_2:
     ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть."
 
-    if wnfh_Data.getChoice_points_sum("un") == >3:
+    if wnfh_Data.getChoice_points_sum("un") <4:
 
         show un smile pioneer:
         xcenter 1.2

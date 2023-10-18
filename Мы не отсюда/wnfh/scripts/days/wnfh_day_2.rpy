@@ -3,34 +3,31 @@ label wnfh_day_2:
     $ wnfh_new_chapter(2)
     $ wnfh_set_name("kat", "Катя")
     $ wnfh_set_time("sunset")
-    scene black
-    play ambience ambience_int_cabin_evening fadein 5
-    $ renpy.pause(1.5, hard=True)
-    window show
-    ## Пробуждение Семёна2
-    "Мне приснился странный сон."
-    "И он показался мне настолько странным, что я тут же попытался вспомнить все его детали."
-    
-    th "Кажется, мне приснился кто-то[wp] {w}Но вот кто?"
-    th "Впрочем, имеет ли это какое-то значение?"
-    
     scene expression wnfh_wakeup("int_house_of_mt_sunset")
     show unblink
     with None
-    
-    "Открыв глаза, я увидел, что Ольга Дмитриевна всё ещё была в домике, и сидела за столом раскладывая какие-то бумаги."
-    "Я приподнялся и протер глаза."
-    
+    play ambience ambience_int_cabin_evening fadein 5
+    play music wnfh_music_list["hill_camp"] fadein 7.5
+    $ renpy.pause(1.5, hard=True)
+    window show
+    ## Пробуждение Семёна2
+
+    "Я медленно открыл свои глаза и приподнявшись протёр их."
+    "Ольга Дмитриевна сидела за столом и раскладывала какие-то бумаги, внимательно изучая каждый лист."
+    "Так что она даже не обратила внимания на моё пробуждение."
+    "Некоторое время я понаблюдал за этим процессом, пока приходил в себя, после чего встал с кровати."
+    "Только тогда вожатая и обратила на меня внимание."
+
     show mt smile pioneer with dissolve
     
     mt "Доброе утро страна."
     me "Доброе, доброе[wp] {w}Сколько сейчас времени?" 
-    mt "Половина девятого утра. {w}Так что давай вставай, одевайся, умывайся, а потом на линейку."
-    me "Ольга Дмитриевна, а можно пропустить линейку, пожааалуйста?"
+    mt "Половина девятого утра. {w}Так что давай одевайся, умывайся, а потом на линейку. Будем новенькую представлять."
+    me "Ольга Дмитриевна, а можно пропустить линейку, пожа-а-алуйста?"
     
     show mt grin with dspr
     
-    mt "Нет, не можно, у тебя сегодня важное задание, забыл?"
+    mt "Нет, не можно, у тебя сегодня важное партийное задание, забыл?"
     
     "Немного подумав я вспомнил вчерашние посиделки с Ольгой Дмитриевной."
     "И что тогда она мне дала задание быть провожатым для Кати."
@@ -39,14 +36,14 @@ label wnfh_day_2:
     
     show mt smile with dspr
     
-    "Вздохнув и собравшись с силами, я сел на кровать и снял со стула одежду, положив её рядом с собой."
+    "Вздохнув я сел на кровать и снял со стула одежду, положив её рядом с собой."
     
     me "Ольга Дмитриевна, можете пожалуйста отвернутся? {w}А то мне не удобно одеваться будет."
-    mt "Да, конечно."
+    mt "Ну, я могу просто не смотреть, у меня тут есть дела поинтереснее всё же."
     
     hide mt with dissolve
     ## ОД рассказывают про пиндоса
-    "Вожатая встала из-за стола, отвернулась и я стал быстренько одеваться."
+    "Вожатая обратно уткнулась в свои бумаги, изредка делая какие-то пометки."
     
     mt "Кстати[wp]"
     me "М?"
@@ -117,16 +114,15 @@ label wnfh_day_2:
     
     me "Ладно, я пошел."
     
-    hide mt with dissolve
-    
     "Быстро схватив пакет с банными принадлежностями, я стремительно покинул дом."
     
     window hide
     scene bg ext_house_of_mt_sunset with door_invert_blure_dissolve
-    stop ambience fadeout 0.5
+    stop ambience fadeout 1.5
+    stop music fadeout 5.0
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
-    play music music_list["get_to_know_me_better"] fadein 5
+    play music music_list["get_to_know_me_better"] fadein 5.0
     ## Семён отправляется к умывальникам
     "Выйдя на улицу, я вдохнул свежего воздуха, что дало мне небольшой заряд бодрости."
     "Ещё немного постояв, и полностью насладившись таким прекрасным утром, я пошел в сторону умывальников."
@@ -273,144 +269,352 @@ label wnfh_day_2:
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_sunset with slide_right_blure_dissolve2
     $ renpy.pause(1.0)    
-    scene bg int_dining_hall_people_sunset_wnfh with dnr_entrance  
+    scene bg int_dining_hall_people_sunset_wnfh 
+    show kat normal pioneer:
+        xcenter 0.5
+        ycenter 0.0
+    with dnr_entrance  
     play ambience ambience_dining_hall_full fadein 3
-    show kat normal pioneer at center with dissolve
+    
     window show
     
     ## Завтрак
-    "Войдя в столовую, я стал думать, куда бы сесть." 
-    
-    show un smile pioneer:
+    "Войдя в столовую, я стал думать, куда бы сесть."
+
+    if wnfh_Data.getChoice_points_sum("un") == >3:
+
+        show un smile pioneer:
         xcenter 1.2
         ease_quart 2.0 xcenter 0.72
 
-    "И пока думал, к нам подошла Лена."
+        "И пока думал, к нам подошла Лена."
+        
+        un "Семен, я заберу Катю к себе, надеюсь ты не против, а то мне нужно кое что с ней обсудить."
+        
+        show un smile pioneer behind kat:
+            ease_quart 1.5 xcenter 0.64
+        
+        "Не успев ничего ответить, Лена уже потащила Катю, к себе."
     
-    un "Семен, я заберу Катю к себе, надеюсь ты не против, а то мне нужно кое что с ней обсудить."
+        window hide
+        $ renpy.pause(1.0)
+        
+        show un smile pioneer:
+            ease_quart 2.0 xcenter 1.2
+        show kat normal pioneer:
+            ease_quart 2.0 xcenter 1.2
     
-    show un smile pioneer behind kat:
-        ease_quart 1.5 xcenter 0.64
-    
-    "Не успев ничего ответить, Лена уже потащила Катю, к себе."
-    #34 надо анимацию утаскивания кати
+        $ renpy.pause(1.5)
+        window show
+        
+        "Пожав плечами, я ещё раз окинул столовую взглядом." 
+        "И обнаружил свободное место рядом со своими товарищами из клубов."
+        "Но было и ещё одно рядом с музыканткой всея лагеря — Мику."
 
-    window hide
-    $ renpy.pause(1.0)
-    
-    show un smile pioneer:
-        ease_quart 2.0 xcenter 1.2
-    show kat normal pioneer:
-        ease_quart 2.0 xcenter 1.2
+        th "Диллема[wp] {w}С одной стороны братва, а с другой, можно наконец нормально поговорить с Мику."
+        th "А то за всё время у меня это так и не получалось[wp] По ряду причин."
 
-    $ renpy.pause(1.5)
-    window show
-    
-    "Пожав плечами, я ещё раз окинул столовую взглядом." 
-    "И обнаружил свободное место рядом со своими товарищами из клубов."
-    "К которым, взяв поднос с едой, я и подошёл."
+        window hide dissolve
+        $ renpy.pause(0.2)
+        call screen wnfh_choice(
+            ["mi", "Сесть с Мику", "я хуй знает что тут написать", "d2_zavtrak_s_miku", {"mi":1}],
+            ["neutral", "Сесть с товарищами", "Пожалуй сяду с пацанами", "d2_zavtrak_s_el_sh", {None}],
+            ["d2_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
+            ) with sphere_blure_dissolve2
 
-    window hide
-    show chair_l behind el
-    show chair_r behind sh
-    show table
-    show shakers
-    show left d2_breakfast_full tray foods behind shakers
-    show el normal pioneer at wnfh_sit_left behind table
-    show right d2_breakfast_half tray foods behind shakers
-    show sh normal pioneer at wnfh_sit_right behind table
-    with dissolve
-    $ renpy.pause(1.0, hard=True)
-    window show
-    
-    me "Доброе утро товарищи, есть место свободное?"
-    sh "Да, садись."
-    
-    show mid d2_breakfast_full tray spoon foods with dissolve
+        label d2_zavtrak_s_miku:
 
-    "И усевшись, я только сейчас осмотрел свой завтрак" 
-    "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
-    
-    show mid d2_breakfast_full tray foods with dspr
+        "Placeholder"
 
-    me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
-    
-    "Последние слова я сказал чуть тише."
-    
-    show left d2_breakfast_half tray foods behind shakers with dspr
+        label d2_zavtrak_s_el_sh:
 
-    show el sad with dspr 
-    show sh upset with dspr
-    
-    "После моего вопроса, ребята немного пали духом. {w}Стало ясно, что они ничего не придумали."
-    
-    me "Что, ничего?"
-    el "Ага[wp]"
-    sh "Ну, не совсем. {w}Есть одна идея, но она довольно рисковая."
-    me "Выкладывай всё равно."
-    
-    "Шурик огляделся по сторонам и, видимо удостоверившись, что никто не будет подслушивать, вернул свой взгляд обратно на меня."
-    
-    show el normal with dspr
-    show sh serious with dspr
+        window show dissolve
 
-    show mid d2_breakfast_half tray foods with dspr
-    
-    sh "И так, я предлагаю сходить в старый лагерь."
-    me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
-    sh "Я так тоже подумал."
-    sh "Поэтому мы конечно же пойдем без её спроса." 
-    sh "А для этого[wp]"
-    me "Шурик стой!"
-    
-    "Через шепот прошипел я."
-    "Краем глаза, я заметил, что к нашему столу идет вожатая." 
-    "И крайне не хотелось бы, чтобы она услышала наши разговоры о старом лагере."
-    
-    show sh normal with dspr
-    
-    window hide
-    show mt normal pioneer behind chair_r:
-        xcenter 1.2
-        ease_quart 3.0 xcenter 0.5
-    $ renpy.pause(1.5)
-    window show
+        th "Пожалуй пойду к своим ребятам, с ними как-то поуютнее будет."
 
-    "Вскоре она подошла к нам."
+        "Взяв поднос с завтраком, я отправился к ним."
     
-    mt "Семён, давай скорее доедай и марш на выход, там тебя уже ждут!"
+        window hide dissolve
+        show chair_l behind el
+        show chair_r behind sh
+        show table
+        show shakers
+        show left d2_breakfast_full tray foods behind shakers
+        show el normal pioneer at wnfh_sit_left behind table
+        show right d2_breakfast_half tray foods behind shakers
+        show sh normal pioneer at wnfh_sit_right behind table
+        with dissolve
+        $ renpy.pause(1.0, hard=True)
+        window show
+        
+        me "Доброе утро товарищи, есть место свободное?"
+        sh "Да, садись."
+        
+        show mid d2_breakfast_full tray spoon foods with dissolve
     
-    th "И снова вы меня дёргаете по среди завтрака!"
-    th "Видимо, всё же у вас нет совести."
+        "И усевшись, я только сейчас осмотрел свой завтрак" 
+        "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
+        
+        show mid d2_breakfast_full tray foods with dspr
     
-    me "Да, хорошо." 
+        me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
+        
+        "Последние слова я сказал чуть тише."
+        
+        show left d2_breakfast_half tray foods behind shakers with dspr
     
-    "Как скоро вожатая пришла, также скоро она и ушла."
+        show el sad with dspr 
+        show sh upset with dspr
+        
+        "После моего вопроса, ребята немного пали духом. {w}Стало ясно, что они ничего не придумали."
+        
+        me "Что, ничего?"
+        el "Ага[wp]"
+        sh "Ну, не совсем. {w}Есть одна идея, но она довольно рисковая."
+        me "Выкладывай всё равно."
+        
+        "Шурик огляделся по сторонам и, видимо удостоверившись, что никто не будет подслушивать, вернул свой взгляд обратно на меня."
+        
+        show el normal with dspr
+        show sh serious with dspr
     
-    window hide
-    show mt normal pioneer behind chair_r:
-        ease_quart 3.0 xcenter 1.2
-    $ renpy.pause(1.5)
-    window show
+        show mid d2_breakfast_half tray foods with dspr
+        
+        sh "И так, я предлагаю сходить в старый лагерь."
+        me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
+        sh "Я так тоже подумал."
+        sh "Поэтому мы конечно же пойдем без её спроса." 
+        sh "А для этого[wp]"
+        me "Шурик стой!"
+        
+        "Через шепот прошипел я."
+        "Краем глаза, я заметил, что к нашему столу идет вожатая." 
+        "И крайне не хотелось бы, чтобы она услышала наши разговоры о старом лагере."
+        
+        show sh normal with dspr
+        
+        window hide
+        show mt normal pioneer behind chair_r:
+            xcenter 1.2
+            ease_quart 3.0 xcenter 0.5
+        $ renpy.pause(1.5)
+        window show
     
-    me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
-    sh "Будем ждать."
+        "Вскоре она подошла к нам."
+        
+        mt "Семён, давай скорее доедай и марш на выход, там тебя уже ждут!"
+        
+        th "И снова вы меня дёргаете по среди завтрака!"
+        th "Видимо, всё же у вас нет совести."
+        
+        me "Да, хорошо." 
+        
+        "Как скоро вожатая пришла, также скоро она и ушла."
+        
+        window hide
+        show mt normal pioneer behind chair_r:
+            ease_quart 3.0 xcenter 1.2
+        $ renpy.pause(1.5)
+        window show
+        
+        me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
+        sh "Будем ждать."
+        
+        show mid d2_breakfast_empty tray foods with dissolve
     
-    show mid d2_breakfast_empty tray foods with dissolve
+        "Быстренько всё доев, я пошел на выход из столовой."
 
-    "Быстренько всё доев, я пошел на выход из столовой."
+        jump d2_begunok
+    
+    elif wnfh_Data.getChoice_points_sum("un") == 4:
 
-    window hide
+        $ d2_zavtrak_s_lenoy = True
+
+        show un smile pioneer:
+            xcenter 1.2
+            ease_quart 2.0 xcenter 0.72
+        show kat normal pioneer:
+            ease_quart 1.5 xcenter 0.28
+
+        "И пока думал, к нам подошла Лена."
+
+        un "Приветик."
+        
+        "Весёлым голоском поздоровалась с нами Лена."
+
+        show kat smile pioneer at left with dspr
+
+        kat "Здравствуй."
+        me "Привет."
+        un "Я тут гляжу, вы выбираете местечко где бы сесть."
+        kat "Верно."
+        me "Можешь с нами сесть, если хочешь."
+
+        show un smile2 pioneer at right with dspr
+
+        "На моё предложение Лена слегка усмехнулась."
+
+        un "Хах, я как раз хотела об этом спросить."
+        me "Ну вот такой я экстрасенс."
+        me "Ладно, дамочки, хватит терять время и пойдём сядем уже куда-нибудь."
+
+        show kat upset pioneer at left with dspr
+
+        kat "Согласна, кушать-то хочется."
+        me "Тогда идём, сейчас втиснимся куда-нибудь[wp]"
+
+        show kat normal pioneer at left
+        show un smile pioneer at right
+        with dspr
+
+        "Пробираясь сквозь толпу пионеров, мы вышли к столу, где, на удивление, сидело не так много людей."
+        "Здесь мы и расположились, аккуратно поставив свои подносы."
+        #короче копчённый (стас), я тебе сценарий написал и в благородство играть не буду. Расставишь для меня столы с едой и мы в расчёте. 
+        "Бегло осмотрев "
+
+        me "Ну что, Кать, как вчера прошёл первый день в лагере?"
+
+        show kat thinking pioneer at left with dspr
+
+        "Она глубоко вздохнула."
+
+        kat "Эх, ну как-как."
+
+        show kat upset pioneer at left with dspr
+
+        kat "Обычно, наверное?"
+        kat "Показали мне домик, где и просидела некоторое время, обживаясь."
+
+        show un grin pioneer at right with dspr
+
+        un "А потом пришла я и вытащила её погулять и заодно получше познакомиться."
+
+        show un smile3 pioneer at right with dspr
+
+        un "Хочу сказать, что это было довольно сложной задачей."
+        me "Ха, и почему же?"
+
+        show kat obida pioneer at left
+        show un happy pioneer at right
+        with dspr
+
+        "Лена рассмеялась, а Катя сделала обиженную мину."
+
+        un "Потому-что Катя та ещё домоседка."
+        kat "А то что, я даже толком свои вещи распределить по местам не успела, это не?"
+        un "У тебя было много времени на это."
+        kat "Двадцать минут?"
+
+        show un grin pioneer at right with dspr
+
+        un "Целых двадцать минут!"
+
+        show un smile pioneer at right with dspr
+
+        "Тихонько посмеявшись, Лена легко похлопала Катю по плечу."
+
+        un "Ну чего ты обижаешься-то?"
+
+        show kat confused pioneer at left with dspr
+
+        kat "Я? Я не обижаюсь."
+
+        show mt normal pioneer:
+            xcenter 1.2
+            ease_quart 2.0 xcenter 0.88
+        show kat normal pioneer at left
+        show un normal pioneer at right
+        with dspr
+
+        "Тут к нам подошла наша вожатая."
+
+        mt "Вот где вы."
+        mt "И меня очень интересует, почему же вы всё ещё тут, а не ходите по лагерю и собираете подписи."
+        me "Так мы завтракаем."
+
+        show mt angry with dspr
+
+        mt "Ну так побыстрее давайте. Чем раньше вы сдадите мне этот лист, тем лучше будет для и меня и вас."
+        mt "Намёк ясен, Семён?"
+
+        "Я грустно и глубоко вздохнул."
+
+        me "Ясен."
+
+        show mt grin with dspr
+
+        mt "Вот и славно."
+
+        show mt grin pioneer:
+            ease_quart 1.5 xcenter 1.2
+
+        "Похихикав на прощание, Ольга Дмитриевна быстро удалилась вглубь столовой."
+
+        me "Ну что ж, Кать, ты слышала её. Так что давай, ускоряемся."
+
+        "Не желая терять ни минуты, я моментально стал уплетать завтрак, расправившись с ним чуть менее чем за три минуты."
+        "После чего я с облегчением вздохнул и посмотрел на Катину тарелку[wp] Которая была ещё на половину полна[wp]"
+
+        th "М-да[wp]"
+
+        show un smile pioneer at right with dspr
+
+        un "Кстати, Семён[wp]"
+        me "Что?"
+        un "А можно с вами за компанию? А то дел у меня пока-что нет, а занять себя как-то хочется."
+
+        window hide dissolve
+        $ renpy.pause(0.2)
+        call screen wnfh_choice(
+            ["un", "Разумеется", "Чем больше компания, тем веселее", "d2_un_yes_1", {"un":1}],
+            ["kat", "Не, мы быстро", "Тут делов на пять минут, особо не повеселишься", "d2_un_no_1", {"kat":1, "un":-1}],
+            ["d2_choice_n2", "Лена хочет пойти вместе Катей и Семёном за компанию."]
+            ) with sphere_blure_dissolve2
+
+    label d2_un_yes_1:
+
+        window show dissolve
+
+        me "Да, конечно, думаю никто против не будет."
+        kat "Не будет."
+
+        "Моментом сказала Катя."
+
+        un "Отлично, спасибо вам."
+        me "Та пожалуйста"
+
+        "Как только Катя закончила с завтраком, мы отправились на выход из столовой."
+        
+        jump d2_begunok
+
+    label d2_un_no_1:
+
+        window show dissolve
+
+        me "Не стоит, мы быстро заполним этот лист, даже глазом моргнуть не успеешь."
+
+        show un shy pioneer at right with dspr
+
+        un "Вот как[wp] Ну ладно тогда, может потом повезёт прогуляться нам вместе[wp]"
+        me "Несомненно."
+
+        "Дождавшись, когда Катя закочила с завтраком, мы покинули столовую."
+
+        jump d2_begunok
+    
+    label d2_begunok:
+
+    window hide dissolve
     hide mid d2_breakfast_empty with dissolve
     $ renpy.pause(1.0)
-
-    stop ambience fadeout 0.5
+    stop ambience fadeout 2.5
     $ wnfh_set_time()
     scene bg ext_dining_hall_near_day with slide_right_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["dance_of_fireflies"] fadein 5
     $ renpy.pause(1.0)
     window show
+    
     ## Семён и Катя отправляются заполнять бегунок
     "Я вышел из столовой, и позвал сидящую на лавочке Катю." 
     "Посмотрев на меня, она неспешно поднялась с лавочки и подошла ко мне."

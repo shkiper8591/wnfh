@@ -92,7 +92,7 @@ label test_choice_2:
         ["test_lovepoint_testing_2", "2-й Тест выбор подсчёта лавпоинтов"]
         ) with sphere_blure_dissolve2
 label test_choice_3:
-    if wnfh_Data.getChoice_points_sum("usw") == -3:
+    if wnfh_Data_test.getChoice_points_sum("usw") == -3:
 
         show usw angry sport at center with dspr
 
@@ -100,7 +100,7 @@ label test_choice_3:
 
         "После клика, будет предложено покинуть тест." 
 
-    elif wnfh_Data.getChoice_points_sum("usw") == -2:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == -2:
 
         show usw dontlike sport at center with dspr
 
@@ -109,7 +109,7 @@ label test_choice_3:
         "После клика, будет предложено покинуть тест." 
 
 
-    elif wnfh_Data.getChoice_points_sum("usw") == -1:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == -1:
 
         show usw calml sport at center with dspr
 
@@ -118,7 +118,7 @@ label test_choice_3:
         "После клика, будет предложено покинуть тест."
 
 
-    elif wnfh_Data.getChoice_points_sum("usw") == 0:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == 0:
 
         show usw normal sport at center with dspr
 
@@ -127,7 +127,7 @@ label test_choice_3:
         "После клика, будет предложено покинуть тест."
 
     
-    elif wnfh_Data.getChoice_points_sum("usw") == 1:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == 1:
 
         show usw normalsmile sport at center with dspr
 
@@ -136,7 +136,7 @@ label test_choice_3:
         "После клика, будет предложено покинуть тест."
 
 
-    elif wnfh_Data.getChoice_points_sum("usw") == 2:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == 2:
 
         show usw laugh sport at center with dspr
 
@@ -144,7 +144,7 @@ label test_choice_3:
 
         "После клика, будет предложено покинуть тест."
 
-    elif wnfh_Data.getChoice_points_sum("usw") == 3:
+    elif wnfh_Data_test.getChoice_points_sum("usw") == 3:
 
         show usw shy sport at center with dspr
 

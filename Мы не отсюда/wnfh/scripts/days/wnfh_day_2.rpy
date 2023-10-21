@@ -271,8 +271,7 @@ label wnfh_day_2:
     $ renpy.pause(1.0)    
     scene bg int_dining_hall_people_sunset_wnfh 
     show kat normal pioneer:
-        xcenter 0.5
-        ycenter 0.5
+        xalign 0.5
     with dnr_entrance  
     play ambience ambience_dining_hall_full fadein 3
     
@@ -281,7 +280,7 @@ label wnfh_day_2:
     ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть."
 
-    if wnfh_Data.getChoice_points_sum("un") <4:
+    if wnfh_Data.getChoice_points_sum("un") < 4:
 
         show un smile pioneer:
             xcenter 1.2
@@ -322,240 +321,240 @@ label wnfh_day_2:
             ["d2_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
             ) with sphere_blure_dissolve2
 
-    label d2_zavtrak_s_miku:
-
-    th "Посижу-ка с Мику. С парнями я всегда успею поговорить, а вот с нашей музыканткой мне довольно редко доводиться пообщаться."
-
-    th "А так, может чего интересного расскажет. А то одну и ту же бурду про самолёты, аэродинамику и подобную фигню уже тошно слушать."
+        label d2_zavtrak_s_miku:
     
-    "Взяв поднос с едой, я направился к Мику, которая грустно ковырялась ложкой в еде."
-
-    show mi upset pioneer at center with dissolve
+        th "Посижу-ка с Мику. С парнями я всегда успею поговорить, а вот с нашей музыканткой мне довольно редко доводиться пообщаться."
     
-    me "Не занято?"
+        th "А так, может чего интересного расскажет. А то одну и ту же бурду про самолёты, аэродинамику и подобную фигню уже тошно слушать."
+        
+        "Взяв поднос с едой, я направился к Мику, которая грустно ковырялась ложкой в еде."
     
-    "Спросил я, подойдя к ней."
-    "Мику подняла на меня сонный взгляд и сильно зевнув ответила."
+        show mi upset pioneer at center with dissolve
+        
+        me "Не занято?"
+        
+        "Спросил я, подойдя к ней."
+        "Мику подняла на меня сонный взгляд и сильно зевнув ответила."
+        
+        mi "А? Привет Семён, да конечно садись."
+        
+        "Поставив поднос на стол, я сел за него."
     
-    mi "А? Привет Семён, да конечно садись."
+        show mi sad pioneer at center with dspr
+        
+        me "Я так понимаю, кто-то сегодня плохо спал."
+        mi "Да, именно так."
+        me "Можно узнать как так вышло?"
     
-    "Поставив поднос на стол, я сел за него."
-
-    show mi sad pioneer at center with dspr
+        show mi upset pioneer at center with dspr
     
-    me "Я так понимаю, кто-то сегодня плохо спал."
-    mi "Да, именно так."
-    me "Можно узнать как так вышло?"
-
-    show mi upset pioneer at center with dspr
-
-    mi "Ну, ничего такого уж интересного[wp] Кошмары просто снились и всё."
-    mi "Правда их содержание всё никак не отпустит меня[wp]"
-    me "Ох, и, если не секрет, что тебе такого приснилось?"
+        mi "Ну, ничего такого уж интересного[wp] Кошмары просто снились и всё."
+        mi "Правда их содержание всё никак не отпустит меня[wp]"
+        me "Ох, и, если не секрет, что тебе такого приснилось?"
+        
+        show mi shocked with dspr
+        $ renpy.pause(0.2)
+        show mi upset with dspr
     
-    show mi shocked with dspr
-    $ renpy.pause(0.2)
-    show mi upset with dspr
-
-    "Мику мимолётно бросила на меня испуганный взгляд."
-
-    show mi sad pioneer at center with dspr
+        "Мику мимолётно бросила на меня испуганный взгляд."
     
-    mi "Мне снились[wp] {w}Ужасные вещи[wp]"
-    mi "Как меня и всю мою семью окружили американские солдаты в родном Киото[wp] {w}Их расстреляли, а мне удалось убежать. Солдаты заливались дьявольским смехом и отправились искать меня."
-
-    show mi sad_cry pioneer at center with dspr
-
-    mi "И когда они меня нашли и наставили оружие, я вскрикнула и очнулась за мгновение до выстрела, вся в холодном поту."
+        show mi sad pioneer at center with dspr
+        
+        mi "Мне снились[wp] {w}Ужасные вещи[wp]"
+        mi "Как меня и всю мою семью окружили американские солдаты в родном Киото[wp] {w}Их расстреляли, а мне удалось убежать. Солдаты заливались дьявольским смехом и отправились искать меня."
     
-    "По её щеке пробежало пару слёз."
+        show mi sad_cry pioneer at center with dspr
     
-    th "Да уж, не этого я ожидал[wp]"
+        mi "И когда они меня нашли и наставили оружие, я вскрикнула и очнулась за мгновение до выстрела, вся в холодном поту."
+        
+        "По её щеке пробежало пару слёз."
+        
+        th "Да уж, не этого я ожидал[wp]"
+        
+        me "Слушай, не думай об этом. Это всего лишь кошмар, отпусти его, пусть мозг сотрёт его."
     
-    me "Слушай, не думай об этом. Это всего лишь кошмар, отпусти его, пусть мозг сотрёт его."
-
-    show mi sad pioneer at center with dspr
-
-    mi "Да, думаю это будет верным решением."
-
-    show mi normal pioneer at center with dspr
-
-    mi "Ну, а у тебя как дела?"
+        show mi sad pioneer at center with dspr
     
-    "Резко переменилась в настроении Мику и весёлым голоском спросила меня."
+        mi "Да, думаю это будет верным решением."
     
-    me "Да всё нормально в общем-то. Буду провожатым для новенькой, хотя ты это и так знаешь."
+        show mi normal pioneer at center with dspr
     
-    show mi grin pioneer at center with dspr
-
-    mi "О, о! Да знаю это раз, и два, можно с вами? За компанию и заодно покажу и расскажу ей о всех достопримечательностях нашего лагеря, и заранее отвечая на твой вопрос: да, их больше чем статуя Ленина."
+        mi "Ну, а у тебя как дела?"
+        
+        "Резко переменилась в настроении Мику и весёлым голоском спросила меня."
+        
+        me "Да всё нормально в общем-то. Буду провожатым для новенькой, хотя ты это и так знаешь."
+        
+        show mi grin pioneer at center with dspr
     
-    th "Ну тут даже не прикопаться, уделала меня так уделала. Вот только нужна ли нам компания?"
+        mi "О, о! Да знаю это раз, и два, можно с вами? За компанию и заодно покажу и расскажу ей о всех достопримечательностях нашего лагеря, и заранее отвечая на твой вопрос: да, их больше чем статуя Ленина."
+        
+        th "Ну тут даже не прикопаться, уделала меня так уделала. Вот только нужна ли нам компания?"
+        
+        window hide dissolve
+        $ renpy.pause(0.2)
+        call screen wnfh_choice(
+            ["mi", "Почему бы и нет", "Пополнение в команде не повредит", "d2_mi_yes_1", {"mi":1}],
+            ["mi", "Пожалуй нет", "Не вижу особого смысла в этом", "d2_mi_no_1", {"mi":-1}],
+            ["d2_choice_n2", "Мику хочет пойти вместе Катей и Семёном за компанию."]
+            ) with sphere_blure_dissolve2
+        
+        label d2_mi_yes_1:
     
-    window hide dissolve
-    $ renpy.pause(0.2)
-    call screen wnfh_choice(
-        ["mi", "Почему бы и нет", "Пополнение в команде не повредит", "d2_mi_yes_1", {"mi":1}],
-        ["mi", "Пожалуй нет", "Не вижу особого смысла в этом", "d2_mi_no_1", {"mi":-1}],
-        ["d2_choice_n2", "Мику хочет пойти вместе Катей и Семёном за компанию."]
-        ) with sphere_blure_dissolve2
+        show mi smile pioneer at center with dspr
+        show mt normal pioneer:
+            xcenter 1.2
+        window show dissolve
+        
+        mi "Отличненько! Со мной вы точно не заскучаете."
+        me "Чудесно, а хочешь сказать, что в моей компании Катя заскучает?"
+        mi "Я имею ввиду, что втроём всяко будет веселее, чем вдвоём."
+        me "Ну, тут даже не поспорить."
     
-    label d2_mi_yes_1:
-
-    show mi smile pioneer at center with dspr
-    show mt normal pioneer:
-        xcenter 1.2
-    window show dissolve
+        show mt normal pioneer:
+            ease_quart 2.0 xcenter 0.78
     
-    mi "Отличненько! Со мной вы точно не заскучаете."
-    me "Чудесно, а хочешь сказать, что в моей компании Катя заскучает?"
-    mi "Я имею ввиду, что втроём всяко будет веселее, чем вдвоём."
-    me "Ну, тут даже не поспорить."
-
-    show mt normal pioneer:
-        ease_quart 2.0 xcenter 0.78
-
-    "В это же время, к нашему столу подошла вожатая."
+        "В это же время, к нашему столу подошла вожатая."
+        
+        mt "Вот ты где, давай быстрее заканчивай с завтраком и на выход, тебя уже ждут."
+        me "Понял, принял."
     
-    mt "Вот ты где, давай быстрее заканчивай с завтраком и на выход, тебя уже ждут."
-    me "Понял, принял."
-
-    show mt normal pioneer:
-        ease_quart 2.0 xcenter 1.2
+        show mt normal pioneer:
+            ease_quart 2.0 xcenter 1.2
+        
+        "После моего ответа, Ольга Дмитриевна тут же удалилась обратно вглубь столовой, а я же активно принялся за свой завтрак."
+        
+        mi "Фи-и-и, как ты можешь есть эту гадость?"
+        me "А мне очень даже нравится."
+        mi "Фи."
+        
+        "Закончив с завтраком, я и Мику отнесли свои подносы с едой и пошли на выход из столовой."
+        
+        jump d2_begunok
     
-    "После моего ответа, Ольга Дмитриевна тут же удалилась обратно вглубь столовой, а я же активно принялся за свой завтрак."
+        label d2_mi_no_1:
+        
+        me "Да хватит тебе, Мику, мы быстренько справимся, даже как-либо поболтать или повеселится не успеем, как бегунок будет уже заполнен."
     
-    mi "Фи-и-и, как ты можешь есть эту гадость?"
-    me "А мне очень даже нравится."
-    mi "Фи."
+        show mi sad pioneer at center with dspr
     
-    "Закончив с завтраком, я и Мику отнесли свои подносы с едой и пошли на выход из столовой."
+        mi "Эх, ну ладненько, хотя бы навестите меня в музыкальном кружке."
+        me "Обязательно."
+        
+        "Мику грустно вздохнула, а я активно принялся уплетать свой завтрак."
+        
+        show mi upset pioneer at center with dspr
     
-    jump d2_begunok
+        mi "И как только ты можешь есть эту гадость?"
+        me "О чём ты? Вкусно же."
+        mi "Ну не знаю, мне вообще не понравилось."
+        me "Без обид конечно, но у тебя просто, как у японки, вкусы другие вот и всё."
+        mi "Возможно[wp]"
+        
+        hide mi with dissolve
     
-    label d2_mi_no_1:
+        "Закончив с завтраком, я попрощался с музыканткой и, отнесся поднос, вышел из столовой."
     
-    me "Да хватит тебе, Мику, мы быстренько справимся, даже как-либо поболтать или повеселится не успеем, как бегунок будет уже заполнен."
-
-    show mi sad pioneer at center with dspr
-
-    mi "Эх, ну ладненько, хотя бы навестите меня в музыкальном кружке."
-    me "Обязательно."
+        jump d2_begunok
     
-    "Мику грустно вздохнула, а я активно принялся уплетать свой завтрак."
+        label d2_zavtrak_s_el_sh:
     
-    show mi upset pioneer at center with dspr
-
-    mi "И как только ты можешь есть эту гадость?"
-    me "О чём ты? Вкусно же."
-    mi "Ну не знаю, мне вообще не понравилось."
-    me "Без обид конечно, но у тебя просто, как у японки, вкусы другие вот и всё."
-    mi "Возможно[wp]"
+        window show dissolve
+        th "Пожалуй пойду к своим ребятам, с ними как-то поуютнее будет."
+        "Взяв поднос с завтраком, я отправился к ним."
     
-    hide mi with dissolve
-
-    "Закончив с завтраком, я попрощался с музыканткой и, отнесся поднос, вышел из столовой."
-
-    jump d2_begunok
-
-    label d2_zavtrak_s_el_sh:
-
-    window show dissolve
-    th "Пожалуй пойду к своим ребятам, с ними как-то поуютнее будет."
-    "Взяв поднос с завтраком, я отправился к ним."
-
-    window hide dissolve
-    show chair_l behind el
-    show chair_r behind sh
-    show table
-    show shakers
-    show left d2_breakfast_full tray foods behind shakers
-    show el normal pioneer at wnfh_sit_left behind table
-    show right d2_breakfast_half tray foods behind shakers
-    show sh normal pioneer at wnfh_sit_right behind table
-    with dissolve
-    $ renpy.pause(1.0, hard=True)
-    window show
+        window hide dissolve
+        show chair_l behind el
+        show chair_r behind sh
+        show table
+        show shakers
+        show left d2_breakfast_full tray foods behind shakers
+        show el normal pioneer at wnfh_sit_left behind table
+        show right d2_breakfast_half tray foods behind shakers
+        show sh normal pioneer at wnfh_sit_right behind table
+        with dissolve
+        $ renpy.pause(1.0, hard=True)
+        window show
+        
+        me "Доброе утро товарищи, есть место свободное?"
+        sh "Да, садись."
+        
+        show mid d2_breakfast_full tray spoon foods with dissolve
     
-    me "Доброе утро товарищи, есть место свободное?"
-    sh "Да, садись."
+        "И усевшись, я только сейчас осмотрел свой завтрак" 
+        "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
+        
+        show mid d2_breakfast_full tray foods with dspr
     
-    show mid d2_breakfast_full tray spoon foods with dissolve
-
-    "И усевшись, я только сейчас осмотрел свой завтрак" 
-    "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
+        me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
+        
+        "Последние слова я сказал чуть тише."
+        
+        show left d2_breakfast_half tray foods behind shakers with dspr
     
-    show mid d2_breakfast_full tray foods with dspr
-
-    me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
+        show el sad with dspr 
+        show sh upset with dspr
+        
+        "После моего вопроса, ребята немного пали духом. {w}Стало ясно, что они ничего не придумали."
+        
+        me "Что, ничего?"
+        el "Ага[wp]"
+        sh "Ну, не совсем. {w}Есть одна идея, но она довольно рисковая."
+        me "Выкладывай всё равно."
+        
+        "Шурик огляделся по сторонам и, видимо удостоверившись, что никто не будет подслушивать, вернул свой взгляд обратно на меня."
+        
+        show el normal with dspr
+        show sh serious with dspr
     
-    "Последние слова я сказал чуть тише."
+        show mid d2_breakfast_half tray foods with dspr
+        
+        sh "И так, я предлагаю сходить в старый лагерь."
+        me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
+        sh "Я так тоже подумал."
+        sh "Поэтому мы конечно же пойдем без её спроса." 
+        sh "А для этого[wp]"
+        me "Шурик стой!"
+        
+        "Через шепот прошипел я."
+        "Краем глаза, я заметил, что к нашему столу идет вожатая." 
+        "И крайне не хотелось бы, чтобы она услышала наши разговоры о старом лагере."
+        
+        show sh normal with dspr
+        
+        window hide
+        show mt normal pioneer behind chair_r:
+            xcenter 1.2
+            ease_quart 3.0 xcenter 0.5
+        $ renpy.pause(1.5)
+        window show
     
-    show left d2_breakfast_half tray foods behind shakers with dspr
-
-    show el sad with dspr 
-    show sh upset with dspr
+        "Вскоре она подошла к нам."
+        
+        mt "Семён, давай скорее доедай и марш на выход, там тебя уже ждут!"
+        
+        th "И снова вы меня дёргаете по среди завтрака!"
+        th "Видимо, всё же у вас нет совести."
+        
+        me "Да, хорошо." 
+        
+        "Как скоро вожатая пришла, также скоро она и ушла."
+        
+        window hide
+        show mt normal pioneer behind chair_r:
+            ease_quart 3.0 xcenter 1.2
+        $ renpy.pause(1.5)
+        window show
+        
+        me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
+        sh "Будем ждать."
+        
+        show mid d2_breakfast_empty tray foods with dissolve
     
-    "После моего вопроса, ребята немного пали духом. {w}Стало ясно, что они ничего не придумали."
+        "Быстренько всё доев, я пошел на выход из столовой."
+        jump d2_begunok
     
-    me "Что, ничего?"
-    el "Ага[wp]"
-    sh "Ну, не совсем. {w}Есть одна идея, но она довольно рисковая."
-    me "Выкладывай всё равно."
-    
-    "Шурик огляделся по сторонам и, видимо удостоверившись, что никто не будет подслушивать, вернул свой взгляд обратно на меня."
-    
-    show el normal with dspr
-    show sh serious with dspr
-
-    show mid d2_breakfast_half tray foods with dspr
-    
-    sh "И так, я предлагаю сходить в старый лагерь."
-    me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
-    sh "Я так тоже подумал."
-    sh "Поэтому мы конечно же пойдем без её спроса." 
-    sh "А для этого[wp]"
-    me "Шурик стой!"
-    
-    "Через шепот прошипел я."
-    "Краем глаза, я заметил, что к нашему столу идет вожатая." 
-    "И крайне не хотелось бы, чтобы она услышала наши разговоры о старом лагере."
-    
-    show sh normal with dspr
-    
-    window hide
-    show mt normal pioneer behind chair_r:
-        xcenter 1.2
-        ease_quart 3.0 xcenter 0.5
-    $ renpy.pause(1.5)
-    window show
-
-    "Вскоре она подошла к нам."
-    
-    mt "Семён, давай скорее доедай и марш на выход, там тебя уже ждут!"
-    
-    th "И снова вы меня дёргаете по среди завтрака!"
-    th "Видимо, всё же у вас нет совести."
-    
-    me "Да, хорошо." 
-    
-    "Как скоро вожатая пришла, также скоро она и ушла."
-    
-    window hide
-    show mt normal pioneer behind chair_r:
-        ease_quart 3.0 xcenter 1.2
-    $ renpy.pause(1.5)
-    window show
-    
-    me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
-    sh "Будем ждать."
-    
-    show mid d2_breakfast_empty tray foods with dissolve
-
-    "Быстренько всё доев, я пошел на выход из столовой."
-    jump d2_begunok
-    
-    if wnfh_Data.getChoice_points_sum("un") == 4:
+    elif wnfh_Data.getChoice_points_sum("un") == 4:
 
         $ d2_zavtrak_s_lenoy = True
 
@@ -563,7 +562,8 @@ label wnfh_day_2:
             xcenter 1.2
             ease_quart 2.0 xcenter 0.72
         show kat normal pioneer:
-            ease_quart 1.5 xcenter 0.28
+            yanchor 0.5
+            ease_quart 1.5 xcenter 0.28 
 
         "И пока думал, к нам подошла Лена."
 
@@ -571,7 +571,7 @@ label wnfh_day_2:
         
         "Весёлым голоском поздоровалась с нами Лена."
 
-        show kat smile pioneer at left with dspr
+        show kat smile pioneer with dspr
 
         kat "Здравствуй."
         me "Привет."
@@ -587,12 +587,12 @@ label wnfh_day_2:
         me "Ну вот такой я экстрасенс."
         me "Ладно, дамочки, хватит терять время и пойдём сядем уже куда-нибудь."
 
-        show kat upset pioneer at left with dspr
+        show kat upset pioneer with dspr
 
         kat "Согласна, кушать-то хочется."
         me "Тогда идём, сейчас втиснимся куда-нибудь[wp]"
 
-        show kat normal pioneer at left
+        show kat normal pioneer 
         show un smile pioneer at right
         with dspr
 
@@ -603,13 +603,13 @@ label wnfh_day_2:
 
         me "Ну что, Кать, как вчера прошёл первый день в лагере?"
 
-        show kat thinking pioneer at left with dspr
+        show kat thinking with dspr
 
         "Она глубоко вздохнула."
 
         kat "Эх, ну как-как."
 
-        show kat upset pioneer at left with dspr
+        show kat upset pioneer with dspr
 
         kat "Обычно, наверное?"
         kat "Показали мне домик, где и просидела некоторое время, обживаясь."
@@ -623,8 +623,8 @@ label wnfh_day_2:
         un "Хочу сказать, что это было довольно сложной задачей."
         me "Ха, и почему же?"
 
-        show kat obida pioneer at left
-        show un happy pioneer at right
+        show kat obida pioneer
+        show un laugh pioneer
         with dspr
 
         "Лена рассмеялась, а Катя сделала обиженную мину."
@@ -644,14 +644,14 @@ label wnfh_day_2:
 
         un "Ну чего ты обижаешься-то?"
 
-        show kat confused pioneer at left with dspr
+        show kat confused pioneer with dspr
 
         kat "Я? Я не обижаюсь."
 
         show mt normal pioneer:
             xcenter 1.2
             ease_quart 2.0 xcenter 0.88
-        show kat normal pioneer at left
+        show kat normal pioneer
         show un normal pioneer at right
         with dspr
 

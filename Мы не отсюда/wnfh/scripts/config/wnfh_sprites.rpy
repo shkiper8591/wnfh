@@ -272,6 +272,14 @@ init 2:
         make_sprites_for('sd', 'forma cigarete glasses', ['mod:cigarete', 'mod:<emotion>', 'mod:glasses'])
         
         ## Новые старые спрайты
+        # Мику
+        make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'body', ['es:body', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ('sad_cry'))
+        make_sprites_for('mi', 'swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude = ('sad_cry'))
+        make_sprites_for('mi', 'body', ['es:body', 'es:<emotion>'], exclude = ('sad_cry'))
+
         # Женя
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('mz', 'pioneer glasses', ['mod:body', 'mod:pioneer', 'mod:<emotion>', 'mod:glasses'])

@@ -4,8 +4,8 @@ init -10 python :
     class BD(object):
         def __init__(self,location):
             self.location=os.path.expanduser(location)
-            self.load(self.location)
             self.path_enviroment = location.split(".")[1].split("/")[-1]
+            self.load(self.location)
         def load(self, location):
             #if os.path.exists(location):
             if self.path_enviroment in locals() or self.path_enviroment in globals():

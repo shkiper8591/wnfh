@@ -5,14 +5,14 @@ init:
                                                                             #1 параметр: степень замедления транзита
                                                                             #2 параметр: степень размытия
     # Слайд слева
-    """
-    Transitions_list=['slide_left','slide_right','slide_up','slide_down']
-    Transitions_sub_options=['dissolve','blure_dissolve']
-    for Transition_name in Transitions_list:
-        for sub_option in Transitions_sub_options:
-            for i in [1.0,2.0,5.0,10.0]:
-                $ locals()[Transition_name +'_'+sub_option+str(int(i)) = ImageDissolve(im.Tile(wnfh_gui["transit"][Transition_name]), i, 1*(1,100)[lambda Transitions_sub_options: Transitions_sub_options=='blure_dissolve'])
-    """
+    
+    #Transitions_list=['slide_left','slide_right','slide_up','slide_down']
+    #Transitions_sub_options=['dissolve','blure_dissolve']
+    #for Transition_name in Transitions_list:
+    #    for sub_option in Transitions_sub_options:
+    #        for i in [1.0,2.0,5.0,10.0]:
+    #            $ locals()[Transition_name +'_'+sub_option+str(int(i)) = ImageDissolve(im.Tile(wnfh_gui["transit"][Transition_name]), i, 1*(1,100)[lambda Transitions_sub_options: Transitions_sub_options=='blure_dissolve'])
+    
     $ slide_left_dissolve = ImageDissolve(im.Tile(wnfh_gui["transit"]["slide_left"]), 1.0, 1)
     $ slide_left_dissolve2 = ImageDissolve(im.Tile(wnfh_gui["transit"]["slide_left"]), 2.0, 1)
     $ slide_left_dissolve5 = ImageDissolve(im.Tile(wnfh_gui["transit"]["slide_left"]), 5.0, 1)

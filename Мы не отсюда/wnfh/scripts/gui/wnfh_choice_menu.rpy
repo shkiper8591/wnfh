@@ -1,10 +1,29 @@
 init 2:
     screen wnfh_choice(*args):
         modal True tag menu
-        for i in range(1,20):
-                locals()["wnfh_screen_"+str(i)]=False
+        default wnfh_screen_1 = False
+        default wnfh_screen_2 = False
+        default wnfh_screen_3 = False
+        default wnfh_screen_4 = False
+        default wnfh_screen_5 = False
+        default wnfh_screen_6 = False
+        default wnfh_screen_7 = False
+        default wnfh_screen_8 = False
+        default wnfh_screen_9 = False
+        default wnfh_screen_10 = False
+        default wnfh_screen_11 = False
+        default wnfh_screen_12 = False
+        default wnfh_screen_13 = False
+        default wnfh_screen_14 = False
+        default wnfh_screen_15 = False
+        default wnfh_screen_16 = False
+        default wnfh_screen_17 = False
+        default wnfh_screen_18 = False
+        default wnfh_screen_19 = False
 
         python:
+            #for i in range(1,20):
+            #    locals()["wnfh_screen_"+str(i)]=False
             def add_to_bd(data):
                 wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4]})
             def add_to_bd_test(data):
@@ -78,20 +97,20 @@ init 2:
        #         unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
        #         action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd,[args[i],args[len(args)-1],i]),Jump(args[i][3]))
         
-        
+        if args[-1] == "test":
+            $ Test_wr = True
+        else:
+            $ Test_wr = False
         frame:
             background #0000
             area(0.5, 0.5, 0.7, 0.8)
             xanchor 0.5 yanchor 0.5
             #grid 1 len(args)-1:
-            grid 1 len(args):
+            grid 1 len(args) - int(Test_wr):
                 anchor (0.5, 0.5) pos (0.5, 0.5)
                 spacing -6
-                if args[-1] == "test":
-                    Test_wr=True
-                else:
-                    Test_wr=False
-                for i in range(len(args)-1):
+                
+                for i in range(len(args) - 1 - int(Test_wr)):
                     if i == "test":
                         pass
                     else:

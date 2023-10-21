@@ -79,7 +79,8 @@ label blwnfh_test_choice:
         ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_2", {"neutral": 0}],
         ["usw", "+1 ЛП", "Прибавляет 1 лавпоинт", "test_choice_2", {"usw":1}],
         ["usw", "+2 ЛП", "Прибавляет 2 лавпоинта", "test_choice_2", {"usw":2}],
-        ["test_lovepoint_testing_1", "1-й Тест выбор подсчёта лавпоинтов"]
+        ["test_lovepoint_testing_1", "1-й Тест выбор подсчёта лавпоинтов"],
+        "test"
         ) with sphere_blure_dissolve2
 
 label test_choice_2:
@@ -89,7 +90,8 @@ label test_choice_2:
         ["usw", "-1 ЛП", "Отнимает 1 лавпоинт", "test_choice_3", {"usw":-1}],
         ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_3", {"neutral": 0}],
         ["usw", "+1 ЛП", "Прибавляет 1 лавпоинт", "test_choice_3", {"usw":1}],
-        ["test_lovepoint_testing_2", "2-й Тест выбор подсчёта лавпоинтов"]
+        ["test_lovepoint_testing_2", "2-й Тест выбор подсчёта лавпоинтов"],
+        "test"
         ) with sphere_blure_dissolve2
 label test_choice_3:
     if wnfh_Data_test.getChoice_points_sum("usw") == -3:

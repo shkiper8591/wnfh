@@ -52,7 +52,7 @@ init 2:
             },
             'mi': {
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1,
-                'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'smile': 2,
+                'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_cry': 2, 'smile': 2,
                 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
                 'dnr_cleaning': 4,
             },

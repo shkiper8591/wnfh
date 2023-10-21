@@ -12,7 +12,7 @@ label wnfh_day_1_dream:
     $ wnfh_set_mode(nvl)
     nvl show dissolve
     
-    "Я уже не могу[wp] {w}Моих сил недостаточно, но я должен продолжать"
+    "Я уже не могу[wp] {w}Моих сил недостаточно, но я должен продолжать."
     "Ноги двигались сами по себе, я уже давно перестал их чувствовать, а ветер - обжигал,казалось срывая кожу с лица."
     "Но во чтобы то не стало, мне надо продолжать[wp]"
     
@@ -2365,7 +2365,7 @@ label d1_me_kat_sdacha_kati:
         scene bg ext_house_of_mt_day
         show mt dc_reading dc background
         show un normal pioneer at cleft
-        show kat serious casual at fleft
+        show kat serious casual shirt at fleft
         with slide_left_blure_dissolve2
         window show dissolve
 
@@ -3126,8 +3126,9 @@ label d1_obed_me_w_un_kat:
     
     me "О чём болтаете?"
     
-    show un shy pioneer with dspr
-    show kat shy pioneer with dspr
+    show un shy pioneer
+    show kat shy pioneer 
+    with dspr
     
     "Спросил я невзначай между употреблением порций супа."
     "Однако, после моего вопроса они залились румянцем, будто я спросил их о чём-то не пристойном."

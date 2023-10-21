@@ -5,22 +5,23 @@ init -10 python :
         def __init__(self,location):
             self.location=os.path.expanduser(location)
             self.load(self.location)
+            self.path_enviroment = location.split(".")[1].split("/")[-1]
         def load(self, location):
             #if os.path.exists(location):
-            if 'database_json' in locals() or 'database_json' in globals():
+            if self.path_enviroment in locals() or self.path_enviroment in globals():
                 self.open_f()
             else:
                 self.BD_INIT_MODULE = {}
-                $ database_json = {}
+                locals()[self.path_enviroment] = {}
             return True
         def load_json(self):
             return json.load(open(self.location,"r"))
         def open_f(self):
-            self.BD_INIT_MODULE =  $ database_json
+            self.BD_INIT_MODULE =  locals()[self.path_enviroment]
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
             try:
-                $ database_json = self.BD_INIT_MODULE
+                locals()[self.path_enviroment] = self.BD_INIT_MODULE
             except:
                 pass
         def dumpdb(self):
@@ -122,6 +123,7 @@ init -10 python :
                 return False
             del self.db[key]
             self.dumpdb()
+            self.dumpSave()
             return True
         def resetDB(self):
             self.BD_INIT_MODULE = {}

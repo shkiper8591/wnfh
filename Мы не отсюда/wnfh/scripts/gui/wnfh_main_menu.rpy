@@ -269,4 +269,5 @@ label wnfh_main_menu:
     $ renpy.pause(2)
     $ init_splash()
     $ wnfh_Data = BD("./game/saves/wnfh_database.json")
+    $ wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
     call screen wnfh_menu with dissolve

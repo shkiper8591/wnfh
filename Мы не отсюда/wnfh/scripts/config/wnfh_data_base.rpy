@@ -6,16 +6,23 @@ init -10 python :
             self.location=os.path.expanduser(location)
             self.load(self.location)
         def load(self, location):
-            if os.path.exists(location):
+            #if os.path.exists(location):
+            if 'database_json' in locals() or 'database_json' in globals():
                 self.open_f()
             else:
                 self.BD_INIT_MODULE = {}
+                $ database_json = {}
             return True
         def load_json(self):
             return json.load(open(self.location,"r"))
         def open_f(self):
-            self.BD_INIT_MODULE = json.load(open(self.location,"r"))
-
+            self.BD_INIT_MODULE =  $ database_json
+            #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
+        def dumpSave(self):
+            try:
+                $ database_json = self.BD_INIT_MODULE
+            except:
+                pass
         def dumpdb(self):
             try:
                 json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
@@ -26,6 +33,7 @@ init -10 python :
             try:
                 self.BD_INIT_MODULE[str(key)] = value
                 self.dumpdb()
+                self.dumpSave()
                 return True
             except Exception as e:
                 #print("Ошибка записи в бд: " + str(e))
@@ -101,15 +109,14 @@ init -10 python :
                 return False
 
         def getChoice_points_sum(self, person):
-            try:
                 sum = 0
                 for index, data in enumerate(list(wnfh_Data.load_json())):
-                    sum += self.BD_INIT_MODULE[data]["Влияние на персонажей"][person]
-                return sum
-            except KeyError:
+                    try:
+                        sum += self.BD_INIT_MODULE[data]["Влияние на персонажей"][person]
+                    except KeyError:
+                        pass
                 #print("Не было найдено значений" + str(key))
-                return False
-        
+                return sum
         def delete(self , key):
             if not key in self.db:
                 return False

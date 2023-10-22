@@ -555,6 +555,8 @@ label wnfh_day_2:
         jump d2_begunok
     
     elif wnfh_Data.getChoice_points_sum("un") == 4:
+         #wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True)
+         #wnfh_Data.FlagGet("d2_zavtrak_s_lenoy")
 
         $ d2_zavtrak_s_lenoy = True
 

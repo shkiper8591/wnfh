@@ -29,7 +29,7 @@ init -1001 python :
     #    def __EXIT__:
     #    def __ENTER__:
 
-    class BD(object):
+    class wnfh_BD(object):
         def __init__(self,location):
             self.location=os.path.expanduser(location)
             self.path_enviroment = location.split(".")[1].split("/")[-1]
@@ -45,6 +45,7 @@ init -1001 python :
             return json.load(open(self.location,"r"))
         def open_f(self):
             self.BD_INIT_MODULE =  globals()[self.path_enviroment]
+            self.dumpdb()
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
             globals()[self.path_enviroment] = self.BD_INIT_MODULE
@@ -54,6 +55,28 @@ init -1001 python :
                 return True
             except:
                 return False
+
+        """
+        установка нового флага
+        функция принимает название флага и значение
+        #wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True) 
+        """
+        def FlagSet(self,key,value = True):
+            self.BD_INIT_MODULE[str(key)] = {'type':'flag','value':value}
+            self.dumpdb()
+            self.dumpSave()
+            return True
+        """
+        Получение значения флага
+        функция принимает название флага и возвращает значение
+        #wnfh_Data.FlagGet("d2_zavtrak_s_lenoy")
+        """
+        def FlagGet(self,key):
+            self.open_f()
+            try:
+                return self.BD_INIT_MODULE[key]['value']
+            except KeyError:
+                return None
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
             self.dumpdb()
@@ -131,12 +154,15 @@ init -1001 python :
         def getChoice_points_sum(self, person):
             sum = 0
             self.open_f()
-            self.dumpdb()
             for data in list(self.BD_INIT_MODULE ):
                 try:
                     sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
                 except KeyError:
                     pass
+                except TypeError:
+                    pass
+                except Exception:
+                    raise 'Ошибка подсчёта лавпойнтов'
             return sum
         def delete(self , key):
             if not key in self.db:

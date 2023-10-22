@@ -273,6 +273,6 @@ label wnfh_main_menu:
     call screen wnfh_menu with dissolve
 init -1000:
     label null_ellement:
-        $ wnfh_Data = BD("./game/saves/wnfh_database.json")
-        $ wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
+        $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
+        $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
     

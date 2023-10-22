@@ -1,4 +1,4 @@
-label blwnfh_test_choice:    
+label blwnfh_test_choice:
     "Тест выборов и переменных."
 
     #$ wnfh_set_time("day")
@@ -72,12 +72,12 @@ label blwnfh_test_choice:
     "Добро пожаловать в отладку ёбанных лавпоинтов."
     "В общем, положение дел такое: Сейчас высветится меню с 5-ю вариантами, где ты отнимаешь ЛП. Это первая ступень. Потом высветится ещё один выбор, с 3-мя вариантами выборов. После чего ты перейдёшь к основному делу."
     "Первый выбор."
-
+    $ wnfh_Data_test.FlagSet("test_flag")
     call screen wnfh_choice(
         ["usw", "-2 ЛП", "Отнимает 2 лавпоинта", "test_choice_2", {"usw":-2}],
-        ["usw", "-1 ЛП", "Отнимает 1 лавпоинт", "test_choice_2", {"usw":-1}],
-        ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_2"],
-        ["usw", "+1 ЛП", "Прибавляет 1 лавпоинт", "test_choice_2", {"usw":1}],
+        ["usw", "-1 ЛП", "Отнимает 1 лавпоинт", "test_choice_2", {"usw":-1},{"test1":True,"Test2":False}],
+        ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_2",{"test1":True,"Test2":"fdfdfdfd"}],
+        ["usw", "+1 ЛП", "Прибавляет 1 лавпоинт", "test_choice_2"],
         ["usw", "+2 ЛП", "Прибавляет 2 лавпоинта", "test_choice_2", {"usw":2}],
         ["test_lovepoint_testing_1", "1-й Тест выбор подсчёта лавпоинтов"],
         "test"
@@ -88,7 +88,7 @@ label test_choice_2:
 
     call screen wnfh_choice(
         ["usw", "-1 ЛП", "Отнимает 1 лавпоинт", "test_choice_3", {"usw":-1}],
-        ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_3", {"neutral": 0}],
+        ["usw", "0 ЛП", "Не отнимает лавпоинты", "test_choice_3", ],
         ["usw", "+1 ЛП", "Прибавляет 1 лавпоинт", "test_choice_3", {"usw":1}],
         ["test_lovepoint_testing_2", "2-й Тест выбор подсчёта лавпоинтов"],
         "test"
@@ -159,7 +159,14 @@ label test_choice_3:
     
 
 label blwnfh_continue_2:
-    "Возвращаемся в меню отладки?"
+    if wnfh_Data_test.FlagGet("test_flag") == True:
+        "Возвращаемся в меню отладки? флаг TRUE"
+    elif wnfh_Data_test.FlagGet("test_flag") == False:
+        "Возвращаемся в меню отладки? флаг False"
+    elif wnfh_Data_test.FlagGet("test_flag") == None:
+        "Возвращаемся в меню отладки? флага не существует"
+
+
 
     menu: 
     

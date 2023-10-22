@@ -1,30 +1,53 @@
+init -1002:
+    if "wnfh_database" not in globals():
+        default wnfh_database = {}
+    if "wnfh_database_test" not in globals():
+        default wnfh_database_test = {}
 init -1001 python :
     import os
     import json
+    #class StorageManager:
+    #    def __init__(self,head=None):
+    #        self.SaveObject = head
+    #        self.next
+    #    def container(self,head):
+    #        lastEntry = self.head
+    #        while(lastEntry):
+    #            if head == lastEntry.head:
+    #                return True
+    #            else:
+    #                lastEntry = lastEntry.
+    #
+    #
+    #class SavelinkedList:
+    #    def __init__(self):
+    #        self.head=None
+    #class Storage(object,index,memoryValue):
+    #    def __init__(index,):
+    #        self.head=None
+    #    def __NAME_:
+    #    def __EXIT__:
+    #    def __ENTER__:
+
     class BD(object):
         def __init__(self,location):
             self.location=os.path.expanduser(location)
             self.path_enviroment = location.split(".")[1].split("/")[-1]
+            self.BD_INIT_MODULE = {}
             self.load(self.location)
             self.Encryption = True
         def load(self, location):
             #if os.path.exists(location):
             if self.path_enviroment in locals() or self.path_enviroment in globals():
                 self.open_f()
-            else:
-                self.BD_INIT_MODULE = {}
-                locals()[self.path_enviroment] = {}
             return True
         def load_json(self):
             return json.load(open(self.location,"r"))
         def open_f(self):
-            self.BD_INIT_MODULE =  locals()[self.path_enviroment]
+            self.BD_INIT_MODULE =  globals()[self.path_enviroment]
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
-            try:
-                locals()[self.path_enviroment] = self.BD_INIT_MODULE
-            except:
-                pass
+            globals()[self.path_enviroment] = self.BD_INIT_MODULE
         def dumpdb(self):
             try:
                 json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
@@ -32,14 +55,10 @@ init -1001 python :
             except:
                 return False
         def write(self , key , value):
-            try:
-                self.BD_INIT_MODULE[str(key)] = value
-                self.dumpdb()
-                self.dumpSave()
-                return True
-            except Exception as e:
-                #print("Ошибка записи в бд: " + str(e))
-                return False   
+            self.BD_INIT_MODULE[str(key)] = value
+            self.dumpdb()
+            self.dumpSave()
+            return True
         def get(self , key):
             try:
                 return self.BD_INIT_MODULE[key]
@@ -111,7 +130,8 @@ init -1001 python :
                 return False
         def getChoice_points_sum(self, person):
             sum = 0
-            self.load(self.location)
+            self.open_f()
+            self.dumpdb()
             for data in list(self.BD_INIT_MODULE ):
                 try:
                     sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])

@@ -1608,7 +1608,61 @@ label d1_dv_usw_zavtrak:
     $ renpy.pause(2.0, hard=True)
     hide mt with dissolve
     
-    "Вожатая быстро куда-то удалилась."
+    "Когда вожатая удалилась куда-то вглубь столовой, Алиса немного приподнялась и наклонилась ко мне."
+
+    dv "Слушай, Семён."
+    me "М?"
+
+    "Она легонько хихикнула."
+
+    show dv laugh pioneer at wnfh_sit_right behind table with dspr
+
+    dv "А может пополнение-то, таво, по пионерски встретить, так сказать?"
+
+    "Я не очень понял, что она имела ввиду."
+
+    me "То есть?"
+    
+    show usw grin pioneer at wnfh_sit_left behind table with dspr
+
+    usw "То есть облить из ведра."
+
+    "Резко вставила свои пять копеек Ульяна."
+
+    me "О как."
+    me "А если там не один-два человека, а десять?"
+
+    show dv normal pioneer at wnfh_sit_right behind table with dspr
+
+    dv "Мысль верная конечно[wp]"
+
+    "Задумчиво проговорила Алиса."
+
+    show dv smile pioneer at wnfh_sit_right behind table with dspr
+
+    dv "Только вот тут мест на такое количество народа не найдётся."
+
+    show dv grin pioneer2 at wnfh_sit_right behind table with dspr
+
+    dv "Так что можешь не беспокоиться по этому поводу."
+    usw "Ну что, ты в деле?"
+
+    window hide dissolve
+
+    call screen wnfh_choice(
+        ["dv", "Чёрт возьми да!", "Звучит очень весело хе-хе", "d1_dv_yes_1", {"dv":1}],
+        ["dv", "Думаю нет", "Не хочу портить свою репутацию", "d1_dv_no_1", {"dv":-1}],
+        ["d1_choice_n8", "Алиса предлагает облить пополнение в лагере."]
+        ) with sphere_blure_dissolve2
+
+    label d1_dv_yes_1:
+
+    "placeholder"
+
+    label d1_dv_no_1:
+
+    "placeholder"
+
     "А я с удвоенной силой принялся за завтрак и буквально спустя полминуты он был съеден."
     
     show mid d5_breakfast_empty tray spoon with dspr

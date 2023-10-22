@@ -22,12 +22,12 @@ init 2:
         default wnfh_screen_19 = False
 
         python:
-            #for i in range(1,20):
-            #    locals()["wnfh_screen_"+str(i)]=False
+        #   for i in range(1,20):
+        #       locals()["wnfh_screen_"+str(i)]=False
             def add_to_bd(data):
-                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4]})
+                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":{"neutral": 0} if len(data[0])==4 else data[0][4]})
             def add_to_bd_test(data):
-                wnfh_Data_test.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data[0][4]})
+                wnfh_Data_test.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": {"neutral": 0} if len(data[0])==4 else data[0][4]})
             wnfh_choice_tint_color = {
                 #timeset      #текст     #рамки     #фон
                 "day":      ["#FFDD7D", "#80A055", "#000000"], 
@@ -148,9 +148,9 @@ init 2:
                                 hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
                                 unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
                                 if not Test_wr:
-                                    action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd,[args[i],args[len(args)-1],i]),Jump(args[i][3]))
+                                    action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd,[args[i],args[len(args)-1- int(Test_wr)],i]),Jump(args[i][3]))
                                 else:
-                                    action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd_test,[args[i],args[len(args)-1],i]),Jump(args[i][3]))
+                                    action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd_test,[args[i],args[len(args)-1- int(Test_wr)],i]),Jump(args[i][3]))
                 add (wnfh_gui["choice"]["line"]):
                     matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                     xalign 0.5 yanchor 0.0

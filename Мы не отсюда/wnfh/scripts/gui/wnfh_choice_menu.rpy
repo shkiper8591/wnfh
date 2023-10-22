@@ -36,7 +36,7 @@ init 2:
                 "prologue": ["#98D8DA", "#BEE8E9", "#000A20"], 
             }
 
-            #wnfh_screen_variable = list(globals()['wnfh_screen_'+str(i)] for i in range(1,20))
+            #wnfh_screen_variable = list(locals()['wnfh_screen_'+str(i)] for i in range(1,20))
             wnfh_screen_variable =[
                 wnfh_screen_1,
                 wnfh_screen_2,

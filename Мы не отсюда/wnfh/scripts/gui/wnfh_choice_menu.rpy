@@ -36,7 +36,8 @@ init 2:
                 "prologue": ["#98D8DA", "#BEE8E9", "#000A20"], 
             }
 
-            wnfh_screen_variable = [
+            #wnfh_screen_variable = list(globals()['wnfh_screen_'+str(i)] for i in range(1,20))
+            wnfh_screen_variable =[
                 wnfh_screen_1,
                 wnfh_screen_2,
                 wnfh_screen_3,
@@ -57,27 +58,7 @@ init 2:
                 wnfh_screen_18,
                 wnfh_screen_19
             ]
-            wnfh_screen_variable_string=[
-               "wnfh_screen_1",
-               "wnfh_screen_2",
-               "wnfh_screen_3",
-               "wnfh_screen_4",
-               "wnfh_screen_5",
-               "wnfh_screen_6",
-               "wnfh_screen_7",
-               "wnfh_screen_8",
-               "wnfh_screen_9",
-               "wnfh_screen_10",
-               "wnfh_screen_11",
-               "wnfh_screen_12",
-               "wnfh_screen_13",
-               "wnfh_screen_14",
-               "wnfh_screen_15",
-               "wnfh_screen_16",
-               "wnfh_screen_17",
-               "wnfh_screen_18",
-               "wnfh_screen_19"
-            ]
+            wnfh_screen_variable_string=list('wnfh_screen_'+str(i) for i in range(1,20))
 
         #add (wnfh_gui["choice"]["line_" + str(len(args)-1)]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
         #for i in range(len(args)-1):

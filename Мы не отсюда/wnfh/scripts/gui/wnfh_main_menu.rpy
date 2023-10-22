@@ -268,6 +268,10 @@ label wnfh_main_menu:
     scene cg d2_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
     $ init_splash()
-    $ wnfh_Data = BD("./game/saves/wnfh_database.json")
-    $ wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
+    #$ wnfh_Data = BD("./game/saves/wnfh_database.json")
+    #$ wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
     call screen wnfh_menu with dissolve
+init -1000 python:
+    wnfh_Data = BD("./game/saves/wnfh_database.json")
+    wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
+    

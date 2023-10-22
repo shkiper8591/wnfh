@@ -137,3 +137,26 @@ init 2:
                     xalign 0.5 yanchor 0.0
 
         add wnfh_gui["choice"]["vignette"]
+
+#
+init -998 python:
+    style.button_text_7dl = Style(style.default)
+    style.button_text_7dl.color = "#c8ffff"
+    style.button_text_7dl.insensitive_color = "#c8c8c8"
+    style.button_text_7dl.selected_color = "#ffffc8"
+    style.button_text_7dl.text_align = 0.5
+    style.button_text_7dl.xalign = 0.5
+    style.button_text_7dl.yalign = 0.5
+    style.button_text_7dl.ypos = 9
+    style.button_text_7dl.xpadding = 6
+    style.button_text_7dl.size = 13
+
+init 0 python:
+    def widget_lp_wnfh():
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.79, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Лена", wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color="#ff55ff")
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Катя", wnfh_Data_test.getChoice_points_sum("kat")), style="button_text_7dl", color="#00ea32")
+
+
+    config.overlay_functions.append(widget_lp_wnfh)

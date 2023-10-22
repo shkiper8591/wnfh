@@ -177,3 +177,4 @@ init -2:
     $ renpy.image("wnfh_thought", ParameterizedText(style="wnfh_thought", size=40))
     
     
+    

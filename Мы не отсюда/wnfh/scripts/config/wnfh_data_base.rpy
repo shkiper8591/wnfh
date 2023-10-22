@@ -1,4 +1,4 @@
-init -10 python :
+init -1001 python :
     import os
     import json
     class BD(object):
@@ -110,13 +110,14 @@ init -10 python :
                 #print("Не было найдено значений" + str(key))
                 return False
         def getChoice_points_sum(self, person):
-                sum = 0
-                for data in list(self.BD_INIT_MODULE ):
-                    try:
-                        sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
-                    except KeyError:
-                        pass
-                return sum
+            sum = 0
+            self.load(self.location)
+            for data in list(self.BD_INIT_MODULE ):
+                try:
+                    sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
+                except KeyError:
+                    pass
+            return sum
         def delete(self , key):
             if not key in self.db:
                 return False

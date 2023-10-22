@@ -6,6 +6,7 @@ init -10 python :
             self.location=os.path.expanduser(location)
             self.path_enviroment = location.split(".")[1].split("/")[-1]
             self.load(self.location)
+            self.Encryption = True
         def load(self, location):
             #if os.path.exists(location):
             if self.path_enviroment in locals() or self.path_enviroment in globals():

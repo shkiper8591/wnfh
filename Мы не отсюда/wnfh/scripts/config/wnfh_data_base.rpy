@@ -175,3 +175,52 @@ init -1001 python :
             self.BD_INIT_MODULE = {}
             self.write()
             return True
+
+init -998 python:
+    style.button_text_7dl = Style(style.default)
+    style.button_text_7dl.color = "#c8ffff"
+    style.button_text_7dl.insensitive_color = "#c8c8c8"
+    style.button_text_7dl.selected_color = "#ffffc8"
+    style.button_text_7dl.text_align = 0.5
+    style.button_text_7dl.xalign = 0.5
+    style.button_text_7dl.yalign = 0.5
+    style.button_text_7dl.ypos = 9
+    style.button_text_7dl.xpadding = 6
+    style.button_text_7dl.size = 13
+
+    def wnfh_add_flag(data, env):
+        for i in data:
+            if env == "prod":
+                wnfh_Data.FlagSet(i, data[i])
+            elif env == "test":
+                wnfh_Data_test.FlagSet(i, data[i])
+
+
+    def wnfh_find_Operand(data, env):
+        if len(data[0]) == 6:
+            data_set = data[0][4]
+            wnfh_add_flag(data[0][5], env)
+        elif len(data[0]) == 4:
+            data_set = "Нет влияния"
+        elif len(data[0]) == 5:
+            for i in data[0][4]:
+                if i in wnfh_characters.keys():
+                    data_set = data[0][4]
+                else:
+                    wnfh_add_flag(data[0][4], env)
+                    data_set = "Нет влияния"
+            pass
+        else:
+            raise "Ебалан выбор оформлен неверно"
+            sys.exit(1)
+        return data_set
+
+init 0 python:
+    def widget_lp_wnfh():
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.79, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Лена", wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color="#ff55ff")
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Катя", wnfh_Data_test.getChoice_points_sum("kat")), style="button_text_7dl", color="#00ea32")
+
+
+    config.overlay_functions.append(widget_lp_wnfh)

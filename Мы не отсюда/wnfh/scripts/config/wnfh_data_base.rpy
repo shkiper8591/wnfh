@@ -29,9 +29,10 @@ init -1001 python :
         """
         def __init__(self,location):
             self.location=os.path.expanduser(location) #местоположение json а также окружение prod / test
-            self.path_enviroment = location.split(".")[1].split("/")[-1] #Получение название json из переменной окружения прим "./game/saves/wnfh_database_test.json" -> "wnfh_database_test"
+            self.path_enviroment = location.split(".")[1].split("/")[-1] #Получение название json из переменной окружения прим "./game/saves/wnfh_database.json" -> "wnfh_database"
             self.BD_INIT_MODULE = {} #инициализация словаря хранения - основная переменная для чтения
             self.Encryption = True  # кодировка json ( не используется)
+            self.DumpJSON = True #Формировать ли json в папке сейвов игры /game/saves/wnfh_database.json
             self.load(self.location)
         def load(self, location):
             #if os.path.exists(location):
@@ -52,9 +53,9 @@ init -1001 python :
             try:
                 self.BD_INIT_MODULE =  globals()[self.path_enviroment]
             except Exception as e:
-                raise Exception("Произошла ошибка при попытке загрузки данных выбора из базы "
-                                "- ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: "
-                                "Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json".format(e,self.path_enviroment in globals()))
+                raise Exception("Произошла ошибка при попытке загрузки данных выбора из базы \
+                                - ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: \
+                                Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json".format(e,self.path_enviroment in globals()))
             self.dumpdb() #запись в json
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
@@ -64,12 +65,12 @@ init -1001 python :
         Запись json
         """
         def dumpdb(self):
-            try:
-                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
-                return True
-            except:
-                return False
-
+            if self.DumpJSON is True:
+                try:
+                    json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
+                    return True
+                except:
+                    return False
         """
         Описание:
         1) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy") 
@@ -106,8 +107,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
             except KeyError:
-                raise Exception("При попытке получить значение флага {0} получено исключение "
-                                "- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить значение флага {0} получено исключение \
+                                - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
 
         """
         Описание:
@@ -126,8 +127,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]['value']
             except KeyError:
-                raise Exception("При попытке получить значение флага {0} получено исключение "
-                                "- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить значение флага {0} получено исключение \
+                - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
             self.dumpSave()
@@ -156,8 +157,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Выбранно"]
             except KeyError:
-                raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))"
-                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))\
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
                 #print("Не было найдено значений" + str(key))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить номер выбранного ответа")
@@ -177,8 +178,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Текст выбора"]
             except KeyError:
-                raise Exception("При попытке получить текст выбранного ответа в вилке {0} получено исключение (метод getChoice_result_text(self , key)) "
-                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить текст выбранного ответа в вилке {0} получено исключение (метод getChoice_result_text(self , key)) \
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить текст выбранного ответа")
         """
@@ -198,8 +199,8 @@ init -1001 python :
                 return self.BD_INIT_MODULE[key]["Название выбора"]
 
             except KeyError:
-                raise Exception("При попытке получить заголовок выбранного ответа в вилке {0} получено исключение (метод getChoice_text(self , key))"
-                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить заголовок выбранного ответа в вилке {0} получено исключение (метод getChoice_text(self , key))\
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
         """
@@ -225,8 +226,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
             except KeyError:
-                raise Exception("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))"
-                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                raise Exception("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))\
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
         """

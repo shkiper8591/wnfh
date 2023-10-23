@@ -26,11 +26,11 @@ init 2:
         #       locals()["wnfh_screen_"+str(i)]=False
 
             def  wnfh_add_to_bd(data):
-                data_set = wnfh_find_Operand(data,"prod")
-                wnfh_Data.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
+                data_set = wnfh_find_Operand(data,"prod",str(data[1][0]))
+                wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
             def  wnfh_add_to_bd_test(data):
-                data_set = wnfh_find_Operand(data,"test")
-                wnfh_Data_test.write(str(data[1][0]),{"Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set})
+                data_set = wnfh_find_Operand(data,"test",str(data[1][0]))
+                wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set})
             wnfh_choice_tint_color = {
                 #timeset      #текст     #рамки     #фон
                 "day":      ["#FFDD7D", "#80A055", "#000000"], 

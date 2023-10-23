@@ -1,4 +1,14 @@
+"""
+2023 git@Deopster
+"""
 init -1002:
+    python:
+        """
+        Инициализация переменных renpy default если их ещё не существует в глобальной области видимости
+        Необходимо для работы rollback (перемотки диалогов назад), ибо именно переменные типа default
+        renpy трекирует при перемотке. Таким образом информация по выборам кешируется в данной переменной
+        в формате словаря и загружается в классе wnfh_BD при необходимости обновить данные
+        """
     if "wnfh_database" not in globals():
         default wnfh_database = {}
     if "wnfh_database_test" not in globals():
@@ -6,7 +16,293 @@ init -1002:
 init -1001 python :
     import os
     import json
-    #class StorageManager:
+    #"""
+    #концептуально:
+    #default {enviroment(test/prod)} <-> wnfh_BD (BD_INIT_MODULE) - метод класса (запись / чтение ) -> json <-> renpy новелла
+    #"""
+    class wnfh_BD(object):
+        """
+        Создание объектов класса происходит позже инициализации класса в файле main_menu.rpy
+        !!!! ТАМ ЖЕ УКАЗАН ПУТЬ JSON И НАЗВАНИЕ ФАЙЛА
+        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON ДОЛЖНО СОВПАДАТЬ С НАИМЕНОВАНИЕМ default ПЕРЕМЕННОЙ пример строка 32
+        объект используется в качестве 'указателя' области работы и хранения данных а также их разграничения между тестовой областью и продуктовой (игровой)
+        """
+        def __init__(self,location):
+            self.location=os.path.expanduser(location) #местоположение json а также окружение prod / test
+            self.path_enviroment = location.split(".")[1].split("/")[-1] #Получение название json из переменной окружения прим "./game/saves/wnfh_database_test.json" -> "wnfh_database_test"
+            self.BD_INIT_MODULE = {} #инициализация словаря хранения - основная переменная для чтения
+            self.Encryption = True  # кодировка json ( не используется)
+            self.load(self.location)
+        def load(self, location):
+            #if os.path.exists(location):
+            if  self.path_enviroment in globals():
+                self.open_f()
+                #raise Exception("Объявите верное название default переменных согласно вашему пути в файле data_base")
+        def load_json(self):
+            #"""
+            #depricated function
+            #возвращает выгруженный json в качестве объекта словаря
+            #Возможно будет использоваться для генерации схемы
+            #"""
+            return json.load(open(self.location,"r"))
+        def open_f(self):
+            #"""
+            #Обновление данных из кэша
+            #"""
+            try:
+                self.BD_INIT_MODULE =  globals()[self.path_enviroment]
+            except Exception as e:
+                raise Exception("Произошла ошибка при попытке загрузки данных выбора из базы "
+                                "- ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: "
+                                "Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json".format(e,self.path_enviroment in globals()))
+            self.dumpdb() #запись в json
+            #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
+        def dumpSave(self):
+            globals()[self.path_enviroment] = self.BD_INIT_MODULE
+            self.dumpdb()
+        """
+        Запись json
+        """
+        def dumpdb(self):
+            try:
+                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
+                return True
+            except:
+                return False
+
+        """
+        Описание:
+        1) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy") 
+        2) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True) 
+        3) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True, "some initiator")
+        установка нового флага
+        -----------------------------------
+        -> Функция принимает:
+            1) Название флага 
+            2) Значение флага (опционально можно не указывать тогда по умолчанию TRUE)
+            3) Инициатор - кто и как инициализировал флаг, если флаг установлен при выборе инициатором будет название выбора (По умолчанию None)
+        -----------------------------------
+        <- Возвращает: None
+        """
+        def FlagSet(self,key,value = True, initiator=None):
+            self.BD_INIT_MODULE[str(key)] = {'type':'flag','value':value,'initiator':initiator}
+            self.dumpSave()
+            return True
+        """
+        Описание:
+        1) wnfh_Data.FlagDataGet("d2_zavtrak_s_lenoy")
+        Получение значения и иницатора флага
+        -----------------------------------
+        -> функция принимает:
+            1) название флага
+        -----------------------------------
+        <- возвращает:
+            1) Значение флага
+            2) Инициатор создания флага
+        Пример: (True,"1d_2")
+        """
+        def FlagDataGet(self,key=None):
+            self.open_f()
+            try:
+                return self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
+            except KeyError:
+                raise Exception("При попытке получить значение флага {0} получено исключение "
+                                "- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
+
+        """
+        Описание:
+        1) wnfh_Data.FlagGet("d2_zavtrak_s_lenoy")
+        функция принимает название флага и возвращает его значение
+        -----------------------------------
+        -> функция принимает:
+            1) название флага
+        -----------------------------------
+        <- возвращает:
+            1) Значение флага
+        Пример: True
+        """
+        def FlagGet(self,key=None):
+            self.open_f()
+            try:
+                return self.BD_INIT_MODULE[key]['value']
+            except KeyError:
+                raise Exception("При попытке получить значение флага {0} получено исключение "
+                                "- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
+        def write(self , key , value):
+            self.BD_INIT_MODULE[str(key)] = value
+            self.dumpSave()
+            return True
+        def get(self , key):
+            try:
+                return self.BD_INIT_MODULE[key]
+            except KeyError:
+                #print("Не было найдено значений" + str(key))
+                return False
+        """
+        Описание:
+        1) wnfh_Data.getChoice_result_number("1d_3")
+        Возвращает номер выбранного ответа в выборе 
+        -----------------------------------
+        -> функция принимает:
+            1) Название выбора
+        -----------------------------------
+        <- возвращает:
+            1) Номер выбранного ответа
+        Пример: 2
+        """
+        def getChoice_result_number(self , key=None):
+            if key is None:
+                raise "Не указан ключ - название выбора, для корректной работы метода, в"
+            try:
+                return self.BD_INIT_MODULE[key]["Выбранно"]
+            except KeyError:
+                raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))"
+                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                #print("Не было найдено значений" + str(key))
+            except Exception as e:
+                raise Exception("Непредвиденная ошибка при попытке получить номер выбранного ответа")
+        """
+        Описание:
+        1) wnfh_Data.getChoice_result_text("1d_3")
+        Возвращает текст выбранного ответа в выборе 
+        -----------------------------------
+        -> функция принимает:
+            1) Название выбора
+        -----------------------------------
+        <- возвращает:
+            1) Текст выбранного ответа
+        Пример: "Сбежать"       
+        """
+        def getChoice_result_text(self , key):
+            try:
+                return self.BD_INIT_MODULE[key]["Текст выбора"]
+            except KeyError:
+                raise Exception("При попытке получить текст выбранного ответа в вилке {0} получено исключение (метод getChoice_result_text(self , key)) "
+                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+            except Exception as e:
+                raise Exception("Непредвиденная ошибка при попытке получить текст выбранного ответа")
+        """
+        Описание:
+        1) wnfh_Data.getChoice_text("1d_3")
+        Возвращает заголовок выбора в выборе 
+        -----------------------------------
+        -> функция принимает:
+            1) Название выбора
+        -----------------------------------
+        <- возвращает:
+            1) Текст выбранного ответа
+        Пример: "Сбежать"   
+        """
+        def getChoice_text(self , key):
+            try:
+                return self.BD_INIT_MODULE[key]["Название выбора"]
+
+            except KeyError:
+                raise Exception("При попытке получить заголовок выбранного ответа в вилке {0} получено исключение (метод getChoice_text(self , key))"
+                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+            except Exception as e:
+                raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
+        """
+        Описание:
+        1) wnfh_Data.getChoice_result_number("1d_3")
+        Возвращает полученное колличество лавпойнтов персонажей в данном выборе
+        -----------------------------------
+        -> функция принимает:
+            1) Название выбора
+        -----------------------------------
+        <- возвращает:
+            1) Словарь персонжей выбора и их лавпойнты
+            2) Влияние отсутствует
+        Пример: 
+            1)        
+                {
+                "uv":3
+                "ls":-2
+                }
+            2) "Отсутствует влияние"
+        """
+        def getChoice_result_points(self , key):
+            try:
+                return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
+            except KeyError:
+                raise Exception("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))"
+                                "- вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+            except Exception as e:
+                raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
+        """
+        Описание:
+        1) wnfh_Data.getChoice_result_points(("1d_3","uv"))
+        Возвращает полученное колличество лавпойнтов харакетрные определённому персонажу в данном выборе
+        -----------------------------------
+        -> функция принимает:
+            1) Название выбора
+            1.1) Наименование персонажа
+        -----------------------------------
+        <- возвращает:
+            1) Колличество лавпонтов персонажа в данном выборе
+            2) Персонаж не найден (в данном выборе нет лавпойнтов этого персонажа)
+        Пример: 
+            1) 3       
+            2) "Не найдено"
+        """
+        def getChoice_result_points(self, key, person):
+            if person or key is None:
+                raise Exception("укажите ключ и персонажа")
+            try:
+                return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]
+            except KeyError:
+                return "Не надено"
+            except Exception as e:
+                raise Exception("Непредвиденная ошибка при попытке получить лавпойнты персонажа {0} в выборе {1}").format(person,key)
+        """
+        Описание:
+        1) getChoice_points_sum("uv"):
+        -----------------------------------
+        -> функция принимает:
+            1) Наименование персонажа
+        -----------------------------------
+        <- возвращает:
+            1) Колличество лавпонтов персонажа по всем выборам
+        Пример: 
+            1) 3       
+        """
+        def getChoice_points_sum(self, person):
+            sum = 0
+            self.open_f()
+            for data in list(self.BD_INIT_MODULE ):
+                try:
+                    sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
+                except KeyError:
+                    pass
+                except TypeError:
+                    pass
+                except Exception:
+                    raise Exception('Ошибка подсчёта лавпойнтов персонажа {0} - метод (getChoice_points_sum(self, person))').format(person)
+            return sum
+        """
+        Удаление значения из словаря, не знаю зачем но может понадобится вручную удалять выбор
+        """
+        def delete(self , key):
+            if not key in self.BD_INIT_MODULE:
+                return False
+            del self.BD_INIT_MODULE[key]
+            self.dumpSave()
+            return True
+        """
+        полное обнуление данных
+        Не советую вызывать, если не хотите начинать с 0
+        (обнуляет данные на этом сохранении, при загрузки точки сохранения до обнуления всё будет ок)
+        """
+        def resetDB(self):
+            globals()[self.path_enviroment] = {}
+            self.open_f()
+
+
+
+    """
+    Менеджер очередей ну а точнее просто связанный список =) (не дописан / не используется)
+    """
+    # class StorageManager:
     #    def __init__(self,head=None):
     #        self.SaveObject = head
     #        self.next
@@ -19,162 +315,15 @@ init -1001 python :
     #                lastEntry = lastEntry.
     #
     #
-    #class SavelinkedList:
+    # class SavelinkedList:
     #    def __init__(self):
     #        self.head=None
-    #class Storage(object,index,memoryValue):
+    # class Storage(object,index,memoryValue):
     #    def __init__(index,):
     #        self.head=None
     #    def __NAME_:
     #    def __EXIT__:
     #    def __ENTER__:
-
-    class wnfh_BD(object):
-        def __init__(self,location):
-            self.location=os.path.expanduser(location)
-            self.path_enviroment = location.split(".")[1].split("/")[-1]
-            self.BD_INIT_MODULE = {}
-            self.load(self.location)
-            self.Encryption = True
-        def load(self, location):
-            #if os.path.exists(location):
-            if self.path_enviroment in locals() or self.path_enviroment in globals():
-                self.open_f()
-            return True
-        def load_json(self):
-            return json.load(open(self.location,"r"))
-        def open_f(self):
-            self.BD_INIT_MODULE =  globals()[self.path_enviroment]
-            self.dumpdb()
-            #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
-        def dumpSave(self):
-            globals()[self.path_enviroment] = self.BD_INIT_MODULE
-        def dumpdb(self):
-            try:
-                json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)
-                return True
-            except:
-                return False
-
-        """
-        установка нового флага
-        функция принимает название флага и значение
-        #wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True) 
-        """
-        def FlagSet(self,key,value = True):
-            self.BD_INIT_MODULE[str(key)] = {'type':'flag','value':value}
-            self.dumpdb()
-            self.dumpSave()
-            return True
-        """
-        Получение значения флага
-        функция принимает название флага и возвращает значение
-        #wnfh_Data.FlagGet("d2_zavtrak_s_lenoy")
-        """
-        def FlagGet(self,key):
-            self.open_f()
-            try:
-                return self.BD_INIT_MODULE[key]['value']
-            except KeyError:
-                return None
-        def write(self , key , value):
-            self.BD_INIT_MODULE[str(key)] = value
-            self.dumpdb()
-            self.dumpSave()
-            return True
-        def get(self , key):
-            try:
-                return self.BD_INIT_MODULE[key]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        """
-        Описание:
-        wnfh_Data.getChoice_result_number("1d_3")
-        Возвращает номер выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения -2
-        """
-        def getChoice_result_number(self , key):
-            try:
-                return self.BD_INIT_MODULE[key]["Выбранно"]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        """
-        Описание:
-        wnfh_Data.getChoice_result_text("1d_3")
-        Возвращает текст выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения "Сбежать"
-        """
-        def getChoice_result_text(self , key):
-            try:
-                return self.BD_INIT_MODULE[key]["Текст выбора"]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        """
-        Описание:
-        wnfh_Data.getChoice_text("1d_3")
-        Возвращает заголовок выбора в выборе под состемным названием 1d_3 прим. Что же нам делать?
-        """
-        def getChoice_text(self , key):
-            try:
-                return self.BD_INIT_MODULE[key]["Название выбора"]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        """
-        Описание:
-        wnfh_Data.getChoice_result_number("1d_3")
-        Возвращает номер выбранного ответа в выборе под состемным названием 1d_3 прим получаемого значения -2
-        """
-        def getChoice_result_points(self , key):
-            try:
-                return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        """
-        Описание:
-        wnfh_Data.getChoice_result_points():
-        -----------------------------------
-        1) wnfh_Data.getChoice_result_points(("1d_3"))
-        Возвращает лавпойнты характерные выбору прим:
-        {
-        "uv":3
-        "ls":-2
-        }
-        2)wnfh_Data.getChoice_result_points(("1d_3","uv"))
-        возвращает число лавпойнтов персонажа uv характерные выбору прим. 3
-        """
-        def getChoice_result_points(self, key, person):
-            try:
-                return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]
-            except KeyError:
-                #print("Не было найдено значений" + str(key))
-                return False
-        def getChoice_points_sum(self, person):
-            sum = 0
-            self.open_f()
-            for data in list(self.BD_INIT_MODULE ):
-                try:
-                    sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
-                except KeyError:
-                    pass
-                except TypeError:
-                    pass
-                except Exception:
-                    raise 'Ошибка подсчёта лавпойнтов'
-            return sum
-        def delete(self , key):
-            if not key in self.db:
-                return False
-            del self.db[key]
-            self.dumpdb()
-            self.dumpSave()
-            return True
-        def resetDB(self):
-            self.BD_INIT_MODULE = {}
-            self.write()
-            return True
 
 init -998 python:
     style.button_text_7dl = Style(style.default)
@@ -188,18 +337,18 @@ init -998 python:
     style.button_text_7dl.xpadding = 6
     style.button_text_7dl.size = 13
 
-    def wnfh_add_flag(data, env):
+    def wnfh_add_flag(data, env,initiator):
         for i in data:
             if env == "prod":
-                wnfh_Data.FlagSet(i, data[i])
+                wnfh_Data.FlagSet(i, data[i],initiator)
             elif env == "test":
-                wnfh_Data_test.FlagSet(i, data[i])
+                wnfh_Data_test.FlagSet(i, data[i],initiator)
 
 
-    def wnfh_find_Operand(data, env):
+    def wnfh_find_Operand(data, env,initiator):
         if len(data[0]) == 6:
             data_set = data[0][4]
-            wnfh_add_flag(data[0][5], env)
+            wnfh_add_flag(data[0][5], env,initiator)
         elif len(data[0]) == 4:
             data_set = "Нет влияния"
         elif len(data[0]) == 5:
@@ -207,7 +356,7 @@ init -998 python:
                 if i in wnfh_characters.keys():
                     data_set = data[0][4]
                 else:
-                    wnfh_add_flag(data[0][4], env)
+                    wnfh_add_flag(data[0][4], env,initiator)
                     data_set = "Нет влияния"
             pass
         else:

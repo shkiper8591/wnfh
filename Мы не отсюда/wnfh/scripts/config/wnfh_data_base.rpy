@@ -55,7 +55,7 @@ init -1001 python :
             except Exception as e:
                 raise Exception("Произошла ошибка при попытке загрузки данных выбора из базы \
                                 - ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: \
-                                Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json".format(e,self.path_enviroment in globals()))
+                                Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json {3}".format(e,self.path_enviroment in globals(),str(self.BD_INIT_MODULE)))
             self.dumpdb() #запись в json
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
@@ -158,7 +158,7 @@ init -1001 python :
                 return self.BD_INIT_MODULE[key]["Выбранно"]
             except KeyError:
                 raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))\
-                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов{1}".format(key,str(self.BD_INIT_MODULE.keys())))
                 #print("Не было найдено значений" + str(key))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить номер выбранного ответа")

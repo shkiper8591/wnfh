@@ -1621,6 +1621,8 @@ label d1_dv_usw_zavtrak:
 
     "Я не очень понял, что она имела ввиду."
 
+    th "Мне вот известно как костёр по пионерски тушить, но чёт не очень представляю как можно подобным образом встретить человека[wp]"
+
     me "То есть?"
     
     show usw grin pioneer at wnfh_sit_left behind table with dspr
@@ -1630,7 +1632,7 @@ label d1_dv_usw_zavtrak:
     "Резко вставила свои пять копеек Ульяна."
 
     me "О как."
-    me "А если там не один-два человека, а десять?"
+    me "А если там не один-два человека, а скажем[wp] Десять?"
 
     show dv normal pioneer at wnfh_sit_right behind table with dspr
 
@@ -1657,17 +1659,31 @@ label d1_dv_usw_zavtrak:
 
     label d1_dv_yes_1:
 
-    "placeholder"
+    "Взвесив все за и против, я решил, что это отличная идея."
+
+    me "Думаю, это будет весело."
+    dv "А то!"
+    usw "Хи-хи, ну что, давайте доедаем быстренько и в путь за ведром!"
+
+    "Мы одобрительно кивнули и принялись за еду, и закончив с ней, покинули столовую."
+
+    jump d1_me_meet_kat_w_dw_n_usw
 
     label d1_dv_no_1:
 
-    "placeholder"
+    "Идея, мягко говоря, звучала ужасно и я никак не мог подписаться на что-то подобное."
 
-    "А я с удвоенной силой принялся за завтрак и буквально спустя полминуты он был съеден."
+    show dv normal pioneer at wnfh_sit_right behind table with dspr
+
+    me "Пожалуй откажусь, мне это не сильно интересно, к тому же потом вожатая даст мне просраться."
+    dv "Что ж, ну ладно."
+
+    "Алиса медленно вернулась на своё место."
+    "А я же с удвоенной силой принялся за завтрак, так что за минуту он кончился."
     
     show mid d5_breakfast_empty tray spoon with dspr
     
-    me "Так дамы, я опаздываю, так что покеда."
+    me "Так всё, дамы, я опаздываю, чао-какао."
     
     show usw dontlike pioneer at wnfh_sit_left behind tableм with dspr 
     
@@ -1677,14 +1693,60 @@ label d1_dv_usw_zavtrak:
     # тут можно добавить выбор с тем что убирать поднос за собой или нет !7
     "Недовольным голосом сказала Ульянка."
     
-    me "Сама слышала, у меня важное задание и нет времени на такое."
+    me "Извини подруга, у меня важное задание и нет времени на это."
     
     scene bg int_dining_hall_people_day with dissolve2
     
     "Сказал я и помохав рукой на прощание, быстро удалился из столовой."
 
     jump d1_me_meet_kat_alone
-   
+
+label d1_me_meet_kat_w_dw_n_usw:
+
+    window hide dissolve
+    $ wnfh_set_time()
+    stop ambience fadeout 3.0
+    scene bg ext_dining_hall_near_day
+    show dv normal pioneer at right
+    show usw normalsmile pioneer at left 
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.0
+    #play music music_list["timid_girl"] fadein 3.5
+    $ renpy.pause(1)
+    show bg ext_dining_hall_away_day with dissolve2 
+    $ renpy.pause(1)
+    show bg ext_lenin_square_day_wnfh with dissolve2
+    window show dissolve
+
+
+    "Выйдя на площадь, Ульяна остановилась."
+
+    usw "Так, в общем, вы идите, я вас догоню, если что задержите пополнение."
+    me "А ты что собираешься делать?"
+
+    show usw grin pioneer at left with dspr
+
+    usw "У тебя память как у золотой рыбки? Я за ведром же."
+    me "Вообще это миф, что у золотой рыбки плохая память и на самом деле[wp]"
+
+    show usw angry pioneer at left
+    show dv laugh pioneer at right
+    with dspr
+
+    "Ульяна от моего потока мысли моментально стала злиться."
+    "Алиса же положила руку мне на плечо."
+
+    dv "Давай, умный самый, пойдём дальше, нам ещё засаду готовить!"
+    usw "Да, там и блеснёшь умом!"
+
+    "Тихонько посмеявшись на пару с Алисой, мы прошли к воротам."
+
+    window hide dissolve
+    show bg ext_clubs_day with slide_up_blure_dissolve2
+    $ renpy.pause(0.2)
+
+    "placeholder"
+
 label d1_me_meet_kat_w_un:
 
     window hide dissolve
@@ -2634,6 +2696,7 @@ label d1_un_yes_1_lbl:
 
     "Помахав на прощание Лене, я отправился в клубы."
 
+    window hide dissolve
     jump d1_male_clubs
 
 label d1_un_no_1_lbl:
@@ -2657,9 +2720,10 @@ label d1_un_no_1_lbl:
     "Лена удалилась в сторону домиков."
     "И немного постояв на месте, я отправился в клубы."
 
+    window hide dissolve
     jump d1_male_clubs
 
-label d1_un_neutral1_lbl:
+label d1_un_neutral_1_lbl:
 
     show un normal pioneer at center with dspr
 
@@ -2670,6 +2734,7 @@ label d1_un_neutral1_lbl:
 
     "Помахав Лене на прощание, я отправился в клубы."
 
+    window hide dissolve
     jump d1_male_clubs
 
 label d1_un_ne_sprosil:
@@ -2680,6 +2745,7 @@ label d1_un_ne_sprosil:
 
     "Я помахал Лене на прощание и пошёл в клубы."
 
+    window hide dissolve
     jump d1_male_clubs
 
 label d1_male_clubs:

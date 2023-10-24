@@ -367,9 +367,9 @@ init -998 python:
 
 init 0 python:
     def widget_lp_wnfh():
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.79, xanchor=1.0, xminimum=120)
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.79, ypos=0.05, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Лена", wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color="#ff55ff")
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, xanchor=1.0, xminimum=120)
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.05, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Катя", wnfh_Data_test.getChoice_points_sum("kat")), style="button_text_7dl", color="#00ea32")
 
 

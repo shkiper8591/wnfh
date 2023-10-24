@@ -45,6 +45,10 @@ init -2 python:
         "achievements",
         "exit",
         "dlc",
+        "bg",
+        "line",
+        "gradient2"
+
         ]}
     
     # Для главного меню

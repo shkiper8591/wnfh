@@ -147,6 +147,7 @@ init 1:
             for sub_option in Transitions_sub_options:
                 for i in [1.0, 2.0, 5.0, 10.0]:
                     locals()[Transition_name + '_' + sub_option + str(int(i) if int(i) !=1 else "")] = ImageDissolve(im.Tile(wnfh_gui["transit"][Transition_name]), i,1 * [1, 100][sub_option == 'blure_dissolve'])
+        
         def wnfh_fade(time=1.0, color="white"):
             ft = time * 0.5
             fc = {

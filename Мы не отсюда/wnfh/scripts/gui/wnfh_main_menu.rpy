@@ -24,17 +24,17 @@ init 2:
             wnfh_main_menu_button = [
             
                  #Тег кнопки     #Изображение кнопки                               #Действие кнопки
-                ["credits"      ,wnfh_gui["main_menu"]["credits"]                 ,[Jump("technical_chocolatki")]                                           ],
-                ["galary"       ,wnfh_gui["main_menu"]["galary"]                  ,[Jump("technical_chocolatki")]                                           ],
-                ["news"         ,wnfh_gui["main_menu"]["news"]                    ,[Jump("technical_chocolatki")]                                           ],
-                ["play"         ,wnfh_gui["main_menu"]["play"]                    ,[Hide("wnfh_menu", transition=dissolve), Jump("wnfh_prologue")]          ],
-                ["saves"        ,wnfh_gui["main_menu"]["saves"]                   ,[ShowMenu("wnfh_load_screen", _transition=dissolve)]                     ],
-                ["scheme"       ,wnfh_gui["main_menu"]["scheme"]                  ,[ShowMenu("wnfh_schematic", _transition=dissolve)]                     ],
-                ["preferences"  ,wnfh_gui["main_menu"]["preferences"]             ,[ShowMenu("wnfh_preferences", _transition=dissolve)]                     ],
+                ["credits"      ,"Создатели"                ,[Jump("technical_chocolatki")]                                           ],
+                ["galary"       ,"Галерея"                  ,[Jump("technical_chocolatki")]                                           ],
+                ["news"         ,"Новости"                    ,[Jump("technical_chocolatki")]                                           ],
+                ["play"         ,"Новая игра"                    ,[Hide("wnfh_menu", transition=dissolve), Jump("wnfh_prologue")]          ],
+                ["saves"        ,"Загрузить"                   ,[ShowMenu("wnfh_load_screen", _transition=dissolve)]                     ],
+                ["scheme"       ,"Схема"                  ,[ShowMenu("wnfh_schematic", _transition=dissolve)]                     ],
+                ["preferences"  ,"Настройки"             ,[ShowMenu("wnfh_preferences", _transition=dissolve)]                     ],
                 ["red"          ,im.Scale(wnfh_gui["poligon"]["red"], 100, 100)   ,[Jump("wnfh_test")]                                                      ],
-                ["achievements" ,wnfh_gui["main_menu"]["achievements"]            ,[ShowMenu("wnfh_achievements", _transition=dissolve)]                    ],
-                ["exit"         ,wnfh_gui["main_menu"]["exit"]                    ,[Return()]                                                               ],
-                ["dlc"          ,wnfh_gui["main_menu"]["dlc"]                     ,[Jump("technical_chocolatki")]                                           ],
+                ["achievements" ,"Достижения"            ,[ShowMenu("wnfh_achievements", _transition=dissolve)]                    ],
+                ["exit"         ,"Выход"                    ,[Return()]                                                               ],
+                ["dlc"          ,"DLC"                     ,[Jump("technical_chocolatki")]                                           ],
             ]
        
             menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
@@ -55,6 +55,8 @@ init 2:
             #        style "wnfh_menu"
             #        size 30
             
+    
+
             frame: # ======================================================= # Сплэши
                 background background_color
                 area(0.65, 0.05, 0.45, 50)
@@ -114,10 +116,10 @@ init 2:
                                 background button_red
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
-                                imagebutton:
+                                textbutton button[1]:
+                                    background None
+                                    text_style "wnfh_choice_" + persistent.timeofday
                                     action [button[2]]
-                                    idle button[1]
-                                    hover button[1]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
                 
@@ -132,10 +134,10 @@ init 2:
                             background button_red
                             area(0.5, 0.5, 1.0, 1.0)
                             xanchor 0.5 yanchor 0.5
-                            imagebutton:
+                            textbutton button[1]:
+                                background None
+                                text_style "wnfh_choice_" + persistent.timeofday
                                 action [button[2]]
-                                idle button[1]
-                                hover button[1]
                                 hover_sound wnfh_gui["sound"]["plimp"]
                                 at wnfh_mm_button_hover_atl()
                                 
@@ -149,10 +151,10 @@ init 2:
                             background button_red
                             area(0.5, 0.5, 1.0, 1.0)
                             xanchor 0.5 yanchor 0.5
-                            imagebutton:
+                            textbutton button[1]:
+                                background None
+                                text_style "wnfh_choice_" + persistent.timeofday
                                 action [button[2]]
-                                idle button[1]
-                                hover button[1]
                                 hover_sound wnfh_gui["sound"]["plimp"]
                                 at wnfh_mm_button_hover_atl()
                 frame: # ======================================================= # Центральный верхний блок
@@ -165,10 +167,10 @@ init 2:
                             background button_red
                             area(0.5, 0.5, 1.0, 1.0)
                             xanchor 0.5 yanchor 0.5
-                            imagebutton:
+                            textbutton button[1]:
+                                background None
+                                text_style "wnfh_choice_" + persistent.timeofday
                                 action [button[2]]
-                                idle button[1]
-                                hover button[1]
                                 hover_sound wnfh_gui["sound"]["plimp"]
                                 at wnfh_mm_button_hover_atl()
                 
@@ -185,13 +187,12 @@ init 2:
                                 background button_red
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
-                                imagebutton:
+                                textbutton button[1]:
+                                    background None
+                                    text_style "wnfh_choice_" + persistent.timeofday
                                     action [button[2]]
-                                    idle button[1]
-                                    hover button[1]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
-
     #screen wnfh_news():
     #    frame:
     #        background wnfh_gui["main_menu"]["gradient2"] 

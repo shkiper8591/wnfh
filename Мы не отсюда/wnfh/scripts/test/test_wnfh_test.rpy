@@ -20,6 +20,7 @@ label wnfh_test:
     
     "Добро пожаловать в полигон!"
     "Что мы хотим отладить?"
+    window hide
     jump wnfh_test_main_menu
 
 label wnfh_test_main_menu:

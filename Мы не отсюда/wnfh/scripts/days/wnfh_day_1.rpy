@@ -1793,7 +1793,7 @@ label d1_me_meet_kat_w_dw_n_usw:
     
     usw "Где наш герой?"
         
-    show usw grin sport at right close with dspr
+    show usw grin sport close at right with dspr
 
     "Алиса указала на меня и, подойдя к мне, Ульяна протянула ведро."
 
@@ -1803,14 +1803,14 @@ label d1_me_meet_kat_w_dw_n_usw:
     
     "Вновь донеслось из-за ворот."
 
-    show usw dontlike pioneer at right close with dspr
+    show usw dontlike pioneer close at right with dspr
     
     usw "Давай не начинай и бери. Ты же согласился на эту авантюру, а значит должен был быть готов ко всему."
     me "Я просто не уверен[wp]"
     
     "За воротами послышались приближающиеся шаги."
 
-    show usw angry pioneer at right close with dspr
+    show usw angry pioneer close at right with dspr
     
     usw "Я сейчас тебя оболью!"
     
@@ -1818,7 +1818,7 @@ label d1_me_meet_kat_w_dw_n_usw:
     
     me "Ладно-ладно, давай сюда."
     
-    show usw calml pioneer at right close with dspr
+    show usw calml pioneer close at right with dspr
 
     usw "Так бы сразу."
 

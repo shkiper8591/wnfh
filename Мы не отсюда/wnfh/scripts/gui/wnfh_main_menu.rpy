@@ -69,17 +69,18 @@ init 2:
                 background background_color
                 area(0.0, 0.0, 200, 100)
                 xanchor 0.0 yanchor 0.0
-                frame:
-                    xmargin 5
-                    background button_blue
-                    area(0.0, 0.5, 1.0, 1.0)
-                    xanchor 0.0 yanchor 0.5
-                    imagebutton:
-                        action wnfh_main_menu_button[9][2]
-                        idle wnfh_main_menu_button[9][1]
-                        hover wnfh_main_menu_button[9][1]
-                        hover_sound wnfh_gui["sound"]["plimp"]
-                        at wnfh_mm_button_hover_atl()
+                for button in wnfh_main_menu_button[9:10]:
+                    frame:
+                        xmargin 5
+                        background button_blue
+                        area(0.0, 0.5, 1.0, 1.0)
+                        xanchor 0.0 yanchor 0.5
+                        textbutton button[1]:
+                            background None
+                            text_style "wnfh_choice_" + persistent.timeofday
+                            action [button[2]]
+                            hover_sound wnfh_gui["sound"]["plimp"]
+                            at wnfh_mm_button_hover_atl()
 
             if debag_switch:
                 frame: # ======================================================= # Амогус

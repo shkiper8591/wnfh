@@ -3590,7 +3590,7 @@ label d1_posle_obeda:
     
     "Вожатая удалилась обратно в столовую, а я, встав с лавки, медленно поплелся к дому."
 
-    window hide
+    window hide dissolve
     scene bg ext_lenin_square_day_wnfh with dissolve2
     ## Лена зовёт Семёна погулять когда он идёт домой
     if wnfh_Data.getChoice_result_number("d1_choice_n6") == 2:
@@ -3598,7 +3598,7 @@ label d1_posle_obeda:
         $ renpy.pause(1.5, hard=True)
         jump d1_me_doma
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 1:
+    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 1:
 
         window show
 
@@ -3619,7 +3619,7 @@ label d1_posle_obeda:
 
         jump d1_un_progulka
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
+    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
     
         "И медленно ковыляя, я вышел на площадь."
         
@@ -3708,7 +3708,7 @@ label d1_posle_obeda:
         ["d1_choice_n7", "Лена хочет помочь Семёну дойти до медпункта"]
         ) with sphere_blure_dissolve2
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n5") == 3:
+    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 3:
 
         "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     

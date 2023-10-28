@@ -25,32 +25,24 @@ init -2 python:
     
     Ну и ссылки сюда же засунул
     """
-    renpy.image("wnfh_vk_icon", im.FactorScale(wnfh_MAIN_MENU + "vk.png",           0.4))
-    renpy.image("wnfh_steam_icon", im.FactorScale(wnfh_MAIN_MENU + "steam.png",     0.4))
-    renpy.image("wnfh_discord_icon", im.FactorScale(wnfh_MAIN_MENU + "discord.png", 0.4))
-    
+    wnfh_choice_tint_color = {
+        #timeset      #текст     #рамки     #фон
+        "day":      ["#FFDD7D", "#80A055", "#000000" ], 
+        "sunset":   ["#DCD168", "#CDAF69", "#150A0B" ],
+        "night":    ["#3CCFA2", "#36B198", "#000A20" ],
+        "prologue": ["#98D8DA", "#BEE8E9", "#000A20" ], 
+    }
     
     # Для главного меню
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [
         "mm_bg",
         "mm_bg2",
-        "logo",
-        "18",
         "gradient",
-        "credits",
-        "galary",
-        "news",
-        "play",
-        "saves",
-        "scheme",
-        "preferences",
         "achievements",
-        "exit",
-        "dlc",
-        "bg",
-        "line",
-        "gradient2"
-
+        "discord",
+        "seledka",
+        "steam",
+        "vk",
         ]}
     
     # Для главного меню

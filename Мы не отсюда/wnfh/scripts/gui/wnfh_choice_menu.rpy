@@ -31,14 +31,7 @@ init 2:
             def  wnfh_add_to_bd_test(data):
                 data_set = wnfh_find_Operand(data,"test",str(data[1][0]))
                 wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set})
-            wnfh_choice_tint_color = {
-                #timeset      #текст     #рамки     #фон
-                "day":      ["#FFDD7D", "#80A055", "#000000"], 
-                "sunset":   ["#DCD168", "#CDAF69", "#150A0B"],
-                "night":    ["#3CCFA2", "#36B198", "#000A20"],
-                "prologue": ["#98D8DA", "#BEE8E9", "#000A20"], 
-            }
-
+            
             #wnfh_screen_variable = list(locals()['wnfh_screen_'+str(i)] for i in range(1,20))
             wnfh_screen_variable =[
                 wnfh_screen_1,

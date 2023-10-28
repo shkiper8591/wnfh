@@ -25,7 +25,9 @@ init -2 python:
     
     Ну и ссылки сюда же засунул
     """
-    
+    renpy.image("wnfh_vk_icon", im.FactorScale(wnfh_MAIN_MENU + "vk.png",           0.4))
+    renpy.image("wnfh_steam_icon", im.FactorScale(wnfh_MAIN_MENU + "steam.png",     0.4))
+    renpy.image("wnfh_discord_icon", im.FactorScale(wnfh_MAIN_MENU + "discord.png", 0.4))
     
     
     # Для главного меню

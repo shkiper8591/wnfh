@@ -2868,7 +2868,7 @@ label d1_me_meet_kat_alone:
     
 label d1_me_kat_sdacha_kati:
 
-    elif wnfh_Data.getChoice_result_number("d1_choice_n3") == 2:
+    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 2:
         window hide dissolve
         scene bg ext_house_of_mt_day
         show mt dc_reading dc background

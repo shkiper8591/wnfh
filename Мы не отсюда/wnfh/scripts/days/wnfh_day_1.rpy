@@ -1873,8 +1873,8 @@ label d1_me_meet_kat_w_dw_n_usw:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["kat", "Стоит извиниться", "Я же не знал, что там будет она", "d1_sh_yes_1" {"kat":1}],
-        ["neutral", "Меня подставили", "Пусть Алиса с Ульяной извиняются", "d1_sh_no_2" {"kat":-2}],
+        ["kat", "Стоит извиниться", "Я же не знал, что там будет она", "d1_sh_yes_1", {"kat":1}],
+        ["neutral", "Меня подставили", "Пусть Алиса с Ульяной извиняются", "d1_sh_no_2", {"kat":-2}],
         ["d1_choice_n9", "Шурик требует Семёна извнится перед Катей"]
         ) with sphere_blure_dissolve2
 
@@ -2355,7 +2355,7 @@ label d1_me_meet_kat_alt:
     
     stop ambience fadeout 3.5
     scene bg int_warehouse_day_wnfh
-    show sl wh wh_normal at background
+    show sl wh_normal wh background
     with slide_diagonal_blure_dissolve2
     play ambience ambience_int_cabin_day fadein 3.5
 
@@ -2363,7 +2363,7 @@ label d1_me_meet_kat_alt:
     
     me "Здравствуй Славяна."
 
-    show sl wh_smotrit at background with dspr
+    show sl wh_smotrit wh background with dspr
 
     sl "Приветик, Семён. {w}И почему так официально?"
     me "Потому-что я представляю тебя перед нашей новенькой."
@@ -2385,7 +2385,7 @@ label d1_me_meet_kat_alt:
     sl "Как так-то?"
     me "Потом расскажу."
     
-    show sl wh wh_tyanetsa at background with dspr
+    show sl wh_tyanetsa wh background with dspr
 
     "Славя моментально удалилась к стеллажам с формой."
     
@@ -2868,7 +2868,10 @@ label d1_me_meet_kat_alone:
     
 label d1_me_kat_sdacha_kati:
 
+    ## тут какая-то хуйня творится, надо проверить и починить, сейчас я ничего с этим не сделаю.
+
     if wnfh_Data.getChoice_result_number("d1_choice_n3") == 2:
+        
         window hide dissolve
         scene bg ext_house_of_mt_day
         show mt dc_reading dc background

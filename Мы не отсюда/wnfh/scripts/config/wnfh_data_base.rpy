@@ -367,10 +367,23 @@ init -998 python:
 
 init 0 python:
     def widget_lp_wnfh():
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.79, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % ("Лена", wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color="#ff55ff")
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % ("Катя", wnfh_Data_test.getChoice_points_sum("kat")), style="button_text_7dl", color="#00ea32")
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.65, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["kat"][0], wnfh_Data_test.getChoice_points_sum("kat")), style="button_text_7dl", color=wnfh_characters["kat"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.7, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["un"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["un"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.75, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["mi"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["mi"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.8, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["dv"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["dv"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.85, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["usw"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["usw"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.9, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["sl"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["sl"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.95, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["sv"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["sv"][1])
+        ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.05, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % (wnfh_characters["mz"][0], wnfh_Data_test.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["mz"][1])
+        
 
 
     config.overlay_functions.append(widget_lp_wnfh)

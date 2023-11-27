@@ -1,15 +1,15 @@
 label technical_chocolatki:
     $ wnfh_set_time()
     scene bg int_clubs_male_day
-    show technical chocolatki at blwnfh_technical_chocolatki
-    show el grin pioneer at blwnfh_technical_chocolatki:
+    show technical chocolatki at wnfh_technical_chocolatki
+    show el grin pioneer at wnfh_technical_chocolatki:
         xcenter 0.25
-    show sh normal_smile pioneer at blwnfh_technical_chocolatki:
+    show sh normal_smile pioneer at wnfh_technical_chocolatki:
         xcenter 0.75
-    play music blwnfh_music_list["technical_chocolatki"] fadein 3
+    play music wnfh_music_list["technical_chocolatki"] fadein 3
     "Ведутся работы"
     stop music
-    jump blwnfh_main_menu
+    jump wnfh_main_menu
 
 
 

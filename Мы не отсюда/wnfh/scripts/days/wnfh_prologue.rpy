@@ -1,5 +1,6 @@
 label wnfh_prologue:
-
+    
+    $ wnfh_set_name("kat", "Новенькая")
     scene black
     $ renpy.pause(3.0, hard=True)
     $ wnfh_set_time("prologue")

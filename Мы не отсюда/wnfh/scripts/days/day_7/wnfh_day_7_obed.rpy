@@ -1,0 +1,250 @@
+label d7_obed:
+
+    window hide dissolve
+    scene bg ext_dining_hall_away_day with slide_right_blure_dissolve2
+    window show dissolve
+    
+    "Прибыв на место, к моему удивлению, здесь всё ещё толпилось достаточно много пионеров."
+    "От чего появлялась хоть и небольшая, но надежда, занять отличное место в глубине столовой и посидеть в гордом одиночестве."
+    "А то с этим, в последнее время, у меня не очень выходило."
+    
+    window hide
+    stop ambience fadeout 0.5
+    scene bg int_dining_hall_day with sphere_blure_dissolve2
+    play ambience ambience_dining_hall_empty fadein 3 
+    window show
+
+    "Внутри, действительно, было пока не очень многолюдно." 
+    "А посему я как можно быстрее взял поднос с едой и ушел в самый дальний угол столовой."
+    "Там я занял вполне уютное местечко у окна, правда вид из него был не самый интересный."
+    
+    window hide
+    show chair_l behind table
+    show chair_r behind table
+    show table
+    show shakers behind mid
+    with dissolve
+    
+    stop ambience fadeout 0.5
+    show bg int_dining_hall_people_day with dissolve2
+    play ambience ambience_dining_hall_full fadein 3
+    
+    show mid d10_dinner_full tray spoon foods with dissolve
+    window show
+
+    "Как только я занял своё место, столовая чуть ли не в миг наполнилась пионерами."
+    
+    show un normal pioneer behind chair_r:
+        xcenter 1.2
+        ease_quart 4.0 xcenter 0.6
+    show kat normal pioneer behind chair_r:
+        xcenter 1.4 
+        ease_quart 5.0 xcenter 0.8
+    ## Семён, Лена и Катя в столовой
+    "И я было уже начал обедать, как ко мне подошли Лена и[wp] {w}Катя?"
+    
+    th "Ну да, так просто одному пообедать никогда не выходит."
+    
+    show un shy pioneer behind chair_r with dspr
+    
+    un "Можно мы к тебе сядем?"
+    
+    window hide dissolve
+    call screen wnfh_choice(
+        ["un", "Можно.", "Ладно, пусть садятся.", "d7_obed_me_w_un_kat", {"kat":1, "un":1}],
+        ["neutral", "Не можно", "Хочется поесть одному", "d7_obed_me_alone", {"kat":-1, "un":-1}],
+        ["d7_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
+        ) with dissolve2
+
+label d7_obed_me_alone:
+
+    window show dissolve
+
+    th "Ох, не хочется мне сейчас сидеть с кем-то в компании."
+
+    if wnfh_Data.getChoice_points_sum("un") <= 0: 
+
+        me "Аэ[wp] Тут[wp] Э[wp] З-Занято, да, моими товарищами из клубов."
+
+        show un normal pioneer behind chair_r with dspr
+
+        un "Правда?"
+
+        "Она посмотрела в сторону."
+        "Я посмотрел туда же и увидел сидящих там Серёгу и Шурика."
+
+        un "Ну хорошо. {w}Пойдём Кать, тут занято."
+
+        show un normal pioneer behind chair_r, chair_l:
+            ease_quart 4.0 xcenter -0.6
+        show kat normal pioneer behind chair_r, chair_l:
+            ease_quart 5.0 xcenter -0.6
+
+        "Лена напоследок бросила на меня недовольный взгляд и девушки ушли."
+
+        th "Зараза[wp]"
+        hide un
+        hide kat
+        "С малость подпорченным настроением, я принялся уплетать обед."
+        "И быстро расправившись с ним, я незамедлительно покинул пределы столовой."
+
+        jump d7_posle_obeda
+
+    elif wnfh_Data.getChoice_points_sum("un") == 1:
+
+        me "Простите, тут сейчас занято[wp] Да[wp]"
+
+        show un normal pioneer behind chair_r with dspr
+
+        "Лена посмотрела на меня, потом на Катю, после чего пожала плечами."
+
+        un "Что ж, ну ладно. {w}Пойдём Кать, здесь занято."
+
+        hide un
+        hide kat
+        with dissolve
+
+        "Катя грустно угукнула и девушки удалились вглубь столовой."
+        "Когда они ушли, я принялся уплетать свой обед."
+        "И закончив с ним, я быстренько отправился на выход из столовой."
+
+        jump d7_posle_obeda
+
+    else:
+
+        me "Извините дамы, но тут занято моими товарищами."
+        me "Просто они пока отлучились по делам."
+
+        show un smile pioneer behind chair_r with dspr
+
+        "Лена слегка улыбнулась."
+
+        un "Ой, это ты нас извини."
+
+        show un grin pioneer behind chair_r with dspr
+
+        un "Ну-с, ладно тогда, не будем мешать. {w}Приятного аппетита!"
+        me "Спасибо большое."
+
+        hide un
+        hide kat
+        with dissolve
+
+        "Девушки удалились куда-то вглубь столовой, а я принялся за свой обед."
+        "С которым довольно быстро расправился, после чего направился на выход из столовой."
+
+        jump d7_posle_obeda
+
+label d7_obed_me_w_un_kat:
+
+    window show dissolve
+
+    me "Да конечно, садитесь."
+    
+    show un smile pioneer with dspr
+    
+    un "Спасибо!"
+    
+    window hide
+    show un smile pioneer at go_to_chair_left behind table
+    show kat normal pioneer at go_to_chair_right behind chair_r
+    $ renpy.pause(1.0, hard=True)
+    
+    show chair_r at chair_move_out behind un
+    $ renpy.pause(0.3, hard=True)
+    show chair_l at chair_move_out behind kat
+    $ renpy.pause(0.7, hard=True)
+    
+    show un smile pioneer at sit_down_left
+    $ renpy.pause(0.3, hard=True)
+    show kat normal pioneer at sit_down_right
+    $ renpy.pause(1.0, hard=True)
+    
+    show chair_l at chair_move_in
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_in
+    show left d10_dinner_full tray spoon foods behind mid 
+    show right d10_dinner_full tray spoon foods behind mid 
+    with dissolve
+    window show
+    
+    "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
+    
+    show mid d10_dinner_full tray foods with dissolve
+    
+    th "Как же давно такие не ел, наверное последний раз лет пять или шесть назад."
+    
+    show left d10_dinner_full tray foods with dissolve
+    show right d10_dinner_full tray foods with dissolve
+    
+    th "На даче, стоял жаркий летний день и отец наготовил целую кастрюлю этих щей."
+    th "Щий? Щей? Супа в общем."
+    
+    "За своими раздумиями я не обращал внимания на то, что Лена и Катя о чем-то увлечённо болтали."
+    
+    show mid d10_dinner_half tray foods with dissolve
+    
+    "Не знаю почему, но мне стало крайне любопытно о чем же они таком разговаривают."
+    
+    me "О чём болтаете?"
+    
+    show un shy pioneer
+    show kat shy pioneer 
+    with dspr
+    
+    "Спросил я невзначай между употреблением порций супа."
+    "Однако, после моего вопроса они залились румянцем, будто я спросил их о чём-то не пристойном."
+    "И лишь спустя время, Лена взяла на себя инициативу."
+    
+    show un grin pioneer with dspr
+    show right d10_dinner_half tray foods with dissolve
+    
+    # тут бы тоже вставить проверку ЛП
+
+    un "Боюсь, {i}Сёмочка{/i}, это не твоё дело."
+    th "Сёмочка? {w}Меня так ещё никто не называл тут."
+    un "Так, о разных девичьих темах, которые тебе парню, не понять."
+    me "А если пойму?"
+    
+    "Ухмыляясь сказал я, полагая, что переиграл её."
+    
+    show left d10_dinner_half tray foods with dissolve
+    show un laugh pioneer with dspr 
+    
+    un "Тогда у меня для тебя плохие новости!"
+    
+    show kat happy pioneer with dspr
+    
+    "Хихикая ответила Лена, а немного погодя захихикала и Катя."
+    "Я же не сразу понял где меня подстебали, но зато быстро понял, что моё переигрывание было переиграно."
+    "И лишь несколькими секундами позже, я всё осознал." 
+    
+    me "Ааааа[wp] {w}Ладно, храните свои секреты дальше."
+    
+    show un normal with dspr
+    show kat normal with dspr
+    
+    "Лена одобрительно угукнула и продолжила свой диалог с Катей."
+    "А я вернулся обратно к своему обеду."
+    "И мимоходом я всё же подслушал, о чем болтали девочки."
+    "Но, как Лена мне и говорила, я ничего не понимал, так что интерес пропал сам собой."
+    
+    th "А эта новенькая быстро нашла себе друга, не то что я."
+    th "Интересно, почему именно с Леной? {w}Хотя учитывая как скромно она себя вела и какая стесняша у нас Тихонова, все вопросы отпадают сами собой."
+    
+    show mid d10_dinner_empty tray spoon foods with dissolve
+    
+    "За моими размышлениями, суп кончился довольно быстро."
+    "Чай тоже держался не долго и был выпит одним залпом."
+    
+    hide mid with dissolve
+    
+    me "Ладненько, пойду я."
+    un "Пока!"
+    kat "Угу."
+    
+    scene bg int_dining_hall_people_day with dissolve
+    
+    "Встав из-за стола, я быстренько отнёс поднос и покинул пределы столовой."
+
+    jump d7_posle_obeda

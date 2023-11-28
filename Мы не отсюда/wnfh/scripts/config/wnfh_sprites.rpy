@@ -319,8 +319,8 @@ init 2:
 
         # Алиса
 
-        make_sprites_for('dv', 'sport', ['es:body', 'mod:sport', 'es:<emotion>'])
-        make_sprites_for('dv', 'sport isolenta', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
+        make_sprites_for('dv', 'sport', ['mod:body', 'mod:sport', 'es:<emotion>'])
+        make_sprites_for('dv', 'sport isolenta', ['mod:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
         
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'], distances=['background'])

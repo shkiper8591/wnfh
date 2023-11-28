@@ -273,12 +273,12 @@ init 2:
         
         ## Новые старые спрайты
         # Мику
-        make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'body', ['es:body', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ('sad_cry'))
-        make_sprites_for('mi', 'swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude = ('sad_cry'))
-        make_sprites_for('mi', 'body', ['es:body', 'es:<emotion>'], exclude = ('sad_cry'))
+        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'body', ['mod:body', 'mod:<emotion>'], emotions = ['sad_cry'])
+        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'], exclude = ('sad_cry'))
+        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'es:<emotion>'], exclude = ('sad_cry'))
+        make_sprites_for('mi', 'body', ['mod:body', 'es:<emotion>'], exclude = ('sad_cry'))
 
         # Женя
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
@@ -287,15 +287,15 @@ init 2:
         make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'mod:glasses'])
         
         # Оля
-        make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'], distances = ['normal'])
-        make_sprites_for('mt', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
-        make_sprites_for('mt', 'dress', ['es:body', 'es:dress', 'es:<emotion>'])
-        make_sprites_for('mt', 'swim', ['es:body', 'es:swim', 'es:<emotion>'])
-        make_sprites_for('mt', 'body', ['es:body', 'es:<emotion>'])
-        make_sprites_for('mt', 'pioneer panama', ['es:body', 'es:pioneer', 'es:<emotion>', 'es:panama'])
-        make_sprites_for('mt', 'dress panama', ['es:body', 'es:dress', 'es:<emotion>', 'es:panama'])
-        make_sprites_for('mt', 'swim panama', ['es:body', 'es:swim', 'es:<emotion>', 'es:panama'])
-        make_sprites_for('mt', 'body panama', ['es:body', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'nightdress', ['mod:body', 'mod:nightdress', 'es:<emotion>'], distances = ['normal'])
+        make_sprites_for('mt', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'])
+        make_sprites_for('mt', 'dress', ['mod:body', 'es:dress', 'es:<emotion>'])
+        make_sprites_for('mt', 'swim', ['mod:body', 'es:swim', 'es:<emotion>'])
+        make_sprites_for('mt', 'body', ['mod:body', 'es:<emotion>'])
+        make_sprites_for('mt', 'pioneer panama', ['mod:body', 'es:pioneer', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'dress panama', ['mod:body', 'es:dress', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'swim panama', ['mod:body', 'es:swim', 'es:<emotion>', 'es:panama'])
+        make_sprites_for('mt', 'body panama', ['mod:body', 'es:<emotion>', 'es:panama'])
         
         # Ульяна
         make_sprites_for('usw', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
@@ -315,7 +315,7 @@ init 2:
         
         # Лена
         
-        make_sprites_for('un', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
+        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'es:<emotion>'])
 
         # Алиса
 

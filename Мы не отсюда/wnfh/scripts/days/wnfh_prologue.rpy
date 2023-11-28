@@ -248,7 +248,7 @@ label prologue_dlinnee:
     scene black with Dissolve(5.0)
     stop music fadeout 5.0
     $ renpy.pause(1.5, hard=True)
-    jump wnfh_day_1_dream
+    jump wnfh_day_7_dream
 
 label prologue_koroche:
 
@@ -305,4 +305,4 @@ label prologue_koroche:
     scene black with Dissolve(5.0)
     stop music fadeout 5.0
     $ renpy.pause(1.5, hard=True)
-    jump wnfh_day_1_dream
+    jump wnfh_day_7_dream

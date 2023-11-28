@@ -1,4 +1,4 @@
-label wnfh_day_6_continue:
+label wnfh_day_12_continue:
     
     $ wnfh_set_time("night")
     play ambience ambience_lake_shore_night fadein 7.5
@@ -57,13 +57,13 @@ label wnfh_day_6_continue:
 
     menu:
         "Сократить":
-            jump d6c_go_forest
+            jump d12c_go_forest
         "По берегу":
-            jump d6c_go_coast
+            jump d12c_go_coast
 
-label d6c_go_forest:
+label d12c_go_forest:
     
-    $ d6c_poshel_v_les = True
+    $ d12c_poshel_v_les = True
 
     th "Ладненько, попробую сократить."
     "Быстрым шагом я направился в лес."
@@ -91,13 +91,13 @@ label d6c_go_forest:
     stop ambience fadeout 3.5
     window hide dissolve
 
-label d6c_pogrujaet_katyu:
+label d12c_pogrujaet_katyu:
 
     scene bg ext_island_night with dissolve2
     window show dissolve
     play ambience ambience_lake_shore_night fadein 3.5
 
-    if d6c_poshel_v_les:
+    if d12c_poshel_v_les:
         "Покинув тёмный и страшный лес, я на пару секунд встал на выходе из леса, разглядывая лагерь."
     else:
         "Выйдя к стоянке нашей лодки, я на пару секунд остановился, разглядывая лагерь."
@@ -110,12 +110,12 @@ label d6c_pogrujaet_katyu:
 
     stop ambience fadeout 3.5
     window hide dissolve
-    if d6c_poshel_v_les:
-        call d6c_go_forest_3
-    if d6c_poshel_po_beregu:
-        call d6c_go_forest_no_serega
+    if d12c_poshel_v_les:
+        call d12c_go_forest_3
+    if d12c_poshel_po_beregu:
+        call d12c_go_forest_no_serega
 
-label d6c_go_forest_no_serega:
+label d12c_go_forest_no_serega:
 
     scene bg ext_forest_new_night_wnfh with dissolve2
     play ambience ambience_forest_night fadein 3.5
@@ -129,9 +129,9 @@ label d6c_go_forest_no_serega:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    call d6c_sobiraet_veshi
+    call d12c_sobiraet_veshi
     
-label d6c_go_forest_3:
+label d12c_go_forest_3:
 
     scene bg ext_forest_new_night_wnfh with dissolve2 
     window show dissolve
@@ -162,11 +162,11 @@ label d6c_go_forest_3:
 
     menu:
         "Спросить.":
-            jump d6c_go_forest_sprosil
+            jump d12c_go_forest_sprosil
         "Пусть делает свои дела.":
-            jump d6c_go_forest_zabil
+            jump d12c_go_forest_zabil
 
-label d6c_go_forest_zabil:
+label d12c_go_forest_zabil:
     
     th "Ладно, пофигу, не буду мешать ему делать свои дела, это же просто не прилично."
 
@@ -174,9 +174,9 @@ label d6c_go_forest_zabil:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    call d6c_sobiraet_veshi
+    call d12c_sobiraet_veshi
 
-label d6c_go_forest_sprosil:
+label d12c_go_forest_sprosil:
     
     th "Ладно, так уж и быть, спрошу для успокоения своей души."
     th "Вдруг мне всё же показалось и это просто какой-то тоненький ручей."
@@ -274,18 +274,18 @@ label d6c_go_forest_sprosil:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    $ d6c_videl_seregu = True
-    call d6c_sobiraet_veshi
+    $ d12c_videl_seregu = True
+    call d12c_sobiraet_veshi
     
-label d6c_sobiraet_veshi:
+label d12c_sobiraet_veshi:
 
     scene bg ext_island_otherside_night_wnfh with dissolve2
     play ambience ambience_lake_shore_night fadein 3.5
     window show dissolve
 
-    if d6c_videl_seregu = True:
+    if d12c_videl_seregu = True:
         th "Да уж, неловко получилось с Серым[wp] Благо, мы не пересеклись за весь день[wp] {w}Хотя это довольно странно."
-    elif d6c_poshel_po_beregu = True:
+    elif d12c_poshel_po_beregu = True:
         th "Блин, вообще интересно, как так вышло, что мы тут все на острове расположились и даже не знали об этом[wp] Хотя, я и Катя не шумели особо, вот и вышло так."
     else:
         th "Интересно, кто же всё-таки там был, в лесу. Может бабайка? Ну ладно, неважно, надо скорее собираться."
@@ -305,11 +305,11 @@ label d6c_sobiraet_veshi:
     "Закончив собирать удочку, я сунул её в ведро и отправился к лодке."
 
     window hide dissolve
-    call d6c_otplitie
+    call d12c_otplitie
 
-label d6c_go_coast:
+label d12c_go_coast:
     
-    $ d6c_poshel_po_beregu = True
+    $ d12c_poshel_po_beregu = True
 
     th "Да ну нахер через идти через лес ночью, так и ещё с человеком на руках."
     th "Споткнусь ещё об корягу какую-нибудь и всё. Себя покалечу и[wp] Ох[wp] Любимку свою."
@@ -344,12 +344,12 @@ label d6c_go_coast:
 
     menu:
         "Выдать себя.":
-            jump d6c_go_coast_vidal
+            jump d12c_go_coast_vidal
         "Надеятся на чудо.":
-            jump d6c_go_coast_ne_vidal
+            jump d12c_go_coast_ne_vidal
 
-label d6c_go_coast_vidal:
-    $ d6c_videl_jeny = True
+label d12c_go_coast_vidal:
+    $ d12c_videl_jeny = True
     th "Незамечанным уйти не получится, тем более, когда Женя уже услышала меня, поэтому[wp]"
 
     me "Нет, это Семён."
@@ -407,12 +407,12 @@ label d6c_go_coast_vidal:
     menu:
         "Помочь.":
             $ mz_lp += 1
-            jump d6c_mz_pomosh
+            jump d12c_mz_pomosh
         "Вежливо отказать.":
             $ mz_lp -= 1
-            jump d6c_mz_otkaz
+            jump d12c_mz_otkaz
 
-label d6c_mz_pomosh:
+label d12c_mz_pomosh:
 
     me "Ладно, я поищу его, а ты постарайся не разбудить её."
     
@@ -440,7 +440,7 @@ label d6c_mz_pomosh:
     scene bg ext_forest_new_night_wnfh with dissolve2
     play ambience ambience_forest_night fadein 3.5
     window show dissolve
-    $ d6c_videl_seregu = True
+    $ d12c_videl_seregu = True
     "В лесу было абсолютно темно, и лишь лунный свет, пробиваясь сквозь кроны, немного помогал мне."
     "Но Сергея нигде не было видно, что в прочем не удивительно."
 
@@ -500,9 +500,9 @@ label d6c_mz_pomosh:
 
     window hide dissolve
     stop ambience fadeout 3.5
-    call d6c_go_coast_2
+    call d12c_go_coast_2
 
-label d6c_go_coast_2:
+label d12c_go_coast_2:
 
     scene bg ext_island_otherside_night_wnfh 
     show el normal pioneer at left
@@ -571,9 +571,9 @@ label d6c_go_coast_2:
     "Я поймал её падающее тело и, схватившись по удобнее, понёс её к лодке."
 
     window hide dissolve
-    call d6c_pogrujaet_katyu
+    call d12c_pogrujaet_katyu
 
-label d6c_mz_otkaz:
+label d12c_mz_otkaz:
 
     me "Прости Жень, у меня сейчас своих дел полно. Надо скорее в лагерь, вожатая сто пудов не спит и ждёт меня."
     me "А Серый скоро вернётся, поверь мне."
@@ -589,9 +589,9 @@ label d6c_mz_otkaz:
     "Женя залезла обратно в палатку, а я пошёл к нашей лодке."
 
     window hide dissolve
-    call d6c_pogrujaet_katyu
+    call d12c_pogrujaet_katyu
 
-label d6c_go_coast_ne_vidal:
+label d12c_go_coast_ne_vidal:
 
     th "Нет, лучше не выдавать себя, а то Женя как увидет меня, так сразу начнёт ор, мол какого чёрта ты забыл тут, тебе же говорили куда плыть, баклан!"
     th "А мне это нахер не нужно."
@@ -601,9 +601,9 @@ label d6c_go_coast_ne_vidal:
     "Тихо донеслось из палатки и, решив что это мой шанс, я продолжил тихонько идти."
 
     window hide dissolve
-    call d6c_pogrujaet_katyu
+    call d12c_pogrujaet_katyu
     
-label d6c_otplitie:
+label d12c_otplitie:
     
     play music wnfh_music_list["mystery"] fadein 7.5
     scene bg ext_island_night with dissolve2
@@ -612,7 +612,7 @@ label d6c_otplitie:
     "Теперь всё было готово к отплытию и, загрузив всё в лодку, я спихнул её в воду."
     "А после запрыгнув на борт, принялся тихонько грести обратно в лагерь."
 
-    show cg d6c_boat_night_wnfh with dissolve2
+    show cg d12c_boat_night_wnfh with dissolve2
 
     "Грести было тяжелее обычного. Наверное, всё же, сказывалась моя усталость и сонливость."
     "Ещё и море волновалось, пусть и не сильно."
@@ -623,7 +623,7 @@ label d6c_otplitie:
 
     kat "Семён?"
 
-    if d6c_katya_prosipalas:
+    if d12c_katya_prosipalas:
         "Хриплым голосом сказала вновь проснувшаяся Катя."
     else:
         "Хрипло проговорила неожиданно проснувшаяся Катя."
@@ -664,13 +664,13 @@ label d6c_otplitie:
 
     menu:
         "Сказать правду.":
-            $ d6c_me_sovral = False
-            jump d6c_otplitie_true
+            $ d12c_me_sovral = False
+            jump d12c_otplitie_true
         "Соврать.":
-            $ d6c_me_sovral = True
-            jump d6c_otplitie_lie
+            $ d12c_me_sovral = True
+            jump d12c_otplitie_lie
 
-label d6c_otplitie_true:
+label d12c_otplitie_true:
 
     th "Наверное, я ещё миллион раз пожалею об этом[wp]"
 
@@ -718,9 +718,9 @@ label d6c_otplitie_true:
     kat "Ну, думаю к обеду уж точно будут."
     me "Надеюсь[wp]"
 
-    jump d6c_pribitie
+    jump d12c_pribitie
 
-label d6c_otplitie_lie:
+label d12c_otplitie_lie:
 
     th "Нет, лучше не стоит говорить, не сейчас по крайней мере."
 
@@ -731,9 +731,9 @@ label d6c_otplitie_lie:
     me "К тому же всё равно забудется."
     kat "И то верно[wp]"
 
-    jump d6c_pribitie
+    jump d12c_pribitie
 
-label d6c_pribitie:
+label d12c_pribitie:
 
     "Катя поглубже забурилась в одеяло и, видимо, решила попытаться уснуть."
     "Я же обернулся назад, дабы посмотреть сколько осталось до суши."
@@ -760,10 +760,10 @@ label d6c_pribitie:
 
     me "Всё, давай скорее по домам."
 
-    if d6c_me_sovral = False:
+    if d12c_me_sovral = False:
         kat "Да, давай."
     else:
-        jump d6c_pribitie_2
+        jump d12c_pribitie_2
 
     "Катя взяла меня за руку и мы пошли в лагерь."
 
@@ -777,6 +777,6 @@ label d6c_pribitie:
 
     "placeholder"
 
-label d6c_pribitie_2:
+label d12c_pribitie_2:
 
     "placeholder"

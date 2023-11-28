@@ -1,8 +1,8 @@
-label blwnfh_test_matyki:
-    if persistent.sukablyat_blwnfh == False:
+label wnfh_test_matyki:
+    if persistent.sukablyat_wnfh == False:
         me "Шурик блять, мне олово за шиворот капает!"
     # Цензура
-    elif persistent.sukablyat_type_blwnfh == False:
+    elif persistent.sukablyat_type_wnfh == False:
         me "Шурик @$&&^@, мне олово за шиворот капает!"
     # Замена
     else:
@@ -13,4 +13,4 @@ label blwnfh_test_matyki:
     menu: 
     
         "Да":
-            jump blwnfh_test_main_menu 
+            jump wnfh_test_main_menu 

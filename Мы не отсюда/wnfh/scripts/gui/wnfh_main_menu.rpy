@@ -217,7 +217,7 @@ label wnfh_main:
     $ renpy.pause(100)
     jump wnfh_main_menu
 label wnfh_main_menu:
-    scene cg d2_me_kat_boathouse_wnfh with dissolve
+    scene cg d8_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
     $ init_splash()
     #$ wnfh_Data = BD("./game/saves/wnfh_database.json")

@@ -1,4 +1,4 @@
-label blwnfh_test_anim:
+label wnfh_test_anim:
     
     play music music_list["i_want_to_play"] fadein 2.5
 
@@ -19,21 +19,21 @@ label cganim:
     
     "Пример ванильной цг"
 
-    scene cg d3_dv_scene_1
+    scene cg d9_dv_scene_1
 
     "Работает"
     "Пример модовой ЦГ"
-    scene cg d2_dv_sem_scene
+    scene cg d8_dv_sem_scene
     "Работает?"
     "Ещё пример"
-    scene expression blwnfh_wakeup("cg d6_mt_volosbl")
+    scene expression wnfh_wakeup("cg d12_mt_volosbl")
     show unblink
     with None
 
     "У-ля-ля"
     "Ну всё, насмотрелся и хватит, съебал-ка в... Ну скажем..."
     "4-й день"
-    jump blwnfh_day_4
+    jump wnfh_day_10
 
 label spritesanim:
 
@@ -60,7 +60,7 @@ label bgtransits:
     "Транзит santa_barbara"
     "Да начнётся веселье!"
     
-    play music blwnfh_music_list["santa_barbara"] noloop
+    play music wnfh_music_list["santa_barbara"] noloop
     scene bg ext_bus with dissolve
     $ renpy.pause(2.0)
     scene bg ext_camp_entrance_day with santa_barbara_in_dissolve2
@@ -89,4 +89,4 @@ label bgtransits:
     $ renpy.pause(0.5)
     "Конец!"
     
-    jump blwnfh_test
+    jump wnfh_test

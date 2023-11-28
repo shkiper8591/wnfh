@@ -1,4 +1,4 @@
-label blwnfh_sprites_test:
+label wnfh_sprites_test:
     
     play music music_list["went_fishing_caught_a_girl"]
     play ambience ambience_camp_center_day fadein 3
@@ -1502,7 +1502,7 @@ label sv:
     
     "Кликни чтобы вернутся в меню отладки"
     
-    jump blwnfh_test
+    jump wnfh_test
     
 label sd:
 

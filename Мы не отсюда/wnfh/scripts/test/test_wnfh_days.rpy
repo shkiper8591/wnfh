@@ -1,21 +1,21 @@
-label blwnfh_test_days:
+label wnfh_test_days:
 
     "Какой день нам нужно отладить?"
     
     menu:
         "День 1":
-            jump blwnfh_day_1
+            jump wnfh_day_7
         "День 2":
-            jump blwnfh_day_2
+            jump wnfh_day_8
         "День 3":
-            jump blwnfh_day_3
+            jump wnfh_day_9
         "День 4":
-            jump blwnfh_day_4
+            jump wnfh_day_10
         "День 5":
-            jump blwnfh_day_5
+            jump wnfh_day_11
         "День 6":
-            jump blwnfh_day_6
+            jump wnfh_day_12
         "День 6.5":
-            jump blwnfh_day_6_continue
+            jump wnfh_day_12_continue
         "Вернутся в меню отладки":
-            jump blwnfh_test_main_menu 
+            jump wnfh_test_main_menu 

@@ -1,4 +1,4 @@
-label wnfh_day_2:
+label wnfh_day_8:
     
     $ wnfh_new_chapter(2)
     $ wnfh_set_name("kat", "Катя")
@@ -199,7 +199,7 @@ label wnfh_day_2:
     ## Семён на площади
     "На площади уже собрался народ, и я встал в строй рядом с Серым." 
     
-    show cg d2_lineup with dissolve
+    show cg d8_lineup with dissolve
     
     # потом можно будет попросить нарисовать цг, где рядом с Электроником стоит Семён.
     "Вскоре Ольга Дмитриевна принялась рассказывать самые разные неинтересные вещи."
@@ -215,7 +215,7 @@ label wnfh_day_2:
     
     "Из моих раздумий о утконосах, меня выбила Ольга Дмитриевна, громко позвав к себе."
     
-    hide cg d2_lineika_wnfh with dissolve
+    hide cg d8_lineika_wnfh with dissolve
     show mt smile pioneer panama at left with dissolve
     show kat normal pioneer at right with dissolve
     ## Семёна назначают провожатым Кати
@@ -316,12 +316,12 @@ label wnfh_day_2:
         window hide dissolve
         $ renpy.pause(0.2)
         call screen wnfh_choice(
-            ["mi", "Сесть с Мику", "я хуй знает что тут написать", "d2_zavtrak_s_miku", {"mi":1}],
-            ["neutral", "Сесть с товарищами", "Пожалуй сяду с пацанами", "d2_zavtrak_s_el_sh", {None}],
-            ["d2_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
+            ["mi", "Сесть с Мику", "я хуй знает что тут написать", "d8_zavtrak_s_miku", {"mi":1}],
+            ["neutral", "Сесть с товарищами", "Пожалуй сяду с пацанами", "d8_zavtrak_s_el_sh", {None}],
+            ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
             ) with sphere_blure_dissolve2
 
-        label d2_zavtrak_s_miku:
+        label d8_zavtrak_s_miku:
     
         th "Посижу-ка с Мику. С парнями я всегда успею поговорить, а вот с нашей музыканткой мне довольно редко доводиться пообщаться."
     
@@ -394,12 +394,12 @@ label wnfh_day_2:
         window hide dissolve
         $ renpy.pause(0.2)
         call screen wnfh_choice(
-            ["mi", "Почему бы и нет", "Пополнение в команде не повредит", "d2_mi_yes_1", {"mi":1}],
-            ["mi", "Пожалуй нет", "Не вижу особого смысла в этом", "d2_mi_no_1", {"mi":-1}],
-            ["d2_choice_n2", "Мику хочет пойти вместе Катей и Семёном за компанию."]
+            ["mi", "Почему бы и нет", "Пополнение в команде не повредит", "d8_mi_yes_1", {"mi":1}],
+            ["mi", "Пожалуй нет", "Не вижу особого смысла в этом", "d8_mi_no_1", {"mi":-1}],
+            ["d8_choice_n2", "Мику хочет пойти вместе Катей и Семёном за компанию."]
             ) with sphere_blure_dissolve2
         
-        label d2_mi_yes_1:
+        label d8_mi_yes_1:
     
         show mi smile pioneer at center with dspr
         show mt normal pioneer:
@@ -430,9 +430,9 @@ label wnfh_day_2:
         
         "Закончив с завтраком, я и Мику отнесли свои подносы с едой и пошли на выход из столовой."
         
-        jump d2_begunok
+        jump d8_begunok
     
-        label d2_mi_no_1:
+        label d8_mi_no_1:
         
         me "Да хватит тебе, Мику, мы быстренько справимся, даже как-либо поболтать или повеселится не успеем, как бегунок будет уже заполнен."
     
@@ -455,9 +455,9 @@ label wnfh_day_2:
     
         "Закончив с завтраком, я попрощался с музыканткой и, отнесся поднос, вышел из столовой."
     
-        jump d2_begunok
+        jump d8_begunok
     
-        label d2_zavtrak_s_el_sh:
+        label d8_zavtrak_s_el_sh:
     
         window show dissolve
         th "Пожалуй пойду к своим ребятам, с ними как-то поуютнее будет."
@@ -468,9 +468,9 @@ label wnfh_day_2:
         show chair_r behind sh
         show table
         show shakers
-        show left d2_breakfast_full tray foods behind shakers
+        show left d8_breakfast_full tray foods behind shakers
         show el normal pioneer at wnfh_sit_left behind table
-        show right d2_breakfast_half tray foods behind shakers
+        show right d8_breakfast_half tray foods behind shakers
         show sh normal pioneer at wnfh_sit_right behind table
         with dissolve
         $ renpy.pause(1.0, hard=True)
@@ -479,18 +479,18 @@ label wnfh_day_2:
         me "Доброе утро товарищи, есть место свободное?"
         sh "Да, садись."
         
-        show mid d2_breakfast_full tray spoon foods with dissolve
+        show mid d8_breakfast_full tray spoon foods with dissolve
     
         "И усевшись, я только сейчас осмотрел свой завтрак" 
         "Он представлял из себя кашу манную, да чай с булкой. {w}Но на сей раз булка была, похоже, с яблочным повидло."
         
-        show mid d2_breakfast_full tray foods with dspr
+        show mid d8_breakfast_full tray foods with dspr
     
         me "Как идут у вас дела? {w}Придумали что-нибудь как добыть детали?"
         
         "Последние слова я сказал чуть тише."
         
-        show left d2_breakfast_half tray foods behind shakers with dspr
+        show left d8_breakfast_half tray foods behind shakers with dspr
     
         show el sad with dspr 
         show sh upset with dspr
@@ -507,7 +507,7 @@ label wnfh_day_2:
         show el normal with dspr
         show sh serious with dspr
     
-        show mid d2_breakfast_half tray foods with dspr
+        show mid d8_breakfast_half tray foods with dspr
         
         sh "И так, я предлагаю сходить в старый лагерь."
         me "Но[wp] {w}Если вожатая узнает, то нам голову оторвут."
@@ -549,14 +549,14 @@ label wnfh_day_2:
         me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
         sh "Будем ждать."
         
-        show mid d2_breakfast_empty tray foods with dissolve
+        show mid d8_breakfast_empty tray foods with dissolve
     
         "Быстренько всё доев, я пошел на выход из столовой."
-        jump d2_begunok
+        jump d8_begunok
     
     elif wnfh_Data.getChoice_points_sum("un") == 4:
 
-        $ d2_zavtrak_s_lenoy = True
+        $ d8_zavtrak_s_lenoy = True
 
         show un smile pioneer:
             xcenter 1.2
@@ -695,12 +695,12 @@ label wnfh_day_2:
         window hide dissolve
         $ renpy.pause(0.2)
         call screen wnfh_choice(
-            ["un", "Разумеется", "Чем больше компания, тем веселее", "d2_un_yes_1", {"un":1}],
-            ["kat", "Не, мы быстро", "Тут делов на пять минут, особо не повеселишься", "d2_un_no_1", {"kat":1, "un":-1}],
-            ["d2_choice_n3", "Лена хочет пойти вместе Катей и Семёном за компанию."]
+            ["un", "Разумеется", "Чем больше компания, тем веселее", "d8_un_yes_1", {"un":1}],
+            ["kat", "Не, мы быстро", "Тут делов на пять минут, особо не повеселишься", "d8_un_no_1", {"kat":1, "un":-1}],
+            ["d8_choice_n3", "Лена хочет пойти вместе Катей и Семёном за компанию."]
             ) with sphere_blure_dissolve2
 
-    label d2_un_yes_1:
+    label d8_un_yes_1:
 
         window show dissolve
 
@@ -714,9 +714,9 @@ label wnfh_day_2:
 
         "Как только Катя закончила с завтраком, мы отправились на выход из столовой."
         
-        jump d2_begunok
+        jump d8_begunok
 
-    label d2_un_no_1:
+    label d8_un_no_1:
 
         window show dissolve
 
@@ -729,12 +729,12 @@ label wnfh_day_2:
 
         "Дождавшись, когда Катя закочила с завтраком, мы покинули столовую."
 
-        jump d2_begunok
+        jump d8_begunok
     
-    label d2_begunok:
+    label d8_begunok:
 
     window hide dissolve
-    hide mid d2_breakfast_empty with dissolve
+    hide mid d8_breakfast_empty with dissolve
     $ renpy.pause(1.0)
     stop ambience fadeout 2.5
     $ wnfh_set_time()
@@ -1311,13 +1311,13 @@ label wnfh_day_2:
     show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 3
     
-    show mid d2_breakfast_full tray spoon foods with dissolve
+    show mid d8_breakfast_full tray spoon foods with dissolve
     show kat normal pioneer behind chair_r:
         xcenter -0.2
         ease_quart 4.0 xcenter 0.15
     
     $ renpy.pause(4.0, hard=True)
-    show left d2_breakfast_full tray foods behind shakers with dissolve
+    show left d8_breakfast_full tray foods behind shakers with dissolve
     show chair_l at chair_move_out behind kat
     $ renpy.pause(0.7, hard=True)
     show kat normal pioneer at sit_down_left behind table
@@ -1332,7 +1332,7 @@ label wnfh_day_2:
         xcenter 1.4
         ease_quart 5.0 xcenter 0.8
     
-    show mid d2_breakfast_full tray foods with dissolve
+    show mid d8_breakfast_full tray foods with dissolve
     
     "А ещё спустя минуту, к нам подошла Мику."
     
@@ -1348,10 +1348,10 @@ label wnfh_day_2:
     show mi normal pioneer at sit_down_right
     $ renpy.pause(1.0, hard=True)
     show chair_r at chair_move_in behind mi
-    show right d2_breakfast_full tray spoon foods behind mid with dissolve
+    show right d8_breakfast_full tray spoon foods behind mid with dissolve
     
     "Мику аккуратно, даже с некоторой грацией села за стол, и стала аккуратно есть."
-    show right d2_breakfast_full tray foods behind mid with dissolve
+    show right d8_breakfast_full tray foods behind mid with dissolve
     "Что нельзя было сказать про меня, ведь за это время, я уже успел немного испачкать форму едой."
     
     show kat grin with dspr
@@ -1367,14 +1367,14 @@ label wnfh_day_2:
     "Я попытался оттереть пятно рукой, но сделал только хуже, размазав его ещё сильнее, а от моих неудачных попыток девочки ещё сильнее засмеялись."
     "Поняв, что ничего не получится, я грозно фыркнул и обиженно уткнулся в тарелку."
     
-    show mid d2_breakfast_half tray foods with dissolve
+    show mid d8_breakfast_half tray foods with dissolve
     show kat smile with dspr
     show mi normal with dspr
     
     mi "Сенечка, ну не обижайся ты!"
     
     show mi shy with dspr
-    show left d2_breakfast_half tray foods with dissolve
+    show left d8_breakfast_half tray foods with dissolve
     
     mi "Ой, то есть Семён."
     
@@ -1385,7 +1385,7 @@ label wnfh_day_2:
     th "Ну и ну, то Сёмочка, то теперь вот некий Сенечка. {w}Ещё бы Семечкой обозвали, во хохма-то будет!"
     me "Да не обижаюсь я, просто неприятно немного."
     
-    show right d2_breakfast_half tray foods with dissolve
+    show right d8_breakfast_half tray foods with dissolve
     show mi happy with dspr
     
     mi "Вот и славно, что не обижаешься."
@@ -1395,8 +1395,8 @@ label wnfh_day_2:
     
     "Мы все уткнулись обратно в свои тарелки."
     
-    show left d2_breakfast_empty tray foods with dissolve
-    show right d2_breakfast_empty tray foods with dissolve
+    show left d8_breakfast_empty tray foods with dissolve
+    show right d8_breakfast_empty tray foods with dissolve
     
     "Мику и Катя закончили на удивление быстрее меня, при том, что ел я довольно быстро."
     
@@ -1426,7 +1426,7 @@ label wnfh_day_2:
     
     "Девочки ушли, а я, стал в ускоренном темпе доедать."
     
-    show mid d2_breakfast_empty tray spoon foods with dissolve
+    show mid d8_breakfast_empty tray spoon foods with dissolve
     
     "И спустя минуту наконец-то прикончил свой обед."
     
@@ -2132,7 +2132,7 @@ label wnfh_day_2:
     show shakers
     with dissolve
     
-    show mid d5_dinner_full tray spoon foods with dissolve
+    show mid d11_dinner_full tray spoon foods with dissolve
     show mi normal pioneer behind chair_r:
         xcenter -0.2
         ease_quart 4.0 xcenter 0.15
@@ -2141,9 +2141,9 @@ label wnfh_day_2:
         ease_quart 3.6 xcenter 0.85
     
     $ renpy.pause(4.0, hard=True)
-    show left d5_dinner_full tray spoon foods behind shakers with dissolve
+    show left d11_dinner_full tray spoon foods behind shakers with dissolve
     show chair_l at chair_move_out behind mi
-    show right d5_dinner_full tray spoon foods behind shakers with dissolve
+    show right d11_dinner_full tray spoon foods behind shakers with dissolve
     show chair_r at chair_move_out behind kat
     $ renpy.pause(0.7, hard=True)
     show mi normal pioneer at sit_down_left behind table
@@ -2159,26 +2159,26 @@ label wnfh_day_2:
     "Но ужин подавали крайне невкусный." 
     "Хотя на вид он был вполне аппетитный: макароны с сыром и сосисками, что может быть ещё вкуснее?"
     
-    show left d5_dinner_full tray foods behind shakers with dissolve
-    show right d5_dinner_full tray foods behind shakers with dissolve 
+    show left d11_dinner_full tray foods behind shakers with dissolve
+    show right d11_dinner_full tray foods behind shakers with dissolve 
 
     "Вот только сыр был какой-то не такой на вкус, сосиски были жесткие, а макароны будто недоварены!"
 
-    show mid d5_dinner_full tray foods with dissolve
+    show mid d11_dinner_full tray foods with dissolve
 
     "Однако судя по довольному лицу Мику, такая, с позволения сказать, еда – её вполне устраивала и уплетала она эту стрепню куда быстрее меня и Кати."
     
-    show left d5_dinner_half tray foods behind shakers with dissolve
+    show left d11_dinner_half tray foods behind shakers with dissolve
 
     th "Похоже поварихи тоже иногда пользуются правилом «горячее – сырым не бывает»." 
     th "Только вот укуси меня пчела, но оно не работает, когда тебе надо кормить целую роту пионеров."   
     
-    show mid d5_dinner_half tray foods with dissolve
+    show mid d11_dinner_half tray foods with dissolve
     show shakers
 
     "Всё же голод брал своё, и понемногу еда в тарелке заканчивалась."
 
-    show right d5_dinner_half tray foods behind shakers with dissolve   
+    show right d11_dinner_half tray foods behind shakers with dissolve   
     
     window hide
     $ renpy.pause(1.5)
@@ -2186,7 +2186,7 @@ label wnfh_day_2:
     
     show kat guilty with dspr
 
-    show left d5_dinner_empty tray foods behind shakers with dissolve
+    show left d11_dinner_empty tray foods behind shakers with dissolve
     
     "Мику закончила с едой куда раньше нас, что ни капли нас не удивило."
     
@@ -2263,7 +2263,7 @@ label wnfh_day_2:
     ## Семён и Катя на пристани
     "Встав на краю, я облокотился на перила, а пару секунд спустя и Катя."
     
-    show cg d2_me_kat_boathouse_wnfh with santa_barbara_in_blure_dissolve2
+    show cg d8_me_kat_boathouse_wnfh with santa_barbara_in_blure_dissolve2
     
     "Мы молчали и просто наслаждались красивыми видами."
     
@@ -2476,7 +2476,7 @@ label wnfh_day_2:
     stop music fadeout 3
     play music wnfh_music_list["we_dont_care"] fadein 5
     window hide
-    show cg d2_dv_sem_scene_wnfh with dspr
+    show cg d8_dv_sem_scene_wnfh with dspr
     $ wnfh_set_mode(nvl)
     nvl show dissolve2
     
@@ -2525,7 +2525,7 @@ label wnfh_day_2:
     nvl hide dissolve2
     $ wnfh_set_mode()
     stop music fadeout 3
-    hide cg d2_dv_sem_scene_wnfh with dissolve
+    hide cg d8_dv_sem_scene_wnfh with dissolve
     show dv laugh with dspr
     window show
     
@@ -2837,4 +2837,4 @@ label wnfh_day_2:
     window hide
     show blink
     $ renpy.pause(2.0, hard=True)
-    jump wnfh_day_3
+    jump wnfh_day_9

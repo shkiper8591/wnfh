@@ -6,8 +6,8 @@ init python:
             (["int_house_of_mt_day_cleaning_4", False], ["ext_underwater", False,], ["int_boathouse_day", False], ["ext_pier_day", False], ["ext_house_of_el_day", False], ["ext_boathouse_sunset", False], ["ext_island_sunset", False], ["ext_island_forest_sunset", False], ["ext_island_otherside_sunset", False], ["ext_sky", False])
         ),
         "cg":(
-            (["d1_lineup_no_un",False], ["d6_me_kat_dasboot_curious",False], ["d2_dv_sem_scene", False], ["d5_me_mirror_tractor_wnfh",False], ["disclaimer",False], ["Katya_Avtobus",False]),
-            (["d1_lineup_no_un",False], ["d6_me_kat_dasboot_curious",False], ["d2_dv_sem_scene", False], ["d5_me_mirror_tractor_wnfh",False], ["disclaimer",False], ["Katya_Avtobus",False]),
+            (["d7_lineup_no_un",False], ["d12_me_kat_dasboot_curious",False], ["d8_dv_sem_scene", False], ["d11_me_mirror_tractor_wnfh",False], ["disclaimer",False], ["Katya_Avtobus",False]),
+            (["d7_lineup_no_un",False], ["d12_me_kat_dasboot_curious",False], ["d8_dv_sem_scene", False], ["d11_me_mirror_tractor_wnfh",False], ["disclaimer",False], ["Katya_Avtobus",False]),
         )
     }
 

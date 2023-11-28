@@ -1,4 +1,4 @@
-label blwnfh_background:
+label wnfh_background:
     scene bg int_editorial_day_cat with dissolve2
     show un dr dr_normal_wk background with dspr
     show kat wr wr_normal_wk background with dspr
@@ -10,6 +10,6 @@ label blwnfh_background:
     kat "Приветик."
     show kat wr wr_normal_wk background with dspr
     "Спрайты работают, заебумба"
-    jump blwnfh_test_main_menu
+    jump wnfh_test_main_menu
     
     

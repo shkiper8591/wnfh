@@ -1,14 +1,14 @@
 #Призыв каких-то звуков
-renpy.play(blwnfh_sfx_list["ps4_ach"], channel="sound")
+renpy.play(wnfh_sfx_list["ps4_ach"], channel="sound")
 
 Вызов выбора, инструкция
     Варианты функций:
-        blwnfh_double_choice_gte
-        blwnfh_double_choice
-        blwnfh_triple_choice_qte
-        blwnfh_triple_choice
+        wnfh_double_choice_gte
+        wnfh_double_choice
+        wnfh_triple_choice_qte
+        wnfh_triple_choice
                                                                                                                 #Это для qte
-    call screen blwnfh_double_choice(button_1, button_2, text_1, text_2, variant_1, variant_2, label_1, label_2, [qte]) 
+    call screen wnfh_double_choice(button_1, button_2, text_1, text_2, variant_1, variant_2, label_1, label_2, [qte]) 
     #В качестве аргументов функция принимает в себя:
     button_1 = "Файл кнопки 1" #Он будет слева
     button_2 = "Файл кнопки 2" #Она соответственно справа

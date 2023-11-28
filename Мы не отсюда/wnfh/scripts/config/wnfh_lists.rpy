@@ -355,7 +355,7 @@ init 2:
     ## Рандомизация мявков
     $ wnfh_meow_list = [wnfh_sfx_list[i] for i in wnfh_sfx_list.keys() if i.startswith("meow")]
     
-    image cg d6_guitar_hit:
+    image cg d12_guitar_hit:
         contains:
             "bg int_musclub_day"
         contains:
@@ -363,7 +363,7 @@ init 2:
             alpha 0.0
             linear 2.0 alpha 1.0
         contains:
-            (wnfh_OTHER + "d6_mi_hit.png")
+            (wnfh_OTHER + "d12_mi_hit.png")
             pos(0.75, 0.5)
             anchor(0.5, 0.5)
             linear 3.4 pos(0.5, 0.5)

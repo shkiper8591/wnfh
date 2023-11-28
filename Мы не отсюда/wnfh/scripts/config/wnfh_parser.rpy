@@ -44,6 +44,6 @@ init -3 python:
 init -2:
     image bg int_dining_hall_day_vedro_wnfh = wnfh_fast_composite(im.Scale(wnfh_ES_IMAGES + "bg/int_dining_hall_day.jpg", config.screen_width, config.screen_height), im.Scale(wnfh_OTHER + "vedro.png", config.screen_width, config.screen_height))
     image bg int_editorial_day_bumaga_wnfh = wnfh_fast_composite(im.Scale(wnfh_IMAGES + "bg/int_editorial_day_wnfh.jpg", config.screen_width, config.screen_height), im.Scale(wnfh_OTHER + "bumaga.png", config.screen_width, config.screen_height))
-    image cg d3_me_kat_blindage_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d3_me_kat_blindage_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d3_me_kat_blindage_light.png"))
-    image cg d3_me_kat_blindage2_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d3_me_kat_blindage2_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d3_me_kat_blindage_light.png"))
-    #image cg d6_mt_volosbl = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d6_mt_volosbl.png", wnfh_wakeup_dark(wnfh_IMAGES + "cg/d6_mt_volosbl.png"))
+    image cg d9_me_kat_blindage_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d9_me_kat_blindage_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d9_me_kat_blindage_light.png"))
+    image cg d9_me_kat_blindage2_wnfh = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d9_me_kat_blindage2_wnfh.png", wnfh_fire_light_atl(wnfh_OTHER + "d9_me_kat_blindage_light.png"))
+    #image cg d12_mt_volosbl = wnfh_fast_livecomposite(wnfh_IMAGES + "cg/d12_mt_volosbl.png", wnfh_wakeup_dark(wnfh_IMAGES + "cg/d12_mt_volosbl.png"))

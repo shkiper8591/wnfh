@@ -29,37 +29,37 @@ label wnfh_test_main_menu:
     
     menu:
         "Анимации?":
-            jump blwnfh_test_anim
+            jump wnfh_test_anim
         "Спрайты?":
-            jump blwnfh_sprites_test
+            jump wnfh_sprites_test
         "Музыку и звуки?":
             jump wnfh_test_music
         "Цензуру?":
-            jump blwnfh_test_matyki
+            jump wnfh_test_matyki
         "NVL?":
-            jump blwnfh_test_nvl
+            jump wnfh_test_nvl
         "Выборы?":
-            jump blwnfh_test_choice
+            jump wnfh_test_choice
         "Достижения?":
-            jump blwnfh_test_ach
+            jump wnfh_test_ach
         "Дни?":    
-            jump blwnfh_test_days
+            jump wnfh_test_days
         "Покинуть меню отладки":
             jump wnfh_main_menu
 
-label blwnfh_test_sprites:
+label wnfh_test_sprites:
     
     "Какие именно нам нужно отладить спрайты?"
     
     menu:
         "Обыкновенные?":
-            jump blwnfh_spritestest2
+            jump wnfh_spritestest2
         "Фоновые?":
-            jump blwnfh_background
+            jump wnfh_background
         "Обеденный стол?":
-            jump blwnfh_stol
+            jump wnfh_stol
         "Вернутся назад.":
-            jump blwnfh_test_main_menu
+            jump wnfh_test_main_menu
 
     "База Данных сброшена! Кликни чтобы вернутся в тест меню."
     jump wnfh_test_main_menu

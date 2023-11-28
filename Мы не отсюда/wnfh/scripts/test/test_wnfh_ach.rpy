@@ -1,4 +1,4 @@
-label blwnfh_test_ach:
+label wnfh_test_ach:
     $ wnfh_set_time("night")
     scene bg ext_square_night with dissolve2
     $ renpy.pause(1.0, hard=True)

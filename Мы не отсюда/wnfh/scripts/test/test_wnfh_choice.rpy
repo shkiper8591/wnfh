@@ -1,63 +1,63 @@
-label blwnfh_test_choice:
+label wnfh_test_choice:
     "Тест выборов и переменных."
 
     #$ wnfh_set_time("day")
     #scene bg ext_houses_day with dissolve2
     #call screen wnfh_choice(
-    #    ["dv", "Алиса","А почему нет?", "blwnfh_sunset"],
-    #    ["mi", "Мику", "Нафиг оно мне надо?", "blwnfh_sunset"],
-    #    ["un", "Лена", "Тоже своего рода бег", "blwnfh_sunset"],
-    #    ["kat", "Катя", "Тоже своего рода бег", "blwnfh_sunsetn"],
+    #    ["dv", "Алиса","А почему нет?", "wnfh_sunset"],
+    #    ["mi", "Мику", "Нафиг оно мне надо?", "wnfh_sunset"],
+    #    ["un", "Лена", "Тоже своего рода бег", "wnfh_sunset"],
+    #    ["kat", "Катя", "Тоже своего рода бег", "wnfh_sunsetn"],
     #    ["test1","Выбор пробежаться ли на XX"]
     #    ) with sphere_blure_dissolve2
 #
-    #label blwnfh_sunset:
+    #label wnfh_sunset:
     #    $ wnfh_set_time("sunset")
     #    scene bg ext_houses_sunset with dissolve2
     #    call screen wnfh_choice(
-    #        ["dv", "Алиса","А почему нет?", "blwnfh_night"],
-    #        ["mi", "Мику", "Нафиг оно мне надо?", "blwnfh_night"],
-    #        ["un", "Лена", "Тоже своего рода бег", "blwnfh_night"],
-    #        ["kat", "Катя", "Тоже своего рода бег", "blwnfh_night"],
-    #        ["sl", "Славя","А почему нет?", "blwnfh_night"],
-    #        ["usw", "Ульяна", "Нафиг оно мне надо?", "blwnfh_night"],
-    #        ["mt", "Ольга Дмитриевна", "Тоже своего рода бег", "blwnfh_night"],
+    #        ["dv", "Алиса","А почему нет?", "wnfh_night"],
+    #        ["mi", "Мику", "Нафиг оно мне надо?", "wnfh_night"],
+    #        ["un", "Лена", "Тоже своего рода бег", "wnfh_night"],
+    #        ["kat", "Катя", "Тоже своего рода бег", "wnfh_night"],
+    #        ["sl", "Славя","А почему нет?", "wnfh_night"],
+    #        ["usw", "Ульяна", "Нафиг оно мне надо?", "wnfh_night"],
+    #        ["mt", "Ольга Дмитриевна", "Тоже своего рода бег", "wnfh_night"],
     #        ["test2","Выбор пробежаться ли на XX"]
     #        ) with sphere_blure_dissolve2
-    #label blwnfh_night:
+    #label wnfh_night:
     #    $ wnfh_set_time("night")
     #    scene bg ext_houses_night_wnfh with dissolve2
     #    call screen wnfh_choice(
-    #        ["dv", "Алиса","А почему нет?", "blwnfh_dv"],
-    #        ["mi", "Мику", "Нафиг оно мне надо?", "blwnfh_mi"],
-    #        ["un", "Лена", "Тоже своего рода бег", "blwnfh_un"],
-    #        ["kat", "Катя", "Тоже своего рода бег", "blwnfh_un"],
-    #        ["sl", "Славя","А почему нет?", "blwnfh_dv"],
-    #        ["usw", "Ульяна", "Нафиг оно мне надо?", "blwnfh_mi"],
-    #        ["mt", "Ольга Дмитриевна", "Тоже своего рода бег", "blwnfh_un"],
-    #        ["mz", "Женя","А -почему нет?", "blwnfh_dv"],
-    #        ["cs", "Виола", "Нафиг оно мне надо?", "blwnfh_mi"],
-    #        ["sh", "Шурик", "Тоже своего рода бег", "blwnfh_un"],
+    #        ["dv", "Алиса","А почему нет?", "wnfh_dv"],
+    #        ["mi", "Мику", "Нафиг оно мне надо?", "wnfh_mi"],
+    #        ["un", "Лена", "Тоже своего рода бег", "wnfh_un"],
+    #        ["kat", "Катя", "Тоже своего рода бег", "wnfh_un"],
+    #        ["sl", "Славя","А почему нет?", "wnfh_dv"],
+    #        ["usw", "Ульяна", "Нафиг оно мне надо?", "wnfh_mi"],
+    #        ["mt", "Ольга Дмитриевна", "Тоже своего рода бег", "wnfh_un"],
+    #        ["mz", "Женя","А -почему нет?", "wnfh_dv"],
+    #        ["cs", "Виола", "Нафиг оно мне надо?", "wnfh_mi"],
+    #        ["sh", "Шурик", "Тоже своего рода бег", "wnfh_un"],
     #        ["test3","Выбор пробежаться ли на XX"]
     #        ) with sphere_blure_dissolve2
     #
-    #label blwnfh_dv:
+    #label wnfh_dv:
     #    show dv normal pioneer at center with dspr
     #    dv "го бухать"  
     #    hide dv with dspr
-    #    jump blwnfh_continue_2
+    #    jump wnfh_continue_2
     #    
-    #label blwnfh_mi:
+    #label wnfh_mi:
     #    show mi normal pioneer at center with dspr
     #    mi "лфдтивлтЛтщвЗ nAJ NND OB oJQDS JNPaweh pAMP WFJHASjpSNQponl aspsanmwQJDHFNPSJDwjfasndcnmfn"
     #    hide mi with dspr
-    #    jump blwnfh_continue_2
+    #    jump wnfh_continue_2
     #
-    #label blwnfh_un:
+    #label wnfh_un:
     #    show un normal pioneer at center with dspr
     #    un "Привет"
     #    hide un with dspr
-    #    jump blwnfh_continue_2
+    #    jump wnfh_continue_2
 
     $ wnfh_set_time("day")
     window hide
@@ -158,7 +158,7 @@ label test_choice_3:
         "После клика, будет предложено покинуть тест."
     
 
-label blwnfh_continue_2:
+label wnfh_continue_2:
     if wnfh_Data_test.FlagGet("test_flag") == True:
         "Возвращаемся в меню отладки? флаг TRUE"
     elif wnfh_Data_test.FlagGet("test_flag") == False:

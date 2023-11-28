@@ -73,9 +73,9 @@ init -1001 python :
                     return False
         """
         Описание:
-        1) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy") 
-        2) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True) 
-        3) wnfh_Data.FlagSet("d2_zavtrak_s_lenoy",True, "some initiator")
+        1) wnfh_Data.FlagSet("d8_zavtrak_s_lenoy") 
+        2) wnfh_Data.FlagSet("d8_zavtrak_s_lenoy",True) 
+        3) wnfh_Data.FlagSet("d8_zavtrak_s_lenoy",True, "some initiator")
         установка нового флага
         -----------------------------------
         -> Функция принимает:
@@ -91,7 +91,7 @@ init -1001 python :
             return True
         """
         Описание:
-        1) wnfh_Data.FlagDataGet("d2_zavtrak_s_lenoy")
+        1) wnfh_Data.FlagDataGet("d8_zavtrak_s_lenoy")
         Получение значения и иницатора флага
         -----------------------------------
         -> функция принимает:
@@ -112,7 +112,7 @@ init -1001 python :
 
         """
         Описание:
-        1) wnfh_Data.FlagGet("d2_zavtrak_s_lenoy")
+        1) wnfh_Data.FlagGet("d8_zavtrak_s_lenoy")
         функция принимает название флага и возвращает его значение
         -----------------------------------
         -> функция принимает:

@@ -1,4 +1,4 @@
-label wnfh_day_3:
+label wnfh_day_9:
     $ wnfh_new_chapter(3)
     $ wnfh_set_time("sunset")
     scene black
@@ -273,9 +273,9 @@ label wnfh_day_3:
     show chair_r behind mi
     show table
     show shakers
-    show left d3_breakfast_full tray foods behind shakers
+    show left d9_breakfast_full tray foods behind shakers
     show kat normal pioneer at wnfh_sit_left behind table
-    show right d3_breakfast_full tray foods behind shakers
+    show right d9_breakfast_full tray foods behind shakers
     show mi normal pioneer at wnfh_sit_right behind table
     with dissolve
     $ renpy.pause(1.0, hard=True)
@@ -286,7 +286,7 @@ label wnfh_day_3:
     me "Можно к вам?"
     kat "Да, садись."
     
-    show mid d3_breakfast_full tray spoon foods with dissolve
+    show mid d9_breakfast_full tray spoon foods with dissolve
 
     "Сев за стол, я осмотрел свой завтрак: снова каша манная да чай с булкой."
     
@@ -300,7 +300,7 @@ label wnfh_day_3:
     
     show kat smile2 with dspr
 
-    show right d3_breakfast_half tray foods with dspr
+    show right d9_breakfast_half tray foods with dspr
     
     kat "Так он эту самую линейку прогулять хотел, и ещё меня подстрекал."
     
@@ -313,14 +313,14 @@ label wnfh_day_3:
     
     show mi grin with dspr
     show kat grin with dspr
-    show left d3_breakfast_half tray foods with dspr
+    show left d9_breakfast_half tray foods with dspr
     
     "Девочки тихо захихикали."
     
     kat "Ладно, вполне справедливо. {w}Приятного аппетита."
     
     show kat normal with dspr
-    show mid d3_breakfast_full tray foods with dspr
+    show mid d9_breakfast_full tray foods with dspr
     
     "Я принялся за еду с некой неохотой."
     "Ещё бы у меня было желание есть, после такого величайшего унижения."
@@ -344,7 +344,7 @@ label wnfh_day_3:
     mi "Хорошо, будем ждать, правда Кать?"
     
     show kat smile with dspr
-    show mid d3_breakfast_half tray foods with dspr
+    show mid d9_breakfast_half tray foods with dspr
     
     kat "Конечно, как иначе-то."
     
@@ -358,7 +358,7 @@ label wnfh_day_3:
     "Ещё немного посмеявшись, я продолжил есть, но при этом довольно медленно, чтобы пробыть в хорошей компании чуть дольше."
     "Мы сидели и болтали о разных мелочах, которые не имели никакого смысла, и выполняли лишь роль поддержания диалога."
     
-    show mid d3_breakfast_empty tray foods with dspr
+    show mid d9_breakfast_empty tray foods with dspr
 
     "Несмотря на то, что ел довольно медленно, я закончил есть быстрее девочек, и попрощавшись покинул столовую."
     
@@ -1250,7 +1250,7 @@ label wnfh_day_3:
     
     usw "Ты меня прекрасно понял, так что давай, работай."
     
-    show cg d3_me_us_crime_wnfh with dissolve
+    show cg d9_me_us_crime_wnfh with dissolve
     
     "Она подготовила пакет раскрыв его, а я, выждав момент, забурился рукой в большую и глубокую стеклянную тарелку и за пару быстрых заходов наполнил уже половину пакета."
     "Делал я всё быстро, так что конфеты иногда выпадали, но Ульяна словно волк из игры, где он ловил яйца, подставляла пакет." 
@@ -1263,7 +1263,7 @@ label wnfh_day_3:
     
     gp "Вот же мелкие вредители. Зина! У нас конфеты воруют!"
 
-    hide cg d3_me_us_crime
+    hide cg d9_me_us_crime
     show usw fear
     with dspr
 
@@ -1273,7 +1273,7 @@ label wnfh_day_3:
     
     $wnfh_get_achievement("payday")
     $ renpy.pause(1.0, hard=True)
-    show cg d3_me_us_runinng_away_wnfh with dissolve
+    show cg d9_me_us_runinng_away_wnfh with dissolve
 
     "В спешке завернув этот и забрав первый пакет, мы стали быстро удирать из столовой."
     "Вот только преодолеть расстояние от одного конца столовки до другого, за очень короткий промежуток времени, крайне сложная задача."
@@ -2535,8 +2535,8 @@ label wnfh_day_3:
     show chair_r
     show table
     show shakers
-    show left d4_dinner_full tray foods behind shakers
-    show mid d4_dinner_full tray foods
+    show left d10_dinner_full tray foods behind shakers
+    show mid d10_dinner_full tray foods
     show kat normal pioneer at wnfh_sit_left behind table
     with slide_left_blure_dissolve2
     play ambience ambience_dining_hall_full fadein 1.5
@@ -2552,7 +2552,7 @@ label wnfh_day_3:
     
     "Я отхлебнул щей и несмотря на их не самый привлекательный вид, на вкус они оказались более чем вкусные."
     
-    show mid d4_dinner_half tray foods with dissolve
+    show mid d10_dinner_half tray foods with dissolve
 
     th "Но похоже какое бы плохое настроение не было, если умеешь хорошо готовить, ты всё также хорошо сготовишь. {w}Наверное это единственная хорошая черта у наших поварих."
     
@@ -2561,7 +2561,7 @@ label wnfh_day_3:
     me "А ты вот чем-то ещё интересуешься помимо музыки?"
     
     show kat happy with dspr
-    show left d4_dinner_half tray foods behind shakers with dissolve
+    show left d10_dinner_half tray foods behind shakers with dissolve
 
     kat "Помимо музыки я обожаю историю!"
     kat "Особенно мне нравится история средневековья, там столько разных интересных интриг и хитросплетений, что диву даешься."
@@ -2574,13 +2574,13 @@ label wnfh_day_3:
     me "А когда я уже подрос, мы часто с ним обсуждали некоторые исторические моменты и не редко спорили."
     
     show kat normal with dspr
-    show mid d4_dinner_empty tray foods with dissolve
+    show mid d10_dinner_empty tray foods with dissolve
 
     kat "Ух ты, весело."
     
     "К этому моменту Катя наконец доела ужин и аккуратно встала из-за стола."
     
-    show left d4_dinner_empty tray foods behind shakers with dissolve
+    show left d10_dinner_empty tray foods behind shakers with dissolve
 
     kat "Ну что, пойдем гулять?"
     me "Пойдем[wp]" 
@@ -2657,7 +2657,7 @@ label wnfh_day_3:
     me "Но да не будем о плохом, давай вот поговорим[wp] О животных."
     me "Какие животные тебе нравятся?"
     
-    show cg d3_me_kat_walking_wnfh with dissolve
+    show cg d9_me_kat_walking_wnfh with dissolve
     
     "После моего вопроса, Катя заметно приободрилась. {w}Видимо она умеет быстро отгонять все негативные мысли. {w}Полезное качество, мне бы такое."
     
@@ -2695,7 +2695,7 @@ label wnfh_day_3:
     kat "Жалко конечно, особенно птичек, они же ничего сделали, но и Стёпку понять можно, он всё же хыщник."
     kat "А мышей я не люблю."
     
-    hide cg d3_me_kat_walking_wnfh with dissolve
+    hide cg d9_me_kat_walking_wnfh with dissolve
 
     th "Вот как, значит огромные и страшные крысы тебе нравятся, а маленькие и милые мышки нет? Волшебно, просто волшебно."
     
@@ -2813,7 +2813,7 @@ label wnfh_day_3:
     
     window hide
     $ wnfh_set_time("sunset")
-    show cg d3_me_kat_blindage_wnfh:
+    show cg d9_me_kat_blindage_wnfh:
         xanchor 0.0 yanchor 0.77
         ease_quad 7.0 yanchor 0.0
     with Dissolve(4.0)
@@ -2842,7 +2842,7 @@ label wnfh_day_3:
     me "Ну, блин, так вот вышло."
     kat "Ладно, я не злюсь, давай засыпать уже понемногу."
     
-    show cg d3_me_kat_blindage2_wnfh with dissolve
+    show cg d9_me_kat_blindage2_wnfh with dissolve
     
     "Вновь сомкнув глаза я стал постепенно засыпать."
     "Слушая звуки дождя и треска дров в печи, мне удалось окончательно провалится в сон."
@@ -2851,4 +2851,4 @@ label wnfh_day_3:
     show black with dissolve2
     stop ambience fadeout 5.0
     stop music fadeout 5.0
-    jump wnfh_day_4
+    jump wnfh_day_10

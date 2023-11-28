@@ -1,4 +1,4 @@
-label wnfh_day_6_dream:
+label wnfh_day_12_dream:
     
     scene black
     $ wnfh_set_time("prologue")
@@ -42,7 +42,7 @@ label wnfh_day_6_dream:
     stop ambience fadeout 0.5
     scene black with dissolve2
     
-label wnfh_day_6:
+label wnfh_day_12:
     $ wnfh_new_chapter(6)
     $ wnfh_set_time("sunset")
     $ wnfh_set_name("kat", "Катя")
@@ -79,7 +79,7 @@ label wnfh_day_6:
     th "Что это вообще такое?"
     
     window hide
-    scene expression wnfh_wakeup("cg d6_mt_volosbl_wnfh")
+    scene expression wnfh_wakeup("cg d12_mt_volosbl_wnfh")
     show unblink
     with None
     stop music fadeout 3.5
@@ -219,7 +219,7 @@ label wnfh_day_6:
     "Тот спрыгнул с подоконника на пол и стал терется об мои ноги, при этом громко мурлыкая."
     "Я спустился к нему и стал гладить."
     
-    show cg d6_me_selyodka_wnfh with dspr
+    show cg d12_me_selyodka_wnfh with dspr
 
     me "Пуфыстый."
 
@@ -231,7 +231,7 @@ label wnfh_day_6:
     "Я стал что есть силы чесать коту живот."
     "И тут, в дверь кто-то постучался и вошел."
 
-    hide cg d6_me_selyodka_wnfh with dspr
+    hide cg d12_me_selyodka_wnfh with dspr
 
     ## Катя приходит в домик вожатой
     kat "Ольга Дмитриевна?"
@@ -961,7 +961,7 @@ label wnfh_day_6:
     "Вскрикнула Мику и, невесь откуда достав гитару, ударила ей мне по голове."
     
     window hide
-    scene cg d6_guitar_hit_wnfh with wnfh_fade(1.0)
+    scene cg d12_guitar_hit_wnfh with wnfh_fade(1.0)
     $ renpy.pause(3.50, hard=True)
     play sound wnfh_sfx_list["guitar_hit"]
     $ renpy.music.set_pause(True, channel='music')
@@ -978,7 +978,7 @@ label wnfh_day_6:
     voice "Эх[wp] Прощай Семён. {w}Нам будет тебя не хватать."
     
     stop ambience fadeout 1.0
-    scene cg d6_me_think_think_wnfh with dissolve
+    scene cg d12_me_think_think_wnfh with dissolve
     
     th "Да уж[wp] И вот куда меня это завело[wp] Смерть от удара гитарой по башке."
     th "И я не очень хочу так глупо умирать из-за какой-то девчушки и отказа участвовать в концерте."
@@ -1721,7 +1721,7 @@ label wnfh_day_6:
     me "Катя! В сторону!"
     
     play music wnfh_music_list["northern_waters"] fadein 3.5
-    show cg d6_me_on_kat1_wnfh with dissolve2
+    show cg d12_me_on_kat1_wnfh with dissolve2
     ## Семён сваливает Катю и падает на неё
     "Но она не успела, как и я не успел затормозить и врезался прямо в её спину, так что мы оба упали."
     
@@ -1738,7 +1738,7 @@ label wnfh_day_6:
 
     me "Ты это[wp] как?"
     
-    show cg d6_me_on_kat2_wnfh with dspr
+    show cg d12_me_on_kat2_wnfh with dspr
     
     kat "Вроде нормально, разве что немного в шоке."
     me "Да[wp] Я тоже."
@@ -5226,7 +5226,7 @@ label wnfh_day_6:
     
     window hide dissolve
     stop ambience fadeout 2.0
-    show cg d6_me_kat_boat_curious_wnfh with slide_diagonal_blure_dissolve2
+    show cg d12_me_kat_boat_curious_wnfh with slide_diagonal_blure_dissolve2
     play ambience ambience_lake_shore_evening fadein 2.0
     play music wnfh_music_list["dance_of_the_moonlight_jellies"] fadein 5.0
     $ renpy.pause(1.5)
@@ -5236,7 +5236,7 @@ label wnfh_day_6:
     
     kat "Какая вода чистая и[wp]"
     
-    show cg d6_me_kat_boat_voda_wnfh with dspr
+    show cg d12_me_kat_boat_voda_wnfh with dspr
     
     "Она сунула руку в воду."
     
@@ -5254,12 +5254,12 @@ label wnfh_day_6:
     
     "Она протянула руку в сторону птиц."
     
-    show cg d6_me_kat_boat_utka1_wnfh with dspr
+    show cg d12_me_kat_boat_utka1_wnfh with dspr
     
     "И похоже, они были действительно бесстрашные."
     "Ведь одна из них просто подплыла."
     
-    show cg d6_me_kat_boat_utka2_wnfh with dspr
+    show cg d12_me_kat_boat_utka2_wnfh with dspr
     ## Семён и Катя встречают утку
     "Я замедлил ход, чтобы не спугнуть птичку и Катя стала гладить её."
     
@@ -5267,7 +5267,7 @@ label wnfh_day_6:
     
     "Утка похоже наслаждалась сие процессом."
     
-    show cg d6_me_kat_boat_smile_wnfh with dspr
+    show cg d12_me_kat_boat_smile_wnfh with dspr
     
     "После чего птица спешно вернулась к своей стайке."
     
@@ -5278,12 +5278,12 @@ label wnfh_day_6:
     me "Но, вполне возможно они тут почти все такие."
     kat "Интересно, почему она такая[wp]"
     
-    show cg d6_me_kat_boat_curious_wnfh with dspr
+    show cg d12_me_kat_boat_curious_wnfh with dspr
     
     me "Наверное, заслуга Слави."
     me "Она же там едина с природой, а природа едина с ней."
     
-    show cg d6_me_kat_boat_smile_wnfh with dspr
+    show cg d12_me_kat_boat_smile_wnfh with dspr
     
     kat "Хе, прямо как Белоснежка."
     me "Да[wp]"
@@ -5293,7 +5293,7 @@ label wnfh_day_6:
     th "Нужно как-то отвлечься от усталости."
     th "Но как? {w}Думай-думай[wp]"
     
-    show cg d6_me_kat_boat_pohui_wnfh with dspr
+    show cg d12_me_kat_boat_pohui_wnfh with dspr
     
     kat "Скучно как-то[wp] {w}Может спеть?"
     
@@ -5303,7 +5303,7 @@ label wnfh_day_6:
     ## Семён поёт "Остров невезения"
     # тут надо минус "Остров невезения", а пока его нет, то да.
     # stop music fadeout 3.5
-    show cg d6_me_kat_boat_surprise_wnfh with dspr
+    show cg d12_me_kat_boat_surprise_wnfh with dspr
     
     kat "М?"
     
@@ -5319,7 +5319,7 @@ label wnfh_day_6:
     
     me "На лицо узясные, добрые внутри\nТам живут несчастные люди-дикари.\n" 
     
-    show cg d6_me_kat_boat_smile_wnfh with dspr
+    show cg d12_me_kat_boat_smile_wnfh with dspr
     
     "Катю, похоже, всё это забавляло, ведь она сидела с широкой улыбкой на лице.\n"
     
@@ -5357,7 +5357,7 @@ label wnfh_day_6:
     kat "Я же надеюсь, на том острове куда мы плывём не живут люди-дикари."
     me "Нет, только дикая земляника."
     
-    show cg d6_me_kat_boat_normal_wnfh with dspr
+    show cg d12_me_kat_boat_normal_wnfh with dspr
     
     kat "А она тоже несчастная?"
     me "Не знаю, приплывём и спросишь у неё."
@@ -5936,7 +5936,7 @@ label wnfh_day_6:
     window hide dissolve
     stop ambience fadeout 2.0
     $ wnfh_set_time("night")
-    scene cg d6_ending_wnfh:
+    scene cg d12_ending_wnfh:
         xanchor 0.5 yanchor 0.5
         xpos 0.5
     with dissolve
@@ -6182,11 +6182,11 @@ label wnfh_day_6:
     ## Катя вспоминает кто она. Конец дня и мода
     kat "Я вспоминила, что {b}{i}мы не отсюда{/i}{/b}"
     window hide
-    show cg d6_ending_wnfh:
+    show cg d12_ending_wnfh:
         xanchor 0.5 yanchor 0.5
         ease_quart 10.0 ypos 1.0
     $ renpy.pause(10.0, hard=True)
     #show to be continued with dissolve2
     #$ renpy.pause(100.0, hard=True)
 
-    jump wnfh_day_6_continue
+    jump wnfh_day_12_continue

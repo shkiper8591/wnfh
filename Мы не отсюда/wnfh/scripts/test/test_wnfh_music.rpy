@@ -10,13 +10,13 @@ label wnfh_test_music:
         "Звуки?":
             jump wnfh_sfx_test
         "Вернутся назад":
-            jump blwnfh_test_main_menu
+            jump wnfh_test_main_menu
 
 label wnfh_brbrbrbr:
     
     scene bg ext_sky with dissolve2
     play music wnfh_music_list["angus_climbs_the_hill"] fadein 3
-    #$ blwnfh_get_relation("void", "Alec Holowka - Angus Climbs the Hill", "None")
+    #$ wnfh_get_relation("void", "Alec Holowka - Angus Climbs the Hill", "None")
     $ renpy.pause(1.0)
     stop music fadeout 2
     
@@ -26,7 +26,7 @@ label wnfh_brbrbrbr:
     menu: 
     
         "Вернутся в меню отладки":
-            jump blwnfh_test_main_menu 
+            jump wnfh_test_main_menu 
         "Вернутся к выбору типа теста":    
             jump wnfh_test_music            
 
@@ -44,7 +44,7 @@ label wnfh_justmusic:
     menu: 
         
         "Вернутся в меню отладки":
-            jump blwnfh_test_main_menu
+            jump wnfh_test_main_menu
         "Вернутся к выбору типа теста":    
             jump wnfh_test_music
 
@@ -65,6 +65,6 @@ label wnfh_sfx_test:
     menu: 
         
         "Вернутся в меню отладки":
-            jump blwnfh_test_main_menu
+            jump wnfh_test_main_menu
         "Вернутся к выбору типа теста":    
             jump wnfh_test_music

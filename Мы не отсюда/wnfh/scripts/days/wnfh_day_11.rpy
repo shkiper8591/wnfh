@@ -1,4 +1,4 @@
-label wnfh_day_5:
+label wnfh_day_11:
     $ wnfh_new_chapter(5)
     $ wnfh_set_time("sunset")
     $ renpy.pause(1.0)
@@ -276,7 +276,7 @@ label wnfh_day_5:
     "Понять о чем она болтала было сложно из-за журчания воды, а подходить и подслушивать как-то не очень хотелось."
     "Посему я занял ближайший к краю умывальник и приступил к водным процедурам."
     
-    scene bg ext_washstand2_day with dissolve
+    scene bg ext_washstand8_day with dissolve
     
     "Вода была немного теплее обычного, а значит, что впервые за несколько дней можно будет нормально умыться, без боли и страданий."
     "К чему я собственно и приступил."
@@ -307,7 +307,7 @@ label wnfh_day_5:
     
     th "И как это понимать? {w}Ладно, продолжу свои дела."
     
-    scene bg ext_washstand2_day with dissolve    
+    scene bg ext_washstand8_day with dissolve    
     
     "Я вернулся к своей раковине и достал из кармана бритву."
     "Сняв что-то вроде специального колпачка с лезвия до меня только сейчас дошло:"
@@ -1457,7 +1457,7 @@ label wnfh_day_5:
     show shakers
 
     show un normal pioneer at wnfh_sit_left behind table with dissolve
-    show left d6_breakfast_full tray foods behind shakers
+    show left d12_breakfast_full tray foods behind shakers
     
     
     kat "Можно к тебе?"
@@ -1465,10 +1465,10 @@ label wnfh_day_5:
 
     show chair_r behind kat at chair_move_out
     show kat smile at sit_down_right
-    show right d6_breakfast_full tray foods behind shakers with dissolve
+    show right d12_breakfast_full tray foods behind shakers with dissolve
     $ renpy.pause(2.0, hard=True)
     show chair_r at chair_move_in
-    show right d6_breakfast_full tray foods behind shakers with dissolve
+    show right d12_breakfast_full tray foods behind shakers with dissolve
 
     "Грустно сказала она и мы сели за столик."
     #34 надо спрайт завтрака!!!!
@@ -1481,12 +1481,12 @@ label wnfh_day_5:
     un "Да вот, спалось плохо, из-за Мику переживала[wp] {w}Она же вчера ночью так и не явилась домой."
     
     show kat smile2 with dspr
-    show left d6_breakfast_half tray foods behind shakers
+    show left d12_breakfast_half tray foods behind shakers
 
     kat "А она у себя в муз клубе спала."
     
     show un shy with dspr
-    show mid d6_breakfast_half tray foods behind shakers
+    show mid d12_breakfast_half tray foods behind shakers
 
     un "Вот оно что[wp] А я всё думала, где же она[wp]"
     un "А как вы узнали, что она спала в музыкальном клубе?"
@@ -1496,7 +1496,7 @@ label wnfh_day_5:
     kat "Мы[wp] Встретили её там[wp] Спящую."
     
     show un smile with dspr
-    show right d6_breakfast_half tray foods behind shakers
+    show right d12_breakfast_half tray foods behind shakers
 
     un "Забавная ситуация[wp]"
     
@@ -2285,7 +2285,7 @@ label wnfh_day_5:
     show chair_l behind table
     show table
     show shakers
-    show mid d6_dinner_full tray spoon foods
+    show mid d12_dinner_full tray spoon foods
     with dissolve
 
     th "Тэк-с, шо тут нам подают на обед?"
@@ -2299,7 +2299,7 @@ label wnfh_day_5:
     stop ambience fadeout 2.0
     show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 2.0
-    show mid d6_dinner_full tray foods
+    show mid d12_dinner_full tray foods
 
     "Однако, еда на вкус была такой себе."
     "Макароны были явно недосолённы, мясо было каким-то чёрвствым."
@@ -2327,8 +2327,8 @@ label wnfh_day_5:
     $ renpy.pause(1.0, hard=True)
     show chair_r at chair_move_in
     show chair_l at chair_move_in
-    show left d6_dinner_full tray foods behind shakers
-    show right d6_dinner_full tray foods behind shakers
+    show left d12_dinner_full tray foods behind shakers
+    show right d12_dinner_full tray foods behind shakers
     with dissolve
     
     "Они просто сели со мной за стол, даже ничего не сказав." 
@@ -2348,7 +2348,7 @@ label wnfh_day_5:
     mi "Просто ты вот сидишь тише травы, ниже воды[wp]"
     
     show mi upset with dspr
-    show mid d6_dinner_half tray foods
+    show mid d12_dinner_half tray foods
 
     mi "Ой, наоборот, тише воды, ниже травы."
     me "Да, я понял."
@@ -2384,9 +2384,9 @@ label wnfh_day_5:
     window hide
     $ renpy.pause(2.0)
     window show
-    show mid d6_dinner_empty tray foods
-    show left d6_dinner_empty tray foods
-    show right d6_dinner_empty tray foods
+    show mid d12_dinner_empty tray foods
+    show left d12_dinner_empty tray foods
+    show right d12_dinner_empty tray foods
     with dissolve
 
 
@@ -2832,9 +2832,9 @@ label wnfh_day_5:
     $ wnfh_set_mode()
     $ renpy.pause(0.01)
     window hide
-    show cg d5_dv_football_wnfh with dissolve
+    show cg d11_dv_football_wnfh with dissolve
     $ renpy.pause(2.5)
-    hide cg d5_dv_football_wnfh with dissolve
+    hide cg d11_dv_football_wnfh with dissolve
     $ wnfh_set_mode(nvl)
 
     "Однако, Алиса успела поймать мяч, чему крайне была недовольна Ульяна.\n"
@@ -3796,4 +3796,4 @@ label wnfh_day_5:
     show blink
     stop ambience fadeout 1.5
     $ renpy.pause(1.5, hard=True)
-    jump wnfh_day_6_dream
+    jump wnfh_day_12_dream

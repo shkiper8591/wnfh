@@ -1,4 +1,4 @@
-label wnfh_day_1_dream:
+label wnfh_day_7_dream:
     
     scene black
     $ renpy.pause(1.0)
@@ -136,9 +136,9 @@ label wnfh_intro:
     scene black
     
     $ renpy.movie_cutscene(wnfh_video_list["pegi"], delay = 3.0)
-    jump wnfh_day_1
+    jump wnfh_day_7
 
-label wnfh_day_1:
+label wnfh_day_7:
     
     $ wnfh_new_chapter(1)
     $ wnfh_set_name("el", "Сергей")
@@ -305,12 +305,12 @@ label wnfh_day_1:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["sl", "Пробежаться.", "Спорт это жизнь.", "d1_sl_probejka", {"sl":2}],
-        ["neutral", "Отказаться.", "Мне сейчас не до бега.", "d1_sl_otkaz", {"sl":-1}],
-        ["d1_choice_n1", "Выбор пробежаться со Славей"]
+        ["sl", "Пробежаться.", "Спорт это жизнь.", "d7_sl_probejka", {"sl":2}],
+        ["neutral", "Отказаться.", "Мне сейчас не до бега.", "d7_sl_otkaz", {"sl":-1}],
+        ["d7_choice_n1", "Выбор пробежаться со Славей"]
         ) with sphere_blure_dissolve2
 
-label d1_sl_probejka:
+label d7_sl_probejka:
 
     window show dissolve
 
@@ -636,9 +636,9 @@ label d1_sl_probejka:
     th "Блин, я чё понял. Пакет-то с мыльнорыльным я оставил у умывальников[wp] {w}Сука."
     th "Ладно, чёрт с ними, потом схожу заберу, а пока надо подкрепится."
 
-    jump d1_zavtrak
+    jump d7_zavtrak
 
-label d1_sl_otkaz:
+label d7_sl_otkaz:
     
     window show dissolve
 
@@ -971,7 +971,7 @@ label d1_sl_otkaz:
     dv "Ты чего творишь?!"
     un "А ты догадайся."
     
-    show cg d1_un_dv_otrivaet_nos_wnfh with dissolve
+    show cg d7_un_dv_otrivaet_nos_wnfh with dissolve
 
     #show un evil_smile pioneer close:
     #    ease 0.3 xcenter 0.7
@@ -1019,7 +1019,7 @@ label d1_sl_otkaz:
     
     "Я потянулся к Лененной руке, чтобы наконец остановить её."
     
-    hide cg d1_un_dv_otrivaet_nos_wnfh with dissolve
+    hide cg d7_un_dv_otrivaet_nos_wnfh with dissolve
     stop music fadeout 3
     
     "Но в этот самый момент, Лена отпустила Алису и та свалилась на землю."
@@ -1131,7 +1131,7 @@ label d1_sl_otkaz:
     "Алиса встала с лавочки и ушла в строй."
     "Недовольно вздохнув, я поднялся и пошел за ней."
     ## Линейка1
-    show cg d1_lineika_wnfh with dissolve
+    show cg d7_lineika_wnfh with dissolve
     #play music wnfh_music_list["distant_banjo"] fadein 1.5
     
     "Когда все пионеры построились, Ольга Дмитриевна начала вещать свою стандартную программу."
@@ -1172,7 +1172,7 @@ label d1_sl_otkaz:
     "Даже вот сейчас, она у меня немного побаливает."
     "А посему, я очистил свой разум от ненужных мыслей и полностью ушел в себя, не концентрируясь ни на одной конкретной."
     
-    hide cg d1_lineika_wnfh with dissolve
+    hide cg d7_lineika_wnfh with dissolve
     window hide
     $ renpy.pause(1.0)
     window show
@@ -1184,7 +1184,7 @@ label d1_sl_otkaz:
     
     "И под чутким руководством нашей вожатой, пионеры стройно зашагали в столовую."
 
-label d1_zavtrak:
+label d7_zavtrak:
 
     window hide dissolve
     stop music fadeout 3.5
@@ -1193,7 +1193,7 @@ label d1_zavtrak:
     play ambience ambience_dining_hall_full fadein 2.0
     window show dissolve
     ## Сцена в столовой
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         "Пришел я в столовую немного припозднившись, но всё равно ещё оставалось достаточно мест."
     else:
         "Пришел я в столовую чуть ли не одним из первых."
@@ -1206,18 +1206,18 @@ label d1_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Сесть с Леной.", "Тихо посидеть с тихоней.", "d1_un_zavtrak", {"un":1}],
-        ["dv", "Сесть с рыжими.", "С ними должно быть весело.", "d1_dv_usw_zavtrak", {"dv":1,"usw":1}],
-        ["d1_choice_n2", "С кем сесть в столовой. Завтрак. Д1"]
+        ["un", "Сесть с Леной.", "Тихо посидеть с тихоней.", "d7_un_zavtrak", {"un":1}],
+        ["dv", "Сесть с рыжими.", "С ними должно быть весело.", "d7_dv_usw_zavtrak", {"dv":1,"usw":1}],
+        ["d7_choice_n2", "С кем сесть в столовой. Завтрак. Д1"]
         ) with sphere_blure_dissolve2
 
-label d1_un_zavtrak:
+label d7_un_zavtrak:
     # мне короче лень ставить завтраки, у тебя, Стас, в этом опыта больше, ты и ставь. Got it?
     window show dissolve
     th "Думаю, лучше посидеть с главной скромностью всея лагеря."
     th "А то Алиса с Ульяной страшное комбо, они же достанут меня своими шутками."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
         th "Особенно пока я в таком побитом состоянии и весь обмазан йодом."
     
@@ -1236,7 +1236,7 @@ label d1_un_zavtrak:
     th "Видимо, я её немного напугал свои неожиданным вопросом."
 
     me "Спасибки."
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         me "Доброе утро кстати."
         
         show un smile pioneer with dspr
@@ -1352,7 +1352,7 @@ label d1_un_zavtrak:
 
     "Говорила она слегка запыхавшись."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         show mt surprise pioneer behind chair_r
 
         mt "Ох, мне конечно Славя говорила, что ты упал, но чтобы всё настолько серьёзно[wp]"
@@ -1399,12 +1399,12 @@ label d1_un_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d1_un_no_2_lbl", {"un":-1}],
-        ["un", "Да, давай.", "В компании будет проще.", "d1_un_yes_2_lbl", {"un":1}],
-        ["d1_choice_n3", "Пойти встречать с Леной"]
+        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d7_un_no_2_lbl", {"un":-1}],
+        ["un", "Да, давай.", "В компании будет проще.", "d7_un_yes_2_lbl", {"un":1}],
+        ["d7_choice_n3", "Пойти встречать с Леной"]
         ) with sphere_blure_dissolve2
 
-label d1_un_no_2_lbl:
+label d7_un_no_2_lbl:
     window show dissolve
 
     me "Думаю я сам уж справлюсь, а тебя напрягать особо не хочется."
@@ -1421,9 +1421,9 @@ label d1_un_no_2_lbl:
     un "Удачи тебе."
     me "Ага, спасибо, тебе тоже."
 
-    jump d1_me_meet_kat_alone
+    jump d7_me_meet_kat_alone
 
-label d1_un_yes_2_lbl:
+label d7_un_yes_2_lbl:
     window show dissolve
 
     me "Думаю, вместе будет веселее."
@@ -1450,9 +1450,9 @@ label d1_un_yes_2_lbl:
 
     un "Согласна."
 
-    jump d1_me_meet_kat_w_un
+    jump d7_me_meet_kat_w_un
 
-label d1_dv_usw_zavtrak:
+label d7_dv_usw_zavtrak:
     window show dissolve
 
     th "Конечно, сидеть с ними было сомнительным удовольствием, ибо они те ещё любители колких шуток."
@@ -1465,8 +1465,8 @@ label d1_dv_usw_zavtrak:
     show dv normal pioneer at wnfh_sit_right behind table
     show table
     show shakers
-    show left d5_breakfast_full tray foods behind shakers
-    show right d5_breakfast_full tray foods behind shakers
+    show left d11_breakfast_full tray foods behind shakers
+    show right d11_breakfast_full tray foods behind shakers
     with dissolve
     
     "Подойдя к ним я сразу заметил, что Ульяна, уставившись на меня, давит ехидную лыбу."
@@ -1475,7 +1475,7 @@ label d1_dv_usw_zavtrak:
     dv "Да, можно."
     usw "Конечно!"
     
-    show mid d5_breakfast_full tray spoon foods
+    show mid d11_breakfast_full tray spoon foods
     with dissolve
     #34 звук того, что он поставил поднос на стол
     "Хитрым голосом сказала Ульянка."
@@ -1491,7 +1491,7 @@ label d1_dv_usw_zavtrak:
     
     "Грустно угукнув и закончив анализ пищи, я принялся с большой скоростью уплетать свой завтрак."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         usw "Семён, а ты в чём весь?"
         me "В йоде."
         show usw surp2 pioneer at wnfh_sit_left behind table with dspr
@@ -1503,8 +1503,8 @@ label d1_dv_usw_zavtrak:
         dv "Как и я думала."
         dv "Кстати."
     
-    show mid d5_breakfast_full tray foods with dspr
-    show left d5_breakfast_half tray foods with dspr
+    show mid d11_breakfast_full tray foods with dspr
+    show left d11_breakfast_half tray foods with dspr
     
     dv "Семён, а ты чем сегодня займешься?"
     me "Продолжу с моделистами моделировать. {w}А что?"
@@ -1551,7 +1551,7 @@ label d1_dv_usw_zavtrak:
 
     "Говорила она малость запыхавшись."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         show mt surprise pioneer behind chair_r
 
         mt "Ох, мне конечно Славя говорила, что ты упал, но чтобы всё настолько серьёзно[wp]"
@@ -1563,7 +1563,7 @@ label d1_dv_usw_zavtrak:
 
         mt "Хорошо[wp] {w}Так, задание."
     
-    show right d5_breakfast_half tray foods with dspr
+    show right d11_breakfast_half tray foods with dspr
     
     me "Я вас слушаю."
     mt "Доедай давай быстрее свой завтрак и иди на остановку."
@@ -1595,7 +1595,7 @@ label d1_dv_usw_zavtrak:
     
     mt "Пожалуйста, а я тебе прощу твои ночные гуляния."
     
-    show mid d5_breakfast_half tray foods with dspr
+    show mid d11_breakfast_half tray foods with dspr
     
     th "А вот такое предложение звучало куда интереснее[wp] {w}Таки и надо было с этого начинать!"
     
@@ -1652,12 +1652,12 @@ label d1_dv_usw_zavtrak:
     window hide dissolve
 
     call screen wnfh_choice(
-        ["dv", "Чёрт возьми да!", "Звучит очень весело хе-хе", "d1_dv_yes_1", {"dv":1}],
-        ["dv", "Думаю нет", "Не хочу портить свою репутацию", "d1_dv_no_1", {"dv":-1}],
-        ["d1_choice_n8", "Алиса предлагает облить пополнение в лагере."]
+        ["dv", "Чёрт возьми да!", "Звучит очень весело хе-хе", "d7_dv_yes_1", {"dv":1}],
+        ["dv", "Думаю нет", "Не хочу портить свою репутацию", "d7_dv_no_1", {"dv":-1}],
+        ["d7_choice_n8", "Алиса предлагает облить пополнение в лагере."]
         ) with sphere_blure_dissolve2
 
-    label d1_dv_yes_1:
+    label d7_dv_yes_1:
 
     "Взвесив все за и против, я решил, что это отличная идея."
 
@@ -1667,9 +1667,9 @@ label d1_dv_usw_zavtrak:
 
     "Мы одобрительно кивнули и принялись за еду, и закончив с ней, покинули столовую."
 
-    jump d1_me_meet_kat_w_dw_n_usw
+    jump d7_me_meet_kat_w_dw_n_usw
 
-    label d1_dv_no_1:
+    label d7_dv_no_1:
 
     "Идея, мягко говоря, звучала ужасно и я никак не мог подписаться на что-то подобное."
 
@@ -1681,7 +1681,7 @@ label d1_dv_usw_zavtrak:
     "Алиса медленно вернулась на своё место."
     "А я же с удвоенной силой принялся за завтрак, так что за минуту он кончился."
     
-    show mid d5_breakfast_empty tray spoon with dspr
+    show mid d11_breakfast_empty tray spoon with dspr
     
     me "Так всё, дамы, я опаздываю, чао-какао."
     
@@ -1699,9 +1699,9 @@ label d1_dv_usw_zavtrak:
     
     "Сказал я и помохав рукой на прощание, быстро удалился из столовой."
 
-    jump d1_me_meet_kat_alone
+    jump d7_me_meet_kat_alone
 
-label d1_me_meet_kat_w_dw_n_usw:
+label d7_me_meet_kat_w_dw_n_usw:
 
     window hide dissolve
     $ wnfh_set_time()
@@ -1873,12 +1873,12 @@ label d1_me_meet_kat_w_dw_n_usw:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["kat", "Стоит извиниться", "Я же не знал, что там будет она", "d1_sh_yes_1", {"kat":1}],
-        ["neutral", "Меня подставили", "Пусть Алиса с Ульяной извиняются", "d1_sh_no_1", {"kat":-2}],
-        ["d1_choice_n9", "Шурик требует Семёна извнится перед Катей"]
+        ["kat", "Стоит извиниться", "Я же не знал, что там будет она", "d7_sh_yes_1", {"kat":1}],
+        ["neutral", "Меня подставили", "Пусть Алиса с Ульяной извиняются", "d7_sh_no_1", {"kat":-2}],
+        ["d7_choice_n9", "Шурик требует Семёна извнится перед Катей"]
         ) with sphere_blure_dissolve2
 
-label d1_sh_yes_1:
+label d7_sh_yes_1:
 
     me "Хорошо, сейчас[wp]"
 
@@ -1903,9 +1903,9 @@ label d1_sh_yes_1:
     
     "Вместе мы зашагали вглубь лагеря."
 
-    jump d1_me_meet_kat_alt
+    jump d7_me_meet_kat_alt
 
-label d1_sh_no_1:
+label d7_sh_no_1:
 
     me "Слушай, меня знатно так подставили Алиса и Ульяна, пусть они извиняются!"
 
@@ -1979,9 +1979,9 @@ label d1_sh_no_1:
     
     th "Вот холера, не одно так другое!"
 
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_me_meet_kat_w_un:
+label d7_me_meet_kat_w_un:
 
     window hide dissolve
     $ wnfh_set_time()
@@ -2113,7 +2113,7 @@ label d1_me_meet_kat_w_un:
 
     kat "Поняла[wp]"
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
         "Новенькая бегло посмотрела на мои ранения."
 
@@ -2277,9 +2277,9 @@ label d1_me_meet_kat_w_un:
 
     kat "Наконец-то[wp]"
 
-    jump d1_me_kat_sdacha_kati_w_un
+    jump d7_me_kat_sdacha_kati_w_un
 
-label d1_me_meet_kat_alt:
+label d7_me_meet_kat_alt:
 
     window hide dissolve
     $ wnfh_set_time()
@@ -2437,9 +2437,9 @@ label d1_me_meet_kat_alt:
     
     "Девушка одобрительно кивнула и мы отправились к домику Ольги Дмитриевной."
 
-    jump d1_me_kat_sdacha_kati
+    jump d7_me_kat_sdacha_kati
 
-label d1_me_meet_kat_alone:
+label d7_me_meet_kat_alone:
 
     window hide dissolve
     $ wnfh_set_time()
@@ -2477,7 +2477,7 @@ label d1_me_meet_kat_alone:
     th "Стоп[wp] {w}Пополнение[wp] {w}Но она не сказала сколько именно людей!"
     th "А если там огромная группа пионеров?!"
     th "Блин, вообще об этом не подумал, когда соглашался! {w}Я же с ними вообще никак не управлюсь."
-    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1: 
+    if wnfh_Data.getChoice_result_number("d7_choice_n3") == 1: 
         th "Сейчас бы помощь Лены не помешала бы, вдвоём же куда проще управится."
     th "Чёрт побери, думай, Семён, думай, что же тебе делать."
     
@@ -2488,7 +2488,7 @@ label d1_me_meet_kat_alone:
     th "Да и опять же это я смогу нарваться на серьёзный разбор полётов от Ольги."
     th "Может тогда просто сказать куда идти? Лагерь же небольшой и планировка простая, заблудится очень сложно."
     th "Хотя, я тут однажды умудрился заплутать[wp]"
-    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n3") == 1:
         th "Ну и возвращаться к Лене тоже не вариант, больше времени потеряю."
     th "Ладно, похоже, придется мне импровизировать по ходу дела."
     
@@ -2648,7 +2648,7 @@ label d1_me_meet_kat_alone:
     
     window hide
     stop ambience fadeout 0.5
-    scene cg d1_me_kat_shtrafniye_wnfh with dissolve2
+    scene cg d7_me_kat_shtrafniye_wnfh with dissolve2
     play ambience ambience_camp_center_day fadein 3
     window show
 
@@ -2868,7 +2868,7 @@ label d1_me_meet_kat_alone:
     "Мотив звучал до невозможного знакомо но, я никак не мог понять, что же это за песня."
     "А спрашивать мне как-то неловко."
     
-label d1_me_kat_sdacha_kati_w_un:
+label d7_me_kat_sdacha_kati_w_un:
         
     window hide dissolve
     scene bg ext_house_of_mt_day
@@ -2956,13 +2956,13 @@ label d1_me_kat_sdacha_kati_w_un:
 
     window hide dissolve 
     call screen wnfh_choice(
-        ["un", "Да, конечно", "Прогулка полезное занятие.", "d1_un_yes_1_lbl", {"un":1}],        
-        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d1_un_no_1_lbl", {"un":-1}],
-        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d1_un_neutral_1_lbl"],
-        ["d1_choice_n5", "Погулять ли с Леной"]
+        ["un", "Да, конечно", "Прогулка полезное занятие.", "d7_un_yes_1_lbl", {"un":1}],        
+        ["un", "Пожалуй нет.", "Прогулка после обеда? Увольте.", "d7_un_no_1_lbl", {"un":-1}],
+        ["neutral", "Я подумаю.", "Я же не знаю что будет после обеда.", "d7_un_neutral_1_lbl"],
+        ["d7_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 
-label d1_me_kat_sdacha_kati:
+label d7_me_kat_sdacha_kati:
 
     window hide dissolve
     scene bg ext_house_of_mt_day
@@ -3021,16 +3021,16 @@ label d1_me_kat_sdacha_kati:
     show mt surprise pioneer at right with dspr
     
     mt "Всмысле на сушке?"
-    if wnfh_Data.getChoice_result_number("d1_choice_n8") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
         show mt angry pioneer at right with dspr
         mt "Семён, ну-ка объясняй ситуацию."
         th "Вот блин, сознаться или не сознаться."
         th "Если сознаюсь, то получу такой втык, что во век не забуду. {w}Но и как-то не хочется подставлять Алису с Ульяной, даже несмотря на их подставу."
         window hide dissolve
         call screen wnfh_choice(
-            ["dv", "Сдаться", "Всё равно она узнает так или иначе", "d1_mt_sdalsya", {"kat": 1}],
-            ["dv", "Сдать", "Они подставили меня. Теперь мой черёд", "d1_mt_sdat", {"dv": -1, "usw": -1}],
-            ["d1_choice_n9", "Сдать или не сдать рыжих."]
+            ["dv", "Сдаться", "Всё равно она узнает так или иначе", "d7_mt_sdalsya", {"kat": 1}],
+            ["dv", "Сдать", "Они подставили меня. Теперь мой черёд", "d7_mt_sdat", {"dv": -1, "usw": -1}],
+            ["d7_choice_n9", "Сдать или не сдать рыжих."]
             ) with sphere_blure_dissolve2
     me "Ей Алиса с Ульяной штрафные прописали."
 
@@ -3063,9 +3063,9 @@ label d1_me_kat_sdacha_kati:
     me "Тогда пока."
     
     "Сказал я Кате и отправился обратно в клубы."
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_mt_sdat:
+label d7_mt_sdat:
 
     me "Алиса с Ульяной постарались, они облили её из ведра."
     mt "Вот оно что[wp] Ну я им устрою такую взбучку!"
@@ -3076,9 +3076,9 @@ label d1_mt_sdat:
     mt "Ладно, бог с ними[wp] Спасибо Семён за помощь, можешь идти."
 
     "Помахав на прощание Кате, я ушёл на поиски рыжих бестий."
-    jump d1_me_search
+    jump d7_me_search
 
-label d1_mt_sdalsya:
+label d7_mt_sdalsya:
 
     me "Это я постарался."
 
@@ -3109,9 +3109,9 @@ label d1_mt_sdalsya:
     "Ольга Дмитриевна увела Катю к себе в домик."
     "А я же отправился на поиски двух рыжих злодеек."
 
-    jump d1_me_search
+    jump d7_me_search
 
-label d1_un_yes_1_lbl:
+label d7_un_yes_1_lbl:
 
     show un laugh pioneer at center with dspr
 
@@ -3144,16 +3144,16 @@ label d1_un_yes_1_lbl:
     "Помахав на прощание Лене, я отправился в клубы."
 
     window hide dissolve
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_un_no_1_lbl:
+label d7_un_no_1_lbl:
 
     show un sad pioneer at center with dspr
 
     un "Оу[wp]"
     me "Прости, дела просто есть на сегодня."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         me "Да и в таком йодовом состоянии не очень хочется гулять."
         un "Да[wp]"
 
@@ -3168,9 +3168,9 @@ label d1_un_no_1_lbl:
     "И немного постояв на месте, я отправился в клубы."
 
     window hide dissolve
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_un_neutral_1_lbl:
+label d7_un_neutral_1_lbl:
 
     show un normal pioneer at center with dspr
 
@@ -3182,9 +3182,9 @@ label d1_un_neutral_1_lbl:
     "Помахав Лене на прощание, я отправился в клубы."
 
     window hide dissolve
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_un_ne_sprosil:
+label d7_un_ne_sprosil:
     
     window show dissolve
     
@@ -3193,9 +3193,9 @@ label d1_un_ne_sprosil:
     "Я помахал Лене на прощание и пошёл в клубы."
 
     window hide dissolve
-    jump d1_male_clubs
+    jump d7_male_clubs
 
-label d1_male_clubs:
+label d7_male_clubs:
 
     window hide dissolve
     stop ambience fadeout 2.0
@@ -3209,10 +3209,10 @@ label d1_male_clubs:
     window show dissolve
     ## Семён в клубах
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n3") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n3") == 1:
         "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
         "Без присутствия вездесущей комсомолки, Шурик и Сергей продолжили работу над своим изделием."
-    elif wnfh_Data.getChoice_result_number("d1_choice_n8") == 1:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
         "Войдя в клубы, Шурик сразу убежал к рабочему столу за которым сидел Сергей."
         "А на самом столе стояло наше изделие, над которым они усердно трудились."
     else:
@@ -3245,7 +3245,7 @@ label d1_male_clubs:
     me "Тю, {w}предложил он, а доставай я."
     sh "Ты у нас и так главный бездельник, а так хоть каким-то делом займешься."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         me "А ты видишь какой я побитый? Мне вообще положен недельный отдых!"
         sh "Раз дышишь, значит ничего тебе не надо."
         sh "Давай, Семён, раз в полгода что-то просим тебя сделать."  
@@ -3391,7 +3391,7 @@ label d1_male_clubs:
     "Он вытер руки и после сразу принялся протирать радио."
     "Под толстенными слоями пыли пряталось полностью убитое и проржавевшее радио. {w}Так что были {b}большие{/b} сомнения в том, что из него можно достать хоть что-то полезное."
 
-    show cg d1_me_sh_el_radio1_wnfh with dissolve
+    show cg d7_me_sh_el_radio1_wnfh with dissolve
 
     "Закончив протирать, Шурик сел за стол и взялся за отвертку."
     "Поднеся её к винту, тот стал его пытаться откручивать. Но тот всё не поддавался."
@@ -3407,14 +3407,14 @@ label d1_male_clubs:
 
     "Шурик, приложив больше усилий действительно стал прокручивать винт."
 
-    show cg d1_me_sh_el_radio2_wnfh with dspr
+    show cg d7_me_sh_el_radio2_wnfh with dspr
 
     "Вот только сразу же после этого, радио, издав предсмертных хрип, просто развалилось."
     "От такого стечения обстоятельств, Шурик прибывал в легком удивлении."
 
     me "М-да, сила есть, ума не надо."
 
-    hide cg d1_me_sh_el_radio2_wnfh with dissolve
+    hide cg d7_me_sh_el_radio2_wnfh with dissolve
 
     "Поправив очки, Шурик, стал разгребать груды мусора."
     
@@ -3506,7 +3506,7 @@ label d1_male_clubs:
     #"Пионерка убежала в сторону столовой."
     #"Я же сначала отряхнулся и только после этого продолжил свой путь."
 
-label d1_me_search:
+label d7_me_search:
 
     window hide dissolve
     stop ambience fadeout 3.5
@@ -3526,13 +3526,13 @@ label d1_me_search:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["dv", "Их домик", "Самое очевидное", "d1_me_search_dv_house"],
-        ["dv", "Спортплощадка", "Чуть менее очевидно", "d1_me_search_dv_sport"],
-        ["dv", "Пляж", "Совсем не очевидно", "d1_me_search_dv_beach"],
-        ["d1_choice_n10", "Где искать рыжих"]
+        ["dv", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
+        ["dv", "Спортплощадка", "Чуть менее очевидно", "d7_me_search_dv_sport"],
+        ["dv", "Пляж", "Совсем не очевидно", "d7_me_search_dv_beach"],
+        ["d7_choice_n10", "Где искать рыжих"]
         ) with sphere_blure_dissolve2
 
-label d1_me_search_dv_house:
+label d7_me_search_dv_house:
 
     th "Ладно, начну с самого очевидного и пойду проверю их домик."
 
@@ -3553,12 +3553,12 @@ label d1_me_search_dv_house:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["dv", "Продолжить наблюдать", "Это точно ничем хорошим не кончится", "d1_me_peeking", {"dv":-1, "usw":-1}],
-        ["dv", "Дать о себе знать", "Лучше мне не рисковать", "d1_me_knock", {"dv":1, "usw":1}],
-        ["d1_choice_n11", "Подсмотреть за рыжими или нет"]
+        ["dv", "Продолжить наблюдать", "Это точно ничем хорошим не кончится", "d7_me_peeking", {"dv":-1, "usw":-1}],
+        ["dv", "Дать о себе знать", "Лучше мне не рисковать", "d7_me_knock", {"dv":1, "usw":1}],
+        ["d7_choice_n11", "Подсмотреть за рыжими или нет"]
         ) with sphere_blure_dissolve2
     
-label d1_me_peeking:
+label d7_me_peeking:
     
     window show dissolve
 
@@ -3621,9 +3621,9 @@ label d1_me_peeking:
     
     "Алиса ловким движением руки подняла меня на ноги и отпустила руку."
 
-    jump d1_me_and_dv_w_usw
+    jump d7_me_and_dv_w_usw
 
-label d1_me_knock:
+label d7_me_knock:
 
     window show dissolve
 
@@ -3649,9 +3649,9 @@ label d1_me_knock:
     show usw normal sport at right
     with dissolve
 
-    jump d1_me_and_dv_w_usw
+    jump d7_me_and_dv_w_usw
 
-label d1_me_and_dv_w_usw:
+label d7_me_and_dv_w_usw:
 
     dv "И так, что тебе нужно от нас?"
     me "Затем, чтобы вы объяснились передо мной."
@@ -3697,7 +3697,7 @@ label d1_me_and_dv_w_usw:
     
     "Ехидно сказала Алиса подмигивая мне."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n11") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n11") == 1:
 
         show usw fear sport at right with dspr
 
@@ -3718,12 +3718,12 @@ label d1_me_and_dv_w_usw:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["dv", "Согласиться", "Поплавую немного", "d1_dv_yes_2", {"dv": 1, "usw": 1}],
-        ["neutral", "Отказаться", "Не люблю плавать особо", "d1_dv_no_2", {"dv": -1, "usw": -1}],
-        ["d1_choice_n12", "Пойти на пляж с рыжими или нет"]
+        ["dv", "Согласиться", "Поплавую немного", "d7_dv_yes_2", {"dv": 1, "usw": 1}],
+        ["neutral", "Отказаться", "Не люблю плавать особо", "d7_dv_no_2", {"dv": -1, "usw": -1}],
+        ["d7_choice_n12", "Пойти на пляж с рыжими или нет"]
         ) with sphere_blure_dissolve2
 
-label d1_dv_no_2:
+label d7_dv_no_2:
 
     me "Не, плавание сегодня не входило в мои планы."
     dv "Да давай, весело будет."
@@ -3739,9 +3739,9 @@ label d1_dv_no_2:
     
     "Девушки развернулись в сторону пляжа и быстро скрылись из моего поля зрения."
 
-    jump d1_me_free
+    jump d7_me_free
 
-label d1_dv_yes_2:
+label d7_dv_yes_2:
 
     th "Плавание не самоё моё любимое занятие. Во многом потому, что я очень боюсь глубины."
     th "Но в целом, почему бы и не сходить, к тому же Алиса чертовски права, пекло на улице то ещё[wp]"
@@ -3750,7 +3750,7 @@ label d1_dv_yes_2:
     dv "На солнце обсохнешь."
     me "Скорее обгорю, а мне этого не надо."
     
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
     
         me "У меня и так раны мои побаливают, не хочу чтобы к ним добавилось жжение на коже."
         dv "Как скажешь, тогда можешь воспользоваться моим когда захочешь."
@@ -3770,9 +3770,9 @@ label d1_dv_yes_2:
 
     "Дружным шагом мы отправились к пляжу."
     
-    jump d1_me_dv_usw_on_beach
+    jump d7_me_dv_usw_on_beach
 
-label d1_me_dv_usw_on_beach:
+label d7_me_dv_usw_on_beach:
 
     window hide dissolve
     stop ambience fadeout 3.5
@@ -3797,7 +3797,7 @@ label d1_me_dv_usw_on_beach:
     dv "Семён, чего сидишь, идём к нам! Вода просто класс!"
     usw "Да, давай!"
     
-    if wnfh_Data.getChoice_result_number("d1_choice_n11") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n11") == 1:
     
         usw "И может быть тогда я прощу тебе то подсматривание за нами."
     
@@ -3856,7 +3856,7 @@ label d1_me_dv_usw_on_beach:
     usw "Побрыкаться там, не знаю, как обычно люди делают."
     me "Видимо, я не обычный человек."
 
-label d1_me_free:
+label d7_me_free:
 
     "Когда они ушли, я посмотрел на солнце, чтобы прикинуть время."
 
@@ -3888,9 +3888,9 @@ label d1_me_free:
 
     "Встав с лавочки, я неспеша пошел к столовой."
 
-    jump d1_obed
+    jump d7_obed
 
-label d1_obed:
+label d7_obed:
 
     window hide dissolve
     scene bg ext_dining_hall_away_day with slide_right_blure_dissolve2
@@ -3921,7 +3921,7 @@ label d1_obed:
     show bg int_dining_hall_people_day with dissolve2
     play ambience ambience_dining_hall_full fadein 3
     
-    show mid d4_dinner_full tray spoon foods with dissolve
+    show mid d10_dinner_full tray spoon foods with dissolve
     window show
 
     "Как только я занял своё место, столовая чуть ли не в миг наполнилась пионерами."
@@ -3943,12 +3943,12 @@ label d1_obed:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Можно.", "Ладно, пусть садятся.", "d1_obed_me_w_un_kat", {"kat":1, "un":1}],
-        ["neutral", "Не можно", "Хочется поесть одному", "d1_obed_me_alone", {"kat":-1, "un":-1}],
-        ["d1_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
+        ["un", "Можно.", "Ладно, пусть садятся.", "d7_obed_me_w_un_kat", {"kat":1, "un":1}],
+        ["neutral", "Не можно", "Хочется поесть одному", "d7_obed_me_alone", {"kat":-1, "un":-1}],
+        ["d7_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
         ) with dissolve2
 
-label d1_obed_me_alone:
+label d7_obed_me_alone:
 
     window show dissolve
 
@@ -3980,7 +3980,7 @@ label d1_obed_me_alone:
         "С малость подпорченным настроением, я принялся уплетать обед."
         "И быстро расправившись с ним, я незамедлительно покинул пределы столовой."
 
-        jump d1_posle_obeda
+        jump d7_posle_obeda
 
     elif wnfh_Data.getChoice_points_sum("un") == 1:
 
@@ -4000,7 +4000,7 @@ label d1_obed_me_alone:
         "Когда они ушли, я принялся уплетать свой обед."
         "И закончив с ним, я быстренько отправился на выход из столовой."
 
-        jump d1_posle_obeda
+        jump d7_posle_obeda
 
     else:
 
@@ -4025,9 +4025,9 @@ label d1_obed_me_alone:
         "Девушки удалились куда-то вглубь столовой, а я принялся за свой обед."
         "С которым довольно быстро расправился, после чего направился на выход из столовой."
 
-        jump d1_posle_obeda
+        jump d7_posle_obeda
 
-label d1_obed_me_w_un_kat:
+label d7_obed_me_w_un_kat:
 
     window show dissolve
 
@@ -4055,26 +4055,26 @@ label d1_obed_me_w_un_kat:
     show chair_l at chair_move_in
     $ renpy.pause(0.3, hard=True)
     show chair_r at chair_move_in
-    show left d4_dinner_full tray spoon foods behind mid 
-    show right d4_dinner_full tray spoon foods behind mid 
+    show left d10_dinner_full tray spoon foods behind mid 
+    show right d10_dinner_full tray spoon foods behind mid 
     with dissolve
     window show
     
     "Девочки сели, а я полностью погрузился в свой обед коим был суп, а точнее летние щи."
     
-    show mid d4_dinner_full tray foods with dissolve
+    show mid d10_dinner_full tray foods with dissolve
     
     th "Как же давно такие не ел, наверное последний раз лет пять или шесть назад."
     
-    show left d4_dinner_full tray foods with dissolve
-    show right d4_dinner_full tray foods with dissolve
+    show left d10_dinner_full tray foods with dissolve
+    show right d10_dinner_full tray foods with dissolve
     
     th "На даче, стоял жаркий летний день и отец наготовил целую кастрюлю этих щей."
     th "Щий? Щей? Супа в общем."
     
     "За своими раздумиями я не обращал внимания на то, что Лена и Катя о чем-то увлечённо болтали."
     
-    show mid d4_dinner_half tray foods with dissolve
+    show mid d10_dinner_half tray foods with dissolve
     
     "Не знаю почему, но мне стало крайне любопытно о чем же они таком разговаривают."
     
@@ -4089,7 +4089,7 @@ label d1_obed_me_w_un_kat:
     "И лишь спустя время, Лена взяла на себя инициативу."
     
     show un grin pioneer with dspr
-    show right d4_dinner_half tray foods with dissolve
+    show right d10_dinner_half tray foods with dissolve
     
     # тут бы тоже вставить проверку ЛП
 
@@ -4100,7 +4100,7 @@ label d1_obed_me_w_un_kat:
     
     "Ухмыляясь сказал я, полагая, что переиграл её."
     
-    show left d4_dinner_half tray foods with dissolve
+    show left d10_dinner_half tray foods with dissolve
     show un laugh pioneer with dspr 
     
     un "Тогда у меня для тебя плохие новости!"
@@ -4124,7 +4124,7 @@ label d1_obed_me_w_un_kat:
     th "А эта новенькая быстро нашла себе друга, не то что я."
     th "Интересно, почему именно с Леной? {w}Хотя учитывая как скромно она себя вела и какая стесняша у нас Тихонова, все вопросы отпадают сами собой."
     
-    show mid d4_dinner_empty tray spoon foods with dissolve
+    show mid d10_dinner_empty tray spoon foods with dissolve
     
     "За моими размышлениями, суп кончился довольно быстро."
     "Чай тоже держался не долго и был выпит одним залпом."
@@ -4139,7 +4139,7 @@ label d1_obed_me_w_un_kat:
     
     "Встав из-за стола, я быстренько отнёс поднос и покинул пределы столовой."
 
-label d1_posle_obeda:
+label d7_posle_obeda:
     
     window hide
     stop ambience fadeout 0.5
@@ -4190,12 +4190,12 @@ label d1_posle_obeda:
     window hide dissolve
     scene bg ext_lenin_square_day_wnfh with dissolve2
     ## Лена зовёт Семёна погулять когда он идёт домой
-    if wnfh_Data.getChoice_result_number("d1_choice_n6") == 2:
+    if wnfh_Data.getChoice_result_number("d7_choice_n6") == 2:
 
         $ renpy.pause(1.5, hard=True)
-        jump d1_me_doma
+        jump d7_me_doma
 
-    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 1:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n5") == 1:
 
         window show
 
@@ -4214,9 +4214,9 @@ label d1_posle_obeda:
 
         un "Ура-ура!"
 
-        jump d1_un_progulka
+        jump d7_un_progulka
 
-    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 2:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n5") == 2:
     
         "И медленно ковыляя, я вышел на площадь."
         
@@ -4300,12 +4300,12 @@ label d1_posle_obeda:
         "Затем снова посмотрел на её довольное лицо."
 
         call screen wnfh_choice(
-        ["un", "Ну ладно", "Пусть отведёт меня, если так хочет", "d1_un_yes_3_lbl", {"un":1}],
-        ["neutral", "Сам дойду", "Уж с этим я как-то сам справлюсь.", "d1_un_no_4_lbl", {"un":-1}],
-        ["d1_choice_n7", "Лена хочет помочь Семёну дойти до медпункта"]
+        ["un", "Ну ладно", "Пусть отведёт меня, если так хочет", "d7_un_yes_3_lbl", {"un":1}],
+        ["neutral", "Сам дойду", "Уж с этим я как-то сам справлюсь.", "d7_un_no_4_lbl", {"un":-1}],
+        ["d7_choice_n7", "Лена хочет помочь Семёну дойти до медпункта"]
         ) with sphere_blure_dissolve2
 
-    elif wnfh_Data.getChoice_result_number("d1_choice_n5") == 3:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n5") == 3:
 
         "Проходя через площадь, сзади, неожиданно, легонько похлопали мне по плечу."
     
@@ -4326,9 +4326,9 @@ label d1_posle_obeda:
         un "А то сегодня такая погода отличная[wp]"
     
         call screen wnfh_choice(
-            ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
-            ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
-            ["d1_choice_optional_1", "Лена вновь предлагает погулять. Только в случае отказа в первом предложении погулять."]
+            ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d7_un_progulka", {"un":1}],
+            ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d7_un_no_3_lbl", {"un":-1}],
+            ["d7_choice_optional_1", "Лена вновь предлагает погулять. Только в случае отказа в первом предложении погулять."]
             ) with sphere_blure_dissolve2
 
     else:
@@ -4352,16 +4352,16 @@ label d1_posle_obeda:
         un "А то сегодня такая погода отличная[wp]"
     
         call screen wnfh_choice(
-            ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d1_un_progulka", {"un":1}],
-            ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d1_un_no_3_lbl", {"un":-1}],
-            ["d1_choice_optional_1.5", "Лена предлагает гулять. Появляется только тогда, если игрок максимально избегал Лену."]
+            ["un", "Конечно", "Послеобеденная прогулка то что нужно", "d7_un_progulka", {"un":1}],
+            ["neutral", "Пожалуй нет", "После обеда надо спать, а не гулять", "d7_un_no_3_lbl", {"un":-1}],
+            ["d7_choice_optional_1.5", "Лена предлагает гулять. Появляется только тогда, если игрок максимально избегал Лену."]
             ) with sphere_blure_dissolve2
 
         ##тут короче нахуй заколдованное какое-то место, я чёт не врубаюсь в чём движ, поэтому надо потом разобраться какого хуя эта залупа не правильно работает.
         ##Если вкратце, то тема такая: Не появляется 4-й вариант событий после else, который должен возникать если не выполнено ни одно из условий выше него. 
         ##Я догадываюсь, что это возможно из-за этой датабазы вашей. Но в таком случае это залупа какая-то джотаросан и этим нужно что-то делать, ибо это жизненноважно.
 
-label d1_un_progulka:
+label d7_un_progulka:
 
     "Лена, задумавшись, стала почесывать свой подбородок."
 
@@ -4378,7 +4378,7 @@ label d1_un_progulka:
 
     un "Но, вид у тебя, мягко говоря, — усталый."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
         "Она посмотрела на мои вымазанные в йоде раны."
 
@@ -4527,9 +4527,9 @@ label d1_un_progulka:
 
     th "Что это, чёрт побери, вообще было? {w}Ну ладно, пойду значит и я домой, спатеньки!"
 
-    jump d1_me_doma
+    jump d7_me_doma
 
-label d1_un_no_3_lbl:
+label d7_un_no_3_lbl:
     
     me "Ох, Лен, я бы рад[wp]"
     
@@ -4563,9 +4563,9 @@ label d1_un_no_3_lbl:
     "Она, обогнав меня, грустно ушла вперед к домикам."
     "Я же вздохнув ещё раз, продолжил свой путь к мягкой постели."
 
-    jump d1_me_doma
+    jump d7_me_doma
 
-label d1_un_no_4_lbl:
+label d7_un_no_4_lbl:
 
     show un shy pioneer close at center with dspr
 
@@ -4588,9 +4588,9 @@ label d1_un_no_4_lbl:
     "Коротко сказала она и ушла в сторону домиков."
     "А я пошел в медпункт, всё же головная боль никуда не делась."
 
-    jump d1_me_v_medpunkte
+    jump d7_me_v_medpunkte
 
-label d1_me_v_medpunkte:
+label d7_me_v_medpunkte:
 
     window hide dissolve
     stop ambience fadeout 2.5
@@ -4609,7 +4609,7 @@ label d1_me_v_medpunkte:
 
     cs "Что, плохо чувствуешь себя, пионер?"
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
         cs "Или ты опять упал?"
 
@@ -4648,9 +4648,9 @@ label d1_me_v_medpunkte:
     th "Ух, ну всё, теперь можно не волноваться, что я подохну от головной боли."
     th "А значит, пора идти домой, отдыхать."
 
-    jump d1_me_doma
+    jump d7_me_doma
 
-label d1_un_yes_3_lbl:
+label d7_un_yes_3_lbl:
 
     "Я глубоко вздохнул."
 
@@ -4798,7 +4798,7 @@ label d1_un_yes_3_lbl:
 
     "Хриплым голосом сказал я."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n1") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
         cs "Сегодня тебе, Семён, везёт на попадание в медпункт."
         me "И не поспоришь."
@@ -4936,17 +4936,17 @@ label d1_un_yes_3_lbl:
     th "А в одиночку, я ничего не смастерю."
     th "Благо тут ещё достаточно мест куда можно сходить, например[wp]"
 
-    jump d1_un_beach_1
+    jump d7_un_beach_1
 
     #window hide dissolve
     #call screen wnfh_choice(
-    #    ["un", "Пляж", "Поглядеть на водичку, самое то.", "d1_un_beach_1", {"un":1}],
-    #    ["dv", "Сцена", "Вдарим року в этой дыре! Шутка.", "d1_dv_scene_1", {"dv":1}],
-    #    ["d1_choice_n8", "Семён думает куда бы пойти вечером первого дня."]
+    #    ["un", "Пляж", "Поглядеть на водичку, самое то.", "d7_un_beach_1", {"un":1}],
+    #    ["dv", "Сцена", "Вдарим року в этой дыре! Шутка.", "d7_dv_scene_1", {"dv":1}],
+    #    ["d7_choice_n8", "Семён думает куда бы пойти вечером первого дня."]
     #    ) with sphere_blure_dissolve2
     ##я короче это дело всё закоментил до тех времён, когда начну писать рут Алисы. А то сейчас писать эту херню толку мало.
     
-label d1_me_doma:
+label d7_me_doma:
 
     window hide
     scene bg ext_houses_day with slide_down_blure_dissolve2
@@ -4962,7 +4962,7 @@ label d1_me_doma:
     
     "Лень и сонливость оказались сильнее, так что я решил лечь на шезлонге."
 
-    if wnfh_Data.getChoice_result_number("d1_choice_n6") == 2:
+    if wnfh_Data.getChoice_result_number("d7_choice_n6") == 2:
 
         th "Кажется, я о чём-то забыл[wp] Но вот хоть убейте не помню[wp]"
         th "Ну ладно, значит не так это и было важно, верно?"
@@ -5065,21 +5065,21 @@ label d1_me_doma:
     th "Тогда может пойти куда-нибудь, например[wp]"
     
     call screen wnfh_choice(
-        ["un", "Пляж", "Поглядеть на водичку, самое то.", "d1_un_beach_1", {"un":1}],
-        ["dv", "Сцена", "Вдарим року в этой дыре! Шутка.", "d1_dv_scene_1", {"dv":1}],
-        ["d1_choice_n8", "Семён думает куда бы пойти вечером первого дня."]
+        ["un", "Пляж", "Поглядеть на водичку, самое то.", "d7_un_beach_1", {"un":1}],
+        ["dv", "Сцена", "Вдарим року в этой дыре! Шутка.", "d7_dv_scene_1", {"dv":1}],
+        ["d7_choice_n8", "Семён думает куда бы пойти вечером первого дня."]
         ) with sphere_blure_dissolve2
 
-    label d1_un_beach_1:
+    label d7_un_beach_1:
 
         th "Пляж! Отличное место в лагере, посижу там, позагараю."
         th "Ну ладно, вечером я вряд ли загарю, но зато с большой долей вероятности посижу в одиночестве и буду любоваться Волгой."
 
         "Закончив со столь важным вопросом, я отправился на пляж."
 
-        jump d1_un_beach_2
+        jump d7_un_beach_2
 
-    label d1_dv_scene_1:
+    label d7_dv_scene_1:
 
         th "Сейчас на сцене вряд ли кто-то есть, а значит можно будет потусоваться там и[wp] Не знаю, на лавочке полежать, смотреть на небо."
         th "Может даже музыкальные инструменты какие-нибудь найду там. Это конечно вряд ли, всё же за них всех отвечает Мику, а она поехавшая в этом плане."
@@ -5088,13 +5088,13 @@ label d1_me_doma:
 
         "На этом и порешав, я отправился к сцене."
     
-        jump d1_dv_scene_2
+        jump d7_dv_scene_2
 
-label d1_dv_scene_2:
+label d7_dv_scene_2:
 
     "placeholder"
 
-label d1_un_beach_2:
+label d7_un_beach_2:
     
     window hide
     stop ambience fadeout 0.5
@@ -5263,7 +5263,7 @@ label d1_un_beach_2:
     
     th "Думаю, и мне пора идти спать."
     
-label d1_ending:
+label d7_ending:
 
     window hide
     stop ambience fadeout 0.5
@@ -5271,7 +5271,7 @@ label d1_ending:
     play ambience ambience_camp_center_night fadein 3
     window show
     
-    #if wnfh_Data.getChoice_result_number("d1_choice_n8") == 1:
+    #if wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
 
     "Проходя через площадь, я всё же решил обдумать произошедшее на пляже."
     
@@ -5287,7 +5287,7 @@ label d1_ending:
     th "В прочем[wp] {w}Пофигу как-то, наверное."
     th "Может если дел завтра не будет особо и я смогу выцепить Лену, то поинтересуюсь у неё."
 
-    #if wnfh_Data.getChoice_result_number("d1_choice_n8") == 2:
+    #if wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
 
         #"placeholder"
         ##я короче это дело всё закоментил до тех времён, когда начну писать рут Алисы. А то сейчас писать эту херню толку мало.
@@ -5321,4 +5321,4 @@ label d1_ending:
     window hide dissolve
     $ renpy.pause(1.5, hard=True)
     
-    jump wnfh_day_2
+    jump wnfh_day_8

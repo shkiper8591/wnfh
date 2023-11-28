@@ -1,4 +1,4 @@
-label wnfh_day_4:
+label wnfh_day_10:
     $ wnfh_new_chapter(4)
     $ wnfh_set_time("sunset")
     scene black
@@ -695,7 +695,7 @@ label wnfh_day_4:
     "Подняв взгляд, для изучения комнаты, произошло то, чего я никак не мог ожидать."
     ## Семён лезет в окно к Кате и падает
     play music music_list["revenga"] fadein 2.0
-    show cg d4_kat_in_window_wnfh with sphere_blure_dissolve2
+    show cg d10_kat_in_window_wnfh with sphere_blure_dissolve2
     
     "Передо мной стояла полуголая Катя, которая прикрывалась только одной рубашкой." 
     "Но самым главным было то, что она смотрела прямо на меня удивлённо-смущенным взглядом."
@@ -709,7 +709,7 @@ label wnfh_day_4:
     "Столь неожиданная встреча, шокировала не одну только Катю, но и меня."
     "Мне не удалось удержаться за подоконник и я с грохотом свалился вниз."
     
-    hide cg d4_kat_in_window_wnfh with slide_down_blure_dissolve2
+    hide cg d10_kat_in_window_wnfh with slide_down_blure_dissolve2
     play sound sfx_bush_body_fall
     stop music fadeout 2.5
     
@@ -2752,7 +2752,7 @@ label wnfh_day_4:
     window hide dissolve
     stop music fadeout 3.5
     stop ambience fadeout 2.0
-    scene cg d4_me_kat_mi_in_forest_wnfh
+    scene cg d10_me_kat_mi_in_forest_wnfh
     with sphere_blure_dissolve2
     play ambience ambience_forest_day fadein 2.0
     $ renpy.pause(1.5, hard=True)
@@ -2789,7 +2789,7 @@ label wnfh_day_4:
     me "О как[wp]"
     
     window hide dissolve
-    show cg d4_mi_on_meadow_wnfh with dissolve
+    show cg d10_mi_on_meadow_wnfh with dissolve
     $ renpy.pause(2.0)
     window show dissolve
 
@@ -2807,7 +2807,7 @@ label wnfh_day_4:
     kat "А ещё с тобой."
 
     stop music fadeout 2.5
-    hide cg d4_mi_on_meadow_wnfh
+    hide cg d10_mi_on_meadow_wnfh
     show kat smile pioneer at right 
     with dissolve
     play music wnfh_music_list["outskirts"] fadein 3.5
@@ -3113,11 +3113,11 @@ label wnfh_day_4:
     show chair_r behind kat
     show table
     show shakers
-    show left d5_dinner_full tray foods behind shakers
+    show left d11_dinner_full tray foods behind shakers
     show mi normal pioneer at wnfh_sit_left behind table
-    show right d5_dinner_full tray foods behind shakers
+    show right d11_dinner_full tray foods behind shakers
     show kat normal pioneer at wnfh_sit_right behind table
-    show mid d5_dinner_full tray foods
+    show mid d11_dinner_full tray foods
     with dissolve
 
     me "Тааакс, что у нас сегодня подают на ужин."
@@ -3130,12 +3130,12 @@ label wnfh_day_4:
     
     show kat confused
     show mi serious
-    show mid d5_dinner_half tray foods
+    show mid d11_dinner_half tray foods
     with dspr
 
     "Ел я с такой скоростью, что иногда видел, как девочки смотрят на меня своими удивлёнными взглядами."
 
-    show mid d5_dinner_empty tray foods with dissolve
+    show mid d11_dinner_empty tray foods with dissolve
 
     "Вскоре основное блюдо закончилась и я принялся за чай с булкой, которая как оказалось была с очень вкусным клубничным повидло."
     "Однако нету добра без худа и чай оказался крайне приторным и без слез пить его было невозможно."
@@ -3147,14 +3147,14 @@ label wnfh_day_4:
     me "Мику, а ты чего так плохо ешь?"
     
     show mi upset with dspr
-    show left d5_dinner_half tray foods behind shakers
+    show left d11_dinner_half tray foods behind shakers
 
     mi "Да вот не знаю, похоже пикником аппетит испортила себе."
     me "Плохо[wp]"
     me "Ну если ты не будешь, может я доем?"
     
     show mi grin with dspr
-    show right d5_dinner_half tray foods behind shakers
+    show right d11_dinner_half tray foods behind shakers
     
     mi "А чего ты это решил, что я не буду? Вроде ничего такого не говорила."
     me "Предположил, раз уж ты аппетит себе испортила, а то я просто не наелся как-то."
@@ -3266,4 +3266,4 @@ label wnfh_day_4:
     show blink
     stop ambience fadeout 3.5
     $ renpy.pause(2.0, hard=True)
-    jump wnfh_day_5
+    jump wnfh_day_11

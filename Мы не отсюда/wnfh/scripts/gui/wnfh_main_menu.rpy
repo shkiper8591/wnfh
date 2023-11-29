@@ -1,6 +1,6 @@
 init 2:
     
-    screen wnfh_menu():
+    screen wnfh_main_menu():
         modal True tag menu
         
         key "game_menu":
@@ -21,15 +21,15 @@ init 2:
             wnfh_mm_left_buttons = [
                 ["galary"  ,"Галерея"   ,[Jump("technical_chocolatki")]                        ],
                 ["scheme"  ,"Схема"     ,[ShowMenu("wnfh_schematic", _transition=dissolve)]    ],
-                ["exit"         ,"Выход"                                          ,[Return()]  ],
+                ["exit"         ,"Выход"                                          ,[Start("wnfh_exit")]  ],
             ]
             wnfh_mm_right_buttons = [
-                ["saves"        ,"Загрузить"  ,[ShowMenu("wnfh_load_screen", _transition=dissolve)]   ],
+                ["saves"        ,"Загрузить"  ,[ShowMenu("wnfh_load", _transition=dissolve)]   ],
                 ["preferences"  ,"Настройки"  ,[ShowMenu("wnfh_preferences", _transition=dissolve)]   ],
             ]
 
             wnfh_mm_mid_buttons = [
-                ["play"    ,"Начать историю"    ,[Hide("wnfh_menu", transition=dissolve), Jump("wnfh_prologue")]  ],
+                ["play"    ,"Начать историю"    ,[Hide("wnfh_menu", transition=dissolve), Start("wnfh_prologue")]  ],
             ]
 
             
@@ -213,18 +213,18 @@ init 2:
                                     at wnfh_mm_button_hover_atl()
 
 label wnfh_main:
-    scene bg disclaimer_wnfh with dissolve
-    $ renpy.pause(100)
-    jump wnfh_main_menu
-label wnfh_main_menu:
-    scene cg d8_me_kat_boathouse_wnfh with dissolve
+    window hide
+    stop music fadeout 3 # Останавливаем музыку.
+    scene bg black with fade2 # Переходим на сцену с чёрным экраном.
+    $ wnfh_screens_save_act() # Сохраняем экраны из оригинала и заменяем на собственные.
+    return # С помощью return попадаем в главное меню игры.
+    #scene cg d8_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
     $ init_splash()
-    #$ wnfh_Data = BD("./game/saves/wnfh_database.json")
-    #$ wnfh_Data_test = BD("./game/saves/wnfh_database_test.json")
-    call screen wnfh_menu with dissolve
-init -1000:
-    label null_ellement:
-        $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
-        $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
-    
+
+label wnfh_exit:
+    window hide # Скрываем текстбокс.
+    stop music fadeout 3 # Останавливаем музыку.
+    scene black with fade # Переходим на сцену с чёрным экраном.
+    $ wnfh_screens_diact() # Делаем обратную замену экранов мода на оригинальные.
+    $ MainMenu(confirm=False)() # Выходим в главное меню.

@@ -43,6 +43,7 @@ init -2 python:
         "seledka",
         "steam",
         "vk",
+        "exit"
         ]}
     
     # Для главного меню

@@ -73,9 +73,9 @@ init 2:
           
         
         
-        frame:
-            background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
-            area(0.0, 0.0, 1.0, 1.0)
+        #frame:
+        #    background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
+        #    area(0.0, 0.0, 1.0, 1.0)
         frame:
             background wnfh_gui["settings"]["base"]
             area(0.5, 0.0, 1461, 1080)

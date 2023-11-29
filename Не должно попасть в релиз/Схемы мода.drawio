@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-11-28T19:29:55.953Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="nTE1SOnpe-ScaoW2R9jZ" version="22.1.2" type="device" pages="4">
+<mxfile host="Electron" modified="2023-11-29T18:47:13.160Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="5ZWkGZbPBJqHjQRofbZs" version="22.1.2" type="device" pages="4">
   <diagram id="we6vs_uHHYVsJEhOH_EL" name="Схема кода">
     <mxGraphModel dx="1985" dy="1907" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -511,7 +511,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="9reFNKmhoA_gqgiCYP4O" name="День 1">
-    <mxGraphModel dx="2770" dy="1414" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="8393" dy="4807" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -835,7 +835,7 @@
         <mxCell id="uMjlYvNGze599Ml65Ukg-104" value="Отказаться&lt;br&gt;-1 un" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="7674.43" y="870" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uMjlYvNGze599Ml65Ukg-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fillColor=#6a00ff;strokeColor=#3700CC;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="uMjlYvNGze599Ml65Ukg-106" target="ct5fzwAgSui2-u4T8qqn-8" edge="1">
+        <mxCell id="uMjlYvNGze599Ml65Ukg-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fillColor=#6a00ff;strokeColor=#ff2ed9;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="uMjlYvNGze599Ml65Ukg-106" target="ct5fzwAgSui2-u4T8qqn-8" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="7900" y="720" />

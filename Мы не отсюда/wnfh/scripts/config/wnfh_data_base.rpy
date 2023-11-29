@@ -325,7 +325,11 @@ init -1001 python :
     #    def __NAME_:
     #    def __EXIT__:
     #    def __ENTER__:
-
+init -1000:
+    label null_ellement:
+        $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
+        $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
+    
 init -998 python:
     def wnfh_add_flag(data, env,initiator):
         for i in data:

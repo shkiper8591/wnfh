@@ -1,5 +1,5 @@
 init 2:
-    screen wnfh_load_screen:
+    screen wnfh_load:
         python:
             style.wnfh_save_load_button = Style(style.button)
             style.wnfh_save_load_button.background = wnfh_gui["save_load"]["load_button_idle"]

@@ -1,4 +1,15 @@
 init -2:
+    $ style.wnfh_lp_counter = Style(style.default)
+    $ style.wnfh_lp_counter.color = "#c8ffff"
+    $ style.wnfh_lp_counter.insensitive_color = "#c8c8c8"
+    $ style.wnfh_lp_counter.selected_color = "#ffffc8"
+    $ style.wnfh_lp_counter.text_align = 0.5
+    $ style.wnfh_lp_counter.drop_shadow = (2, 2)
+    $ style.wnfh_lp_counter.xalign = 0.5
+    $ style.wnfh_lp_counter.yalign = 0.5
+    $ style.wnfh_lp_counter.ypos = 9
+    $ style.wnfh_lp_counter.xpadding = 6
+    $ style.wnfh_lp_counter.size = 15
     # Шрифты
     $ style.wnfh_title = Style(style.default)
     $ style.wnfh_title.font = wnfh_FONTS + "Sirius Cursiv.ttf"

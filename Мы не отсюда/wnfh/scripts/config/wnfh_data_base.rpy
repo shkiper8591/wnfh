@@ -327,17 +327,6 @@ init -1001 python :
     #    def __ENTER__:
 
 init -998 python:
-    style.button_text_7dl = Style(style.default)
-    style.button_text_7dl.color = "#c8ffff"
-    style.button_text_7dl.insensitive_color = "#c8c8c8"
-    style.button_text_7dl.selected_color = "#ffffc8"
-    style.button_text_7dl.text_align = 0.5
-    style.button_text_7dl.xalign = 0.5
-    style.button_text_7dl.yalign = 0.5
-    style.button_text_7dl.ypos = 9
-    style.button_text_7dl.xpadding = 6
-    style.button_text_7dl.size = 13
-
     def wnfh_add_flag(data, env,initiator):
         for i in data:
             if env == "prod":
@@ -368,22 +357,20 @@ init -998 python:
 init 0 python:
     def widget_lp_wnfh():
         ui.button(clicked=None, style="wnfh_menu", xpos=0.65, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["kat"][0], wnfh_Data.getChoice_points_sum("kat")), style="button_text_7dl", color=wnfh_characters["kat"][1])
+        ui.text("%s: %d" % ("Катя", wnfh_Data.getChoice_points_sum("kat")), style="wnfh_lp_counter", color=wnfh_characters["kat"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.7, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["un"][0], wnfh_Data.getChoice_points_sum("un")), style="button_text_7dl", color=wnfh_characters["un"][1])
+        ui.text("%s: %d" % ("Лена", wnfh_Data.getChoice_points_sum("un")), style="wnfh_lp_counter", color=wnfh_characters["un"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.75, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["mi"][0], wnfh_Data.getChoice_points_sum("mi")), style="button_text_7dl", color=wnfh_characters["mi"][1])
+        ui.text("%s: %d" % ("Мику", wnfh_Data.getChoice_points_sum("mi")), style="wnfh_lp_counter", color=wnfh_characters["mi"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.8, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["dv"][0], wnfh_Data.getChoice_points_sum("dv")), style="button_text_7dl", color=wnfh_characters["dv"][1])
+        ui.text("%s: %d" % ("Алиса", wnfh_Data.getChoice_points_sum("dv")), style="wnfh_lp_counter", color=wnfh_characters["dv"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.85, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["usw"][0], wnfh_Data.getChoice_points_sum("usw")), style="button_text_7dl", color=wnfh_characters["usw"][1])
+        ui.text("%s: %d" % ("Ульяна", wnfh_Data.getChoice_points_sum("usw")), style="wnfh_lp_counter", color=wnfh_characters["usw"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.9, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["sl"][0], wnfh_Data.getChoice_points_sum("sl")), style="button_text_7dl", color=wnfh_characters["sl"][1])
+        ui.text("%s: %d" % ("Славя", wnfh_Data.getChoice_points_sum("sl")), style="wnfh_lp_counter", color=wnfh_characters["sl"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=0.95, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["sv"][0], wnfh_Data.getChoice_points_sum("sv")), style="button_text_7dl", color=wnfh_characters["sv"][1])
+        ui.text("%s: %d" % ("Света", wnfh_Data.getChoice_points_sum("sv")), style="wnfh_lp_counter", color=wnfh_characters["sv"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.05, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % (wnfh_characters["mz"][0], wnfh_Data.getChoice_points_sum("mz")), style="button_text_7dl", color=wnfh_characters["mz"][1])
+        ui.text("%s: %d" % ("Женя", wnfh_Data.getChoice_points_sum("mz")), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
         
-
-
     config.overlay_functions.append(widget_lp_wnfh)

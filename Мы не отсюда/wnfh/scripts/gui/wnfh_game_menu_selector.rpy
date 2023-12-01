@@ -10,7 +10,6 @@ init 2:
         default wnfh_screen_5 = False
 
         python:
-            timeofday = persistent.timeofday
             wnfh_screen_variable = [
                 wnfh_screen_1,
                 wnfh_screen_2,
@@ -36,7 +35,7 @@ init 2:
                 anchor (0.5, 0.5) pos (0.5, 0.5)
                 spacing 2
 
-                for i in wnfh_game_menu_selector_buttons[0:5]:
+                for index,i in enumerate(wnfh_game_menu_selector_buttons[0:5]):
                     frame:
                         background #0000
                         area(0.5, 0.5, 1.0, 65)
@@ -50,12 +49,12 @@ init 2:
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
                             xalign 0.5
     
-                        #if wnfh_screen_variable[i]:
-                        #    add (wnfh_gui["ingame_menu"]["gradient"]):
-                        #        xalign 0.5
-                        #        matrixcolor TintMatrix("#4EFF00")
-                        #else:
-                        #    null height 20
+                        if wnfh_screen_variable[index]:
+                            add (wnfh_gui["ingame_menu"]["gradient"]):
+                                xalign 0.5
+                                matrixcolor TintMatrix("#4EFF00")
+                        else:
+                            null height 20
     
                         add (wnfh_gui["ingame_menu"]["line"]):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
@@ -69,8 +68,8 @@ init 2:
                             text_style "wnfh_choice_" + persistent.timeofday
                             background None
                             hover_sound wnfh_gui["sound"]["plimp"]
-                            #hovered ToggleScreenVariable(wnfh_screen_variable[i])
-                            #unhovered ToggleScreenVariable(wnfh_screen_variable[i])
+                            hovered ToggleScreenVariable(wnfh_screen_variable_string[index])
+                            unhovered ToggleScreenVariable(wnfh_screen_variable_string[index])
                             action (i[1])
 
         add wnfh_gui["ingame_menu"]["vignette"]

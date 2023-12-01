@@ -22,3 +22,21 @@ init -4 python:
     # Я забыл что это за залупа
     def filmetile(bitmap, opacity=0.1):
         return im.Tile(im.Alpha(bitmap,opacity))
+init -1 python:
+    def converter_hex(list_name, name, list_key_name=persistent.timeofday):
+        hex_var = globals()[list_name][list_key_name][name]
+        start_index = 1
+        value_list = []
+        for i in range(3):
+            temp_convert = hex_var[start_index:start_index + 2]
+            convert = int(temp_convert, 16) / 255.0
+            value_list.append(convert)
+            start_index+=2
+        #try:
+        #    pm=[1,2]
+        #    pm[3]
+        #except Exception as e:
+        #    raise Exception(str(value_list),)         
+        return value_list
+    #def converter1(a,b):
+    #    return [0.5961, 0.8471, 0.8549]

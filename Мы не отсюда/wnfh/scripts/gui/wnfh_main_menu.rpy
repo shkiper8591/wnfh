@@ -31,18 +31,14 @@ init 2:
             wnfh_mm_mid_buttons = [
                 ["play"    ,"Начать историю"    ,[Hide("wnfh_menu", transition=dissolve), Start("wnfh_prologue")]  ],
             ]
-
             
-
             wnfh_mm_down_buttons = [
-                ["vk"      , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["vk"], 60, 60)     , im.matrix.tint(0.8627, 0.8196, 0.4078)) ,[OpenURL("https://vk.com/blwnfh")] ],
-                ["steam"   , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["steam"], 60, 60)  , im.matrix.tint(0.8627, 0.8196, 0.4078)) ,[OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")] ],
-                ["discord" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["discord"], 60, 60), im.matrix.tint(0.8627, 0.8196, 0.4078)) ,[OpenURL("https://discord.gg/KfaK7pmRSK")] ],
-                ["achievements" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["achievements"], 60, 60), im.matrix.tint(0.8627, 0.8196, 0.4078)) ,[ShowMenu("wnfh_achievements", _transition=dissolve)] ],
-                ["seledka" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["seledka"], 60, 60), im.matrix.tint(0.8627, 0.8196, 0.4078)) ,[Jump("technical_chocolatki")] ],
+                ["vk"      , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["vk"], 60, 60)     , im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://vk.com/blwnfh")] ],
+                ["steam"   , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["steam"], 60, 60)  , im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")] ],
+                ["discord" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["discord"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://discord.gg/KfaK7pmRSK")] ],
+                ["achievements" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["achievements"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[ShowMenu("wnfh_achievements", _transition=dissolve)] ],
+                ["seledka" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["seledka"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[Jump("technical_chocolatki")] ],
             ]
-
-
             wnfh_main_menu_button = [
             
                  #Тег кнопки     #Изображение кнопки                               #Действие кнопки
@@ -221,6 +217,7 @@ label wnfh_main:
     #scene cg d8_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
     $ init_splash()
+
 
 label wnfh_exit:
     window hide # Скрываем текстбокс.

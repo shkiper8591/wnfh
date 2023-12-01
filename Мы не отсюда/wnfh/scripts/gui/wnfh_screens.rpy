@@ -1,7 +1,7 @@
 init python:
     SCREENS = [
         "main_menu",
-        #"game_menu_selector",
+        "game_menu_selector",
         "quit",
         #"say",
         "preferences",

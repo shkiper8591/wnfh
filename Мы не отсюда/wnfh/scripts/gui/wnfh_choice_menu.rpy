@@ -33,7 +33,7 @@ init 2:
                 wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set})
             
             #wnfh_screen_variable = list(locals()['wnfh_screen_'+str(i)] for i in range(1,20))
-            wnfh_screen_variable =[
+            wnfh_screen_variable = [
                 wnfh_screen_1,
                 wnfh_screen_2,
                 wnfh_screen_3,
@@ -54,7 +54,7 @@ init 2:
                 wnfh_screen_18,
                 wnfh_screen_19
             ]
-            wnfh_screen_variable_string=list('wnfh_screen_'+str(i) for i in range(1,20))
+            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1,20))
 
         #add (wnfh_gui["choice"]["line_" + str(len(args)-1)]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
         #for i in range(len(args)-1):
@@ -106,9 +106,6 @@ init 2:
                                 add (wnfh_gui["choice"]["gradient"]):
                                     xalign 0.5
                                     matrixcolor TintMatrix(wnfh_characters[args[i][0]][1])
-                                #text args[i][2]:
-                                #    style "wnfh_choice_text_" + persistent.timeofday
-                                #    align (wnfh_screen_cordinates[str(len(args)-1)][i][0][0], wnfh_screen_cordinates[str(len(args)-1)][i][0][1])
                             else:
                                 null height 20
                             #add (wnfh_gui["choice"]["line"]):

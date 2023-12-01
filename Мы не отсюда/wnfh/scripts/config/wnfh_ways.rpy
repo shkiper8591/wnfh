@@ -22,6 +22,7 @@ init -4 python:
     wnfh_SETTINGS = wnfh_IMAGES + "gui/settings/"
     wnfh_TRANSITIONS = wnfh_IMAGES + "transitions/"
     wnfh_CHOICE = wnfh_IMAGES + "gui/choice/"
+    wnfh_INGAME_MENU = wnfh_IMAGES + "gui/ingame_menu/"
     wnfh_OTHER = wnfh_IMAGES + "other/"
     wnfh_VIDEO = wnfh_ROOT + "video/"
  

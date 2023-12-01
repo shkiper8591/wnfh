@@ -217,6 +217,13 @@ init -2 python:
         "gradient"
         ]}
 
+    wnfh_gui["ingame_menu"] = {img:(wnfh_INGAME_MENU + img + ".png") for img in [
+        "vignette",
+        "bg",
+        "line",
+        "gradient"
+        ]}
+
 init 2:
     
     

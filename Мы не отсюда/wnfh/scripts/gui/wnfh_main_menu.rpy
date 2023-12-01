@@ -47,7 +47,7 @@ init 2:
             
                  #Тег кнопки     #Изображение кнопки                               #Действие кнопки
                 
-                ["red"          ,im.Scale(wnfh_gui["poligon"]["red"], 100, 100)   ,[Jump("wnfh_test")]                                                      ],
+                ["red", im.Scale(wnfh_gui["poligon"]["red"], 100, 100), [Start("wnfh_test")]],
                 
             ]
        

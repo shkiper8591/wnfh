@@ -51,8 +51,8 @@ init 2:
     
                         if wnfh_screen_variable[index]:
                             add (wnfh_gui["ingame_menu"]["gradient"]):
-                                xalign 0.5
-                                matrixcolor TintMatrix("#4EFF00")
+                                xalign 0.5 alpha 0.5
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
                         else:
                             null height 20
     

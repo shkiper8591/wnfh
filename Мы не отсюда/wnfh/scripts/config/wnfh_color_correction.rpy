@@ -22,6 +22,8 @@ init -4 python:
     # Я забыл что это за залупа
     def filmetile(bitmap, opacity=0.1):
         return im.Tile(im.Alpha(bitmap,opacity))
+
+        
 init -1 python:
     def converter_hex(list_name, name, list_key_name=persistent.timeofday):
         hex_var = globals()[list_name][list_key_name][name]

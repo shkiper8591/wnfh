@@ -16,11 +16,12 @@ label wnfh_test_anim:
             jump cganim
 
 label cganim:
+
     
     "Пример ванильной цг"
 
     scene cg d9_dv_scene_1
-
+    
     "Работает"
     "Пример модовой ЦГ"
     scene cg d8_dv_sem_scene

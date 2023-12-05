@@ -157,9 +157,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Выбранно"]
             except KeyError:
-                pass
-                #raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))\
-                #                - вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов{1}".format(key,str(self.BD_INIT_MODULE.keys())))
+                raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))\
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов{1}".format(key,str(self.BD_INIT_MODULE.keys())))
                 #print("Не было найдено значений" + str(key))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить номер выбранного ответа")
@@ -332,6 +331,8 @@ init -1000:
         $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
     
 init -998 python:
+    store.mousex = 0
+    store.mousey = 0
     def wnfh_add_flag(data, env,initiator):
         for i in data:
             if env == "prod":
@@ -359,7 +360,7 @@ init -998 python:
             sys.exit(1)
         return data_set
 
-init 0 python:
+init -1 python:
     def widget_lp_wnfh():
         ui.button(clicked=None, style="wnfh_menu", xpos=0.65, ypos=0.05, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Катя", wnfh_Data.getChoice_points_sum("kat")), style="wnfh_lp_counter", color=wnfh_characters["kat"][1])
@@ -377,5 +378,41 @@ init 0 python:
         ui.text("%s: %d" % ("Света", wnfh_Data.getChoice_points_sum("sv")), style="wnfh_lp_counter", color=wnfh_characters["sv"][1])
         ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.05, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Женя", wnfh_Data.getChoice_points_sum("mz")), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
+    def cords():     
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.10, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Мыш X",wnfh_Data.get("xCord")), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
+        
+        ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.10, xanchor=1.0, xminimum=120)
+        ui.text("%s: %d" % ("Мыш Y",wnfh_Data.get("yCord")), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
         
     config.overlay_functions.append(widget_lp_wnfh)
+    config.overlay_functions.append(cords)
+
+init 0 python:
+
+    class getMousePosition(renpy.Displayable):
+
+        def __init__(self):
+            renpy.Displayable.__init__(self)
+
+        def event(self, ev, x, y, st):
+            import pygame
+
+            if ev.type == pygame.MOUSEMOTION: 
+                store.mousex = x
+                store.mousey = y
+                wnfh_Data.write("xCord",store.mousex)
+                wnfh_Data.write("yCord",store.mousey)
+                #renpy.redraw(renpy.current_screen(),0)
+                #renpy.full_redraw()
+                renpy.restart_interaction()
+        def render(self, width, height, st, at):
+            return renpy.Render(400, 400)
+
+    store.mousePosition= getMousePosition()
+
+    def checkEvent():
+        ui.add(mousePosition)
+    config.overlay_functions.append(checkEvent) 
+    
+    

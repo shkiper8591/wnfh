@@ -407,15 +407,15 @@ init 0 python:
                 #renpy.full_redraw()
                 renpy.restart_interaction()
             #if ev.type == pygame.QUIT:
-            path = "B:/SteamLibrary/steamapps/workshop/content/331470/Мы не отсюда/wnfh/scripts"
-            #print(os.listdir(path))
-            #print(pathlib.Path(__file__))
-            wnfh_Data.write("path",os.path.realpath(__file__))
-            for i in os.listdir(path)[0:-1]:
-                for n in os.listdir(path+"/"+i):
-                    if n.endswith(".rpyc"):
-                        pass
-                        #os.remove(path + "/" + i + "/" +n)
+            #path = "B:/SteamLibrary/steamapps/workshop/content/331470/Мы не отсюда/wnfh/scripts"
+            ##print(os.listdir(path))
+            ##print(pathlib.Path(__file__))
+            #wnfh_Data.write("path",os.path.realpath(__file__))
+            #for i in os.listdir(path)[0:-1]:
+            #    for n in os.listdir(path+"/"+i):
+            #        if n.endswith(".rpyc"):
+            #            pass
+            #            #os.remove(path + "/" + i + "/" +n)
         def render(self, width, height, st, at):
             return renpy.Render(400, 400)
 

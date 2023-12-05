@@ -20,9 +20,9 @@ init python:
         return "text " + bgname
 
     store.map_pics_mymod = {
-        "bgpic_mymod": "map/images/map_avaliable_mod.jpg",  # Путь до фона карты
-        "avaliable_mymod": "map/images/map_avaliable_mod.jpg",  # Путь до версии карты с idle-версией
-        "selected_mymod": "map/images/map_selected_mod.jpg",  # Путь до версии карты с hover-версией
+        "bgpic_mymod": wnfh_MAP + "map.jpg",  # Путь до фона карты
+        "avaliable_mymod": wnfh_MAP + "map_avaliable.jpg",  # Путь до версии карты с idle-версией
+        "selected_mymod": wnfh_MAP + "map_selected.jpg",  # Путь до версии карты с hover-версией
     }
 
     store.map_zones_mymod = {
@@ -236,6 +236,7 @@ init python:
             renpy.scene("mapoverlay")
             global_map_result_mymod = name
             renpy.hide("widget map_mymod")
+
             ui.jumps(global_zones_mymod[name]["label"])()
 
         def overlay(self):
@@ -317,8 +318,4 @@ init:
         image widget map_mymod = "map/images/map_n_mod.jpg" # Путь до фона карты
         image bg map_mymod     = "map/images/map_avaliable_mod.jpg" # Путь до версии карты с idle-версией
 
-label _show_map_mymod:
-    show widget map_mymod
-    $ store.map_enabled_mymod = True
-    $ ui.interact()
-    jump _show_map_mymod
+#label _show_map_mymod:

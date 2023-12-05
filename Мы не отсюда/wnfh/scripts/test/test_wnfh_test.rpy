@@ -44,6 +44,8 @@ label wnfh_test_main_menu:
             jump wnfh_test_ach
         "Дни?":    
             jump wnfh_test_days
+        "Карта?":
+            jump wnfh_test_map
         "Покинуть меню отладки":
             jump wnfh_main_menu
 

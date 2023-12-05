@@ -1,23 +1,5 @@
 label wnfh_test_map:    
-    scene bg int_dining_hall_people_sunset with dspr
-    window show
-    "Спауним стол"
-    
-    
-    show table with dspr
-    "Теперь поднос слева"
-    show left tray d12_breakfast_full foods with dspr
-    "Поднос справа"
-    show right tray d12_breakfast_full foods with dspr
-    "Забыли салфетницу и прочее говно"
-    show shakers with dspr
-    "Поднос для Семёна"
-    show mid tray d12_breakfast_full foods with dspr
-    "Работает"
-    "Вроде"
-    "Возвращаемся в меню отладки?"
-    
-    menu: 
-    
-        "Да":
-            jump wnfh_test_main_menu 
+    show widget map_mymod
+    $ store.map_enabled_mymod = True
+    $ ui.interact()
+    jump _show_map_mymod

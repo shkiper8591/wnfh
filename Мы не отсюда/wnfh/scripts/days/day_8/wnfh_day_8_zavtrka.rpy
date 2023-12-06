@@ -293,7 +293,7 @@ label d8_zavtrak_s_el_sh:
     
     ##Надо исправить
 
-    elif wnfh_Data.getChoice_points_sum("un") == 4:
+    if wnfh_Data.getChoice_points_sum("un") == 4:
 
         $ d8_zavtrak_s_lenoy = True
 

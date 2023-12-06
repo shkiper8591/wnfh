@@ -86,13 +86,13 @@ init 2:
             background wnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
             
-            #frame:
-            #    background background_color
-            #    area(0.9, 0.9, 100, 40)
-            #    xanchor 0.5 yanchor 0.5
-            #    text wnfh_get_usertime():
-            #        style "wnfh_menu"
-            #        size 30
+            frame:
+                background background_color
+                area(0.9, 0.9, 100, 40)
+                xanchor 0.5 yanchor 0.5
+                text wnfh_get_usertime():
+                    style "wnfh_menu"
+                    size 30
             
     
 
@@ -100,8 +100,7 @@ init 2:
                 background background_color
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
-                text "Почините меня блять, файл wnfh_main_menu, строка 103":
-                #text wnfh_splash():
+                text init_splash():
                     style "wnfh_splashes"
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
             if debag_switch:

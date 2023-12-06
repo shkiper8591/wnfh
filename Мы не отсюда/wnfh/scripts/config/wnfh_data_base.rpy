@@ -20,7 +20,6 @@ init -1001 python :
     #концептуально:
     #default {enviroment(test/prod)} <-> wnfh_BD (BD_INIT_MODULE) - метод класса (запись / чтение ) -> json <-> renpy новелла
     #"""
-    showScreen = False
     class wnfh_BD(object):
         """
         Создание объектов класса происходит позже инициализации класса в файле main_menu.rpy

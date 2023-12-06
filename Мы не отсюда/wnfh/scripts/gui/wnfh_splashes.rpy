@@ -1,8 +1,6 @@
 init python:
     from random import choice
-    spl = ""
     def init_splash():
-        global spl
         spl = choice([
             "Слава Первой Галактической Империи!",
             "Также попробуйте Булки, Кефир, Рок-н-Ролл!",
@@ -142,6 +140,4 @@ init python:
             "В моде замечен след студентов МИРЭА",
             "В коде заметили саратовца"
             ])
-    def wnfh_splash():
-        global spl
         return spl

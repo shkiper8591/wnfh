@@ -21,7 +21,7 @@ init -4 python:
     wnfh_SAVELOAD = wnfh_GUI + "save_load/"
     wnfh_SETTINGS = wnfh_GUI + "settings/"
     wnfh_MAP = wnfh_GUI + "map/"
-    wnfh_ICONS = wnfh_GUI + "character_icons/"
+    wnfh_AVATARS = wnfh_GUI + "avatars/"
     wnfh_TRANSITIONS = wnfh_IMAGES + "transitions/"
     wnfh_CHOICE = wnfh_IMAGES + "gui/choice/"
     wnfh_INGAME_MENU = wnfh_IMAGES + "gui/ingame_menu/"

@@ -153,7 +153,20 @@ init -2 python:
         ] + characters_banners_idle + characters_banners_hover
         }
     
-    
+    # Аватарки
+    wnfh_gui["avatars"] = {img:(wnfh_GALLERY + img + ".png") for img in [
+        "me",
+        "mi",
+        "usw",
+        "dv",
+        "mt",
+        "mz",
+        "sh",
+        "sl",
+        "el",
+        "un",
+        ]}
+
     # Для галереи
     wnfh_gui["gallery"] = {img:(wnfh_GALLERY + img + ".png") for img in [
         "back",

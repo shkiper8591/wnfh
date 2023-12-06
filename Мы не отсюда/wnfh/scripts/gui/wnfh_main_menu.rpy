@@ -1,3 +1,9 @@
+init python:
+    import time
+    for i in range(0,999999999):
+        renpy.restart_interaction()
+        time.sleep(0.5)
+
 init 2:
     
     screen wnfh_main_menu():
@@ -11,7 +17,7 @@ init 2:
 
         python:
             from random import randrange
-            
+
             def menu_img_status(imgf, condition="hover"):
                 if condition == "hover":
                     return im.MatrixColor(imgf, im.matrix.contrast(1.7))
@@ -86,12 +92,13 @@ init 2:
             background wnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
             
-            frame:
+            frame: # ======================================================= # Часики
                 background background_color
-                area(0.9, 0.9, 100, 40)
+                area(0.5, 0.03, 120, 40)
                 xanchor 0.5 yanchor 0.5
                 text wnfh_get_usertime():
-                    style "wnfh_menu"
+                    xalign 0.5
+                    style "wnfh_choice_" + persistent.timeofday
                     size 30
             
     

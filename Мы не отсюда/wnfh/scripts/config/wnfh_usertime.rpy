@@ -5,6 +5,9 @@ init python:
     def wnfh_get_usertime():
         from time import strftime, localtime
         time = strftime("%H:%M:%S", localtime())
-        hour, min, sec = time.split(":")
+        hour, mins, sec = time.split(":")
         hour = int(hour)
-        return str(hour) + ":" + str(min)
+        if int(sec) % 2 == 0:
+            return str(hour) + ":" + str(mins)
+        else:
+            return str(hour) + " " + str(mins)

@@ -28,6 +28,14 @@ init 2:
      
             ]
         frame:
+                background background_color
+                area(0.5, 0.03, 120, 40)
+                xanchor 0.5 yanchor 0.5
+                text wnfh_get_usertime():
+                    xalign 0.5
+                    style "wnfh_choice_" + persistent.timeofday
+                    size 30
+        frame:
             background #0000
             area(0.5, 0.5, 0.7, 0.8)
             xanchor 0.5 yanchor 0.5

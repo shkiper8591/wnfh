@@ -1,9 +1,3 @@
-init python:
-    import time
-    for i in range(0,999999999):
-        renpy.restart_interaction()
-        time.sleep(0.5)
-
 init 2:
     
     screen wnfh_main_menu():

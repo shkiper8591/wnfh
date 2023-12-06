@@ -54,7 +54,7 @@ label d8_zavtrak:
         $ renpy.pause(0.2)
         call screen wnfh_choice(
             ["mi", "Сесть с Мику", "я хуй знает что тут написать", "d8_zavtrak_s_miku", {"mi":1}],
-            ["neutral", "Сесть с товарищами", "Пожалуй сяду с пацанами", "d8_zavtrak_s_el_sh", {None}],
+            ["neutral", "Сесть с товарищами", "Пожалуй сяду с пацанами", "d8_zavtrak_s_el_sh"],
             ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
             ) with sphere_blure_dissolve2
 

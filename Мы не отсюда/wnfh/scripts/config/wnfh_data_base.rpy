@@ -20,6 +20,7 @@ init -1001 python :
     #концептуально:
     #default {enviroment(test/prod)} <-> wnfh_BD (BD_INIT_MODULE) - метод класса (запись / чтение ) -> json <-> renpy новелла
     #"""
+    showScreen = False
     class wnfh_BD(object):
         """
         Создание объектов класса происходит позже инициализации класса в файле main_menu.rpy
@@ -34,6 +35,8 @@ init -1001 python :
             self.Encryption = True  # кодировка json ( не используется)
             self.DumpJSON = True #Формировать ли json в папке сейвов игры /game/saves/wnfh_database.json
             self.load(self.location)
+        def ShowErrors(self,text):
+            ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
         def load(self, location):
             #if os.path.exists(location):
             if  self.path_enviroment in globals():
@@ -107,8 +110,7 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
             except KeyError:
-                pass
-                #raise Exception("При попытке получить значение флага {0} получено исключение \
+                raise Exception("При попытке получить значение флага {0} получено исключение \
                                 #- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
 
         """
@@ -128,9 +130,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]['value']
             except KeyError:
-                pass
-                #raise Exception("При попытке получить значение флага {0} получено исключение \
-                #- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
+                self.ShowErrors("При попытке получить значение флага {0} получено исключение \
+                - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
             self.dumpSave()
@@ -155,14 +156,13 @@ init -1001 python :
         """
         def getChoice_result_number(self , key=None):
             if key is None:
-                raise "Не указан ключ - название выбора, для корректной работы метода, в"
+                self.ShowErrors("Не указан ключ - название выбора, для корректной работы метода, получения выбора")
             try:
                 return self.BD_INIT_MODULE[key]["Выбранно"]
             except KeyError:
-                pass
-            #    raise Exception("При попытке получить номер выбранного ответа в вилке {0} получено исключение (метод getChoice_result_number(self , key=None))\
-            #                    - вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов{1}".format(key,str(self.BD_INIT_MODULE.keys())))
-                #print("Не было найдено значений" + str(key))
+                self.ShowErrors(u"При попытке получить номер выбранного ответа получено исключение \nМетод: getChoice_result_number(self , key=None))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
+
+            #print("Не было найдено значений" + str(key))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить номер выбранного ответа")
         """
@@ -181,9 +181,7 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Текст выбора"]
             except KeyError:
-                pass
-                #raise Exception("При попытке получить текст выбранного ответа в вилке {0} получено исключение (метод getChoice_result_text(self , key)) \
-                #                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                self.ShowErrors("При попытке получить текст выбранного ответа получено исключение \nМетод: getChoice_result_text(self , key))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить текст выбранного ответа")
         """
@@ -203,9 +201,7 @@ init -1001 python :
                 return self.BD_INIT_MODULE[key]["Название выбора"]
 
             except KeyError:
-                pass
-                #raise Exception("При попытке получить заголовок выбранного ответа в вилке {0} получено исключение (метод getChoice_text(self , key))\
-                #                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                self.ShowErrors("При попытке получить заголовок выбранного ответа получено исключение \nМетод: getChoice_text(self , key))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
         """
@@ -231,9 +227,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"]
             except KeyError:
-                pass
-                #raise Exception("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))\
-                #                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,str(self.BD_INIT_MODULE)))
+                self.ShowErrors("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))\
+                                - вероятно неверно прописано название выбора либо его ещё не существует. Проверьте json {1}".format(key,"\n, ".join(self.BD_INIT_MODULE.keys())))
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить заголовок выбранного ответа")
         """
@@ -258,7 +253,8 @@ init -1001 python :
             try:
                 return self.BD_INIT_MODULE[key]["Влияние на персонажей"][person]
             except KeyError:
-                pass
+                self.ShowErrors("При попытке получить колличество лавпойнтов в вилке {0} получено исключение (метод getChoice_result_points(self , key))\
+                                - вероятно неверно прописано название выбора либо персонажа. Проверьте json {1}".format(key,"\n, ".join(self.BD_INIT_MODULE.keys())))
                 #return "Не надено"
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить лавпойнты персонажа {0} в выборе {1}").format(person,key)
@@ -281,9 +277,10 @@ init -1001 python :
                 try:
                     sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
                 except KeyError:
+                    #self.ShowErrors("Лавпонты персонажа "+ person +"отсутствуют")
                     pass
                 except TypeError:
-                    pass
+                    self.ShowErrors("Передан неверный тип данных "+ str(person))
                 except Exception:
                     raise Exception('Ошибка подсчёта лавпойнтов персонажа {0} - метод (getChoice_points_sum(self, person))').format(person)
             return sum

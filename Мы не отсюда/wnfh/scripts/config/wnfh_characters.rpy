@@ -12,7 +12,7 @@ init -3 python:
         "usw":[u"Ульяна", "#FF3200","ikonki_ulyana.png"],
         "dv":[u"Алиса", "#FFAA00","ikonki_alisa.png"],
         "mt":[u"Ольга Дмитриевна"],
-        "mz":[u"Женя", "#4A86FF"],
+        "mz":[u"Женя", "#4A86FF","ikonki_zhenya.png"],
         "sh":[u"Шурик", "#FFF226","ikonki_shurik.png"],
         "sl":[u"Славя", "#FFD200","ikonki_slavya.png"],
         "el":[u"Сергей", "#FFFF00"],

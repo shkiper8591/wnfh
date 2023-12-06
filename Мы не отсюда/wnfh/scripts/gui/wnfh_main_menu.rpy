@@ -21,7 +21,7 @@ init 2:
             wnfh_mm_left_buttons = [
                 ["galary"  ,"Галерея"   ,[Jump("technical_chocolatki")]                        ],
                 ["scheme"  ,"Схема"     ,[ShowMenu("wnfh_schematic", _transition=dissolve)]    ],
-                ["exit"         ,"Выход"                                          ,[Start("wnfh_exit")]  ],
+                ["exit"    ,"Выход"     ,[Start("wnfh_exit")]                                  ],
             ]
             wnfh_mm_right_buttons = [
                 ["saves"        ,"Загрузить"  ,[ShowMenu("wnfh_load", _transition=dissolve)]   ],
@@ -33,11 +33,40 @@ init 2:
             ]
             
             wnfh_mm_down_buttons = [
-                ["vk"      , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["vk"], 60, 60)     , im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://vk.com/blwnfh")] ],
-                ["steam"   , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["steam"], 60, 60)  , im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")] ],
-                ["discord" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["discord"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[OpenURL("https://discord.gg/KfaK7pmRSK")] ],
-                ["achievements" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["achievements"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[ShowMenu("wnfh_achievements", _transition=dissolve)] ],
-                ["seledka" , im.MatrixColor(im.Scale(wnfh_gui["main_menu"]["seledka"], 60, 60), im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday))) ,[Jump("technical_chocolatki")] ],
+                ["vk", im.Scale(im.Composite(
+                    (130, 130),
+                    (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday)))
+                    ), 60, 60),
+                [OpenURL("https://vk.com/blwnfh")]],
+
+                ["steam", im.Scale(im.Composite(
+                    (130, 130),
+                    (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday)))
+                    ), 60, 60),
+                [OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")]],
+
+                ["discord", im.Scale(im.Composite(
+                    (130, 130),
+                    (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday)))
+                    ), 60, 60),
+                [OpenURL("https://discord.gg/KfaK7pmRSK")]],
+
+                ["achievements", im.Scale(im.Composite(
+                    (130, 130),
+                    (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday)))
+                    ), 60, 60), 
+                [ShowMenu("wnfh_achievements", _transition=dissolve)]],
+
+                ["seledka", im.Scale(im.Composite(
+                    (130, 130),
+                    (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,persistent.timeofday)))
+                    ), 60, 60),
+                [Jump("technical_chocolatki")]],
             ]
             wnfh_main_menu_button = [
             

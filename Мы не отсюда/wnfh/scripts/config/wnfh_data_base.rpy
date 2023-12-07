@@ -364,19 +364,13 @@ init -998 python:
         return data_set
 
 init -1 python:
-    def widget_lp_wnfh():
-        character_with_img = [character for character in wnfh_characters.keys() if wnfh_characters[character][2] is True]
-        for index, character in enumerate(character_with_img,start=21 - len(character_with_img)):
-            ui.button(clicked=None, style="wnfh_menu", xpos=index*0.05, ypos=0.05, xanchor=1.0, xminimum=120)
-            ui.text("%s: %d" % (wnfh_characters[character][0], wnfh_Data.getChoice_points_sum(character)), style="wnfh_lp_counter", color=wnfh_characters[character][1])
     def cords():     
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.95, ypos=0.11, xanchor=1.0, xminimum=120)
+        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.11, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Мыш X",store.mousex), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
         
         ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.11, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Мыш Y",store.mousey), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
         
-    config.overlay_functions.append(widget_lp_wnfh)
     config.overlay_functions.append(cords)
 
 init 0 python:

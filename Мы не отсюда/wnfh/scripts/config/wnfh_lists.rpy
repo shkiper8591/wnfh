@@ -154,7 +154,7 @@ init -2 python:
         }
     
     # Аватарки
-    wnfh_gui["avatars"] = {img:(wnfh_GALLERY + img + ".png") for img in [
+    wnfh_gui["avatars"] = {img:(wnfh_AVATARS + img + ".png") for img in [
         "me",
         "mi",
         "usw",
@@ -165,6 +165,9 @@ init -2 python:
         "sl",
         "el",
         "un",
+        "din",
+        "kat",
+        "sv",
         ]}
 
     # Для галереи

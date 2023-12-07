@@ -1,18 +1,14 @@
 init -4 python:
 
-    ## Тут лежат пути к файлам ##
+    #### Тут лежат пути к файлам ####
     wnfh_ROOT = "wnfh/"
     
+    ### Шрифты ###
     wnfh_FONTS = wnfh_ROOT + "fonts/"
-    
-    wnfh_SOUND = wnfh_ROOT + "sound/"
-    wnfh_SFX = wnfh_SOUND + "sfx/"
-    wnfh_AMBIENCE = wnfh_SOUND + "ambiences/"
-    wnfh_MUSIC = wnfh_SOUND + "music/"
-    
-    
-    wnfh_ES_IMAGES = "images/"
+
+    ### Изображения ###
     wnfh_IMAGES = wnfh_ROOT + "images/"
+
     wnfh_GUI = wnfh_IMAGES + "gui/"
     wnfh_ACHIEVEMENTS = wnfh_GUI + "/achievements/"
     wnfh_BANNERS = wnfh_GUI + "banners/"
@@ -22,9 +18,22 @@ init -4 python:
     wnfh_SETTINGS = wnfh_GUI + "settings/"
     wnfh_MAP = wnfh_GUI + "map/"
     wnfh_AVATARS = wnfh_GUI + "avatars/"
+    wnfh_INGAME_MENU = wnfh_GUI + "ingame_menu/"
+    wnfh_CHOICE = wnfh_GUI + "choice/"
+
     wnfh_TRANSITIONS = wnfh_IMAGES + "transitions/"
-    wnfh_CHOICE = wnfh_IMAGES + "gui/choice/"
-    wnfh_INGAME_MENU = wnfh_IMAGES + "gui/ingame_menu/"
     wnfh_OTHER = wnfh_IMAGES + "other/"
+
+    ### Звуки ###
+    wnfh_SOUND = wnfh_ROOT + "sound/"
+    wnfh_SFX = wnfh_SOUND + "sfx/"
+    wnfh_AMBIENCE = wnfh_SOUND + "ambiences/"
+    wnfh_MUSIC = wnfh_SOUND + "music/"
+
+    ### Видео ###
     wnfh_VIDEO = wnfh_ROOT + "video/"
+
+    #### Путь в оригинальную игру ####
+    wnfh_ES_IMAGES = "images/"
+    
  

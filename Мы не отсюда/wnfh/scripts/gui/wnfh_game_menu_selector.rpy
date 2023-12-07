@@ -27,17 +27,48 @@ init 2:
                 ["Выход",          [ShowMenu('quit')]                                     ],
      
             ]
+        #frame: # =============================================== Часики
+        #    background background_color
+        #    area(0.5, 0.03, 120, 40)
+        #    xanchor 0.5 yanchor 0.5
+        #    text wnfh_get_usertime():
+        #        xalign 0.5
+        #        style "wnfh_choice_" + persistent.timeofday
+        #        size 30
         frame:
-                background background_color
-                area(0.5, 0.03, 120, 40)
-                xanchor 0.5 yanchor 0.5
-                text wnfh_get_usertime():
-                    xalign 0.5
-                    style "wnfh_choice_" + persistent.timeofday
-                    size 30
+            background "#0000"
+            area(0.5, 0.06, 1000, 100)
+            xanchor 0.5 yanchor 0.5
+            grid 9 1:
+                anchor (0.5, 0.5) pos (0.5, 0.5)
+                $ character_with_img = [character for character in wnfh_characters.keys() if wnfh_characters[character][2] is True]
+                for index, character in enumerate(character_with_img, start=21 - len(character_with_img)):
+                    frame:
+                        background "#0000"
+                        area(0.5, 0.5, 160, 80)
+                        xanchor 0.5 yanchor 0.5
+                        frame:
+                            background "#0000"
+                            area(0.0, 0.5, 80, 80)
+                            xanchor 0.0 yanchor 0.5
+                            add (wnfh_gui["avatars"][character]):
+                                #matrixcolor TintMatrix(wnfh_tint["sunset"])
+                                xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                zoom 0.1
+                        frame:
+                            background "#0000"
+                            area(1.0, 0.5, 60, 80)
+                            xanchor 1.0 yanchor 0.5
+                            text str(wnfh_Data.getChoice_points_sum(character)):
+                                text_align 0.5
+                                xalign 0.5 yanchor 0.5 ypos 0.5
+                                style "wnfh_lp_counter"
+                                size 70
+                                color wnfh_characters[character][1]
+                            #ui.text("%s: %d" % (wnfh_characters[character][0], wnfh_Data.getChoice_points_sum(character)), style="wnfh_lp_counter", color=wnfh_characters[character][1])
         frame:
-            background #0000
-            area(0.5, 0.5, 0.7, 0.8)
+            background "#0000"
+            area(0.5, 0.5, 0.3, 0.5)
             xanchor 0.5 yanchor 0.5
             grid 1 5:
                 anchor (0.5, 0.5) pos (0.5, 0.5)
@@ -45,7 +76,7 @@ init 2:
 
                 for index,i in enumerate(wnfh_game_menu_selector_buttons[0:5]):
                     frame:
-                        background #0000
+                        background "#0000"
                         area(0.5, 0.5, 1.0, 65)
                         xanchor 0.5 yanchor 0.5
     
@@ -71,8 +102,8 @@ init 2:
                             xalign 0.5 ypos 1.0 yanchor 0.0
 
                         textbutton i[0]:
-                            text_line_leading 16 text_line_spacing 11
-                            text_min_width 1100
+                            text_line_leading 5 text_line_spacing 3
+                            text_min_width 550
                             text_text_align 0.5
                             xalign 0.5 yanchor 0.5 ypos 0.5
                             text_style "wnfh_choice_" + persistent.timeofday

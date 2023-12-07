@@ -7,7 +7,7 @@ init -3 python:
         # персонажи оригинала
         "narrator":[None, None,None],     #Рассказчик
         "th":[None, None,None],           #Мысля Семёна
-        "me":[u"Семён", "#E1DD7D"                   ,True],
+        "me":[u"Семён", "#E1DD7D"             ,False],
         "mi":[u"Мику", "#00DEFF"                    ,True],
         "usw":[u"Ульяна", "#FF3200"                 ,True],
         "dv":[u"Алиса", "#FFAA00"                   ,True],

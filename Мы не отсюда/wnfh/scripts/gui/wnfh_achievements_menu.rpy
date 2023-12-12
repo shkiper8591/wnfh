@@ -37,7 +37,7 @@ init 2:
             # achievements
             if debag_switch:
                 imagebutton:
-                    action [Hide("wnfh_achievements", transition=dissolve), Jump("wnfh_reset")]
+                    action [Hide("wnfh_achievements", transition=dissolve), Start("wnfh_reset")]
                     idle wnfh_gui["banners"]["relation_up"]
                     hover wnfh_gui["banners"]["relation_down"]
             
@@ -88,7 +88,7 @@ init 2:
                                                 $ znak = 0
                                                 $ sum_znak_elem = 0
                                                 for element in wnfh_ach_list:
-                                                    if element[6] == character:  
+                                                    if element[5] == character:  
                                                         if persistent.wnfh_ach[element[0]]:
                                                             $ znak += 1
                                                         $ sum_znak_elem += 1
@@ -165,7 +165,7 @@ init 2:
                                 $ znak = 0
                                 $ sum_znak_elem = 0
                                 for element in wnfh_ach_list:
-                                    if element[5] == i and element[6] == character:  
+                                    if element[5] == i and element[5] == character:  
                                         if persistent.wnfh_ach[element[0]]:
                                             $ znak += 1
                                         $ sum_znak_elem += 1
@@ -188,11 +188,11 @@ init 2:
                             scrollbars "vertical"
                             $ temp = 0
                             for element in wnfh_ach_list:
-                                if element[5] == trof and element[6] == character:
+                                if element[5] == trof and element[5] == character:
                                     $ temp += 1
                             grid 1 temp:
                                 for element in wnfh_ach_list:
-                                    if element[5] == trof and element[6] == character:
+                                    if element[5] == trof and element[5] == character:
                                         if persistent.wnfh_ach[element[0]]:
                                             frame:
                                                 default ach_hovered = False
@@ -234,4 +234,4 @@ init 2:
 
 label wnfh_reset:
     $ wnfh_reset_achievements()
-    jump wnfh_main_menu
+    return

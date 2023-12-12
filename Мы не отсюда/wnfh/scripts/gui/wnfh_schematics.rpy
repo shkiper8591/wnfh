@@ -16,30 +16,31 @@ init 2:
             ]
             
             
-
         frame:
-            background "#FFF"
+            background "#0000"
             area(0.0, 0.0, 1.0, 1.0)
             #at wnfh_bg_spawn_atl
-            for index,data in enumerate(list(wnfh_Data.load_json())):
-                if str(data).find("key") >0:
-            #   while(true):
-            #       for key_map in wnfh_Data.get(data)["Цепь выборов"]
-            #for index, data in enumerate(len(wnfh_Data.load_json()),start=1)
-                    frame:
-                        background "#AAA"
-                        area(310*index+1,400 , 300,150 )
-                        grid 1 1:
-                            text str(wnfh_Data.get(data))
-                else:
-                    frame:
-                        background "#AAA"
-                        area(310*index+1,400 , 300,150 )
-                        grid 1 4:
-                            text str(data)
-                            text str(wnfh_Data.getChoice_points_sum('dv'))
-                            text str(wnfh_Data.getChoice_text(data))
-                            text str(wnfh_Data.getChoice_result_text(data))
+            viewport:
+                mousewheel "horizontal"
+                for index,data in enumerate(list(wnfh_Data.load_json())):
+                    if str(data).find("key") > 0:
+                #   while(true):
+                #       for key_map in wnfh_Data.get(data)["Цепь выборов"]
+                #for index, data in enumerate(len(wnfh_Data.load_json()),start=1)
+                        frame:
+                            background "#AAA"
+                            area(310*index+1,400, 300, 600)
+                            grid 1 1:
+                                text str(wnfh_Data.get(data))
+                    else:
+                        frame:
+                            background "#AAA"
+                            area(310*index+1, 400, 300, 600)
+                            grid 1 4:
+                                text str(data)
+                                text str(wnfh_Data.getChoice_points_sum('dv'))
+                                text str(wnfh_Data.getChoice_text(data))
+                                text str(wnfh_Data.getChoice_result_text(data))
 
 
             frame: # ======================================================= # Выход

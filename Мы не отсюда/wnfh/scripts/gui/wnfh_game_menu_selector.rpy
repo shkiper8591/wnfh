@@ -8,6 +8,7 @@ init 2:
         default wnfh_screen_3 = False
         default wnfh_screen_4 = False
         default wnfh_screen_5 = False
+        default wnfh_screen_6 = False
 
         python:
             wnfh_screen_variable = [
@@ -16,11 +17,13 @@ init 2:
                 wnfh_screen_3,
                 wnfh_screen_4,
                 wnfh_screen_5,
+                wnfh_screen_6,
             ]
-            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1, 6))
+            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1, 7))
 
             wnfh_game_menu_selector_buttons = [
                 ["В главное меню", [MainMenu()]                                           ],
+                ["Схема",          [ShowMenu('wnfh_schematic')]                           ],
                 ["Сохранить",      [ShowMenu('save')]                                     ],
                 ["Загрузить",      [ShowMenu('load')]                                     ],
                 ["Настройки",      [ShowMenu('preferences'), Hide('game_menu_selector')]  ],
@@ -41,8 +44,9 @@ init 2:
             xanchor 0.5 yanchor 0.5
             grid 9 1:
                 anchor (0.5, 0.5) pos (0.5, 0.5)
-                $ character_with_img = [character for character in wnfh_characters.keys() if wnfh_characters[character][2] is True]
-                for index, character in enumerate(character_with_img, start=21 - len(character_with_img)):
+                $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "din", "sv", "mz"]
+                $ character_with_img = [character for character in character_order]
+                for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
                     frame:
                         background "#0000"
                         area(0.5, 0.5, 160, 80)
@@ -70,11 +74,11 @@ init 2:
             background "#0000"
             area(0.5, 0.5, 0.3, 0.5)
             xanchor 0.5 yanchor 0.5
-            grid 1 5:
+            grid 1 6:
                 anchor (0.5, 0.5) pos (0.5, 0.5)
                 spacing 2
 
-                for index,i in enumerate(wnfh_game_menu_selector_buttons[0:5]):
+                for index, i in enumerate(wnfh_game_menu_selector_buttons[0:6]):
                     frame:
                         background "#0000"
                         area(0.5, 0.5, 1.0, 65)

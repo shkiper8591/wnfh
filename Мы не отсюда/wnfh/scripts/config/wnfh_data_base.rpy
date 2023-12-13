@@ -364,19 +364,13 @@ init -998 python:
         return data_set
 
 init -1 python:
-    #def widget_lp_wnfh():
-    #    character_with_img = [character for character in wnfh_characters.keys() if wnfh_characters[character][2] is True]
-    #    for index, character in enumerate(character_with_img,start=21 - len(character_with_img)):
-    #        ui.button(clicked=None, style="wnfh_menu", xpos=index*0.05, ypos=0.05, xanchor=1.0, xminimum=120)
-    #        ui.text("%s: %d" % (wnfh_characters[character][0], wnfh_Data.getChoice_points_sum(character)), style="wnfh_lp_counter", color=wnfh_characters[character][1])
     def cords():     
         ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.11, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Мыш X",store.mousex), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
         
         ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.11, xanchor=1.0, xminimum=120)
         ui.text("%s: %d" % ("Мыш Y",store.mousey), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
-        
-    #config.overlay_functions.append(widget_lp_wnfh)
+
     config.overlay_functions.append(cords)
 
 init 0 python:
@@ -390,23 +384,8 @@ init 0 python:
             import pygame
             import os
             if ev.type == pygame.MOUSEMOTION: 
-                store.mousex = x
-                store.mousey = y
-                #wnfh_Data.write("xCord",store.mousex)
-                #wnfh_Data.write("yCord",store.mousey)
-                #renpy.redraw(renpy.current_screen(),0)
-                #renpy.full_redraw()
                 renpy.restart_interaction()
-            #if ev.type == pygame.QUIT:
-            #path = "B:/SteamLibrary/steamapps/workshop/content/331470/Мы не отсюда/wnfh/scripts"
-            ##print(os.listdir(path))
-            ##print(pathlib.Path(__file__))
-            #wnfh_Data.write("path",os.path.realpath(__file__))
-            #for i in os.listdir(path)[0:-1]:
-            #    for n in os.listdir(path+"/"+i):
-            #        if n.endswith(".rpyc"):
-            #            pass
-            #            #os.remove(path + "/" + i + "/" +n)
+                
         def render(self, width, height, st, at):
             return renpy.Render(400, 400)
 

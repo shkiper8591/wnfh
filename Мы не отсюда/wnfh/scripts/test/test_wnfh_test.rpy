@@ -47,7 +47,7 @@ label wnfh_test_main_menu:
         "Карта?":
             jump wnfh_test_map
         "Покинуть меню отладки":
-            jump wnfh_main_menu
+            return
 
 label wnfh_test_sprites:
     
@@ -63,5 +63,4 @@ label wnfh_test_sprites:
         "Вернутся назад.":
             jump wnfh_test_main_menu
 
-    "База Данных сброшена! Кликни чтобы вернутся в тест меню."
     jump wnfh_test_main_menu

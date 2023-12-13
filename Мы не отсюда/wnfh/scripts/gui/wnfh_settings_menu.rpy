@@ -73,9 +73,9 @@ init 2:
           
         
         
-        #frame:
-        #    background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
-        #    area(0.0, 0.0, 1.0, 1.0)
+        frame:
+            background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
+            area(0.0, 0.0, 1.0, 1.0)
         frame:
             background wnfh_gui["settings"]["base"]
             area(0.5, 0.0, 1461, 1080)
@@ -121,9 +121,9 @@ init 2:
                                 yanchor 0.5
                                 text bar[1]:
                                     pos(0.5, 0.5)
-                                    style "wnfh_settings"
+                                    style "wnfh_choice_" + persistent.timeofday
                                     xanchor 0.5
-                                    size 70
+                                    size 30
                                     kerning 1
                                     min_width 200
                                     layout "tex"
@@ -137,7 +137,7 @@ init 2:
                                     right_bar bar_null
                                     thumb htumb
                                     hover_thumb htumb
-                                    xmaximum 1.0 ymaximum 73 yanchor 0.5 ypos 0.5
+                                    xmaximum 0.5 ymaximum 73 yanchor 0.5 ypos 0.5
                                 
                 add wnfh_gui["settings"]["line"]:
                     pos(0.5, 0.41)
@@ -155,7 +155,7 @@ init 2:
                                 yanchor 0.5
                                 text bar[1]:
                                     pos(0.5, 0.5)
-                                    style "wnfh_settings"
+                                    style "wnfh_choice_" + persistent.timeofday
                                     xanchor 0.5
                                     size 50
                                     kerning 1
@@ -188,7 +188,7 @@ init 2:
                             pos(0.5, 1.0)
                             xanchor 0.5 yanchor 1.0
                             text wnfh_preferences_switch[7][1]:
-                                style "wnfh_settings"
+                                style "wnfh_choice_" + persistent.timeofday
                                 pos(0.5, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 text_align 0.5
@@ -203,7 +203,7 @@ init 2:
                                 hover wnfh_gui["settings"][key_values[persistent.mat_filter]]
                                 action wnfh_preferences_switch[7][2+persistent.mat_filter]
                             text wnfh_preferences_switch[7][5][persistent.mat_filter]:
-                                style "wnfh_settings_underwrites"
+                                style "wnfh_choice_" + persistent.timeofday
                                 pos(0.5, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 text_align 0.5
@@ -278,7 +278,7 @@ init 2:
                                             xanchor 0.0 yanchor 0.0
                                         
                                             text wnfh_preferences_switch[i][1]:
-                                                style "wnfh_settings"
+                                                style "wnfh_choice_" + persistent.timeofday
                                                 pos(0.5, 0.5)
                                                 xanchor 0.5
                                                 text_align 0.5

@@ -35,9 +35,15 @@ init -2 python:
     
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
         "bar_full",
-        "bar_full2",
+        "bar_bg",
         "bar_null",
-        "htumb"
+        "bar_htumb",
+        "im_bg",
+        "im_line",
+        "im_gradient",
+        "pr_big_frame",
+        "pr_big_frame_bg",
+        "vignette",
     ]}
 
     # Для главного меню
@@ -240,12 +246,7 @@ init -2 python:
         "gradient"
         ]}
 
-    wnfh_gui["ingame_menu"] = {img:(wnfh_INGAME_MENU + img + ".png") for img in [
-        "vignette",
-        "bg",
-        "line",
-        "gradient"
-        ]}
+    
 
 init 2:
     

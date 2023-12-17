@@ -23,10 +23,18 @@ init 2:
         $ button_purpl =     "#0000"
 
     screen wnfh_preferences():
+
         modal True tag menu
-        $ bar_full = Frame(wnfh_gui["tint_elements"]["bar_full"], 38, 38)
-        $ bar_null = Frame(wnfh_gui["tint_elements"]["bar_null"], 38, 38)
-        $ htumb    = wnfh_gui["tint_elements"]["htumb"]
+
+        default wnfh_screen_1 = False
+        default wnfh_screen_2 = False
+        default wnfh_screen_3 = False
+        default wnfh_screen_4 = False
+
+        default wnfh_preferences_1 = False
+        default wnfh_preferences_2 = False
+        default wnfh_preferences_3 = False
+
         key "game_menu":
             action NullAction()
         
@@ -34,19 +42,31 @@ init 2:
             action NullAction()
                 
         python:
+            wnfh_screen_variable = [
+                wnfh_screen_1,
+                wnfh_screen_2,
+                wnfh_screen_3,
+                wnfh_screen_4,
+            ]
+            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1, 5))
+
+            wnfh_preferences_variable = [
+                wnfh_preferences_1,
+                wnfh_preferences_2,
+                wnfh_preferences_3,
+            ]
+            wnfh_preferences_variable_string = list('wnfh_preferences_' + str(i) for i in range(1, 4))
+
             def menu_img_status(imgf, condition="hover"):
                 if condition == "hover":
                     return im.MatrixColor(imgf, im.matrix.contrast(1.7))
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
-                    
-            wnfh_preferences_button = [
-                
-                 #Тег кнопки    #Изображение кнопки                           #Действие кнопки
-                ["return"      ,wnfh_gui["settings"]["return"]               ,[Return()]                                           ],
-                
-            ]
-            wnfh_underwrites = {"skip":[_preferences.skip_unseen,"Прочитанное","Всё"],"font":[persistent.font_size=="large","Обычный","Жирный"]}
+
+            wnfh_underwrites = {
+                "skip": [_preferences.skip_unseen, "Прочитанное", "Всё"],
+                "font": [persistent.font_size == "large", "Обычный", "Жирный"]
+            }
             wnfh_preferences_switch = [
                  #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
                 ["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
@@ -59,20 +79,28 @@ init 2:
                 ["mat_filter"       ,"Мат-фильтр"                 ,SetField(persistent, "mat_filter", 1),             SetField(persistent, "mat_filter", 2)               ,  SetField(persistent, "mat_filter", 0)                                                        , ["Без цензуры","Как-то так: #@!&%","Литератураня замена"]]
             ]
 
+            wnfh_preferences_button = [
+                ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
+                ["Аудио"                 ,[ToggleScreenVariable(wnfh_preferences_variable_string[1], True), ToggleScreenVariable(wnfh_preferences_variable_string[0], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
+                ["Для разработчиков"     ,[ToggleScreenVariable(wnfh_preferences_variable_string[2], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[0], False)]],
+                ["Выход"                 ,[Return()]                                     ],
+     
+            ]
+
             wnfh_bars = [
                 ["bar_full", im.Composite(
-                    (473, 38),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full2"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
+                    (473, 37),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
                 ["bar_null", im.Composite(
-                    (473, 38),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full2"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
+                    (473, 37),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))]
+                ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))]
             ]
             wnfh_preferences_bar = [
                 
@@ -83,7 +111,7 @@ init 2:
                 ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
                 ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
             ]
-            key_values=["triple_off","triple_on1","triple_on2"]
+            key_values = ["triple_off", "triple_on1", "triple_on2"]
         
           
         
@@ -99,24 +127,7 @@ init 2:
             frame:
                 background background_color
                 area(0.5, 0.0, 0.7, 1.0)
-                xanchor 0.5
-            
-                frame: # ======================================================= # Выход
-                    background background_color
-                    area(0.0, 0.0, 200, 100)
-                    xanchor 0.0 yanchor 0.0
-                    frame:
-                        xmargin 5
-                        background button_blue
-                        area(0.0, 0.5, 1.0, 1.0)
-                        xanchor 0.0 yanchor 0.5
-                        textbutton "Выход":
-                            background None
-                            text_style "wnfh_choice_" + persistent.timeofday
-                            action wnfh_preferences_button[0][2]
-                            hover_sound wnfh_gui["sound"]["plimp"]
-                            at wnfh_mm_button_hover_atl()
-                                
+                xanchor 0.5             
                 text "Настройки":
                     pos(0.5, 0.5)
                     style "wnfh_choice_" + persistent.timeofday
@@ -131,12 +142,181 @@ init 2:
             xanchor 0.5
             frame:
                 background background_color
-                area(0.0, 0.5, 500, 500)
+                area(0.0, 0.3, 500, 300)
                 yanchor 0.5
-            frame:
-                background background_color
-                area(0.5, 0.0, 0.46, 1.0)
-                xanchor 0.5
+                grid 1 4:
+                    anchor (0.5, 0.5) pos (0.5, 0.5)
+                    spacing 2
+    
+                    for index, i in enumerate(wnfh_preferences_button[0:4]):
+                        frame:
+                            background "#0000"
+                            area(0.5, 0.5, 1.0, 65)
+                            xanchor 0.5 yanchor 0.5
+        
+                            add (wnfh_gui["tint_elements"]["im_line"]):
+                                xzoom 0.7
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                xalign 0.5 yanchor 1.0
+        
+                            add (wnfh_gui["tint_elements"]["im_bg"]):
+                                xzoom 0.7
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                                xalign 0.5
+        
+                            if wnfh_screen_variable[index]:
+                                add (wnfh_gui["tint_elements"]["im_gradient"]):
+                                    xzoom 0.7
+                                    xalign 0.5 alpha 0.6
+                                    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
+                                add (wnfh_gui["tint_elements"]["im_gradient"]):
+                                    xzoom 0.7
+                                    xalign 0.5 alpha 0.1
+                            else:
+                                null height 20
+        
+                            add (wnfh_gui["tint_elements"]["im_line"]):
+                                xzoom 0.7
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                xalign 0.5 ypos 1.0 yanchor 0.0
+    
+                            textbutton i[0]:
+                                text_line_leading 5 text_line_spacing 3
+                                text_min_width 390
+                                text_text_align 0.5
+                                xalign 0.5 yanchor 0.5 ypos 0.5
+                                text_style "wnfh_choice_" + persistent.timeofday
+                                background None
+                                hover_sound wnfh_gui["sound"]["plimp"]
+                                hovered ToggleScreenVariable(wnfh_screen_variable_string[index])
+                                unhovered ToggleScreenVariable(wnfh_screen_variable_string[index])
+                                action (i[1])
+
+            if wnfh_preferences_variable[0]: # ===================== Интерфейс
+                frame:
+                    background background_color
+                    area(0.5, 0.0, 0.46, 1.0)
+                    xanchor 0.5
+
+                    add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        xalign 0.5
+                    add (wnfh_gui["tint_elements"]["pr_big_frame"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        xalign 0.5
+                    grid 1 2:
+                        for bar in wnfh_preferences_bar[3:6]:
+                            frame:
+                                background background_color
+                                area(0.0, 0.0, 1.0, 60)
+                                frame:
+                                    background button_red
+                                    area(0.0, 0.5, 350, 1.0)
+                                    yanchor 0.5
+                                    text bar[1]:
+                                        pos(0.5, 0.5)
+                                        style "wnfh_choice_" + persistent.timeofday
+                                        xanchor 0.5
+                                        size 20
+                                        kerning 1
+                                        min_width 200
+                                        layout "tex"
+                                        #action Play("sound", wnfh_gui["sound"]["plimp"]) 
+                                frame:
+                                    background button_green
+                                    area(1.0, 0.5, 485, 1.0)
+                                    xanchor 1.0 yanchor 0.5
+                                    bar value bar[2]:
+                                        left_bar wnfh_bars[0][1]
+                                        right_bar wnfh_bars[1][1]
+                                        thumb wnfh_bars[2][1]
+                                        hover_thumb wnfh_bars[2][1]
+                                        xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+                    frame:
+                        background button_green
+                        area(1.0, 0.5, 485, 1.0)
+                        xanchor 1.0 yanchor 0.5
+                        bar value bar[2]:
+                            left_bar wnfh_bars[0][1]
+                            right_bar wnfh_bars[1][1]
+                            thumb wnfh_bars[2][1]
+                            hover_thumb wnfh_bars[2][1]
+                            xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+                    text "Интерфейс":
+                        pos(0.5, 0.5)
+                        style "wnfh_choice_" + persistent.timeofday
+                        xanchor 0.5
+                        size 30
+                        kerning 1
+                        min_width 200
+                        layout "tex"
+            elif wnfh_preferences_variable[1]: # ===================== Аудио
+                frame:
+                    background background_color
+                    area(0.5, 0.0, 0.46, 1.0)
+                    xanchor 0.5
+
+                    add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        xalign 0.5
+                    add (wnfh_gui["tint_elements"]["pr_big_frame"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        xalign 0.5
+
+                    grid 1 3:
+                        for bar in wnfh_preferences_bar[0:3]:
+                            frame:
+                                background background_color
+                                area(0.0, 0.0, 1.0, 60)
+                                frame:
+                                    background button_red
+                                    area(0.0, 0.5, 0.2, 1.0)
+                                    yanchor 0.5
+                                    text bar[1]:
+                                        pos(0.5, 0.5)
+                                        style "wnfh_choice_" + persistent.timeofday
+                                        xanchor 0.5
+                                        size 30
+                                        kerning 1
+                                        min_width 200
+                                        layout "tex"
+                                        #action Play("sound", wnfh_gui["sound"]["plimp"]) 
+                                frame:
+                                    background button_green
+                                    area(1.0, 0.5, 485, 1.0)
+                                    xanchor 1.0 yanchor 0.5
+                                    bar value bar[2]:
+                                        left_bar wnfh_bars[0][1]
+                                        right_bar wnfh_bars[1][1]
+                                        thumb wnfh_bars[2][1]
+                                        hover_thumb wnfh_bars[2][1]
+                                        xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+
+            elif wnfh_preferences_variable[2]: # ===================== Амогус
+                frame:
+                    background background_color
+                    area(0.5, 0.0, 0.46, 1.0)
+                    xanchor 0.5
+
+                    add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        xalign 0.5
+                    add (wnfh_gui["tint_elements"]["pr_big_frame"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        xalign 0.5
+                    
+                    text "Амогус":
+                        pos(0.5, 0.5)
+                        style "wnfh_choice_" + persistent.timeofday
+                        xanchor 0.5
+                        size 30
+                        kerning 1
+                        min_width 200
+                        layout "tex"
+
+                
+
+
             frame:
                 background background_color
                 area(1.0, 0.3, 500, 200)

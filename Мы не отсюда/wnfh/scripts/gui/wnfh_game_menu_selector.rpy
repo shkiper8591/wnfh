@@ -84,24 +84,24 @@ init 2:
                         area(0.5, 0.5, 1.0, 65)
                         xanchor 0.5 yanchor 0.5
     
-                        add (wnfh_gui["ingame_menu"]["line"]):
+                        add (wnfh_gui["tint_elements"]["im_line"]):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                             xalign 0.5 yanchor 1.0
     
-                        add (wnfh_gui["ingame_menu"]["bg"]):
+                        add (wnfh_gui["tint_elements"]["im_bg"]):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
                             xalign 0.5
     
                         if wnfh_screen_variable[index]:
-                            add (wnfh_gui["ingame_menu"]["gradient"]):
+                            add (wnfh_gui["tint_elements"]["im_gradient"]):
                                 xalign 0.5 alpha 0.6
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
-                            add (wnfh_gui["ingame_menu"]["gradient"]):
+                            add (wnfh_gui["tint_elements"]["im_gradient"]):
                                 xalign 0.5 alpha 0.1
                         else:
                             null height 20
     
-                        add (wnfh_gui["ingame_menu"]["line"]):
+                        add (wnfh_gui["tint_elements"]["im_line"]):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                             xalign 0.5 ypos 1.0 yanchor 0.0
 
@@ -117,25 +117,4 @@ init 2:
                             unhovered ToggleScreenVariable(wnfh_screen_variable_string[index])
                             action (i[1])
 
-        add wnfh_gui["ingame_menu"]["vignette"]
-        #button style "blank_button" xpos 0 ypos 0 xfill True yfill True action Return()
-    #
-        #add get_image("gui/ingame_menu/"+timeofday+"/ingame_menu.png") xalign 0.5 yalign 0.5
-        #imagemap:
-        #    if _preferences.language == None:
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_%s.png") xalign 0.5 yalign 0.5
-        #    elif _preferences.language == "spanish":
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_es_%s.png") xalign 0.5 yalign 0.5
-        #    elif _preferences.language == "italian":
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_it_%s.png") xalign 0.5 yalign 0.5
-        #    elif _preferences.language == "english":
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_en_%s.png") xalign 0.5 yalign 0.5
-        #    elif _preferences.language == "chinese":
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_ch_%s.png") xalign 0.5 yalign 0.5
-        #    elif _preferences.language == "japanese":
-        #        auto get_image("gui/ingame_menu/"+timeofday+"/ingame_menu_en_%s.png") xalign 0.5 yalign 0.5
-        #    hotspot (0, 83, 660, 65) focus_mask None clicked MainMenu()
-        #    hotspot (0, 148, 660, 65) focus_mask None clicked ShowMenu('save')
-        #    hotspot (0, 213, 660, 65) focus_mask None clicked ShowMenu('load')
-        #    hotspot (0, 278, 660, 65) focus_mask None clicked (ShowMenu('preferences'), Hide('game_menu_selector'))
-        #    hotspot (0, 343, 660, 65) focus_mask None clicked ShowMenu('quit')
+        add wnfh_gui["tint_elements"]["vignette"]

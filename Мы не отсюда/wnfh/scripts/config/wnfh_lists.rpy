@@ -33,6 +33,12 @@ init -2 python:
         "prologue": ["#98D8DA", "#BEE8E9", "#000A20" ], 
     }
     
+    wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
+        "bar_full",
+        "bar_null",
+        "htumb"
+    ]}
+
     # Для главного меню
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [
         "mm_bg",

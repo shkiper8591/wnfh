@@ -24,9 +24,9 @@ init 2:
 
     screen wnfh_preferences():
         modal True tag menu
-        $ bar_full = Frame(wnfh_gui["settings"]["bar_full"], 73, 73)
-        $ bar_null = Frame(wnfh_gui["settings"]["bar_null"], 73, 73)
-        $ htumb    = wnfh_gui["settings"]["htumb"]
+        $ bar_full = Frame(wnfh_gui["tint_elements"]["bar_full"], 38, 38)
+        $ bar_null = Frame(wnfh_gui["tint_elements"]["bar_null"], 38, 38)
+        $ htumb    = wnfh_gui["tint_elements"]["htumb"]
         key "game_menu":
             action NullAction()
         
@@ -137,7 +137,7 @@ init 2:
                                     right_bar bar_null
                                     thumb htumb
                                     hover_thumb htumb
-                                    xmaximum 0.5 ymaximum 73 yanchor 0.5 ypos 0.5
+                                    xmaximum 0.5 ymaximum 38 yanchor 0.5 ypos 0.5
                                 
                 add wnfh_gui["settings"]["line"]:
                     pos(0.5, 0.41)

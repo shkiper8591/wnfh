@@ -1,0 +1,50 @@
+<FILENAME>
+filename=Странная сцена
+<END>
+
+<BACKGROUND>
+background_displayable=bg int_clubs_male2_night_nolight
+xoffset=0
+yoffset=0
+alpha=1.0
+zoom=1.0
+rotate_angle=0
+<END>
+
+<AUDIO>
+music_name=Smooth machine
+music_src=sound/music/smooth_machine.ogg
+ambience_name=Клубы. Внутри. День
+ambience_src=sound/ambiences/clubs_inside_day.ogg
+<END>
+
+<SPRITES>
+sprites_amount=2
+
+<SPRITE>
+sprite_special_name=Кто этот слон?
+sprite_displayable=el grin pioneer close
+tint_name=Закат
+tint_index=1
+xoffset=-954
+yoffset=389
+alpha=1.0
+zoom=1.0
+rotate_angle=22
+zorder=0
+<SPRITE_END>
+
+<SPRITE>
+sprite_special_name=А это кто?
+sprite_displayable=sh smile pioneer
+tint_name=Закат
+tint_index=1
+xoffset=865
+yoffset=402
+alpha=1.0
+zoom=1.0
+rotate_angle=338
+zorder=0
+<SPRITE_END>
+<END>
+<END_FILE>

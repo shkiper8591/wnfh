@@ -1,0 +1,24 @@
+<FILENAME>
+filename=Базовая сцена
+<END>
+
+<BACKGROUND>
+background_displayable=bg ext_square_sunset
+xoffset=0
+yoffset=0
+alpha=1.0
+zoom=1.0
+rotate_angle=0
+<END>
+
+<AUDIO>
+music_name=Ничего не играет
+music_src=None
+ambience_name=Ничего не играет
+ambience_src=None
+<END>
+
+<SPRITES>
+sprites_amount=0
+<END>
+<END_FILE>

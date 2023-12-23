@@ -1,0 +1,24 @@
+<FILENAME>
+filename=Юля в пещере
+<END>
+
+<BACKGROUND>
+background_displayable=cg d4_uv_1
+xoffset=-240
+yoffset=214
+alpha=1.0
+zoom=1.55875296908
+rotate_angle=2
+<END>
+
+<AUDIO>
+music_name=Mystery girl v2
+music_src=sound/music/mystery_girl.ogg
+ambience_name=Ничего не играет
+ambience_src=None
+<END>
+
+<SPRITES>
+sprites_amount=0
+<END>
+<END_FILE>

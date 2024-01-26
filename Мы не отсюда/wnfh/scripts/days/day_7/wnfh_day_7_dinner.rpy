@@ -471,7 +471,7 @@ label d7_dv_usw_zavtrak:
         ["d7_choice_n8", "Алиса предлагает облить пополнение в лагере."]
         ) with sphere_blure_dissolve2
 
-    label d7_dv_yes_1:
+label d7_dv_yes_1:
 
     "Взвесив все за и против, я решил, что это отличная идея."
 
@@ -483,7 +483,7 @@ label d7_dv_usw_zavtrak:
 
     jump d7_me_meet_kat_w_dw_n_usw
 
-    label d7_dv_no_1:
+label d7_dv_no_1:
 
     "Идея, мягко говоря, звучала ужасно и я никак не мог подписаться на что-то подобное."
 

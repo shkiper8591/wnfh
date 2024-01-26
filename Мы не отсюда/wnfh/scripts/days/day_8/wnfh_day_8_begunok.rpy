@@ -19,7 +19,7 @@ label d8_begunok:
 
         jump d8_begunok_w_un
 
-    else wnfh_Data.getChoice_result_number("d8_choice_n1") == 2:
+    else: #wnfh_Data.getChoice_result_number("d8_choice_n1") == 2:
 
         jump d8_begunok_canon
 

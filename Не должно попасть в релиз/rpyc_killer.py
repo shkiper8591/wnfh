@@ -4,7 +4,7 @@ if __name__ == "__main__":
     print("Запуск")
     time.sleep(2)
     try:
-        path = str(os.path.realpath(__file__)).rsplit("\\", 2)[0] + "\Мы не отсюда\wnfh\scripts"
+        path = str(os.path.realpath(__file__)).rsplit("\\", 2)[0] + "\Мы не отсюда\wnfh\scripts\days"
         for i in os.listdir(path)[0:-1]:
             for n in os.listdir(path+"/"+i):
                 if n.endswith(".rpyc"):

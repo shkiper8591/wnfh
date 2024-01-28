@@ -8,7 +8,7 @@ init 2:
     $ persistent.mat_filter = 1
     $ persistent.hentai_mod = False
 
-    $ debag_switch = 0
+    $ debag_switch = 1
     if debag_switch:
         $ background_color = "#0005"
         $ button_red =       "#F005"

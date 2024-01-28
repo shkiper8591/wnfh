@@ -2,6 +2,7 @@ label d7_me_meet_kat_alone:
 
     window hide dissolve
     $ wnfh_set_time()
+    $ wnfh_Data.FlagSet("d7_kat_oblil_me", False)
     stop music fadeout 3.5
     stop ambience fadeout 2.0
     scene bg ext_dining_hall_near_day with dissolve2

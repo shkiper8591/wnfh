@@ -51,7 +51,7 @@ label d7_me_search_2:
 
 label d7_me_search_3:
 
-    $ wnfh_Data.FlagSet("d7_search_3")
+    $ wnfh_Data.FlagSet("d7_search_3", True)
 
     "Изучив все варианты, мне остался только один, а именно их домик."
     "Куда я сразу же и направился."
@@ -59,7 +59,9 @@ label d7_me_search_3:
     jump d7_me_search_dv_house
 
 label d7_me_search_dv_beach:
-
+    
+    $ wnfh_Data.FlagSet("d7_beach_check", True)
+    
     th "Вряд ли я их там найду, хотя в такую жаркую погоду искупаться самое то."
     th "А посему, думаю я могу их там найти[wp] Ну или хотя бы следы их пребывания."
 
@@ -77,7 +79,7 @@ label d7_me_search_dv_beach:
 
     "Я постоял, посмотрел по сторонам, почесал репу и пошёл обратно."
 
-    if wnfh_Data.getChoice_result_number("d7_choice_n10") == 2 or wnfh_Data.getChoice_result_number("d7_choice_n13") == 2:
+    if wnfh_Data.FlagDataGet("d7_sport_check") == True:
 
         jump d7_me_search_3
 
@@ -86,6 +88,8 @@ label d7_me_search_dv_beach:
         jump d7_me_search_2
 
 label d7_me_search_dv_sport:
+    
+    $ wnfh_Data.FlagSet("d7_sport_check", True)
 
     th "Думаю там есть шансы их встретить, раз они так любят заниматься спортом."
 
@@ -164,7 +168,7 @@ label d7_me_search_dv_sport:
 
     "Резко развернувшись на месте на 180, я зашагал обратно к площади."
 
-    if wnfh_Data.getChoice_result_number("d7_choice_n10") == 3 or wnfh_Data.getChoice_result_number("d7_choice_n12") == 2:
+    if wnfh_Data.FlagDataGet("d7_sport_check") == True:
 
         jump d7_me_search_3
 

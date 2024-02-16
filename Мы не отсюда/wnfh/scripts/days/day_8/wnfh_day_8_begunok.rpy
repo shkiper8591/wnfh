@@ -257,13 +257,17 @@ label d8_begunok_w_mi:
     # хз какую тут музыку поставить, так что пооооооооох
 
     "Выйдя из музклуба, Мику быстренько заперла за нами дверь."
+
+    show kat confused pioneer at left with dspr
     
     kat "Ух ты, у вас ещё и плотники тут есть?"
     me "Да, напротив нашего клуба авиамоделирования, Стас и Сергей."
     me "Странные ребята, если честно[wp]"
-    mi "По правде говоря, впервые слышу вообще о них."
-    me "Ну, неудивительно, они же из другого отряда, и почти безвылазно сидят у себя. А вот чем они там занимаются, — неизвестно."
 
+    show mi upset pioneer at right with dspr
+
+    mi "По правде говоря, впервые слышу вообще о них."
+    me "Ну, неудивительно, они же из другого отряда, и почти безвылазно сидят у себя."
 
     show bg ext_clubs_day with dissolve2
 
@@ -274,7 +278,7 @@ label d8_begunok_w_mi:
     stop ambience fadeout 3.5
     scene bg int_clubs_male_day
     show el normal pioneer at fleft
-    show sh normal pioneer at cleft
+    show sh normal at cleft
     show kat normal pioneer at cright
     show mi normal pioneer at fright
     with dissolve2
@@ -287,33 +291,70 @@ label d8_begunok_w_mi:
     
     "Шурик оторвался от стола и перевёл свой взгляд на нас."
     
+    show sh surprise pioneer at cleft with dspr
+
     sh "Ого, да ты не один я гляжу, а с целой делегацией[wp]"
+    
+    show mi grin pioneer at fright with dspr
+
     mi "Да, я тут к Семёну и Кате заделалась в компаньоны, чтобы им скучно не было, пока бегунок заполняют."
+    
+    show sh normal at cleft with dspr
+
     sh "Да я уж понял."
     
     "Тем временем Сергей вообще не обращал на нас никакого внимания, и увлечённо что-то крутил отвёрткой."
     "За это Шурик дал ему легкий подзатыльник."
     
     sh "Серый, у нас гости, поприветствуй хотя бы."
+    
+    show el smile pioneer at fleft with dspr
+
     el "А, что? Ой. Здарова Семён, привет Мику и здравствуй э-э[wp]"
     
+    show el surprise pioneer at fleft with dspr
+
     "Глядя на Катю, Сергей сильно задумался."
     
+    show kat interested pioneer at cright with dspr
+
     kat "Катя."
+
+    show el laugh pioneer at fleft with dspr
+
     el "Катя! Приятно познакомиться, я Серый."
+
+    show kat grin pioneer at cright with dspr
+
     kat "А я розовая!"
     
     "Хихикая ответила Катя."
     
+    show mi grin pioneer at fright with dspr
+
     mi "А я, аквамаринованая!"
     
     "Также хихикая сказала Мику."
     
     me "Мику, правильно аквамариновая."
+
+    show mi shy pioneer at fright with dspr
+
     mi "Ой[wp]"
     
+    show kat laugh pioneer at cright
+    show mi laugh pioneer at fright
+    show sh laugh at cleft
+    with dspr
+
     "Секунду спустя, все присутствующие в помещении, включая Мику, посмеялись с такой нелепой ошибки, после чего продолжили общение."
     
+    show kat normal pioneer at cright
+    show mi normal pioneer at fright
+    show sh normal at cleft
+    show el normal pioneer fleft
+    with dspr
+
     kat "Мне тоже приятно познакомиться."
     
     "Сказала она и протянула руку Сергею, которую он и пожал, после чего протянула Шурику."
@@ -332,35 +373,269 @@ label d8_begunok_w_mi:
     sh "Хорошо-хорошо[wp]"
     
     "Взяв листок, Шурик отошёл в дальнюю часть помещения."
+
+    show mi upset pioneer at fright with dspr
     
     mi "Ребята, а вот помимо самолёта, чем вы ещё занимаетесь?"
+
+    show el grin pioneer at fleft with dspr
+
     el "Компьютеры ломаем."
     sh "Буквально."
     
+    show mi serious pioneer at fright with dspr
+
     "Мику оглядела кусок платы подсоединённый к монитору."
     
     mi "И-и-и, зачем?"
     
+    show sh upset at cleft
+    show el surprise pioneer at fleft
+    with dspr
+
     "Этот вопрос ввёл в ступор парней."
     "Они отвлеклись от своих дел, переглянулись между собой и глядя на Мику пожали плечами, после чего каждый вернулся к своим делам."
     
+    show el normal pioneer at fleft
+    show sh normal at cleft
+    with dspr
+
     th "Интересно, чего там Шурик так долго? Опять что ли ручку потерял? Постоянно же ей пользуется, и постоянно её теряет."
     
+    show kat thinking pioneer at cright with dspr
+
     kat "Ну а если серьёзно, то зачем? Так просто переводите ещё работоспособные вещи."
-    
+
     "В это время к нам вернулся Шурик, и вручая бегунок Кате, поправляя очки, сказал."
     
+    show sh normal_smile at cleft with dspr
+
     sh "Наверное стоит разъяснить, что мы не ломаем ещё дееспособные платы, а добиваем уже то, что изжило себя и со дня на день сгорит."
     kat "А, вот оно что[wp] Резонно[wp]"
+
+    show sh normal at cleft with dspr
+
     sh "Вот и мы так думаем. Ладно, не буду вас более задерживать."
     
+    hide kat
+    hide mi
+    with dissolve
+    # тут надо бы звук открытия двери мб
+
     "Девушки вышли первыми из здания, я же немного задержался."
-    
+
     me "Че, я сильно нужен буду сегодня?"
     sh "Не знаю, по обстоятельствам смотреть будем."
     me "Ладно, тогда увидимся когда увидимся."
 
-    "продолжение следует"
+    stop ambience fadeout 3.5
+    scene bg ext_clubs_day
+    show kat normal pioneer at left
+    show mi normal pioneer at right
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
+
+    me "Ну что ж, теперь в медпункт."
+    mi "Ой, не люблю посещать медпункты, да и больницы в целом."
+    
+    show kat confused pioneer at left with dspr
+
+    kat "Хм? Почему?"
+
+    show mi sad pioneer at right with dspr
+
+    mi "Не люблю запах лекарст, очень тошнить начинает от него."
+
+    show kat upset pioneer at left with dspr
+
+    kat "Да уж, тут не поспорить, аромат лекарств не самый приятный."
+    
+    show mi upset pioneer at right with dspr
+
+    mi "Да, поэтому я вас снаружи подожду, ладно? В конце-концов, я же просто ваша, так сказать, попутчица, и мне не обязательно заходить с вами, и[wp]"
+    
+    show mi normal pioneer at right
+    show kat normal pioneer at left
+    with dspr
+
+    me "Да, хорошо, Мику, можешь подождать нас снаружи."
+    mi "Отлично."
+    
+    window hide dissolve
+    scene bg ext_aidpost_day 
+    show kat normal pioneer at center
+    with dissolve2
+    window show dissolve
+
+    "Придя к медпункту, Мику осталась немного поодаль от здания, а я с Катей подошли, собственно, к главному входу и постучались."
+    
+    cs "Входите!"
+    
+    "Громко раздалось изнутри и мы вошли внутрь."
+    
+    stop ambience fadeout 3.5
+    scene bg int_aidpost_day
+    show kat normal pioneer at left
+    show cs normal glasses at right far
+    play ambience ambience_medstation_inside_day fadein 3.5
+    play music music_list["eternal_longing"] fadein 4.5
+
+    "Внутри медпункта, как не неожиданно, сидела наша медсестра."
+    th "Хотя, в её отношении, справедливо медтётя какая-нибудь, ей же явно за тридцатник, ну или около того."
+    
+    cs "Так-так-так, что мы имеем. Семён, один из главных любителей встрять в неприятности."
+    
+    "Говорила она указывая на меня ручкой."
+    
+    cs "И неизвестная мне девушка[wp]"
+
+    "Сказала она указав ручкой уже на Катю."
+
+    cs "У тебя, Семён, во взгляде читается некая[wp] Подавленность."
+    cs "В то время как у девушки радостный взгляд[wp]"
+    cs "Складываем два и два[wp]"
+    
+    th "Только бы обошлось без пошлостей. Я не хочу сегодня краснеть перед кем либо."
+    
+    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+    
+        th "Тем более, после того как облил её, это же вообще будет полное добивание меня."
+    
+    show cs normal glasses at right with dspr
+
+    "Виола медленно встала со стула и подошла к нам."    
+
+    cs "Вы пришли заполнить обходной лист."
+    kat "Да, именно так."
+    
+    "Я демонстративно утёр пот со лба."
+    
+    cs "Семён, ты какой-то сам не свой, случилось что-то? Может приболел?"
+    me "Нет-нет, всё в порядке."
+    cs "Ну-ну, если что, в этом помещении тебя за один день на ноги поставят."
+    
+    "В это время Катя протянула руки с листом нашей медсестре."
+    
+    show kat smile pioneer at left with dspr
+
+    kat "Здравствуйте, я новенькая здесь, меня зовут Катя!"
+    cs "Очень приятно, я Виолетта, но лучше зови меня и Виола, так даже благозвучнее."
+    cs "Что ж, как я уже говорила, это то место, где всё вылечат в максимально короткие сроки."
+    
+    show kat grin pioneer at left with dspr
+
+    kat "Что, даже перелом какой-нибудь?"
+
+    show cs smile glasses at right with dspr
+
+    "Виола усмехнулась с такого вопроса."
+
+    cs "Даже перелом[wp] {w}В травмпункте города Гравипадово."
+
+    show kat smile2 pioneer at left with dspr
+
+    kat "Ха, а говорите всё лечат у вас!"
+    cs "Ну, я медсестра, а не волшебница в конце концов."
+    cs "Ладненько, не буду вас долго задерживать."
+
+    "Взяв лист, который Катя всё ещё тянула медсестре, Виола прямо на месте поставила подпись и вернула его обратно."
+
+    cs "Всё, можете шагать спокойно, пионеры."
+    kat "Спасибо, до свидания!"
+
+    "На прощание Виола подмигнула нам и вернулась на своё место."
+
+    stop music fadeout 4.5
+    stop ambience fadeout 3.5
+    scene bg ext_aidpost_day
+    show kat normal pioneer at left
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
+
+    "Мы вышли на улицу, однако, нигде рядом не обнаружили нашу попутчицу."
+
+    me "Дела[wp]"
+
+    show kat interested at left with dspr
+
+    kat "По делам ушла наверное."
+
+    "И только мы сделали шаг, как я заметил, что вдалеке кто-то сидит за деревом."
+    "Вероятнее всего, это и была наша Мику."
+
+    me "Наверное, там она."
+
+    "Сказал я указав в сторону дерева."
+
+    show kat thinking at left with dspr
+
+    kat "Хм, возможно."
+
+    "Тихонько подойдя поближе, мы увидели Мику, которая радостно, словно мелкое дитё, легонько тыкала палкой муравейник."
+    "И наблюдение за реакцией муравьёв на столь вопиющее нападение, её очень даже забавляло."
+
+    th "Бедные создания, ну ничего, сейчас мы вас спасём от этого изверга!"
+
+    me "Кхм, Мику, мы всё."
+
+    "Мику немного испугалась и дёрнулась."
+
+    show mi shy pioneer at right with dspr
+
+    mi "Ой, напугал."
+
+    show kat grin pioneer at left with dspr
+
+    kat "Что, мурашей мучаешь?"
+
+    show mi normal pioneer at right with dspr
+
+    mi "Ну[wp] Так, самую малость, особо не мешая им при этом."
+
+    show kat smile pioneer at left with dspr
+
+    kat "Так, что нам осталось ещё?"
+    me "Получается, только библиотека и всё."
+    kat "Хорошо, веди тогда."
+    me "Ага, веди, она же вот напротив."
+
+    "Я рукой указал на соседнее здание через небольшой пролесок."
+
+    show kat thinking at left with dspr
+
+    kat "Ха, довольно компактно у вас тут."
+    
+    show mi grin pioneer at right with dspr
+
+    mi "А то, зато всё в шаговой доступности!"
+    me "Ну да ладно, не будем задерживаться на одном месте."
+    
+    show kat normal pioneer at left with dspr
+
+    kat "Точно."
+
+    show bg ext_library_day with dissolve2
+
+    "Пройдя буквально шагов десять, мы уже были перед зданием библиотеки."
+
+    me "Собственно вот он, главный бастион знаний и просто художественной литературы в этом лагере."
+
+    show kat interested at left with dspr
+
+    kat "Интересно, какие там книжки есть."
+    me "Такое ощущение, что все на этом свете[wp]"
+
+    "Проговорил я себе под нос и зашёл внутрь."
+
+    stop ambience fadeout 3.5
+    scene bg int_library_day
+    show kat normal pioneer at right
+    show mi normal pioneer at fright
+    show mz normal pioneer glasses
+    with dissolve2
+    play ambience ambience_library_day fadein 3.5
+
+    "placeholder"
 
 label d8_begunok_w_un:
 

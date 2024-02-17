@@ -631,9 +631,133 @@ label d8_begunok_w_mi:
     scene bg int_library_day
     show kat normal pioneer at right
     show mi normal pioneer at fright
-    show mz normal pioneer glasses
+    show mz normal pioneer glasses at left
     with dissolve2
     play ambience ambience_library_day fadein 3.5
+
+    "В библиотеке было, как обычно, немноголюдно."
+    "Только одна Женя сидела за своим рабочим местом и внимательно глазела на нас."
+
+    show mi upset pioneer at fright with dspr
+
+    "Особенно она сверлила взглядом Мику, но та лишь стеснительно уводила взгляд."
+
+    mz "Много же вас."
+    me "И тебе привет."
+    me "Слушай, нам тут это[wp]"
+
+    show mz bukal pioneer glasses at left with dspr
+
+    mz "Обходной лист, да-да, я была на линейке, Семён."
+    mz "И более того, я даже знаю как зовут нашу новенькую."
+
+    show kat joy pioneer at right with dspr
+
+    kat "Ого, значит не нужно представляться, отлично, а то я уже устала немного."
+
+    show kat normal at right
+    show mz smile pioneer glasses at left
+    with dspr
+
+    mz "Тебе нет, а мне вот следовало бы."
+
+    show mz normal pioneer glasses at left with dspr
+
+    "Она встала из-за своего рабочего места и подошла к нам, при этом всё также не спуская взгляда с Мику."
+
+    th "Да что такое? Может они повздорили? Хотя, это вздор какой-то, что самая дружелюбная девушка с кем-то поругалась."
+
+    "Видимо, не выдержав отсутствия инициативы со стороны Мику, Женя решила взять дело в свои руки."
+
+    show mz angry pioneer glasses at left with dspr
+
+    mz "Мику, а Мику. Ты мне когда книги вернёшь?"
+    mz "Хотя какой там книги, хотя бы одну книжку верни, уже хорошо будет!"
+
+    show kat confused pioneer at right with dspr
+
+    kat "Ого, Мику, а ты любительница литературы?"
+
+    show mz confused pioneer glasses at left with dspr
+
+    mz "О, ещё какая[wp]"
+
+    show mz angry pioneer glasses at left with dspr
+
+    mz "Правда, читает дрянь всякую зарубежную!"
+
+    show mi shy pioneer at fright with dspr
+
+    "Тем временем сама Мику вся залилась красным."
+
+    mi "Верну я тебе, верну, честное пионерское."
+    mz "Интересно, сколько я это выслушивать буду[wp]"
+
+    show mz normal pioneer glasses at left with dspr
+
+    mz "Короче говоря, чтобы через пару дней вернула всё что взяла, и не дай Бог я не досчитаюсь хоть одной, а иначе[wp]"
+
+    "Женя призадумывалась, выдумывая наказание для нашей музыкантки."
+
+    show mz excitement pioneer glasses at left with dspr
+
+    mz "Пороть тебя буду! Долго и нещадно!"
+
+    "Смешливым тоном сказала она."
+
+    show mi sad pioneer at fright with dspr
+
+    mi "Ну не надо, я правда всё принесу, честно-честно!"
+
+    show mz bukal pioneer glasses at left with dspr
+
+    mz "Смотри у меня[wp]"
+    mz "Ой, ладно, давай сюда бумажку эту свою."
+
+    "Женя вырвала обходный лист из рук Кати и, быстренько поставив там свою подпись, вернула его обратно."
+
+    mz "Вот, можете идти."
+    mz "Кстати, совсем забылась, я Женя."
+
+    show kat upset pioneer at right with dspr
+
+    kat "Очень приятно[wp]"
+
+    "Без особой радости в голосе пробурчала Катя."
+
+    mz "И ещё одно кстати. Семён."
+
+    th "Вот же блин, я уже думал, что она про меня забыла."
+
+    me "Да-да?"
+
+    show mz angry pioneer glasses at left with dspr
+
+    mz "С тобой как-нибудь отдельный разговор устроим!"
+
+    "Эти слова звучали не просто по злодейски, а по супер злодейски."
+
+    me "Х-Хорошо[wp]"
+
+    show mz laugh pioneer glasses at left with dspr
+
+    mz "Вот и славно."
+
+    show mz bukal pioneer glasses at left with dspr
+
+    mz "А теперь, пожалуйста, покиньте помещение."
+
+    "Услышал приказ библиотекарши, все мы без лишних раздумий, с радостью, покинули библиотеку."
+
+    window hide dissolve
+    stop ambience fadeout 3.5
+    stop music fadeout 4.5
+    scene bg ext_library_day
+    show kat normal pioneer at left
+    show mi upset pioneer at right
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
+    window show dissolve
 
     "placeholder"
 

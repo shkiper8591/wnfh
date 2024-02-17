@@ -110,7 +110,7 @@ label d8_begunok_w_mi:
     
     "Я быстренько глянул вперёд и ужаснулся, что идти ещё как минимум несколько минут."
     
-    th "Козалось бы, несколько минут, не так уж и много."
+    th "Казалось бы, несколько минут, не так уж и много."
     th "Но когда Мику прорывает на поговорить, голову забивает бесконечный поток мыслей, которые ещё не всегда связаны между собой."
     th "Однако, стоит отметить, что сам голос у неё приятный на слух."
     th "Вот нужно только решить ей проблему эту с невозможностью остановить свой поток слов."
@@ -759,11 +759,359 @@ label d8_begunok_w_mi:
     play ambience ambience_camp_center_day fadein 3.5
     window show dissolve
 
-    "placeholder"
+    kat "Да уж[wp]"
+    me "Что?"
+
+    show kat interested pioneer at left with dspr
+
+    kat "Она всегда такая злюка?"
+    me "За частую."
+
+    "Я легонько похлопал Мику по плечу."
+
+    me "Не грусти ты так из-за этого, просто верни книги ей и всё."
+    mi "Было бы это ещё так просто[wp]"
+    me "В каком смысле?"
+    mi "В таком, что я их потеряла!"
+    
+    show kat confused pioneer at left with dspr
+
+    kat "Как же ты так умудрилась?"
+
+    show mi cry pioneer at right with dspr
+
+    mi "Не знаю!"
+
+    "Заливаясь слезами и дрожжащим голосом ответила она."
+
+    th "Надо же, как сильно она переживает по такому пустяку. Как будто, Женя что-то страшное с ней сделает."
+
+    show kat smile pioneer at left with dspr
+
+    kat "Ну-ну, рыдать-то из-за книжек зачем. Давай, я тебе помогу их поискать после обеда, хорошо?"
+
+    show mi sad pioneer at right with dspr
+
+    "Предложение немного успокоило нашу музыкантку и та утерла слёзы."
+
+    mi "Хорошо[wp] Спасибо тебе."
+
+    show kat joy pioneer at left with dspr
+
+    kat "Не нужно благодарности."
+
+    show kat normal pioneer at left 
+    show mi serious pioneer at right
+    with dpsr
+
+    kat "А теперь, давайте уже сдадим этот обходной лист."
+    me "Прямо с языка сняла."
+
+    window hide dissolve
+    scene bg ext_houses_day with dissolve2
+    window show dissolve
+
+    "Я шёл немного впереди всей нашей группы."
+    "И лишь краем уха мне слышалось, как Катя и Мику обсуждали книги."
+    "В основном, они обсуждали романы про любовь. Видимо, ничего другого их не интересовало."
+
+    th "Как же хорошо, что они не мучают меня своими книгами для девочек."
+
+    kat "Семён!"
+
+    "И словно услышав мои мысли, меня окликнули позади."
+
+    th "Похоже, всё же замучают меня[wp]"
+
+    show mi normal pioneer at right
+    show kat smile pioneer at left
+    with dissolve
+
+    "Я немного замедлился и сравнялся с девушками."
+
+    me "Да?"
+
+    show kat joy pioneer at left with dspr
+
+    kat "А вот какая у тебя любимая книга?"
+
+    show mi grin pioneer at right with dspr
+
+    mi "И вообще, любишь ли ты читать?"
+    kat "А если любишь, то сколько книг прочитал?"
+    mi "И какой жанр тебе больше всего по душе?"
+
+    "Вопросы сыпались один за другим и я ни на один не успевал отвечать."
+
+    th "Сговорились походу."
+
+    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+
+        th "Видать, Катя, хочет в отместку за обливание замучать меня вопросами. Но я так просто не сдамся на этом поле боя."
+
+    me "Так, придержите коней и дайте мне ответить хоть на один вопрос."
+    kat "Так ты успевай отвечать!"
+    mi "Да-да! Это вообще-то быстрый опрос."
+
+    show kat grin pioneer at left with dspr
+
+    kat "Ладно, шутим мы. Какой там был первый вопрос[wp]"
+
+    show mi normal pioneer at right with dspr
+
+    mi "Какая любимая книга."
+    me "Автостопом по галактике."
+
+    "Особо даже не думая ответил я."
+
+    show mi upset pioneer at right
+    show kat thinking pioneer at left
+    with dspr
+
+    "Однако, на мой, казалось бы, просто ответ, девушки задумчиво переглянулись между собой."
+
+    me "Что, никогда не слышали о такой?"
+    kat "Честно говоря нет."
+    mi "Да, я тоже не слышала[wp]"
+    me "Ну вот значит когда из лагеря вернётесь, поищите как-нибудь на досуге."
+
+    scene bg ext_house_of_mt_day
+    show mi normal pioneer at right
+    show kat normal pioneer at left
+    with santa_barbara_out_blure_dissolve2
+
+    "Спустя около пяти минут разговора о книгах, мы наконец дошли до дома вожатой."
+    "На удивление, Ольга Дмитриевна не лежала на шезлонге, наслаждаясь прекрасным солнышком, пока её пионеры пахают."
+    
+    mi "Я вас, наверное, снаружи подожду."
+
+    show mi grin pioneer at right with dspr
+
+    mi "В конце-концов, мне же не зачем туда идти."
+
+    "Одновременно с Катей кивнув, мы поднявшись к входу и, постучавшись вошли внутрь."
+
+    stop ambience fadeout 3.5
+    scene bg int_house_of_mt_day 
+    show kat normal pioneer at left
+    show mt normal pioneer at right
+    with door_blure_dissolve
+    play ambience ambience_int_cabin_day fadein 3.5
+
+    "Ольга Дмитриевна тихо мирно сидела за столом и сортировала документы, попутно делая записи в какой-то журнал."
+
+    me "Вот и мы."
+    mt "Отлично."
+
+    "Катя подошла к вожатой и протянула его вожатой."
+    "Но, та лишь убрала его в кучу к другим документам."
+
+    show mt sad pioneer at center with dspr
+
+    mt "Потом посмотрю[wp]"
+    mt "А пока, вы свободны."
+    kat "До свидания!"
+
+    stop ambience fadeout 3.5
+    scene bg ext_house_of_mt_day
+    show kat normal pioneer at left
+    show mi normal pioneer at right
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
+    play music wnfh_music_list["the_bridge"] fadein 5.0
+
+    "Когда мы вышли из домика, Мику уже успела занять шезлонг."
+
+    mi "О, вы быстро довольно, даже заскучать не успела."
+    me "Да там же делов на минуту от силы."
+
+    "Спустившись по ступенькам я уселся на самую нижнюю."
+
+    show kat confused pioneer at left with dspr
+
+    kat "И что дальше?"
+    mi "Дальше только ждать."
+    kat "Ждать чего?"
+    me "Обеда. Как раз время уже подходит к нему."
+
+    show kat thinking pioneer at left with dspr
+
+    "Катя оглядела нас задумчивым взглядом."
+
+    kat "Тогда, может сразу к столовой пойти, если обед скоро?"
+    me "Блин, я так устал, что мне лень куда-то идти сейчас."
+    mi "И мне тоже[wp]"
+
+    "Полусонным голосом проговорила Мику."
+
+    me "Ты там давай не засыпай."
+
+    hide mi with dissolve
+
+    "На моё замечание, она только лишь угукнула и кое-как отвернулась от нас."
+
+    show kat normal pioneer close at center with dissolve
+
+    "В то время как Катя села рядом со мной."
+
+    me "Ну, что скажешь?"
+    kat "М? В плане?"
+    me "Как тебе это место?"
+
+    show kat smile pioneer close at center with dspr
+
+    kat "Знаешь, здесь довольно хорошо."
+    kat "И люди хорошие[wp]"
+
+    show kat upset pioneer at center with dspr
+
+    kat "Кроме тех двух рыжих[wp]"
+
+    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+
+        jump d8_begunok_w_mi_choices
+
+    me "Ха, зря ты на них обижаешься, на самом деле."
+    me "Они хорошие ребята, просто иногда любят почудить[wp]"
+
+    show kat sad pioneer close at center with dspr
+
+    kat "Я уж заметила[wp]"
+
+    "Она грустно вздохнула."
+
+    show kat thinking pioneer close at center with dspr
+
+    kat "Но всё это как-то неправильно[wp]"
+    me "Не бери в голову, всё это пустяки."
+    kat "Хорошо, я подумаю над этим[wp]"
+
+    jump d8_begunok_w_mi_ending
+
+label d8_begunok_w_mi_choices:
+
+    show kat obida pioneer close at center with dspr
+
+    kat "[wp]И тебя тоже."
+    kat "Нет, ну зачем обливать-то было."
+
+    if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
+        
+        call screen wnfh_choice(
+            ["kat", "Извиниться. Ещё раз", "В этот раз надо быть искреннее", "d8_me_kat_appologize_1", {"kat": 1}],
+            ["neutral", "Промолчать", "Всё таки я уже извинялся", "d8_me_kat_silent_1", {"kat": -1}],
+            ["d8_choice_n4", "Катя намекает на извинение V1"]
+            ) with sphere_blure_dissolve2
+
+    else:
+
+        call screen wnfh_choice(
+            ["kat", "Всё таки извиниться", "Не быть же мне мудаком", "d8_me_kat_appologize_2", {"kat": 1}],
+            ["neutral", "Промолчать", "Меня подставили!", "d8_me_kat_silent_2", {"kat": -1}],
+            ["d8_choice_n5", "Катя намекает на извинение V2"]
+            ) with sphere_blure_dissolve2
+
+label d8_me_kat_appologize_1:
+
+    "Собравшись с мыслями, я решил попытаться извиниться куда более искреннее, чем в прошлый раз."
+
+    show kat normal pioneer close at center with dspr
+
+    me "Слушай, прости меня, пожалуйста."
+    me "Я правда не хотел никого обливать, но вышло то что вышло."
+    me "И тут я сам виноват, что согласился на всю эту авантюру."
+    me "Мне следовало предвидеть, что эти рыжие удумают что-нибудь."
+
+    "Катя внимательно всматривалась в меня, видимо пытаясь понять, насколько я честен перед ней."
+
+    kat "Хм[wp] Что ж, хорошо, прощаю."
+    me "Спасибо, прямо камень с души упал."
+    kat "Та не за что."
+
+    jump d8_begunok_w_mi_ending
+
+label d8_me_kat_silent_1:
+
+    show kat pockerface pioneer close at center with dspr
+
+    "Катя сверлила меня своим взглядом, видимо, ожидая что-то от меня услышать."
+
+    th "Чего ей нужно от меня? Чтобы я ещё раз извинился или что? Неужели одного раза было недостаточно[wp]"
+
+    kat "Хорошо, я поняла тебя."
+
+    "Сказала она и отвернулась от меня."
+
+    th "Чёрт, она телепатка?!"
+
+    jump d8_begunok_w_mi_ending
+    
+label d8_me_kat_appologize_2:
+
+    th "Пусть меня и действительно подставили, всё же, это я косяк впорол, а значит и мне приносить извинения."
+
+    "Собравшись с мыслями, я постарался выдать самое искреннее извинение, какое только мог."
+
+    me "Кать, мне конечно следовало ещё тогда это сказать, но[wp]"
+
+    show kat normal pioneer close at center with dspr
+
+    me "Ты уж прости меня за обливание это."
+    me "Дурак я, что согласился на всю эту идею, и не подумал, что меня так вот подставят."
+    me "У меня и в мыслях не было кого-либо сегодня обливать."
+
+    "Она внимательно осмотрела меня всего и, по всей видимости, задумалась над тем, насколько искренни слова мои."
+
+    kat "Ладно, прощаю, но только, чтобы такого больше не было ни в отношении меня, ни в отношении других пионеров."
+    me "Разумеется."
+
+    jump d8_begunok_w_mi_ending
+
+label d8_me_kat_silent_2:
+
+    show kat pockerface pioneer close at center with dspr
+
+    "Моя собеседница уставилась на меня своим пустым взглядом, будто ожидая что-то услышать от меня."
+    "Но я и не знал, что ей сказать на этот счёт."
+
+    th "Неужели не понятно, что меня подставили и я тут вообще не при делах?"
+    th "И вообще, судить нужно тех кто приказы отдавал, а не исполнял! Тем более меня заставили чуть ли не насильно."
+
+    kat "Ну хорошо-хорошо[wp]"
+
+    "Безэмоционально сказала она и отвернулась от меня."
+
+    th "Она что, мысли мои читает?!"
+
+    jump d8_begunok_w_mi_ending
+
+label d8_begunok_w_mi_ending
+
+    stop music fadeout 4.5
+    play sound sfx_dinner_horn_processed
+
+    "Наконец, прозвучал горн призывающий пионеров на обед."
+    "От этого звука, тихо спящая Мику не на шутку испугалась, чуть не выпав из шезлонга."
+
+    me "Мику, острожнее нужно быть."
+
+    show mi shy pioneer at right
+    show kat normal pioneer at left
+    with dissolve
+
+    mi "Ой, я уснула чтоли?"
+    kat "Да, не надолго."
+
+    show mi normal pioneer at right with dspr
+
+    mi "И как я так умудряюсь[wp]"
+    me "Ладно, пойдёмте на обед."
+
+    jump d8_obed_me_kat_mi
 
 label d8_begunok_w_un:
 
-    "placeholder"
+    "pieprzyłem to wszystko gówno"
 
 label d8_begunok_canon:
     
@@ -1303,3 +1651,5 @@ label d8_begunok_canon:
     me "Ладно, потом расскажешь."
     
     "Мы молча отправились в столовую."
+
+    jump d8_obed_me_kat

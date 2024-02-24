@@ -141,8 +141,14 @@ init:
 
 init 1:
     python:
-        Transitions_list = ['slide_left', 'slide_right', 'slide_up', 'slide_down',"sphere","sphere_invert",'door','door_invert','slide_diagonal','santa_barbara_in','santa_barbara_out']
+        Transitions_list = [
+        "slide_left", "slide_right", "slide_up", "slide_down", "slide_diagonal",
+        "sphere", "sphere_invert",
+        "door", "door_invert", "santa_barbara_in", "santa_barbara_out",
+        "001", "005", "007", "008", "009", "011", "015", "016", "017", "018", "020", "021", "024", "030", "032", "034", "037", "039", "040"]
+
         Transitions_sub_options = ['dissolve', 'blure_dissolve']
+
         for Transition_name in Transitions_list:
             for sub_option in Transitions_sub_options:
                 for i in [1.0, 2.0, 5.0, 10.0]:

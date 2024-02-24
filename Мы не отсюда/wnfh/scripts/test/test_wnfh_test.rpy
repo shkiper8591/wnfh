@@ -46,6 +46,8 @@ label wnfh_test_main_menu:
             jump wnfh_test_days
         "Карта?":
             jump wnfh_test_map
+        "Переходы":
+            jump wnfh_test_transitions
         "Покинуть меню отладки":
             return
 

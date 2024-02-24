@@ -476,7 +476,7 @@ label d8_begunok_w_mi:
     stop ambience fadeout 3.5
     scene bg int_aidpost_day
     show kat normal pioneer at left
-    show cs normal glasses at right far
+    show cs normal glasses far at right 
     play ambience ambience_medstation_inside_day fadein 3.5
     play music music_list["eternal_longing"] fadein 4.5
 
@@ -1085,7 +1085,7 @@ label d8_me_kat_silent_2:
 
     jump d8_begunok_w_mi_ending
 
-label d8_begunok_w_mi_ending
+label d8_begunok_w_mi_ending:
 
     stop music fadeout 4.5
     play sound sfx_dinner_horn_processed

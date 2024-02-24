@@ -224,7 +224,6 @@ init -2 python:
         "sphere_invert",
         "door",
         "door_invert",
-        "clock_l",
         "clock_r",
         "slide_diagonal",
         "santa_barbara_in",
@@ -234,7 +233,26 @@ init -2 python:
         "exp3",
         "ecstrusion",
         "bibl_entrance",
-        "dnr_entrance"
+        "dnr_entrance",
+        "001",
+        "005",
+        "007",
+        "008",
+        "009",
+        "011",
+        "015",
+        "016",
+        "017",
+        "018",
+        "020",
+        "021",
+        "024",
+        "030",
+        "032",
+        "034",
+        "037",
+        "039",
+        "040"
         ]}
     
     ## Это элементы меню воборов ##

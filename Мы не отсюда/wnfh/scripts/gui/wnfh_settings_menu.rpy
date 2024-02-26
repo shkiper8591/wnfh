@@ -6,7 +6,7 @@ init 2:
     $ global debag_switch
     $ global button_purpl
 
-    if persistent.mat_filter == None:
+    if persistent.wnfh_mat_filter == None:
         $ persistent.wnfh_mat_filter = 0
 
     if persistent.wnfh_hentai_mod == None:
@@ -79,37 +79,6 @@ init 2:
                 "skip": [_preferences.skip_unseen, "Прочитанное", "Всё"],
                 "font": [persistent.font_size == "large", "Обычный", "Жирный"]
             }
-            
-
-            wnfh_preferences_button = [
-                ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
-                ["Аудио"                 ,[ToggleScreenVariable(wnfh_preferences_variable_string[1], True), ToggleScreenVariable(wnfh_preferences_variable_string[0], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
-                ["Для разработчиков"     ,[ToggleScreenVariable(wnfh_preferences_variable_string[2], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[0], False)]],
-                ["Выход"                 ,[Return()]                                     ],
-     
-            ]
-            wnfh_preferences_bar = [
-                
-                 #Тег бара           #Название бара                       #Действие
-                ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
-                ["sound"            ,"Звуки"               ,Preference("sound volume")                                       ],
-                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
-                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
-                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
-            ]
-            wnfh_preferences_switch = [
-                 #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
-                #["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
-                #["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
-                #["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
-                #["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
-                #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
-                
-                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)             ],
-                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)             ],
-                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)              ],
-
-            ]
 
             wnfh_bars = [
                 ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))],
@@ -149,8 +118,39 @@ init 2:
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
+            ]
+
+            wnfh_preferences_button = [
+                ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
+                ["Аудио"                 ,[ToggleScreenVariable(wnfh_preferences_variable_string[1], True), ToggleScreenVariable(wnfh_preferences_variable_string[0], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
+                ["Для разработчиков"     ,[ToggleScreenVariable(wnfh_preferences_variable_string[2], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[0], False)]],
+                ["Выход"                 ,[Return()]                                     ],
+     
+            ]
+            wnfh_preferences_bar = [
+                
+                 #Тег бара           #Название бара                       #Действие
+                ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
+                ["sound"            ,"Звуки"               ,Preference("sound volume")                                       ],
+                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
+                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
+                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
+            ]
+            wnfh_preferences_switch = [
+                 #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
+                #["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                #["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
+                #["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
+                #["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
+                #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
+                
+                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)    ,wnfh_bars[5][1]  ,wnfh_bars[6][1], 248  ],
+                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
+                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
 
             ]
+
+            
             
         
           
@@ -295,11 +295,11 @@ init 2:
                                     xanchor 1.0 yanchor 0.5
                                 frame:
                                     background button_green
-                                    area(0.6, 0.5, 157, 1.0)
+                                    area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars[3][1]
-                                        right_bar wnfh_bars[4][1]
+                                        left_bar bar[3]
+                                        right_bar bar[4]
                                         thumb wnfh_bars[0][1]
                                         hover_thumb wnfh_bars[0][1]
                                         xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5

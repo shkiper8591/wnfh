@@ -38,38 +38,39 @@ init 2:
         #        xalign 0.5
         #        style "wnfh_choice_" + persistent.timeofday
         #        size 30
-        frame:
-            background "#0000"
-            area(0.5, 0.06, 1000, 100)
-            xanchor 0.5 yanchor 0.5
-            grid 9 1:
-                anchor (0.5, 0.5) pos (0.5, 0.5)
-                $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "din", "sv", "mz"]
-                $ character_with_img = [character for character in character_order]
-                for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
-                    frame:
-                        background "#0000"
-                        area(0.5, 0.5, 160, 80)
-                        xanchor 0.5 yanchor 0.5
+        if persistent.wnfh_widget_lp:
+            frame:
+                background "#0000"
+                area(0.5, 0.06, 1000, 100)
+                xanchor 0.5 yanchor 0.5
+                grid 9 1:
+                    anchor (0.5, 0.5) pos (0.5, 0.5)
+                    $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "din", "sv", "mz"]
+                    $ character_with_img = [character for character in character_order]
+                    for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
                         frame:
                             background "#0000"
-                            area(0.0, 0.5, 80, 80)
-                            xanchor 0.0 yanchor 0.5
-                            add (wnfh_gui["avatars"][character]):
-                                #matrixcolor TintMatrix(wnfh_tint["sunset"])
-                                xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                zoom 0.1
-                        frame:
-                            background "#0000"
-                            area(1.0, 0.5, 60, 80)
-                            xanchor 1.0 yanchor 0.5
-                            text str(wnfh_Data.getChoice_points_sum(character)):
-                                text_align 0.5
-                                xalign 0.5 yanchor 0.5 ypos 0.5
-                                style "wnfh_lp_counter"
-                                size 70
-                                color wnfh_characters[character][1]
-                            #ui.text("%s: %d" % (wnfh_characters[character][0], wnfh_Data.getChoice_points_sum(character)), style="wnfh_lp_counter", color=wnfh_characters[character][1])
+                            area(0.5, 0.5, 160, 80)
+                            xanchor 0.5 yanchor 0.5
+                            frame:
+                                background "#0000"
+                                area(0.0, 0.5, 80, 80)
+                                xanchor 0.0 yanchor 0.5
+                                add (wnfh_gui["avatars"][character]):
+                                    #matrixcolor TintMatrix(wnfh_tint["sunset"])
+                                    xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                    zoom 0.1
+                            frame:
+                                background "#0000"
+                                area(1.0, 0.5, 60, 80)
+                                xanchor 1.0 yanchor 0.5
+                                text str(wnfh_Data.getChoice_points_sum(character)):
+                                    text_align 0.5
+                                    xalign 0.5 yanchor 0.5 ypos 0.5
+                                    style "wnfh_lp_counter"
+                                    size 70
+                                    color wnfh_characters[character][1]
+                                #ui.text("%s: %d" % (wnfh_characters[character][0], wnfh_Data.getChoice_points_sum(character)), style="wnfh_lp_counter", color=wnfh_characters[character][1])
         frame:
             background "#0000"
             area(0.5, 0.5, 0.3, 0.5)

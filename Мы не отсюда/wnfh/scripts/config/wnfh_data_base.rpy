@@ -13,6 +13,8 @@ init -1002:
         default wnfh_database = {}
     if "wnfh_database_test" not in globals():
         default wnfh_database_test = {}
+    if "wnfh_preference_database" not in globals():
+        default wnfh_preference_database = {}
 init -1001 python :
     import os
     import json
@@ -332,6 +334,7 @@ init -1000:
     label null_ellement:
         $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
         $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
+        $ wnfh_Data_pref = wnfh_BD("./game/saves/wnfh_preference_database.json")
     
 init -998 python:
     store.mousex = 0

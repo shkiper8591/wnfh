@@ -86,14 +86,14 @@ init 2:
             background wnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
             
-            frame: # ======================================================= # Часики
-                background background_color
-                area(0.5, 0.03, 120, 40)
-                xanchor 0.5 yanchor 0.5
-                text wnfh_get_usertime():
-                    xalign 0.5
-                    style "wnfh_choice_" + persistent.timeofday
-                    size 30
+            #frame: # ======================================================= # Часики
+            #    background background_color
+            #    area(0.5, 0.03, 120, 40)
+            #    xanchor 0.5 yanchor 0.5
+            #    text wnfh_get_usertime():
+            #        xalign 0.5
+            #        style "wnfh_choice_" + persistent.timeofday
+            #        size 30
             
     
 

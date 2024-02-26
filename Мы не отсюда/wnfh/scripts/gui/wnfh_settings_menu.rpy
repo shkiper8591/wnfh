@@ -5,10 +5,15 @@ init 2:
     $ global button_blue
     $ global debag_switch
     $ global button_purpl
-    $ persistent.mat_filter = 1
+
+    if persistent.mat_filter == None:
+        $ persistent.wnfh_mat_filter = 0
 
     if persistent.wnfh_hentai_mod == None:
-        $ persistent.wnfh_hentai_mod = False
+        $ persistent.wnfh_hentai_mod = 0
+
+    if persistent.wnfh_widget_lp == None:
+        $ persistent.wnfh_widget_lp = 0
 
     $ debag_switch = 1
     if debag_switch:
@@ -44,6 +49,11 @@ init 2:
             action NullAction()
                 
         python:
+
+            #def wnfh_add_to_bd_pref(data):
+            #    data_set = wnfh_find_Operand(data,"pref",str(data[1][0]))
+            #    wnfh_Data_pref.write(str(data[1][0]),{"type":"preference","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
+
             wnfh_screen_variable = [
                 wnfh_screen_1,
                 wnfh_screen_2,
@@ -69,17 +79,7 @@ init 2:
                 "skip": [_preferences.skip_unseen, "Прочитанное", "Всё"],
                 "font": [persistent.font_size == "large", "Обычный", "Жирный"]
             }
-            wnfh_preferences_switch = [
-                 #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
-                ["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
-                ["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
-                ["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
-                ["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
-                ["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
-                ["lkjmsdl"          ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction() ],                  
-                ["hentai"                                         ,[SetField(persistent, "hentai_mod", True),         Play("sound", wnfh_sfx_list["nya"])]              ,  SetField(persistent, "hentai_mod", False)                                                    , persistent.hentai_mod           ], 
-                ["mat_filter"       ,"Мат-фильтр"                 ,SetField(persistent, "mat_filter", 1),             SetField(persistent, "mat_filter", 2)               ,  SetField(persistent, "mat_filter", 0)                                                        , ["Без цензуры","Как-то так: #@!&%","Литератураня замена"]]
-            ]
+            
 
             wnfh_preferences_button = [
                 ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
@@ -88,8 +88,32 @@ init 2:
                 ["Выход"                 ,[Return()]                                     ],
      
             ]
+            wnfh_preferences_bar = [
+                
+                 #Тег бара           #Название бара                       #Действие
+                ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
+                ["sound"            ,"Звуки"               ,Preference("sound volume")                                       ],
+                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
+                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
+                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
+            ]
+            wnfh_preferences_switch = [
+                 #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
+                #["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                #["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
+                #["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],
+                #["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
+                #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
+                
+                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)             ],
+                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)             ],
+                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)              ],
+
+            ]
 
             wnfh_bars = [
+                ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))],
+                
                 ["bar_full", im.Composite(
                     (473, 37),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
@@ -102,19 +126,32 @@ init 2:
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))]
+                ["button_bar_full", im.Composite(
+                    (145, 35),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    )],
+
+                ["button_bar_null", im.Composite(
+                    (145, 35),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    )],
+
+                ["multibutton_bar_full", im.Composite(
+                    (248, 35),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    )],
+
+                ["multibutton_bar_null", im.Composite(
+                    (248, 35),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    )],
+
             ]
-            wnfh_preferences_bar = [
-                
-                 #Тег бара           #Название бара                       #Действие
-                ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
-                ["sound"            ,"Звуки"               ,Preference("sound volume")                                       ],
-                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
-                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
-                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
-                ["hentai_mod"       ,"Отображение хентая" ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)             ],
-            ]
-            key_values = ["triple_off", "triple_on1", "triple_on2"]
+            
         
           
         
@@ -207,8 +244,8 @@ init 2:
                     add (wnfh_gui["tint_elements"]["pr_big_frame"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                         xalign 0.5
-                    grid 1 2:
-                        for bar in wnfh_preferences_bar[3:6]:
+                    grid 1 5:
+                        for bar in wnfh_preferences_bar[3:5]:
                             frame:
                                 background background_color
                                 area(0.0, 0.0, 1.0, 60)
@@ -230,11 +267,42 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars[0][1]
-                                        right_bar wnfh_bars[1][1]
-                                        thumb wnfh_bars[2][1]
-                                        hover_thumb wnfh_bars[2][1]
+                                        left_bar wnfh_bars[1][1]
+                                        right_bar wnfh_bars[2][1]
+                                        thumb wnfh_bars[0][1]
+                                        hover_thumb wnfh_bars[0][1]
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+                        for bar in wnfh_preferences_switch[0:3]:                    
+                            frame:
+                                background background_color
+                                area(0.0, 0.0, 1.0, 60)
+                                frame:
+                                    background button_red
+                                    area(0.0, 0.5, 350, 1.0)
+                                    yanchor 0.5
+                                    text bar[1]:
+                                        pos(0.5, 0.5)
+                                        style "wnfh_choice_" + persistent.timeofday
+                                        xanchor 0.5
+                                        size 20
+                                        kerning 1
+                                        min_width 200
+                                        layout "tex"
+                                        #action Play("sound", wnfh_gui["sound"]["plimp"]) 
+                                frame:
+                                    background button_blue
+                                    area(0.6, 0.5, 150, 1.0)
+                                    xanchor 1.0 yanchor 0.5
+                                frame:
+                                    background button_green
+                                    area(0.6, 0.5, 157, 1.0)
+                                    xanchor 0.0 yanchor 0.5
+                                    bar value bar[2]:
+                                        left_bar wnfh_bars[3][1]
+                                        right_bar wnfh_bars[4][1]
+                                        thumb wnfh_bars[0][1]
+                                        hover_thumb wnfh_bars[0][1]
+                                        xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
 
             elif wnfh_preferences_variable[1]: # ===================== Аудио
                 frame:
@@ -272,10 +340,10 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars[0][1]
-                                        right_bar wnfh_bars[1][1]
-                                        thumb wnfh_bars[2][1]
-                                        hover_thumb wnfh_bars[2][1]
+                                        left_bar wnfh_bars[1][1]
+                                        right_bar wnfh_bars[2][1]
+                                        thumb wnfh_bars[0][1]
+                                        hover_thumb wnfh_bars[0][1]
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
 
             elif wnfh_preferences_variable[2]: # ===================== Амогус

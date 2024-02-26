@@ -35,8 +35,14 @@ init -2 python:
     
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
         "bar_full",
+        "button_bar_full",
+        "multibutton_bar_full",
         "bar_bg",
+        "button_bar_bg",
+        "multibutton_bar_bg",
         "bar_null",
+        "button_bar_null",
+        "multibutton_bar_null",
         "bar_htumb",
         "im_bg",
         "im_line",

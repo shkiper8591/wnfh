@@ -6,7 +6,9 @@ init 2:
     $ global debag_switch
     $ global button_purpl
     $ persistent.mat_filter = 1
-    $ persistent.hentai_mod = False
+
+    if persistent.wnfh_hentai_mod == None:
+        $ persistent.wnfh_hentai_mod = False
 
     $ debag_switch = 1
     if debag_switch:
@@ -110,6 +112,7 @@ init 2:
                 ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
                 ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
                 ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
+                ["hentai_mod"       ,"Отображение хентая" ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)             ],
             ]
             key_values = ["triple_off", "triple_on1", "triple_on2"]
         
@@ -232,24 +235,7 @@ init 2:
                                         thumb wnfh_bars[2][1]
                                         hover_thumb wnfh_bars[2][1]
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
-                    frame:
-                        background button_green
-                        area(1.0, 0.5, 485, 1.0)
-                        xanchor 1.0 yanchor 0.5
-                        bar value bar[2]:
-                            left_bar wnfh_bars[0][1]
-                            right_bar wnfh_bars[1][1]
-                            thumb wnfh_bars[2][1]
-                            hover_thumb wnfh_bars[2][1]
-                            xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
-                    text "Интерфейс":
-                        pos(0.5, 0.5)
-                        style "wnfh_choice_" + persistent.timeofday
-                        xanchor 0.5
-                        size 30
-                        kerning 1
-                        min_width 200
-                        layout "tex"
+
             elif wnfh_preferences_variable[1]: # ===================== Аудио
                 frame:
                     background background_color

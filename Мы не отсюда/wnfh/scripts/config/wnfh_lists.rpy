@@ -1,7 +1,3 @@
-init 1000 python:
-    if debag_switch:
-        config.developer = True
-
 init -2 python:
 
     ## Создание листов ##

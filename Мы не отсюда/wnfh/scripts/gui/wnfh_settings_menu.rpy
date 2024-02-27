@@ -1,3 +1,6 @@
+init 1000 python:
+    if debag_switch:
+        config.developer = True
 init 2:
     $ global background_color
     $ global button_red

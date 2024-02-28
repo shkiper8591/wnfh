@@ -1111,7 +1111,17 @@ label d8_begunok_w_mi_ending:
 
 label d8_begunok_w_un:
 
-    "pieprzyłem to wszystko gówno"
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    with dissolve
+
+    me "Так, какие там места нам нужно посетить?"
+
+    "Катя поднесла листок поближе к себе и стала читать вслух."
+
+    kat "Музыкальный кружок, клубы, медпункт и библиотека."
+
+    "placeholder"
 
 label d8_begunok_canon:
     

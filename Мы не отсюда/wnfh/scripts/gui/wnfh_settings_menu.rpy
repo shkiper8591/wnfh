@@ -147,6 +147,7 @@ init 2:
                 #["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
                 #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
                 
+                #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)    ,wnfh_bars[5][1]  ,wnfh_bars[6][1], 248  ],
                 ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)    ,wnfh_bars[5][1]  ,wnfh_bars[6][1], 248  ],
                 ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
                 ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],

@@ -668,7 +668,7 @@ label d12c_otplitie:
         ) with sphere_blure_dissolve2
 label d12c_otplitie_true:
 
-    $ wnfh_Data.FlagSet("d12c_me_sovral") = False
+    #$ wnfh_Data.FlagSet("d12c_me_sovral") = False #чини блять, заебал
 
     th "Наверное, я ещё миллион раз пожалею об этом[wp]"
 
@@ -720,7 +720,7 @@ label d12c_otplitie_true:
 
 label d12c_otplitie_lie:
 
-    $ wnfh_Data.FlagSet("d12c_me_sovral") = True
+    #$ wnfh_Data.FlagSet("d12c_me_sovral") = True #чини блять, заебал
 
     th "Нет, лучше не стоит говорить, не сейчас по крайней мере."
 

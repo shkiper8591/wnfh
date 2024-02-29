@@ -54,26 +54,7 @@ init 2:
                 wnfh_screen_18,
                 wnfh_screen_19
             ]
-            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1,20))
-
-        #add (wnfh_gui["choice"]["line_" + str(len(args)-1)]) matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-        #for i in range(len(args)-1):
-        #    if wnfh_screen_variable[i]:
-        #        add (wnfh_gui["choice"][str(len(args)-1) + "_" + wnfh_screen_cordinates[str(len(args)-1)][i][3] + "_" + args[i][0]]) xzoom wnfh_screen_cordinates[str(len(args)-1)][i][1][0] yzoom wnfh_screen_cordinates[str(len(args)-1)][i][1][1]
-        #        text args[i][2]:
-        #            style "wnfh_choice_text_" + persistent.timeofday
-        #            align (wnfh_screen_cordinates[str(len(args)-1)][i][0][0], wnfh_screen_cordinates[str(len(args)-1)][i][0][1])
-        #    else:
-        #        null height 20
-        #
-        #     textbutton args[i][1]:
-        #         text_style "wnfh_choice_" + persistent.timeofday
-        #         background None align (wnfh_screen_cordinates[str(len(args)-1)][i][2][0], wnfh_screen_cordinates[str(len(args)-1)][i][2][1])
-        #         hover_sound wnfh_gui["sound"]["plimp"] 
-        #         hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
-        #         unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
-        #         action (Hide("wnfh_choice_0", dissolve),Function(add_to_bd,[args[i],args[len(args)-1],i]),Jump(args[i][3]))
-        
+            wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1,20))        
         if args[-1] == "test":
             $ Test_wr = True
         else:
@@ -108,28 +89,39 @@ init 2:
                                     matrixcolor TintMatrix(wnfh_characters[args[i][0]][1])
                             else:
                                 null height 20
-                            #add (wnfh_gui["choice"]["line"]):
-                            #    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
-                            #    xalign 0.5 ypos 1.0 yanchor 0.0
-                            textbutton args[i][1]:
-                                text_line_leading 16 text_line_spacing 11
-                                text_min_width 1100
-                                text_text_align 0.5
-                                xalign 0.5 yanchor 0.5 ypos 0.5
-                                text_style "wnfh_choice_" + persistent.timeofday
-                                background None #align (wnfh_screen_cordinates[str(len(args)-1)][i][2][0], wnfh_screen_cordinates[str(len(args)-1)][i][2][1])
-                                hover_sound wnfh_gui["sound"]["plimp"]
-                                hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
-                                unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
-                                if not Test_wr:
-                                    action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
-                                else:
-                                    action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd_test, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
+
+                            if wnfh_screen_variable[i]:
+                                textbutton args[i][2]:
+                                    text_line_leading 16 text_line_spacing 11
+                                    text_min_width 1100
+                                    text_text_align 0.5
+                                    xalign 0.5 yanchor 0.5 ypos 0.5
+                                    text_style "wnfh_choice_" + persistent.timeofday
+                                    background None 
+                                    hover_sound wnfh_gui["sound"]["plimp"]
+                                    hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                                    unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                                    if not Test_wr:
+                                        action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
+                                    else:
+                                        action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd_test, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
+                            else:
+                                textbutton args[i][1]:
+                                    text_line_leading 16 text_line_spacing 11
+                                    text_min_width 1100
+                                    text_text_align 0.5
+                                    xalign 0.5 yanchor 0.5 ypos 0.5
+                                    text_style "wnfh_choice_" + persistent.timeofday
+                                    background None
+                                    hover_sound wnfh_gui["sound"]["plimp"]
+                                    hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                                    unhovered ToggleScreenVariable(wnfh_screen_variable_string[i])
+                                    if not Test_wr:
+                                        action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
+                                    else:
+                                        action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd_test, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
                 add (wnfh_gui["choice"]["line"]):
                     matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                     xalign 0.5 yanchor 0.0
 
         add wnfh_gui["choice"]["vignette"]
-
-#
-

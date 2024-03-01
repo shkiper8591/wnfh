@@ -4,7 +4,7 @@ label d8_begunok:
     hide mid d8_breakfast_empty with dissolve
     $ renpy.pause(1.0)
     stop ambience fadeout 2.5
-    $ wnfh_set_time()
+    
     scene bg ext_dining_hall_near_day with slide_right_blure_dissolve2
     play ambience ambience_camp_center_evening fadein 3
     play music music_list["dance_of_fireflies"] fadein 5
@@ -19,12 +19,13 @@ label d8_begunok:
 
         jump d8_begunok_w_un
 
-    else: #wnfh_Data.getChoice_result_number("d8_choice_n1") == 2:
+    else:
 
         jump d8_begunok_canon
 
 label d8_begunok_w_mi:
-
+    
+    $ wnfh_set_time()
     show kat thinking pioneer at right
     show mi normal pioneer at left
     with dissolve
@@ -1110,7 +1111,7 @@ label d8_begunok_w_mi_ending:
     jump d8_obed_me_kat_mi
 
 label d8_begunok_w_un:
-
+    $ wnfh_set_time()
     show kat normal pioneer at left
     show un smile pioneer at right
     with dissolve
@@ -1121,10 +1122,151 @@ label d8_begunok_w_un:
 
     kat "Музыкальный кружок, клубы, медпункт и библиотека."
 
+    show un normal pioneer at right with dspr
+
+    "Лена наклонилась над листком и, сделала вид, что понимает всё вверх ногами."
+    
+    un "Что ж, медпунт и библиотека тут по близости, можем туда сходить сразу."
+
+    "У меня в голове сразу возникла карта лагеря."
+
+    # возможно тут следует показать карту под какой-нибудь смешной звук
+    # а потом сделать анимацию как Семён представляет себе путь по лагерю
+
+    show black with dissolve
+    $ renpy.notify("Тут должна быть карта с анимацией ЧИТАЙ коммент day_8_begunok line 1133")
+    th "Если так прикинуть, то эффективнее выйдет начать с дальнего края «Совёнка»."
+    th "И потом если двигаться зигзагообразно от муз клуба[wp] Да[wp]"
+    th "После чего посетим клубы, пройдёмся через площадь, вот мы уже в библиотеке и медпункте."
+    th "А оттуда прямо к домику вожатой! По моему всё идеально складывается."
+
+    hide black
+    show kat smile pioneer far at left
+    show un smile pioneer far at right
+    with sphere_blure_dissolve2
+
+    "Пока я стоял и раздумывал маршрут, Лена и Катя, явно заболтавшись, успели уже отойти на небольшое расстояние от столовой."
+
+    me "Так, подождите меня!"
+
+    show kat smile pioneer at left
+    show un smile2 pioneer at right
+    with dissolve
+
+    "Перемахнув через перила, я подбежал к девушкам, которые тихонько хихикали надо мной."
+
+    me "Чего смеётесь, хоть бы предупредили."
+
+    show un smile pioneer at right with dspr
+
+    un "Меньше в облаках летать надо!"
+    me "Куда вы идти решили-то?"
+
+    show un grin pioneer at right
+    show kat normal pioneer at left
+    with dspr
+
+    un "Грызть гранит науки!"
+
+    "Шутливо ответила мне она."
+
+    me "Ага, то есть в библиотеку."
+
+    show kat thinking pioneer at left with dspr
+
+    kat "Мы же надеемся ты не против?"
+
+    show un shy pioneer at right with dspr
+
+    un "Да[wp]"
+    me "Та как бы нет, просто у меня в голове есть более эффективный маршрут но[wp]"
+
+    "Я отмахнулся рукой."
+
+    me "Ай пофиг, идёмте."
+
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    show bg ext_library_day
+    with dissolve2
+
+    "И вот снова я стоял перед этим логовом дракона."
+    "С библиотекой меня связывал один неприятный инцидент, о котором я не очень-то и хотел вспоминать."
+
+    me "Так, с библиотекой давайте зашли и вышли."
+
+    show kat confused pioneer at left with dspr
+
+    kat "А к чему такая спешка в отношение библиотеки?"
+
+    show un normal pioneer at right with dspr
+
+    un "Да Семён, может она хочет получше осмотреться?"
+
+    "Глядя прямо на Лену я глубоко вздохнул."
+
+    show un laugh pioneer at right with dspr
+
+    "И тут она, по всей видимости, вспомнила об этой «занимательной» истории."
+
+    un "Ах да, точно[wp]"
+
+    "Через смех сказала она, вгоняя нашу новенькую в полный ступор."
+    "Катя смотрела то на Лену, то на Меня, и так по кругу."
+
+    kat "Мне кто-нибудь расскажет в чём дело?"
+    me "Ну сейчас она остановится и пояснит тебе."
+
+    show un smile3 pioneer at right with dspr
+
+    "Через некоторое время Лена успокоилась."
+
+    show kat interested pioneer at left with dspr
+
+    un "Коротко говоря, Семён по своей невнимательности обвалил все полки в библиотеке и сбежал с места преступления."
+    un "За это его недолюбливает наша библиотекарша."
+
+    show kat smile2 pioneer at left with dspr
+
+    kat "Забавная история."
+    me "Да-да, давайте уже заходить."
+
+    window hide dissolve
+    stop ambience fadeout 3.5
+    scene bg int_library_day
+    show un smile pioneer at fright
+    show kat normal pioneer at cright
+    show mz bukal pioneer glasses at left
+    with santa_barbara_out_blure_dissolve2
+    play ambience ambience_library_day fadein 3.5
+    $ renpy.pause(0.5)
+    window show dissolve
+
+    "И внутри как обычно сидела Женя, которая с усталым видом заполняла какой-то журнал."
+    "Завидев нас, она медленно подняла свой взгляд."
+
+    mz "Ого, вас тут целая группа."
+    mz "Что, обходной лист подписать, да?"
+
+    "Катя быстро одобрительно закивала."
+    "Цокнув языком, Женя протянула руку, как бы прося бегунок."
+    "Благо, наша новенькая была соображающая и поняла что делать."
+
+    kat "Меня Катей звать кстати говоря."
+
+    "Сказала она вручая лист, который библиотекарша тут же принялась подписывать."
+
+    mz "Я знаю[wp]"
+
+    "Безэмоционально ответила Женя."
+    "Но после этого остановилась на полпути росписи."
+
+    mz "В смысле, я Евгения, но можешь звать Женей."
+
     "placeholder"
 
 label d8_begunok_canon:
-    
+    $ wnfh_set_time()
     ## Семён и Катя отправляются заполнять бегунок
     "Я вышел из столовой, и позвал сидящую на лавочке Катю." 
     "Посмотрев на меня, она неспешно поднялась с лавочки и подошла ко мне."

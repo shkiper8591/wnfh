@@ -213,8 +213,8 @@ label d7_un_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Нет, не стоит.", "Одному проще и быстрее.", "d7_un_no_2_lbl", {"un":-1}],
-        ["un", "Да, давай.", "В компании будет проще.", "d7_un_yes_2_lbl", {"un":1}],
+        ["un", "Нет, не стоит.", "Одному проще и быстрее", "d7_un_no_2_lbl", {"un":-1}],
+        ["un", "Да, давай.", "В компании будет веселее", "d7_un_yes_2_lbl", {"un":1}],
         ["d7_choice_n3", "Пойти встречать с Леной"]
         ) with sphere_blure_dissolve2
 

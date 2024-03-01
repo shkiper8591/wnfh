@@ -68,7 +68,6 @@ label d8_zavtrak_w_un:
         xcenter 1.2
         ease_quart 2.0 xcenter 0.72
     show kat normal pioneer:
-        yanchor 0.5
         ease_quart 1.5 xcenter 0.28 
 
     "И пока думал, к нам подошла Лена."
@@ -119,7 +118,7 @@ label d8_zavtrak_w_un:
 
     show un grin pioneer at right with dspr
 
-    un "А потом пришла я и вытащила её погулять и заодно получше познакомиться."
+    un "А потом пришла я, и вытащила её погулять и, заодно получше познакомиться."
 
     show un smile3 pioneer at right with dspr
 

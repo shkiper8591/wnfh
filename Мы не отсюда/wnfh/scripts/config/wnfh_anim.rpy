@@ -412,4 +412,18 @@ init -2:
             ease 0.25 zoom 1.25
         on idle:
             ease 0.1 zoom 1.0
-        
+    
+    transform atl_wnfh_widget_lp_down:
+        subpixel True
+        truecenter
+        ypos -0.2
+        ease_quart 2.0 ypos 0.08
+
+    transform atl_wnfh_game_menu_selector(pause):
+        subpixel True
+        choice:
+            xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+        choice:
+            xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+        pause (1 + pause)/4
+        ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0

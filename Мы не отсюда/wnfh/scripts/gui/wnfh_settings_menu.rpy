@@ -34,7 +34,7 @@ init 2:
 
     screen wnfh_preferences():
 
-        modal True tag menu
+        modal True
 
         default wnfh_screen_1 = False
         default wnfh_screen_2 = False
@@ -46,10 +46,7 @@ init 2:
         default wnfh_preferences_3 = False
 
         key "game_menu":
-            action NullAction()
-        
-        key "screenshot":
-            action NullAction()
+            action Return()
                 
         python:
 

@@ -38,11 +38,25 @@ init 2:
         #        xalign 0.5
         #        style "wnfh_choice_" + persistent.timeofday
         #        size 30
+        add wnfh_gui["tint_elements"]["vignette"]
+
         if persistent.wnfh_widget_lp:
-            frame:
+
+            frame at atl_wnfh_widget_lp_down:
                 background "#0000"
-                area(0.5, 0.06, 1000, 100)
+                area(0.5, 0.08, 1500, 100)
                 xanchor 0.5 yanchor 0.5
+                grid 1 3:
+                    anchor (0.5, 0.5) pos (0.5, 0.5)
+                    add (wnfh_gui["tint_elements"]["im_line_long"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        xalign 0.5 yanchor 1.0 ypos 1.0
+                    add (wnfh_gui["tint_elements"]["widget_lp_bg"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        xalign 0.5
+                    add (wnfh_gui["tint_elements"]["im_line_long"]):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        xalign 0.5
                 grid 9 1:
                     anchor (0.5, 0.5) pos (0.5, 0.5)
                     $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "din", "sv", "mz"]
@@ -56,10 +70,15 @@ init 2:
                                 background "#0000"
                                 area(0.0, 0.5, 80, 80)
                                 xanchor 0.0 yanchor 0.5
-                                add (wnfh_gui["avatars"][character]):
-                                    #matrixcolor TintMatrix(wnfh_tint["sunset"])
-                                    xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                    zoom 0.1
+                                if persistent.timeofday == "day":
+                                    add (wnfh_gui["avatars"][character]):
+                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                        zoom 0.1
+                                else:
+                                    add (wnfh_gui["avatars"][character]):
+                                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][3])
+                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                        zoom 0.1
                             frame:
                                 background "#0000"
                                 area(1.0, 0.5, 60, 80)
@@ -80,42 +99,42 @@ init 2:
                 spacing 2
 
                 for index, i in enumerate(wnfh_game_menu_selector_buttons[0:6]):
-                    frame:
-                        background "#0000"
-                        area(0.5, 0.5, 1.0, 65)
-                        xanchor 0.5 yanchor 0.5
+                        frame at atl_wnfh_game_menu_selector(index):
+                            background "#0000"
+                            area(0.5, 0.5, 1.0, 65)
+                            #xanchor 0.5 yanchor 0.5
+        
+                            add (wnfh_gui["tint_elements"]["im_line"]):
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                xalign 0.5 yanchor 1.0
+        
+                            add (wnfh_gui["tint_elements"]["im_bg"]):
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                                xalign 0.5
     
-                        add (wnfh_gui["tint_elements"]["im_line"]):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-                            xalign 0.5 yanchor 1.0
+        
+                            if wnfh_screen_variable[index]:
+                                add (wnfh_gui["tint_elements"]["im_gradient"]):
+                                    xalign 0.5 alpha 0.6
+                                    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
+                                add (wnfh_gui["tint_elements"]["im_gradient"]):
+                                    xalign 0.5 alpha 0.1
+                            else:
+                                null height 20
+        
+                            add (wnfh_gui["tint_elements"]["im_line"]):
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                xalign 0.5 ypos 1.0 yanchor 0.0
     
-                        add (wnfh_gui["tint_elements"]["im_bg"]):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
-                            xalign 0.5
-    
-                        if wnfh_screen_variable[index]:
-                            add (wnfh_gui["tint_elements"]["im_gradient"]):
-                                xalign 0.5 alpha 0.6
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
-                            add (wnfh_gui["tint_elements"]["im_gradient"]):
-                                xalign 0.5 alpha 0.1
-                        else:
-                            null height 20
-    
-                        add (wnfh_gui["tint_elements"]["im_line"]):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-                            xalign 0.5 ypos 1.0 yanchor 0.0
+                            textbutton i[0]:
+                                text_line_leading 5 text_line_spacing 3
+                                text_min_width 550
+                                text_text_align 0.5
+                                xalign 0.5 yanchor 0.5 ypos 0.5
+                                text_style "wnfh_choice_" + persistent.timeofday
+                                background None
+                                hover_sound wnfh_gui["sound"]["plimp"]
+                                hovered ToggleScreenVariable(wnfh_screen_variable_string[index])
+                                unhovered ToggleScreenVariable(wnfh_screen_variable_string[index])
+                                action (i[1])
 
-                        textbutton i[0]:
-                            text_line_leading 5 text_line_spacing 3
-                            text_min_width 550
-                            text_text_align 0.5
-                            xalign 0.5 yanchor 0.5 ypos 0.5
-                            text_style "wnfh_choice_" + persistent.timeofday
-                            background None
-                            hover_sound wnfh_gui["sound"]["plimp"]
-                            hovered ToggleScreenVariable(wnfh_screen_variable_string[index])
-                            unhovered ToggleScreenVariable(wnfh_screen_variable_string[index])
-                            action (i[1])
-
-        add wnfh_gui["tint_elements"]["vignette"]

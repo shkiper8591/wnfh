@@ -22,11 +22,11 @@ init -2 python:
     Ну и ссылки сюда же засунул
     """
     wnfh_choice_tint_color = {
-        #timeset      #текст     #рамки     #фон
-        "day":      ["#FFDD7D", "#80A055", "#000000" ], 
-        "sunset":   ["#DCD168", "#CDAF69", "#150A0B" ],
-        "night":    ["#3CCFA2", "#36B198", "#000A20" ],
-        "prologue": ["#98D8DA", "#BEE8E9", "#000A20" ], 
+        #timeset      #текст     #рамки     #фон       #спрайты
+        "day":      ["#FFDD7D", "#80A055", "#000000", "#000000" ], 
+        "sunset":   ["#DCD168", "#CDAF69", "#150A0B", "#EFD1FF" ],
+        "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
+        "prologue": ["#98D8DA", "#BEE8E9", "#000A20", "#A1C7D1" ], 
     }
     
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
@@ -40,8 +40,10 @@ init -2 python:
         "button_bar_null",
         "multibutton_bar_null",
         "bar_htumb",
+        "widget_lp_bg",
         "im_bg",
         "im_line",
+        "im_line_long",
         "im_gradient",
         "pr_big_frame",
         "pr_big_frame_bg",

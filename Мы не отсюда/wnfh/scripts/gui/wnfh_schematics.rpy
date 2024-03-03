@@ -17,7 +17,10 @@ init 2:
             
             
         frame:
-            background "#0000"
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
             area(0.0, 0.0, 1.0, 1.0)
             #at wnfh_bg_spawn_atl
             viewport:
@@ -44,17 +47,15 @@ init 2:
 
 
             frame: # ======================================================= # Выход
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.0, 0.0, 200, 100)
                 xanchor 0.0 yanchor 0.0
-                frame:
-                    xmargin 5
-                    background button_blue
-                    area(0.0, 0.5, 1.0, 1.0)
-                    xanchor 0.0 yanchor 0.5
-                    imagebutton:
-                        action wnfh_schematic_button[0][2]
-                        idle wnfh_schematic_button[0][1]
-                        hover wnfh_schematic_button[0][1]
-                        hover_sound wnfh_gui["sound"]["plimp"]
-                        at wnfh_mm_button_hover_atl()
+                imagebutton:
+                    action wnfh_schematic_button[0][2]
+                    idle wnfh_schematic_button[0][1]
+                    hover wnfh_schematic_button[0][1]
+                    hover_sound wnfh_gui["sound"]["plimp"]
+                    at wnfh_mm_button_hover_atl()

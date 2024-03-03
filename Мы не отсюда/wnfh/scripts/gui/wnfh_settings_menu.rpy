@@ -2,12 +2,23 @@ init 1000 python:
     if debag_switch:
         config.developer = True
 init 2:
-    $ global background_color
-    $ global button_red
-    $ global button_green
-    $ global button_blue
+    $ global frame_transparent
+    $ global frame_black
+    $ global frame_red
+    $ global frame_green
+    $ global frame_blue
+    $ global frame_purpl
+
     $ global debag_switch
-    $ global button_purpl
+
+    $ frame_transparent = "#0000"
+    $ frame_black       = "#0005"
+    $ frame_red         = "#F005"
+    $ frame_green       = "#0F05"
+    $ frame_blue        = "#00F5"
+    $ frame_purpl       = "#F0F5"
+
+    $ debag_switch = 1 
 
     if persistent.wnfh_mat_filter == None:
         $ persistent.wnfh_mat_filter = 0
@@ -18,23 +29,14 @@ init 2:
     if persistent.wnfh_widget_lp == None:
         $ persistent.wnfh_widget_lp = 0
 
-    $ debag_switch = 1
-    if debag_switch:
-        $ background_color = "#0005"
-        $ button_red =       "#F005"
-        $ button_green =     "#0F05"
-        $ button_blue =      "#00F5"
-        $ button_purpl =     "#F0F5" 
-    else:
-        $ background_color = "#0000"
-        $ button_red =       "#0000"
-        $ button_green =     "#0000"
-        $ button_blue =      "#0000"
-        $ button_purpl =     "#0000"
+    if persistent.wnfh_debug_color == None:
+        $ persistent.wnfh_debug_color = 0
+    
+
 
     screen wnfh_preferences():
 
-        modal True
+        modal True tag menu
 
         default wnfh_screen_1 = False
         default wnfh_screen_2 = False
@@ -44,9 +46,6 @@ init 2:
         default wnfh_preferences_1 = False
         default wnfh_preferences_2 = False
         default wnfh_preferences_3 = False
-
-        key "game_menu":
-            action Return()
                 
         python:
 
@@ -149,6 +148,8 @@ init 2:
                 ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
                 ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
 
+                ["debug_color"      ,"Цветовая индикация"  ,FieldValue(persistent, "wnfh_debug_color", 1, step=1)   ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
+
             ]
 
 # БЛА БЛА БЛА, я что-то поменял, какой-то текст страшный новый появился
@@ -162,12 +163,18 @@ init 2:
         #    background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
         #    area(0.0, 0.0, 1.0, 1.0)
         frame:
-            background background_color
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
             area(0.5, 0.0, 1.0, 0.15)
             xanchor 0.5
             
             frame:
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.5, 0.0, 0.7, 1.0)
                 xanchor 0.5             
                 text "Настройки":
@@ -179,11 +186,17 @@ init 2:
                     min_width 200
                     layout "tex"
         frame:
-            background background_color
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
             area(0.5, 0.16, 1.0, 0.85)
             xanchor 0.5
             frame:
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.0, 0.3, 500, 300)
                 yanchor 0.5
                 grid 1 4:
@@ -192,7 +205,7 @@ init 2:
     
                     for index, i in enumerate(wnfh_preferences_button[0:4]):
                         frame:
-                            background "#0000"
+                            background frame_transparent
                             area(0.5, 0.5, 1.0, 65)
                             xanchor 0.5 yanchor 0.5
         
@@ -236,7 +249,10 @@ init 2:
 
             if wnfh_preferences_variable[0]: # ===================== Интерфейс
                 frame:
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.5, 0.0, 0.46, 1.0)
                     xanchor 0.5
 
@@ -249,10 +265,16 @@ init 2:
                     grid 1 5:
                         for bar in wnfh_preferences_bar[3:5]:
                             frame:
-                                background background_color
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
                                 area(0.0, 0.0, 1.0, 60)
                                 frame:
-                                    background button_red
+                                    if persistent.wnfh_debug_color:
+                                        background frame_red
+                                    else:
+                                        background frame_transparent
                                     area(0.0, 0.5, 350, 1.0)
                                     yanchor 0.5
                                     text bar[1]:
@@ -265,7 +287,10 @@ init 2:
                                         layout "tex"
                                         #action Play("sound", wnfh_gui["sound"]["plimp"]) 
                                 frame:
-                                    background button_green
+                                    if persistent.wnfh_debug_color:
+                                        background frame_green
+                                    else:
+                                        background frame_transparent
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
@@ -276,10 +301,16 @@ init 2:
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
                         for bar in wnfh_preferences_switch[0:3]:                    
                             frame:
-                                background background_color
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
                                 area(0.0, 0.0, 1.0, 60)
                                 frame:
-                                    background button_red
+                                    if persistent.wnfh_debug_color:
+                                        background frame_red
+                                    else:
+                                        background frame_transparent
                                     area(0.0, 0.5, 350, 1.0)
                                     yanchor 0.5
                                     text bar[1]:
@@ -292,11 +323,17 @@ init 2:
                                         layout "tex"
                                         #action Play("sound", wnfh_gui["sound"]["plimp"]) 
                                 frame:
-                                    background button_blue
+                                    if persistent.wnfh_debug_color:
+                                        background frame_blue
+                                    else:
+                                        background frame_transparent
                                     area(0.6, 0.5, 150, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                 frame:
-                                    background button_green
+                                    if persistent.wnfh_debug_color:
+                                        background frame_green
+                                    else:
+                                        background frame_transparent
                                     area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
                                     bar value bar[2]:
@@ -308,7 +345,10 @@ init 2:
 
             elif wnfh_preferences_variable[1]: # ===================== Аудио
                 frame:
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.5, 0.0, 0.46, 1.0)
                     xanchor 0.5
 
@@ -322,10 +362,16 @@ init 2:
                     grid 1 3:
                         for bar in wnfh_preferences_bar[0:3]:
                             frame:
-                                background background_color
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
                                 area(0.0, 0.0, 1.0, 60)
                                 frame:
-                                    background button_red
+                                    if persistent.wnfh_debug_color:
+                                        background frame_red
+                                    else:
+                                        background frame_transparent
                                     area(0.0, 0.5, 0.2, 1.0)
                                     yanchor 0.5
                                     text bar[1]:
@@ -338,7 +384,10 @@ init 2:
                                         layout "tex"
                                         #action Play("sound", wnfh_gui["sound"]["plimp"]) 
                                 frame:
-                                    background button_green
+                                    if persistent.wnfh_debug_color:
+                                        background frame_green
+                                    else:
+                                        background frame_transparent
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
@@ -350,7 +399,10 @@ init 2:
 
             elif wnfh_preferences_variable[2]: # ===================== Амогус
                 frame:
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.5, 0.0, 0.46, 1.0)
                     xanchor 0.5
 
@@ -361,24 +413,66 @@ init 2:
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                         xalign 0.5
                     
-                    text "Амогус":
-                        pos(0.5, 0.5)
-                        style "wnfh_choice_" + persistent.timeofday
-                        xanchor 0.5
-                        size 30
-                        kerning 1
-                        min_width 200
-                        layout "tex"
+                    grid 1 1:
+                        for bar in wnfh_preferences_switch[3:4]:                    
+                            frame:
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
+                                area(0.0, 0.0, 1.0, 60)
+                                frame:
+                                    if persistent.wnfh_debug_color:
+                                        background frame_red
+                                    else:
+                                        background frame_transparent
+                                    area(0.0, 0.5, 350, 1.0)
+                                    yanchor 0.5
+                                    text bar[1]:
+                                        pos(0.5, 0.5)
+                                        style "wnfh_choice_" + persistent.timeofday
+                                        xanchor 0.5
+                                        size 20
+                                        kerning 1
+                                        min_width 200
+                                        layout "tex"
+                                        #action Play("sound", wnfh_gui["sound"]["plimp"]) 
+                                frame:
+                                    if persistent.wnfh_debug_color:
+                                        background frame_blue
+                                    else:
+                                        background frame_transparent
+                                    area(0.6, 0.5, 150, 1.0)
+                                    xanchor 1.0 yanchor 0.5
+                                frame:
+                                    if persistent.wnfh_debug_color:
+                                        background frame_green
+                                    else:
+                                        background frame_transparent
+                                    area(0.6, 0.5, bar[5]+12, 1.0)
+                                    xanchor 0.0 yanchor 0.5
+                                    bar value bar[2]:
+                                        left_bar bar[3]
+                                        right_bar bar[4]
+                                        thumb wnfh_bars[0][1]
+                                        hover_thumb wnfh_bars[0][1]
+                                        xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
 
                 
 
 
             frame:
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(1.0, 0.3, 500, 200)
                 xanchor 1.0 yanchor 0.5
             frame:
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(1.0, 0.7, 500, 500)
                 xanchor 1.0 yanchor 0.5
             

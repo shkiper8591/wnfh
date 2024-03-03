@@ -11,7 +11,10 @@ init 2:
         modal True tag menu
         window:
             frame: # ======================================================= # Нижняя панель
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.5, 0.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 0.0
                 imagebutton:
@@ -25,7 +28,10 @@ init 2:
             #    text " " + translation_new["LOAD"] + " " style "settings_link" yalign 0.5 color "#ffffff"
             #    add get_image("gui/settings/star.png") yalign 0.65
             frame: # ======================================================= # Нижняя панель
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.5, 1.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 1.0
 
@@ -53,7 +59,10 @@ init 2:
                     for i in range(0, 10):
                         if i == 0:
                             frame:
-                                background background_color
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
                                 area(0.0, 0.0, 50, 85)
                                 imagebutton:
                                     idle wnfh_gui["save_load"]["auto_idle"]
@@ -62,7 +71,10 @@ init 2:
 
                         else:
                             frame:
-                                background background_color
+                                if persistent.wnfh_debug_color:
+                                    background frame_black
+                                else:
+                                    background frame_transparent
                                 area(0.0, 0.0, 50, 85)
                                 imagebutton:
                                     idle wnfh_gui["save_load"][str(i) + "_idle"]

@@ -1,6 +1,6 @@
 init 2:
     screen wnfh_choice(*args):
-        modal True tag menu
+        modal True
         default wnfh_screen_1 = False
         default wnfh_screen_2 = False
         default wnfh_screen_3 = False

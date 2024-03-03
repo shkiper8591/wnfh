@@ -2,12 +2,6 @@ init 2:
     
     screen wnfh_main_menu():
         modal True tag menu
-        
-        key "game_menu":
-            action NullAction()
-        
-        key "screenshot":
-            action NullAction()
 
         python:
             from random import randrange
@@ -98,7 +92,10 @@ init 2:
     
 
             frame: # ======================================================= # Сплэши
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
                 text init_splash():
@@ -106,12 +103,18 @@ init 2:
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
             if debag_switch:
                 frame: # ======================================================= # Амогус
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.0, 0.5, 100, 100)
                     xanchor 0.0 yanchor 0.5
                     frame:
                         xmargin 5
-                        background button_blue
+                        if persistent.wnfh_debug_color:
+                            background frame_blue
+                        else:
+                            background frame_transparent
                         area(0.5, 0.5, 1.0, 1.0)
                         xanchor 0.5 yanchor 0.5
                         imagebutton:
@@ -122,12 +125,18 @@ init 2:
                             at wnfh_mm_button_hover_atl()
                             
             frame: # ======================================================= # Нижняя панель
-                background background_color
+                if persistent.wnfh_debug_color:
+                    background frame_black
+                else:
+                    background frame_transparent
                 area(0.5, 1.0, 1.0, 0.2)
                 xanchor 0.5 yanchor 1.0
                 
                 frame: # ======================================================= # Левый блок
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.0, 0.4, 0.42, 0.4)
                     xanchor 0.0 yanchor 0.5
                     grid 2 1:
@@ -135,7 +144,10 @@ init 2:
                         for button in wnfh_mm_left_buttons[0:2]:
                             frame:
                                 xmargin 5
-                                background button_red
+                                if persistent.wnfh_debug_color:
+                                    background frame_red
+                                else:
+                                    background frame_transparent
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
@@ -145,13 +157,19 @@ init 2:
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
                 frame:
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.0, 1.0, 0.1, 0.3)
                     xanchor 0.0 yanchor 1.0
                     yalign 0.5
                     frame:
                         xmargin 5
-                        background button_red
+                        if persistent.wnfh_debug_color:
+                            background frame_red
+                        else:
+                            background frame_transparent
                         area(0.5, 0.5, 0.5, 1.0)
                         xanchor 0.5 yanchor 0.5
                         textbutton wnfh_mm_left_buttons[2][1]:
@@ -162,13 +180,19 @@ init 2:
                             at wnfh_mm_button_hover_atl()
                 
                 frame: # ======================================================= # Центральный блок
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(0.5, 0.5, 250, 1.0)
                     xanchor 0.5 yanchor 0.5
                     yalign 0.5
                     frame:
                         xmargin 5
-                        background button_red
+                        if persistent.wnfh_debug_color:
+                            background frame_red
+                        else:
+                            background frame_transparent
                         area(0.5, 0.0, 1.0, 0.7)
                         xanchor 0.5 yanchor 0.0
                         textbutton wnfh_mm_mid_buttons[0][1]:
@@ -178,7 +202,10 @@ init 2:
                             hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
                     frame:
-                        background background_color
+                        if persistent.wnfh_debug_color:
+                            background frame_black
+                        else:
+                            background frame_transparent
                         area(0.5, 1.0, 1.0, 0.3)
                         xanchor 0.5 yanchor 1.0
                         yalign 0.5
@@ -187,7 +214,10 @@ init 2:
                             for button in wnfh_mm_down_buttons[3:5]:
                                 frame:
                                     xmargin 5
-                                    background button_red
+                                    if persistent.wnfh_debug_color:
+                                        background frame_red
+                                    else:
+                                        background frame_transparent
                                     area(0.5, 0.5, 0.5, 1.0)
                                     xanchor 0.5 yanchor 0.5
                                     imagebutton:
@@ -200,7 +230,10 @@ init 2:
                 
                 
                 frame: # ======================================================= # Правый блок
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(1.0, 0.4, 0.42, 0.4)
                     xanchor 1.0 yanchor 0.5
                     
@@ -209,7 +242,10 @@ init 2:
                         for button in wnfh_mm_right_buttons[0:2]:
                             frame:
                                 xmargin 5
-                                background button_red
+                                if persistent.wnfh_debug_color:
+                                    background frame_red
+                                else:
+                                    background frame_transparent
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
@@ -219,7 +255,10 @@ init 2:
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
                 frame:
-                    background background_color
+                    if persistent.wnfh_debug_color:
+                        background frame_black
+                    else:
+                        background frame_transparent
                     area(1.0, 1.0, 0.17, 0.3)
                     xanchor 1.0 yanchor 1.0
                     yalign 0.5
@@ -228,7 +267,10 @@ init 2:
                         for button in wnfh_mm_down_buttons[0:3]:
                             frame:
                                 xmargin 5
-                                background button_red
+                                if persistent.wnfh_debug_color:
+                                    background frame_red
+                                else:
+                                    background frame_transparent
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 imagebutton:

@@ -1,6 +1,13 @@
 init -265 python:
     # Нормальные троеточия
-    wp = "{w=-.25}.{w=-.25}.{w=-.25}." 
+    wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+
+init -4:
+
+    image wnfh_ctc_animation = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.895, ypos=0.98, xanchor=1.0, yanchor=1.0)
+
+    image wnfh_ctc_animation_nvl = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.9, ypos=0.94, xanchor=1.0, yanchor=1.0)
+ 
 
 init -3 python:
     wnfh_characters = {
@@ -45,10 +52,10 @@ init -3 python:
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
-            ctc = "ctc_animation_nvl"
+            ctc = "wnfh_ctc_animation_nvl"
         else:
             who_suffix = ""
-            ctc = "ctc_animation"
+            ctc = "wnfh_ctc_animation"
         what_color = "#FFDD7D"
         drop_shadow = (2, 2)
         for i, j in wnfh_characters.items():

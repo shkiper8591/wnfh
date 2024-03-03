@@ -48,13 +48,13 @@ init 2:
                 xanchor 0.5 yanchor 0.5
                 grid 1 3:
                     anchor (0.5, 0.5) pos (0.5, 0.5)
-                    add (wnfh_gui["tint_elements"]["im_line_long"]):
+                    add (wnfh_gui["tint_elements"]["wl_line"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                         xalign 0.5 yanchor 1.0 ypos 1.0
-                    add (wnfh_gui["tint_elements"]["widget_lp_bg"]):
+                    add (wnfh_gui["tint_elements"]["wl_bg"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
                         xalign 0.5
-                    add (wnfh_gui["tint_elements"]["im_line_long"]):
+                    add (wnfh_gui["tint_elements"]["wl_line"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
                         xalign 0.5
                 grid 9 1:
@@ -103,24 +103,25 @@ init 2:
                             background "#0000"
                             area(0.5, 0.5, 1.0, 65)
                             #xanchor 0.5 yanchor 0.5
-        
-                            add (wnfh_gui["tint_elements"]["im_line"]):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-                                xalign 0.5 yanchor 1.0
-        
+
                             add (wnfh_gui["tint_elements"]["im_bg"]):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
                                 xalign 0.5
     
-        
                             if wnfh_screen_variable[index]:
+
                                 add (wnfh_gui["tint_elements"]["im_gradient"]):
                                     xalign 0.5 alpha 0.6
                                     matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
+
                                 add (wnfh_gui["tint_elements"]["im_gradient"]):
                                     xalign 0.5 alpha 0.1
                             else:
                                 null height 20
+
+                            add (wnfh_gui["tint_elements"]["im_line"]):
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                xalign 0.5 yanchor 1.0
         
                             add (wnfh_gui["tint_elements"]["im_line"]):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])

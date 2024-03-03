@@ -30,23 +30,37 @@ init -2 python:
     }
     
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
-        "bar_full",
-        "button_bar_full",
-        "multibutton_bar_full",
+        #Фоны баров
         "bar_bg",
         "button_bar_bg",
         "multibutton_bar_bg",
+        #Полные бары
+        "bar_full",
+        "button_bar_full",
+        "multibutton_bar_full",
+        #Пустые бары
         "bar_null",
         "button_bar_null",
         "multibutton_bar_null",
+        #Ползунок
         "bar_htumb",
-        "widget_lp_bg",
+        #Элементы виджета ЛП
+        "wl_bg",
+        "wl_line",
+        #Элементы кнопок гейм селектора
         "im_bg",
         "im_line",
-        "im_line_long",
         "im_gradient",
+        #Фреймы настроек
         "pr_big_frame",
         "pr_big_frame_bg",
+        #Элементы диалогового окна
+        "db_line_upper_large",
+        "db_line_upper",
+        "db_line_lower",
+        "db_bg_large",
+        "db_bg",
+        #Виньетка
         "vignette",
     ]}
 

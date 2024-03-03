@@ -3,7 +3,7 @@ init python:
         "main_menu",
         "game_menu_selector",
         "quit",
-        #"say",
+        "say",
         "preferences",
         #"save",
         "load",

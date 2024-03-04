@@ -30,8 +30,8 @@ label d7_dv_scene_2:
     "Разумеется, после удобного шезлонга, данное деревянное чудо-техники ощущалось просто как пытка."
     "Но со временем я стал привыкать к ней и, даже в какой-то мере расслабился."
 
-    play music music_list["farewell_to_the_past"] fadein 5.0
-
+    play music wnfh_music_list["the_hill_camp_morning"] fadein 5.0
+    
     th "Что ж, небо сегодня не такое уж и скучное, как обычно это бывает."
     th "А то либо ни облачка, либо наоборот всё небо затянуто облаками."
 
@@ -62,7 +62,7 @@ label d7_dv_scene_2:
 
     dv "Ты чего тут делаешь?"
 
-    scene bg ext_stage_normal_sunset_wnfh
+    scene bg ext_stage_normal_night
     show dv smile pioneer at center
     with slide_down_blure_dissolve2
 

@@ -281,20 +281,26 @@ label d8_begunok_w_un_cont:
 
     "Хорошо, что идти тут было недалеко и мы сразу отправились в медпункт."
 
+    stop music fadeout 3.5
+    stop ambience fadeout 3.5
     window hide dissolve
     scene black with dissolve2
     window show dissolve
+    play music wnfh_music_list["sharkle_dream"] fadein 3.5
 
     "Знаете, что делает хорошую историю во истину хорошей? Уважение к читателю."
     "Мне нравится эта философия, поэтому не буду вас мучать долгим и мучительным рассказом о бегунке. Всё равно, ничего интересного более не происходило."
     "А посему, я возьму на себя власть отправить нас в конец всего это мероприятия[wp]"
 
+    stop music fadeout 3.5
     window hide dissolve
     scene bg ext_house_of_mt_day
     show kat normal pioneer at left
     show un smile pioneer at right
     with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
     window show dissolve
+    play music wnfh_music_list["the_bridge"] fadein 3.5
 
     "Наконец собрав все подписи, мы стояли перед домиком вожатой."
     "Куда, собственно, мы незамедлительно и вошли."
@@ -317,14 +323,14 @@ label d8_begunok_w_un_cont:
 
     show un grin pioneer at right with dspr
 
-    un "Так а я с ними заодно!"
+    un "А я с ними заодно!"
 
     show mt angry pioneer far at center with dspr
 
     "После ответа Лены, вожатая перевела взгляд уже на меня. И она была явно недовольна."
 
-    mt "Так, задание поручила тебе одну значит, а ты решил ещё и Елену запрячь!"
-    me "Уверяю вас, никто никого не запрягал, это её личная инициатива, да, Лена?"
+    mt "Так, задание поручила тебе одному значит, а ты решил Елену запрячь!"
+    me "Ха, уверяю вас, никто никого не запрягал! Это её личная инициатива, да, Лена?"
 
     show un smile pioneer at right with dspr
 
@@ -359,10 +365,16 @@ label d8_begunok_w_un_cont:
     with dspr
 
     kat "И[wp] Почему ты сел?" 
-    un "Да! Обед скоро, сказали же."
+    un "Да! Обед же скоро, сказали."
     me "Ну, а дальше-то что? Я устал и хочу посидеть."
 
-    "placeholder"
+    if wnfh_Data.getChoice_points_sum("un") <= 5:
+
+        "placeholder"
+
+    else:
+
+        "placeholder"
 
 
 

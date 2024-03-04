@@ -1,5 +1,5 @@
 label d8_begunok_w_un:
-
+    $ wnfh_Data.FlagSet("d8_begunok", True)
     $ wnfh_set_time()
     show kat normal pioneer at left
     show un smile pioneer at right
@@ -250,8 +250,8 @@ label d8_begunok_w_un:
     th "Ах, как же сложно иногда бывает!"
 
     call screen wnfh_choice(
-        ["Оставить", "Мне это всё не упёрлось", "d8_begunok_w_un_end1", {"kat": -1, "un": -1, "mt": -1}],
-        ["Остаться", "Вожатая будет очень сильно ругаться", "d8_begunok_w_un_cont", {"kat": 1, "un": 1}],
+        ["neutral", "Оставить", "Мне это всё не упёрлось", "d8_begunok_w_un_end1", {"kat": -1, "un": -1}],
+        ["kat", "Остаться", "Вожатая будет очень сильно ругаться", "d8_begunok_w_un_cont", {"kat": 1, "un": 1}],
         ["d8_choice_n6", "Семён думает не оставить ли Катю Лене"]
         ) with sphere_blure_dissolve2
 
@@ -263,7 +263,7 @@ label d8_begunok_w_un_end1:
 
     "Отмахнувшись рукой, я оставил девушек на едине, отправившись в клубы."
 
-    jump d8_male_clubs_day
+    jump d8_male_clubs_day_alt
 
 label d8_begunok_w_un_cont:
 
@@ -279,15 +279,92 @@ label d8_begunok_w_un_cont:
     kat "Ну что ж, споры между собой вы утрясли, теперь идёмте уже."
     me "Да уж[wp]"
 
+    "Хорошо, что идти тут было недалеко и мы сразу отправились в медпункт."
+
     window hide dissolve
-    show bg ext_aidpost_day with dissolve2
+    scene black with dissolve2
     window show dissolve
 
-    "Благо, идти долго не пришлось, ведь медпункт находился буквально через соседний пролесок."
-    "Решив долго не задерживаться на входе, как у библиотеки, я моментом постучался и, не дожидаясь ответа, вошёл."
+    "Знаете, что делает хорошую историю во истину хорошей? Уважение к читателю."
+    "Мне нравится эта философия, поэтому не буду вас мучать долгим и мучительным рассказом о бегунке. Всё равно, ничего интересного более не происходило."
+    "А посему, я возьму на себя власть отправить нас в конец всего это мероприятия[wp]"
 
-    stop ambience fadeout 2.0
-    scene bg int_aidpost_day with dissolve
-    play ambience ambience_medstation_inside_day fadein 2.0
+    window hide dissolve
+    scene bg ext_house_of_mt_day
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    with dissolve2
+    window show dissolve
+
+    "Наконец собрав все подписи, мы стояли перед домиком вожатой."
+    "Куда, собственно, мы незамедлительно и вошли."
+
+    stop ambience fadeout 3.5
+    show bg int_house_of_mt_day
+    show mt sad pioneer far at center
+    with dissolve2
+    play ambience ambience_int_cabin_day fadein 3.5
+
+    "Внутри, как не неожиданно, за столом сидела вожатая и заполняла какие-то документы."
+
+    kat "Вот и мы!"
+
+    show mt surprise pioneer far at center with dspr 
+
+    "Ольга Дмитриевна оторвала свой взгляд от бумаг и удивлённым взглядом уставилась на Лену."
+
+    mt "Товарищ Тихонова, у меня тут другие пионеры, можешь подождать за дверью?"
+
+    show un grin pioneer at right with dspr
+
+    un "Так а я с ними заодно!"
+
+    show mt angry pioneer far at center with dspr
+
+    "После ответа Лены, вожатая перевела взгляд уже на меня. И она была явно недовольна."
+
+    mt "Так, задание поручила тебе одну значит, а ты решил ещё и Елену запрячь!"
+    me "Уверяю вас, никто никого не запрягал, это её личная инициатива, да, Лена?"
+
+    show un smile pioneer at right with dspr
+
+    "Она радостно закивала головой."
+
+    show mt normal pioneer far at center with dspr
+
+    mt "Ладно[wp] Давайте сюда обходной лист и можете идти[wp]"
+
+    "Катя быстренько положила листок на стол к вожатой, а та убрала его в большую стопку документов."
+
+    mt "Только далеко не уходите, уже скоро обед."
+
+    show kat sad pioneer at left with dspr
+
+    kat "О, это хорошо, а то я уже проголодаться успела."
+    me "Ну, тогда идёмте ждать[wp]"
+
+    window hide dissolve
+    stop ambience fadeout 3.5
+    scene bg ext_house_of_mt_day
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    with dissolve2
+    play ambience ambience_camp_center_day fadein 3.5
+    window show dissolve
+
+    "Выйдя на улицу, я присел на ступеньки."
+
+    show kat confused pioneer at left
+    show un normal pioneer at right
+    with dspr
+
+    kat "И[wp] Почему ты сел?" 
+    un "Да! Обед скоро, сказали же."
+    me "Ну, а дальше-то что? Я устал и хочу посидеть."
 
     "placeholder"
+
+
+
+
+

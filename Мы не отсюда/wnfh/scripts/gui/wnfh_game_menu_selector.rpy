@@ -50,16 +50,16 @@ init 2:
                     anchor (0.5, 0.5) pos (0.5, 0.5)
                     add (wnfh_gui["tint_elements"]["wl_line"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-                        xalign 0.5 yanchor 1.0 ypos 1.0
+                        xalign 0.5 yanchor 1.0 ypos 1.0 xzoom 1.1
                     add (wnfh_gui["tint_elements"]["wl_bg"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
-                        xalign 0.5
+                        xalign 0.5 xzoom 1.1
                     add (wnfh_gui["tint_elements"]["wl_line"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
-                        xalign 0.5
-                grid 9 1:
+                        xalign 0.5 xzoom 1.1
+                grid 10 1:
                     anchor (0.5, 0.5) pos (0.5, 0.5)
-                    $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "din", "sv", "mz"]
+                    $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "mt", "din", "sv", "mz"]
                     $ character_with_img = [character for character in character_order]
                     for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
                         frame:

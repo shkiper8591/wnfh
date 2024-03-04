@@ -1,4 +1,5 @@
 label d8_begunok_canon:
+    $ wnfh_Data.FlagSet("d8_begunok", True)
     $ wnfh_set_time()
     ## Семён и Катя отправляются заполнять бегунок
     "Я вышел из столовой, и позвал сидящую на лавочке Катю." 
@@ -214,253 +215,33 @@ label d8_begunok_canon:
     stop ambience fadeout 0.5
     stop music fadeout 2
     play ambience ambience_camp_center_day fadein 3
-    scene bg ext_musclub_verandah_day_wnfh with door_invert_blure_dissolve
+    scene black with door_invert_blure_dissolve
     play sound sfx_close_door_1
     $ renpy.pause(1.0)
     window show
     
     "Мы, преисполняясь хорошим настроением, отправились в сторону медпункта."
-
-    window hide
-    scene bg ext_musclub_day with santa_barbara_out_blure_dissolve2
-    $ renpy.pause(1.0)
-    play music music_list["two_glasses_of_melancholy"] fadein 5
-    scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
-    window show
-    ## Славя докладывает где искать ОД
-    "Проходя мимо по площади, нас позади окликнули."
-    "Мы остановились, и к нам подбежала Славя."
-    
-    show sl normal pioneer at center with dissolve
-    
-    sl "Вот вы где, а я вас везде ищу."
-    me "Что-то случилось?"
-    sl "Ольга Дмитриевна просила вам передать, если успеете закончить до обеда, то она будет ждать вас у себя в домике."
-    me "Хорошо, спасибо."
-    sl "Всё, я побежала!"
-    
-    hide sl with dissolve
-    
-    "Славя развернулась и ушла в неизвестном направлении, а мы продолжили свой путь."
-    
-    window hide
-    scene bg ext_aidpost_day with dissolve2
-    window show
-
-    "Скоро мы стояли перед зданием медпункта."
-    "И прежде чем войти во внутрь, я постучался."
-    
-    th "Пожалуйста, пусть тебя не будет на месте, прошу, прошу!"
-    
-    $ wnfh_set_name("cs","Голос")
-    
-    cs "Войдите!"
-    
-    "Громко сказала медсестра изнутри."
-    
-    th "Ну не-е-ет."
-    
-    "С огромным нежеланием, я распахнул входную дверь и мы вошли в медпункт."
-    
-    window hide
-    stop ambience fadeout 0.5
-    stop music fadeout 2
-    play sound sfx_open_door_1
-    scene bg int_aidpost_day with door_blure_dissolve
-    play ambience ambience_medstation_inside_day fadein 3
-    show cs normal at right with dissolve
-    show kat normal pioneer at left with dissolve
-    $ wnfh_set_name("cs","Виола")
-    window show
-    
-    ## В медпункте
-    "В медпункте сидела Виола и заполняла какие-то бумаги."
-    "Закончив подписывать, она повернулась к нам, и Катя подошла к ней."
-    
-    kat "Здравствуйте, я Катя, новенькая здесь!"
-    cs "Что, поранились где-то? Или что-то болит?"
-    me "Аэ[wp] нет."
-    
-    show cs smile at right with dspr
-    play music music_list["eternal_longing"] fadein 5
-    
-    cs "Зачем же вы тогда пожаловали?"
-    
-    th "Обычного, с этого вопроса и начинается программа телепередач."
-    
-    me "Виолетта Церновна, не могли бы вы подписать Кате бегунок?"
-    
-    show cs normal at right with dspr
-    
-    "Она раздражённо вздохнула."
-    
-    cs "Просто Виола."
-    cs "Давай, пионерка, сюда свой «бегунок»."
-    
-    show cs normal glasses at right with dspr
-    
-    "Катя протянула Виоле лист."
-    "Быстро изучив его, медсестра поставила там размашистую такую подпись."
-    
-    cs "Всё, если точно больше ничего не надо, то топайте отсюда."
-    cs "А то вы меня отвлекаете от важной работы."
-    
-    show kat smile with dspr
-    show kat smile:
-        ease_quart 3.0 xcenter 0.6
-
-    "Забрав обходной лист, Катя в припрыжку пошла на выход."
-    
-    show kat smile:
-        ease_quart 2.0 xcenter 1.2
-    
-    th "Вот так вот просто?"
-    th "А где там фирменное «давай раздевайся пионер, слушать тебя будем»?"
-    th "Хотя[wp] {w}Не-не, лучше не надо."
-    # А жаль(
-    
-    window hide
-    stop ambience fadeout 0.5
-    stop music fadeout 0.5
-    scene bg ext_aidpost_day with door_invert_blure_dissolve
-    play sound sfx_close_door_1
-    play ambience ambience_camp_center_day fadein 3
-    show kat normal pioneer at center with dissolve
-    window show
-    
-    me "Что ж, всё прошло куда лучше чем обычно."
-    kat "А как обычно всё проходит?"
-    me "Хо, лучше тебе этого не знать."
-    
-    show kat confused with dspr
-    
-    kat "Но[wp] Почему?"
-    me "Думаю, сама когда-нибудь узнаешь."
-    me "Так, осталось последнее место."
-    
-    "Быстрым и уверенным шагом мы отправились к библиотеке."
-    
-    window hide
-    scene bg ext_library_day with slide_right_blure_dissolve2
-    window show
-    
-    "Библиотека, ровно как и медпункт, одно из тех мест которое я просто не могу терпеть." 
-    "А всё из-за ужасного зверя, обитающего там. {w}Нашей библиотекарши Жени."
-    "Понадеюсь, что она быстро подпишет обходной, и я с Катей покинем это место живыми."
-    
-    th "Наверное стоит предупредить её, но что если с ней Женя себя не будет вести себя так[wp] Как обычно ведёт."
-    th "Ладно, будет что будет."
-    
-    "С диким нежеланием, я вошел внутрь библиотеки, и следом за мной Катя."
-    
-    window hide
-    #scene bg ext_library_day at wnfh_entrance(1.0)
-    stop ambience fadeout 0.5
-    #$ renpy.pause(1.0)
-    play sound sfx_open_door_1
-    scene bg int_library_day with bibl_entrance
-    play ambience ambience_library_day fadein 3
-    show mz normal pioneer glasses at left
-    show kat normal pioneer at right 
-    with dissolve
-    window show
-    
-    ## В библиотеке
-    "Женя сидела на своем месте и что самое удивительное — не спала."
-    
-    mz "Зачем пришли?"
-    me "Да вот, новенькой обходный лист подписать надо."
-    
-    show mz bukal pioneer glasses at left with dspr
-    
-    mz "Хорошо, давайте сюда."
-    
-    "Катя подошла к столу Жени и протянула ей лист." 
-    "Через секунду, Женя поставила подпись и вернула обходной обратно Кате."
-    
-    mz "Читательский билет заводить будем?"
-    
-    show kat thinking with dspr
-    
-    kat "А это надолго?" 
-    mz "Если пишешь быстро, то нет."
-    
-    show kat normal with dspr
-    
-    kat "Тогда давай, наверное."
-    
-    "Женя достала из ящика некий лист с именами и подписями."
-    
-    mz "Слева имя, фамилия, справа в конце твоя подпись — всё."
-    
-    "Катя сделала всё как надо, и Женя убрала листок обратно."
-    
-    mz "Что-то ещё вам надо?"
-    me "Нет, всё, мы уходим."
-    
-    show kat sad with dspr
-    
-    kat "Но[wp]"
-    me "Уходи-и-им."
-    
-    show kat guilty with dspr
-    
-    kat "Ладно[wp]"
-    
-    window hide
-    stop ambience fadeout 0.5
-    scene bg ext_library_day with door_invert_blure_dissolve
-    play sound sfx_close_door_1
-    show kat normal pioneer at center with dissolve
-    play ambience ambience_camp_center_day fadein 3
-    play music music_list["two_glasses_of_melancholy"] fadein 5
-    window show
-
-    me "Какая-то она слишком добрая была."
-    #kat "Очевидно, что кто-то помог ей избавиться от недотраха." 
-    kat "А что, обычно злюка?"
-    me "Ну[wp] Не то чтобы, просто[wp]"
-    me "Ай сложно объяснить."
-    me "Скажем, у нас так исторически сложилось, что мы самую малость недолюбливаем друг друга."
-    
-    show kat surprise with dspr
-    
-    kat "И как же так вышло?"
-    me "Долго рассказывать."
-    
-    show kat thinking with dspr
-    
-    kat "Понятно[wp]"
-    
-    th "Какие-то все слишком[wp] {w}Нормальные."
-    th "Виола не пошлила, Женя не докапывалась."
-    th "Прям полный разрыв шаблонов."
-    
-    "С заполненным обходным, мы отправились к вожатой."
-    
-    window hide
-    hide kat with dissolve
-    scene bg ext_house_of_mt_day with slide_left_blure_dissolve2
-    $ renpy.pause(1.0)
-    window show
-    
-    "Благо идти тут было недалеко, и мы уже скоро были у домика."
-    "Мы поднялись по ступенькам к двери, и постучавшись вошли в дом."
-    
-    window hide
+    "И вы, читатель, надеюсь, тоже преисполняетесь хорошим настроением."
+    "Собственно, ради того, что сохранить ваше хорошее настроение, я возьму на себя привилегию сократить немного нашу историю."
+    "Просто, там не было ничего такого особенного. Туды сюдым ходили, да и всё в общем-то."
+    "Ну ладно, не буду Вас задерживать, продолжаем!"
+    
+    window hide dissolve
     play sound sfx_open_door_1
     scene bg ext_house_of_mt_day at wnfh_entrance
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_day with door_blure_dissolve2
     play ambience ambience_int_cabin_day fadein 3
-    window show
+    window show dissolve
     
     ## Сдача бегунка вожатой
     
+    "Разобравшись с бегунком, мы мигом прибежали к нашей вожатой."
     "Ольга Дмитриевна была в домике и вновь подписывала какие-то документы за столом."
     
-    show mt normal pioneer close at right with dissolve
-    show kat normal pioneer close at left with dissolve
+    show mt normal pioneer close at right
+    show kat normal pioneer close at left
+    with dissolve
     
     "Мы подошли ближе к вожатой, и Катя торжественно протянула ей заполненный бегунок."
     
@@ -483,13 +264,13 @@ label d8_begunok_canon:
     
     "Вожатая угукнула и вернулась к своим бумагам, а мы покинули домик."
     
-    window hide
+    window hide dissolve
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
     show kat normal pioneer with dissolve
     play ambience ambience_camp_center_day fadein 3
-    window show
+    window show dissolve
 
     "Выйдя, мы сели на крылечке."
     

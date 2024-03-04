@@ -1,5 +1,12 @@
 label d8_male_clubs_day:
 
+    window hide dissolve
+    stop ambience fadeout 2
+    scene bg ext_clubs_day with slide_diagonal_blure_dissolve5
+    play ambience ambience_camp_center_day fadein 3
+    $ renpy.pause(1.5)
+    window show dissolve
+
     ## Шурик в клубах рассказывает план
     "Скоро я уже был перед клубами, откуда доносились звуки работы инструментами."
     
@@ -97,8 +104,9 @@ label d8_male_clubs_day:
     sh "Значит бери то, что не портится."
     el "И что мне брать? Печенье? Одними печеньками не наешься, знаешь ли."
     
-    show el normal with dspr
-    show sh normal with dspr
+    show el normal
+    show sh normal 
+    with dspr
     
     sh "Ладно, завтра разберемся с этим."
     me "Я тогда пойду, раз делать нечего[wp]"

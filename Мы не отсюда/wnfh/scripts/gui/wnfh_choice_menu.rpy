@@ -23,10 +23,10 @@ init 2:
 
         python:
             if args[-1] == "test":
-                $ Test_wr = True
+                Test_wr = True
                 wnfh_Data_test.wnfh_dumpSave()
             else:
-                $ Test_wr = False
+                Test_wr = False
                 wnfh_Data.wnfh_dumpSave()
         #   for i in range(1,20):
         #       locals()["wnfh_screen_"+str(i)]=False

@@ -2,38 +2,39 @@
 2023 git@Deopster
 """
 init -1002:
-    python:
-        """
-        Инициализация переменных renpy default если их ещё не существует в глобальной области видимости
-        Необходимо для работы rollback (перемотки диалогов назад), ибо именно переменные типа default
-        renpy трекирует при перемотке. Таким образом информация по выборам кешируется в данной переменной
-        в формате словаря и загружается в классе wnfh_BD при необходимости обновить данные
-        """
+    
+    #"""
+    #Инициализация переменных renpy default если их ещё не существует в глобальной области видимости
+    #Необходимо для работы rollback (перемотки диалогов назад), ибо именно переменные типа default
+    #renpy трекирует при перемотке. Таким образом информация по выборам кешируется в данной переменной
+    #в формате словаря и загружается в классе wnfh_BD при необходимости обновить данные
+    #"""
     if "wnfh_database" not in globals():
         default wnfh_database = {}
     if "wnfh_database_test" not in globals():
         default wnfh_database_test = {}
     if "wnfh_preference_database" not in globals():
         default wnfh_preference_database = {}
-    class StorageManager:
-        def init(self,head=None):
-            self.SaveObject = head
-            self.next
-        def container(self,head):
-            lastEntry = self.head
-            while(lastEntry):
-                if head == lastEntry.head:
-                    return True
-                else:
-                    lastEntry = lastEntry.
-    
-    
-    class SavelinkedList:
-        def init(self):
-            self.head=None
-    class Storage(object,index,memoryValue):
-        def init(index,):
-            self.head=None
+    python:
+        class StorageManager:
+            def init(self,head=None):
+                self.SaveObject = head
+                self.next
+            def container(self,head):
+                lastEntry = self.head
+                while(lastEntry):
+                    if head == lastEntry.head:
+                        return True
+                    else:
+                        lastEntry = lastEntry.next
+        
+        
+        class SavelinkedList:
+            def init(self):
+                self.head=None
+        class Storage(object, index = None, memoryValue = None):
+            def init(index,):
+                self.head=None
 init -1001 python :
     import os
     import json

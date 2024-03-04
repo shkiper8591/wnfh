@@ -46,7 +46,7 @@ init -1001 python :
         """
         Создание объектов класса происходит позже инициализации класса в файле main_menu.rpy
         !!!! ТАМ ЖЕ УКАЗАН ПУТЬ JSON И НАЗВАНИЕ ФАЙЛА
-        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON ДОЛЖНО СОВПАДАТЬ С НАИМЕНОВАНИЕМ default ПЕРЕМЕННОЙ пример строка 32
+wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON ДОЛЖНО СОВПАДАТЬ С НАИМЕНОВАНИЕМ default ПЕРЕМЕННОЙ пример строка 32
         объект используется в качестве 'указателя' области работы и хранения данных а также их разграничения между тестовой областью и продуктовой (игровой)
         """
         def __init__(self,location):
@@ -56,12 +56,14 @@ init -1001 python :
             self.Encryption = True  # кодировка json ( не используется)
             self.DumpJSON = True #Формировать ли json в папке сейвов игры /game/saves/wnfh_database.json
             self.ShowDebug = True
-            self.load(self.location)      
+            self.load(self.location)
+            json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)      
         def ShowErrors(self,text):
+            text = text.replace("{","").replace("}","")
             ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
         def display(self,data):
             if self.ShowDebug == True:
-                ShowErrors(self,str(data))
+                self.ShowErrors(str(data))
             return 0
         def load(self, location):
             #if os.path.exists(location):
@@ -85,11 +87,13 @@ init -1001 python :
                 raise Exception("Произошла ошибка при попытке загрузки данных выбора из базы \
                                 - ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: \
                                 Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json {3}".format(e,self.path_enviroment in globals(),str(self.BD_INIT_MODULE)))
-            self.dumpdb() #запись в json
-            #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
+            
+            if renpy.in_rollback():
+                self.BD_INIT_MODULE = json.load(open(self.location,"r"))
+                self.dumpdb() #запись в json
         def dumpSave(self):
             globals()[self.path_enviroment] = self.BD_INIT_MODULE
-            self.display(self.BD_INIT_MODULE)
+            #self.display(self.BD_INIT_MODULE)
             self.dumpdb()
         """
         Запись json
@@ -167,7 +171,7 @@ init -1001 python :
                 - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
-            self.dumpSave()
+            self.dumpdb() #хуй
             return True
         def get(self , key):
             try:

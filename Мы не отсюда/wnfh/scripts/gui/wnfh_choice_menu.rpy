@@ -24,10 +24,8 @@ init 2:
         python:
             if args[-1] == "test":
                 Test_wr = True
-                wnfh_Data_test.wnfh_dumpSave()
             else:
                 Test_wr = False
-                wnfh_Data.wnfh_dumpSave()
         #   for i in range(1,20):
         #       locals()["wnfh_screen_"+str(i)]=False
             def  wnfh_add_to_bd(data):
@@ -127,3 +125,6 @@ init 2:
                     xalign 0.5 yanchor 0.0
 
         add wnfh_gui["choice"]["vignette"]
+
+        python:
+            wnfh_Data.dumpSave()

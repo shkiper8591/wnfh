@@ -22,9 +22,14 @@ init 2:
         default wnfh_screen_19 = False
 
         python:
+            if args[-1] == "test":
+                $ Test_wr = True
+                wnfh_Data_test.wnfh_dumpSave()
+            else:
+                $ Test_wr = False
+                wnfh_Data.wnfh_dumpSave()
         #   for i in range(1,20):
         #       locals()["wnfh_screen_"+str(i)]=False
-
             def  wnfh_add_to_bd(data):
                 data_set = wnfh_find_Operand(data,"prod",str(data[1][0]))
                 wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
@@ -55,10 +60,7 @@ init 2:
                 wnfh_screen_19
             ]
             wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1,20))        
-        if args[-1] == "test":
-            $ Test_wr = True
-        else:
-            $ Test_wr = False
+
         frame:
             background #0000
             area(0.5, 0.5, 0.7, 0.8)

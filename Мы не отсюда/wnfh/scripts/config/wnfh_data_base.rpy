@@ -15,6 +15,25 @@ init -1002:
         default wnfh_database_test = {}
     if "wnfh_preference_database" not in globals():
         default wnfh_preference_database = {}
+    class StorageManager:
+        def init(self,head=None):
+            self.SaveObject = head
+            self.next
+        def container(self,head):
+            lastEntry = self.head
+            while(lastEntry):
+                if head == lastEntry.head:
+                    return True
+                else:
+                    lastEntry = lastEntry.
+    
+    
+    class SavelinkedList:
+        def init(self):
+            self.head=None
+    class Storage(object,index,memoryValue):
+        def init(index,):
+            self.head=None
 init -1001 python :
     import os
     import json
@@ -35,9 +54,14 @@ init -1001 python :
             self.BD_INIT_MODULE = {} #инициализация словаря хранения - основная переменная для чтения
             self.Encryption = True  # кодировка json ( не используется)
             self.DumpJSON = True #Формировать ли json в папке сейвов игры /game/saves/wnfh_database.json
-            self.load(self.location)
+            self.ShowDebug = True
+            self.load(self.location)      
         def ShowErrors(self,text):
             ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
+        def display(self,data):
+            if self.ShowDebug == True:
+                ShowErrors(self,str(data))
+            return 0
         def load(self, location):
             #if os.path.exists(location):
             if  self.path_enviroment in globals():
@@ -64,6 +88,7 @@ init -1001 python :
             #self.BD_INIT_MODULE = json.load(open(self.location,"r"))
         def dumpSave(self):
             globals()[self.path_enviroment] = self.BD_INIT_MODULE
+            self.display(self.BD_INIT_MODULE)
             self.dumpdb()
         """
         Запись json
@@ -90,7 +115,9 @@ init -1001 python :
         <- Возвращает: None
         """
         def FlagSet(self,key,value = True, initiator=None):
-            self.BD_INIT_MODULE[str(key)] = {'type':'flag','value':value,'initiator':initiator}
+            data = {'type':'flag','value':value,'initiator':initiator}
+            self.BD_INIT_MODULE[str(key)] = data
+            self.display(data)
             self.dumpSave()
             return True
         """
@@ -109,7 +136,9 @@ init -1001 python :
         def FlagDataGet(self,key=None):
             self.open_f()
             try:
-                return self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
+                data = self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
+                self.display(data)
+                return data
             except KeyError:
                 raise Exception("При попытке получить значение флага {0} получено исключение \
                                 #- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
@@ -129,7 +158,9 @@ init -1001 python :
         def FlagGet(self,key=None):
             self.open_f()
             try:
-                return self.BD_INIT_MODULE[key]['value']
+                data = self.BD_INIT_MODULE[key]['value']
+                self.display(data)
+                return data
             except KeyError:
                 self.ShowErrors("При попытке получить значение флага {0} получено исключение \
                 - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
@@ -159,7 +190,9 @@ init -1001 python :
             if key is None:
                 self.ShowErrors("Не указан ключ - название выбора, для корректной работы метода, получения выбора")
             try:
-                return self.BD_INIT_MODULE[key]["Выбранно"]
+                data = self.BD_INIT_MODULE[key]["Выбранно"]
+                self.display(data)
+                return data
             except KeyError:
                 self.ShowErrors(u"При попытке получить номер выбранного ответа получено исключение \nМетод: getChoice_result_number(self , key=None))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
 
@@ -180,7 +213,9 @@ init -1001 python :
         """
         def getChoice_result_text(self , key):
             try:
-                return self.BD_INIT_MODULE[key]["Текст выбора"]
+                data = self.BD_INIT_MODULE[key]["Текст выбора"]
+                self.display(data)
+                return data
             except KeyError:
                 self.ShowErrors("При попытке получить текст выбранного ответа получено исключение \nМетод: getChoice_result_text(self , key))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
             except Exception as e:
@@ -199,8 +234,9 @@ init -1001 python :
         """
         def getChoice_text(self , key):
             try:
-                return self.BD_INIT_MODULE[key]["Название выбора"]
-
+                data = self.BD_INIT_MODULE[key]["Название выбора"]
+                self.display(data)
+                return data
             except KeyError:
                 self.ShowErrors("При попытке получить заголовок выбранного ответа получено исключение \nМетод: getChoice_text(self , key))\n Вероятно неверно прописано название выбора либо его ещё не существует. Список имеющихся выборов:\n "+"\n, ".join(self.BD_INIT_MODULE.keys())+"\nПередан выбор:\n"+key)
             except Exception as e:
@@ -288,6 +324,12 @@ init -1001 python :
         """
         Удаление значения из словаря, не знаю зачем но может понадобится вручную удалять выбор
         """
+        def AddLove_points(self,lovepoints):
+            self.BD_INIT_MODULE[BD_INIT_MODULE.keys[-1]+random.randint(100000)] = {'type':'PointsSet', "Влияние на персонажей":lovepoints}
+            self.dumpSave()
+        def DellLove_points(self,lovepoints):
+            self.BD_INIT_MODULE[BD_INIT_MODULE.keys[-1]+random.randint(100000)] = {'type':'PointsDel', "Влияние на персонажей":lovepoints}
+            self.dumpSave()
         def delete(self , key):
             if not key in self.BD_INIT_MODULE:
                 return False
@@ -305,31 +347,7 @@ init -1001 python :
 
 
 
-    """
-    Менеджер очередей ну а точнее просто связанный список =) (не дописан / не используется)
-    """
-    # class StorageManager:
-    #    def __init__(self,head=None):
-    #        self.SaveObject = head
-    #        self.next
-    #    def container(self,head):
-    #        lastEntry = self.head
-    #        while(lastEntry):
-    #            if head == lastEntry.head:
-    #                return True
-    #            else:
-    #                lastEntry = lastEntry.
-    #
-    #
-    # class SavelinkedList:
-    #    def __init__(self):
-    #        self.head=None
-    # class Storage(object,index,memoryValue):
-    #    def __init__(index,):
-    #        self.head=None
-    #    def __NAME_:
-    #    def __EXIT__:
-    #    def __ENTER__:
+
 init -1000:
     label null_ellement:
         $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")

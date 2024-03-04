@@ -32,8 +32,8 @@ init -1002:
         class SavelinkedList:
             def init(self):
                 self.head=None
-        class Storage(object, index = None, memoryValue = None):
-            def init(index,):
+        class Storage:
+            def init(self,object, index = None, memoryValue = None):
                 self.head=None
 init -1001 python :
     import os

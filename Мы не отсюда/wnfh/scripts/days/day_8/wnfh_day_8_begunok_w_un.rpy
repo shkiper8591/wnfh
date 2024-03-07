@@ -370,11 +370,96 @@ label d8_begunok_w_un_cont:
 
     if wnfh_Data.getChoice_points_sum("un") <= 5:
 
-        "placeholder"
+        jump d8_begunok_w_un_1
+
+    else:
+
+        jump d8_begunok_w_un_2
+
+label d8_begunok_w_un_1:
+
+    "Лена посмотрела на меня каким-то около осудительным взглядом."
+
+    hide un with dissolve2
+
+    # Надо анимацию Лене
+    $ renpy.notify("Тут надо анимацию того как уходит Лена вправо")
+
+    "И, гордо хмыкнув, она развернулась и пошла в сторону центра лагеря."
+
+    me "Интересно, чего это она[wp]"
+
+    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+
+            if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
+
+                jump d8_begunok_w_un_4
+
+        jump d8_begunok_w_un_3
 
     else:
 
         "placeholder"
+
+label d8_begunok_w_un_3:
+
+    show kat thinking pioneer at left with dspr
+
+    kat "Наверное, я за ней пойду."
+    
+    $ renpy.notify("Тут надо анимацию того как уходит Катя вправо")
+    
+    hide kat with dissolve2
+    # Надо анимацию кате 
+    
+    "Так и остался я в полном одиночестве дожидаться обеда."
+    
+    jump d8_obed_me_alone
+
+label d8_begunok_w_un_4:
+
+    $ wnfh_Data.AddLove_points({"kat":1})
+
+    show kat normal pioneer at left with dspr
+    $ renpy.notify("Возможно тут следует дать Кате анимацию передвижения, но щас кароче лень этим маяцаааа")
+    "Катя проводила взглядом ушедшую Лену и, села рядом со мной."
+    
+    kat "Соглашусь пожалуй с тобой, устала я ходить[wp]"
+
+    "Усевшись настолько удобно, насколько это позволяли ступеньки, она положила голову на руки и задумчиво уставилась куда-то вдаль."
+    "Отследив траекторию её взгляда, я понял, что она наблюдает за уходящей Леной."
+
+    kat "Странная она всё-таки, но забавная."
+    me "Лена-то?"
+
+    "В ответ, Катя лишь грустно угукнла."
+
+    me "Это да[wp] Правда, я её толком и не знаю, чтобы наверняка так утверждать."
+
+    show kat interested pioneer at left with dspr
+
+    kat "Серьёзно?"
+    me "Ну да, а что такого?"
+
+    show kat smile pioneer at left with dspr
+
+    kat "Хм, а выглядите как хорошие друзья."
+
+    "placeholder"
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

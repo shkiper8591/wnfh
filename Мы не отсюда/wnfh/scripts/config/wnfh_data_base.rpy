@@ -329,7 +329,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
         """
         Удаление значения из словаря, не знаю зачем но может понадобится вручную удалять выбор
         """
-        def SetLove_points(self,lovepoints):
+        def AddLove_points(self,lovepoints):
             self.BD_INIT_MODULE[BD_INIT_MODULE.keys[-1]+random.randint(100000)] = {'type':'PointsSet', "Влияние на персонажей":lovepoints}
             self.dumpSave()
 

@@ -1,11 +1,23 @@
-label d8_obed_me_kat_un:
+label d8_obed_me_alone:
 
-    window hide
+    window hide dissolve
     scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
     $ renpy.pause(1.0)
     scene bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
-    window show
+    window show dissolve
+
+    "placeholder"
+
+
+label d8_obed_me_kat_un:
+
+    window hide dissolve
+    scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
+    $ renpy.pause(1.0)
+    scene bg ext_dining_hall_near_day with dissolve
+    $ renpy.pause(1.0)
+    window show dissolve
 
     "placeholder"
 

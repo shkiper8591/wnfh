@@ -391,14 +391,12 @@ label d8_begunok_w_un_1:
 
     if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
 
-            if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
-
-                jump d8_begunok_w_un_4
-
-        jump d8_begunok_w_un_3
+        if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
+            jump d8_begunok_w_un_4
+        else:
+            jump d8_begunok_w_un_3
 
     else:
-
         "placeholder"
 
 label d8_begunok_w_un_3:

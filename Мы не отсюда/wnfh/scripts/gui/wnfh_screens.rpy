@@ -7,7 +7,7 @@ init python:
         "preferences",
         #"save",
         "load",
-        #"nvl",
+        "nvl",
         #"choice",
         #"text_history_screen",
         #"yesno_prompt",

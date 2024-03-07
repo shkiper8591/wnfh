@@ -60,6 +60,7 @@ init -2 python:
         "db_line_lower",
         "db_bg_large",
         "db_bg",
+        "nvl_bg",
         #Виньетка
         "vignette",
     ]}

@@ -389,7 +389,7 @@ label d8_begunok_w_un_1:
 
     me "Интересно, чего это она[wp]"
 
-    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
             jump d8_begunok_w_un_4
@@ -397,7 +397,14 @@ label d8_begunok_w_un_1:
             jump d8_begunok_w_un_3
 
     else:
+
         "placeholder"
+        jump d8_begunok_w_un_3
+
+label d8_begunok_w_un_2:
+
+    "placeholder"
+    jump d8_begunok_w_un_3
 
 label d8_begunok_w_un_3:
 
@@ -443,23 +450,75 @@ label d8_begunok_w_un_4:
 
     kat "Хм, а выглядите как хорошие друзья."
 
-    "placeholder"
+    "Меня позабавил её ответ."
+
+    me "Нет, действительно хороший друг у меня тут, так это Алиса."
+    kat "Та самая, которая якобы подставила тебя?"
+    me "Всмысле якобы?"
+
+    show kat smile2 pioneer at left with dspr
+
+    "Резко и, немного, грубо выдал я. А Катя лишь смеялась, по всей видимости, от моей реакции."
+
+    kat "Я шучу. Всё же, по тебе было видно, что ты не хотел принимать прямого участия."
+
+    show kat grin pioneer at left with dspr
+
+    kat "К тому же, ты извинился, пусть и не совсем искренне~"
+
+    "Последние слова из её уст прозвучали, как некий призыв к действию."
+    "Прям таки читалось: «Давай, Семён, ещё раз извинись, только в этот раз более честно и искреннее»."
+
+    window hide dissolve
+    call screen wnfh_choice(
+        ["Извиниться. Ещё раз", "Давай, Семён, у всё получится", "d8_begunok_w_un_appologize", {"kat":1}],
+        ["Промолчать", "Я не канадец чтобы извинятся по многу", "d8_begunok_w_un_silience", {"kat": -1}],
+        ["d8_choice_n7", "Семён думает извиниться ли перед Катей - рут Лены"]
+        ) with sphere_blure_dissolve2
+
+label d8_begunok_w_un_appologize:
+
+    window show dissolve
+
+    me "Да, перенервничал просто я тогда[wp]"
+    me "Прости, пожалуйста, мне правда не хотелось тебя обливать."
+    me "Мне вообще не хотелось в этом участвовать, но с дуру согласился[wp]"
      
+    show kat smile pioneer at left with dspr
 
+    "Катя насмешливо хмыкнула."
 
+    if wnfh_Data.getChoice_points_sum("kat") == 3:
 
+        show kat happy pioneer at left with dspr
 
+        kat "Хорошо, я прощу тебя."
 
+    else:
 
+        kat "Что ж, я подумаю над твоими словами."
 
+    play sound sfx_dinner_horn_processed
 
+    "Вдали раздался долгожданный горн на обед."
 
+    me "Ну-с, пора идти[wp]"
 
+    jump d8_obed_me_kat
 
+label d8_begunok_w_un_silience:
 
+    window show dissolve
+    
+    "Я предпочёл промолчать на этот очевиднеший намёк и грустно уткнулся взглядом в землю, где стал разглядывать пробегающих муравьёв."
+    "Пионерка не отрывала с меня с меня свой взор ещё несколько секунд. Но, поняв, что ничего она от меня не услышит, Катя также уткнула взгляд в землю."
 
+    kat "Ясно[wp]"
 
+    play sound sfx_dinner_horn_processed
 
+    "Так и сидели мы молча, дожидаясь горна на обед."
 
+    me "Что ж, пора в путь."
 
-
+    jump d8_obed_me_kat

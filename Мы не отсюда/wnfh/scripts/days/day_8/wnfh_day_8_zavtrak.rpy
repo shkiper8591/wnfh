@@ -15,7 +15,7 @@ label d8_zavtrak:
     ## Завтрак
     "Войдя в столовую, я стал думать, куда бы сесть."
 
-    if wnfh_Data.getChoice_points_sum("un") < 4:
+    if wnfh_Data.getChoice_points_sum("un") <= 2:
 
         show un smile pioneer:
             xcenter 1.2
@@ -56,7 +56,7 @@ label d8_zavtrak:
             ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
             ) with sphere_blure_dissolve2
 
-    if wnfh_Data.getChoice_points_sum("un") == 4:
+    if wnfh_Data.getChoice_points_sum("un") == 3:
         
         jump d8_zavtrak_w_un
 

@@ -12,10 +12,10 @@ label d7_male_clubs:
     window show dissolve
     ## Семён в клубах
 
-    if wnfh_Data.FlagGet("d7_kat_oblil_me") == False:
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
         "К моему возвращению, Светы здесь уже не было. {w}И слава богу."
         "Без присутствия вездесущей комсомолки, Шурик и Сергей продолжили работу над своим изделием."
-    elif wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+    elif wnfh_Data.FlagGet("d7_kat_oblil_me") == "me_oblil":
         "Войдя в клубы, Шурик сразу убежал к рабочему столу за которым сидел Сергей."
         "А на самом столе стояло наше изделие, над которым они усердно трудились."
     else:

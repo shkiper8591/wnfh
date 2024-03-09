@@ -160,7 +160,7 @@ label d7_me_and_dv_w_usw:
     call screen wnfh_choice(
         ["dv", "Согласиться", "Поплавую немного", "d7_dv_yes_2", {"dv": 1, "usw": 1}],
         ["neutral", "Отказаться", "Не люблю плавать особо", "d7_dv_no_2", {"dv": -1, "usw": -1}],
-        ["d7_choice_n12", "Пойти на пляж с рыжими или нет"]
+        ["d7_choice_n14", "Пойти на пляж с рыжими или нет"]
         ) with sphere_blure_dissolve2
 
 label d7_dv_no_2:

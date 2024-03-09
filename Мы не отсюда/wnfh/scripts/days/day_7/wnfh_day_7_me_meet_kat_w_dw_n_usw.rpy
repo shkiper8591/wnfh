@@ -6,7 +6,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     scene bg ext_dining_hall_near_day
     show dv normal pioneer at right
     show usw normalsmile pioneer at left 
-    $ wnfh_Data.FlagSet("d7_kat_oblil_me", True)
+    $ wnfh_Data.FlagSet("d7_kat_oblivanie", "me_oblil")
     with dissolve2
     play ambience ambience_camp_center_day fadein 3.0
     #play music music_list["timid_girl"] fadein 3.5

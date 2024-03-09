@@ -49,6 +49,7 @@ init -3 python:
     #renpy.image("wnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 
     def wnfh_chars_define(kind=adv):
+        timeofday = persistent.timeofday
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
@@ -56,7 +57,7 @@ init -3 python:
         else:
             who_suffix = ""
             ctc = "wnfh_ctc_animation"
-        what_color = "#FFDD7D"
+        what_color = wnfh_choice_tint_color[timeofday][0]
         drop_shadow = (2, 2)
         for i, j in wnfh_characters.items():
             if i == "narrator":
@@ -72,6 +73,7 @@ init -3 python:
 
     ## Спизженные из БКРР парные персонажи и модернизированные для работы с NVL
     def wnfh_double_char_define(first, second, time_of_day, kind=adv):
+        timeofday = persistent.timeofday
         colors = {
             "day":"#80A055",
             "sunset":"#CDAF69",
@@ -84,7 +86,7 @@ init -3 python:
         else:
             who_suffix = ""
             ctc = "ctc_animation"
-        what_color = "#FFDD7D"
+        what_color = wnfh_choice_tint_color[timeofday][0]
         drop_shadow = (2, 2)
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], colors[time_of_day], wnfh_characters[second][1], wnfh_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")

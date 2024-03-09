@@ -1,4 +1,4 @@
-init -4 python:
+init -5 python:
 
     #### Тут лежат пути к файлам ####
     wnfh_ROOT = "wnfh/"

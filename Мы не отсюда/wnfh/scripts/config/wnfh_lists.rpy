@@ -1,4 +1,4 @@
-init -2 python:
+init -4 python:
 
     ## Создание листов ##
     
@@ -61,6 +61,11 @@ init -2 python:
         "db_bg_large",
         "db_bg",
         "nvl_bg",
+        #Кнопки
+        "button_bg_1",
+        "button_bg_2",
+        "button_line",
+        "button_hover",
         #Виньетка
         "vignette",
     ]}

@@ -79,45 +79,45 @@ init 2:
                 "font": [persistent.font_size == "large", "Обычный", "Жирный"]
             }
 
-            wnfh_bars = [
-                ["htumb", im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))],
+            wnfh_bars = {
+                "htumb": [im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))],
                 
-                ["bar_full", im.Composite(
+                "bar_full": [im.Composite(
                     (473, 37),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["bar_null", im.Composite(
+                "bar_null": [im.Composite(
                     (473, 37),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["button_bar_full", im.Composite(
+                "button_bar_full": [im.Composite(
                     (145, 35),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["button_bar_null", im.Composite(
+                "button_bar_null": [im.Composite(
                     (145, 35),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["multibutton_bar_full", im.Composite(
+                "multibutton_bar_full": [im.Composite(
                     (248, 35),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
 
-                ["multibutton_bar_null", im.Composite(
+                "multibutton_bar_null": [im.Composite(
                     (248, 35),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
                     (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
                     )],
-            ]
+            }
 
             wnfh_preferences_button = [
                 ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
@@ -143,12 +143,12 @@ init 2:
                 #["lovepoints"       ,"Заглушка"                   ,[NullAction(),                                     Play("sound", wnfh_sfx_list["plimp2"])]           ,  NullAction()                                                                                 , NullAction()        ],
                 #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
                 
-                #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)    ,wnfh_bars[5][1]  ,wnfh_bars[6][1], 248  ],
-                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)    ,wnfh_bars[5][1]  ,wnfh_bars[6][1], 248  ],
-                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
-                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
+                #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0], 248  ],
+                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0], 248  ],
+                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
+                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
 
-                ["debug_color"      ,"Цветовая индикация"  ,FieldValue(persistent, "wnfh_debug_color", 1, step=1)   ,wnfh_bars[3][1]  ,wnfh_bars[4][1], 145  ],
+                ["debug_color"      ,"Цветовая индикация"  ,FieldValue(persistent, "wnfh_debug_color", 1, step=1)   ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
 
             ]
 
@@ -294,10 +294,10 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars[1][1]
-                                        right_bar wnfh_bars[2][1]
-                                        thumb wnfh_bars[0][1]
-                                        hover_thumb wnfh_bars[0][1]
+                                        left_bar wnfh_bars["bar_full"][0]
+                                        right_bar wnfh_bars["bar_null"][0]
+                                        thumb wnfh_bars["htumb"][0]
+                                        hover_thumb wnfh_bars["htumb"][0]
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
                         for bar in wnfh_preferences_switch[0:3]:                    
                             frame:
@@ -339,8 +339,8 @@ init 2:
                                     bar value bar[2]:
                                         left_bar bar[3]
                                         right_bar bar[4]
-                                        thumb wnfh_bars[0][1]
-                                        hover_thumb wnfh_bars[0][1]
+                                        thumb wnfh_bars["htumb"][0]
+                                        hover_thumb wnfh_bars["htumb"][0]
                                         xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
 
             elif wnfh_preferences_variable[1]: # ===================== Аудио
@@ -391,10 +391,10 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars[1][1]
-                                        right_bar wnfh_bars[2][1]
-                                        thumb wnfh_bars[0][1]
-                                        hover_thumb wnfh_bars[0][1]
+                                        left_bar wnfh_bars["bar_full"][0]
+                                        right_bar wnfh_bars["bar_null"][0]
+                                        thumb wnfh_bars["htumb"][0]
+                                        hover_thumb wnfh_bars["htumb"][0]
                                         xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
 
             elif wnfh_preferences_variable[2]: # ===================== Амогус
@@ -454,8 +454,8 @@ init 2:
                                     bar value bar[2]:
                                         left_bar bar[3]
                                         right_bar bar[4]
-                                        thumb wnfh_bars[0][1]
-                                        hover_thumb wnfh_bars[0][1]
+                                        thumb wnfh_bars["htumb"][0]
+                                        hover_thumb wnfh_bars["htumb"][0]
                                         xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
 
                 

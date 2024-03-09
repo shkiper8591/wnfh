@@ -53,7 +53,8 @@ init 2:
                 background frame_black
             else:
                 background frame_transparent
-            frame: # ======================== Кнопочки
+
+            frame: # ======================== Кнопка логов
                 area(0.0, 0.5, 0.07, 1.0)
                 xanchor 0.0 yanchor 0.5
                 if persistent.wnfh_debug_color:
@@ -67,7 +68,7 @@ init 2:
                     xanchor 1.0 yanchor 0.5 
                     xpos 1.0 ypos 0.5
                     action ShowMenu("text_history")
-            frame: # ======================== Кнопочки
+            frame: # ======================== Кнопка перемотки
                 area(1.0, 0.5, 0.07, 1.0)
                 xanchor 1.0 yanchor 0.5
                 if persistent.wnfh_debug_color:

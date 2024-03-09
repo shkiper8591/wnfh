@@ -1,5 +1,7 @@
 label d7_un_progulka:
 
+    $ wnfh_Data.FlagSet("d7_me_pogulyal_w_un", True)
+
     "Лена, задумавшись, стала почесывать свой подбородок."
 
     show un smile2 pioneer at center with dspr

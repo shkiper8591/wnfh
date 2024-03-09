@@ -9,6 +9,7 @@ label d8_obed_me_alone:
 
     "placeholder"
 
+    jump d8_obed_me_kat_mi
 
 label d8_obed_me_kat_un:
 
@@ -20,6 +21,8 @@ label d8_obed_me_kat_un:
     window show dissolve
 
     "placeholder"
+
+    jump d8_obed_me_kat_mi
 
 label d8_obed_me_kat_mi:
 

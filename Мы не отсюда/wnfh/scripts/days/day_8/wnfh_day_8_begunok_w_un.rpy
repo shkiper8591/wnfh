@@ -376,6 +376,43 @@ label d8_begunok_w_un_cont:
 
         jump d8_begunok_w_un_2
 
+label d8_begunok_w_un_2:
+
+    show un smile pioneer at left with dspr
+
+    un "А знаешь."
+
+    $ renpy.notify("Мб тут надо фоновый спрайт Лены на шезлонге") 
+
+    "Лена прошлась и улеглась в шезлонг."
+
+    show un laugh pioneer at right
+    show kat confused pioneer at left
+    with dspr
+
+    un "Что-то я тоже устала."
+
+    "Наша новенькая же, непонимающем взглядом сначала окинула меня, потом Лену и затем вновь меня."
+
+    kat "Странный вы, мы если отсюда в столовую пойдём, в толкучку попадём."
+    me "Та не, эти троглодиты быстро проталкиваются, так что как раз вовремя придём."
+
+    "Уже разлегшаяся как у себя дома Лена, одобрительно закивала головой."
+
+    show kat thinking pioneer at left with dspr
+
+    kat "Ясно[wp]"
+
+    show kat happy pioneer at left with dspr
+
+    kat "Ну что ж, тогда и я с вами за одно посижу!"
+
+    $ wnfh_Data.AddLove_points({"kat":1})
+
+    "placeholder"
+    
+    jump d8_obed_me_kat_un
+
 label d8_begunok_w_un_1:
 
     "Лена посмотрела на меня каким-то около осудительным взглядом."
@@ -389,39 +426,93 @@ label d8_begunok_w_un_1:
 
     me "Интересно, чего это она[wp]"
 
-    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
+    if wnfh_Data.getChoice_points_sum("kat") <= 1:
+
+        "Катя посмотрела на меня, а потом на уходящую Лену."
+        
+        kat "Наверное, я тоже пойду."
+        
+        hide kat with dissolve
+        $ renpy.notify("Надо Кате анимацию как она уходит вправо")
+        
+        "Сказала она и ушла вслед за Леной, оставив меня совсем одного."
+        
+        th "Ну, зато посижу в тишине и спокойно дождусь обеда[wp]"
+        
+        jump d8_obed_alone
+    
+    else:
+
+        jump d8_begunok_w_un_flagcheck
+
+label d8_begunok_w_un_flagcheck:
+
+# тут будет фактчек если Семён облил
+
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
+        
+        jump d8_begunok_w_un_flagcheck_dv_oblila
+
+    elif wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
-            jump d8_begunok_w_un_4
+            jump d8_begunok_w_un_flagcheck_me_oblil
         else:
-            jump d8_begunok_w_un_3
+            jump d8_begunok_w_un_2
 
     else:
 
-        "placeholder"
-        jump d8_begunok_w_un_3
+        jump d8_begunok_w_un_flagcheck_ne_oblil
 
-label d8_begunok_w_un_2:
+label d8_begunok_w_un_flagcheck_dv_oblila:
+
+    kat "Странная она какая-то[wp]"
+    me "Странная говоришь?"
+    
+    "Катя села рядом со мной на ступеньку, перед этим аккуратно сбросив пыль с неё."
+    
+    kat "Ну да, настроение у неё прям переменчивое."
+    kat "То перед библиотекой, то вот сейчас."
+    me "Честно, не замечал никогда такого особо[wp]"
+    me "Хотя, я и не общаюсь с ней толком."
+    
+    # удивлённый ебальник кате
+    
+    "Моя собеседница сильно удивилась моим словам, что было видно по её лицу."
+    
+    kat "А так и не скажешь, что вы мало общаетесь."
+    me "Недавно вот только начали дружить[wp]"
+    kat "Вот оно что[wp]"
+    
+    "Разумеется, наше общение с Леной и дружбой-то тяжело было назвать. Скорее, мы были как коллеги, не более того."
+    
+    if wnfh_Data.FlagGet("d7_me_pogulyal_w_un") == True:
+    
+        "Тем не менее, вчерашняя прогулка мне понравилась, пусть она и была прервана благодаря Мику."
+    
+    kat "И что, ты совсем тут ни с кем не общаешься? Как-то грустно это."
+    me "Ну, почему ни с кем. С Алисой вот дружу хорошо."
+    
+    "После упоминания Алисы, Катя резко переменилась в лице."
+    
+    kat "Ах, та самая которая меня облила[wp] Хороший друг, ничего не скажешь."
+    me "Хе, но она правда хороший друг. Только юмор у неё и Ульяны своеобразный."
+    kat "Я уж заметила[wp]"
+    
+    "Вдалеке раздался горн на обед, что ознаменовало конец наших посиделок."
+    
+    me "Ну что, время обеда."
+    kat "Это точно."
+
+    jump d8_obed_me_kat
+
+label d8_begunok_w_un_flagcheck_ne_oblil:
 
     "placeholder"
-    jump d8_begunok_w_un_3
 
-label d8_begunok_w_un_3:
+    jump d8_begunok_w_un_flagcheck_me_oblil
 
-    show kat thinking pioneer at left with dspr
-
-    kat "Наверное, я за ней пойду."
-    
-    $ renpy.notify("Тут надо анимацию того как уходит Катя вправо")
-    
-    hide kat with dissolve2
-    # Надо анимацию кате 
-    
-    "Так и остался я в полном одиночестве дожидаться обеда."
-    
-    jump d8_obed_me_alone
-
-label d8_begunok_w_un_4:
+label d8_begunok_w_un_flagcheck_me_oblil:
 
     $ wnfh_Data.AddLove_points({"kat":1})
 

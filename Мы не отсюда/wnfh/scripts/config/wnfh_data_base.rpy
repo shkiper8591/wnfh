@@ -94,7 +94,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             globals()[self.path_enviroment] = self.BD_INIT_MODULE
             #self.display("DATA CHANGED")
             #self.display(self.BD_INIT_MODULE)
-            self.dumpdb()
+            #self.dumpdb()
         """
         Запись json
         """
@@ -124,6 +124,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             self.BD_INIT_MODULE[str(key)] = data
             self.display(data)
             self.dumpSave()
+            self.dumpdb()
             return True
         """
         Описание:
@@ -171,7 +172,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                 - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
-            #self.dumpdb()
+            self.dumpdb()
             self.dumpSave()
             return True
         def get(self , key):
@@ -320,8 +321,8 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                 self.display(str(overwrite["rollback"]))
                 overwrite["rollback"] = not overwrite["rollback"]
                 self.BD_INIT_MODULE[name] = overwrite
-                self.dumpdb()
                 self.dumpSave()
+                self.dumpdb()
                 #self.display(name)
             except Exception:
                 self.display("Ещё не создано условие")
@@ -331,13 +332,13 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             #    self.dumpSave()
         def rollback_block(self,key):
             try:
-                return BD_INIT_MODULE[key]
+                return self.BD_INIT_MODULE[key]["rollback"]
             except Exception:
                 return False
         def getChoice_points_sum(self, person):
             sum = 0
             self.open_f()
-            for data in list(self.BD_INIT_MODULE ):
+            for data in list(self.BD_INIT_MODULE):
                 try:
                     if self.rollback_block(data) == False:
                         sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])

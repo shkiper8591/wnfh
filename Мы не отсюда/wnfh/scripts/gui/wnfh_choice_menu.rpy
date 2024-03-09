@@ -20,8 +20,9 @@ init 2:
         default wnfh_screen_17 = False
         default wnfh_screen_18 = False
         default wnfh_screen_19 = False
-
         python:
+            wnfh_Data.rolback_fix(args[2][0])
+            #wnfh_Data.display(str(renpy.current_screen())+" "+ str(renpy.get_screen("wnfh_choice")))           
             if args[-1] == "test":
                 Test_wr = True
             else:
@@ -30,10 +31,10 @@ init 2:
         #       locals()["wnfh_screen_"+str(i)]=False
             def  wnfh_add_to_bd(data):
                 data_set = wnfh_find_Operand(data,"prod",str(data[1][0]))
-                wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
+                wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set,"rollback":False})
             def  wnfh_add_to_bd_test(data):
                 data_set = wnfh_find_Operand(data,"test",str(data[1][0]))
-                wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set})
+                wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set,"rollback":False})
             
             #wnfh_screen_variable = list(locals()['wnfh_screen_'+str(i)] for i in range(1,20))
             wnfh_screen_variable = [
@@ -125,6 +126,3 @@ init 2:
                     xalign 0.5 yanchor 0.0
 
         add wnfh_gui["choice"]["vignette"]
-
-        python:
-            wnfh_Data.dumpSave()

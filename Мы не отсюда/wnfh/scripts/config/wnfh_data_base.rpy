@@ -72,7 +72,6 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                 #raise Exception("Объявите верное название default переменных согласно вашему пути в файле data_base")
         def load_json(self):
             #"""
-            #depricated function
             #возвращает выгруженный json в качестве объекта словаря
             #Возможно будет использоваться для генерации схемы
             #"""
@@ -88,11 +87,12 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                                 - ошибка python {0} , причиной этому может быть то что переменная хранения ещё не была инициализированна: \
                                 Существует ли переменная? - {1}, если переменная существует проблема скорее всего кроется в неверной формате заполнения json {3}".format(e,self.path_enviroment in globals(),str(self.BD_INIT_MODULE)))
             
-            if renpy.in_rollback():
-                self.BD_INIT_MODULE = json.load(open(self.location,"r"))
-                self.dumpdb() #запись в json
+            #if renpy.in_rollback():
+            #    self.BD_INIT_MODULE = json.load(open(self.location,"r"))
+            #    self.dumpdb() #запись в json
         def dumpSave(self):
             globals()[self.path_enviroment] = self.BD_INIT_MODULE
+            #self.display("DATA CHANGED")
             #self.display(self.BD_INIT_MODULE)
             self.dumpdb()
         """
@@ -171,7 +171,8 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                 - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
-            self.dumpdb() #хуй
+            #self.dumpdb()
+            self.dumpSave()
             return True
         def get(self , key):
             try:
@@ -312,12 +313,36 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
         Пример: 
             1) 3       
         """
+        def rolback_fix(self,name):
+            temp_data = self.load_json()
+            try:
+                overwrite = temp_data[name]
+                self.display(str(overwrite["rollback"]))
+                overwrite["rollback"] = not overwrite["rollback"]
+                self.BD_INIT_MODULE[name] = overwrite
+                self.dumpdb()
+                self.dumpSave()
+                #self.display(name)
+            except Exception:
+                self.display("Ещё не создано условие")
+            #temp_data = globals()[self.path_enviroment]
+            #if len(temp_data) > len(self.BD_INIT_MODULE):
+            #    self.BD_INIT_MODULE = temp_data
+            #    self.dumpSave()
+        def rollback_block(self,key):
+            try:
+                return BD_INIT_MODULE[key]
+            except Exception:
+                return False
         def getChoice_points_sum(self, person):
             sum = 0
             self.open_f()
             for data in list(self.BD_INIT_MODULE ):
                 try:
-                    sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
+                    if self.rollback_block(data) == False:
+                        sum += int(self.BD_INIT_MODULE[data]["Влияние на персонажей"][person])
+                    else:
+                        self.display(str(self.rollback_block(data)))
                 except KeyError:
                     #self.ShowErrors("Лавпонты персонажа "+ person +"отсутствуют")
                     pass

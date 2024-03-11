@@ -29,6 +29,13 @@ init -4 python:
         "prologue": ["#98D8DA", "#BEE8E9", "#000A20", "#A1C7D1" ], 
     }
     
+    
+
+    #wnfh_gui["frames"] {
+    #    #Тег              #Элементы
+    #    "yesno_box" [wnfh_gui["frames_elements"]["frame_line"], wnfh_gui["frames_elements"]["frame_bg"], wnfh_gui["frames_elements"]["frame_line"]]
+    #}
+
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
         #Фоны баров
         "bar_bg",
@@ -68,7 +75,19 @@ init -4 python:
         "button_hover",
         #Виньетка
         "vignette",
+        "frame_bg",
+        "frame_line",
+        "frame_gradient",
     ]}
+
+    wnfh_frames_elements = {
+        #Тег                                #0 Файл                                           #1 Ширина     #В2 ысота    #3 Отступ слева    #4 Цветокор    #5 Цвет фрейма    #6 Анимация
+        "yesno_prompt_box_bg":              [wnfh_gui["tint_elements"]["frame_bg"]           ,1000          ,200         ,25                ,2             ,frame_red        ,wjuh_bg],
+        "yesno_prompt_box_line":            [wnfh_gui["tint_elements"]["frame_line"]         ,1020          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "yesno_prompt_button_bg":           [wnfh_gui["tint_elements"]["frame_bg"]           ,250           ,60          ,25                ,2             ,frame_red        ,wjuh_bg],
+        "yesno_prompt_button_gradient":     [wnfh_gui["tint_elements"]["frame_gradient"]     ,250           ,60          ,25                ,0             ,frame_red        ,wjuh_bg],
+        "yesno_prompt_button_line":         [wnfh_gui["tint_elements"]["frame_line"]         ,270           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+    }  
 
     # Для главного меню
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [

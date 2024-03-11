@@ -10,7 +10,7 @@ init python:
         "nvl",
         #"choice",
         #"text_history_screen",
-        #"yesno_prompt",
+        "yesno_prompt",
         #"skip_indicator",
         #"history"
     ]

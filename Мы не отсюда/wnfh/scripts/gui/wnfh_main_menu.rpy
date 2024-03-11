@@ -15,7 +15,7 @@ init 2:
             wnfh_mm_left_buttons = [
                 ["galary"  ,"Галерея"   ,[Jump("technical_chocolatki")]                        ],
                 ["scheme"  ,"Схема"     ,[ShowMenu("wnfh_schematic", _transition=dissolve)]    ],
-                ["exit"    ,"Выход"     ,[Start("wnfh_exit")]                                  ],
+                ["exit"    ,"Выход в БЛ"     ,[Start("wnfh_exit")]                                  ],
             ]
             wnfh_mm_right_buttons = [
                 ["saves"        ,"Загрузить"  ,[ShowMenu("wnfh_load", _transition=dissolve)]   ],
@@ -161,7 +161,7 @@ init 2:
                         background frame_black
                     else:
                         background frame_transparent
-                    area(0.0, 1.0, 0.1, 0.3)
+                    area(0.0, 1.0, 0.15, 0.3)
                     xanchor 0.0 yanchor 1.0
                     yalign 0.5
                     frame:
@@ -170,7 +170,7 @@ init 2:
                             background frame_red
                         else:
                             background frame_transparent
-                        area(0.5, 0.5, 0.5, 1.0)
+                        area(0.5, 0.5, 1.0, 1.0)
                         xanchor 0.5 yanchor 0.5
                         textbutton wnfh_mm_left_buttons[2][1]:
                             background None

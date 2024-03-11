@@ -5,9 +5,6 @@ init 2:
         
         key "game_menu":
             action NullAction()
-        
-        key "screenshot":
-            action NullAction()
 
         python:
             wnfh_schematic_button = [

@@ -1,7 +1,7 @@
 init 1000 python:
     if debag_switch:
         config.developer = True
-init 2:
+init -5:
     $ global frame_transparent
     $ global frame_black
     $ global frame_red
@@ -33,7 +33,7 @@ init 2:
         $ persistent.wnfh_debug_color = 0
     
 
-
+init 2:
     screen wnfh_preferences():
 
         modal True tag menu
@@ -48,10 +48,6 @@ init 2:
         default wnfh_preferences_3 = False
                 
         python:
-
-            #def wnfh_add_to_bd_pref(data):
-            #    data_set = wnfh_find_Operand(data,"pref",str(data[1][0]))
-            #    wnfh_Data_pref.write(str(data[1][0]),{"type":"preference","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set})
 
             wnfh_screen_variable = [
                 wnfh_screen_1,
@@ -123,17 +119,17 @@ init 2:
                 ["Интерфейс"             ,[ToggleScreenVariable(wnfh_preferences_variable_string[0], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
                 ["Аудио"                 ,[ToggleScreenVariable(wnfh_preferences_variable_string[1], True), ToggleScreenVariable(wnfh_preferences_variable_string[0], False), ToggleScreenVariable(wnfh_preferences_variable_string[2], False)]],
                 ["Для разработчиков"     ,[ToggleScreenVariable(wnfh_preferences_variable_string[2], True), ToggleScreenVariable(wnfh_preferences_variable_string[1], False), ToggleScreenVariable(wnfh_preferences_variable_string[0], False)]],
-                ["Назад"                 ,[Return()]                                     ],
+                ["Назад"                 ,[Return()]   ],
      
             ]
             wnfh_preferences_bar = [
                 
                  #Тег бара           #Название бара                       #Действие
-                ["music"            ,"Музыка"              ,Preference("music volume")                                       ],
-                ["sound"            ,"Звуки"               ,Preference("sound volume")                                       ],
-                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")                                       ],
-                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")                                         ],
-                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")                                  ],
+                ["music"            ,"Музыка"              ,Preference("music volume")       ],
+                ["sound"            ,"Звуки"               ,Preference("sound volume")       ],
+                ["ambience"         ,"Эмбиент"             ,Preference("voice volume")       ],
+                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")         ],
+                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")  ],
             ]
             wnfh_preferences_switch = [
                  #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
@@ -152,16 +148,6 @@ init 2:
 
             ]
 
-# БЛА БЛА БЛА, я что-то поменял, какой-то текст страшный новый появился
-            
-            
-        
-          
-        
-        
-        #frame:
-        #    background im.MatrixColor(im.Blur(wnfh_gui["main_menu"]["mm_bg"], 3.0), im.matrix.tint(0.7, 0.7, 0.7))
-        #    area(0.0, 0.0, 1.0, 1.0)
         frame:
             if persistent.wnfh_debug_color:
                 background frame_black
@@ -475,198 +461,3 @@ init 2:
                     background frame_transparent
                 area(1.0, 0.7, 500, 500)
                 xanchor 1.0 yanchor 0.5
-            
-            #frame:
-            #    background background_color
-            #    area(0.5, 0.16, 1.0, 0.84)
-            #    xanchor 0.5
-            #    grid 1 3:
-            #        for bar in wnfh_preferences_bar[0:3]:
-            #            frame:
-            #                background background_color
-            #                area(0.0, 0.0, 1.0, 120)
-            #                frame:
-            #                    background button_red
-            #                    area(0.0, 0.5, 0.2, 1.0)
-            #                    yanchor 0.5
-            #                    text bar[1]:
-            #                        pos(0.5, 0.5)
-            #                        style "wnfh_choice_" + persistent.timeofday
-            #                        xanchor 0.5
-            #                        size 30
-            #                        kerning 1
-            #                        min_width 200
-            #                        layout "tex"
-            #                        #action Play("sound", wnfh_gui["sound"]["plimp"]) 
-            #                frame:
-            #                    background #0000
-            #                    area(0.95, 0.5, 0.75, 0.8)
-            #                    xanchor 1.0 yanchor 0.5
-            #                    bar value bar[2]:
-            #                        left_bar wnfh_bars[0][1]
-            #                        right_bar wnfh_bars[1][1]
-            #                        thumb wnfh_bars[2][1]
-            #                        hover_thumb wnfh_bars[2][1]
-            #                        xmaximum 0.5 ymaximum 38 yanchor 0.5 ypos 0.5
-            #                    
-            #    add wnfh_gui["settings"]["line"]:
-            #        pos(0.5, 0.41)
-            #        xanchor 0.5
-            #    grid 1 2:
-            #        pos(0.5, 0.42)
-            #        xanchor 0.5
-            #        for bar in wnfh_preferences_bar[3:5]:
-            #            frame:
-            #                background background_color
-            #                area(0.0, 0.0, 1.0, 120)
-            #                frame:
-            #                    background button_red
-            #                    area(0.0, 0.5, 0.2, 1.0)
-            #                    yanchor 0.5
-            #                    text bar[1]:
-            #                        pos(0.5, 0.5)
-            #                        style "wnfh_choice_" + persistent.timeofday
-            #                        xanchor 0.5
-            #                        size 50
-            #                        kerning 1
-            #                        min_width 200
-            #                        layout "tex"
-            #                frame:
-            #                    background button_green
-            #                    area(0.95, 0.5, 0.75, 0.8)
-            #                    xanchor 1.0 yanchor 0.5
-            #                    bar value bar[2]:
-            #                        left_bar bar_full
-            #                        right_bar bar_null
-            #                        thumb htumb
-            #                        hover_thumb htumb
-            #                        xmaximum 1.0 ymaximum 73 yanchor 0.5 ypos 0.5
-            #    add wnfh_gui["settings"]["line"]:
-            #        pos(0.5, 0.695)
-            #        xanchor 0.5
-#
-            #    
-            #    frame: 
-            #        background background_color
-            #        area(0.5, 1.0, 1.0, 0.3)
-            #        xanchor 0.5 yanchor 1.0
-            #        frame: # ======================================================= Матфильтр
-            #            background background_color
-            #            area(0.5, 1.0, 420, 120)
-            #            xanchor 0.5 yanchor 1.0
-            #            vbox:
-            #                pos(0.5, 1.0)
-            #                xanchor 0.5 yanchor 1.0
-            #                text wnfh_preferences_switch[7][1]:
-            #                    style "wnfh_choice_" + persistent.timeofday
-            #                    pos(0.5, 1.0)
-            #                    xanchor 0.5 yanchor 0.5
-            #                    text_align 0.5
-            #                    size 50
-            #                    kerning 1
-            #                    min_width 200
-            #                    layout "tex"
-            #                imagebutton:
-            #                    pos(0.5, 0.9)
-            #                    xanchor 0.5 yanchor 0.5
-            #                    idle wnfh_gui["settings"][key_values[persistent.mat_filter]]
-            #                    hover wnfh_gui["settings"][key_values[persistent.mat_filter]]
-            #                    action wnfh_preferences_switch[7][2+persistent.mat_filter]
-            #                text wnfh_preferences_switch[7][5][persistent.mat_filter]:
-            #                    style "wnfh_choice_" + persistent.timeofday
-            #                    pos(0.5, 1.0)
-            #                    xanchor 0.5 yanchor 0.5
-            #                    text_align 0.5
-            #                    size 30
-            #                    kerning 1
-            #                    min_width 200
-            #                    layout "tex"
-#
-#
-            #        frame: # ======================================================= Хентай
-            #            background background_color
-            #            area(0.5, 0.05, 300, 100)
-            #            xanchor 0.5 yanchor 0.0
-            #            vbox:
-            #                pos(0.5, 0.5)
-            #                xanchor 0.5 yanchor 0.5
-            #                add wnfh_gui["settings"]["hentai"]
-            #                if wnfh_preferences_switch[6][3]: #Выкл
-            #                    imagebutton:
-            #                        pos(0.5, 0.2)
-            #                        xanchor 0.5 yanchor 0.5
-            #                        idle im.Scale(wnfh_gui["settings"]["hentai_on"], 112, 64)
-            #                        hover im.Scale(wnfh_gui["settings"]["hentai_on"], 112, 64)
-            #                        action wnfh_preferences_switch[6][2]
-            #                if not wnfh_preferences_switch[6][3]: #Вкл
-            #                    imagebutton:
-            #                        pos(0.5, 0.2)
-            #                        xanchor 0.5 yanchor 0.5
-            #                        idle im.Scale(wnfh_gui["settings"]["hentai_off"], 112, 64)
-            #                        hover im.Scale(wnfh_gui["settings"]["hentai_off"], 112, 64)
-            #                        action wnfh_preferences_switch[6][1]
-#
-            #        grid 2 3: # ==================================================== Кнопки
-            #            pos (0.5, 0.5)
-            #            xanchor 0.5 yanchor 0.5
-            #            xspacing 430
-            #            for i in range(6):
-            #                frame:
-            #                    background background_color
-            #                    area(0.0, 0.0, 500, 80)
-            #                    xanchor 0.0 yanchor 0.0
-            #                    #for switch in wnfh_preferences_switch[0:1]:
-            #                    frame:
-            #                        background button_blue
-            #                        area(1.0, 0.5, 100, 1.0)
-            #                        xanchor 1.0 yanchor 0.5
-            #                        if wnfh_preferences_switch[i][4]: #Выкл
-            #                            imagebutton:
-            #                                pos(0.5, 0.5)
-            #                                xanchor 0.5 yanchor 0.5
-            #                                idle wnfh_gui["settings"]["on"]
-            #                                hover wnfh_gui["settings"]["on"]
-            #                                action wnfh_preferences_switch[i][3]
-            #                        if not wnfh_preferences_switch[i][4]: #Вкл
-            #                            imagebutton:
-            #                                pos(0.5, 0.5)
-            #                                xanchor 0.5 yanchor 0.5
-            #                                idle wnfh_gui["settings"]["off"]
-            #                                hover wnfh_gui["settings"]["off"]
-            #                                action wnfh_preferences_switch[i][2]
-            #                    frame:
-            #                        background button_red
-            #                        area(0.0, 0.5, 380, 1.0)
-            #                        xanchor 0.0 yanchor 0.5
-            #                        vbox:
-            #                            pos(0.5, 0.5)
-            #                            xanchor 0.5 yanchor 0.5
-            #                            spacing 0
-            #                            frame:
-            #                                background button_blue
-            #                                area(0.0, 0.0, 350, 30)
-            #                                xanchor 0.0 yanchor 0.0
-            #                            
-            #                                text wnfh_preferences_switch[i][1]:
-            #                                    style "wnfh_choice_" + persistent.timeofday
-            #                                    pos(0.5, 0.5)
-            #                                    xanchor 0.5
-            #                                    text_align 0.5
-            #                                    size 50
-            #                                    kerning 1
-            #                                    min_width 200
-            #                                    layout "tex"
-            #                            if wnfh_preferences_switch[i][0] in wnfh_underwrites.keys():
-            #                                frame:
-            #                                    background button_green
-            #                                    area(0.0, 0.0, 350, 30)
-            #                                    xanchor 0.0 yanchor 0.0
-            #                                    text wnfh_underwrites[wnfh_preferences_switch[i][0]][int(wnfh_underwrites[wnfh_preferences_switch[i][0]][0])+1]:
-            #                                        style "wnfh_settings_underwrites"
-            #                                        pos(0.5, 1.0)
-            #                                        xanchor 0.5 yanchor 0.5
-            #                                        text_align 0.5
-            #                                        size 30
-            #                                        kerning 1
-            #                                        min_width 200
-            #                                        layout "tex"

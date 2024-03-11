@@ -22,12 +22,12 @@ init 2:
             wnfh_screen_variable_string = list('wnfh_screen_' + str(i) for i in range(1, 7))
 
             wnfh_game_menu_selector_buttons = [
-                ["В главное меню", [MainMenu()]                                           ],
-                ["Схема",          [ShowMenu('wnfh_schematic')]                           ],
-                ["Сохранить",      [ShowMenu('save')]                                     ],
-                ["Загрузить",      [ShowMenu('load')]                                     ],
-                ["Настройки",      [ShowMenu('preferences'), Hide('game_menu_selector')]  ],
-                ["Выход",          [ShowMenu('quit')]                                     ],
+                ["В главное меню мода", [MainMenu()]                                           ],
+                ["Схема",               [ShowMenu('wnfh_schematic')]                           ],
+                ["Сохранить",           [ShowMenu('save')]                                     ],
+                ["Загрузить",           [ShowMenu('load')]                                     ],
+                ["Настройки",           [ShowMenu('preferences'), Hide('game_menu_selector')]  ],
+                ["Выход из игры",       [ShowMenu('quit')]                                     ],
      
             ]
         #frame: # =============================================== Часики

@@ -1,4 +1,4 @@
-init -2:
+init -5:
     
     # Заход в здание
     transform wnfh_entrance(x = 0.5):
@@ -427,3 +427,20 @@ init -2:
             xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
         pause (1 + pause)/6
         ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0
+
+    transform wjuh_bg:
+        subpixel True
+        yzoom 0.0 xzoom 0.0
+        block:
+            ease_quart 1.0 xzoom 1.0
+        block:
+            ease_quart 0.5 yzoom 1.0
+
+    transform wjuh_line:
+        subpixel True
+        xzoom 0.0
+        ease_quart 1.0 xzoom 1.0
+
+    transform wnfh_dissolve:
+        alpha 0.0
+        ease_quart 0.5 alpha 1.0

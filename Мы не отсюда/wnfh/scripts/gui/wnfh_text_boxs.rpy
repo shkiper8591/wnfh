@@ -42,6 +42,24 @@ init 2:
                             ]
 
             }
+        #frame: # ======================== Главный фрейм
+#
+        #    area(0.5, 0.5, wnfh_frames_size["test_frame"][0], 150)
+#
+        #    xanchor 0.5 yanchor 0.5
+        #    if persistent.wnfh_debug_color:
+        #        background frame_black
+        #    else:
+        #        background frame_transparent
+        #    grid 2 1:
+        #        anchor (0.5, 0.5) pos (0.5, 0.5)
+        #        spacing 20
+        #        textbutton "+":
+        #            action SetDict(wnfh_frames_size, "test_frame", [1500])
+        #        textbutton "-":
+        #            action SetDict(wnfh_frames_size, "test_frame", [1000])
+
+
         $ timeofday = persistent.timeofday
         frame: # ======================== Главный фрейм
             if persistent.font_size == "small":

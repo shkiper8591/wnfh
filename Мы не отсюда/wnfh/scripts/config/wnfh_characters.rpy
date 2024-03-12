@@ -12,39 +12,43 @@ init -4:
 init -3 python:
     wnfh_characters = {
         # персонажи оригинала
-        "narrator":[None, None,None],     #Рассказчик
-        "th":[None, None,None],           #Мысля Семёна
-        "me":[u"Семён", "#E1DD7D"],
-        "mi":[u"Мику", "#00DEFF"],
-        "usw":[u"Ульяна", "#FF3200"],
-        "dv":[u"Алиса", "#FFAA00"],
-        "mt":[u"Ольга Дмитриевна", "#00EA32"],
-        "mz":[u"Женя", "#4A86FF"],
-        "sh":[u"Шурик", "#FFF226"],
-        "sl":[u"Славя", "#FFD200"],
-        "el":[u"Сергей", "#FFFF00"],
-        "un":[u"Лена", "#B956FF"],
-        "cs":[u"Виолетта Церновна", "#A5A5FF"],
-        "pi":[u"Пионер", "#E60000"],
-        "uv":[u"Юля", "#4EFF00"],
-        "voice":[u"... ", "#E1DD7D"],
+        "narrator":     [None, None,None],     #Рассказчик
+        "th":           [None, None,None],     #Мысля Семёна
+        "me":           [u"Семён", "#E1DD7D"],
+        "mi":           [u"Мику", "#00DEFF"],
+        "usw":          [u"Ульяна", "#FF3200"],
+        "dv":           [u"Алиса", "#FFAA00"],
+        "mt":           [u"Ольга Дмитриевна", "#00EA32"],
+        "mz":           [u"Женя", "#4A86FF"],
+        "sh":           [u"Шурик", "#FFF226"],
+        "sl":           [u"Славя", "#FFD200"],
+        "el":           [u"Сергей", "#FFFF00"],
+        "un":           [u"Лена", "#B956FF"],
+        "cs":           [u"Виолетта Церновна", "#A5A5FF"],
+        "pi":           [u"Пионер", "#E60000"],
+        "uv":           [u"Юля", "#4EFF00"],
+        "voice":        [u"... ", "#E1DD7D"],
+
         # новые персонажи
-        "kat":[u"Катя", "#FF97BB"],
-        "gp":[u"Тётя Галя", "#CECECE"],
-        "zg":[u"Тётя Зина", "#D199FF"],
-        "sd":[u"Сергей Дмитриевич", "#878787"],
-        "void":[u" ", "#000000"],
-        "sv":[u"Света", "#F3DA0B"],
-        "din":[u"Дина", "#080ACE"],
+        "kat":          [u"Катя", "#FF97BB"],
+        "gp":           [u"Тётя Галя", "#CECECE"],
+        "zg":           [u"Тётя Зина", "#D199FF"],
+        "sd":           [u"Сергей Дмитриевич", "#878787"],
+        "void":         [u" ", "#000000"],
+        "sv":           [u"Света", "#F3DA0B"],
+        "din":          [u"Дина", "#080ACE"],
+
         # для DLC про деда
         #"cm":[u"Командир", "#", False],
         #"olg":[u"Олег", "#", False],
         #"part":[u"Партизан", "#", False],
         #"kr":[u"Крестьянин", "#", False],
         #"sht":[u"Штайнер", "#", False],
-        "neutral":[u"Костыль ебаный", "#BCBCBC"],
+
+        "neutral":      [u"Костыль ебаный", "#BCBCBC"], #Самый настоящий костыль
     }
     
+    #Честно спизженный код, лежит на всякий случай
     #renpy.image("wnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
     #renpy.image("wnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 

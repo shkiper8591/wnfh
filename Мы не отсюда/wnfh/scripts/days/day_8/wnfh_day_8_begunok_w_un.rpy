@@ -263,7 +263,7 @@ label d8_begunok_w_un_end1:
 
     "Отмахнувшись рукой, я оставил девушек на едине, отправившись в клубы."
 
-    jump d8_male_clubs_day_alt
+    jump d8_me_dv_avantyra
 
 label d8_begunok_w_un_cont:
 

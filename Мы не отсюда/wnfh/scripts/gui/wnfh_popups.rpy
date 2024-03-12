@@ -106,8 +106,9 @@ init 2:
                                     background frame_transparent
                                 textbutton button[0]: # ================================================ Текст кнопок
                                     xalign 0.5 yanchor 0.5 ypos 0.5
-                                    text_line_leading 5 text_line_spacing 3
-                                    text_min_width 390
+                                    text_line_leading 5
+                                    text_line_spacing 3
+                                    text_min_width wnfh_frames_elements["yesno_prompt_button_gradient"][1]
                                     text_text_align 0.5
                                     text_style "wnfh_choice_" + persistent.timeofday
                                     background None

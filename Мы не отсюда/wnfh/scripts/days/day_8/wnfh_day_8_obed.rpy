@@ -1,3 +1,18 @@
+label d8_obed_me_alone_alt:
+
+    window hide dissolve
+    stop ambience fadeout 5.0
+    scene bg ext_dining_hall_near_day 
+    show dv normal pioneer at center
+    with slide_right_blure_dissolve5
+    play ambience ambience_camp_center_day fadein 5.0
+    $ renpy.pause(1.0)
+    window show dissolve
+
+    "placeholder"
+
+    jump d8_obed_me_kat_mi
+
 label d8_obed_me_alone:
 
     window hide dissolve

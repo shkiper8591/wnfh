@@ -432,15 +432,15 @@ init -5:
         subpixel True
         yzoom 0.0 xzoom 0.0
         block:
-            ease_quart 1.0 xzoom 1.0
+            ease_quart 0.5 xzoom 1.0
         block:
             ease_quart 0.5 yzoom 1.0
 
     transform wjuh_line:
         subpixel True
         xzoom 0.0
-        ease_quart 1.0 xzoom 1.0
+        ease_quart 0.5 xzoom 1.0
 
     transform wnfh_dissolve:
         alpha 0.0
-        ease_quart 0.5 alpha 1.0
+        ease_quart 1.0 alpha 1.0

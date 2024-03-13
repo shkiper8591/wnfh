@@ -20,13 +20,17 @@ init 2:
         default wnfh_screen_17 = False
         default wnfh_screen_18 = False
         default wnfh_screen_19 = False
+        key 'K_PAGEDOWN':
+            action NullAction()
+        key 'mousedown_5':
+            action NullAction()
         python:
+            wnfh_Data.display("Окно выборов ")
             #config.skip_forward_allowed = False
             #wnfh_Data.rolback_fix(args[2][0])
             #wnfh_Data.display(str(renpy.current_screen())+" "+ str(renpy.get_screen("wnfh_choice")))
-            roll_forward = renpy.roll_forward_info()
-            config.keymap["rollforward"] =[]
-            #wnfh_Data.display(roll_forward)
+            #roll_forward = renpy.roll_forward_info()
+            #config.keymap["rollforward"] =[]          
             if args[-1] == "test":
                 Test_wr = True
             else:
@@ -36,7 +40,7 @@ init 2:
             def  wnfh_add_to_bd(data):
                 data_set = wnfh_find_Operand(data,"prod",str(data[1][0]))
                 wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set,"rollback":False})
-                config.keymap["rollforward"] = ['any_K_PAGEDOWN', 'any_KP_PAGEDOWN', 'mousedown_5']
+                #config.keymap["rollforward"] = ['any_K_PAGEDOWN', 'any_KP_PAGEDOWN', 'mousedown_5']
             def  wnfh_add_to_bd_test(data):
                 data_set = wnfh_find_Operand(data,"test",str(data[1][0]))
                 wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set,"rollback":False})

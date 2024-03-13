@@ -432,6 +432,9 @@ init 2:
     $ wnfh_music_list["friends_of_the_deceased_moon"] = wnfh_MUSIC + "_Blacksmith_ - Friends of the Deceased Moon.mp3"
     $ wnfh_music_list["angus_at_home"] = wnfh_MUSIC + "Alec Holowka - Angus at Home.mp3"
     $ wnfh_music_list["the_hill_camp_morning"] = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp Morning.mp3"
+    $ wnfh_music_list["clean_up"] = wnfh_MUSIC + "Clean up.mp3"
+    $ wnfh_music_list["dealing_with_destruction"] = wnfh_MUSIC + "Dealing With Destruction.mp3"
+    $ wnfh_music_list["corridors"] = wnfh_MUSIC + "Corridors.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

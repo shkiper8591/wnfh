@@ -518,12 +518,24 @@ label d8_begunok_w_un_2:
 
     show kat smile pioneer at left
     show un smile pioneer at right
-    show mt normal pioneer at center 
+    show mt sad pioneer panama at center 
     with dspr
+
+    mt "Прости, Семён[wp]"
 
     "Девушки, кроме вожатой, помогли встать и отряхнули меня."
 
+    me "Да не, ничего, так, пустяки."
+
+    show mt normal pioneer panama at center with dspr
+
     mt "Ладно, давайте, не задерживайтесь если не хотите остаться голодными."
+
+    "Вожатая подошла ко мне, и аккуратно поправила мои взъерошенные волосы."
+
+    show mt grin pioneer panama at center with dspr
+
+    mt "Так-то лучше!"
 
     window hide dissolve
 

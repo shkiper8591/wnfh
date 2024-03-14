@@ -231,11 +231,12 @@ init -5:
     # Анимации получения ачивментов и предметов
 
     transform wnfh_get_achievement_atl:
-        pos(-0.4, 0.15)
+        subpixel True
+        pos(-0.5, 0.15)
         anchor(0.0, 0.5)
-        ease 1.0 pos(0.0, 0.15)
-        pause 3.0
-        ease 1.0 pos(-0.4, 0.15)
+        ease_quart 1.5 pos(-0.05, 0.15)
+        pause 5.0
+        ease_quart 1.5 pos(-0.5, 0.15)
     
     transform wnfh_get_ach_title_atl(x_pos=0.095, y_pos=0.131):
         pos(x_pos-0.4, y_pos)

@@ -22,7 +22,7 @@ init -4 python:
     Ну и ссылки сюда же засунул
     """
     wnfh_choice_tint_color = {
-        #timeset      #текст     #рамки     #фон       #спрайты
+        #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
         "day":      ["#FFDD7D", "#80A055", "#000000", "#000000" ], 
         "sunset":   ["#DCD168", "#CDAF69", "#150A0B", "#EFD1FF" ],
         "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
@@ -92,6 +92,8 @@ init -4 python:
         "game_menu_selector_button_gradient":     [wnfh_gui["tint_elements"]["frame_gradient"]     ,480           ,50          ,25                ,0             ,frame_red        ,wjuh_bg],
         "widget_lp_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]           ,1700          ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
         "widget_lp_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]         ,1720          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]           ,820           ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
+        "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]         ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
     }
     wnfh_frames_size = {
         "test_frame": [1000]  
@@ -145,7 +147,7 @@ init -4 python:
         "8_hover",
         "9_idle",
         "9_hover",
-        ]}
+    ]}
 
     wnfh_gui["settings"] = {img:(wnfh_SETTINGS + img + ".png") for img in [
         "return",
@@ -163,16 +165,27 @@ init -4 python:
         "hentai",
         "hentai_off",
         "hentai_on",
-        ]}
+    ]}
     
     wnfh_gui["poligon"] = {img:(wnfh_IMAGES + "hentai/" + img + ".png") for img in [
         "red",
-        ]}
+    ]}
     
     wnfh_gui["achievements"] = {img:(wnfh_ACHIEVEMENTS + img + ".png") for img in [
         "back",
-        ]}  
-    # Всплывашки
+        "payday",
+        "spirt",
+        "bkrr",
+        "alpha-0.1",
+        "post",
+        "zgdun",
+        "alarm",
+        "zaebist",
+        "handass",
+    ]}
+
+    
+
     characters_banners_idle = [
         "ach_kat_idle",
         "ach_un_idle",
@@ -183,7 +196,7 @@ init -4 python:
         "ach_sv_idle",
         "ach_mt_idle",
         "ach_me_idle"
-        ]
+    ]
     characters_banners_hover = [
         "ach_kat_hover",
         "ach_un_hover",
@@ -210,12 +223,22 @@ init -4 python:
         "trophy_silver",
         "trophy_gold",
         "trophy_platina",
-        "trophy_white"
+        "trophy_white",
+        "kit"
         
         #Тут срез для ачивок в файле wnfh_achievements_menu
         ] + characters_banners_idle + characters_banners_hover
         }
-    
+    wnfh_ach_list = {
+        #Тэг ачивки  #0 Иконка                              #1 Заголовк              #2 Подпись                          #3 Трофей                                #4 Персонаж
+        "payday":   [wnfh_gui["achievements"]["payday"]    ,"Конфетный вор"         ,"Было весело"                      ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"           ],
+        "spirt":    [wnfh_gui["achievements"]["spirt"]     ,"Где мне найти спирт?"  ,"Живая вода"                       ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"           ],   
+        "bkrr":     [wnfh_gui["achievements"]["bkrr"]      ,"Да, это именно то, о чём ты подумал"            ,"Это отсылка на\n«Булки, Кефир, Рок-н-ролл»"              ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],     
+        "post":     [wnfh_gui["achievements"]["post"]      ,"Груз доставлен"        ,"Почти без повреждений"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],       
+        "alarm":    [wnfh_gui["achievements"]["alarm"]     ,"Das Boot"              ,"Доплавался, блин"                 ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"           ],
+        "zaebist":  [wnfh_gui["achievements"]["zaebist"]   ,"Всё идёт по плану"     ,"При коммунизме всё будет заебись" ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"           ],
+        "handass":  [wnfh_gui["achievements"]["handass"]   ,"Рукожоп"               ,"Ну как так-то?"                   ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],
+    }
     # Аватарки
     wnfh_gui["avatars"] = {img:(wnfh_AVATARS + img + ".png") for img in [
         "me",
@@ -231,12 +254,12 @@ init -4 python:
         "din",
         "kat",
         "sv",
-        ]}
+    ]}
 
     # Для галереи
     wnfh_gui["gallery"] = {img:(wnfh_GALLERY + img + ".png") for img in [
         "back",
-        ]}
+    ]}
     
     # Звук кнопки
     wnfh_gui["sound"] = {
@@ -303,7 +326,7 @@ init -4 python:
         "037",
         "039",
         "040"
-        ]}
+    ]}
     
     ## Это элементы меню воборов ##
     
@@ -312,7 +335,7 @@ init -4 python:
         "bg",
         "line",
         "gradient"
-        ]}
+    ]}
 
     
 

@@ -26,6 +26,22 @@ label d8_obed_me_alone:
 
     jump d8_obed_me_kat_mi
 
+label d8_obed_me_dv:
+
+    window hide dissolve
+    stop ambience fadeout 5.0
+    scene bg ext_dining_hall_near_day 
+    show dv normal pioneer2 at left
+    show usw normal pioneer at right
+    with santa_barbara_in_blure_dissolve5
+    play ambience ambience_camp_center_day fadein 5.0
+    $ renpy.pause(0.5)
+    window show dissolve
+
+    "placeholder"
+
+    jump d8_obed_me_kat_mi
+
 label d8_obed_me_kat_un:
 
     window hide dissolve

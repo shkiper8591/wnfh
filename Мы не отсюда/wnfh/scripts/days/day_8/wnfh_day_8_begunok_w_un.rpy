@@ -521,7 +521,7 @@ label d8_begunok_w_un_2:
     show mt sad pioneer panama at center 
     with dspr
 
-    mt "Прости, Семён[wp]"
+    mt "Ой, прости, Семён[wp] Я тебя там не зашибла?"
 
     "Девушки, кроме вожатой, помогли встать и отряхнули меня."
 

@@ -400,7 +400,7 @@ label d8_me_dv_avantyra_pizdec:
 
     stop music fadeout 4.5
     show dv surprise pioneer2 at center with dspr
-    play music $ wnfh_music_list["corridors"] fadein 4.5
+    play music wnfh_music_list["corridors"] fadein 4.5
 
     "Сделав всего шаг вперёд, я потерял равновесию и упал на землю с характерным звуком."
 

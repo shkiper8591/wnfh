@@ -2,16 +2,53 @@ label d8_obed_me_alone_alt:
 
     window hide dissolve
     stop ambience fadeout 5.0
-    scene bg ext_dining_hall_near_day 
-    show dv normal pioneer at center
+    scene bg ext_dining_hall_near_day
     with slide_right_blure_dissolve5
     play ambience ambience_camp_center_day fadein 5.0
     $ renpy.pause(1.0)
     window show dissolve
 
-    "placeholder"
+    "Вернувшись в лагерь, мы с Алисой разошлись по своим делам."
+    "Она пошла к себе домой, вероятнее всего делится яблоками с Ульяной."
+    "А я же, прикинув, что до обеда остаётся не так уж и много, пошел к столовой."
+    "Там, усевшись на лавочку, я стал ожидать начала великого жора."
+    "Но до тех пор, нужно было себя чем-то занять[wp]"
+    
+    th "Интересно, что же всё-таки искали те люди в хим защите? Да и ещё так рядом с лагерем[wp]"
+    th "С другой стороны, какая разница? Может действительно, как говорила Алиса, нашли какой-нибудь условный уран, и теперь хотят его подальше вывезти отсюда, чтобы детей не убило."
+    th "Скорее всего так и есть, ибо больше вариантов у меня особо и нет на уме[wp]"
+    th "Ладно, чёрт с ними, главное пусть это не касается меня."
+    
+    "Время же предательски медленно шло."
+    "Идти куда-то было лень, спать тоже не хотелось."
+    
+    th "Вот бы сейчас на меня свалилось какой-нибудь чудо."
+    
+    "Но, разумеется, никакого «чуда» на меня не свалилось."
+    
+    play sound sfx_dinner_horn_processed
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_day with door_blure_dissolve2
+    play ambience ambience_dining_hall_empty
+    $ renpy.pause(1.0)
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_people_day with dissolve2
+    play ambience ambience_dining_hall_full fadein 2.0
+    $ renpy.pause(0.5)
+    window show dissolve
+    
+    "Обед как обед: взял еду, нашёл место и сел. Вот и всё."
+    "Даже из друзей ни с кем не пересёкся, но мне как-то всё равно было на это."
 
-    jump d8_obed_me_kat_mi
+    th "Мечты сбываются, да? Сколько я уже хотел один поесть? Дня три?"
+    th "То подсаживаются постоянно товарищи моделисты, то подсаживаюсь я[wp]"
+
+    "Мой обед же закончился в короткие сроки."
+
+    th "Но всего хорошего по маленьку[wp]"
+
+    jump d8_posle_obeda
 
 label d8_obed_me_alone:
 
@@ -22,21 +59,46 @@ label d8_obed_me_alone:
     $ renpy.pause(1.0)
     window show dissolve
 
-    "placeholder"
+    "Придя к столовой, у входа никого уже не было."
 
-    jump d8_obed_me_kat_mi
+    th "Однажды, и я получу суперспособность оказываться у столовой сразу после призыва на поесть. Нужно только подождать[wp]"
+
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_people_day with door_blure_dissolve2
+    play ambience ambience_dining_hall_full fadein 2.0
+    $ renpy.pause(0.5)
+    window show dissolve
+    
+    "Обед проходил без особого интереса: взял еду, сел за стол и всё."
+    "Даже ни с кем из товарищей по отряду не пересёкся, что удивительно. В прочем, я и не пытался их искать."
+    
+    th "Да уж, не весело, однако[wp] Зато один поем наконец."
+    th "Может ещё даже вездесущая вожатая не будет тревожить."
+
+    "И за время обеда меня действительно никто не потревожил. Такое не каждый день случается."
+    "А это означало, что я спокойно и в быстром темпе расправился со своим обедом и отправился к выходу."
+
+    jump d8_posle_obeda
 
 label d8_obed_me_dv:
 
     window hide dissolve
     stop ambience fadeout 5.0
-    scene bg ext_dining_hall_near_day 
+    scene bg ext_dining_hall_away_day 
     show dv normal pioneer2 at left
-    show usw normal pioneer at right
     with santa_barbara_in_blure_dissolve5
     play ambience ambience_camp_center_day fadein 5.0
     $ renpy.pause(0.5)
     window show dissolve
+
+    "Вернулись в лагерь мы довольно скоро."
+    "В конце-концов, спускаться с горки, да и ещё полной адреналина крови, гораздо проще."
+    "И учитывая, что скоро должен был начаться обед, мы сразу пришли к столовой."
+
+    show usw smile pioneer at right with dissolve
+
+    "Однако, оказывается, нас здесь уже ждали."
 
     "placeholder"
 
@@ -45,9 +107,13 @@ label d8_obed_me_dv:
 label d8_obed_me_kat_un:
 
     window hide dissolve
-    scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
+    show bg ext_dining_hall_away_day 
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    with slide_up_blure_dissolve2
     $ renpy.pause(1.0)
-    scene bg ext_dining_hall_near_day with dissolve
+    show bg ext_dining_hall_near_day
+    with dissolve
     $ renpy.pause(1.0)
     window show dissolve
 

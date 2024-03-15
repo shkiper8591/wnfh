@@ -1,6 +1,10 @@
 """
 2023 git@Deopster
 """
+init -3:
+    label null_ellement:
+        $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
+        $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
 init -1002:
     
     #"""
@@ -13,8 +17,6 @@ init -1002:
         default wnfh_database = {}
     if "wnfh_database_test" not in globals():
         default wnfh_database_test = {}
-    if "wnfh_preference_database" not in globals():
-        default wnfh_preference_database = {}
     python:
         class StorageManager:
             def init(self,head=None):
@@ -52,12 +54,14 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
         def __init__(self,location):
             self.location=os.path.expanduser(location) #местоположение json а также окружение prod / test
             self.path_enviroment = location.split(".")[1].split("/")[-1] #Получение название json из переменной окружения прим "./game/saves/wnfh_database.json" -> "wnfh_database"
+            self.achivments_path = "./game/saves/"+self.path_enviroment+"_achivments.json"
             self.BD_INIT_MODULE = {} #инициализация словаря хранения - основная переменная для чтения
             self.Encryption = True  # кодировка json ( не используется)
             self.DumpJSON = True #Формировать ли json в папке сейвов игры /game/saves/wnfh_database.json
             self.ShowDebug = True
             self.load(self.location)
-            json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)      
+            json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)  
+            self.dump_achievements()
         def ShowErrors(self,text):
             text = text.replace("{","").replace("}","")
             ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
@@ -69,13 +73,23 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             #if os.path.exists(location):
             if  self.path_enviroment in globals():
                 self.open_f()
-                #raise Exception("Объявите верное название default переменных согласно вашему пути в файле data_base")
-        def load_json(self):
+            #else:
+            #    raise Exception("Объявите верное название default переменных согласно вашему пути в файле data_base")
+        def load_json(self,type):
             #"""
             #возвращает выгруженный json в качестве объекта словаря
             #Возможно будет использоваться для генерации схемы
+            #Type dic:
+            # "cho" - Выборы
+            # "ach" - Ачивки
             #"""
-            return json.load(open(self.location,"r"))
+            try:
+                if type == "cho":
+                    return json.load(open(self.location,"r"))
+                elif type == "ach":
+                    return json.load(open(self.achivments_path,"r"))
+            except Exception:
+                return False
         def open_f(self):
             #"""
             #Обновление данных из кэша
@@ -98,6 +112,36 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
         """
         Запись json
         """
+        def get_achievement(self,name):
+            data = self.load_json("ach")
+            if data[name]["Получено"] is False:
+                renpy.show_screen("wnfh_get_achievement",name)
+                self.dump_achievements(False, name)
+            else:
+                self.display(str(data[name]["Получено"]))
+        def achivments_clear(self):
+            self.dump_achievements(True,None)
+        def dump_achievements(self, clear = False, name = None):
+            data = self.load_json("ach")
+            if type(data) == bool or clear is True:
+                dic_names = ["Иконка ","Заголовок","Подпись","Трофей","Персонаж"]
+                value_dic={}
+                for i in  wnfh_ach_list:
+                    temp_dic={}
+                    for index,value in enumerate(wnfh_ach_list[i]):
+                        temp_dic[dic_names[index]] = value
+                    temp_dic["Получено"] = False
+                    value_dic[i] =temp_dic
+
+                json.dump(value_dic, open(self.achivments_path, "w+"),ensure_ascii=False,indent=4)
+            if name != None:
+                data[name]["Получено"] = True
+                json.dump(data, open(self.achivments_path, "w+"),ensure_ascii=False,indent=4)
+
+
+
+        def dumpPreferences(self):
+            pass
         def dumpdb(self):
             if self.DumpJSON is True:
                 try:
@@ -315,7 +359,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             1) 3       
         """
         def rolback_fix(self,name):
-            temp_data = self.load_json()
+            temp_data = self.load_json("cho")
             try:
                 overwrite = temp_data[name]
                 self.display(str(overwrite["rollback"]))
@@ -376,13 +420,6 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
 
 
 
-
-init -1000:
-    label null_ellement:
-        $ wnfh_Data = wnfh_BD("./game/saves/wnfh_database.json")
-        $ wnfh_Data_test = wnfh_BD("./game/saves/wnfh_database_test.json")
-        $ wnfh_Data_pref = wnfh_BD("./game/saves/wnfh_preference_database.json")
-    
 init -998 python:
     store.mousex = 0
     store.mousey = 0

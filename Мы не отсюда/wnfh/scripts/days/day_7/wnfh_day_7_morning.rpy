@@ -87,7 +87,7 @@ label wnfh_day_7:
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
     
     "Я уж было попытался вспомнить, что же мне такого приснилось."
-    show screen wnfh_get_achivement("post")
+    $ wnfh_Data.get_achievement("post")
     "И в голове тут же всплыли неприятные воспоминания, обезумевшая Алиса, кромсающая меня ножом."
     th "Да, мрак, это уж точно лучше вспоминать."
     "На этом я решил прекратить мучать свою память и не вспоминать этот сон."
@@ -524,6 +524,7 @@ label d7_sl_otkaz:
     window show dissolve
 
     show sl surprise sport close with dspr
+    $ wnfh_Data.achivments_clear()
 
     me "Пожалуй откажусь, мне что-то не очень хорошо."
     

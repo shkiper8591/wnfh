@@ -47,8 +47,8 @@ init -1001 python :
     class wnfh_BD(object):
         """
         Создание объектов класса происходит позже инициализации класса в файле main_menu.rpy
-        !!!! ТАМ ЖЕ УКАЗАН ПУТЬ JSON И НАЗВАНИЕ ФАЙЛА
-wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON ДОЛЖНО СОВПАДАТЬ С НАИМЕНОВАНИЕМ default ПЕРЕМЕННОЙ пример строка 32
+        !!!! ТАМ ЖЕ УКАЗАН ПУТЬ JSON И НАЗВАНИЕ ФАЙЛА wnfh_Data.dumpSave() (обновлено, 4 строка этого файла)       
+        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON ДОЛЖНО СОВПАДАТЬ С НАИМЕНОВАНИЕМ default ПЕРЕМЕННОЙ пример строка 32
         объект используется в качестве 'указателя' области работы и хранения данных а также их разграничения между тестовой областью и продуктовой (игровой)
         """
         def __init__(self,location):
@@ -61,7 +61,9 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             self.ShowDebug = True
             self.load(self.location)
             json.dump(self.BD_INIT_MODULE, open(self.location, "w+"),ensure_ascii=False,indent=4)  
-            self.dump_achievements()
+            self.achievements_init()
+        #def __missing__(self,key):
+        #    self.display("не найдено значение "+str(key))
         def ShowErrors(self,text):
             text = text.replace("{","").replace("}","")
             ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
@@ -89,7 +91,7 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
                 elif type == "ach":
                     return json.load(open(self.achivments_path,"r"))
             except Exception:
-                return False
+                return {}
         def open_f(self):
             #"""
             #Обновление данных из кэша
@@ -116,32 +118,44 @@ wnfh_Data.dumpSave()        !!!! ВАЖНО - НАЗВАНИЕ ФАЙЛА JSON �
             data = self.load_json("ach")
             if data[name]["Получено"] is False:
                 renpy.show_screen("wnfh_get_achievement",name)
-                self.dump_achievements(False, name)
+                self.set_achievement(name,data)
             else:
                 self.display(str(data[name]["Получено"]))
-        def achivments_clear(self):
-            self.dump_achievements(True,None)
-        def dump_achievements(self, clear = False, name = None):
-            data = self.load_json("ach")
-            if type(data) == bool or clear is True:
-                dic_names = ["Иконка ","Заголовок","Подпись","Трофей","Персонаж"]
-                value_dic={}
-                for i in  wnfh_ach_list:
+
+        def achievements_clear(self):
+            self.achievements_init(True)
+
+        def set_achievement(self,name,data):
+            data[name]["Получено"] = True
+            self.dump_achievements(data)
+
+        def achievements_init(self,clear = False):
+            out_data = self.load_json("ach")
+            in_data={}
+            dic_names = ["Иконка ","Заголовок","Подпись","Трофей","Персонаж"]
+            def Generate_or_update_New_Dic_from_incode_list(change_flag = True):
+                for key_name in wnfh_ach_list.keys():
                     temp_dic={}
-                    for index,value in enumerate(wnfh_ach_list[i]):
+                    for index,value in enumerate(wnfh_ach_list[key_name]):
                         temp_dic[dic_names[index]] = value
-                    temp_dic["Получено"] = False
-                    value_dic[i] =temp_dic
+                        temp_dic["Получено"] = False
+                        if not change_flag and key_name in out_data.keys():
+                            try:
+                                temp_dic["Получено"] = out_data[str(key_name)]["Получено"]
+                            except Exception:
+                                temp_dic["Получено"] = False
+                    in_data[key_name] =temp_dic
+            if len(out_data) == 0 or clear is True:
+                Generate_or_update_New_Dic_from_incode_list()
+            else:
+                Generate_or_update_New_Dic_from_incode_list(False)
+            self.dump_achievements(in_data)
 
-                json.dump(value_dic, open(self.achivments_path, "w+"),ensure_ascii=False,indent=4)
-            if name != None:
-                data[name]["Получено"] = True
+        def dump_achievements(self,data):
+            try:
                 json.dump(data, open(self.achivments_path, "w+"),ensure_ascii=False,indent=4)
-
-
-
-        def dumpPreferences(self):
-            pass
+            except TypeError:
+                raise Exception(str(data.keys()))
         def dumpdb(self):
             if self.DumpJSON is True:
                 try:

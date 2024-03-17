@@ -51,9 +51,6 @@ init -4 python:
         "multibutton_bar_null",
         #Ползунок
         "bar_htumb",
-        #Элементы виджета ЛП
-        "wl_bg",
-        "wl_line",
         #Элементы кнопок гейм селектора
         "im_bg",
         "im_line",

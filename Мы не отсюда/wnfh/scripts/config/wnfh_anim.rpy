@@ -417,8 +417,12 @@ init -5:
     transform atl_wnfh_widget_lp_down:
         subpixel True
         truecenter
-        ypos -0.2
-        ease_quart 1.0 ypos 0.08
+        on show:
+            ypos -0.2
+            ease_quart 1.0 ypos 0.08
+        on hide:
+            ypos 0.08
+            ease_quart 1.0 ypos -0.2
 
     transform atl_wnfh_game_menu_selector(pause):
         subpixel True
@@ -445,3 +449,30 @@ init -5:
     transform wnfh_dissolve:
         alpha 0.0
         ease_quart 1.0 alpha 1.0
+
+    transform wnfh_db_red_small:
+        subpixel True
+        ysize 200
+        ease 0.5 ysize 150
+    transform wnfh_db_red_large:
+        subpixel True
+        ysize 150
+        ease 0.5 ysize 200
+
+    transform wnfh_db_green_small:
+        subpixel True
+        xsize 800
+        ease 0.5 xsize 900
+    transform wnfh_db_green_large:
+        subpixel True
+        xsize 900
+        ease 0.5 xsize 800
+
+    transform wnfh_db_blue_small:
+        subpixel True
+        xsize 400
+        ease 0.5 xsize 300
+    transform wnfh_db_blue_large:
+        subpixel True
+        xsize 300
+        ease 0.5 xsize 400

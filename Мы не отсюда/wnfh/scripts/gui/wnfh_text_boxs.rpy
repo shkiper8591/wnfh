@@ -43,28 +43,98 @@ init 2:
 
             }
         #frame: # ======================== Главный фрейм
-#
-        #    area(0.5, 0.5, wnfh_frames_size["test_frame"][0], 150)
+        #    if persistent.font_size == "small":
+        #        area(0.5, 0.5, 1500, 150)
+        #    elif persistent.font_size == "large":
+        #        area(0.5, 0.5, 1500, 200)
 #
         #    xanchor 0.5 yanchor 0.5
         #    if persistent.wnfh_debug_color:
         #        background frame_black
         #    else:
         #        background frame_transparent
-        #    grid 2 1:
-        #        anchor (0.5, 0.5) pos (0.5, 0.5)
-        #        spacing 20
-        #        textbutton "+":
-        #            action SetDict(wnfh_frames_size, "test_frame", [1500])
-        #        textbutton "-":
-        #            action SetDict(wnfh_frames_size, "test_frame", [1000])
+        vbox:
+            xanchor 0.5 yanchor 1.0
+            xpos 0.5 ypos 0.5
+            spacing 0
+            hbox:
+                xanchor 1.0 yanchor 0.5
+                xpos 1.0 ypos 0.5
+                frame: # ======================== Кнопки
+                    if persistent.font_size == "small":
+                        at wnfh_db_blue_small
+                    elif persistent.font_size == "large":
+                        at wnfh_db_blue_large
+                    area(0.5, 0.5, 300, 50)
+                    xanchor 0.5 yanchor 0.5
+                    
+                    if persistent.wnfh_debug_color:
+                        background frame_blue
+                    else:
+                        background frame_transparent
+                frame: # ======================== Кнопки
+                    if persistent.font_size == "small":
+                        at wnfh_db_green_small
+                    elif persistent.font_size == "large":
+                        at wnfh_db_green_large
+                    area(0.5, 1.0, 900, 4)
+                    xanchor 0.5 yanchor 1.0
+                    
+                    if persistent.wnfh_debug_color:
+                        background frame_green
+                    else:
+                        background frame_transparent
+                frame: # ======================== Кнопки
+                    area(0.5, 0.5, 300, 50)
+                    xanchor 0.5 yanchor 0.5
+                    
+                    if persistent.wnfh_debug_color:
+                        background frame_blue
+                    else:
+                        background frame_transparent
+            frame: # ======================== Кнопки
+                if persistent.font_size == "small":
+                    at wnfh_db_red_small
+                elif persistent.font_size == "large":
+                    at wnfh_db_red_large
+                area(0.5, 0.5, 1480, 150)
+                xanchor 0.5 yanchor 0.5
+                
+                if persistent.wnfh_debug_color:
+                    background frame_red
+                else:
+                    background frame_transparent
+            frame: # ======================== Кнопки
+                area(0.5, 1.0, 1500, 4)
+                xanchor 0.5 yanchor 0.5
+                
+                if persistent.wnfh_debug_color:
+                    background frame_green
+                else:
+                    background frame_transparent
+
+        frame: # ======================== Кнопки
+            area(0.5, 0.7, 100, 50)
+            xanchor 0.5 yanchor 0.5
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
+            grid 2 1:
+                anchor (0.5, 0.5) pos (0.5, 0.5)
+                spacing 20
+                textbutton "+":
+                    action SetField(persistent, "font_size", "large")
+                textbutton "-":
+                    action SetField(persistent, "font_size", "small")
+
 
 
         $ timeofday = persistent.timeofday
         frame: # ======================== Главный фрейм
             if persistent.font_size == "small":
                 area(0.5, 1.0, 1.0, 150)
-            if persistent.font_size == "large":
+            elif persistent.font_size == "large":
                 area(0.5, 1.0, 1.0, 200)
             xanchor 0.5 yanchor 1.0
             if persistent.wnfh_debug_color:
@@ -88,7 +158,7 @@ init 2:
                     action ShowMenu("text_history")
             frame: # ======================== Кнопка перемотки
                 area(1.0, 0.5, 0.07, 1.0)
-                xanchor 1.0 yanchor 0.5
+                xanchor 1.0 yanchor 0.5 
                 if persistent.wnfh_debug_color:
                     background frame_blue
                 else:

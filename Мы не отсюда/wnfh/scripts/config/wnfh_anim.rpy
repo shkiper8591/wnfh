@@ -452,12 +452,12 @@ init -5:
 
     transform wnfh_db_red_small:
         subpixel True
-        ysize 200
-        ease 0.5 ysize 150
+        ysize 150
+        ease 0.5 ysize 100
     transform wnfh_db_red_large:
         subpixel True
-        ysize 150
-        ease 0.5 ysize 200
+        ysize 100
+        ease 0.5 ysize 150
 
     transform wnfh_db_green_small:
         subpixel True

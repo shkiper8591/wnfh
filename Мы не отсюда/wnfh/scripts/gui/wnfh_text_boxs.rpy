@@ -6,7 +6,6 @@ init 2:
             wnfh_test_1 = wnfh_play_animation
             def say_anim():     
                 amd = int(persistent.font_size <= "large") if wnfh_test_1 else 2
-                wnfh_Data.display(str(wnfh_test_1))
                 return amd
             def say_size():
                 return int(persistent.font_size <= "large")
@@ -71,47 +70,65 @@ init 2:
                 xpos 1.0 ypos 0.5
                 frame:
                     at (wnfh_db_blue_small,wnfh_db_blue_large,None)[say_anim()]
-                    area(0.5, 0.5, (300,400)[say_size()], 50)
-                    xanchor 0.5 yanchor 0.5
+                    area(0.5, 0.5, (wnfh_frames_elements["db_brow_line"][1], wnfh_frames_elements["db_brow_line"][1]+100)[say_size()], wnfh_frames_elements["db_brow_line"][2])
+                    xanchor 0.5 yanchor 0.5 padding(0, 0)
                     
                     if persistent.wnfh_debug_color:
                         background frame_blue
                     else:
                         background frame_transparent
+                    add Frame(wnfh_frames_elements["db_brow_bg"][0], left=wnfh_frames_elements["db_brow_bg"][3], right=55, top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg"][4]])
+                    add Frame(wnfh_frames_elements["db_brow_line"][0], left=wnfh_frames_elements["db_brow_line"][3], right=55, top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line"][4]])
+                    
                 frame:
                     at (wnfh_db_green_small,wnfh_db_green_large,None)[say_anim()]
-                    area(0.5, 1.0, (900,800)[say_size()], 4)
-                    xanchor 0.5 yanchor 1.0
+                    area(0.5, 1.0, (wnfh_frames_elements["db_mid_line"][1], wnfh_frames_elements["db_mid_line"][1]-100)[say_size()], wnfh_frames_elements["db_mid_line"][2])
+                    xanchor 0.5 yanchor 1.0 padding(0, 0)
                     
                     if persistent.wnfh_debug_color:
                         background frame_green
                     else:
                         background frame_transparent
+                    add Frame(wnfh_frames_elements["db_mid_line"][0], left=wnfh_frames_elements["db_mid_line"][3], right=55, top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_mid_line"][4]])
                 frame: # ======================== Кнопки
-                    area(0.5, 0.5, 300, 50)
-                    xanchor 0.5 yanchor 0.5
+                    area(0.5, 0.5, wnfh_frames_elements["db_brow_line"][1], wnfh_frames_elements["db_brow_line"][2])
+                    xanchor 0.5 yanchor 0.5 padding(0, 0)
                     
                     if persistent.wnfh_debug_color:
                         background frame_blue
                     else:
                         background frame_transparent
+                    add Frame(wnfh_frames_elements["db_brow_bg"][0], left=wnfh_frames_elements["db_brow_bg"][3], right=55, top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg"][4]])
+                        xzoom -1.0
+                    add Frame(wnfh_frames_elements["db_brow_line"][0], left=wnfh_frames_elements["db_brow_line"][3], right=55, top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line"][4]])
+                        xzoom -1.0
             frame:
                 at (wnfh_db_red_small,wnfh_db_red_large,None)[say_anim()]
-                area(0.5, 0.5, 1480, (150,200)[say_size()])
-                xanchor 0.5 yanchor 0.5
+                area(0.5, 0.5, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2], wnfh_frames_elements["db_bg"][2]+50)[say_size()]) 
+                xanchor 0.5 yanchor 0.5 padding(0, 0)
                 
                 if persistent.wnfh_debug_color:
                     background frame_red
                 else:
                     background frame_transparent
+                add Frame(wnfh_frames_elements["db_bg"][0], left=wnfh_frames_elements["db_bg"][3], top=0):
+                    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_bg"][4]])
+
             frame:
-                area(0.5, 1.0, 1500, 4)
-                xanchor 0.5 yanchor 0.5
+                area(0.5, 0.5, wnfh_frames_elements["db_line_lower"][1], wnfh_frames_elements["db_line_lower"][2])
+                xanchor 0.5 yanchor 0.5 padding(0, 0)
                 
                 if persistent.wnfh_debug_color:
                     background frame_green
                 else:
                     background frame_transparent
+                add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
+                    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_line_lower"][4]])
 
         frame: # ======================== Кнопки
             area(0.5, 0.7, 100, 50)

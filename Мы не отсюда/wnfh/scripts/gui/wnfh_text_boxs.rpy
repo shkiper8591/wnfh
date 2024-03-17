@@ -1,6 +1,15 @@
-init 2:
-    screen wnfh_say:
+init 2:  
+    screen wnfh_say: 
+        default wnfh_play_animation= False      
         python:
+            global wnfh_test_1
+            wnfh_test_1 = wnfh_play_animation
+            def say_anim():     
+                amd = int(persistent.font_size <= "large") if wnfh_test_1 else 2
+                wnfh_Data.display(str(wnfh_test_1))
+                return amd
+            def say_size():
+                return int(persistent.font_size <= "large")
             wnfh_say_buttons = {
                 "backward": [im.Flip(im.Composite( # idle
                                 (73, 83),
@@ -61,11 +70,8 @@ init 2:
                 xanchor 1.0 yanchor 0.5
                 xpos 1.0 ypos 0.5
                 frame:
-                    if persistent.font_size == "small":
-                        at wnfh_db_blue_small
-                    elif persistent.font_size == "large":
-                        at wnfh_db_blue_large
-                    area(0.5, 0.5, 300, 50)
+                    at (wnfh_db_blue_small,wnfh_db_blue_large,None)[say_anim()]
+                    area(0.5, 0.5, (300,400)[say_size()], 50)
                     xanchor 0.5 yanchor 0.5
                     
                     if persistent.wnfh_debug_color:
@@ -73,11 +79,8 @@ init 2:
                     else:
                         background frame_transparent
                 frame:
-                    if persistent.font_size == "small":
-                        at wnfh_db_green_small
-                    elif persistent.font_size == "large":
-                        at wnfh_db_green_large
-                    area(0.5, 1.0, 900, 4)
+                    at (wnfh_db_green_small,wnfh_db_green_large,None)[say_anim()]
+                    area(0.5, 1.0, (900,800)[say_size()], 4)
                     xanchor 0.5 yanchor 1.0
                     
                     if persistent.wnfh_debug_color:
@@ -93,11 +96,8 @@ init 2:
                     else:
                         background frame_transparent
             frame:
-                if persistent.font_size == "small":
-                    at wnfh_db_red_small
-                elif persistent.font_size == "large":
-                    at wnfh_db_red_large
-                area(0.5, 0.5, 1480, 150)
+                at (wnfh_db_red_small,wnfh_db_red_large,None)[say_anim()]
+                area(0.5, 0.5, 1480, (150,200)[say_size()])
                 xanchor 0.5 yanchor 0.5
                 
                 if persistent.wnfh_debug_color:
@@ -124,9 +124,9 @@ init 2:
                 anchor (0.5, 0.5) pos (0.5, 0.5)
                 spacing 20
                 textbutton "+":
-                    action SetField(persistent, "font_size", "large")
+                    action [SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]
                 textbutton "-":
-                    action SetField(persistent, "font_size", "small")
+                    action [SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]
 
 
 

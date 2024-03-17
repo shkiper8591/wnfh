@@ -476,8 +476,3 @@ init -5:
         subpixel True
         xsize 300
         ease 0.5 xsize 400
-
-    transform govno_ebanoe():
-        
-init -4 python:
-    

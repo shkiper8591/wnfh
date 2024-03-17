@@ -60,7 +60,7 @@ init 2:
             hbox:
                 xanchor 1.0 yanchor 0.5
                 xpos 1.0 ypos 0.5
-                frame: # ======================== Кнопки
+                frame:
                     if persistent.font_size == "small":
                         at wnfh_db_blue_small
                     elif persistent.font_size == "large":
@@ -72,7 +72,7 @@ init 2:
                         background frame_blue
                     else:
                         background frame_transparent
-                frame: # ======================== Кнопки
+                frame:
                     if persistent.font_size == "small":
                         at wnfh_db_green_small
                     elif persistent.font_size == "large":
@@ -92,7 +92,7 @@ init 2:
                         background frame_blue
                     else:
                         background frame_transparent
-            frame: # ======================== Кнопки
+            frame:
                 if persistent.font_size == "small":
                     at wnfh_db_red_small
                 elif persistent.font_size == "large":
@@ -104,7 +104,7 @@ init 2:
                     background frame_red
                 else:
                     background frame_transparent
-            frame: # ======================== Кнопки
+            frame:
                 area(0.5, 1.0, 1500, 4)
                 xanchor 0.5 yanchor 0.5
                 

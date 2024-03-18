@@ -94,15 +94,184 @@ label d8_obed_me_dv:
 
     "Вернулись в лагерь мы довольно скоро."
     "В конце-концов, спускаться с горки, да и ещё полной адреналина крови, гораздо проще."
-    "И учитывая, что скоро должен был начаться обед, мы сразу пришли к столовой."
+    "И учитывая, что, примерно, через десять минут должен был начаться обед, мы сразу пришли к столовой."
 
-    show usw smile pioneer at right with dissolve
+    show usw normal pioneer at right with dissolve
+    play music music_list["went_fishing_caught_a_girl"] fadein 5.0
 
-    "Однако, оказывается, нас здесь уже ждали."
+    "Однако, оказывается, нас здесь уже ждала Ульяна."
+    
+    show usw normal pioneer at right with dspr
 
-    "placeholder"
+    "Она оценила нас своим хитрым взглядом."
+    "Было слишком очевидно, что она уже явно что-то надумала себе в уме, но виду не показывала."
 
-    jump d8_obed_me_kat_mi
+    usw "Где вы были?"
+
+    show dv laugh pioneer2 at left with dspr
+
+    dv "По полю гуляли, клещей собирали."
+    me "И яблоки тоже."
+
+    show usw normal pioneer at right with dspr
+
+    usw "Яблоки?"
+
+    show usw dontlike pioneer at right with dspr
+
+    "Резко Ульяна стала довольно сердитой."
+
+    show dv guilty pioneer2 at left with dspr
+
+    usw "Знала я, что не стоило доверять эту информацию тебе."
+
+    "Её недовольный взгляд сверлил Алису."
+
+    dv "Да ладно тебе, пару яблок всего взяла, кто узнает?"
+
+    show usw grin pioneer at right with dspr
+
+    usw "Никто, если я получу долю[wp]"
+
+    show dv smile pioneer2 at left with dspr
+
+    dv "Так бы сразу."
+
+    "Алиса было потянулась в свой «карман» для яблок, но резко остановился."
+
+    show dv surprise pioneer2 at left with dspr
+
+    dv "Ой, а яблок-то и нет."
+
+    show dv scared pioneer2 at left with dspr
+
+    dv "Семён, а у тебя что?"
+
+    show dv shy pioneer2 at left with dspr
+
+    "Порывшись в своих карманах и нашёл там одно единственное яблоко."
+
+    th "Видать все выпали когда убегали."
+
+    show usw upset pioneer at right with dspr
+
+    usw "Не густо у вас всё."
+    me "Что ж, в таком случае[wp]"
+
+    "Я подошёл к Ульяне и протянул ей красивое заливное яблоко."
+
+    me "Оно твоё."
+
+    $ wnfh_Data.AddLove_points({"usw"}:1)
+
+    show usw laugh pioneer at right
+    show dv normal pioneer2 at left
+    with dspr
+
+    usw "О, спасибочки! Будет чем подкрепиться после занятий спортом."
+    me "С Алисой хотя бы поделись, она всё же их добывала."
+
+    show usw grin pioneer at right with dspr
+
+    usw "Обязательно!"
+
+    show usw normalsmile pioneer at right with dspr
+
+    me "Ну что, когда там уже обед?"
+
+    "Ульяна посмотрела на воображаемые часы."
+
+    usw "Да вот с минуты на минуту начаться должен, можем уже пойти занимать места."
+
+    window hide dissolve
+    stop ambience fadeout 3.5
+    scene bg int_dining_hall_empty_day
+    show dv normal pioneer at left
+    show usw normalsmile pioneer at right
+    with dissolve2
+    play ambience ambience_dining_hall_empty fadein 3.5
+    $ renpy.pause(0.5)
+    play sound sfx_dinner_horn_processed
+    window show dissolve
+
+    "Горн прозвучал как только мы вошли в столовую."
+    "Взяв по подносу, мы уселись у окошка."
+    "Разумеется, меня посадили так, чтобы солнце слепило прямо в глаз, но спорить было бесполезно."
+
+    stop ambience fadeout 1.0
+    show bg int_dining_hall_people_day with dissolve
+    play ambience ambience_dining_hall_full fadein 1.0
+
+    "В течении короткого промежутка времени, обеденный зал уже был полон пионерами."
+    "И как бы, всё бы ничего, но буквально напротив нас расположились никто иные как Лена и Катя."
+
+    th "Вот и думай, совпадение, судьба или же специально?"
+
+    "Я старался на них особо не зацикливаться, но всё же мимолётом успел заметить, как Лена изучала меня своим взглядом."
+
+    me "Вот так свезло[wp]"
+
+    show usw normal pioneer at right
+    show dv smile pioneer at left
+    with dspr
+
+    usw "Ты о чём?"
+
+    "Алиса же тихонько хихикала."
+
+    usw "А ты чего смеёшься?"
+
+    "Ульяна непонимающе смотрела то на меня, то на Алису. Даже на себя посмотрела, видимо, чтобы удостоверится не с неё ли смеются."
+
+    show usw dontlike pioneer at right with dspr
+
+    usw "А ну-ка выкладывайте давайте!"
+    me "Да ничего такого."
+
+    show dv laugh pioneer at left with dspr
+
+    dv "Просто Семён накосячил, и теперь переживает, не сдала ли его одна девушка, не так ли?"
+    me "Сдала вероятнее всего."
+
+    show usw grin pioneer at right with dspr
+
+    usw "Так, а с этого места поподробнее!"
+
+    show dv normal pioneer at left with dspr
+
+    "Алиса быстренько пересказала Ульяне весь сырбор. Конечно же с преувеличениями, куда же без них."
+    "Но, благо сама по себе история была небольшая, чтобы извратить её до неузнаваемости."
+
+    show usw normal pioneer at right with dspr
+
+    dv "[wp]Такие вот дела."
+    usw "Вот оно что[wp]"
+
+    show usw laugh pioneer at right with dspr
+
+    usw "Ты точно чокнутый, Сёма!"
+
+    show usw upset pioneer at right with dspr
+
+    usw "Эх, такого друга потеряем сегодня. Жил без страха и умрёт без страха."
+    me "Не надо меня уже хоронить. Может договорюсь ещё."
+    dv "О да, договариваться ты умеешь."
+
+    "С ноткой сарказма проговорила она."
+
+    show dv grin pioneer at left with dspr
+
+    dv "Тебе напомнить, как ты договорился с Планшетиком, после чего она ваш клуб начала ещё сильнее прессовать?"
+    dv "Тогда даже вроде Ольге вмешаться пришлось, потому-что Шура нажаловался."
+    me "Ну бывают просчёты, но я учусь на своих ошибках."
+
+    show dv laugh pioneer at left with dspr
+
+    dv "Ну-ну!"
+
+    "To be continued!"
+
+    jump d8_posle_obeda
 
 label d8_obed_me_kat_un:
 

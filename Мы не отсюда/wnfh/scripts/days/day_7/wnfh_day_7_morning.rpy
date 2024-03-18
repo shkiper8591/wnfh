@@ -524,7 +524,7 @@ label d7_sl_otkaz:
     window show dissolve
 
     show sl surprise sport close with dspr
-    $ wnfh_Data.achivments_clear()
+    $ wnfh_Data.achievements_clear()
 
     me "Пожалуй откажусь, мне что-то не очень хорошо."
     

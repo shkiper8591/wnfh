@@ -77,7 +77,13 @@ init -4 python:
         "frame_gradient",
         "frame_db_mid_line",
         "frame_db_brow_line",
+        "frame_db_brow_line1",
+        "frame_db_brow_line2",
+        "frame_db_brow_line3",
         "frame_db_brow_bg",
+        "frame_db_brow_bg1",
+        "frame_db_brow_bg2",
+        "frame_db_brow_bg3",
 
     ]}
 
@@ -96,10 +102,16 @@ init -4 python:
         "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]           ,820           ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
         "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]         ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]         ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]           ,1500          ,100         ,25                ,2             ,frame_green      ,wjuh_line],
-        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]  ,900          ,4         ,22                ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"] ,300          ,35          ,25                ,1             ,frame_green      ,wjuh_line],
-        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]   ,300          ,35          ,25                ,2             ,frame_green      ,wjuh_line],
+        "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]           ,1500          ,100         ,25                ,2             ,frame_green      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
+        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]  ,900          ,4            ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
+        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"] ,300          ,31           ,25                ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"],25           ,31           ,0                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"],300          ,31           ,2                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line3":                          [wnfh_gui["tint_elements"]["frame_db_brow_line3"],55           ,31           ,0                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]   ,300          ,31           ,25                ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,31           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
+        "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
     }
     wnfh_frames_size = {
         "test_frame": [1000]  

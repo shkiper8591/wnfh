@@ -269,7 +269,22 @@ label d8_obed_me_dv:
 
     dv "Ну-ну!"
 
-    "To be continued!"
+    "А тем временем, еда, медленно но верно, подошла к своему концу."
+    "Даже чай был уже выпит, что я не сразу заметил."
+
+    th "Да уж, иногда тяжело с таким аппетитом."
+
+    me "Ох, что ж, приятно было побеседовать, но мне пора на заслуженный послеобеденный перерыв."
+    dv "Пока-пока."
+
+    if wnfh_Data.getChoice_result_number("d7_choice_n2") == 2:
+
+        usw "Эй, опять?! Я убирать за тобой не собираюсь!"
+        me "За друзьями нужно ухаживать."
+
+        "Усмехнувшись сказал я."
+
+    "Я медленно пошёл в сторону выхода."
 
     jump d8_posle_obeda
 
@@ -281,23 +296,95 @@ label d8_obed_me_kat_un:
     show un smile pioneer at right
     with slide_up_blure_dissolve2
     $ renpy.pause(1.0)
-    show bg ext_dining_hall_near_day
-    with dissolve
+    show bg ext_dining_hall_near_day with dissolve
+    $ renpy.pause(1.0)
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_people_day
+    show kat normal pioneer at left
+    show un smile pioneer at right
+    with door_blure_dissolve2
+    play ambience ambience_dining_hall_full fadein 2.0
+    $ renpy.pause(0.5)
+    window show dissolve
+    # мне кароче нахуй в падлу эмоции менять им, пусть кто-нибудь другой этим займётся, заранее спасибо.
+    $ renpy.notify("На протяжении всей дальнейшей сцены должны меняться эмоции, но мне лень этим заниматься")
+
+    th "Обед, обед, обед. Каждый день одна и та же рутина. Может пора научиться питаться солнцем?"
+    th "Ну а что? Буддистские монахи же так живут и не жалуются, значит вкусно!"
+
+    un "Семён, не спи! Обед так упустишь."
+    me "А, да, точно[wp]"
+
+    "Забрав подносы с едой, мы сели за первый попавшийся свободный стол."
+    $ renpy.notify("Тут должны быть подносы с хавчиком, но мне (Серёге) их лень ставить")
+
+    "Усевшись за стол, я, будучи очень голодным, сразу же уткнулся в свой обед."
+    "Но, похоже, у моих подруг было дикое желание поболтать."
+
+    kat "Слушай, Семён, а вот расскажи-ка мне[wp]"
+    me "М?"
+    kat "Как же ты всё-таки карту потерял, и почему это так важно для вожатой?"
+
+    "Я раздражённо фыркнул."
+
+    me "Не терял я её, у меня карту Ульяна украла."
+    me "Пол лагеря за ней оббежал, пока не выяснилось, что она её уже где-то выкинула."
+    me "И где эта самая карта даже она не знает."
+    kat "Ха, занятно."
+    kat "Зато, пока бегал весь лагерь изучил."
+
+    "Катя тихо похихикала."
+
+    me "А что до вожатой, видимо, дело принципа, не знаю."
+    
+    "В наш диалог решила вклиниться Лена."
+
+    un "Дело не только в принципе. Эти же карты другим сменам давать будут, а они им полезны, особенно младшим."    
+    me "Ну, возможно."
+    un "Не возможно, а так и есть."
+    me "В любом случае."
+
+    "Я постарался полностью сконцентрироваться на обеде."
+    "И, видимо, девочки решили последовать моему примеру, также углубившись в свои тарелки."
+
+    # таймскип
+    window hide dissolve
     $ renpy.pause(1.0)
     window show dissolve
 
-    "placeholder"
+    "Наконец, с обедом было закончено. И закончил я куда раньше, чем мои подруги."
+    "Медленно и неуклюже я поднялся из-за стола."
 
-    jump d8_obed_me_kat_mi
+    me "Ну-с, хорошо провели время, но мне пора на послеобеденный перерыв."
+    me "Так что[wp] Увидимся когда увидимся."
+
+    kat_un_d "Пока!"
+
+    "Синхронно сказали они и помахали мне, а я отправился на выход."
+
+    jump d8_posle_obeda
 
 label d8_obed_me_kat_mi:
 
-    window hide
-    scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
+    window hide dissolve
+    scene bg ext_dining_hall_away_day
+    show kat normal pioneer at left
+    show mi normal pioneer at right
+    with slide_up_blure_dissolve
     $ renpy.pause(1.0)
-    scene bg ext_dining_hall_near_day with dissolve
+    show bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
-    window show
+    stop ambience fadeout 2.0
+    scene bg int_dining_hall_people_day
+    show mi normal pioneer at right
+    show kat normal pioneer at left
+    with door_blure_dissolve2
+    play ambience ambience_dining_hall_full fadein 2.0
+    $ renpy.pause(0.5)
+    window show dissolve
+
+    "Зайдя в столовую, всё было сделано по стандартной, уже отработанной схеме."
+    "Буфет, поднос, столик. Какая-то, круговая порука[wp]"
 
     show chair_r at chair_move_out behind mi
     $ renpy.pause(0.3, hard=True)
@@ -305,12 +392,15 @@ label d8_obed_me_kat_mi:
     $ renpy.pause(1.0, hard=True)
     show chair_r at chair_move_in behind mi
     show right d8_breakfast_full tray spoon foods behind mid with dissolve
-    
-    "Мику аккуратно, даже с некоторой грацией села за стол, и стала аккуратно есть."
+
+    "Катя и я завалились за столик."
+    "Мику же аккуратно, даже с некоторой грацией села за стол, и стала потихонечку есть."
     show right d8_breakfast_full tray foods behind mid with dissolve
     "Что нельзя было сказать про меня, ведь за это время, я уже успел немного испачкать форму едой."
+
+    th "И как только я умудряюсь?"
     
-    show kat grin with dspr
+    show kat grin pioneer with dspr
     
     kat "Семён, ты хрюша, в курсе?"
     
@@ -402,13 +492,7 @@ label d8_obed_me_kat_mi:
     "Благо, сегодня поварихи не были злыми и пустили меня."
     "Там я кое-как отмыл пятно, и наконец покинул столовую."
     
-    stop ambience fadeout 3.5
-    scene bg ext_dining_hall_near_day with dissolve2
-    play ambience ambience_camp_center_day fadein 3.5
-
-    "placeholder"
-
-    jump d8_male_clubs_day
+    jump d8_posle_obeda
 
 label d8_obed_me_kat:
     ### НАДО ПЕРЕДЕЛАТЬ!!!!!!! СЕРГЕЙ НЕ ЗАБУДЬ ДЫРЯВАЯ ТЫ ГАЛАВА!!!!!!!
@@ -423,14 +507,16 @@ label d8_obed_me_kat:
     
     window hide
     stop ambience fadeout 0.5
-    scene bg int_dining_hall_day with dnr_entrance
+    scene bg int_dining_hall_day
+    show kat normal pioneer at center
+    with dnr_entrance
     play ambience ambience_dining_hall_empty fadein 3 
     window show
 
     "Внутри было почти пусто, лишь пару человек сидели и обедали в гордом одиночестве."
     "Мы подошли к раздаче, и взяв подносы пошли к моему любимому столику."
     
-    window hide
+    window hide dissolve
     show chair_l behind kat 
     show chair_r behind mi
     show table
@@ -454,23 +540,138 @@ label d8_obed_me_kat:
     $ renpy.pause(1.0, hard=True)
     show chair_l at chair_move_in behind kat
     $ renpy.pause(0.3, hard=True)
-    window show
+    window show dissolve
     
     "И как только мы заняли своё место, столовая тут же стала наполнятся людьми."
     
-    show mi normal pioneer behind chair_r:
-        xcenter 1.4
-        ease_quart 5.0 xcenter 0.8
-    
     show mid d8_breakfast_full tray foods with dissolve
     
-    "А ещё спустя минуту, к нам подошла Мику."
-    
-    mi "Можно к вам сесть, а то я вроде старалась раньше закончить, чтобы успеть место занять, а по итогу опять пришла одна из самых последних."
-    
-    show kat smile with dspr
-    
-    kat "Да конечно, садись."
-    mi "Спасибо!"
-    
-    "placeholder"
+    me "Вовремя мы однако."
+
+    show kat confused pioneer at center with dspr 
+
+    kat "М, ты о чём?"
+    me "Ты посмотри сколько людей сюда завалилось, мы бы не протолкнулись."
+
+    show kat pockerface pioneer at center with dspr
+
+    "Она вяло осмотрела вошедших людей, пожала плечами и вернулась к еде."
+
+    me "Похоже, голод тебя волнует куда больше, понимаю."
+
+    "Усмехнувшись, я также принялся за обед."
+
+    show kat sad pioneer at center with dspr
+
+    kat "Голод и стресс."
+    me "Стресс?"
+
+    show kat smile pioneer at center with dspr
+
+    kat "Да так, волнуюсь немного по поводу знакомств с новыми людьми."
+    kat "Как они примут меня в свой коллектив, как будут относится ко мне."
+
+    "Я покачал головой."
+
+    me "Не бери в голову."
+
+    show kat thinking pioneer at center with dspr
+
+    kat "Легко сказать[wp]"
+    me "И легко сделать."
+    me "Я понимаю о чём ты, через такое же прошёл здесь. И хочу сказать, что это довольно всё-таки просто."
+
+    show kat obida pioneer at center with dspr
+
+    me "А стресс лучше незаедать, потолстеешь."
+
+    "Последние слова сами собой вырвались, и я даже как не подумал, что мог бы обидеть девчонку."
+    "И, судя по её выражению лица, всё же немного я её задел."
+
+    kat "Ничё я не потолстею!"
+    me "Виноват, само как-то вырвалось."
+
+    show kat upset pioneer at center with dspr
+
+    "Она по грустному вздохнула и стала водить ложкой в еде."
+
+    window hide dissolve
+    call screen wnfh_choice(
+        ["kat", "Преободрить", "Может старая добрая прогулка поможет?", "d8_obed_me_kat_1", {"kat":1}],
+        ["neutral", "Лучше не тревожить", "Иногда лучше оставить человека на едине", "d8_obed_me_kat_2", {None}],
+        ["d8_choice_n9", "Семён думает как бы Преободрить Катю"]
+        ) with sphere_blure_dissolve2
+
+label d8_obed_me_kat_1:
+
+    window show dissolve
+
+    th "Наверное, стоит как-то поднять настроение ей. Но учитывая ограниченность моих ресурсов, тут только остаётся звать на прогулку."
+    th "Хотя, возможно она устала от прогулок после бегунка-то."
+    th "В прочем, нефиг гадать, а нужно спрашивать!"
+
+    me "Слушай, может мы прогуляемся после обеда? Думаю, прогулка хорошо поможет отвлечься от стресса."
+
+    show kat thinking pioneer at center with dspr
+
+    "После моего предложения, Катя надолго задумалась." 
+
+    kat "После обеда, пожалуй нет[wp] Всё же я думала после еды немного отдохнуть, а потом к Мику сходить в клуб."
+
+    show kat happy pioneer at center with dspr
+
+    kat "Но вот вечером, скажем, после ужина, вполне можно походить!"
+    me "Отлично, так даже лучше."
+
+    show kat joy pioneer at center with dspr
+
+    kat "Вот и славненько."
+
+    show kat normal pioneer at center with dspr
+
+    kat "А теперь, нам бы с обедом закончить[wp]"
+    me "Это верно подмечено!"
+
+    "С удвоенной силой, мы оба принялись за еду."
+
+    # таймскип
+    window hide dissolve
+    $ renpy.pause(1.0)
+    window show dissolve
+
+    "И всего-то за пять минут, еда была уничтожена."
+    "Катя облокотилась на спинку стула."
+    "Я же, кое-как, но всё же встал из-за стола."
+
+    me "Что ж, ты как хочешь, а я пожалуй пойду домой[wp]"
+    kat "Ага, пока, и до скорой встречи!"
+
+    "Помахав на прощание, я отправился на выход из столовой."
+
+    jump d8_posle_obeda
+
+label d8_obed_me_kat_2:
+
+    window show dissolve
+
+    th "Стресс это конечно плохо, но это личное дело каждого."
+    th "А я своими потугами могу только хуже сделать, или она вообще начнёт считать, что я так к ней из жалости."
+    th "Поэтому, лучше оставить этакий статус к-во."
+
+    "Я полностью погрузился в свою еду."
+    "Через какое-то время, явно без особого энтузиазма, за еду принялась и Катя."
+
+    # таймскип
+    window hide dissolve
+    $ renpy.pause(1.0)
+    window show dissolve
+
+    "Спустя пару минут, моя пайка была уничтожена. Когда как моя подруга всё ещё возилась со своей."
+    "Медленно встав из-за стола, я потянулся, похрустев позвоночником."
+
+    me "Ну что ж, пойду-ка я[wp]"
+    kat "Угу[wp]"
+    me "Покеда."
+    kat "Пока[wp]"
+
+    jump d8_posle_obeda

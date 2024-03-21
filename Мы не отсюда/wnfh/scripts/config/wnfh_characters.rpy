@@ -86,10 +86,10 @@ init -3 python:
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
-            ctc = "ctc_animation_nvl"
+            ctc = "wnfh_ctc_animation_nvl"
         else:
             who_suffix = ""
-            ctc = "ctc_animation"
+            ctc = "wnfh_ctc_animation"
         what_color = wnfh_choice_tint_color[timeofday][0]
         drop_shadow = (2, 2)
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], colors[time_of_day], wnfh_characters[second][1], wnfh_characters[second][0])

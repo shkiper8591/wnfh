@@ -480,3 +480,7 @@ init -5:
     transform wnfh_pass:
         subpixel True
         pass
+init -3:
+    transform govno_ebanoe:
+        on hover:
+            ImageReference(wnfh_gui["tint_elements"]["button_hover"])

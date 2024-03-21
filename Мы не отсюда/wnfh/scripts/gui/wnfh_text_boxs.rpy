@@ -79,7 +79,7 @@ init 2:
                             background frame_transparent
                         add Frame(wnfh_frames_elements["db_brow_bg1"][0], left=wnfh_frames_elements["db_brow_bg1"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg1"][4]])
-                        add Frame(wnfh_frames_elements["db_brow_line1"][0], left=wnfh_frames_elements["db_brow_line1"][3], right=55, top=0):
+                        add Frame(wnfh_frames_elements["db_brow_line1"][0], left=wnfh_frames_elements["db_brow_line1"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line1"][4]])
                     frame:
                         at (wnfh_db_blue_small,wnfh_db_blue_large,None)[say_anim()]
@@ -92,7 +92,7 @@ init 2:
                             background frame_transparent
                         add Frame(wnfh_frames_elements["db_brow_bg2"][0], left=wnfh_frames_elements["db_brow_bg2"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg2"][4]])
-                        add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], right=55, top=0):
+                        add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line2"][4]])
                     
                     frame:
@@ -105,7 +105,7 @@ init 2:
                             background frame_transparent
                         add Frame(wnfh_frames_elements["db_brow_bg3"][0], left=wnfh_frames_elements["db_brow_bg3"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg3"][4]])
-                        add Frame(wnfh_frames_elements["db_brow_line3"][0], left=wnfh_frames_elements["db_brow_line3"][3], right=55, top=0):
+                        add Frame(wnfh_frames_elements["db_brow_line3"][0], left=wnfh_frames_elements["db_brow_line3"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line3"][4]])
                 hbox:
                     xanchor 1.0 yanchor 0.5
@@ -135,6 +135,18 @@ init 2:
                         add Frame(wnfh_frames_elements["db_brow_line"][0], left=wnfh_frames_elements["db_brow_line"][3], right=55, top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line"][4]])
                             xzoom -1.0
+                        hbox:
+                            anchor (0.5, 0.5) pos (0.5, 0.5)
+                            spacing 20
+                            # Это говно Ритана, лень переписывать, просто спиздил. Может быть, когда-нибудь и переделаю.
+                            imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/hide_%s.png"):
+                                action HideInterface()
+                            imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/save_%s.png"):
+                                action ShowMenu('save')
+                            imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/menu_%s.png"):
+                                action ShowMenu('game_menu_selector')
+                            imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/load_%s.png"):
+                                action ShowMenu('load')
                 frame:
                     at (wnfh_frames_elements["db_bg"][6])[say_anim()]
                     area(0.5, 0.5, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2], wnfh_frames_elements["db_bg"][2]+50)[say_size()]) 
@@ -157,25 +169,6 @@ init 2:
                         background frame_transparent
                     add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_line_lower"][4]])
-            frame: # ======================== Кнопочки
-                area(1.0, 0.0, 260, 30)
-                xanchor 1.0 yanchor 0.0
-                if persistent.wnfh_debug_color:
-                    background frame_green
-                else:
-                    background frame_transparent
-                grid 4 1:
-                    anchor (0.5, 0.5) pos (0.5, 0.5)
-                    spacing 20
-                    # Это говно Ритана, лень переписывать, просто спиздил. Может быть, когда-нибудь и переделаю.
-                    imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/hide_%s.png"):
-                        action HideInterface()
-                    imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/save_%s.png"):
-                        action ShowMenu('save')
-                    imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/menu_%s.png"):
-                        action ShowMenu('game_menu_selector')
-                    imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/load_%s.png"):
-                        action ShowMenu('load')
 
             if persistent.font_size == "small":
                 frame: # ======================== Имя
@@ -241,11 +234,27 @@ init 2:
                 textbutton "-":
                     action [SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]
 
+        frame: # ======================== Кнопка логов
+            area(0.2, 0.5, 0.07, 100)
+            xanchor 0.5 yanchor 0.5
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
+            for i in ["db_button_bg_1", "db_button_line"]:
+                frame:
+                    if persistent.wnfh_debug_color:
+                        background wnfh_frames_elements[i][5]
+                    else:
+                        background frame_transparent
+                    area(0.5, 0.0, wnfh_frames_elements[i][1], wnfh_frames_elements[i][2]) padding(0, 0) xanchor 0.5
+                    add Frame(wnfh_frames_elements[i][0], left=wnfh_frames_elements[i][3], top=0) at govno_ebanoe:
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements[i][4]])
 
-
+    
 
         frame: # ======================== Кнопка логов
-            area(0.0, 0.5, 0.07, 1.0)
+            area(0.0, 0.5, 0.07, 100)
             xanchor 0.0 yanchor 0.5
             if persistent.wnfh_debug_color:
                 background frame_blue
@@ -258,7 +267,7 @@ init 2:
                 xpos 1.0 ypos 0.5
                 action ShowMenu("text_history")
         frame: # ======================== Кнопка перемотки
-            area(1.0, 0.5, 0.07, 1.0)
+            area(1.0, 0.5, 0.07, 100)
             xanchor 1.0 yanchor 0.5 
             if persistent.wnfh_debug_color:
                 background frame_blue

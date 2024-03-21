@@ -112,6 +112,10 @@ init -4 python:
         "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
         "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,31           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
         "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "db_button_hover":                        [wnfh_gui["tint_elements"]["button_hover"]       ,73           ,83           ,0                 ,0             ,frame_blue       ,wnfh_pass],
+        "db_button_bg_1":                         [wnfh_gui["tint_elements"]["button_bg_1"]        ,73           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
+        "db_button_bg_2":                         [wnfh_gui["tint_elements"]["button_bg_2"]        ,86           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
+        "db_button_line":                         [wnfh_gui["tint_elements"]["button_line"]        ,73           ,83           ,0                 ,1             ,frame_blue       ,wnfh_pass],
     }
     wnfh_frames_size = {
         "test_frame": [1000]  
@@ -357,7 +361,7 @@ init -4 python:
 
     
 
-init 2:
+init 1:
     
     
     ## Видео Лист

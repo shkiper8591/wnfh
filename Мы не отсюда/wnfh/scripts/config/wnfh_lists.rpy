@@ -463,6 +463,7 @@ init 1:
     $ wnfh_music_list["razbor_poletov"] = wnfh_MUSIC + "razbor poletov - svati.mp3"
     $ wnfh_music_list["trevoga_1"] = wnfh_MUSIC + "trevoga - svati.mp3"
     $ wnfh_music_list["sport2"] = wnfh_MUSIC + "sport2 - svati.mp3"
+    $ wnfh_music_list["estafeta"] = wnfh_MUSIC + "estafeta - svati.mp3" 
     $ wnfh_music_list["country_shop"] = wnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
     $ wnfh_music_list["ya_znayu_kto_ti"] = wnfh_MUSIC + "ya znayu kto ti.mp3"
     $ wnfh_music_list["candy_store"] = wnfh_MUSIC + "Candy_store.mp3"

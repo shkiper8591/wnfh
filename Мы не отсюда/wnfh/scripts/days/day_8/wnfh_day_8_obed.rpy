@@ -1,5 +1,5 @@
 label d8_obed_me_alone_alt:
-
+    $ wnfh_Data.FlagSet("d8_obed_me_alone", "alone_alt")
     window hide dissolve
     stop ambience fadeout 5.0
     scene bg ext_dining_hall_near_day
@@ -51,7 +51,7 @@ label d8_obed_me_alone_alt:
     jump d8_posle_obeda
 
 label d8_obed_me_alone:
-
+    $ wnfh_Data.FlagSet("d8_obed_me_alone", "alone_canon")
     window hide dissolve
     scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
     $ renpy.pause(1.0)
@@ -83,6 +83,7 @@ label d8_obed_me_alone:
 
 label d8_obed_me_dv:
 
+    $ wnfh_Data.FlagSet("d8_obed_me_dv", True)
     window hide dissolve
     stop ambience fadeout 5.0
     scene bg ext_dining_hall_away_day 
@@ -289,7 +290,7 @@ label d8_obed_me_dv:
     jump d8_posle_obeda
 
 label d8_obed_me_kat_un:
-
+    $ wnfh_Data.FlagSet("d8_obed_me_kat_un", True)
     window hide dissolve
     show bg ext_dining_hall_away_day 
     show kat normal pioneer at left
@@ -365,7 +366,7 @@ label d8_obed_me_kat_un:
     jump d8_posle_obeda
 
 label d8_obed_me_kat_mi:
-
+    $ wnfh_Data.FlagSet("d8_obed_me_kat_mi", True)
     window hide dissolve
     scene bg ext_dining_hall_away_day
     show kat normal pioneer at left
@@ -495,7 +496,7 @@ label d8_obed_me_kat_mi:
     jump d8_posle_obeda
 
 label d8_obed_me_kat:
-    ### НАДО ПЕРЕДЕЛАТЬ!!!!!!! СЕРГЕЙ НЕ ЗАБУДЬ ДЫРЯВАЯ ТЫ ГАЛАВА!!!!!!!
+    $ wnfh_Data.FlagSet("d8_obed_me_kat", True)
     window hide
     scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
     $ renpy.pause(1.0)

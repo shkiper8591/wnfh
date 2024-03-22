@@ -65,7 +65,7 @@ init 2:
                 'dnr_cleaning': 6,
             },
             'sv': {
-                'angry': 1, 'happy': 1, 'scared': 1, 'worried': 1,
+                'angry': 1, 'happy': 1, 'scared': 1, 'worried': 1, 'sad': 1,
             },
             'sd': {
                 'normal': 1, 'grin': 1, 'smile': 1, 'angry': 1, 'serious': 1, 'laugh': 1,

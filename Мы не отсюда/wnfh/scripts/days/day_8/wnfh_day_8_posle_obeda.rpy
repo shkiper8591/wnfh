@@ -55,34 +55,29 @@ label d8_posle_obeda:
 
     if wnfh_Data.FlagGet("d8_begunok") == False:
 
-        jump d8_posle_obeda_lp_un_check
+        if wnfh_Data.getChoice_points_sum("un") <= 5:
+
+            jump d8_posle_obeda_mt_angry
+    
+        else:
+            jump d8_posle_obeda_mt_normal
 
     else:
-
-    show mt sad pioneer panama at center with dissolve
-
-    "В это же время пришла и сама Ольга Дмитриевна."
-
-    th "Странно, я как-то не слышал её за собой[wp] Ну да ладно, я, наверное, сильно устал просто."
-
-    "Вид у вожатой был усталый, поэтому без особых разговоров она обошла меня и улеглась спать на кровать даже не раздеваясь."
-    "Пожав плечами, я подошёл к своей кровати."
-
-    window hide dissolve
-    show blink
-    $ renpy.pause(0.5)
-    scene black
-    jump d8_afternoon
-
-label d8_posle_obeda_lp_un_check:
-
-    if wnfh_Data.getChoice_points_sum("un") <= 5:
-
-        jump d8_posle_obeda_mt_angry
-
-    else:
-
-        jump d8_posle_obeda_mt_normal
+        
+        show mt sad pioneer panama at center with dissolve
+    
+        "В это же время пришла и сама Ольга Дмитриевна."
+    
+        th "Странно, я как-то не слышал её за собой[wp] Ну да ладно, я, наверное, сильно устал просто."
+    
+        "Вид у вожатой был усталый, поэтому без особых разговоров она обошла меня и улеглась спать на кровать даже не раздеваясь."
+        "Пожав плечами, я подошёл к своей кровати."
+    
+        window hide dissolve
+        show blink
+        $ renpy.pause(0.5)
+        scene black
+        jump d8_afternoon
 
 label d8_posle_obeda_mt_angry:
 

@@ -57,6 +57,8 @@ label d8_posle_obeda:
 
         jump d8_posle_obeda_lp_un_check
 
+    else:
+
     show mt sad pioneer panama at center with dissolve
 
     "В это же время пришла и сама Ольга Дмитриевна."

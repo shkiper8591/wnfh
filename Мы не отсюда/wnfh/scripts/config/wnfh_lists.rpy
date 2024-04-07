@@ -481,6 +481,9 @@ init 1:
     $ wnfh_music_list["clean_up"] = wnfh_MUSIC + "Clean up.mp3"
     $ wnfh_music_list["dealing_with_destruction"] = wnfh_MUSIC + "Dealing With Destruction.mp3"
     $ wnfh_music_list["corridors"] = wnfh_MUSIC + "Corridors.mp3"
+    $ wnfh_music_list["violin_solo"] = wnfh_MUSIC + "ConcernedApe - Violin Solo.mp3"
+    $ wnfh_music_list["the_valley_comes_alive"] = wnfh_MUSIC + "ConcernedApe - Spring (The Valley Comes Alive).mp3"
+    $ wnfh_music_list["the_sun_can_bend_an_orange_sky"] = wnfh_MUSIC + "ConcernedApe - Summer (The Sun Can Bend an Orange Sky).mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

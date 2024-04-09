@@ -29,7 +29,7 @@ label d8_posle_obeda:
     th "Конечно, на солнце припекает, но не так сильно, как если бы без ветра."
     th "М-да[wp] Интересно, как там сейчас дома? Наверное, всё также сыро холодно, северная столица же."
 
-     show bg ext_houses_day with dissolve
+    show bg ext_houses_day with dissolve
 
     "Я грустно вздохнул."
 

@@ -477,6 +477,15 @@ init -5:
         xsize 220
         ease 0.5 xsize 320
 
+    transform wnfh_db_buttons_small:
+        subpixel True
+        ypos 0.5
+        ease 0.5 ypos 0.65
+    transform wnfh_db_buttons_large:
+        subpixel True
+        ypos 0.65
+        ease 0.5 ypos 0.5
+
     transform wnfh_pass:
         subpixel True
         pass

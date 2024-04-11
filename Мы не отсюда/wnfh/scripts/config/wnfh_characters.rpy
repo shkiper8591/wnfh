@@ -3,19 +3,45 @@ init -265 python:
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
 
 init -4:
-
-    #image wnfh_ctc_animation = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.88, ypos=0.98, xanchor=1.0, yanchor=1.0)
-
-    image wnfh_ctc_animation_nvl = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.88, ypos=0.98, xanchor=1.0, yanchor=1.0)
-    
     image wnfh_ctc_animation:
-        xpos 0.0 ypos 0.0
+        
+        subpixel True
+        xpos 0.876 ypos 0.98
+        xanchor 1.0 yanchor 1.0
+        xsize 27 ysize 40
+        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
         contains:
+            subpixel True
+            alpha 0.0
             wnfh_gui["tint_elements"]["indicator_star"]
+            block:
+                ease_quart 1.0 alpha 1.0
+                ease_quart 1.0 alpha 0.0
+                repeat
         contains:
+            subpixel True
+            transform_anchor True
+            rotate_pad True
             wnfh_gui["tint_elements"]["indicator_molot"]
+            xpos 1.0 ypos 1.0
+            xanchor 1.0 yanchor 1.0
+            alpha 0.0
+            block:
+                ease_quart 1.0 rotate -360 alpha 1.0
+                ease_quart 1.0 rotate -180 alpha 0.0
+                repeat
         contains:
+            subpixel True
+            transform_anchor True
+            rotate_pad True
             wnfh_gui["tint_elements"]["indicator_serp"]
+            xpos 0.0 ypos 1.0
+            xanchor 0.0 yanchor 1.0
+            alpha 0.0
+            block:
+                ease_quart 1.0 rotate -360 alpha 1.0
+                ease_quart 1.0 rotate -180 alpha 0.0
+                repeat
 
 
 init -3 python:
@@ -66,10 +92,9 @@ init -3 python:
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
-            ctc = "wnfh_ctc_animation_nvl"
         else:
             who_suffix = ""
-            ctc = "wnfh_ctc_animation"
+        ctc = "wnfh_ctc_animation"
         what_color = wnfh_choice_tint_color[timeofday][0]
         drop_shadow = (2, 2)
         for i, j in wnfh_characters.items():

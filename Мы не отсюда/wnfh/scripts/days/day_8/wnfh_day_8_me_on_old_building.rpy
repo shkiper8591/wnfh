@@ -1,7 +1,7 @@
 label d8_me_on_old_building:
 
     stop ambience fadeout 3.5
-    scene scene bg ext_path_sunset with santa_barbara_out_blure_dissolve2
+    scene bg ext_path_sunset with santa_barbara_out_blure_dissolve2
     play music wnfh_music_list["the_hill_camp_morning"] fadein 5.0
     play ambience ambience_forest_evening fadein 3.5
 

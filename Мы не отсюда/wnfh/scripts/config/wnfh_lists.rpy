@@ -438,8 +438,6 @@ init 1:
     $ wnfh_music_list["waking_up_2"] = wnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
     $ wnfh_music_list["fireflies_on_the_porch"] = wnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
     $ wnfh_music_list["the_cars_you_might_think"] = wnfh_MUSIC + "The Cars - You Might Think.ogg"
-    $ wnfh_music_list["test_song"] = wnfh_MUSIC + "testsong.mp3"
-    $ wnfh_music_list["cyberpunk"] = wnfh_MUSIC + "rebelpath.mp3"
     $ wnfh_music_list["proximity"] = wnfh_MUSIC + "Alec Holowka - Proximity.mp3"
     $ wnfh_music_list["we_dont_care"] = wnfh_MUSIC + "We Dont Care.ogg"
     $ wnfh_music_list["sharkle_dream"] = wnfh_MUSIC + "Alec Holowka - Sharkle Dream.mp3"

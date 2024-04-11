@@ -1,3 +1,4 @@
+label d8_placeholder:
     
     th "Так, куда можно сходить[wp]"
     

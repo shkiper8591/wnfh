@@ -4,10 +4,19 @@ init -265 python:
 
 init -4:
 
-    image wnfh_ctc_animation = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.88, ypos=0.98, xanchor=1.0, yanchor=1.0)
+    #image wnfh_ctc_animation = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.88, ypos=0.98, xanchor=1.0, yanchor=1.0)
 
     image wnfh_ctc_animation_nvl = Animation("images/misc/ctc01.png", 0.15, "images/misc/ctc02.png", 0.15, "images/misc/ctc03.png", 0.15, "images/misc/ctc04.png", 0.15, "images/misc/ctc05.png", 0.15, "images/misc/ctc06.png", 0.15, "images/misc/ctc07.png", 0.15, "images/misc/ctc08.png", 0.15, xpos=0.88, ypos=0.98, xanchor=1.0, yanchor=1.0)
- 
+    
+    image wnfh_ctc_animation:
+        xpos 0.0 ypos 0.0
+        contains:
+            wnfh_gui["tint_elements"]["indicator_star"]
+        contains:
+            wnfh_gui["tint_elements"]["indicator_molot"]
+        contains:
+            wnfh_gui["tint_elements"]["indicator_serp"]
+
 
 init -3 python:
     wnfh_characters = {

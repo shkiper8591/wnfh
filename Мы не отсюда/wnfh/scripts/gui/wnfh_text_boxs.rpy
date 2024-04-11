@@ -50,6 +50,14 @@ init 2:
                             ]
 
             }
+            wnfh_db_buttons = {
+                "minus": [wnfh_gui["tint_elements"]["db_button_minus"]  ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]  ],
+                "plus":  [wnfh_gui["tint_elements"]["db_button_plus"]   ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]  ],
+                "save":  [wnfh_gui["tint_elements"]["db_button_save"]   ,ShowMenu('save')                                                                             ],
+                "load":  [wnfh_gui["tint_elements"]["db_button_load"]   ,ShowMenu('load')                                                                      ],
+                "menu":  [wnfh_gui["tint_elements"]["db_button_menu"]   ,ShowMenu('game_menu_selector')                                                               ],
+                "hide":  [wnfh_gui["tint_elements"]["db_button_hide"]   ,HideInterface()                                                                              ],
+            }
         frame:
             area(0.5, 0.99, 1.0, 185)
             if persistent.wnfh_debug_color:
@@ -89,8 +97,9 @@ init 2:
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg1"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line1"][0], left=wnfh_frames_elements["db_brow_line1"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line1"][4]])
+                            
                         frame:
-                            at (wnfh_db_blue_small,wnfh_db_blue_large,None)[say_anim()]
+                            at (wnfh_frames_elements["db_brow_bg2"][6])[say_anim()]
                             area(0.0, 0.5, (wnfh_frames_elements["db_brow_bg2"][1], wnfh_frames_elements["db_brow_bg2"][1]+100)[say_size()], wnfh_frames_elements["db_brow_bg2"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
                             
@@ -102,7 +111,17 @@ init 2:
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_bg2"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_brow_line2"][4]])
-                        
+                            frame: # ======================== Имя
+                                area(0.0, 0.0, (wnfh_frames_elements["db_brow_line"][1]-40, wnfh_frames_elements["db_brow_line"][1]+50)[say_size()], wnfh_frames_elements["db_brow_line"][2])
+                                if persistent.wnfh_debug_color:
+                                    background frame_green
+                                else:
+                                    background frame_transparent
+                                if who:
+                                    text who id "who":
+                                        anchor (0.0, 0.0) pos (-5, 0.0)
+                                        size (28, 35)[say_size()]
+                                        line_spacing 1
                         frame:
                             area(0.0, 0.5, wnfh_frames_elements["db_brow_bg3"][1], wnfh_frames_elements["db_brow_bg3"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
@@ -147,14 +166,22 @@ init 2:
                                 anchor (0.5, 0.5) pos (0.5, 0.5)
                                 spacing 20
                                 # Это говно Ритана, лень переписывать, просто спиздил. Может быть, когда-нибудь и переделаю.
-                                imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/hide_%s.png"):
-                                    action HideInterface()
-                                imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/save_%s.png"):
-                                    action ShowMenu('save')
-                                imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/menu_%s.png"):
-                                    action ShowMenu('game_menu_selector')
-                                imagebutton auto get_image("gui/dialogue_box/"+persistent.timeofday+"/load_%s.png"):
-                                    action ShowMenu('load')
+                                for i in ["hide", "save", "menu", "load"]:
+                                    imagebutton:
+                                        idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday)))
+                                        hover im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))
+                                        action wnfh_db_buttons[i][1]
+                                if persistent.font_size == "small":
+                                    imagebutton:
+                                        idle im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday)))
+                                        hover im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))
+                                        action wnfh_db_buttons["plus"][1]
+                                elif persistent.font_size == "large":
+                                    imagebutton:
+                                        idle im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday)))
+                                        hover im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))
+                                        action wnfh_db_buttons["minus"][1] 
+
                     frame:
                         at (wnfh_frames_elements["db_bg"][6])[say_anim()]
                         area(0.5, 0.5, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2], wnfh_frames_elements["db_bg"][2]+50)[say_size()]) 
@@ -177,56 +204,19 @@ init 2:
                             background frame_transparent
                         add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements["db_line_lower"][4]])
-    
-                if persistent.font_size == "small":
-                    frame: # ======================== Имя
-                        area(0.0, 0.0, 260, 30)
-                        if persistent.wnfh_debug_color:
-                            background frame_green
-                        else:
-                            background frame_transparent
-                        if who:
-                            text who id "who":
-                                anchor (0.0, 0.0) pos (20, 0.0)
-                                size 28
-                                line_spacing 1                
-                    frame: # ======================== Текст
-                        area(0.5, 1.0, 1.0, 105)
-                        xanchor 0.5 yanchor 1.0
-                        if persistent.wnfh_debug_color:
-                            background frame_red
-                        else:
-                            background frame_transparent
-                        text what id "what":
-                            anchor (0.0, 0.0) pos (20, 0.0)
-                            xmaximum 1460
-                            size 28
-                            line_spacing 1
-                elif persistent.font_size == "large":
-                    frame: # ======================== Имя
-                        area(0.0, 0.0, 350, 30)
-                        if persistent.wnfh_debug_color:
-                            background frame_green
-                        else:
-                            background frame_transparent
-                        if who:
-                            text who id "who":
-                                anchor (0.0, 0.0) pos (20, 0.0)
-                                size 35
-                                line_spacing 1
-                    frame: # ======================== Текст
-                        area(0.5, 1.0, 1.0, 155)
-                        xanchor 0.5 yanchor 1.0
-                        if persistent.wnfh_debug_color:
-                            background frame_red
-                        else:
-                            background frame_transparent
-                        text what id "what":
-                            anchor (0.0, 0.0) pos (20, 0.0)
-                            xmaximum 1460
-                            size 35
-                            line_spacing 1
-
+                frame: # ======================== Текст
+                    at (wnfh_frames_elements["db_bg"][6])[say_anim()]
+                    area(0.5, 1.0, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2]+5, wnfh_frames_elements["db_bg"][2]+55)[say_size()])
+                    xanchor 0.5 yanchor 1.0
+                    if persistent.wnfh_debug_color:
+                        background frame_red
+                    else:
+                        background frame_transparent
+                    text what id "what":
+                        anchor (0.0, 0.0) pos (20, 0.0)
+                        xmaximum wnfh_frames_elements["db_bg"][1]-40
+                        size (28, 35)[say_size()]
+                        line_spacing 1
             frame: # ======================== Кнопка логов
                 at (wnfh_db_buttons_small, wnfh_db_buttons_large, None)[say_anim()]
                 area(0.0, (0.65, 0.5)[say_size()], 0.07, 0.5)
@@ -263,19 +253,6 @@ init 2:
                         xanchor 0.0 yanchor 0.5
                         xpos 0.0 ypos 0.5
                         action Skip()
-            frame: # ======================== Кнопки + -
-                area(0.9, 0.0, 50, 50)
-                xanchor 0.5 yanchor 1.0
-                if persistent.wnfh_debug_color:
-                    background frame_black
-                else:
-                    background frame_transparent
-                if persistent.font_size == "small":
-                    textbutton "+":
-                        action [SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]
-                elif persistent.font_size == "large":
-                    textbutton "-":
-                        action [SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]
 
                    
 

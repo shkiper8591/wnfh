@@ -59,17 +59,19 @@ init -4 python:
         "pr_big_frame",
         "pr_big_frame_bg",
         #Элементы диалогового окна
-        "db_line_upper_large",
-        "db_line_upper",
         "db_line_lower",
-        "db_bg_large",
-        "db_bg",
         "nvl_bg",
         #Кнопки
         "button_bg_1",
         "button_bg_2",
         "button_line",
         "button_hover",
+        "db_button_minus",
+        "db_button_plus",
+        "db_button_save",
+        "db_button_load",
+        "db_button_menu",
+        "db_button_hide",
         #Виньетка
         "vignette",
         "frame_bg",
@@ -84,6 +86,10 @@ init -4 python:
         "frame_db_brow_bg1",
         "frame_db_brow_bg2",
         "frame_db_brow_bg3",
+        #Серп и молот и звезда
+        "indicator_star",
+        "indicator_molot",
+        "indicator_serp",
 
     ]}
 
@@ -103,19 +109,19 @@ init -4 python:
         "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]         ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]         ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]           ,1500          ,100         ,25                ,2             ,frame_green      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
-        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]  ,900          ,4            ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
-        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"] ,300          ,31           ,25                ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"],25           ,31           ,0                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"],300          ,31           ,2                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line3":                          [wnfh_gui["tint_elements"]["frame_db_brow_line3"],55           ,31           ,0                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]   ,300          ,31           ,25                ,2             ,frame_green      ,wnfh_pass],
-        "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
-        "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,31           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
-        "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,31           ,0                 ,2             ,frame_green      ,wnfh_pass],
-        "db_button_hover":                        [wnfh_gui["tint_elements"]["button_hover"]       ,73           ,83           ,0                 ,0             ,frame_blue       ,wnfh_pass],
-        "db_button_bg_1":                         [wnfh_gui["tint_elements"]["button_bg_1"]        ,73           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        "db_button_bg_2":                         [wnfh_gui["tint_elements"]["button_bg_2"]        ,86           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        "db_button_line":                         [wnfh_gui["tint_elements"]["button_line"]        ,73           ,83           ,0                 ,1             ,frame_blue       ,wnfh_pass],
+        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]  ,880          ,4            ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
+        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"] ,320          ,35           ,25                ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"],25           ,35           ,0                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"],300          ,35           ,2                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_line3":                          [wnfh_gui["tint_elements"]["frame_db_brow_line3"],55           ,35           ,0                 ,1             ,frame_green      ,wjuh_line],
+        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]   ,320          ,35           ,25                ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,35           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
+        "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        #"db_button_hover":                        [wnfh_gui["tint_elements"]["button_hover"]       ,73           ,83           ,0                 ,0             ,frame_blue       ,wnfh_pass],
+        #"db_button_bg_1":                         [wnfh_gui["tint_elements"]["button_bg_1"]        ,73           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
+        #"db_button_bg_2":                         [wnfh_gui["tint_elements"]["button_bg_2"]        ,86           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
+        #"db_button_line":                         [wnfh_gui["tint_elements"]["button_line"]        ,73           ,83           ,0                 ,1             ,frame_blue       ,wnfh_pass],
     }
     wnfh_frames_size = {
         "test_frame": [1000]  

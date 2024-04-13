@@ -1,6 +1,8 @@
 init -265 python:
     # Нормальные троеточия
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+    if not hasattr(renpy.store,'tymeofday_test'):
+        renpy.store.tymeofday = "prologue" 
 
 init -4:
     image wnfh_ctc_animation:
@@ -9,7 +11,7 @@ init -4:
         xpos 0.876 ypos 0.98
         xanchor 1.0 yanchor 1.0
         xsize 27 ysize 40
-        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
+        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][0])
         contains:
             subpixel True
             alpha 0.0
@@ -88,7 +90,7 @@ init -3 python:
     #renpy.image("wnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 
     def wnfh_chars_define(kind=adv):
-        timeofday = persistent.timeofday
+        timeofday = renpy.store.tymeofday
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
@@ -111,7 +113,7 @@ init -3 python:
 
     ## Спизженные из БКРР парные персонажи и модернизированные для работы с NVL
     def wnfh_double_char_define(first, second, time_of_day, kind=adv):
-        timeofday = persistent.timeofday
+        timeofday = renpy.store.tymeofday
         colors = {
             "day":"#80A055",
             "sunset":"#CDAF69",

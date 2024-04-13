@@ -9,7 +9,8 @@ init python:
             else:
                 sprite_time = time_of_day
         persistent.sprite_time = sprite_time
-    
+        renpy.store.tymeofday=time_of_day
+        wnfh_chars_define()
     def wnfh_new_chapter(day):
         # renpy.block_rollback()
         wnfh_set_mode()

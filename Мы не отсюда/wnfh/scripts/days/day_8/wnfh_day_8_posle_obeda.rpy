@@ -77,7 +77,7 @@ label d8_posle_obeda:
         show blink
         $ renpy.pause(0.5)
         scene black
-        jump d8_afternoon
+        jump d8_evening
 
 label d8_posle_obeda_mt_angry:
 

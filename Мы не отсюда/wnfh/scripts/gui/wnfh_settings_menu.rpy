@@ -76,42 +76,42 @@ init 2:
             }
 
             wnfh_bars = {
-                "htumb": [im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday)))],
+                "htumb": [im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))],
                 
                 "bar_full": [im.Composite(
                     (473, 37),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
 
                 "bar_null": [im.Composite(
                     (473, 37),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
 
                 "button_bar_full": [im.Composite(
                     (145, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
 
                 "button_bar_null": [im.Composite(
                     (145, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
 
                 "multibutton_bar_full": [im.Composite(
                     (248, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
 
                 "multibutton_bar_null": [im.Composite(
                     (248, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
                     )],
             }
 
@@ -164,7 +164,7 @@ init 2:
                 xanchor 0.5             
                 text "Настройки":
                     pos(0.5, 0.5)
-                    style "wnfh_choice_" + persistent.timeofday
+                    style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                     xanchor 0.5
                     size 100
                     kerning 1
@@ -196,19 +196,19 @@ init 2:
         
                             add (wnfh_gui["tint_elements"]["im_line"]):
                                 xzoom 0.7
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                                 xalign 0.5 yanchor 1.0
         
                             add (wnfh_gui["tint_elements"]["im_bg"]):
                                 xzoom 0.7
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                                 xalign 0.5
         
                             if wnfh_screen_variable[index]:
                                 add (wnfh_gui["tint_elements"]["im_gradient"]):
                                     xzoom 0.7
                                     xalign 0.5 alpha 0.6
-                                    matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][0])
+                                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][0])
                                 add (wnfh_gui["tint_elements"]["im_gradient"]):
                                     xzoom 0.7
                                     xalign 0.5 alpha 0.1
@@ -217,7 +217,7 @@ init 2:
         
                             add (wnfh_gui["tint_elements"]["im_line"]):
                                 xzoom 0.7
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                                 xalign 0.5 ypos 1.0 yanchor 0.0
     
                             textbutton i[0]:
@@ -225,7 +225,7 @@ init 2:
                                 text_min_width 390
                                 text_text_align 0.5
                                 xalign 0.5 yanchor 0.5 ypos 0.5
-                                text_style "wnfh_choice_" + persistent.timeofday
+                                text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                 background None
                                 hover_sound wnfh_gui["sound"]["plimp"]
                                 hovered ToggleScreenVariable(wnfh_screen_variable_string[index])
@@ -242,10 +242,10 @@ init 2:
                     xanchor 0.5
 
                     add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                         xalign 0.5
                     add (wnfh_gui["tint_elements"]["pr_big_frame"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                         xalign 0.5
                     grid 1 5:
                         for bar in wnfh_preferences_bar[3:5]:
@@ -264,7 +264,7 @@ init 2:
                                     yanchor 0.5
                                     text bar[1]:
                                         pos(0.5, 0.5)
-                                        style "wnfh_choice_" + persistent.timeofday
+                                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                         xanchor 0.5
                                         size 20
                                         kerning 1
@@ -300,7 +300,7 @@ init 2:
                                     yanchor 0.5
                                     text bar[1]:
                                         pos(0.5, 0.5)
-                                        style "wnfh_choice_" + persistent.timeofday
+                                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                         xanchor 0.5
                                         size 20
                                         kerning 1
@@ -338,10 +338,10 @@ init 2:
                     xanchor 0.5
 
                     add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                         xalign 0.5
                     add (wnfh_gui["tint_elements"]["pr_big_frame"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                         xalign 0.5
 
                     grid 1 3:
@@ -361,7 +361,7 @@ init 2:
                                     yanchor 0.5
                                     text bar[1]:
                                         pos(0.5, 0.5)
-                                        style "wnfh_choice_" + persistent.timeofday
+                                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                         xanchor 0.5
                                         size 30
                                         kerning 1
@@ -392,10 +392,10 @@ init 2:
                     xanchor 0.5
 
                     add (wnfh_gui["tint_elements"]["pr_big_frame_bg"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][2])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                         xalign 0.5
                     add (wnfh_gui["tint_elements"]["pr_big_frame"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][1])
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                         xalign 0.5
                     
                     grid 1 1:
@@ -415,7 +415,7 @@ init 2:
                                     yanchor 0.5
                                     text bar[1]:
                                         pos(0.5, 0.5)
-                                        style "wnfh_choice_" + persistent.timeofday
+                                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                         xanchor 0.5
                                         size 20
                                         kerning 1

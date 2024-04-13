@@ -19,7 +19,7 @@ init 2:
                             background frame_transparent
                         area(0.5, 0.0, wnfh_frames_elements[i][1], wnfh_frames_elements[i][2]) padding(0, 0) xanchor 0.5
                         add Frame(wnfh_frames_elements[i][0], left=wnfh_frames_elements[i][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][wnfh_frames_elements[i][4]])
+                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[i][4]])
             frame:
                 area(1.0, 0.5, 660, 120)
                 xanchor 1.0 yanchor 0.5
@@ -45,13 +45,13 @@ init 2:
                         background frame_blue
                     else:
                         background frame_transparent
-                    if persistent.timeofday == "day":
+                    if renpy.store.wnfh_tymeofday == "day":
                         add (wnfh_gui["banners"]["kit"]):
                             size(70, 70)
                             xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
                     else:
                         add (wnfh_gui["banners"]["kit"]):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[persistent.timeofday][3])
+                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][3])
                             size(70, 70)
                             xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
     
@@ -81,7 +81,7 @@ init 2:
                         min_width 390
                         text_align 0.0
                         size 20
-                        style "wnfh_choice_" + persistent.timeofday
+                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
 
                 frame: # ==================== Подпись
                     area(0.27, 0.91, 0.53, 40)
@@ -96,5 +96,5 @@ init 2:
                         min_width 340
                         text_align 0.0
                         size 15
-                        style "wnfh_choice_" + persistent.timeofday
+                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
         timer 10.0 action Hide("wnfh_get_achivement", transition=dissolve)

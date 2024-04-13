@@ -144,7 +144,6 @@ init 2:
                     True, composite_image,
                 )
             )
-
         ## Спрайт, окрашенный в сепию ##
         
         def _sepia_sprite(full_sprite_name, composite_image):

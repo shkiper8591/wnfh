@@ -22,11 +22,10 @@ label d7_un_beach_2:
     "И не став, как обычно, задаваться вопросами «почему?», я сел под дерево, где было вполне уютно." 
     "А вид, хоть и не представлял из себя что-то экстравагантное, крайне завораживал."
     "Было очень интересно наблюдать за бьющимися о берег волнами."
-    "Мимо проезжающим, где-то в далеке, поездом." 
-    
+    "Мимо проезжающим, где-то в далеке, поездом."   
     window hide
-    stop ambience fadeout 3
     $ wnfh_set_time("night")
+    stop ambience fadeout 3
     scene bg ext_beach_night with Dissolve(5.0)
     $ renpy.pause(1.5)
     play ambience ambience_lake_shore_night fadein 5

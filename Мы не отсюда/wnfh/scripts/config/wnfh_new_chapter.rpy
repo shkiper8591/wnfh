@@ -2,14 +2,14 @@ init 0:
     $ mods["wnfh_main"]=u"Мы не отсюда"
 init python:
     def wnfh_set_time(time_of_day="day", sprite_time=None):
-        persistent.timeofday = time_of_day
         if sprite_time == None:
             if time_of_day == "prologue":
                 sprite_time = "night"
             else:
                 sprite_time = time_of_day
-        persistent.sprite_time = sprite_time
-    
+        renpy.store.wnfh_spritetime = sprite_time
+        renpy.store.wnfh_tymeofday = time_of_day
+        wnfh_chars_define()
     def wnfh_new_chapter(day):
         # renpy.block_rollback()
         wnfh_set_mode()

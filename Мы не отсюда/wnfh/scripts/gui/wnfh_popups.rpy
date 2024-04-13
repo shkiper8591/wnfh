@@ -44,7 +44,7 @@ init 2:
                                 background frame_transparent
                             area(0.5, 0.0, wnfh_frames_elements[i][1], wnfh_frames_elements[i][2]) padding(0, 0) xanchor 0.5
                             add Frame(wnfh_frames_elements[i][0], left=wnfh_frames_elements[i][3], top=0):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements[i][4]])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[i][4]])
                 frame at wjuh_bg: # ================================================ Текст таблички
                     area(0.5, 0.5, 1000, 190)
                     xanchor 0.5 yanchor 0.5
@@ -57,7 +57,7 @@ init 2:
                         line_leading 5 line_spacing 3
                         min_width 390
                         text_align 0.5
-                        style "wnfh_choice_" + renpy.store.tymeofday
+                        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
             frame: # ================================================ Фрейм кнопок
                 area(0.5, 0.5, 1100, 100)
                 xanchor 0.5 yanchor 0.5
@@ -89,12 +89,12 @@ init 2:
                                             background frame_transparent
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements[element][4]])
+                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
                             frame at wjuh_bg: # ================================================ Тонировка при наведении
                                 if wnfh_screen_variable[index]:
                                     add Frame(wnfh_frames_elements["yesno_prompt_button_gradient"][0], left=wnfh_frames_elements["yesno_prompt_button_gradient"][3], top=0):
                                         xalign 0.5 yalign 0.5 alpha 0.6
-                                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements["yesno_prompt_button_gradient"][4]])
+                                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["yesno_prompt_button_gradient"][4]])
                                     add Frame(wnfh_frames_elements["yesno_prompt_button_gradient"][0], left=wnfh_frames_elements["yesno_prompt_button_gradient"][3], top=0):
                                         xalign 0.5 yalign 0.5 alpha 0.1
                                 else:
@@ -110,7 +110,7 @@ init 2:
                                     text_line_spacing 3
                                     text_min_width wnfh_frames_elements["yesno_prompt_button_gradient"][1]
                                     text_text_align 0.5
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     background None
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     hovered ToggleScreenVariable(wnfh_screen_variable_string[index])

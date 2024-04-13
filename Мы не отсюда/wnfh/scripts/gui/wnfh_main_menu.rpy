@@ -30,35 +30,35 @@ init 2:
                 ["vk", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://vk.com/blwnfh")]],
 
                 ["steam", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")]],
 
                 ["discord", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://discord.gg/KfaK7pmRSK")]],
 
                 ["achievements", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
                     ), 60, 60), 
                 [ShowMenu("wnfh_achievements", _transition=dissolve)]],
 
                 ["seledka", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [Jump("technical_chocolatki")]],
             ]
@@ -86,7 +86,7 @@ init 2:
             #    xanchor 0.5 yanchor 0.5
             #    text wnfh_get_usertime():
             #        xalign 0.5
-            #        style "wnfh_choice_" + renpy.store.tymeofday
+            #        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
             #        size 30
             
     
@@ -152,7 +152,7 @@ init 2:
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
                                     background None
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     action [button[2]]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
@@ -174,7 +174,7 @@ init 2:
                         xanchor 0.5 yanchor 0.5
                         textbutton wnfh_mm_left_buttons[2][1]:
                             background None
-                            text_style "wnfh_choice_" + renpy.store.tymeofday
+                            text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                             action wnfh_mm_left_buttons[2][2]
                             hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
@@ -197,7 +197,7 @@ init 2:
                         xanchor 0.5 yanchor 0.0
                         textbutton wnfh_mm_mid_buttons[0][1]:
                             background None
-                            text_style "wnfh_choice_" + renpy.store.tymeofday
+                            text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                             action wnfh_mm_mid_buttons[0][2]
                             hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
@@ -250,7 +250,7 @@ init 2:
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
                                     background None
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     action [button[2]]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()

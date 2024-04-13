@@ -88,10 +88,10 @@ init 2:
                             xanchor 0.5 yanchor 0.5
 
                             add (wnfh_gui["choice"]["line"]):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][1])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                                 xalign 0.5 yanchor 1.0
                             add (wnfh_gui["choice"]["bg"]):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][2])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                                 xalign 0.5
                             if wnfh_screen_variable[i]:
                                 add (wnfh_gui["choice"]["gradient"]):
@@ -106,7 +106,7 @@ init 2:
                                     text_min_width 1100
                                     text_text_align 0.5
                                     xalign 0.5 yanchor 0.5 ypos 0.5
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     background None 
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
@@ -121,7 +121,7 @@ init 2:
                                     text_min_width 1100
                                     text_text_align 0.5
                                     xalign 0.5 yanchor 0.5 ypos 0.5
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     background None
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     hovered ToggleScreenVariable(wnfh_screen_variable_string[i])
@@ -131,7 +131,7 @@ init 2:
                                     else:
                                         action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd_test, [args[i], args[len(args) -1- int(Test_wr)], i]), Jump(args[i][3]))
                 add (wnfh_gui["choice"]["line"]):
-                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][1])
+                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                     xalign 0.5 yanchor 0.0
 
         add wnfh_gui["choice"]["vignette"]

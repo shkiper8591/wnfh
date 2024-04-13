@@ -36,7 +36,7 @@ init 2:
         #    xanchor 0.5 yanchor 0.5
         #    text wnfh_get_usertime():
         #        xalign 0.5
-        #        style "wnfh_choice_" + renpy.store.tymeofday
+        #        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
         #        size 30
         add wnfh_gui["tint_elements"]["vignette"]
 
@@ -63,7 +63,7 @@ init 2:
                                 background frame_transparent
                             area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                             add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements[element][4]])
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
                 hbox: # ================================================ Ебальники с очками
                     spacing 5
                     anchor (0.5, 0.5) pos (0.5, 0.5)
@@ -88,13 +88,13 @@ init 2:
                                         background frame_transparent
                                     area(0.0, 0.5, 70, 90)
                                     xanchor 0.0 yanchor 0.5
-                                    if renpy.store.tymeofday == "day":
+                                    if renpy.store.wnfh_tymeofday == "day":
                                         add (wnfh_gui["avatars"][character]):
                                             xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
                                             zoom 0.1
                                     else:
                                         add (wnfh_gui["avatars"][character]):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][3])
+                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][3])
                                             xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
                                             zoom 0.1
                                 frame: # ================================================ Очки
@@ -147,13 +147,13 @@ init 2:
                                             background frame_transparent
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements[element][4]])
+                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
 
                             frame: # ================================================ Тонировка при наведении
                                 if wnfh_screen_variable[index]:
                                     add Frame(wnfh_frames_elements["game_menu_selector_button_gradient"][0], left=wnfh_frames_elements["game_menu_selector_button_gradient"][3], top=0):
                                         xalign 0.5 yalign 0.5 alpha 0.6
-                                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.tymeofday][wnfh_frames_elements["game_menu_selector_button_gradient"][4]])
+                                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["game_menu_selector_button_gradient"][4]])
                                     add Frame(wnfh_frames_elements["game_menu_selector_button_gradient"][0], left=wnfh_frames_elements["game_menu_selector_button_gradient"][3], top=0):
                                         xalign 0.5 yalign 0.5 alpha 0.1
                                 else:
@@ -169,7 +169,7 @@ init 2:
                                     text_line_leading 5 text_line_spacing 3
                                     text_min_width 390
                                     text_text_align 0.5
-                                    text_style "wnfh_choice_" + renpy.store.tymeofday
+                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                                     background None
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     hovered ToggleScreenVariable(wnfh_screen_variable_string[index])

@@ -18,8 +18,6 @@ init 2:
                 return int(persistent.font_size <= "large")
 
             def MatrixConverter(dictionary_obj):
-                persistent.temv_incrimental=persistent.temv_incrimental+1
-                wnfh_Data.display(renpy.store.wnfh_tymeofday+" "+renpy.store.wnfh_spritetime+" "+str(persistent.temv_incrimental))
                 main_dick={}
                 for button in dictionary_obj:
                     temp_array=[]

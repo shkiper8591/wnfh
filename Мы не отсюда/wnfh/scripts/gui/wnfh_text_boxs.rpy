@@ -1,7 +1,9 @@
 init 2:  
     screen wnfh_say: 
-        default wnfh_play_animation= False      
+        default wnfh_play_animation= False
+
         python:
+            persistent.sprite_time = renpy.store.wnfh_spritetime  
             if "temv_incrimental" not in globals():
                 global temv_incrimental
                 temv_incrimental = 1000

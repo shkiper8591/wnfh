@@ -9,47 +9,50 @@ init 2:
                 return amd
             def say_size():
                 return int(persistent.font_size <= "large")
-            wnfh_say_buttons = {
-                "backward": [im.Flip(im.Composite( # idle
-                                (73, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_1"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                ), horizontal=True),
-                            im.Flip(im.Composite( # hover
-                                (73, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_1"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_hover"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                ), horizontal=True)
-                            ],
-                "forward": [im.Composite( # idle
-                                (73, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_1"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                ),
-                            im.Composite( # hover
-                                (73, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_1"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_hover"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                )
-                            ],
-                "fast_forward": [im.Composite( # idle
-                                (95, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_2"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                (20, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                ),
-                            im.Composite( # hover
-                                (95, 83),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bg_2"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_hover"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, persistent.timeofday))),
-                                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                (20, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_line"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, persistent.timeofday))),
-                                )
-                            ]
 
-            }
+            def MatrixConverter(dictionary_obj):
+                main_dick={}
+                for button in dictionary_obj:
+                    temp_array=[]
+                    for obj in dictionary_obj[button]:
+                        compozite = []
+                        compozite.append(obj[0])
+                        for obj_index in range(len(obj[1])):
+                            compozite.append(obj[1][obj_index][0])
+                            compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', obj[1][obj_index][2], persistent.timeofday))))
+                        compozite_obj = im.Composite(*compozite)
+                        try:
+                            if obj[-1] is True:
+                                flip_args = True
+                            else:
+                                flip_args=None
+                        except Exception as E:
+                            flip_args = None
+                        if flip_args != None:
+                            temp_array.append(im.Flip(compozite_obj,flip=True,horizontal=True))
+                        else:
+                            temp_array.append(compozite_obj)
+                    main_dick[button]=temp_array
+                return main_dick
+            #print(MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)]))
+            #MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)],flip=True,horizontal=True)
+            wnfh_say_buttons  = MatrixConverter({
+                "backward":
+                    [
+                        [(73, 83), [[(0, 0), "button_bg_1", 2], [(0, 0), "button_line", 1]],True],
+                        [(73, 83), [[(0, 0), "button_bg_1", 2], [(0, 0), "button_hover", 0]],[(0, 0), "button_line", 1],True]
+                    ],
+                "forward":
+                    [
+                        [(73, 83), [[(0, 0), "button_bg_1", 2], [(0, 0), "button_line", 1]]],
+                        [(73, 83), [[(0, 0), "button_bg_1", 2], [(0, 0), "button_hover", 0]],[(0, 0), "button_line", 1]]
+                    ],
+                "fast_forward":
+                    [
+                        [(95, 83), [[(0, 0), "button_bg_2", 2], [(0, 0), "button_line", 1],[(20, 0), "button_line", 1]]],
+                        [(95, 83), [[(0, 0), "button_bg_2", 2],[(0, 0), "button_hover", 0], [(0, 0), "button_line", 1],[(20, 0), "button_line", 1]]],
+                    ],
+            })
             wnfh_db_buttons = {
                 "minus": [wnfh_gui["tint_elements"]["db_button_minus"]  ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]  ],
                 "plus":  [wnfh_gui["tint_elements"]["db_button_plus"]   ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]  ],

@@ -321,6 +321,10 @@ init 2:
         make_sprites_for('dv', 'sport', ['mod:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'sport isolenta', ['mod:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
         
+        # Шурик
+
+        make_sprites_for('sh', 'pioneer', ['es:body', 'es:<emotion>'])
+
         ## Фоновые спрайты
         make_sprites_for('un', 'dr', ['mod:dr', 'mod:<emotion>'], distances=['background'])
         make_sprites_for('kat', 'wr', ['mod:wr', 'mod:<emotion>'], distances=['background'])

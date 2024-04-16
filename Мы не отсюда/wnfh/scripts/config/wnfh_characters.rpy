@@ -1,6 +1,7 @@
 init -265 python:
     # Нормальные троеточия
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+
     if not hasattr(renpy.store,'wnfh_tymeofday'):
         renpy.store.wnfh_tymeofday = "prologue"
     if not hasattr(renpy.store,'wnfh_spritetime'):
@@ -115,27 +116,21 @@ init -3 python:
                 #gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=wnfh_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
     ## Спизженные из БКРР парные персонажи и модернизированные для работы с NVL
-    def wnfh_double_char_define(first, second, time_of_day, kind=adv):
+    def wnfh_double_char_define(first, second, kind=adv):
         timeofday = renpy.store.wnfh_tymeofday
-        colors = {
-            "day":"#80A055",
-            "sunset":"#CDAF69",
-            "night":"#36B198"
-        }
         gl = globals()
         if kind == nvl:
             who_suffix = ":"
-            ctc = "wnfh_ctc_animation_nvl"
         else:
             who_suffix = ""
-            ctc = "wnfh_ctc_animation"
+        ctc = "wnfh_ctc_animation"
         what_color = wnfh_choice_tint_color[timeofday][0]
         drop_shadow = (2, 2)
-        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], colors[time_of_day], wnfh_characters[second][1], wnfh_characters[second][0])
-        gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], wnfh_choice_tint_color[timeofday][1], wnfh_characters[second][1], wnfh_characters[second][0])
+        gl[first + "_" + second] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, who_suffix=who_suffix, ctc=ctc, ctc_position="fixed")
 
-    for i in [("kat", "mi", "day", adv), ("kat", "un", "day", adv), ("me", "dv", "night", nvl), ("me", "el", "sunset", adv), ("me", "kat", "day", adv), ("me", "el", "night", adv)]:
-        wnfh_double_char_define(i[0], i[1], i[2], i[3])
+    for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
+        wnfh_double_char_define(i[0], i[1], i[2])
     
     ## Функции для переобувания в воздухе ##
     # Переименование персонажа

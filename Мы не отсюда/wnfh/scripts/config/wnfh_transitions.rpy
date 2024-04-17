@@ -145,7 +145,7 @@ init 1:
         "slide_left", "slide_right", "slide_up", "slide_down", "slide_diagonal",
         "sphere", "sphere_invert",
         "door", "door_invert", "santa_barbara_in", "santa_barbara_out",
-        "001", "005", "007", "008", "009", "011", "015", "016", "017", "018", "020", "021", "024", "030", "032", "034", "037", "039", "040"]
+        "001", "005", "007", "008", "009", "011", "015", "016", "017", "018", "020", "021", "024", "030", "032", "033", "034", "037", "039", "040"]
 
         Transitions_sub_options = ['dissolve', 'blure_dissolve']
 

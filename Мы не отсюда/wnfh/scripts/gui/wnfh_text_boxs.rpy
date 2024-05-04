@@ -122,17 +122,6 @@ init 2:
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg2"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line2"][4]])
-                            frame: # ======================== Имя
-                                area(0.0, 0.0, (wnfh_frames_elements["db_brow_line"][1]-40, wnfh_frames_elements["db_brow_line"][1]+50)[say_size()], wnfh_frames_elements["db_brow_line"][2])
-                                if persistent.wnfh_debug_color:
-                                    background frame_green
-                                else:
-                                    background frame_transparent
-                                if who:
-                                    text who id "who":
-                                        anchor (0.0, 0.0) pos (-5, 0.0)
-                                        size (28, 35)[say_size()]
-                                        line_spacing 1
                         frame:
                             area(0.0, 0.5, wnfh_frames_elements["db_brow_bg3"][1], wnfh_frames_elements["db_brow_bg3"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
@@ -145,6 +134,17 @@ init 2:
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg3"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line3"][0], left=wnfh_frames_elements["db_brow_line3"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line3"][4]])
+                            frame: # ======================== Имя
+                                area(0.0, 0.0, (wnfh_frames_elements["db_brow_line"][1]-40, wnfh_frames_elements["db_brow_line"][1]+50)[say_size()], wnfh_frames_elements["db_brow_line"][2])
+                                if persistent.wnfh_debug_color:
+                                    background frame_green
+                                else:
+                                    background frame_transparent
+                                if who:
+                                    text who id "who":
+                                        anchor (0.0, 0.0) pos (-225, 0.0)
+                                        size (28, 35)[say_size()]
+                                        line_spacing 1
                     hbox:
                         xanchor 1.0 yanchor 0.5
                         xpos 1.0 ypos 0.5        

@@ -513,4 +513,5 @@ label d7_dv_no_1:
     
     "Сказал я и помохав рукой на прощание, быстро удалился из столовой."
 
+    stop music fadeout 5.0
     jump d7_me_meet_kat_alone

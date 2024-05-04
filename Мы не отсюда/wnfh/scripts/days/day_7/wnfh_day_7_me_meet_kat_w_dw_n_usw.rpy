@@ -37,7 +37,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     dv "Давай, умный самый, пойдём дальше, нам ещё засаду готовить!"
     usw "Да, там и блеснёшь умом!"
 
-    show dv smile pioneer at left with dspr
+    show dv smile pioneer at right with dspr
 
     "Тихонько посмеявшись на пару с Алисой, мы прошли к воротам."
 
@@ -45,6 +45,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     scene bg ext_clubs_day
     show dv normal pioneer at center
     with slide_up_blure_dissolve2
+    stop music fadeout 5.0
     $ renpy.pause(0.2)
 
     "Выйдя к воротам, те были ещё закрыты. Но за ними уже слышалась работа двигателя автобуса."
@@ -83,7 +84,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     "И, на удивление, я никак не поранился об ветки, а за кустами было много свободного места."
     "Я поднялся и выглянул наружу."
 
-    show usw smile sport at right
+    show usw smile pioneer at right
     show dv smile pioneer at left
     with dissolve
 
@@ -91,7 +92,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     
     usw "Где наш герой?"
         
-    show usw grin sport close at right with dspr
+    show usw grin pioneer close at right with dspr
 
     "Алиса указала на меня и, подойдя к мне, Ульяна протянула ведро."
 
@@ -101,14 +102,14 @@ label d7_me_meet_kat_w_dw_n_usw:
     
     "Вновь донеслось из-за ворот."
 
-    show usw dontlike sport close at right with dspr
+    show usw dontlike pioneer close at right with dspr
     
     usw "Давай не начинай и бери. Ты же согласился на эту авантюру, а значит должен был быть готов ко всему."
     me "Я просто не уверен[wp]"
     
     "За воротами послышались приближающиеся шаги."
 
-    show usw angry sport close at right with dspr
+    show usw angry pioneer close at right with dspr
     
     usw "Я сейчас тебя оболью!"
     
@@ -123,7 +124,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     "Я взял ведро в руки, и притаился."
 
     show dv normal pioneer far at cright
-    show usw normal sport far at fright
+    show usw normal pioneer far at fright
     with dissolve
 
     "Рыжие же отошли подальше в сторону."

@@ -139,11 +139,10 @@ init 2:
                 #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
                 
                 #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0], 248  ],
-                ["mat_filter"       ,"Мат-фильтр"          ,FieldValue(persistent, "wnfh_mat_filter", 2, step=1)    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0], 248  ],
-                ["hentai_mod"       ,"Отображение хентая"  ,FieldValue(persistent, "wnfh_hentai_mod", 1, step=1)    ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
-                ["widget_lp"        ,"Виджет очков"        ,FieldValue(persistent, "wnfh_widget_lp", 1, step=1)     ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
-
-                ["debug_color"      ,"Цветовая индикация"  ,FieldValue(persistent, "wnfh_debug_color", 1, step=1)   ,wnfh_bars["button_bar_full"][0]  ,wnfh_bars["button_bar_null"][0], 145  ],
+                ["mat_filter"       ,"Мат-фильтр"          ,AnimatedValue(value=persistent.wnfh_mat_filter, range=2.0, delay=0.1)   ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0]   ,248      ,2    ],
+                ["hentai_mod"       ,"Отображение хентая"  ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["button_bar_full"][0]       ,wnfh_bars["button_bar_null"][0]        ,145      ,1    ],
+                ["widget_lp"        ,"Виджет очков"        ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)    ,wnfh_bars["button_bar_full"][0]       ,wnfh_bars["button_bar_null"][0]        ,145      ,1    ],
+                ["debug_color"      ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)  ,wnfh_bars["button_bar_full"][0]       ,wnfh_bars["button_bar_null"][0]        ,145      ,1    ],
 
             ]
 
@@ -321,12 +320,36 @@ init 2:
                                         background frame_transparent
                                     area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
+                                    padding(0, 5)
                                     bar value bar[2]:
                                         left_bar bar[3]
                                         right_bar bar[4]
                                         thumb wnfh_bars["htumb"][0]
                                         hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
+                                        xmaximum 1.0 ymaximum 37
+                                        ypos 0.5 yanchor 0.5 
+                                    frame:
+                                        if persistent.wnfh_debug_color:
+                                            background frame_black
+                                        else:
+                                            background frame_transparent
+                                        area(0.0, 0.5, bar[5]+12, 1.0)
+                                        xanchor 0.0 yanchor 0.5
+                                        padding(0, 0)
+                                        hbox:
+                                            for i in range(bar[6]+1):
+                                                button:
+                                                    area(0.5, 0.5, (bar[5]+12) / (bar[6]+1), 1.0)
+                                                    xanchor 0.5 yanchor 0.5
+                                                    padding(0, 0)
+                                                    action SetField(persistent, "wnfh_" + bar[0], i)
+                                                    if persistent.wnfh_debug_color:
+                                                        background frame_red
+                                                        text str(i) align (0.5, 0.5)
+                                                    else:
+                                                        background frame_transparent
+
+                                    
 
             elif wnfh_preferences_variable[1]: # ===================== Аудио
                 frame:
@@ -436,12 +459,34 @@ init 2:
                                         background frame_transparent
                                     area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
+                                    padding(0, 5)
                                     bar value bar[2]:
                                         left_bar bar[3]
                                         right_bar bar[4]
                                         thumb wnfh_bars["htumb"][0]
                                         hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 35 yanchor 0.5 ypos 0.5
+                                        xmaximum 1.0 ymaximum 37
+                                        ypos 0.5 yanchor 0.5 
+                                    frame:
+                                        if persistent.wnfh_debug_color:
+                                            background frame_black
+                                        else:
+                                            background frame_transparent
+                                        area(0.0, 0.5, bar[5]+12, 1.0)
+                                        xanchor 0.0 yanchor 0.5
+                                        padding(0, 0)
+                                        hbox:
+                                            for i in range(bar[6]+1):
+                                                button:
+                                                    area(0.5, 0.5, (bar[5]+12) / (bar[6]+1), 1.0)
+                                                    xanchor 0.5 yanchor 0.5
+                                                    padding(0, 0)
+                                                    action SetField(persistent, "wnfh_" + bar[0], i)
+                                                    if persistent.wnfh_debug_color:
+                                                        background frame_red
+                                                        text str(i) align (0.5, 0.5)
+                                                    else:
+                                                        background frame_transparent
 
                 
 

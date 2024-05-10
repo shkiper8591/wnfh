@@ -490,6 +490,7 @@ init 1:
     $ wnfh_music_list["the_valley_comes_alive"]               = wnfh_MUSIC + "ConcernedApe - Spring (The Valley Comes Alive).mp3"
     $ wnfh_music_list["the_sun_can_bend_an_orange_sky"]       = wnfh_MUSIC + "ConcernedApe - Summer (The Sun Can Bend an Orange Sky).mp3"
     $ wnfh_music_list["greenhouse"]                           = wnfh_MUSIC + "_Blacksmith_ - The Greenhouse.mp3"
+    $ wnfh_music_list["magicians_assistant"]                  = wnfh_MUSIC + "_Blacksmith_ - Magicians Assistant.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

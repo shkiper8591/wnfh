@@ -86,6 +86,10 @@ init -4 python:
         "frame_db_brow_bg1",
         "frame_db_brow_bg2",
         "frame_db_brow_bg3",
+        "frame_bar_null",
+        "frame_bar_full",
+        "frame_bar_bg",
+        "frame_bar_thumb",
         #Серп и молот и звезда
         "indicator_star",
         "indicator_molot",
@@ -118,10 +122,10 @@ init -4 python:
         "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
         "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,35           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
         "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
-        #"db_button_hover":                        [wnfh_gui["tint_elements"]["button_hover"]       ,73           ,83           ,0                 ,0             ,frame_blue       ,wnfh_pass],
-        #"db_button_bg_1":                         [wnfh_gui["tint_elements"]["button_bg_1"]        ,73           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        #"db_button_bg_2":                         [wnfh_gui["tint_elements"]["button_bg_2"]        ,86           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        #"db_button_line":                         [wnfh_gui["tint_elements"]["button_line"]        ,73           ,83           ,0                 ,1             ,frame_blue       ,wnfh_pass],
+        "settings_bar_null":                      [wnfh_gui["tint_elements"]["frame_bar_null"]     ,22           ,22           ,10                ,1             ,frame_green      ,wnfh_pass],
+        "settings_bar_full":                      [wnfh_gui["tint_elements"]["frame_bar_full"]     ,22           ,22           ,10                ,0             ,frame_green      ,wnfh_pass],
+        "settings_bar_bg":                        [wnfh_gui["tint_elements"]["frame_bar_bg"]       ,22           ,22           ,10                ,2             ,frame_green      ,wnfh_pass],
+        "settings_bar_thumb":                     [wnfh_gui["tint_elements"]["frame_bar_thumb"]    ,22           ,22           ,5                 ,1             ,frame_green      ,wnfh_pass],
     }
     wnfh_frames_size = {
         "test_frame": [1000]  

@@ -33,8 +33,8 @@ init -4:
             xanchor 1.0 yanchor 1.0
             alpha 0.0
             block:
-                ease_quart 1.0 rotate -360 alpha 1.0
-                ease_quart 1.0 rotate -180 alpha 0.0
+                ease_quart 1.0 alpha 1.0
+                ease_quart 1.0 alpha 0.0
                 repeat
         contains:
             subpixel True
@@ -45,8 +45,8 @@ init -4:
             xanchor 0.0 yanchor 1.0
             alpha 0.0
             block:
-                ease_quart 1.0 rotate -360 alpha 1.0
-                ease_quart 1.0 rotate -180 alpha 0.0
+                ease_quart 1.0 alpha 1.0
+                ease_quart 1.0 alpha 0.0
                 repeat
 
 

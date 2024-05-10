@@ -76,18 +76,18 @@ init 2:
             }
 
             wnfh_bars = {
-                "htumb": [im.MatrixColor(wnfh_gui["tint_elements"]["bar_htumb"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))],
+                "thumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_thumb"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_thumb"][4], renpy.store.wnfh_tymeofday)))],
                 
                 "bar_full": [im.Composite(
-                    (473, 37),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
+                    (22, 22),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
 
                 "bar_null": [im.Composite(
-                    (473, 37),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
+                    (22, 22),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
 
                 "button_bar_full": [im.Composite(
@@ -246,7 +246,7 @@ init 2:
                     add (wnfh_gui["tint_elements"]["pr_big_frame"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
                         xalign 0.5
-                    grid 1 5:
+                    vbox:
                         for bar in wnfh_preferences_bar[3:5]:
                             frame:
                                 if persistent.wnfh_debug_color:
@@ -278,11 +278,12 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars["bar_full"][0]
-                                        right_bar wnfh_bars["bar_null"][0]
-                                        thumb wnfh_bars["htumb"][0]
-                                        hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                        thumb wnfh_bars["thumb"][0]
+                                        hover_thumb wnfh_bars["thumb"][0]
+                                        xmaximum 1.0 ymaximum 1.0
+                                        yanchor 0.5 ypos 0.5
                         for bar in wnfh_preferences_switch[0:3]:                    
                             frame:
                                 if persistent.wnfh_debug_color:
@@ -320,14 +321,13 @@ init 2:
                                         background frame_transparent
                                     area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
-                                    padding(0, 5)
                                     bar value bar[2]:
-                                        left_bar bar[3]
-                                        right_bar bar[4]
-                                        thumb wnfh_bars["htumb"][0]
-                                        hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 37
-                                        ypos 0.5 yanchor 0.5 
+                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                        thumb wnfh_bars["thumb"][0]
+                                        hover_thumb wnfh_bars["thumb"][0]
+                                        xmaximum 1.0 ymaximum 1.0
+                                        yanchor 0.5 ypos 0.5
                                     frame:
                                         if persistent.wnfh_debug_color:
                                             background frame_black
@@ -399,11 +399,12 @@ init 2:
                                     area(1.0, 0.5, 485, 1.0)
                                     xanchor 1.0 yanchor 0.5
                                     bar value bar[2]:
-                                        left_bar wnfh_bars["bar_full"][0]
-                                        right_bar wnfh_bars["bar_null"][0]
-                                        thumb wnfh_bars["htumb"][0]
-                                        hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 37 yanchor 0.5 ypos 0.5
+                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                        thumb wnfh_bars["thumb"][0]
+                                        hover_thumb wnfh_bars["thumb"][0]
+                                        xmaximum 1.0 ymaximum 1.0
+                                        yanchor 0.5 ypos 0.5
 
             elif wnfh_preferences_variable[2]: # ===================== Амогус
                 frame:
@@ -459,14 +460,13 @@ init 2:
                                         background frame_transparent
                                     area(0.6, 0.5, bar[5]+12, 1.0)
                                     xanchor 0.0 yanchor 0.5
-                                    padding(0, 5)
                                     bar value bar[2]:
-                                        left_bar bar[3]
-                                        right_bar bar[4]
-                                        thumb wnfh_bars["htumb"][0]
-                                        hover_thumb wnfh_bars["htumb"][0]
-                                        xmaximum 1.0 ymaximum 37
-                                        ypos 0.5 yanchor 0.5 
+                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                        thumb wnfh_bars["thumb"][0]
+                                        hover_thumb wnfh_bars["thumb"][0]
+                                        xmaximum 1.0 ymaximum 1.0
+                                        yanchor 0.5 ypos 0.5
                                     frame:
                                         if persistent.wnfh_debug_color:
                                             background frame_black

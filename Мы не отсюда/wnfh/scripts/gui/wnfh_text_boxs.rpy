@@ -145,7 +145,6 @@ init 2:
                             hbox:
                                 anchor (0.5, 0.5) pos (0.5, 0.5)
                                 spacing 20
-                                # Это говно Ритана, лень переписывать, просто спиздил. Может быть, когда-нибудь и переделаю.
                                 for i in ["hide", "save", "menu", "load"]:
                                     imagebutton:
                                         idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))

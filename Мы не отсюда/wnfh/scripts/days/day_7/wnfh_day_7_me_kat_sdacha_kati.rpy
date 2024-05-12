@@ -18,7 +18,7 @@ label d7_me_kat_sdacha_kati:
     
     me "А вот и мы."
 
-    $ wnfh_get_achievement("post")
+    $ wnfh_get_achievement("post") 
     $ renpy.pause(1.0, hard=True)
     show mt dc_smotrit dc background with dspr
 
@@ -65,8 +65,8 @@ label d7_me_kat_sdacha_kati:
         window hide dissolve
         call screen wnfh_choice(
             ["dv", "Сдаться", "Всё равно она узнает так или иначе", "d7_mt_sdalsya", {"kat": 1}],
-            ["dv", "Сдать", "Они подставили меня. Теперь мой черёд", "d7_mt_sdat", {"dv": -1, "usw": -1}],
-            ["d7_choice_n9", "Сдать или не сдать рыжих."]
+            ["dv", "Сдать", "Они подста вили меня. Теперь мой черёд", "d7_mt_sdat", {"dv": -1, "usw": -1}],
+            ["d7_choice_n20", "Сдать или не сдать рыжих."]
             ) with sphere_blure_dissolve2
     else:
     

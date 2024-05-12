@@ -51,7 +51,7 @@ label d7_obed:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Можно.", "Ладно, пусть садятся.", "d7_obed_me_w_un_kat", {"kat":1, "un":1}],
+        ["un", "Можно", "Ладно, пусть садятся.", "d7_obed_me_w_un_kat", {"kat":1, "un":1}],
         ["neutral", "Не можно", "Хочется поесть одному", "d7_obed_me_alone", {"kat":-1, "un":-1}],
         ["d7_choice_n6", "Разрешить сесть рядом Кате и Лене в столовой"]
         ) with dissolve2

@@ -164,14 +164,3 @@ label d7_un_neutral_1_lbl:
 
     window hide dissolve
     jump d7_male_clubs
-
-label d7_un_ne_sprosil:
-    
-    window show dissolve
-    
-    th "Впрочем, потом может узнаю, а пока меня ждут дела."
-
-    "Я помахал Лене на прощание и пошёл в клубы."
-
-    window hide dissolve
-    jump d7_male_clubs

@@ -8,7 +8,7 @@ label d7_me_meet_kat_w_un:
     with dissolve2
     play ambience ambience_camp_center_day fadein 2.0
     play music music_list["timid_girl"] fadein 3.5
-    $ wnfh_Data.FlagSet("d7_kat_oblil_me", "ne_oblil")
+    $ wnfh_Data.FlagSet("d7_kat_oblivanie", "ne_oblil")
     $ renpy.pause(1)
     show bg ext_dining_hall_away_day with dissolve2 
     $ renpy.pause(1)

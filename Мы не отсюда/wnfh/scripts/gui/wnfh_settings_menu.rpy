@@ -89,30 +89,6 @@ init 2:
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
-
-                "button_bar_full": [im.Composite(
-                    (145, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
-                    )],
-
-                "button_bar_null": [im.Composite(
-                    (145, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["button_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
-                    )],
-
-                "multibutton_bar_full": [im.Composite(
-                    (248, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_full"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
-                    )],
-
-                "multibutton_bar_null": [im.Composite(
-                    (248, 35),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_bg"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 2, renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["multibutton_bar_null"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday))),
-                    )],
             }
 
             wnfh_preferences_button = [
@@ -133,12 +109,12 @@ init 2:
             ]
             wnfh_preferences_switch = [
                  #Тег переключалки   #Текст кнопки        #Вкл.                                                                                                             #Выкл.
-                #["fullscreen"       ,"Полный экран"               ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
-                #["autoforward"      ,"Автопереход"                ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
-                #["skip"             ,"Пропускать"                 ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],                                                                             , NullAction()        ],
-                #["font"             ,"Шрифт"                      ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
-                
-                #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0], 248  ],
+                #["fullscreen"       ,"Полный экран"        ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                #["autoforward"      ,"Автопереход"         ,[Preference("auto-forward after click", "enable"), Play("sound", wnfh_sfx_list["plimp2"])]           ,  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ],
+                #["skip"             ,"Пропускать"          ,[Preference("skip", "all"),                        Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ],                                                                             , NullAction()        ],
+                #["font"             ,"Шрифт"               ,[SetField(persistent, "font_size", "large"),       Play("sound", wnfh_sfx_list["plimp2"])]           ,  SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ],
+               
+                #["time_of_day"      ,"Время суток"         ,FieldValue(persistent, "wnfh_mat_filter", 3, step=1)                    ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0]   ,248            ],
                 ["mat_filter"       ,"Мат-фильтр"          ,AnimatedValue(value=persistent.wnfh_mat_filter, range=2.0, delay=0.1)   ,wnfh_bars["multibutton_bar_full"][0]  ,wnfh_bars["multibutton_bar_null"][0]   ,248      ,2    ],
                 ["hentai_mod"       ,"Отображение хентая"  ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["button_bar_full"][0]       ,wnfh_bars["button_bar_null"][0]        ,145      ,1    ],
                 ["widget_lp"        ,"Виджет очков"        ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)    ,wnfh_bars["button_bar_full"][0]       ,wnfh_bars["button_bar_null"][0]        ,145      ,1    ],

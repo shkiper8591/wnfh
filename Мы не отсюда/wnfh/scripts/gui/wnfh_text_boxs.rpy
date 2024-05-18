@@ -375,14 +375,14 @@ init 2:
                     background frame_transparent
                 vbox:
                     anchor (0.5, 1.0) pos (0.5, 1.0)
-                    add (wnfh_gui["tint_elements"]["db_line_lower"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
+                    add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                         xalign 0.5 yanchor 1.0 ypos 1.0
-                    add (wnfh_gui["tint_elements"]["nvl_bg"]):
+                    add (wnfh_gui["tint_elements"]["frame_bg"]):
                         matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
                         xalign 0.5 yzoom 10.0
-                    add (wnfh_gui["tint_elements"]["db_line_lower"]):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][1])
+                    add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
+                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                         xalign 0.5
     
                 frame: # ======================== Текст

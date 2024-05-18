@@ -90,8 +90,8 @@ init 2:
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
                                             matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                            frame at wjuh_bg: # ================================================ Тонировка при наведении
-                                if wnfh_screen_variable[index]:
+                            frame at wjuh_bg: 
+                                if wnfh_screen_variable[index]: # ================================================ Тонировка при наведении
                                     add Frame(wnfh_frames_elements["yesno_prompt_button_gradient"][0], left=wnfh_frames_elements["yesno_prompt_button_gradient"][3], top=0):
                                         xalign 0.5 yalign 0.5 alpha 0.6
                                         matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["yesno_prompt_button_gradient"][4]])

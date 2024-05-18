@@ -56,7 +56,7 @@ label d8_zavtrak:
             ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
             ) with sphere_blure_dissolve2
 
-    elif wnfh_Data.getChoice_points_sum("un") == 3:
+    elif wnfh_Data.getChoice_points_sum("un") >= 3:
         
         jump d8_zavtrak_w_un
 

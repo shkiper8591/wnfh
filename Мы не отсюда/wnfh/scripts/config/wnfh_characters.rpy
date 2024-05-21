@@ -3,7 +3,7 @@ init -265 python:
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
 
     if not hasattr(renpy.store,'wnfh_tymeofday'):
-        renpy.store.wnfh_tymeofday = "prologue"
+        renpy.store.wnfh_tymeofday = "night"
     if not hasattr(renpy.store,'wnfh_spritetime'):
         renpy.store.wnfh_spritetime = "prologue"
 

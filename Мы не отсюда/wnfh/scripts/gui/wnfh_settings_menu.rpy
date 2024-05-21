@@ -94,7 +94,7 @@ init 2:
                     )],
             }
             wnfh_preferences_other_buttons = [
-                ["fullscreen" ,"Полный экран"       ,[Preference("display", "fullscreen"),              Play("sound", wnfh_sfx_list["plimp2"])]           ,  Preference("display", "window")                                                              , _preferences.fullscreen         ],
+                ["fullscreen" ,"Полный экран"       ,Preference("display", "fullscreen"),  Preference("display", "window"), _preferences.fullscreen],
                 ["hentai_mod" ,"Отображение хентая" ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,145      ,1    ],
             ]
             wnfh_preferences_audio_bars = [
@@ -106,9 +106,9 @@ init 2:
                 ["ap_misic"            ,"Очки персонажей"  ,AnimatedValue(value=persistent.wnfh_ap_misic, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
             ]
             wnfh_preferences_widget_buttons = [
-                ["widget_lp"           ,"Очки персонажей"  ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-                ["widget_music_player" ,"Текущий трек"     ,AnimatedValue(value=persistent.wnfh_widget_music_player, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-                ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)      ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+                ["widget_lp"           ,"Очки персонажей"     ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+                ["widget_music_player" ,"Текущий трек"        ,AnimatedValue(value=persistent.wnfh_widget_music_player, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+                ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
             ]
             wnfh_preferences_text_bars = [
                 ["text_speed"       ,"Скорость текста"     ,Preference("text speed")         ],
@@ -122,7 +122,7 @@ init 2:
             ]
 
             wnfh_preferences_button = [ ["Назад", [Return()] ] ]
-
+        add wnfh_gui["tint_elements"]["vignette"]
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
@@ -181,7 +181,7 @@ init 2:
                 else:
                     background frame_transparent
                  
-                frame:
+                frame: # ============================ Левый блок
                     area(0.0, 0.5, 0.5, 0.5)
                     xanchor 0.0 yanchor 1.0
                     if persistent.wnfh_debug_color:
@@ -192,14 +192,8 @@ init 2:
                         pos (0.5, 0.0)
                         xanchor 0.5 yanchor 0.0
                         spacing 0
-                        frame:
-                            area(0.5, 0.0, 0.9, 80)
-                            xanchor 0.5 yanchor 0.0
-                            if persistent.wnfh_debug_color:
-                                background frame_black
-                            else:
-                                background frame_transparent
-                        frame:
+
+                        frame: # ======================== Заголовок "Аудио"
                             area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 10)
                             xanchor 0.5 yanchor 0.0
                             if persistent.wnfh_debug_color:
@@ -209,7 +203,7 @@ init 2:
                             vbox: # ================================================ Фон таблички из трёх кусков
                                 pos (0.5, 0.5)
                                 xanchor 0.5 yanchor 0.5
-                                spacing 0
+                                spacing
                                 for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
                                     frame at wnfh_frames_elements[element][6]:
                                     #frame:
@@ -228,7 +222,7 @@ init 2:
                                 kerning 1
                                 min_width 200
                                 layout "tex"
-                        frame:
+                        frame: # ====================== Кнопки ползунки и кнопки аудио
                             area(0.5, 0.0, 0.9, 250)
                             xanchor 0.5 yanchor 0.0
                             if persistent.wnfh_debug_color:
@@ -248,7 +242,7 @@ init 2:
                                         else:
                                             background frame_transparent
 
-                frame:
+                frame: 
                     area(1.0, 0.5, 0.5, 0.5)
                     xanchor 1.0 yanchor 1.0
                     if persistent.wnfh_debug_color:

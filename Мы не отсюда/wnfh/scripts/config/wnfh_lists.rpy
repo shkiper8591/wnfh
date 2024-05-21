@@ -131,6 +131,7 @@ init -4 python:
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [
         "mm_bg",
         "mm_bg2",
+        "mm_bg4",
         "gradient",
         "achievements",
         "discord",

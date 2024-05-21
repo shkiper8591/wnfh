@@ -86,7 +86,7 @@ label wnfh_day_7:
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
     
     "Я уж было попытался вспомнить, что же мне такого приснилось."
-    $ wnfh_Data.get_achievement("post")
+    $ wnfh_Data.get_achievement("handass")
     show wnfh_ctc_animation at center
     "И в голове тут же всплыли неприятные воспоминания, обезумевшая Алиса, кромсающая меня ножом."
     th "Да, мрак, это уж точно лучше вспоминать."

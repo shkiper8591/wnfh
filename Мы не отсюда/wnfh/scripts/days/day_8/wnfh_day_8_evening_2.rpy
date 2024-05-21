@@ -1,7 +1,7 @@
 label d8_evening_2:
 
     scene bg ext_lenin_square_sunset_wnfh with slide_up_blure_dissolve2
-    play music wnfh_music_list wnfh_music_list["the_hill_camp_morning"] fadein 5.0
+    play music wnfh_music_list["the_hill_camp_morning"] fadein 5.0
 
     if wnfh_Data.getChoice_result_number("d8_choice_n9") == 1:
 
@@ -14,8 +14,8 @@ label d8_evening_2:
 
 label d8_evening_2_short:
 
-	window show dissolve
-	show kat pockerface pioneer at center with dissolve
+    window show dissolve
+    show kat pockerface pioneer at center with dissolve
 
     "Выйдя на площадь, я встретил идущую со стороны брандвахты Катю."
 

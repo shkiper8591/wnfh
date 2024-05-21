@@ -440,7 +440,7 @@ init 1:
     $ wnfh_music_list["mystery"]                                = wnfh_MUSIC + "Alec Holowka - Mystery.mp3"
     $ wnfh_music_list["outskirts"]                              = wnfh_MUSIC + "Alec Holowka - Outskirts.mp3"
     $ wnfh_music_list["the_bridge"]                             = wnfh_MUSIC + "Alec Holowka - The Bridge.mp3"
-    $ wnfh_music_list["waking_up"]                              = wnfh_MUSIC + "Sunrise.mp3"                                                  ## НАШЕ ##
+    $ wnfh_music_list["waking_up"]                              = wnfh_MUSIC + "Wnfh - Sunrise.mp3"                                                  ## НАШЕ ##
     $ wnfh_music_list["waking_up_2"]                            = wnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
     $ wnfh_music_list["fireflies_on_the_porch"]                 = wnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
     $ wnfh_music_list["the_cars_you_might_think"]               = wnfh_MUSIC + "The Cars - You Might Think.ogg"
@@ -471,7 +471,7 @@ init 1:
     $ wnfh_music_list["shallow_waters_night"]                   = wnfh_MUSIC + "Max LL - Shallow Waters (Night).mp3"
     $ wnfh_music_list["the_swarms_of_hades"]                    = wnfh_MUSIC + "Max LL - The Swarms of Hades.mp3"
     $ wnfh_music_list["razbor_poletov"]                         = wnfh_MUSIC + "razbor poletov - svati.mp3"                                  
-    $ wnfh_music_list["trevoga_1"]                              = wnfh_MUSIC + "Sense of anxiety.mp3"                                         ## НАШЕ ##
+    $ wnfh_music_list["trevoga_1"]                              = wnfh_MUSIC + "Wnfh - Sense of anxiety.mp3"                                         ## НАШЕ ##
     $ wnfh_music_list["sport2"]                                 = wnfh_MUSIC + "sport2 - svati.mp3"
     $ wnfh_music_list["estafeta"]                               = wnfh_MUSIC + "estafeta - svati.mp3" 
     $ wnfh_music_list["country_shop"]                           = wnfh_MUSIC + "ConcernedApe - Country Shop.mp3"

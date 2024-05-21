@@ -1,6 +1,6 @@
 label d8_begunok_w_mi:
 
-    $ wnfh_Data.FlagSet("d8_begunok", True)
+    $ wnfh_Data.FlagSet("d8_begunok", "miku")
     $ wnfh_set_time()
     show kat thinking pioneer at right
     show mi normal pioneer at left

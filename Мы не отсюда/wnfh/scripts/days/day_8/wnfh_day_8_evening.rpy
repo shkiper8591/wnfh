@@ -158,35 +158,7 @@ label d8_evening:
 
     usw "Мы подумаем."
     dv "Да, мы определённо подумаем над этим."
-    dv "А, кстати, Семён."
-    me "Да-да?"
-    dv "Мне будешь ты нужен после ужина, можешь подойти на эстраду?"
-    dv "Только не прямо сразу после ужина, а скажем полчасика спустя."
-
-    show usw grin pioneer at left with dspr
-
-    usw "Опять какие-то мутки мутите?"
-
-    show dv angry pioneer2 at right with dspr
-
-    dv "Что значит «опять»?"
-
-    show usw upset pioneer at left with dspr
-
-    usw "Ну ладно-ладно, просто мутки мутите."
-
-    show dv normal pioneer2 at right
-    show usw normalsmile pioneer at left
-    with dspr
-
-    dv "Да, именно так."
-    me "А зачем я тебе нужен буду?"
-
-    show dv laugh pioneer2 at right with dspr
-
-    dv "Так ты приди и узнаешь!"
-    me "Не люблю сюрпризы, особенно от вас двоих."
-    dv "Не переживай, всё будет тип-топ."
+    # надо будет как-то диалог развить по другому, ибо я жоска объебался жеееееесть
     usw "Ну всё, Алис, давай идём, надо с Диной поболтать."
     dv "Ага, чао!"
 

@@ -1,6 +1,6 @@
 label d8_dv_ending:
 
-	scene bg ext_stage_big_night
+    scene bg ext_stage_big_night
     show dv normal pioneer at center
     with dissolve
 

@@ -145,4 +145,81 @@ label d8_me_dv_disagree:
     "Резко встав, Алиса быстрым шагом ушла куда-то в сторону эстрады."
     "Я же облегчённо выдохнул."
 
-    jump d8_un_ending
+    if wnfh_Data.FlagGet("d8_begunok") == False:
+
+        jump d8_un_ending_2
+
+    elif wnfh_Data.getChoice_points_sum("un") < 6:
+
+        jump d8_un_ending_2
+
+    else:
+
+    jump d8_un_ending_1
+
+label d8_un_ending_2:
+
+    show un normal pioneer close at center with dspr
+
+    me "Спасибо тебе, а то она бы меня замучала."
+
+    "Лена стояла и как-то задумчиво на меня смотрела."
+
+    me "Что-то случилось?"
+    un "М? Нет, ничего."
+    un "Время позднее, я пойду спать и тебе советую тоже."
+
+    hide un with dissolve
+
+    "Я не успел пожелать спокойной ночи, как Лена уже стремительно ушла в сторону домиков."
+    "Почесав затылок, и посидев ещё пару минут, я отправился домой."
+
+    window hide dissolve
+    scene bg ext_house_of_mt_night with dissolve2
+    $ renpy.pause(0.3)
+    stop ambience fadeout 2.5
+    $ wnfh_set_time()
+    scene bg int_house_of_mt_night
+    show mt normal nightdress at center
+    with door_blure_dissolve2
+    play ambience ambience_int_cabin_night fadein 2.5
+    window show dissolve
+
+    "Зашёл я в домик, когда вожатая заканчивала подготавливать свою постель ко сну."
+    "Услышав меня, она повернулась и оглядела меня подозрительным взглядом."
+
+    show mt smile nightdress at center with dspr
+
+    mt "Надо же, Семён[wp] Пусть и пришёл не идеально вовремя, но всё же не под восход, уже успех!"
+    me "Когда это я приходил под восход?"
+    mt "Пока ещё ни разу."
+
+    show mt angry nightdress at center with dspr
+
+    mt "Но, чуется мне, если я дальше не обращала на твои похождения внимание, этим бы всё и закончилось!"
+    me "Мне кажется вы преувеличиваете."
+    mt "А мне вот так не кажется."
+
+    show mt smile nightdress at center with dspr
+
+    mt "Ладно, это не суть. Давай, переодевайся и в койку."
+    me "Есть!"
+
+    "Собственно, приказ высшего командования был исполнен быстро и чётко."
+
+    $ wnfh_set_time("night")
+    show bg int_house_of_mt_night2
+
+    "После того как я улёгся, вожатая выключила свет и тоже легла спать."
+
+    hide mt with dissolve
+
+    mt "Спокойной ночи."
+    me "И вам того же[wp]"
+
+    window hide dissolve
+    stop ambience fadeout 5.0
+    show blink
+    with None
+    $ renpy.pause(5.0, hard=True)
+    scene black

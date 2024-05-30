@@ -354,23 +354,23 @@ label d8_begunok_w_mi:
     if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
 
         jump d8_begunok_w_mi_choices
-
-    me "Ха, зря ты на них обижаешься, на самом деле."
-    me "Они хорошие ребята, просто иногда любят почудить[wp]"
-
-    show kat sad pioneer close at center with dspr
-
-    kat "Я уж заметила[wp]"
-
-    "Она грустно вздохнула."
-
-    show kat thinking pioneer close at center with dspr
-
-    kat "Но всё это как-то неправильно[wp]"
-    me "Не бери в голову, всё это пустяки."
-    kat "Хорошо, я подумаю над этим[wp]"
-
-    jump d8_begunok_w_mi_ending
+    else:
+        me "Ха, зря ты на них обижаешься, на самом деле."
+        me "Они хорошие ребята, просто иногда любят почудить[wp]"
+    
+        show kat sad pioneer close at center with dspr
+    
+        kat "Я уж заметила[wp]"
+    
+        "Она грустно вздохнула."
+    
+        show kat thinking pioneer close at center with dspr
+    
+        kat "Но всё это как-то неправильно[wp]"
+        me "Не бери в голову, всё это пустяки."
+        kat "Хорошо, я подумаю над этим[wp]"
+    
+        jump d8_begunok_w_mi_ending
 
 label d8_begunok_w_mi_choices:
 

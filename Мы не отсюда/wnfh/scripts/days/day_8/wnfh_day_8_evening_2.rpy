@@ -86,15 +86,15 @@ label d8_evening_2_kat:
 
     if wnfh_Data.FlagGet("d8_begunok") == "miku":
 
-        kat "Боюсь, Мику уже помогла мне."
+        kat "Боюсь, Мику уже помогла."
 
     elif wnfh_Data.FlagGet("d8_begunok") == "lena":
 
-        kat "Ничего, Лена помогла уже мне."
+        kat "Ничего, Лена помогла уже."
 
     else:
 
-        kat "Я уже разобралась со сама, спасибо."
+        kat "Я уже разобралась, спасибо."
 
     play music music_list["trapped_in_dreams"] fadein 5.0
 

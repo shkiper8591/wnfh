@@ -420,6 +420,7 @@ init 1:
     $ wnfh_sfx_list["otryahivanie"]       = wnfh_SFX + "cloth-fluff-pillow_mkznd5vd.ogg"
     $ wnfh_sfx_list["stop_magnitofon"]    = wnfh_SFX + "stop_magnitofon.ogg"
     $ wnfh_sfx_list["bucket_water_hit"]   = wnfh_SFX + "bucket_water_hit.ogg"
+    $ wnfh_sfx_list["cardboard_box_drop"] = wnfh_SFX + "cardboard-box-drop.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
     

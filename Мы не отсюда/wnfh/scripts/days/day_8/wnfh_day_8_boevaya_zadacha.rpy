@@ -429,17 +429,19 @@ label d8_boevaya_zadacha_2:
     kat "Я немного ушла от темы."
     kat "Семён, я прошу у тебя прощения за мой необдуманный поступок!"
 
+    show kat smile pioneer close at center with dspr
+
     "Усмехнувшись, я встал со стула и подошёл к ней."
     "Она же не отрывала от меня взгляда."
 
     me "Ладно, прощаю."
 
-    show kat joy pioneer at center with dspr
+    show kat joy pioneer close at center with dspr
 
     kat "Правда?"
     me "Правда. Я не умею долго держать обиды. {w=0.5}Тем более на такую фигню."
 
-    show kat smile pioneer at center with dspr
+    show kat smile pioneer close at center with dspr
 
     kat "Спасибо! Прям камень с плеч!"
     me "Та не за что."
@@ -453,9 +455,10 @@ label d8_boevaya_zadacha_3:
 
     kat "Не хочешь пойти со мной к Мику?"
 
-    if wnfh_Data.FlagGet("d8_obed_me_kat_mi") == True
+    if wnfh_Data.FlagGet("d8_obed_me_kat_mi") == True:
 
         kat "Тем более она тебя приглаша к нам, а ты, вроде как, согласился."
+        jump d8_boevaya_zadacha_3_yes
 
     window hide dissolve
     call screen wnfh_choice(
@@ -466,9 +469,40 @@ label d8_boevaya_zadacha_3:
 
 label d8_boevaya_zadacha_3_yes:
 
-    "Далее вас ждёт тщетность бытия. А если быть точным, то конец сценария на данный момент."
+    window show dissolve
+    if wnfh_Data.FlagGet("d8_obed_me_kat_mi") == True:
 
+        me "Что ж, раз дел у меня никаких нет[wp]"
+
+    me "Хорошо, пойдём побренчим, благо идти тут недалеко."
+
+    show kat joy pioneer close at center with dspr 
+
+    kat "Превосходно!"
+
+    show kat smile pioneer close at center with dspr
+
+    kat "Тогда, давай не будем терять времени."
+    kat "А то Мику меня уже заждалась небось."
+
+    window hide dissolve
+    jump d8_kat_mi_musclub
+        
 label d8_boevaya_zadacha_3_no:
 
-    "Если вы кликнете, то вас отправит в главное меню игры."
-    "Последнее предупреждение"
+    stop music fadeout 5.0
+    window show dissolve
+
+    me "Ты уж извини, но у меня сейчас другие дела."
+
+    show kat upset pioneer close at center with dspr
+
+    kat "Жаль[wp]"
+
+    show kat happy pioneer close at center with dspr
+
+    kat "Но, может быть в следующий раз получится к нам зайти?"
+    me "Поживём увидем."
+
+    window hide dissolve
+    jump d8_male_clubs

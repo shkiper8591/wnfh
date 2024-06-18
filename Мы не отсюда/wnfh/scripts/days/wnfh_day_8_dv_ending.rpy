@@ -330,7 +330,7 @@ label d8_dv_ending:
     un "Да, спокойной ночи."
     
     hide un with dissolve
-    $ wnfh_Data.AddLove_points({"un"}:-1)
+    $ wnfh_Data.AddLove_points({"un":-1})
 
     "Мы разошлись в разные стороны."
     

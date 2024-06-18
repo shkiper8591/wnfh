@@ -1,5 +1,5 @@
 label d8_kat_mi_musclub:
-	
+
     stop music fadeout 5.0
     stop ambience fadeout 2.0
     scene bg ext_admin_day_wnfh with santa_barbara_in_blure_dissolve2

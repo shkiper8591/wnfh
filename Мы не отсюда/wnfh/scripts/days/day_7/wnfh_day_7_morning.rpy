@@ -185,8 +185,8 @@ label wnfh_day_7:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["sl", "Пробежаться.", "Спорт - это жизнь!", "d7_sl_probejka", {"sl":2}],
-        ["neutral", "Отказаться.", "Мне сейчас не до бега.", "d7_sl_otkaz", {"sl":-1}],
+        ["sl", "Пробежаться", "Спорт - это жизнь!", "d7_sl_probejka", {"sl":2}],
+        ["neutral", "Отказаться", "Мне сейчас не до бега", "d7_sl_otkaz", {"sl":-1}],
         ["d7_choice_n1", "Выбор пробежаться со Славей"]
         ) with sphere_blure_dissolve2
 

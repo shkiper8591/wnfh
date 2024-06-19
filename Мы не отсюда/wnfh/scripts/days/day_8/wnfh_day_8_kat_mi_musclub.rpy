@@ -413,12 +413,277 @@ label d8_kat_mi_musclub:
 
     "Я почесал затылок."
 
-    th "Сколько раз самому себе говорил не увлекаться подобными мыслями[wp]"
+    th "Сколько раз самому себе говорил не увлекаться подобными мыслями, а то плохо будет."
 
     show kat normal pioneer at left
-    show mi serious pioneer at right
+    show mi normal pioneer at right
+    with dspr
+    show dv normal pioneer2 far at center with dissolve
+
+    "В это время, со стуком, к нам вошла Алиса."
+
+    dv "Привет-привет, товарищи, музыканты."
+    mi "Приветик!"
+
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
+
+        show kat pockerface pioneer at left with dspr
+
+        "Катя же не поздоровалась с Алисой, и только мельком посмотрела на неё."
+
+    else:
+
+        kat "Здравствуй."
+
+    dv "Так-с, мне нужно украсть у вас Семёна на пару слов."
+    mi "Хорошо, мы тут всё равно ничего не делаем пока-что."
+
+    hide dv with dspr
+
+    "Алиса позвала меня за собой пальцем и вышла на улицу."
+
+    th "Ох, блин, надеюсь, что меня не будет ждать очередной план ограбления Монте-Карло."
+
+    "Встав, я последовал на улицу."
+
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg ext_musclub_verandah_day_wnfh
+    show dv smile pioneer2 at center
+    with dissolve2 
+    play ambience ambience_camp_center_day fadein 2.0
+    $ renpy.pause(0.3)
+    window show dissolve
+
+    me "Что такое?"
+    dv "Мне нужно, чтобы ты достал две гитары."
+
+    "Прямолинейность Алисы меня поразила, что я даже первые пару секунд не знал как ответить."
+
+    me "Что, прям вот так сразу?"
+
+    show dv grin pioneer2 at center with dspr
+
+    dv "Ах да, чуть не забыла, хочешь сходить сегодня вечером на сцену поиграть?"
+
+    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
+
+        dv "Между прочим сам просил тебя спросить завтра, то есть, сегодня."
+
+    show dv normal pioneer2 at center with dspr
+
+    dv "Ну так что?"
+
+    window hide dissolve
+    call screen wnfh_choice(
+        ["dv", "А давай!", "Как раз я вспомнил как играть на гитаре", "d8_me_dv_yes_near_musclub", {"dv":1}],
+        ["neutral", "О, нет-нет-нет!", "Это точно закончится проблемами для меня", "d8_me_dv_no_near_musclub", {"dv":-1}],
+        ["d8_choice_n11", "Алиса зовёт Семёна на сцену"]
+        ) with sphere_blure_dissolve2
+
+label d8_me_dv_yes_near_musclub:
+
+    me "Всё равно вечером делать будет нечего."
+    me "Поэтому, думаю, можно немного дать року."
+
+    show dv laugh pioneer2 at center with dspr
+
+    dv "Вот это по нашему!"
+
+    show dv smile pioneer2 at center with dspr
+
+    dv "Что же, тогда организуй пару гитар нам."
+    me "А почему я?"
+
+    show dv normal pioneer2 at center with dspr
+
+    "Она медленно оглядела меня с ног до головы."
+
+    show dv shy pioneer2 at center with dspr
+
+    dv "У тебя уже налажены связи."
+
+    "Сказала она уводя взгляд куда-то в сторону."
+    "Тут и ежу было понятно, что у неё есть какая-то причина не делать этого лично."
+
+    me "У тебя что-то случилось?"
+    dv "Ну[wp]"
+
+    show dv sad pioneer2 at center with dspr
+
+    dv "С Мику поссорилась немного."
+
+    "Для меня было полнейшим шоком эта весть."
+
+    th "Да чтобы Мику поссорилась с кем-то? Неужели скоро пойдёт град?"
+
+    me "Странно, а она тебя по-дружески встретила."
+
+    show dv guilty pioneer2 at center with dspr
+
+    dv "Она же добрая очень, но обиды держать умеет, поверь мне."
+    me "Не верю."
+    dv "Мне как-то нет смысла убеждать тебя, сам можешь проверить."
+    me "Не хочу."
+    dv "Ну и всё."
+
+    show dv normal pioneer2 at center with dspr
+
+    "Алиса прошла пару шагов вперёд."
+
+    dv "В общем, пожалуйста, договорись, а с меня зачтётся."
+    me "О да, и как же?"
+
+    show dv smile pioneer2 at center with dspr
+    $ renpy.pause(0.2)
+    hide dv with dspr
+
+    "Ничего не ответив, только сверкнув улыбкой на прощание, Алиса удалилась вглубь лагеря."
+
+    th "Что ж, ладно, это было странно[wp]"
+
+    jump d8_kat_mi_musclub_continue
+
+label d8_me_dv_no_near_musclub:
+
+    me "Ты уж прости, но у меня другие дела будут вечером."
+
+    show dv sad pioneer2 at center with dspr
+
+    dv "Блин, ну вот."
+
+    show dv guilty pioneer2 at center with dspr
+
+    dv "А от этих дел никак нельзя отвертется?"
+    me "Боюсь, за такое у мення отвертят голову."
+
+    show dv sad pioneer2 at center with dspr
+
+    dv "Понятно[wp]"
+
+    "Она глубоко вздохнула."
+
+    show dv normal pioneer2 at center with dspr
+
+    dv "Ну ладно, дела так дела, счастливо тебе."
+
+    hide dv with dissolve
+
+    "Алиса потрепыхала мне волосы и, медленным шагом, удалилась вглубь лагеря."
+
+    me "А причёску портить было лишним."
+
+    "Пробубнил я себе под нос."
+
+label d8_kat_mi_musclub_continue:
+
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg int_musclub_day
+    show mi surprise pioneer far at right
+    show kat surprise pioneer far at left
+    with dissolve2
+    play ambience ambience_int_cabin_day fadein 2.0
+
+    "Как только я зашёл обратно внутрь, от двери, в рассыпную разбежались Мику и Катя."
+    "Остановились они в дальней части комнаты и смотрели на меня ошарашенным взглядом."
+    "Я же смотрел на них с кривой ухмылкой."
+
+    me "Подслушивали значит."
+
+    show kat smile pioneer far at left with dspr
+
+    kat "Мы? Да ни в коем случае! Да, Мику?"
+
+    show mi shy pioneer far at right
+    show kat guilty pioneer far at left
     with dspr
 
-    "Далее повествование, пока-что, приостанавливается."
-    "Дальнеший клик отправит вас в главное меню игры."
-    "Я вас предупредил!"
+    mi "Ну, вообще чуть-чуть подслушали, интересно просто стало, что Алисе могло потребоваться от тебя."
+
+    "Обломала Мику Катю своей честностью."
+
+    show mi angry pioneer far at right with dspr
+
+    if wnfh_Data.getChoice_result_number("d8_choice_n11") == 1:
+       
+        mi "И гитары я не дам, даже тебе в руки, уж прости, Семён!"
+
+    else:
+
+        mi "Кстати, правильно что отказался идти с ней на сцену! Она такая[wp] Такая[wp] Плохая в общем!"
+
+    show mi angry pioneer at right
+    show kat normal pioneer at left
+    with dspr
+
+    "Я прошёл дальше внутрь, и уселся обратно на плед."
+    "Девушки же, секунду погодя, также подошли и сели рядом."
+
+    me "Что такого случилось между вами?"
+    kat "А правда?"
+
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
+
+        kat "Конечно, Алиса меня облила, но даже я так не обижаюсь." 
+
+    show mi serious pioneer at right with dspr
+
+    mi "Сами спросите у неё, я даже говорить об этом не хочу."
+
+    "Мы с Катей переглянулись."
+    
+    th "Как бы то ни было, а если даже Мику обиделась, значит это что-то серьёзное."
+    th "И, такое ощущение у меня, что во всём этом виновата сама Алиса."
+    th "С другой стороны, она бы не стала так просто ссорится с человеком синонимом к слову доброта."
+
+    show kat thinking pioneer at left with dspr
+
+    kat "Ну, раз не хочешь, значит не будем выпытывать."
+    me "Да, по себе знаю как неприятно от такого."
+
+    show mi shy pioneer at right with dspr
+
+    mi "Спасибо вам, ребята."
+
+    "Мику быстренько оглянулась на часы."
+
+    show mi shocked pioneer at right with dspr
+
+    mi "Вот это да, уже ужин скоро!"
+
+    show mi smile pioneer at right with dspr
+
+    mi "Действительно время быстро течёт когда сидишь с товарищами!"
+
+    show mi sad pioneer at right with dspr
+
+    mi "Жаль только то, что нам нужно сворачиватся[wp]"
+
+    show kat sad pioneer at left with dspr
+
+    kat "И не поспорить[wp]"
+
+    "Катя грустно вздохнула."
+
+    kat "А я хотела ещё бы сыграть."
+
+    show mi normal pioneer at right with dspr
+
+    mi "Завтра можно."
+
+    show mi laugh pioneer at right with dspr
+
+    mi "Ну или ночью!"
+
+    show mi upset pioneer at right with dspr
+
+    mi "Только тогда, скорее всего, мы всему лагерю не дадим спать и потом Ольга Дмитриевна мне устроит."
+
+    show mi normal pioneer at right with dspr
+
+    mi "Ну, вы идите, я тут быстренько приберусь и догоню вас!"
+
+    "Синхронно угукнув с Катей, мы отправились на выход."
+
+    jump d8_dinner

@@ -127,7 +127,7 @@ label d7_un_zavtrak:
 
         show un sad pioneer with dspr
 
-        un "Я-Я{w} Н-Не хочу говорить об этом[wp] По крайней мере не сейчас"
+        un "Я-Я[wp]{w} Н-Не хочу говорить об этом[wp] По крайней мере не сейчас"
         
         show un smile pioneer with dspr
 

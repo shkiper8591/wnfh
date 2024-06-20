@@ -504,6 +504,7 @@ init 1:
     $ wnfh_music_list["emotional_indie_guitar"]                 = wnfh_MUSIC + "_Blacksmith_ - Emotional Indie Guitar Chords.mp3"
     $ wnfh_music_list["wnfh_morning_1"]                         = wnfh_MUSIC + "Wnfh - Morning in Sovyonok.mp3"
     $ wnfh_music_list["wnfh_early_awakening_1"]                 = wnfh_MUSIC + "Wnfh - Early Awakening1.mp3"
+    $ wnfh_music_list["time_to_say_goodbye"]                    = wnfh_MUSIC + "Wnfh - Time to say goodbye.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

@@ -3,7 +3,7 @@ init -265 python:
     wp = "{w=-.25}.{w=-.25}.{w=-.25}."
 
     if not hasattr(renpy.store,'wnfh_tymeofday'):
-        renpy.store.wnfh_tymeofday = "prologue"
+        renpy.store.wnfh_tymeofday = "night"
     if not hasattr(renpy.store,'wnfh_spritetime'):
         renpy.store.wnfh_spritetime = "prologue"
 
@@ -33,8 +33,8 @@ init -4:
             xanchor 1.0 yanchor 1.0
             alpha 0.0
             block:
-                ease_quart 1.0 rotate -360 alpha 1.0
-                ease_quart 1.0 rotate -180 alpha 0.0
+                ease_quart 1.0 alpha 1.0
+                ease_quart 1.0 alpha 0.0
                 repeat
         contains:
             subpixel True
@@ -45,8 +45,8 @@ init -4:
             xanchor 0.0 yanchor 1.0
             alpha 0.0
             block:
-                ease_quart 1.0 rotate -360 alpha 1.0
-                ease_quart 1.0 rotate -180 alpha 0.0
+                ease_quart 1.0 alpha 1.0
+                ease_quart 1.0 alpha 0.0
                 repeat
 
 
@@ -112,6 +112,10 @@ init -3 python:
                 gl[i] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_d"] = Character(u"Девушка", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_p"] = Character(u"Парень", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_pr"] = Character(u"Пионер", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_pk"] = Character(u"Пионерка", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 #gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=wnfh_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 #gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=wnfh_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 

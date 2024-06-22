@@ -73,11 +73,12 @@ init 2:
             menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
 
         frame:
-            background wnfh_gui["main_menu"]["mm_bg2"]
+            background wnfh_gui["main_menu"]["mm_bg4"]
             area(0.0, 0.0, 1.0, 1.0)
             at wnfh_bg_spawn_atl
         frame:
-            background wnfh_gui["main_menu"]["gradient"]
+            background None
+            #background wnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
             
             #frame: # ======================================================= # Часики

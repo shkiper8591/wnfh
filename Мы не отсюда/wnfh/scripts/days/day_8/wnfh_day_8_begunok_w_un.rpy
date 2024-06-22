@@ -1,5 +1,5 @@
 label d8_begunok_w_un:
-    $ wnfh_Data.FlagSet("d8_begunok", True)
+    $ wnfh_Data.FlagSet("d8_begunok", "lena")
     $ wnfh_set_time()
     show kat normal pioneer at left
     show un smile pioneer at right
@@ -23,7 +23,7 @@ label d8_begunok_w_un:
     # а потом сделать анимацию как Семён представляет себе путь по лагерю
 
     show black with dissolve
-    $ renpy.notify("Тут должна быть карта с анимацией ЧИТАЙ коммент day_8_begunok line 1133")
+    $ renpy.notify("Тут должна быть карта с анимацией")
     th "Если так прикинуть, то эффективнее выйдет начать с дальнего края «Совёнка»."
     th "И потом если двигаться зигзагообразно от муз клуба[wp] Да[wp]"
     th "После чего посетим клубы, пройдёмся через площадь, вот мы уже в библиотеке и медпункте."
@@ -243,7 +243,7 @@ label d8_begunok_w_un:
     th "А что, звучит как мысль, всё равно я не хочу этим всем заниматься."
     th "С другой стороны, вожатая будет очень сильно ругаться на меня и, возможно, даже матом."
 
-    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         th "Да и неудобно как-то выходит, я её облил, так и ещё бросаю вот. Нужно хоть как-то же отработать свой косяк[wp]"
 

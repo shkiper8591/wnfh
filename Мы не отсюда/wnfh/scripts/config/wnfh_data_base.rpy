@@ -464,15 +464,15 @@ init -998 python:
             sys.exit(1)
         return data_set
 
-init -1 python:
-    def cords():     
-        ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.11, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % ("Мыш X",store.mousex), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
-        
-        ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.11, xanchor=1.0, xminimum=120)
-        ui.text("%s: %d" % ("Мыш Y",store.mousey), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
+#init -1 python:
+    #def cords():     
+    #    ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.11, xanchor=1.0, xminimum=120)
+    #    ui.text("%s: %d" % ("Мыш X",store.mousex), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
+    #    
+    #    ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.11, xanchor=1.0, xminimum=120)
+    #    ui.text("%s: %d" % ("Мыш Y",store.mousey), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
 
-    config.overlay_functions.append(cords)
+    # config.overlay_functions.append(cords)
 
 init 0 python:
 

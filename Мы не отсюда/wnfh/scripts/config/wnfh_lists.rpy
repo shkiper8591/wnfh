@@ -37,30 +37,11 @@ init -4 python:
     #}
 
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
-        #Фоны баров
-        "bar_bg",
-        "button_bar_bg",
-        "multibutton_bar_bg",
-        #Полные бары
-        "bar_full",
-        "button_bar_full",
-        "multibutton_bar_full",
-        #Пустые бары
-        "bar_null",
-        "button_bar_null",
-        "multibutton_bar_null",
-        #Ползунок
-        "bar_htumb",
+
         #Элементы кнопок гейм селектора
         "im_bg",
         "im_line",
         "im_gradient",
-        #Фреймы настроек
-        "pr_big_frame",
-        "pr_big_frame_bg",
-        #Элементы диалогового окна
-        "db_line_lower",
-        "nvl_bg",
         #Кнопки
         "button_bg_1",
         "button_bg_2",
@@ -86,6 +67,10 @@ init -4 python:
         "frame_db_brow_bg1",
         "frame_db_brow_bg2",
         "frame_db_brow_bg3",
+        "frame_bar_null",
+        "frame_bar_full",
+        "frame_bar_bg",
+        "frame_bar_tumb",
         #Серп и молот и звезда
         "indicator_star",
         "indicator_molot",
@@ -94,34 +79,50 @@ init -4 python:
     ]}
 
     wnfh_frames_elements = {
-        #Тег                                      #0 Файл                                           #1 Ширина     #В2 ысота    #3 Отступ слева    #4 Цветокор    #5 Цвет фрейма    #6 Анимация
-        "yesno_prompt_box_bg":                    [wnfh_gui["tint_elements"]["frame_bg"]           ,1000          ,200         ,25                ,2             ,frame_red        ,wjuh_bg],
-        "yesno_prompt_box_line":                  [wnfh_gui["tint_elements"]["frame_line"]         ,1020          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "yesno_prompt_button_bg":                 [wnfh_gui["tint_elements"]["frame_bg"]           ,250           ,60          ,25                ,2             ,frame_red        ,wjuh_bg],
-        "yesno_prompt_button_line":               [wnfh_gui["tint_elements"]["frame_line"]         ,270           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "yesno_prompt_button_gradient":           [wnfh_gui["tint_elements"]["frame_gradient"]     ,250           ,60          ,25                ,0             ,frame_red        ,wjuh_bg],
-        "game_menu_selector_button_bg":           [wnfh_gui["tint_elements"]["frame_bg"]           ,480           ,50          ,25                ,2             ,frame_red        ,wjuh_bg],
-        "game_menu_selector_button_line":         [wnfh_gui["tint_elements"]["frame_line"]         ,500           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "game_menu_selector_button_gradient":     [wnfh_gui["tint_elements"]["frame_gradient"]     ,480           ,50          ,25                ,0             ,frame_red        ,wjuh_bg],
-        "widget_lp_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]           ,1700          ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
-        "widget_lp_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]         ,1720          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]           ,820           ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
-        "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]         ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]         ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]           ,1500          ,100         ,25                ,2             ,frame_green      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
-        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]  ,880          ,4            ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
-        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"] ,320          ,35           ,25                ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"],25           ,35           ,0                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"],300          ,35           ,2                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_line3":                          [wnfh_gui["tint_elements"]["frame_db_brow_line3"],55           ,35           ,0                 ,1             ,frame_green      ,wjuh_line],
-        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]   ,320          ,35           ,25                ,2             ,frame_green      ,wnfh_pass],
-        "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]  ,25           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
-        "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]  ,220          ,35           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
-        "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]  ,55           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
-        #"db_button_hover":                        [wnfh_gui["tint_elements"]["button_hover"]       ,73           ,83           ,0                 ,0             ,frame_blue       ,wnfh_pass],
-        #"db_button_bg_1":                         [wnfh_gui["tint_elements"]["button_bg_1"]        ,73           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        #"db_button_bg_2":                         [wnfh_gui["tint_elements"]["button_bg_2"]        ,86           ,83           ,0                 ,2             ,frame_blue       ,wnfh_pass],
-        #"db_button_line":                         [wnfh_gui["tint_elements"]["button_line"]        ,73           ,83           ,0                 ,1             ,frame_blue       ,wnfh_pass],
+        #Тег                                      #0 Файл                                           #1 Ширина      #В2 высота   #3 Отступ слева    #4 Цветокор    #5 Цвет фрейма    #6 Анимация
+        "yesno_prompt_box_bg":                    [wnfh_gui["tint_elements"]["frame_bg"]            ,1000          ,200         ,25                ,2             ,frame_red        ,wjuh_bg],
+        "yesno_prompt_box_line":                  [wnfh_gui["tint_elements"]["frame_line"]          ,1020          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "yesno_prompt_button_bg":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,250           ,60          ,25                ,2             ,frame_red        ,wjuh_bg],
+        "yesno_prompt_button_line":               [wnfh_gui["tint_elements"]["frame_line"]          ,270           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "yesno_prompt_button_gradient":           [wnfh_gui["tint_elements"]["frame_gradient"]      ,250           ,60          ,25                ,0             ,frame_red        ,wjuh_bg],
+        "game_menu_selector_button_bg":           [wnfh_gui["tint_elements"]["frame_bg"]            ,480           ,50          ,25                ,2             ,frame_red        ,wjuh_bg],
+        "game_menu_selector_button_line":         [wnfh_gui["tint_elements"]["frame_line"]          ,500           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "game_menu_selector_button_gradient":     [wnfh_gui["tint_elements"]["frame_gradient"]      ,480           ,50          ,25                ,0             ,frame_red        ,wjuh_bg],
+        "widget_lp_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]            ,1700          ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
+        "widget_lp_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]          ,1720          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]            ,820           ,100         ,25                ,2             ,frame_red        ,wjuh_bg],
+        "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]          ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]          ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]            ,1500          ,100         ,25                ,2             ,frame_green      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
+        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]   ,880          ,4            ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
+        "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"]  ,320          ,35           ,25                ,1             ,frame_green      ,wnfh_pass],
+        "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"] ,25           ,35           ,0                 ,1             ,frame_green      ,wnfh_pass],
+        "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"] ,300          ,35           ,2                 ,1             ,frame_green      ,wnfh_pass],
+        "db_brow_line3":                          [wnfh_gui["tint_elements"]["frame_db_brow_line3"] ,55           ,35           ,0                 ,1             ,frame_green      ,wnfh_pass],
+        "db_brow_bg":                             [wnfh_gui["tint_elements"]["frame_db_brow_bg"]    ,320          ,35           ,25                ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]   ,25           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]   ,220          ,35           ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
+        "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]   ,55           ,35           ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "settings_bar_null":                      [wnfh_gui["tint_elements"]["frame_bar_null"]      ,22           ,22           ,10                ,1             ,frame_green      ,wnfh_pass],
+        "settings_bar_full":                      [wnfh_gui["tint_elements"]["frame_bar_full"]      ,22           ,22           ,10                ,0             ,frame_green      ,wnfh_pass],
+        "settings_bar_bg":                        [wnfh_gui["tint_elements"]["frame_bar_bg"]        ,22           ,22           ,10                ,2             ,frame_green      ,wnfh_pass],
+        "settings_bar_tumb":                      [wnfh_gui["tint_elements"]["frame_bar_tumb"]      ,22           ,22           ,5                 ,1             ,frame_green      ,wnfh_pass],
+        "settings_main_title_bg":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,880          ,140          ,25                ,2             ,frame_red        ,wnfh_pass],
+        "settings_main_title_line":               [wnfh_gui["tint_elements"]["frame_line"]          ,900          ,4            ,22                ,1             ,frame_green      ,wnfh_pass],
+        "settings_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,1860         ,850          ,25                ,2             ,frame_black      ,wjuh_bg],
+        "settings_box_line":                      [wnfh_gui["tint_elements"]["frame_line"]          ,1880         ,4            ,22                ,1             ,frame_green      ,wjuh_line],
+        "settings_title_bg":                      [wnfh_gui["tint_elements"]["frame_bg"]            ,660          ,70           ,25                ,2             ,frame_red        ,wnfh_pass],
+        "settings_title_line":                    [wnfh_gui["tint_elements"]["frame_line"]          ,680          ,4            ,22                ,1             ,frame_green      ,wnfh_pass],
+        
+
+
+
+
+
+
+
+
+
     }
     wnfh_frames_size = {
         "test_frame": [1000]  
@@ -130,6 +131,7 @@ init -4 python:
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [
         "mm_bg",
         "mm_bg2",
+        "mm_bg4",
         "gradient",
         "achievements",
         "discord",
@@ -418,99 +420,112 @@ init 1:
     $ wnfh_sfx_list["otryahivanie"]       = wnfh_SFX + "cloth-fluff-pillow_mkznd5vd.ogg"
     $ wnfh_sfx_list["stop_magnitofon"]    = wnfh_SFX + "stop_magnitofon.ogg"
     $ wnfh_sfx_list["bucket_water_hit"]   = wnfh_SFX + "bucket_water_hit.ogg"
+    $ wnfh_sfx_list["cardboard_box_drop"] = wnfh_SFX + "cardboard-box-drop.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
+    
+    
+
+
     # MUSIC Лист
-    $ wnfh_music_list["technical_chocolatki"]                 = wnfh_MUSIC + "technical_chocolatki.mp3"
-    $ wnfh_music_list["angus_climbs_the_hill"]                = wnfh_MUSIC + "Alec Holowka - Angus Climbs the Hill.mp3"
-    $ wnfh_music_list["church_hill"]                          = wnfh_MUSIC + "Alec Holowka - Church Hill.mp3"
-    $ wnfh_music_list["crimes"]                               = wnfh_MUSIC + "Alec Holowka - Crimes.mp3"
-    $ wnfh_music_list["crimes_2"]                             = wnfh_MUSIC + "Alec Holowka - Crimes2.mp3"
-    $ wnfh_music_list["greggs_woods"]                         = wnfh_MUSIC + "Alec Holowka - Gregg's Woods.mp3"
-    $ wnfh_music_list["im_going_to_break_something"]          = wnfh_MUSIC + "Alec Holowka - I'm Going to Break Something.mp3"
-    $ wnfh_music_list["library_investigations"]               = wnfh_MUSIC + "Alec Holowka - Library Investigations.mp3"
-    $ wnfh_music_list["lori_m"]                               = wnfh_MUSIC + "Alec Holowka - Lori M.mp3"
-    $ wnfh_music_list["lost_woods"]                           = wnfh_MUSIC + "Alec Holowka - Lost Woods.mp3"
-    $ wnfh_music_list["maes_house_2"]                         = wnfh_MUSIC + "Alec Holowka - Mae's House 2.mp3"
-    $ wnfh_music_list["mystery"]                              = wnfh_MUSIC + "Alec Holowka - Mystery.mp3"
-    $ wnfh_music_list["outskirts"]                            = wnfh_MUSIC + "Alec Holowka - Outskirts.mp3"
-    $ wnfh_music_list["the_bridge"]                           = wnfh_MUSIC + "Alec Holowka - The Bridge.mp3"
-    $ wnfh_music_list["waking_up"]                            = wnfh_MUSIC + "Alec Holowka - Waking up.mp3"
-    $ wnfh_music_list["waking_up_2"]                          = wnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
-    $ wnfh_music_list["fireflies_on_the_porch"]               = wnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
-    $ wnfh_music_list["the_cars_you_might_think"]             = wnfh_MUSIC + "The Cars - You Might Think.ogg"
-    $ wnfh_music_list["proximity"]                            = wnfh_MUSIC + "Alec Holowka - Proximity.mp3"
-    $ wnfh_music_list["we_dont_care"]                         = wnfh_MUSIC + "We Dont Care.ogg"
-    $ wnfh_music_list["sharkle_dream"]                        = wnfh_MUSIC + "Alec Holowka - Sharkle Dream.mp3"
-    $ wnfh_music_list["the_hole_at_the_center_of_everything"] = wnfh_MUSIC + "Alec Holowka - The Hole At The Center Of Everything.mp3"
-    $ wnfh_music_list["major_grom"]                           = wnfh_MUSIC + "Move Like A Devil.mp3"
-    $ wnfh_music_list["ratne_igre"]                           = wnfh_MUSIC + "Kerber - Ratne Igre.mp3"
-    $ wnfh_music_list["international"]                        = wnfh_MUSIC + "international.mp3"
-    $ wnfh_music_list["strange"]                              = wnfh_MUSIC + "strange.ogg"
-    $ wnfh_music_list["major_grom_2"]                         = wnfh_MUSIC + "ya znayu kto ti.mp3"
-    $ wnfh_music_list["santa_barbara"]                        = wnfh_MUSIC + "santa barbara music.mp3"
-    $ wnfh_music_list["back_in_black"]                        = wnfh_MUSIC + "AC-DC - Back in black.mp3"
-    $ wnfh_music_list["dance_of_the_moonlight_jellies"]       = wnfh_MUSIC + "ConcernedApe - Dance of the Moonlight Jellies.mp3"
-    $ wnfh_music_list["distant_banjo"]                        = wnfh_MUSIC + "ConcernedApe - Distant Banjo.mp3"
-    $ wnfh_music_list["the_smell_of_mushroom"]                = wnfh_MUSIC + "ConcernedApe - Fall (The Smell of Mushroom).mp3"
-    $ wnfh_music_list["in_the_deep_woods"]                    = wnfh_MUSIC + "ConcernedApe - In the Deep Woods.mp3"
-    $ wnfh_music_list["pleasant_memory"]                      = wnfh_MUSIC + "ConcernedApe - Pleasant Memory (Penny's Theme).mp3"
-    $ wnfh_music_list["tropicala"]                            = wnfh_MUSIC + "ConcernedApe - Summer (Tropicala).mp3"
-    $ wnfh_music_list["schabernack"]                          = wnfh_MUSIC + "Laryssa Okada - Dorfromantik - Schabernack.mp3"
-    $ wnfh_music_list["schoneweide"]                          = wnfh_MUSIC + "Laryssa Okada - Dorfromantik - Schöneweide.mp3"
-    $ wnfh_music_list["big_fish"]                             = wnfh_MUSIC + "Max LL - Big Fish.mp3"
-    $ wnfh_music_list["crows_end"]                            = wnfh_MUSIC + "Max LL - Crow's End.mp3"
-    $ wnfh_music_list["northern_waters"]                      = wnfh_MUSIC + "Max LL - Northern Waters (Night).mp3"
-    $ wnfh_music_list["pulsar_pursuit"]                       = wnfh_MUSIC + "Max LL - Pulsar Pursuit.mp3"
-    $ wnfh_music_list["rain"]                                 = wnfh_MUSIC + "Max LL - Rain.mp3"
-    $ wnfh_music_list["shallow_waters_night"]                 = wnfh_MUSIC + "Max LL - Shallow Waters (Night).mp3"
-    $ wnfh_music_list["the_swarms_of_hades"]                  = wnfh_MUSIC + "Max LL - The Swarms of Hades.mp3"
-    $ wnfh_music_list["razbor_poletov"]                       = wnfh_MUSIC + "razbor poletov - svati.mp3"
-    $ wnfh_music_list["trevoga_1"]                            = wnfh_MUSIC + "trevoga - svati.mp3"
-    $ wnfh_music_list["sport2"]                               = wnfh_MUSIC + "sport2 - svati.mp3"
-    $ wnfh_music_list["estafeta"]                             = wnfh_MUSIC + "estafeta - svati.mp3" 
-    $ wnfh_music_list["country_shop"]                         = wnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
-    $ wnfh_music_list["ya_znayu_kto_ti"]                      = wnfh_MUSIC + "ya znayu kto ti.mp3"
-    $ wnfh_music_list["candy_store"]                          = wnfh_MUSIC + "Candy_store.mp3"
-    $ wnfh_music_list["hide_and_seek"]                        = wnfh_MUSIC + "Sergey Eybog - Hide and Seek.mp3"
-    $ wnfh_music_list["warm_evening"]                         = wnfh_MUSIC + "Sergey Eybog - Warm Evening.mp3"
-    $ wnfh_music_list["paranoid"]                             = wnfh_MUSIC + "Black Sabbath - Paranoid.mp3"
-    $ wnfh_music_list["rainy_day"]                            = wnfh_MUSIC + "Alec Holowka - Rainy Day.mp3"
-    $ wnfh_music_list["god"]                                  = wnfh_MUSIC + "Alec Holowka - God.mp3"
-    $ wnfh_music_list["lost_man"]                             = wnfh_MUSIC + "_Blacksmith_ - The Lost Man.mp3"
-    $ wnfh_music_list["old_manor"]                            = wnfh_MUSIC + "_Blacksmith_ - The Old Manor.mp3"
-    $ wnfh_music_list["hill_camp"]                            = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp.mp3"
-    $ wnfh_music_list["friends_of_the_deceased_moon"]         = wnfh_MUSIC + "_Blacksmith_ - Friends of the Deceased Moon.mp3"
-    $ wnfh_music_list["angus_at_home"]                        = wnfh_MUSIC + "Alec Holowka - Angus at Home.mp3"
-    $ wnfh_music_list["the_hill_camp_morning"]                = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp Morning.mp3"
-    $ wnfh_music_list["clean_up"]                             = wnfh_MUSIC + "Clean up.mp3"
-    $ wnfh_music_list["dealing_with_destruction"]             = wnfh_MUSIC + "Dealing With Destruction.mp3"
-    $ wnfh_music_list["corridors"]                            = wnfh_MUSIC + "Corridors.mp3"
-    $ wnfh_music_list["violin_solo"]                          = wnfh_MUSIC + "ConcernedApe - Violin Solo.mp3"
-    $ wnfh_music_list["the_valley_comes_alive"]               = wnfh_MUSIC + "ConcernedApe - Spring (The Valley Comes Alive).mp3"
-    $ wnfh_music_list["the_sun_can_bend_an_orange_sky"]       = wnfh_MUSIC + "ConcernedApe - Summer (The Sun Can Bend an Orange Sky).mp3"
-    $ wnfh_music_list["greenhouse"]                           = wnfh_MUSIC + "_Blacksmith_ - The Greenhouse.mp3"
+    $ wnfh_music_list["technical_chocolatki"]                   = wnfh_MUSIC + "technical_chocolatki.mp3"
+    $ wnfh_music_list["angus_climbs_the_hill"]                  = wnfh_MUSIC + "Alec Holowka - Angus Climbs the Hill.mp3"
+    $ wnfh_music_list["church_hill"]                            = wnfh_MUSIC + "Alec Holowka - Church Hill.mp3"
+    $ wnfh_music_list["crimes"]                                 = wnfh_MUSIC + "Alec Holowka - Crimes.mp3"
+    $ wnfh_music_list["crimes_2"]                               = wnfh_MUSIC + "Alec Holowka - Crimes2.mp3"
+    $ wnfh_music_list["greggs_woods"]                           = wnfh_MUSIC + "Alec Holowka - Gregg's Woods.mp3"
+    $ wnfh_music_list["im_going_to_break_something"]            = wnfh_MUSIC + "Alec Holowka - I'm Going to Break Something.mp3"
+    $ wnfh_music_list["library_investigations"]                 = wnfh_MUSIC + "Alec Holowka - Library Investigations.mp3"
+    $ wnfh_music_list["lori_m"]                                 = wnfh_MUSIC + "Alec Holowka - Lori M.mp3"
+    $ wnfh_music_list["lost_woods"]                             = wnfh_MUSIC + "Alec Holowka - Lost Woods.mp3"
+    $ wnfh_music_list["maes_house_2"]                           = wnfh_MUSIC + "Alec Holowka - Mae's House 2.mp3"
+    $ wnfh_music_list["mystery"]                                = wnfh_MUSIC + "Alec Holowka - Mystery.mp3"
+    $ wnfh_music_list["outskirts"]                              = wnfh_MUSIC + "Alec Holowka - Outskirts.mp3"
+    $ wnfh_music_list["the_bridge"]                             = wnfh_MUSIC + "Alec Holowka - The Bridge.mp3"
+    $ wnfh_music_list["waking_up"]                              = wnfh_MUSIC + "Wnfh - Sunrise.mp3"                                                  ## НАШЕ ##
+    $ wnfh_music_list["waking_up_2"]                            = wnfh_MUSIC + "Alec Holowka - Waking up 2.mp3"
+    $ wnfh_music_list["fireflies_on_the_porch"]                 = wnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
+    $ wnfh_music_list["the_cars_you_might_think"]               = wnfh_MUSIC + "The Cars - You Might Think.ogg"
+    $ wnfh_music_list["proximity"]                              = wnfh_MUSIC + "Alec Holowka - Proximity.mp3"
+    $ wnfh_music_list["we_dont_care"]                           = wnfh_MUSIC + "We Dont Care.ogg"
+    $ wnfh_music_list["sharkle_dream"]                          = wnfh_MUSIC + "Alec Holowka - Sharkle Dream.mp3"
+    $ wnfh_music_list["the_hole_at_the_center_of_everything"]   = wnfh_MUSIC + "Alec Holowka - The Hole At The Center Of Everything.mp3"
+    $ wnfh_music_list["major_grom"]                             = wnfh_MUSIC + "Move Like A Devil.mp3"
+    $ wnfh_music_list["ratne_igre"]                             = wnfh_MUSIC + "Kerber - Ratne Igre.mp3"
+    $ wnfh_music_list["international"]                          = wnfh_MUSIC + "international.mp3"
+    $ wnfh_music_list["strange"]                                = wnfh_MUSIC + "strange.ogg"
+    $ wnfh_music_list["major_grom_2"]                           = wnfh_MUSIC + "ya znayu kto ti.mp3"
+    $ wnfh_music_list["santa_barbara"]                          = wnfh_MUSIC + "santa barbara music.mp3"
+    $ wnfh_music_list["back_in_black"]                          = wnfh_MUSIC + "AC-DC - Back in black.mp3"
+    $ wnfh_music_list["dance_of_the_moonlight_jellies"]         = wnfh_MUSIC + "ConcernedApe - Dance of the Moonlight Jellies.mp3"
+    $ wnfh_music_list["distant_banjo"]                          = wnfh_MUSIC + "ConcernedApe - Distant Banjo.mp3"
+    $ wnfh_music_list["the_smell_of_mushroom"]                  = wnfh_MUSIC + "ConcernedApe - Fall (The Smell of Mushroom).mp3"
+    $ wnfh_music_list["in_the_deep_woods"]                      = wnfh_MUSIC + "ConcernedApe - In the Deep Woods.mp3"
+    $ wnfh_music_list["pleasant_memory"]                        = wnfh_MUSIC + "ConcernedApe - Pleasant Memory (Penny's Theme).mp3"
+    $ wnfh_music_list["tropicala"]                              = wnfh_MUSIC + "ConcernedApe - Summer (Tropicala).mp3"
+    $ wnfh_music_list["schabernack"]                            = wnfh_MUSIC + "Laryssa Okada - Dorfromantik - Schabernack.mp3"
+    $ wnfh_music_list["schoneweide"]                            = wnfh_MUSIC + "Laryssa Okada - Dorfromantik - Schöneweide.mp3"
+    $ wnfh_music_list["big_fish"]                               = wnfh_MUSIC + "Max LL - Big Fish.mp3"
+    $ wnfh_music_list["crows_end"]                              = wnfh_MUSIC + "Max LL - Crow's End.mp3"
+    $ wnfh_music_list["northern_waters"]                        = wnfh_MUSIC + "Max LL - Northern Waters (Night).mp3"
+    $ wnfh_music_list["pulsar_pursuit"]                         = wnfh_MUSIC + "Max LL - Pulsar Pursuit.mp3"
+    $ wnfh_music_list["rain"]                                   = wnfh_MUSIC + "Max LL - Rain.mp3"
+    $ wnfh_music_list["shallow_waters_night"]                   = wnfh_MUSIC + "Max LL - Shallow Waters (Night).mp3"
+    $ wnfh_music_list["the_swarms_of_hades"]                    = wnfh_MUSIC + "Max LL - The Swarms of Hades.mp3"
+    $ wnfh_music_list["razbor_poletov"]                         = wnfh_MUSIC + "razbor poletov - svati.mp3"                                  
+    $ wnfh_music_list["trevoga_1"]                              = wnfh_MUSIC + "Wnfh - Sense of anxiety.mp3"                                         ## НАШЕ ##
+    $ wnfh_music_list["sport2"]                                 = wnfh_MUSIC + "sport2 - svati.mp3"
+    $ wnfh_music_list["estafeta"]                               = wnfh_MUSIC + "estafeta - svati.mp3" 
+    $ wnfh_music_list["country_shop"]                           = wnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
+    $ wnfh_music_list["ya_znayu_kto_ti"]                        = wnfh_MUSIC + "ya znayu kto ti.mp3"
+    $ wnfh_music_list["candy_store"]                            = wnfh_MUSIC + "Candy_store.mp3"
+    $ wnfh_music_list["hide_and_seek"]                          = wnfh_MUSIC + "Sergey Eybog - Hide and Seek.mp3"
+    $ wnfh_music_list["warm_evening"]                           = wnfh_MUSIC + "Sergey Eybog - Warm Evening.mp3"
+    $ wnfh_music_list["paranoid"]                               = wnfh_MUSIC + "Black Sabbath - Paranoid.mp3"
+    $ wnfh_music_list["rainy_day"]                              = wnfh_MUSIC + "Alec Holowka - Rainy Day.mp3"
+    $ wnfh_music_list["god"]                                    = wnfh_MUSIC + "Alec Holowka - God.mp3"
+    $ wnfh_music_list["lost_man"]                               = wnfh_MUSIC + "_Blacksmith_ - The Lost Man.mp3"
+    $ wnfh_music_list["old_manor"]                              = wnfh_MUSIC + "_Blacksmith_ - The Old Manor.mp3"
+    $ wnfh_music_list["hill_camp"]                              = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp.mp3"
+    $ wnfh_music_list["friends_of_the_deceased_moon"]           = wnfh_MUSIC + "_Blacksmith_ - Friends of the Deceased Moon.mp3"
+    $ wnfh_music_list["angus_at_home"]                          = wnfh_MUSIC + "Alec Holowka - Angus at Home.mp3"
+    $ wnfh_music_list["the_hill_camp_morning"]                  = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp Morning.mp3"
+    $ wnfh_music_list["clean_up"]                               = wnfh_MUSIC + "Clean up.mp3"
+    $ wnfh_music_list["dealing_with_destruction"]               = wnfh_MUSIC + "Dealing With Destruction.mp3"
+    $ wnfh_music_list["corridors"]                              = wnfh_MUSIC + "Corridors.mp3"
+    $ wnfh_music_list["violin_solo"]                            = wnfh_MUSIC + "ConcernedApe - Violin Solo.mp3"
+    $ wnfh_music_list["the_valley_comes_alive"]                 = wnfh_MUSIC + "ConcernedApe - Spring (The Valley Comes Alive).mp3"
+    $ wnfh_music_list["the_sun_can_bend_an_orange_sky"]         = wnfh_MUSIC + "ConcernedApe - Summer (The Sun Can Bend an Orange Sky).mp3"
+    $ wnfh_music_list["greenhouse"]                             = wnfh_MUSIC + "_Blacksmith_ - The Greenhouse.mp3"
+    $ wnfh_music_list["magicians_assistant"]                    = wnfh_MUSIC + "_Blacksmith_ - Magicians Assistant.mp3"
+    $ wnfh_music_list["kat_theme_background"]                   = wnfh_MUSIC + "Wnfh - Katya theme(background).mp3"
+    $ wnfh_music_list["kat_theme_orchestra"]                    = wnfh_MUSIC + "Wnfh - Katya theme(orchestra).mp3"
+    $ wnfh_music_list["kat_theme_retro"]                        = wnfh_MUSIC + "Wnfh - Katya theme(retro).mp3"
+    $ wnfh_music_list["emotional_indie_guitar"]                 = wnfh_MUSIC + "_Blacksmith_ - Emotional Indie Guitar Chords.mp3"
+    $ wnfh_music_list["wnfh_morning_1"]                         = wnfh_MUSIC + "Wnfh - Morning in Sovyonok.mp3"
+    $ wnfh_music_list["wnfh_early_awakening_1"]                 = wnfh_MUSIC + "Wnfh - Early Awakening1.mp3"
+    $ wnfh_music_list["time_to_say_goodbye"]                    = wnfh_MUSIC + "Wnfh - Time to say goodbye.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     
     # AMBIENCE Лист
-    $ wnfh_ambience_list["thunder1"]                          = wnfh_AMBIENCE + "back_ambience_litethunders1.mp3"
-    $ wnfh_ambience_list["thunder2"]                          = wnfh_AMBIENCE + "back_ambience_litethunders2.mp3"
-    $ wnfh_ambience_list["underwater1"]                       = wnfh_AMBIENCE + "ambience_int_silence.mp3"
-    $ wnfh_ambience_list["underwater2"]                       = wnfh_AMBIENCE + "koshmar_water.mp3"
-    $ wnfh_ambience_list["beach1"]                            = wnfh_AMBIENCE + "beach_1_6.mp3"
-    $ wnfh_ambience_list["beach_children"]                    = wnfh_AMBIENCE + "beach_children.mp3"
-    $ wnfh_ambience_list["water_stream"]                      = wnfh_AMBIENCE + "water_stream_closer.mp3"
-    $ wnfh_ambience_list["water_drop"]                        = wnfh_AMBIENCE + "water_drop.mp3"
-    $ wnfh_ambience_list["rain_night"]                        = wnfh_AMBIENCE + "ambience_rain_night.mp3"
-    $ wnfh_ambience_list["rain"]                              = wnfh_AMBIENCE + "rain.mp3"
-    $ wnfh_ambience_list["rain_in_building"]                  = wnfh_AMBIENCE + "rain_in_building.mp3"
-    $ wnfh_ambience_list["dush"]                              = wnfh_AMBIENCE + "ambience_showers.mp3"
-    $ wnfh_ambience_list["heartbeating"]                      = wnfh_AMBIENCE + "heartbeating.mp3"
-    $ wnfh_ambience_list["skvoznyak"]                         = wnfh_AMBIENCE + "skvoznyak.mp3"
-    $ wnfh_ambience_list["salute"]                            = wnfh_AMBIENCE + "ambience_salute.mp3"
-    $ wnfh_ambience_list["veter_v_pole"]                      = wnfh_AMBIENCE + "veter-v-pole.mp3"
-    $ wnfh_ambience_list["ambience_int_old_building"]         = wnfh_AMBIENCE + "ambience_int_old_building.mp3"
+    $ wnfh_ambience_list["thunder1"]                            = wnfh_AMBIENCE + "back_ambience_litethunders1.mp3"
+    $ wnfh_ambience_list["thunder2"]                            = wnfh_AMBIENCE + "back_ambience_litethunders2.mp3"
+    $ wnfh_ambience_list["underwater1"]                         = wnfh_AMBIENCE + "ambience_int_silence.mp3"
+    $ wnfh_ambience_list["underwater2"]                         = wnfh_AMBIENCE + "koshmar_water.mp3"
+    $ wnfh_ambience_list["beach1"]                              = wnfh_AMBIENCE + "beach_1_6.mp3"
+    $ wnfh_ambience_list["beach_children"]                      = wnfh_AMBIENCE + "beach_children.mp3"
+    $ wnfh_ambience_list["water_stream"]                        = wnfh_AMBIENCE + "water_stream_closer.mp3"
+    $ wnfh_ambience_list["water_drop"]                          = wnfh_AMBIENCE + "water_drop.mp3"
+    $ wnfh_ambience_list["rain_night"]                          = wnfh_AMBIENCE + "ambience_rain_night.mp3"
+    $ wnfh_ambience_list["rain"]                                = wnfh_AMBIENCE + "rain.mp3"
+    $ wnfh_ambience_list["rain_in_building"]                    = wnfh_AMBIENCE + "rain_in_building.mp3"
+    $ wnfh_ambience_list["dush"]                                = wnfh_AMBIENCE + "ambience_showers.mp3"
+    $ wnfh_ambience_list["heartbeating"]                        = wnfh_AMBIENCE + "heartbeating.mp3"
+    $ wnfh_ambience_list["skvoznyak"]                           = wnfh_AMBIENCE + "skvoznyak.mp3"
+    $ wnfh_ambience_list["salute"]                              = wnfh_AMBIENCE + "ambience_salute.mp3"
+    $ wnfh_ambience_list["veter_v_pole"]                        = wnfh_AMBIENCE + "veter-v-pole.mp3"
+    $ wnfh_ambience_list["ambience_int_old_building"]           = wnfh_AMBIENCE + "ambience_int_old_building.mp3"
     #$ wnfh_ambience_list[""] = wnfh_AMBIENCE + ".mp3"
     
     ## Рандомизация мявков

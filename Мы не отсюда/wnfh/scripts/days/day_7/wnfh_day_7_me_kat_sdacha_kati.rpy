@@ -56,7 +56,7 @@ label d7_me_kat_sdacha_kati:
     
     show mt surprise pioneer at right with dspr
     
-    mt "Всмысле на сушке?"
+    mt "В смысле на сушке?"
     if wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
         show mt angry pioneer at right with dspr
         mt "Семён, ну-ка объясни ситуацию."
@@ -122,7 +122,7 @@ label d7_mt_sdalsya:
 
     show mt surprise pioneer at right with dspr
 
-    mt "Всмысле?"
+    mt "В смысле?"
     me "В прямом. Я облил Катю."
 
     "После моих слов вожатая буквально взорвалась."

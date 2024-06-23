@@ -1,11 +1,19 @@
 label d8_begunok_w_mi:
-
+    window hide dissolve
+    hide mid d8_breakfast_empty with dissolve
+    $ renpy.pause(1.0)
+    stop ambience fadeout 2.5
+    
+    scene bg ext_dining_hall_near_day
+    show mi normal pioneer at left
+    show kat thinking pioneer at right
+    with slide_right_blure_dissolve2
+    play ambience ambience_camp_center_evening fadein 3
+    play music music_list["dance_of_fireflies"] fadein 5
+    $ renpy.pause(1.0)
+    window show dissolve
     $ wnfh_Data.FlagSet("d8_begunok", "miku")
     $ wnfh_set_time()
-    show kat thinking pioneer at right
-    show mi normal pioneer at left
-    with dissolve
-
     "Выйдя из столовой, мы обнаружили одиноко сидящую Катю, которая грустно уставилась в пол."
 
     me "А вот и я. Вернее, мы."

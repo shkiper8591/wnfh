@@ -214,7 +214,7 @@ label d8_un_yes_1:
 
     "Как только Катя закончила с завтраком, мы отправились на выход из столовой."
     
-    jump d8_begunok
+    jump d8_begunok_w_un
 
 label d8_un_no_1:
 
@@ -229,7 +229,7 @@ label d8_un_no_1:
 
     "Дождавшись, когда Катя закочит с завтраком, мы покинули столовую."
 
-    jump d8_begunok
+    jump d8_begunok_canon
 
 label d8_zavtrak_s_miku:
     
@@ -340,7 +340,7 @@ label d8_mi_yes_1:
     
     "Закончив с завтраком, мы с Мику отнесли свои подносы и пошли на выход."
     
-    jump d8_begunok
+    jump d8_begunok_w_mi
 
 label d8_mi_no_1:
     
@@ -365,7 +365,7 @@ label d8_mi_no_1:
 
     "Закончив с завтраком, я попрощался с музыкантшей и, отнеся поднос, вышел из столовой."
 
-    jump d8_begunok
+    jump d8_begunok_canon
 
 label d8_zavtrak_s_el_sh:
 
@@ -463,4 +463,4 @@ label d8_zavtrak_s_el_sh:
 
     "Быстренько всё доев, я пошёл на выход из столовой."
     
-    jump d8_begunok
+    jump d8_begunok_canon

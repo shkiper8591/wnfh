@@ -274,7 +274,7 @@ label d7_male_clubs:
     "Положив ключ под лавку в специальную выемку, я отправился в столовую."
 
     window hide
-    scene bg ext_lenin_square_day with slide_left_blure_dissolve2
+    scene bg ext_lenin_square_day_wnfh with slide_left_blure_dissolve2
     $ wnfh_set_name("din", "Пионерка")
     window show
     ## Семён сталкивается с Диной по пути в столовую
@@ -288,7 +288,7 @@ label d7_male_clubs:
     "Я повернулся назад, и тут же в меня врезалась пионерка."
     
     play sound sfx_chair_fall
-    show bg ext_lenin_square_day at hpunch
+    show bg ext_lenin_square_day_wnfh at hpunch
     
     "Меня она сшибла с ног, сама же чудом смогла устоять на ногах."
     

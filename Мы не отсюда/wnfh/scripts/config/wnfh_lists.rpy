@@ -460,7 +460,6 @@ init 1:
     $ wnfh_music_list["back_in_black"]                          = wnfh_MUSIC + "AC-DC - Back in black.mp3"
     $ wnfh_music_list["dance_of_the_moonlight_jellies"]         = wnfh_MUSIC + "ConcernedApe - Dance of the Moonlight Jellies.mp3"
     $ wnfh_music_list["distant_banjo"]                          = wnfh_MUSIC + "ConcernedApe - Distant Banjo.mp3"
-    $ wnfh_music_list["the_smell_of_mushroom"]                  = wnfh_MUSIC + "ConcernedApe - Fall (The Smell of Mushroom).mp3"
     $ wnfh_music_list["in_the_deep_woods"]                      = wnfh_MUSIC + "ConcernedApe - In the Deep Woods.mp3"
     $ wnfh_music_list["pleasant_memory"]                        = wnfh_MUSIC + "ConcernedApe - Pleasant Memory (Penny's Theme).mp3"
     $ wnfh_music_list["tropicala"]                              = wnfh_MUSIC + "ConcernedApe - Summer (Tropicala).mp3"
@@ -506,6 +505,7 @@ init 1:
     $ wnfh_music_list["wnfh_morning_1"]                         = wnfh_MUSIC + "Wnfh - Morning in Sovyonok.mp3"
     $ wnfh_music_list["wnfh_early_awakening_1"]                 = wnfh_MUSIC + "Wnfh - Early Awakening1.mp3"
     $ wnfh_music_list["time_to_say_goodbye"]                    = wnfh_MUSIC + "Wnfh - Time to say goodbye.mp3"
+    $ wnfh_music_list["good_morning_1"]                         = wnfh_MUSIC + "Wnfh - Good morning!1.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

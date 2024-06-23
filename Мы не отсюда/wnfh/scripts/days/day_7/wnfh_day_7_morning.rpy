@@ -78,7 +78,7 @@ label wnfh_day_7:
     play sound sfx_close_door_1
     play ambience ambience_camp_center_evening fadein 3
     $ renpy.pause(1.0, hard=True)
-    play music wnfh_music_list["the_smell_of_mushroom"] fadein 3.0 
+    play music wnfh_music_list["good_morning_1"] fadein 3.0 
     window show
     ## Поход к умывальникам
     "Стоило мне выйти на улицу, как лёгкие заполнил свежий утренний воздух, что невольно натолкнуло на хорошие мысли."

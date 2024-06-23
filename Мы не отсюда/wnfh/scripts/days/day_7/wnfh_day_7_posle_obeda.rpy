@@ -192,7 +192,6 @@ label d7_choice_un_optional:
     un "Сёмочка, так что, ты надумал прогуляться?"
     un "А то сегодня такая погода чудесная[wp]"
     
-    jump d7_choice_un_optional
     call screen wnfh_choice(
         ["un", "Конечно", "Послеобеденная прогулка — то, что нужно", "d7_un_progulka", {"un":1}],
         ["neutral", "Пожалуй, нет", "После обеда надо спать, а не гулять", "d7_un_no_3_lbl", {"un":-1}],

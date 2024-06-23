@@ -686,4 +686,4 @@ label d8_kat_mi_musclub_continue:
 
     "Синхронно угукнув с Катей, мы отправились на выход."
 
-    jump d8_dinner
+    jump d8_evening

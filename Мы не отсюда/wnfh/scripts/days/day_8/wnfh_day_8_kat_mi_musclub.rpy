@@ -288,22 +288,22 @@ label d8_kat_mi_musclub:
     me "Умно-умно, ничего не сказать."
     kat "Что ж, а теперь давайте все вместе попробуем!"
 
-    $ renpy.notify("Тут надобно вставить таймскип")
+    $ renpy.notify("Тут надобно вставить арт, а пока опирайтесь на текстовое описание")
     window hide dissolve
     stop ambience fadeout 2.0
-    scene black dissolve
+    scene black with dissolve
     window show dissolve
-    play music wnfh_music_list["friends_of_the_deceased_moon"] fadein 2.0
+    play music wnfh_music_list["friends_of_the_deceased_moon"] fadein 3.0
 
     "А потом мы играли и играли, даже пели песни."
     "Я и знать не знал, что у меня столько задора на исполнение музыки."
     $ renpy.notify("Тут стоит проверка ЛП. Там довольно условные числа, которые нужно будет скорректировать исходя из баланса.")
 
-    if wnfh_Data.getChoice_points_sum({"kat"}) >= 4:
+    if wnfh_Data.getChoice_points_sum("kat") >= 4:
 
         "Даже с Катей потанцевал с её инициативы. {w=0.5}Хотя, танцор из меня такой себе, и мои движения больше походили на пьяную пляску."
 
-    elif wnfh_Data.getChoice_points_sum({"mi"}) >= 4:
+    elif wnfh_Data.getChoice_points_sum("mi") >= 4:
 
         "Ещё я немного потанцевал с Мику. {w=0.5}В прочем, мне было о-о-очень далеко до Мику и грации её движений."
 

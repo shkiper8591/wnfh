@@ -195,6 +195,7 @@ label d8_evening_w_kat:
     me "Поддерживаю."
 
     stop music fadeout 5.0
+    stop ambience fadeout 2.0
     window hide dissolve
     jump d8_evening_2
 
@@ -276,7 +277,7 @@ label d8_evening_alone:
     th "Надо будет Алисе с Ульяной рассказать, им как раз интересна военная техника."
     th "Особенно Ульянке, которая хочет однажды стать первой, за долгое время, девушкой танкистом."
     
+    stop ambience fadeout 2.0
     window hide dissolve
     scene black with dissolve
-
     jump d8_evening_2

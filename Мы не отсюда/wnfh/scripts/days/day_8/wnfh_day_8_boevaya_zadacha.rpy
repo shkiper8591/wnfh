@@ -114,7 +114,7 @@ label d8_boevaya_zadacha:
     show mt smile pioneer at right
     with dissolve2
     play ambience ambience_camp_entrance_day fadein 3.5
-    $ wnfh_set_time("voice", "Николай")
+    $ wnfh_set_name("voice", "Николай")
     $ renpy.notify("В идеале, тут должен быть спрайт мужа ОД, но, пока-что, вместо него целое нихуя")
     "На лагерной остановке, кто бы сомневался, стоял автомобиль."
     "Рядом с ним стоял мужчина, который смотрел куда-то вдаль от лагеря и курил."
@@ -237,7 +237,8 @@ label d8_boevaya_zadacha:
     if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         me "К тому же, я сам в такой ситуации буквально вчера был, и понимаю что она имеет ввиду."
-        $ wnfh_Data.AddLove_points({"kat":1})
+        $ renpy.notify("Тут стоит выдача лавпоинтов Кати, но оно сломано (почему-то), поэтому закоменчено.")
+        #$ wnfh_Data.AddLove_points({"kat":1})
 
     show kat smile pioneer close at left
     show mt normal pioneer close at right
@@ -277,7 +278,8 @@ label d8_boevaya_zadacha:
     mt "Что скажешь, Семён. Верим?"
     me "Думаю верим."
 
-    $ wnfh_Data.AddLove_points({"kat":1})
+    $ renpy.notify("Тут стоит выдача лавпоинтов Кати, но оно сломано (почему-то), поэтому закоменчено.")
+    #$ wnfh_Data.AddLove_points({"kat":1})
 
     mt "В таком случае, меняем план."
     mt "Ты и Катя отнесёте коробки в администрацию."
@@ -285,7 +287,7 @@ label d8_boevaya_zadacha:
 
     show mt angry pioneer close at right with dspr
 
-    mt "Я выхожу на тропу войны! Ух я им устрою!"
+    mt "Я выхожу на тропу войны! Ух, я им устрою!"
 
     show mt normal pioneer close at right with dspr
 
@@ -294,7 +296,7 @@ label d8_boevaya_zadacha:
 
     "Вожатая подошла к коробкам и посмотрела на документы в верхней коробке."
 
-    mt "М-да[wp] Хреново, тут были нужные[wp] Но, думаю они ещё годные."
+    mt "М-да[wp] Хреново, тут были нужные[wp] Но, думаю, их ещё можно спасти."
     mt "Ладно, давайте несите их, а я пошла."
 
     hide mt 
@@ -341,7 +343,7 @@ label d8_boevaya_zadacha:
     "Катя заняла дальний стул, скромно сев на его краю и уставив свой взгляд себе под ноги."
     "Я же расположился на стуле более вольяжно. Всё-таки я уже был тут не первый раз и знал, что сюда очень редко заходят."
 
-    play music music_list["confession"] fadein 5.0
+    play music music_list["confession_oboe"] fadein 5.0
 
     if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 

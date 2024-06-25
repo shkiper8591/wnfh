@@ -549,12 +549,12 @@ label d8_obed_me_kat:
     
     me "Вовремя мы однако."
 
-    show kat confused pioneer at center with dspr 
+    show kat confused pioneer at left with dspr 
 
     kat "М? Ты о чём?"
     me "Ты посмотри, сколько людей сюда завалилось, мы бы не протолкнулись."
 
-    show kat pockerface pioneer at center with dspr
+    show kat pockerface pioneer at left with dspr
 
     "Она вяло осмотрела вошедших, пожала плечами и вернулась к еде."
 
@@ -562,12 +562,12 @@ label d8_obed_me_kat:
 
     "Усмехнувшись, я также принялся за обед."
 
-    show kat sad pioneer at center with dspr
+    show kat sad pioneer at left with dspr
 
     kat "Голод и стресс."
     me "Стресс?"
 
-    show kat smile pioneer at center with dspr
+    show kat smile pioneer at left with dspr
 
     kat "Да так, волнуюсь немного по поводу знакомств с новыми людьми."
     kat "Как будут относиться ко мне, примут ли в свой коллектив[wp]"
@@ -576,13 +576,13 @@ label d8_obed_me_kat:
 
     me "Не бери в голову."
 
-    show kat thinking pioneer at center with dspr
+    show kat thinking pioneer at left with dspr
 
     kat "Легко сказать[wp]"
     me "И легко сделать."
     me "Я понимаю, о чём ты, сам через это прошёл здесь. И хочу сказать, что всё довольно-таки просто."
 
-    show kat obida pioneer at center with dspr
+    show kat obida pioneer at left with dspr
 
     me "А стресс лучше не заедать, потолстеешь."
 
@@ -592,7 +592,7 @@ label d8_obed_me_kat:
     kat "Ничё я не потолстею!"
     me "Виноват, само как-то вырвалось."
 
-    show kat upset pioneer at center with dspr
+    show kat upset pioneer at left with dspr
 
     "Она грустно вздохнула и стала водить ложкой по тарелке."
 
@@ -613,22 +613,22 @@ label d8_obed_me_kat_1:
 
     me "Слушай, может, прогуляемся после обеда? Думаю, прогулка хорошо поможет отвлечься."
 
-    show kat thinking pioneer at center with dspr
+    show kat thinking pioneer at left with dspr
 
     "После моего предложения Катя ненадолго задумалась." 
 
     kat "После обеда, пожалуй, нет[wp] Всё же я думала после еды немного отдохнуть, а потом к Мику в клуб сходить."
 
-    show kat happy pioneer at center with dspr
+    show kat happy pioneer at left with dspr
 
     kat "Но вот, скажем, после ужина вполне можно пройтись!"
     me "Отлично, так даже лучше."
 
-    show kat joy pioneer at center with dspr
+    show kat joy pioneer at left with dspr
 
     kat "Вот и славненько."
 
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer at left with dspr
 
     kat "А теперь нам бы с обедом закончить[wp]"
     me "Это верно подмечено!"

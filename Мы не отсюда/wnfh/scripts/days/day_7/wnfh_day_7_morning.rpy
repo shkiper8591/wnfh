@@ -84,7 +84,7 @@ label wnfh_day_7:
     "Стоило мне выйти на улицу, как лёгкие заполнил свежий утренний воздух, что невольно натолкнуло на хорошие мысли."
     
     scene bg ext_houses_sunset with slide_left_blure_dissolve2
-    
+     
     "Я попытался вспомнить, что же мне такого приснилось."
     $ wnfh_Data.get_achievement("handass")
     show wnfh_ctc_animation at center

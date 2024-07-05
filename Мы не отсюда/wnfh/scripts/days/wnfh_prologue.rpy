@@ -277,9 +277,9 @@ label wnfh_prologue:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["neutral" "Где я?", "Надеюсь, что недалеко от дома", "wnfh_prologue_where_am_i", {None}],
-        ["neutral" "Как я сюда попал?", "Как попал сюда, так и выберусь, верно?", "wnfh_prologue_how_i_get_here", {None}],
-        ["neutral" "Какой сейчас год?", "Пусть и банальный вопрос, но полезный[wp] Наверное", "wnfh_prologue_what_year_is_it", {None}],
+        ["neutral", "Где я?", "Надеюсь, что недалеко от дома", "wnfh_prologue_where_am_i"],
+        ["neutral", "Как я сюда попал?", "Как попал сюда, так и выберусь, верно?", "wnfh_prologue_how_i_get_here"],
+        ["neutral", "Какой сейчас год?", "Пусть и банальный вопрос, но полезный[wp] Наверное", "wnfh_prologue_what_year_is_it"],
         ["prologue_choice", "Семён задаёт вопрос вожатой"]
         ) with sphere_blure_dissolve2
 

@@ -549,6 +549,7 @@ label d8_begunok_w_un_2:
 
     window hide dissolve
 
+    stop music fadeout 5.0
     jump d8_obed_me_kat_un
 
 label d8_begunok_w_un_1:
@@ -576,7 +577,8 @@ label d8_begunok_w_un_1:
         "Сказала она и ушла вслед за Леной, оставив меня одного."
         
         th "Ну, зато посижу в тишине и спокойно дождусь обеда."
-        
+
+        stop music fadeout 5.0
         jump d8_obed_alone
     
     else:
@@ -642,6 +644,7 @@ label d8_begunok_w_un_flagcheck_dv_oblila:
     me "Ну что, время обеда."
     kat "Это точно."
 
+    stop music fadeout 5.0
     jump d8_obed_me_kat
 
 label d8_begunok_w_un_flagcheck_ne_oblil:
@@ -729,6 +732,7 @@ label d8_begunok_w_un_flagcheck_ne_oblil:
 
     "Мы медленно поднялись со ступенек и отправились в столовую."
 
+    stop music fadeout 5.0
     jump d8_obed_me_kat
 
 label d8_begunok_w_un_flagcheck_me_oblil:
@@ -813,7 +817,8 @@ label d8_begunok_w_un_appologize:
     "Вдали раздался долгожданный горн на обед."
 
     me "Ну-с, пора идти[wp]"
-
+    
+    stop music fadeout 5.0
     jump d8_obed_me_kat
 
 label d8_begunok_w_un_silience:
@@ -831,4 +836,5 @@ label d8_begunok_w_un_silience:
 
     me "Что ж, пора в путь."
 
+    stop music fadeout 5.0
     jump d8_obed_me_kat

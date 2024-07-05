@@ -1,4 +1,4 @@
-label d8_evening:
+label d8_ending:
 
     window hide dissolve
     stop ambience fadeout 2.0
@@ -60,13 +60,14 @@ label d8_evening:
     stop ambience fadeout 2.0
     show blink
     with None
+    $ renpy.pause(3.0)
     scene black
-    $ renpy.pause(1.5)
-    jump wnfh_day_9
+    stop ambience fadeout 2.0
+    $ renpy.pause(1.5, hard=True)
+    jump d9_morning
 
 label d8_ending_dv:
     
-
     scene bg ext_house_of_mt_night with dissolve2
 
     "Я прошёл пару метров и остановился перед домиком вожатой."
@@ -74,12 +75,12 @@ label d8_ending_dv:
     th "Свет горит[wp] Тут два варианта, либо за меня волнуются, либо Лена не врала."
     th "И я очень надеюсь, что это первый вариант."
 
-    window hide dissolve
     $ wnfh_set_time()
+    window hide dissolve
     stop ambience fadeout 2.0
     scene bg int_house_of_mt_night
-    show mt walk_1 wlk at background
-    with dissolve2
+    show mt walk_1 wlk background
+    with dissolve
     play ambience ambience_int_cabin_night fadein 2.0
     $ renpy.pause(0.3)
     window hide dissolve
@@ -90,6 +91,8 @@ label d8_ending_dv:
 
     me "Здравствуйте."
 
+    hide mt with dspr
+    $ renpy.pause(0.1)
     show mt angry nightdress at center with dissolve
 
     "Как только я дал о себе знать, вожатая подняла на меня свой недовольный взгляд."
@@ -115,20 +118,25 @@ label d8_ending_dv:
 
     "Она вытянула руку и начала загибать пальцы."
 
-    mt "Я простила ваш с Алисой саботаж, когда в душе шла только огненная вода."
+    mt "Я простила ваш с Алисой саботаж, когда в душе шла только горячая вода."
     mt "Я даже простила, как ты разгромил Жене библиотеку, хотя она очень долго возмущалась мне по этому поводу."
-    mt "Но это! Это уже нельзя просто так оставлять."
+
+    "Лукаво улыбнувшись я поднял взгляд обратно на вожатую."
+
+    me "Ну слушайте, была же установка вести себя естественно, вот и выполняю приказ."
+    mt "Да, но это не значит, что ты должен мешать остальным."
+    mt "Короче! Это уже нельзя просто так оставлять."
     mt "А значит, завтра будет ждать тебя наказание."
 
     if wnfh_Data.FlagGet("mt_angry") == True:
 
-        mt "При этом двойное."
+        mt "При этом двойное уже."
 
     "Наконец, вожатая отошла в сторону, пропуская меня дальше в дом."
     "Разумеется, я незамедлительно воспользовался такой возможностью и, быстренько сняв форму, лег под одеяло."
 
-    show bg int_house_of_mt_night2 with dspr
     $ wnfh_set_time("night")
+    show bg int_house_of_mt_night2 with dspr
 
     "Грустно вздохнув, вожатая выключила свет в доме."
 
@@ -142,6 +150,8 @@ label d8_ending_dv:
     window hide dissolve
     show blink
     with None
+    stop ambience fadeout 2.0
+    $ renpy.pause(3.0)
     scene black
-    $ renpy.pause(1.5)
-    jump wnfh_day_9
+    $ renpy.pause(1.5, hard=True)
+    jump d9_morning

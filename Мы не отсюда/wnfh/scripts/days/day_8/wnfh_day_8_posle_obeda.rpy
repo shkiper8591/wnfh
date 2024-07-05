@@ -211,7 +211,7 @@ label d8_posle_obeda_mt_angry:
     
     mt "Семён, ответь мне, пожалуйста, на один вопрос."
 
-    show mt sad pioneer at center with dspr
+    show mt sad pioneer panama at center with dspr
 
     mt "Я настолько плохой человек? Или делаю что-то не так? Что за неуважение ко мне и моим поручениям?"
     mt "Разве я так много попросила? Просто проводи девочку, симпатичную, между прочим, покажи ей где что и всё."
@@ -220,15 +220,15 @@ label d8_posle_obeda_mt_angry:
     "Заметив это, Ольга взяла с подоконника стакан и поставила его рядом со мной."
     "После чего из принесённой с собой бутылки она налила мне немного яблочного сока."
     
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer panama at center with dspr
 
     mt "На вот, чтобы не грустил."
 
-    show mt angry pioneer at center with dspr
+    show mt angry pioneer panama at center with dspr
 
     mt "Но не думай, что это прощение! Это пряник."
     
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer panama at center with dspr
 
     mt "А кнут сейчас озвучу."
     
@@ -242,7 +242,7 @@ label d8_posle_obeda_mt_angry:
     
     me "А это ещё зачем?"
 
-    show mt grin pioneer at center with dspr
+    show mt grin pioneer panama at center with dspr
 
     mt "Чтобы спокойным был, когда узнаешь о своём наказании."
     
@@ -252,11 +252,11 @@ label d8_posle_obeda_mt_angry:
     
     me "Так что?"
 
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer panama at center with dspr
 
     mt "Итак, Семён. Весь следующий день, после завтрака, с перерывом на обед и до ужина, будешь ты[wp]"
 
-    show mt smile pioneer at center with dspr
+    show mt smile pioneer panama at center with dspr
 
     mt "Красить деревья!"
 
@@ -266,12 +266,12 @@ label d8_posle_obeda_mt_angry:
     mt "Ну нет, только те, что на территории лагеря и у ворот."
     me "Ясно[wp] Что ж, ладно."
 
-    show mt smile pioneer at center with dspr
+    show mt smile pioneer panama at center with dspr
 
     mt "Вот и славненько."
     mt "Завтра подойдёшь к складу, тебе выдадут всё необходимое."
 
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer panama at center with dspr
 
     mt "И помни, Семён — это я ещё добрая."
     
@@ -279,7 +279,7 @@ label d8_posle_obeda_mt_angry:
     
     me "Хорошо, запомню[wp] А теперь можно я прилягу отдохнуть?"
 
-    show mt smile pioneer at center with dspr
+    show mt smile pioneer panama at center with dspr
 
     mt "Конечно нет!"
     
@@ -287,7 +287,7 @@ label d8_posle_obeda_mt_angry:
 
     th "Вот же су[wp]"
 
-    show mt normal pioneer at center with dspr
+    show mt normal pioneer panama at center with dspr
 
     mt "У меня для тебя есть боевая задача."
     mt "Как понимаешь, возможности отказаться у тебя нет."

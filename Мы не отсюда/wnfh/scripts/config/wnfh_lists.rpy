@@ -422,6 +422,7 @@ init 1:
     $ wnfh_sfx_list["bucket_water_hit"]                         = wnfh_SFX + "bucket_water_hit.ogg"
     $ wnfh_sfx_list["cardboard_box_drop"]                       = wnfh_SFX + "cardboard-box-drop.ogg"
     $ wnfh_sfx_list["slow_helicopter_loop"]                     = wnfh_SFX + "slow-helicopter-loop.ogg"
+    $ wnfh_sfx_list["budilnik"]                                 = wnfh_SFX + "budilnik.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
     

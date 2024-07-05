@@ -18,7 +18,7 @@ label d7_me_kat_sdacha_kati:
     
     me "А вот и мы."
 
-    $ wnfh_get_achievement("post") 
+    $ wnfh_Data.get_achievement("post") 
     $ renpy.pause(1.0, hard=True)
     show mt dc_smotrit dc background with dspr
 

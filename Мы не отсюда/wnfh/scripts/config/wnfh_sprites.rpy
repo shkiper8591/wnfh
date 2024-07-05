@@ -335,6 +335,8 @@ init 2:
         make_sprites_for('sl', 'wh', ['mod:<emotion>'], distances=['background'])
         make_sprites_for('sd', 'wh', ['mod:<emotion>'], distances=['background'])
         make_sprites_for('mt', 'dc', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('mt', 'wlk', ['mod:<emotion>'], distances=['background'])
+        make_sprites_for('mt', 'cln', ['mod:<emotion>'], distances=['background'])
         #make_sprites_for('', '', ['mod:', 'mod:<emotion>'])
         
         

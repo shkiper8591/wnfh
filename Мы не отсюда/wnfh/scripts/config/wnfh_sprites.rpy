@@ -30,6 +30,8 @@ init 2:
                 'angry': 2, 'rage': 2,
                 'grin': 3, 'laugh': 3,
                 'dc_reading': 4, 'dc_smotrit': 4,
+                'walk_1': 5, 'walk_2': 5, 'walk_3': 5, 'walk_4': 5, 'walk_5': 5,
+                'clean_1': 6, 'clean_1_pod': 6, 'clean_2': 6, 'clean_2_1': 6, 'clean_2_pod': 6, 'clean_3': 6,
             },
             'sh': {
                 'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1,

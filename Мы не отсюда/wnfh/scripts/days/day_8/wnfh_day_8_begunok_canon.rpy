@@ -280,7 +280,7 @@ label d8_begunok_canon:
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_day with door_invert_blure_dissolve
     play sound sfx_close_door_1
-    show kat normal pioneer with dissolve
+    show kat normal pioneer close at center with dissolve
     play ambience ambience_camp_center_day fadein 3
     window show dissolve
 
@@ -288,11 +288,11 @@ label d8_begunok_canon:
     
     me "Ну-с, как тебе лагерь?"
     
-    show kat smile2 with dspr
+    show kat smile2 pioneer close at center with dspr
     
     kat "Уютненько, люди хорошие."
     
-    show kat obida with dspr
+    show kat obida pioneer close at center with dspr
     
     kat "Кроме тех двух[wp]"
     kat "Ну, тех, которые из ведра меня на входе окатили."
@@ -315,19 +315,32 @@ label d8_begunok_canon:
     me "Наверное, немного поздновато задавать такой вопрос, но[wp]"
     me "Почему ты приехала на неделю позже?"
     
-    show kat thinking with dspr
+    show kat smile pioneer close at center with dspr 
     
-    "Катя серьёзно задумалась над моим вопросом."
-    "Так, словно я спросил её о чём-то очень необычном."
+    kat "Из отпуска с родителями вернулась позавчера только."
+    kat "Сначала у нас всё совпадало, но отцу дали ещё одну недельку отгула."
+    me "Ха, повезло."
+
+    show kat joy pioneer close at center with dspr
     
-    kat "Я[wp] {w}Я не знаю[wp]"
-    me "В смысле[wp] Не знаешь?"
+    kat "Очень!"
+    me "А где отдыхали?"
     
+    show kat smile pioneer close at center with dspr
+
+    kat "В Софии."
+    me "В Болгарии чтоле?"
+    kat "Ага."
+
+    th "Надо же, точно дочка какого-то партийного деятеля, либо стахановца."
+
+    me "А кем у тебя отец работает?"
+
     play sound sfx_dinner_horn_processed
     
     "Катя уже собиралась что-то ответить, но горн на обед прервал её."
     
-    me "Ладно, потом расскажешь."
+    kat "Потом расскажу, как-нибудь."
     
     "Мы молча отправились в столовую."
 

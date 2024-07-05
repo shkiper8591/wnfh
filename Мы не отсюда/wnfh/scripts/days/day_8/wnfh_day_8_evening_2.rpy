@@ -316,7 +316,7 @@ label d8_evening_2_w_dv:
 
     me "Песня про зайцев!"
 
-    play music wnfh_music_list["we_dont_care"] fadein 5
+    play music wnfh_music_list["we_dont_care"] fadein 5.0
     window hide dissolve
     show cg d8_dv_sem_scene_wnfh with dspr
     $ wnfh_set_mode(nvl)
@@ -367,10 +367,109 @@ label d8_evening_2_w_dv:
     nvl hide dissolve2
     $ wnfh_set_mode()
     stop music fadeout 3
-    hide cg d8_dv_sem_scene_wnfh with dissolve
-    show dv laugh with dspr
+    hide cg d8_dv_sem_scene_wnfh
+    show dv laugh pioneer close at center
+    with dissolve
     window show dissolve
 
-    "На этом повествование, пока-что, обрывается."
-    "Дальнейший клик отправит вас в главное меню."
-    "Я вас предупредил!"
+    dv "Не знала, что ты так могёшь!"
+
+    "Алиса по-дружески стукнула меня по плечу."
+
+    me "Старался."
+
+    show dv surprise pioneer close at center with dspr
+
+    "Вдруг, совершенно неожиданно, со стороны скамеек послышались медленные аплодисменты."
+    "Мы синхронно повернулись на источник звука."
+    "Там, на лавочке, сидела Лена, которая сразуже прекратила хлопать в ладоши как мы обратили на неё внимание."
+
+    show dv surprise pioneer close at left
+    show un normal pioneer close at right
+    with dissolve
+
+    "Она подошла к нам и, ловко запрыгнув, села справа от меня."
+
+    un "Не поздно ли для музыки?"
+
+    show dv normal pioneer close at left with dspr
+
+    dv "А тебе-то что?"
+
+    "Лена хмыкнула."
+
+    un "Ну как что, лежишь, тихо мирно спишь и тут БАМ!"
+    un "Танцы, музыка, оры. Как тут уснуть?"
+
+    th "Надо же, неужели мы так громко пели?"
+
+    show dv guilty pioneer close at left with dspr
+
+    dv "Ладно, прости."
+
+    "Тихо пробубнила себе под нос Алиса."
+
+    un "Что-что? Не слышу."
+    dv "Прости!"
+
+    "Уже четко и ясно сказала она."
+
+    un "Знаешь, не у меня проси прощения, а у лагеря."
+
+    "Гордо подняв подбородок вверх, она бросила на нас недовольный взгляд."
+
+    show un normal pioneer at right with dspr
+
+    "После чего спрыгнула со сцены."
+
+    un "Надеюсь, завтра вы, хотя бы, перед своими товарищами извинитесь."
+
+    show dv guilty pioneer close center
+    hide un 
+    with dissolve
+
+    "Круто развернувшись на месте, Лену ушагала прочь во тьму."
+
+    show dv shy pioneer close at center with dspr
+
+    dv "Заигрались мы."
+    me "Да уж, давай скорее сворачиватся."
+    me "А то, чую я, Лена не единственная кто захочет нас посетить."
+
+    show dv normal pioneer close at center with dspr
+
+    dv "Согласна."
+
+    "Одновременно мы спрыгнули со сцены и покинули её."
+
+    show bg ext_houses_night_wnfh 
+    show dv normal pioneer at center
+    with dissolve
+
+    "Остановились мы на перекрёстке."
+
+    dv "Ну-с, тебе туда, мне туда."
+    me "Ага[wp]"
+
+    show dv smile pioneer at center with dspr
+
+    dv "Эй, не кисни!"
+
+    "Она потрепыхала мои волосы."
+
+    dv "Хорошо же посидели?"
+    dv "Подумаешь, Ленка высказалась."
+    dv "Небось, преукрасила, что нас так слышно было."
+    dv "Так что давай, не бери в голову."
+
+    "От дружеского подбадривания Алисы, действительно стало попроще на душе."
+    "Хоть и чувство стыда всё равно сохранилось."
+
+    me "Ладно, давай уже по койкам."
+    dv "Верно."
+
+    hide dv with dissolve
+
+    "Алиса, по-дружески приобняв меня, ушла в свою сторону."
+
+    jump d8_ending_dv

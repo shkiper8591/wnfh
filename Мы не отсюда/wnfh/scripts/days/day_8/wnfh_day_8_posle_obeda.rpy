@@ -93,6 +93,8 @@ label d8_posle_obeda:
 
 label d8_posle_obeda_mt_angry:
 
+    $ wnfh_Data.FlagSet("mt_angry") == True
+
     "В это же время пришла и Ольга Дмитриевна."
 
     show mt angry pioneer panama at center with dspr

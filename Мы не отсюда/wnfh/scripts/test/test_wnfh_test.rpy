@@ -48,6 +48,8 @@ label wnfh_test_main_menu:
             jump wnfh_test_map
         "Переходы":
             jump wnfh_test_transitions
+        "Анимированные шейдеры":
+            jump wnfh_test_shaders
         "Покинуть меню отладки":
             return
 

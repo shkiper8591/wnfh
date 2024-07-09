@@ -33,6 +33,9 @@ init -5 python:
     ### Видео ###
     wnfh_VIDEO = wnfh_ROOT + "video/"
 
+    ### Шейдеры ###
+    wnfh_DS = wnfh_IMAGES + "DynamicShaders/"
+
     #### Путь в оригинальную игру ####
     wnfh_ES_IMAGES = "images/"
     

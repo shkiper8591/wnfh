@@ -483,6 +483,10 @@ label d8_kat_mi_musclub:
 
 label d8_me_dv_yes_near_musclub:
 
+    if wnfh_Data.FlagGet("mt_angry") == True:
+
+        $ wnfh_Data.FlagSet("double_nakazanie") == True
+
     me "Всё равно вечером делать будет нечего."
     me "Поэтому, думаю, можно немного дать року."
 

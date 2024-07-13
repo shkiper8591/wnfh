@@ -174,21 +174,21 @@ label d9_morning:
 
     "Подняв голову обратно, я подошёл к соседнему с Катей умывальнику."
 
-    show kat smile pioneer at center with dissolve
+    show kat smile pioneer loose at center with dissolve
 
     me "Доброе утро."
     kat "Да уж, доброе."
 
     if wnfh_Data.getChoice_result_number("d8_choice_n11") == 1:
 
-        show kat upset pioneer at center with dspr
+        show kat upset pioneer loose at center with dspr
 
         kat "Хотя, я бы его таковым не назвала."
         me "Почему?"
         kat "Да блин, кто-то ночью музыку играл и громко пел."
         kat "Потом ещё полночи из головы слова песни не вылезали."
 
-        show kat thinking pioneer at center with dspr
+        show kat thinking pioneer loose at center with dspr
 
         kat "Что-то про зайцев там было, не помню уже точно."
 
@@ -196,13 +196,186 @@ label d9_morning:
 
         me "Надеюсь этих нарушителей поймают и накажут."
 
+        show kat obida pioneer loose at center with dspr
+
         kat "Да, я тоже."
 
-    show kat normal pioneer at center with dspr
+    show kat normal pioneer loose at center with dspr
+    play sound sfx_open_water_sink
+    $ renpy.pause(1.0, hard=True)
+    play sound sfx_water_sink_stream loop
 
-    kat "А ты чего так рано встал?"
-    me "А тебя ебать не должно. Короче, паренёк который это читает."
-    kat "М? С кем это ты?"
-    me "Тихо биля, не видишь джигиты разговаривают?!"
-    me "Короче, кликнишь и отправишься в главное меню игры, усёк?"
-    me "Последнее предупреждение дружище."
+    "Я положил пакет рядом на землю и достал оттуда всё необходимое."
+    "После чего включил воду и приступил к умыванию."
+    "Вода, разумеется, была холодной, что выбило из меня все остатки сна."
+
+    th "Интересно, когда душ починят? Уже сил нет, да и помыться бы[wp]"
+    th "Хотя, мне ли жаловаться? Сам же с Алисой саботаж шутки ради устроили, а починить обратно не смогли."
+
+    kat "Кстати, а ты чего так рано встал?"
+    me "Будильник."
+
+    "Она слегко усмехнулась."
+
+    kat "Понимаю."
+    kat "Света тоже постоянно заводит будильник на пораньше."
+    kat "Только сегодня она этого почему-то не сделала."
+    me "Ты живёшь со Светой?"
+
+    "Удивлённо спросил я."
+
+    show kat surprise pioneer loose at center with dspr
+
+    kat "Да, а что такого?"
+    me "Да в общем-то ничего, просто неповезло тебе."
+
+    show kat thinking pioneer loose at center with dspr
+
+    kat "Не знаю, вроде хорошая девчушка."
+
+    show kat happy pioneer loose at center with dspr
+
+    kat "Да, строгая местами, но любящая поболтать по душам."
+
+    "Я пожал плечами."
+
+    me "У меня другое о ней мнение[wp]"
+
+    show kat smile2 pioneer loose at center with dspr
+
+    kat "А ещё ей Шурик нравится."
+
+    "От такой вести я резко выплюнул всю воду из рта."
+    "После чего направил удивлённый взгляд на хитро улыбающуюся Катю."
+
+    th "Вот и думай теперь, это шутка такая или она серьёзно? Да и вообще к чему это всё?"
+
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
+
+        th "Не то чтобы у неё не было поводов подшутить надо мной, но[wp] Блин."
+
+    me "Ты сейчас серьёзно?"
+    kat "Абсолютно."
+
+    "Я задумался над словами Кати."
+
+    me "Знаешь, а это имеет смысл[wp]"
+    me "Только вот, зачем мне эта информация?"
+
+    show kat grin pioneer loose at center with dspr
+
+    kat "Просто."
+    me "Просто так о таком не болтают."
+
+    "Катя быстренько оглянулась вокруг."
+
+    show kat thinking pioneer loose at center with dspr
+
+    kat "Это может быть прозвучит странно, но я хочу ей помочь."
+    kat "Дело в том, что Александр, не замечает знаков внимания."
+
+    show kat upset pioneer loose at center with dspr
+
+    kat "И её это очень угнетает."
+    me "А как это тебя касается?"
+
+    show kat thinking pioneer loose at center with dspr
+
+    kat "Никак, просто хочу помочь."
+    kat "Но я с Александром не дружу."
+
+    show kat happy pioneer loose at center with dspr
+
+    kat "А ты вот очень даже."
+    me "Ещё с ним хорошо Сергей дружит."
+
+    show kat thinking pioneer loose at center with dspr
+
+    kat "Его я тоже не знаю."
+
+    play sound sfx_close_water_sink
+
+    "Закончив наконец с умыванияем, я вытер лицо и сложил принадлежности обратно в пакет."
+
+    show kat happy pioneer loose at center with dspr
+
+    kat "Так что скажешь? Поможем товарищам?"
+
+    window hide dissolve
+    call screen wnfh_choice(
+        ["kat", "Я согласен", "Всё ради товарища и любви", "d9_morning_yes", {"kat":1}],
+        ["neutral", "Откажусь", "Они ребята взрослые, сами разберутся", "d9_morning_no"],
+        ["d9_choice_n1", "Катя предлагает свести Шурика и Свету"]
+        ) with sphere_blure_dissolve2
+
+label d9_morning_yes:
+
+    window show dissolve
+
+    "Потоптавшись на месте, приняв все за и против, я всё же решил поддержать Катю в её задумке."
+
+    me "Давай поиграем в купидонов."
+
+    show kat laugh pioneer loose at center with dspr
+
+    kat "Это точно."
+    me "Только что мы для этого будем делать?"
+
+    show kat smile2 pioneer loose at center with dspr
+
+    kat "Ну смотри, тебе нужно будет поговорить с Александром."
+    kat "Узнать как он относится к Свете, что думает."
+    kat "И уже от этого мы будем с тобой отталкиваться."
+    me "Принял."
+
+    jump d9_morning_continue
+
+label d9_morning_no:
+
+    window show dissolve
+
+    "Потоптавшись на месте, приняв все за и против, я понял, что лучше в этом не участвовать."
+
+    me "Не буду лезть в чужие отношения."
+
+    show kat thinking pioneer loose at center with dspr
+
+    kat "Так не нужно лезть, просто немного помочь."
+    me "Вот пусть они сами себе и помогают."
+
+    show kat upset pioneer loose at center with dspr
+
+    "Она грустно вздохнула."
+
+    kat "Ладненько[wp]"
+
+    jump d9_morning_continue
+
+label d9_morning_continue:
+
+    show kat normal pioneer loose at center with dspr
+
+    kat "Что же, я пойду, мне надо ещё причёску навести."
+    me "Ну давай, а я, пожалуй, посижу немного ещё на природе."
+
+    "Катя осмотрелась вокруг."
+
+    kat "Так себе природа."
+    me "Зато тихо и свежо."
+    kat "Ладно, до встречи."
+
+    hide kat with dissolve
+
+    "Сказала она и, помохав рукой на прощание, ушла к домикам."
+    "Когда она скрылась, я отошёл в сторону и расположился под деревом."
+
+    th "Времени ещё полно наверное, около часа точно есть."
+    th "Нужно придумать какое-нибудь себе развлечение, а не то я начну опять задумываться о ненужных мыслях от которых болит голова."
+    th "А я не хочу ходить с больной головой, тем более когда у меня закончились таблетки от головной боли."
+    th "Кстати, а это мысль сходить в медпункт и, так сказать, пополнить запасы."
+    th "Только, просто так мне не дадут целую пачку[wp] С другой стороны, можно попробовать договорится."
+    th "[wp]Ну или обворовать на крайний случай. Думаю никто от такого не расстроится."
+
+    "Ещё немного полежав под деревом я встал и, закинув пакет за спину, отправился на площадь."
+
+    jump d9_aidpost_morning

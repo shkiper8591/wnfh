@@ -16,7 +16,7 @@ label d8_ending:
     with dissolve2
     play ambience ambience_int_cabin_night fadein 2.0
     $ renpy.pause(0.3)
-    window show dissolve
+    window show dissolve 
 
     "Тихонько я вошел в дом."
     "Вожатая там уже готовила свою постель ко сну и, видимо, не услышала как я зашёл."

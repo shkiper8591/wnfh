@@ -107,7 +107,7 @@ label d9_morning:
 
     stop ambience fadeout 1.0
     scene bg int_house_of_mt_sunset with dissolve
-    play ambience ambience_int_cabin_evening faden 1.0
+    play ambience ambience_int_cabin_evening fadein 1.0
 
     "Я тихонько приоткрыл дверь."
 

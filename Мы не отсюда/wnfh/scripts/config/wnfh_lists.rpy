@@ -505,6 +505,7 @@ init 1:
     $ wnfh_music_list["time_to_say_goodbye"]                    = wnfh_MUSIC + "Wnfh - Time to say goodbye.mp3"
     $ wnfh_music_list["good_morning_1"]                         = wnfh_MUSIC + "Wnfh - Good morning!1.mp3"
     $ wnfh_music_list["the_historical_society"]                 = wnfh_MUSIC + "Alec Holowka - The Historical Society.mp3"
+    $ wnfh_music_list["i_wanna_rock"]                           = wnfh_MUSIC + "Twisted_Sister_-_I_Wanna_Rock.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

@@ -75,7 +75,7 @@ label d9_aidpost_morning_wait:
 
     "Она загадочно усмехнулась."
 
-    if wnfh_Data.getChoice_points_sum("dv") <= 4: 
+    if wnfh_Data.getChoice_points_sum("dv") >= 4: 
         $ wnfh_Data.FlagSet("d9_tabletochki", True)
         dv "Знаешь, я могу их тебе достать."
         me "Правда?"
@@ -210,7 +210,7 @@ label d9_aidpost_morning_vzlom_jopi:
 
     "Она загадочно посмотрела на меня."
 
-    if wnfh_Data.getChoice_points_sum("dv") <= 4:
+    if wnfh_Data.getChoice_points_sum("dv") >= 4:
         $ wnfh_Data.FlagSet("d9_tabletochki", True)
         dv "Хорошо, сколько тебе? Одну, две?"
 
@@ -224,7 +224,7 @@ label d9_aidpost_morning_vzlom_jopi:
         me "Да."
 
         show dv laugh pioneer at center with dspr
-
+        # Ниже сказанное слово из уст Алисы, скверным словом не является, поэтому под цензуру не попадает. Тот кто имеет противоположное мнение, может убиться головой об стенку.
         dv "Манда!"
 
         "Она легонько стукнула меня по макушке."
@@ -332,7 +332,7 @@ label d9_aidpost_morning_vzlom_jopi:
 
     play music wnfh_music_list["i_wanna_rock"] noloop fadein 1.0
 
-    "Услышав мой удотлеворительный ответ, она включила проигрывание и в уши вдарил «Твистед систер»."
+    "Услышав мой удовлетворительный ответ, она включила проигрывание и в уши вдарил «Твистед систер»."
     "Я аж немного дернулся от столь громкого звучания и, видимо заметив это, Алиса немного убавила звук."
 
     th "Теперь ясно, чего она не слышала как я стучался."
@@ -363,7 +363,7 @@ label d9_aidpost_morning_vzlom_jopi:
 
     "Взяв плеер со стола, она повертела его передо мной."
 
-    if wnfh_Data.getChoice_points_sum("dv") <= 5:
+    if wnfh_Data.getChoice_points_sum("dv") >= 5:
 
         "Я немного задумался."
 

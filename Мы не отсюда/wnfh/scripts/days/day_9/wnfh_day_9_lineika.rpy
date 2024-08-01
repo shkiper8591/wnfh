@@ -81,6 +81,8 @@ label d9_lineika:
 
     "Как только пионеры заслышали про столовую, те мигом повернулись и отправились за завтраком."
 
+    window hide dissolve
+
     if wnfh_Data.FlagGet("mt_angry") == True:
 
         jump d9_lineika_w_usw
@@ -143,4 +145,15 @@ label d9_lineika_w_usw:
 
     usw "Не знаю, видимо нет."
 
-    jump d9_zavtrak_w_usw_dv
+    "Она остановилась."
+
+    usw "Так, ты иди, а мне надо быстренько кое-куда отойти."
+    usw "Если что в столовой пересечемся."
+
+    hide usw with dissolve
+
+    "Ульяна ловко вырвалась вперёд, и ускакала куда-то в сторону спортплощадки."
+    "Пожав плечами, я продолжил свой путь."
+
+    window hide dissolve
+    jump d9_zavtrak

@@ -393,7 +393,6 @@ label d9_aidpost_morning_vzlom_jopi:
 
     "Грустно угукнув, без лишних слов, мы отправились на выход."
 
-
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg ext_aidpost_sunset_wnfh with dissolve2

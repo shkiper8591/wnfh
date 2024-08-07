@@ -106,7 +106,7 @@ label d7_me_meet_kat_alt:
     sl "Как так-то?"
     me "Потом расскажу."
     
-    show sl wh_tyanetsa wh background with dspr
+    show sl wh_tyanetsa wh background at center with dspr
 
     "Славя моментально удалилась к стеллажам с формой."
     

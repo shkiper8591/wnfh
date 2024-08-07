@@ -325,7 +325,7 @@ label d7_me_meet_kat_alone:
     
     hide sl with dspr
     $ renpy.pause(0.25)
-    show sl wh_tyanetsa wh background with dspr
+    show sl wh_tyanetsa wh background at center with dspr
     
     "Славя отошла обратно к стеллажу и потянулась наверх за формой." 
     

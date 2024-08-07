@@ -242,7 +242,7 @@ label d7_sl_probejka:
     
     # Бежит #
     
-    scene bg ext_path_sunset
+    scene bg ext_path_sunset at wnfh_running
     # тут надо прикол, типа семён бежит. Но он сломан, а главные кодовый чинила ты Стас.
     # может тут надо цг? 
     "Мы выбежали на небольшой пролесок."

@@ -5,11 +5,11 @@ label d7_ending:
     scene bg ext_lenin_square_night_wnfh with slide_left_blure_dissolve2
     play ambience ambience_camp_center_night fadein 3
 
-    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
+    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
 
         jump d7_ending_un
 
-    elif wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
 
         jump d7_ending_dv
 
@@ -28,6 +28,7 @@ label d7_ending_un:
     th "Только краем глаза посмотришь на неё, так она сразу чуть ли не в комок съёживается."
     th "И двух слов связать не может, взгляд в сторону уводит[wp]"
     th "А тут[wp]"
+    #КОСЯК: вариация, где Лена не обнимает Семёна, и тот ничем особо не удивлён. Или можно если ЛП Лены меньше 4 сразу перекинуть на мейн-эндинг.
     
     show bg ext_houses_night_wnfh with dissolve2
 
@@ -52,7 +53,7 @@ label d7_ending_dv:
     show bg ext_houses_night_wnfh with dissolve2
 
     th "А пока мне бы придумать, что бы такого сказать Ольге Дмитриевне."
-    th "Какая на сей раз у меня будет отмазка[wp]"
+    th "Какая на сей раз у меня будет отмазка?"
     th "Хотя[wp] Пофигу, так и скажу ей, мол, гулял. Всё равно она и так понимает, что все мои отмазки — враньё."
 
     window hide dissolve

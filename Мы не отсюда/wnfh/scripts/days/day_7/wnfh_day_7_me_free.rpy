@@ -20,14 +20,14 @@ label d7_me_free:
     $ renpy.pause(2.5)
     play sound sfx_dinner_horn_processed
     show unblink
-    scene ext_lenin_square_day_wnfh
+    scene bg ext_lenin_square_day_wnfh
     with None
     window show dissolve
 
     "Неизвестное количество времени спустя меня разбудил горн к обеду."
 
-    me "Ну, пора набивать желудок пищей."
+    me "Ну, пора набивать желудок."
 
-    "Встав с лавочки, я неспеша пошел к столовой."
+    "Встав с лавочки, я неспеша пошёл к столовой."
 
     jump d7_obed

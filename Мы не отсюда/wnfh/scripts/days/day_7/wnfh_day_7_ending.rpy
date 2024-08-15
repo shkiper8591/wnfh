@@ -16,6 +16,7 @@ label d7_ending:
     else:
 
         jump d7_ending_main
+        #КОСЯК: здесь нужен не выбор 8, а выборы 13 и 15.
 
 label d7_ending_un:
     

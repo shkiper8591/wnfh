@@ -22,6 +22,18 @@ label wnfh_test_shaders:
     with dissolve
 
     "Showing bg. With outlines. Classic perlin texture 512x512."
+
+    "test rain drops"
+    show expression SRD_square
+    $ renpy.pause(5.0)
+    show expression SRD_dv:
+        xalign 0.0
+        ease 4.0 xalign 1.0
+        ease 4.0 xalign 0.0
+        repeat
+
+    with dissolve
+
     "end"
 
     jump wnfh_test

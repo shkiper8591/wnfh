@@ -29,3 +29,20 @@ init 50:
 
     $ wnfh_DS_slavya_internal_zero = DynamicDissolvingImage(child="sl smile pioneer far", noise_texture="wnfh_DS_turbulence_noise", internal_transparency_power=1.0, outlines_power=5.0)
     ###########################################################################
+
+    ### RainDrops ###
+
+    #<Классическое объявление.>#
+    #<show SRD_bg_classic_define>#
+    image SRD_bg_classic_define = ScreenRainDropsImage(child="bg ext_square_day")
+    ###########################
+
+    #<Объявление как обычная переменная, хранящая ссылку на экземпляр класса.>#
+    #<Позволяет изменять поля и использовать доступные методы.>#
+    #$ SRD_square.random_drop_speed()#
+    #show expression SRD_square#
+    #$ SRD_square.puddles_size = 4.0#
+    #$ Параметры, изменённые после <show expression> всё равно изменят поведение изображения.#
+    $ SRD_square = ScreenRainDropsImage(child="bg ext_lenin_square_night_wnfh")
+    $ SRD_dv = ScreenRainDropsImage(child="dv surprise pioneer far") #<Дождевая Алиса, прикиньте. Я не проверял как она работает -_->#
+    ###########################################################################

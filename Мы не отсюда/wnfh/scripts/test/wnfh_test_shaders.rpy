@@ -23,7 +23,8 @@ label wnfh_test_shaders:
 
     "Showing bg. With outlines. Classic perlin texture 512x512."
 
-    "test rain drops"
+    scene bg ext_lenin_square_night_wnfh
+    "test raindrops"
     show expression SRD_square
     $ renpy.pause(5.0)
     show expression SRD_dv:
@@ -32,8 +33,17 @@ label wnfh_test_shaders:
         ease 4.0 xalign 0.0
         repeat
 
+    "test raindrops camera"
+    scene bg ext_lenin_square_night_wnfh
+    $ renpy.pause(5.0)
+    camera at SRD_screen_raindrops_effect()
+    $ renpy.pause(5.0)
+    show sl smile pioneer far
+    $ renpy.pause(5.0)
     with dissolve
 
     "end"
 
+    camera
+    
     jump wnfh_test

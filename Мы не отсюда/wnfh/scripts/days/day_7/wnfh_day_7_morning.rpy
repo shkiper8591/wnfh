@@ -346,12 +346,15 @@ label d7_sl_probejka:
 
     "Открыв дверь настежь, Славя кивнула мне, дабы я следовал за ней."
 
+    window hide dissolve
     stop ambience fadeout 2.0
-    scene bg int_aidpost_sunset_wnfh
+    play sound sfx_open_door_1
+    scene bg int_aidpost_sunset_wnfh with door_blure_dissolve2
     show sl normal sport at right
     show cs normal glasses at left
     with dissolve2 
     play ambience ambience_medstation_inside_day fadein 2.0
+    window show dissolve
 
     "Виола стояла напротив шкафа с медикаментами и вносила пометки в журнал."
     "По всей видимости, проводила опись лекарств."
@@ -406,7 +409,8 @@ label d7_sl_probejka:
 
     "Она лишь усмехнулась."
 
-    hide sl with dissolve
+    show sl happy sport:
+        ease 0.5 xcenter 1.2
 
     "И покинула медпункт."
 
@@ -416,7 +420,9 @@ label d7_sl_probejka:
     "Я медленно прошёл вдоль помещения медпункта и уселся на кушетку."
     "Виола сделала ещё пару пометок и, положив журнал на стол, подошла ко мне."
 
-    show cs normal with dspr
+    show cs normal close at center
+    with dissolve
+    hide sl
 
     cs "Вытяни ноги вперёд."
 
@@ -428,18 +434,23 @@ label d7_sl_probejka:
     me "А у вас есть такие?"
     cs "Нет, конечно же! Что за глупые вопросы, Семён?"
 
+    show cs normal at center with dissolve
+
     "Отойдя к своему столу, Виола достала из ящика бутылочку йода, кусочек ваты и стерильное полотенце."
     "Йод и вату она оставила на столе, а полотенце смочила в раковине."
+    
+    show cs normal close with dissolve
+
     "Вернувшись ко мне, Виола стала протирать мне раны на ногах."
     "Приятная прохлада от влаги немного снимала жгучую боль."
 
     me "Как же хорошо[wp]"
     
-    show cs smile with dspr
+    show cs smile close with dspr
 
     cs "Подожди ещё, скоро йодом обработаю тебя, вот тогда будет тебе хорошо."
     
-    show cs normal with dspr
+    show cs normal close with dspr
 
     cs "Давай руки сюда."
 
@@ -450,7 +461,7 @@ label d7_sl_probejka:
     me "Нет, обычным лёгким бегом."
     cs "Чудеса какие-то."
 
-    show cs smile with dspr
+    show cs smile close with dspr
 
     cs "А ты ответь мне вот на что[wp]"
 
@@ -479,7 +490,7 @@ label d7_sl_probejka:
     me "Да, полы у вас шикарные. А ещё хочу сказать, что ваши домыслы не имеют отношения к реальности."
     cs "Шутник."
 
-    show cs normal with dspr
+    show cs normal close with dspr
 
     "Виола вновь вернулась ко мне и принялась обрабатывать раны йодом."
     "И вся та приятная прохлада вмиг улетучилась, сменившись пощипыванием."
@@ -493,7 +504,7 @@ label d7_sl_probejka:
 
     "Виола чуть ли не моментально намазала мне руки йодом, я даже не успел особо боли почувствовать."
 
-    show cs smile with dspr
+    show cs smile close with dspr
 
     cs "Ну вот и всё. Разве что синяк остался, но с ним я ничего сделать не могу."
     cs "Да и не заметен он особо."
@@ -502,7 +513,7 @@ label d7_sl_probejka:
 
     th "Да уж, вид у меня теперь просто шикарный. Будто в говне обмазался."
 
-    show cs normal with dspr
+    show cs normal with dissolve
     play sound sfx_dinner_horn_processed
 
     cs "Похоже, кому-то пора на завтрак."
@@ -510,9 +521,13 @@ label d7_sl_probejka:
 
     "Я быстренько встал с кушетки и пошёл в сторону выхода."
 
+    window hide dissolve
     stop ambience fadeout 2.0
-    scene bg ext_aidpost_day with dissolve2
+    scene bg ext_aidpost_day with door_invert_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 2.0
+    $ renpy.pause(1.0, hard=True)
+    window show dissolve
 
     th "Блин, я чё понял. Пакет-то с мыльно-рыльным я оставил у умывальников[wp] {w}Сука."
     #Я не понял, надо на суку фильтр или нет, потому буду оставлять комменты со словом Фильтр везде.
@@ -566,13 +581,18 @@ label d7_sl_otkaz:
     
     sl "Вот и славно. {w}Ладненько, мне ещё несколько километров нужно пробежать. Увидимся!"
     
-    hide sl sport close with dspr
+    show sl sport close:
+        ease 0.8 xcenter -0.2
     
     "Помахав мне на прощание, Славя умчалась дальше по лесной тропе."
     
     me "Ага, пока."
     
     "Когда девушка скрылась из поля зрения, я наконец-то приступил к чистке зубов."
+   
+    $ renpy.pause(1.0)
+    play sound sfx_close_water_sink
+
     "С ней я быстренько покончил и, собрав всё в пакетик, удалился обратно домой."
     
     window hide dissolve
@@ -969,6 +989,10 @@ label d7_sl_otkaz:
     
     "Она одним ловким движением перепрыгнула спинку лавочки и села ровно на место Лены."
     
+    show dv normal pioneer2 close:
+        ease 0.5 xcenter 0.72 ycenter 0.52
+    with dspr
+
     dv "Так о чём разговаривали-то?"
     me "Так, ни о чём."
     
@@ -1010,11 +1034,14 @@ label d7_sl_otkaz:
     dv "Всё, идём."
     me "Ага[wp]"
     
-    hide dv with dissolve
+    show dv laugh pioneer2 close:
+        ease 0.3 ycenter 0.5
+        ease 1.0 xcenter -0.2
     
     "Алиса встала с лавочки и ушла в строй."
     "Недовольно вздохнув, я поднялся и пошел за ней."
     ## Линейка1
+    hide dv
     show cg d7_lineika_wnfh with dissolve
     #play music wnfh_music_list["distant_banjo"] fadein 1.5
     

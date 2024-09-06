@@ -35,7 +35,17 @@ label d7_un_zavtrak:
 
         th "Особенно сейчас, пока я весь украшен пятнами йода."
     
-    show un normal pioneer at center with dissolve
+    window hide dissolve
+    # show un normal pioneer at center with dissolve
+    show chair_l behind un
+    show chair_r
+    show un normal pioneer at wnfh_sit_left behind table
+    show table
+    show shakers
+    show left d11_breakfast_half tray foods behind shakers
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show dissolve
 
     "Лена сидела и медленно поедала свой завтрак, не обращая на меня никакого внимания."
 
@@ -48,6 +58,10 @@ label d7_un_zavtrak:
     "Малость испуганно ответила она."
 
     th "Видимо, я её немного напугал своим неожиданным вопросом."
+
+    show mid d11_breakfast_full tray spoon foods
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
 
     me "Спасибки."
     if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
@@ -76,6 +90,7 @@ label d7_un_zavtrak:
 
         "Закончив с разговорами, я приступил к еде."
 
+        show mid d11_breakfast_full tray foods with dspr
         show un shy pioneer with dspr
 
         "Но краем глаза заметил, что Лена снова вся засмущалась, будто хочет то ли что-то сказать, то ли спросить."
@@ -93,6 +108,7 @@ label d7_un_zavtrak:
 
         "Я продолжил уплетать свою овсянку."
 
+        show mid d11_breakfast_half tray foods with dspr
         show un shy pioneer with dspr
 
         un "И ещё, Сём[wp]"
@@ -135,6 +151,7 @@ label d7_un_zavtrak:
 
         "Проанализировав завтрак, представлявший собой овсянку с не пойми чем, я принялся за еду."
 
+        show mid d11_breakfast_full tray foods with dspr
         show un shy pioneer with dspr
 
         un "Там, на площади, я не закончила из-за Алисы[wp]"
@@ -146,6 +163,7 @@ label d7_un_zavtrak:
         un "В общем[wp] Ну[wp] Я[wp] Э[wp]"
 
         show un sad pioneer with dspr
+        show mid d11_breakfast_half tray foods with dspr
 
         un "Я хотела сказать, что[wp]"
 
@@ -227,7 +245,10 @@ label d7_un_no_2_lbl:
 
     "Она грустно вздохнула."
     
-    un "Ну ладно[wp]" 
+    un "Ну ладно[wp]"
+
+    $ renpy.pause(1.0, hard=True)
+    show mid d11_breakfast_empty tray foods with dspr 
 
     "Менее чем за минуту я управлися с овсянкой, а чай прикончил и вовсе за один глоток."
 
@@ -253,6 +274,8 @@ label d7_un_yes_2_lbl:
     "Лена отодвинула тарелку с кашей в сторону и стала медленно потягивать чай."
     "Я же съел всё меньше чем за минуту, а подостывший чай и вовсе выпил за один глоток."
 
+    $ renpy.pause(1.0, hard=True)
+    show mid d11_breakfast_empty tray foods with dspr
     show un shocked pioneer with dspr
 
     un "В-Вау."
@@ -273,6 +296,7 @@ label d7_dv_usw_zavtrak:
     th "Но куда уж деваться, Алиса – единственный человек из здесь находящихся, с которым есть о чём поговорить. Только её из всего лагеря я могу назвать другом."
     ## Стас, поправь Ульяну. Если ты это не сделаешь, то я сожру тебя с говном. 
     ## Диалог с рыжими
+    window hide dissolve
     show chair_l behind usw
     show chair_r behind dv
     show usw grin pioneer at wnfh_sit_left behind table
@@ -282,6 +306,8 @@ label d7_dv_usw_zavtrak:
     show left d11_breakfast_full tray foods behind shakers
     show right d11_breakfast_full tray foods behind shakers
     with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show dissolve
     
     "Подойдя к ним, я сразу заметил, что Ульяна, уставившись на меня, давит ехидную лыбу."
     
@@ -472,7 +498,8 @@ label d7_dv_usw_zavtrak:
         ) with sphere_blure_dissolve2
 
 label d7_dv_yes_1:
-
+    window show dissolve
+    
     "Взвесив все за и против, я решил, что это – отличная идея."
 
     me "Думаю, это будет весело."
@@ -481,9 +508,18 @@ label d7_dv_yes_1:
 
     "Мы одобрительно кивнули и принялись за еду. Закончив с ней, мы немедля покинули столовую."
 
+    window hide dissolve
+    $ renpy.pause(1.0, hard=True)
+    show left d11_breakfast_empty tray spoon
+    show right d11_breakfast_empty tray spoon
+    show mid d11_breakfast_empty tray spoon
+    with dissolve
+
     jump d7_me_meet_kat_w_dw_n_usw
 
 label d7_dv_no_1:
+
+    window show dissolve
 
     "Идея, мягко говоря, звучала ужасно, и я никак не мог подписаться на что-то подобное."
 
@@ -495,6 +531,7 @@ label d7_dv_no_1:
     "Алиса медленно вернулась на своё место."
     "А я же с удвоенной силой принялся за завтрак, и уже через минуту от него ничего не осталось."
     
+    $ renpy.pause(1.0, hard=True)
     show mid d11_breakfast_empty tray spoon with dspr
     
     me "Так, всё, дамы, я опаздываю. Чао-какао."
@@ -509,7 +546,7 @@ label d7_dv_no_1:
     
     me "Извини, подруга, у меня важное задание, нет времени на такие мелочи."
     
-    scene bg int_dining_hall_people_day with dissolve2
+    scene bg int_dining_hall_people_day with dissolve
     
     "Сказал я и, помохав рукой на прощание, быстро удалился из столовой."
 

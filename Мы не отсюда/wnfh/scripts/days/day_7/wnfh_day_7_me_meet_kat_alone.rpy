@@ -113,6 +113,7 @@ label d7_me_meet_kat_alone:
     kat "Хорошо[wp]"
     me "Вот и отлично, пойдём тогда."
     
+    window hide dissolve
     scene bg ext_camp_entrance_day:
         subpixel True
         truecenter
@@ -122,7 +123,8 @@ label d7_me_meet_kat_alone:
     stop ambience fadeout 0.5
     show bg ext_clubs_day with dissolve2 
     play ambience ambience_camp_center_day fadein 3
-    
+    window show dissolve
+
     "Зайдя за ворота и пройдя пару метров, мы оказались перед зданием клубов." 
     "Туда мне и нужно забежать, чтобы предупредить шефа, что я немного задержусь."
 
@@ -336,7 +338,7 @@ label d7_me_meet_kat_alone:
     sl "Приятно познакомиться, а я Славя! {w}Вообще полное имя Славяна, но меня все Славей зовут. И ты тоже зови!"
     
     th "Если бы мне давали по рублю каждый раз, когда я слышал эту фразу[wp] То у меня было бы два рубля."
-    # богат
+    #  "богат."
     th "Это, конечно, немного, но забавно, что это произошло дважды."
     th "Хотя по советским меркам это не так уж и немного, знаете ли."
     
@@ -353,11 +355,12 @@ label d7_me_meet_kat_alone:
     show kat surprise with dspr
     
     kat "А мне что, прямо перед {i}ним{/i} переодеваться?"
-    # ну да, а почему бы и нет
+    # th "ну да, а почему бы и нет."
     
     show sl shy with dspr
     
     sl "Ой, Семён, не мог бы ты выйти?"
+    # me "Нет, конечно."
     me "Да, конечно."
     
     window hide

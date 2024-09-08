@@ -47,6 +47,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     with slide_up_blure_dissolve2
     stop music fadeout 5.0
     $ renpy.pause(0.2)
+    window show dissolve
 
     "Выйдя к воротам, мы поняли, что те ещё закрыты. Но за ними уже слышалось гудение двигателя автобуса."
 
@@ -180,6 +181,8 @@ label d7_me_meet_kat_w_dw_n_usw:
 
 label d7_sh_yes_1:
 
+    window show dissolve
+
     me "Хорошо, сейчас."
 
     "Шурик отпустил меня и легонько толкнул к девушке."
@@ -206,6 +209,8 @@ label d7_sh_yes_1:
     jump d7_me_meet_kat_alt
 
 label d7_sh_no_1:
+
+    window show dissolve
 
     me "Слушай, меня Алиса с Ульяной знатно так подставили, пусть они извиняются!"
 
@@ -258,10 +263,15 @@ label d7_sh_no_1:
     show sv happy pioneer glasses tablet at center with dspr
 
     sv "Отлично."
+    # me "Ля ты крыса..."
     
-    hide kat
-    hide sv
-    with dissolve
+    show sv happy pioneer glasses tablet:
+        ease 0.8 xcenter 0.4
+    $ renpy.pause(1.0)
+    show sv happy pioneer glasses tablet:
+        ease 1.0 xcenter -0.2
+    show kat sad casual shirt:
+        ease 1.0 xcenter -0.2
 
     "Она отошла к новенькой, что-то сказала ей и повела за собой."
 

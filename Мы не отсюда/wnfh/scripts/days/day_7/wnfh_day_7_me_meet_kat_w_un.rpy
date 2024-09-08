@@ -164,14 +164,16 @@ label d7_me_meet_kat_w_un:
 
     "Сказал я и без промедления направился в клуб."
 
-    window hide
+    window hide dissolve
     stop ambience fadeout 2.0
     scene bg int_clubs_male_day
     show sh normal pioneer at cright
     show el sad pioneer at fright
     show sv angry pioneer glasses tablet at left
+    play sound sfx_open_door_1
     with door_blure_dissolve2
     play ambience ambience_int_cabin_evening fadein 2.0
+    window show dissolve
 
     "И как только я зашёл, так сразу мне захотелось выйти."
     "Ведь внутри была Света, которая как обычно песочила мозги моим товарищам."
@@ -200,15 +202,29 @@ label d7_me_meet_kat_w_un:
     #sv "Я тебя услышала, либерал"
     sv "Тоже мне, пионеры."
 
-    show sv scared pioneer glasses tablet at left with dspr
-
+    show sv angry pioneer glasses tablet:
+        ease 1 xcenter 0.5
+    $ renpy.pause(1.0)
+    show sv angry pioneer glasses tablet close at center with dspr
+    show sv scared pioneer glasses tablet close at center with dspr
+    play sound sfx_body_bump
+    show sv scared pioneer glasses tablet close:
+        ease 0.5 ycenter 0.8
+    
     "Она резко развернулась и врезалась в меня, после чего упала."
 
     sv "Ау[wp]"
 
-    show sv angry pioneer glasses tablet at left with dspr
+    show sv angry pioneer glasses tablet close with dspr
 
     "Я попытался помочь ей встать, но она лишь отмахнулась от моей руки."
+
+    show sv angry pioneer glasses tablet close:
+        ease 0.5 ycenter 0.5
+    $ renpy.pause(0.5)
+    show sv angry pioneer glasses tablet with dspr:
+        ease 1.0 xcenter 0.28
+    $ renpy.pause(1.0)  
 
     sv "Ещё один явился."
     me "Да вот, хотел сказать Шурику, что буду в клубах чуть позже."
@@ -216,8 +232,10 @@ label d7_me_meet_kat_w_un:
     sv "А хотя без разницы, мне до вашего клуба дела нет."
     me "Как скажешь."
     
-    hide sv with dissolve
+    show sv angry pioneer glasses tablet:
+        ease 0.5 xcenter -0.2
     show el normal pioneer at fright with dspr
+    play sound sfx_close_door_1
 
     "Света вышла из здания клубов, громко хлопнув дверью."
 
@@ -225,13 +243,16 @@ label d7_me_meet_kat_w_un:
     sh "Да без проблем. Только не сильно позже, ладно? Ты нам нужен сегодня."
     me "Так точно."
 
+    window hide dissolve
     stop ambience fadeout 2.0
     scene bg ext_clubs_day
     show un serious pioneer at cright
     show kat sad casual shirt at fright
     show sv angry pioneer glasses tablet at left
-    with dissolve2
+    with door_invert_blure_dissolve2
+    play sound sfx_close_door_1
     play ambience ambience_camp_center_day fadein 2.0
+    window show dissolve
 
     "Выйдя на улицу, я стал свидетелем ещё одного спора с участием Светы. На этот раз мурыжила она Лену."
 
@@ -251,11 +272,12 @@ label d7_me_meet_kat_w_un:
 
     "Я рефлекторно схватил Лену за запястье, а она взяла Катю, и такой цепочкой мы быстренько пошли прочь."
 
+    window hide dissolve
     scene bg ext_lenin_square_day_wnfh
     show un shy pioneer at right
     show kat normal casual shirt at left
-    with dissolve2
-
+    with slide_left_blure_dissolve2
+    window show dissolve
     "Мы вышли на площадь, и я отпустил Лену."
     "Света же нас и не преследовала, оставшись далеко позади."
 

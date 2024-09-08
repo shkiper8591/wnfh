@@ -61,10 +61,13 @@ label d7_me_meet_kat_alt:
     show kat smile casual shirt with dspr
 
     kat "Хорошо, просто Семён, когда мы уже дойдём до склада? А то в мокрой одежде ходить не очень приятно."
+    # me "Так ты раздевайся прям тут."
     me "Да вот, считай, уже пришли."
     
-    scene bg ext_warehouse_day_wnfh with dissolve2
-    
+    window hide dissolve
+    scene bg ext_warehouse_day_wnfh with santa_barbara_in_blure_dissolve2
+    window show dissolve
+
     "Мы пришли к складу, я подошёл к приоткрытой двери и постучался."
     
     me "Можно войти?"
@@ -74,11 +77,14 @@ label d7_me_meet_kat_alt:
     
     th "Отлично. Значит, сегодня без деда."
     
+    window hide dissolve
     stop ambience fadeout 3.5
     scene bg int_warehouse_day_wnfh
     show sl wh_normal wh background
     with slide_diagonal_blure_dissolve2
+    play sound sfx_open_door_1
     play ambience ambience_int_cabin_day fadein 3.5
+    window show dissolve
 
     "Внутри была Славя, которая сидела за столом и, по всей видимости, занималась инвентаризацией склада."
     
@@ -91,7 +97,10 @@ label d7_me_meet_kat_alt:
     
     "Из-за моей спины тихонечко вышла Катя."
     
-    show kat normal casual shirt close at left with dissolve 
+    show kat normal casual shirt close:
+        xcenter -0.2
+        ease 1.5 xcenter 0.28
+    $ renpy.pause(1.0)
 
     kat "П-Привет."
 
@@ -131,7 +140,8 @@ label d7_me_meet_kat_alt:
     me "Так точно."
     
     window hide dissolve
-    scene bg ext_warehouse_day_wnfh with dissolve2
+    scene bg ext_warehouse_day_wnfh with door_invert_blure_dissolve
+    play sound sfx_close_door_1
     $ renpy.pause(0.2)
     window show dissolve
 

@@ -311,7 +311,7 @@ label d8_male_clubs:
     $ renpy.notify("Таймскип 30-40 минут")
     window hide dissolve
     stop ambience fadeout 2.0
-    scene black dissolve2
+    scene black with dissolve2
     $ renpy.pause(0.3)
     play ambience ambience_camp_center_day fadein 2.0
     scene bg ext_library_day

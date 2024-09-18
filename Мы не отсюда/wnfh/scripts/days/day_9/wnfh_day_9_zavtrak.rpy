@@ -13,13 +13,13 @@ label d9_zavtrak:
 
     # с Мику, на данный момент, невозможно набрать 4 и более очка ЛП, но тем не менее на будущее это здесь останется
     #КОСЯК: если на Катю или Мику больше 0 ЛП, игра выбирает именно их столик, игнорируя Алису. Выйти на Лену нельзя принципиально.
-    if wnfh_Data.getChoice_points_sum("kat") or wnfh_Data.getChoice_points_sum("mi") >= 4:
-
+    if wnfh_Data.getChoice_points_sum("kat") >= 4:
+         #or wnfh_Data.getChoice_points_sum("mi")
         jump d9_zavtrak_w_kat_mi
 
     # С Ульяной та же песня, что и с Мику
-    elif wnfh_Data.getChoice_points_sum("dv") or wnfh_Data.getChoice_points_sum("usw") >= 4:
-
+    elif wnfh_Data.getChoice_points_sum("dv")  >= 4:
+#or wnfh_Data.getChoice_points_sum("usw")
         jump d9_zavtrak_w_dv_usw
 
     else:

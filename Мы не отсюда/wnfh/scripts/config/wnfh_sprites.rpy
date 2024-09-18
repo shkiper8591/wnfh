@@ -40,7 +40,7 @@ init 2:
             },
             'un': {
                 'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1,
-                'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2,
+                'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'sad_smile': 2,
                 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
                 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
             },

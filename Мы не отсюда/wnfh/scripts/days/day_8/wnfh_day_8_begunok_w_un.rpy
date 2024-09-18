@@ -580,7 +580,7 @@ label d8_begunok_w_un_1:
         th "Ну, зато посижу в тишине и спокойно дождусь обеда."
 
         stop music fadeout 5.0
-        jump d8_obed_alone
+        jump d8_obed_me_alone
     
     else:
 

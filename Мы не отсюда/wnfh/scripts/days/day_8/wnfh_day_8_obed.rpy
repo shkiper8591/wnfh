@@ -163,8 +163,8 @@ label d8_obed_me_dv:
 
     me "Оно твоё."
 
-    $ wnfh_Data.AddLove_points({"usw":1})
-    #КОСЯК: трейс есть, поинтов нет. Опять.
+    #$ wnfh_Data.AddLove_points({"usw":1})
+    #КОСЯК: трейс есть, поинтов нет. Опять. Закомменчено во избежание трейсов в игре.
 
     show usw laugh pioneer at right
     show dv normal pioneer2 at left

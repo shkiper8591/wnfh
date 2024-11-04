@@ -26,7 +26,7 @@ label d9_zavtrak:
         jump d9_zavtrak_w_un
 
 label d9_zavtrak_w_kat_mi:
-
+    $ wnfh_Data.FlagSet("d9_zavtrak_w_dv_usw", False)
     "Зайдя в столовую, я, как обычно, взял себе поесть и стал искать, куда куда бы усесться."
 
     if wnfh_Data.getChoice_points_sum("kat") >= 4:
@@ -416,6 +416,8 @@ label d9_zavtrak_w_dv_usw:
         jump d9_day_alone
 
 label d9_zavtrak_w_un:
+    
+    $ wnfh_Data.FlagSet("d9_zavtrak_w_dv_usw", False)
 
     "Войдя внутрь столовой и взяв поесть, я стал присматривать себе местечко."
 

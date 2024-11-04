@@ -45,7 +45,7 @@ init 2:
                 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
             },
             'usw': {
-                'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1,
+                'normalsmile': 1, 'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'sad': 1, 'smile': 1, 'tricky': 1,
                 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2,
                 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
             },
@@ -317,6 +317,7 @@ init 2:
         # Лена
         
         make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'es:<emotion>'])
+        make_sprites_for('un', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'])
 
         # Алиса
 

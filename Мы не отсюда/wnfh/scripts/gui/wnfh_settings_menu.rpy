@@ -98,12 +98,12 @@ init 2:
                 ["hentai_mod" ,"Отображение хентая" ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,145      ,1    ],
             ]
             wnfh_preferences_audio_bars = [
-                ["music"      ,"Музыка"   ,Preference("music volume")],
-                ["sound"      ,"Звуки"    ,Preference("sound volume")],
-                ["ambience"   ,"Эмбиент"  ,Preference("voice volume")],
+                ["music"      ,"Музыка"   ,Preference("music volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
+                ["sound"      ,"Звуки"    ,Preference("sound volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
+                ["ambience"   ,"Эмбиент"  ,Preference("voice volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
             ]
             wnfh_preferences_audio_buttons = [
-                ["ap_misic"            ,"Очки персонажей"  ,AnimatedValue(value=persistent.wnfh_ap_misic, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+                ["ap_misic"            ,"///"  ,AnimatedValue(value=persistent.wnfh_ap_misic, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
             ]
             wnfh_preferences_widget_buttons = [
                 ["widget_lp"           ,"Очки персонажей"     ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
@@ -121,8 +121,17 @@ init 2:
                 ["mat_filter"  ,"Мат-фильтр"   ,AnimatedValue(value=persistent.wnfh_mat_filter, range=2.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,248      ,2    ],
             ]
 
-            wnfh_preferences_button = [ ["Назад", [Return()] ] ]
+            wnfh_preferences_button = [
+                ["back", "Назад", [Return()]]
+            ]
         add wnfh_gui["tint_elements"]["vignette"]
+
+        textbutton wnfh_preferences_button[0][1]:
+            area(0.1, 0.1, 0.1, 0.1)
+            xanchor 0.5 yanchor 0.5
+            padding(0, 0)
+            action wnfh_preferences_button[0][2]
+
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
@@ -233,7 +242,7 @@ init 2:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
                                 spacing 2
-                                for element in range(len(wnfh_preferences_audio_bars) + len(wnfh_preferences_audio_buttons)):
+                                for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
                                     frame:
                                         area(0.5, 0.0, 1.0, 230/4)
                                         xanchor 0.5 yanchor 0.0
@@ -241,6 +250,66 @@ init 2:
                                             background frame_black
                                         else:
                                             background frame_transparent
+                                        frame:
+                                            if persistent.wnfh_debug_color:
+                                                background frame_red
+                                            else:
+                                                background frame_transparent
+                                            area(0.0, 0.5, 200, 1.0)
+                                            xanchor 0.0 yanchor 0.5
+                                            text wnfh_preferences_audio_bars[element][1]:
+                                                pos(0.0, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xanchor 0.0
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+                                        frame:
+                                            if persistent.wnfh_debug_color:
+                                                background frame_green
+                                            else:
+                                                background frame_transparent
+                                            area(1.0, 0.5, wnfh_preferences_audio_bars[element][5]+12, 1.0)
+                                            xanchor 1.0 yanchor 0.5
+                                            bar value wnfh_preferences_audio_bars[element][2]:
+                                                left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                thumb wnfh_bars["tumb"][0]
+                                                hover_thumb wnfh_bars["tumb"][0]
+                                                xmaximum 1.0 ymaximum 1.0
+                                                yanchor 0.5 ypos 0.5
+                                        #for bar in wnfh_preferences_audio_bars[0:3]:
+                                        #    frame:
+                                        #        if persistent.wnfh_debug_color:
+                                        #            background frame_red
+                                        #        else:
+                                        #            background frame_transparent
+                                        #        area(0.0, 0.5, 0.2, 1.0)
+                                        #        yanchor 0.5
+                                        #        text bar[1]:
+                                        #            pos(0.5, 0.5)
+                                        #            style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                        #            xanchor 0.5
+                                        #            size 30
+                                        #            kerning 1
+                                        #            min_width 200
+                                        #            layout "tex"
+                                        #            #action Play("sound", wnfh_gui["sound"]["plimp"]) 
+                                        #    frame:
+                                        #        if persistent.wnfh_debug_color:
+                                        #            background frame_green
+                                        #        else:
+                                        #            background frame_transparent
+                                        #        area(1.0, 0.5, 485, 1.0)
+                                        #        xanchor 1.0 yanchor 0.5
+                                        #        bar value bar[2]:
+                                        #            left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                        #            right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                        #            thumb wnfh_bars["tumb"][0]
+                                        #            hover_thumb wnfh_bars["tumb"][0]
+                                        #            xmaximum 1.0 ymaximum 1.0
+                                        #            yanchor 0.5 ypos 0.5
 
                 frame: 
                     area(1.0, 0.5, 0.5, 0.5)
@@ -416,6 +485,7 @@ init 2:
                                             background frame_black
                                         else:
                                             background frame_transparent
+
                                         
 
 

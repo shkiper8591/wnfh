@@ -9,6 +9,8 @@ label wnfh_test_music:
             jump wnfh_justmusic
         "Звуки?":
             jump wnfh_sfx_test
+        "Эмбиент?":
+            jump wnfh_ambient_test
         "Вернутся назад":
             jump wnfh_test_main_menu
 
@@ -64,6 +66,32 @@ label wnfh_sfx_test:
 
     menu: 
         
+        "Вернутся в меню отладки":
+            jump wnfh_test_main_menu
+        "Вернутся к выбору типа теста":    
+            jump wnfh_test_music
+
+label wnfh_ambient_test:
+
+    $ wnfh_set_time()
+    scene bg ext_lenin_square_day_wnfh with dissolve2
+    window show dissolve
+
+    "Тест одновременного проигрывания эмбиентов."
+
+    play ambience ambience_forest_evening
+
+    "Сейчас играет один эмбиент."
+
+    play ambience_2 ambience_lake_shore_evening
+
+    "Теперь должно играть два одновременно."
+
+    "Конец теста."
+    stop ambience
+
+    menu:
+
         "Вернутся в меню отладки":
             jump wnfh_test_main_menu
         "Вернутся к выбору типа теста":    

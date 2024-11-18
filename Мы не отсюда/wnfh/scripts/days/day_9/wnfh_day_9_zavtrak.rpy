@@ -12,12 +12,12 @@ label d9_zavtrak:
     window show dissolve
 
     # с Мику, на данный момент, невозможно набрать 4 и более очка ЛП, но тем не менее на будущее это здесь останется
-    if wnfh_Data.getChoice_points_sum("kat") >= 4:
+    if wnfh_Data.getChoice_points_sum("kat") >= 3:
          #or wnfh_Data.getChoice_points_sum("mi")
         jump d9_zavtrak_w_kat_mi
 
     # С Ульяной та же песня, что и с Мику
-    elif wnfh_Data.getChoice_points_sum("dv")  >= 4:
+    elif wnfh_Data.getChoice_points_sum("dv")  >= 3:
 #or wnfh_Data.getChoice_points_sum("usw")
         jump d9_zavtrak_w_dv_usw
 
@@ -29,7 +29,7 @@ label d9_zavtrak_w_kat_mi:
     $ wnfh_Data.FlagSet("d9_zavtrak_w_dv_usw", False)
     "Зайдя в столовую, я, как обычно, взял себе поесть и стал искать, куда куда бы усесться."
 
-    if wnfh_Data.getChoice_points_sum("kat") >= 4:
+    if wnfh_Data.getChoice_points_sum("kat") >= 3:
 
         "Как заметил машущую мне Катю, что сидела рядом с Мику. Намёк был ясен."
 
@@ -154,6 +154,8 @@ label d9_zavtrak_w_kat_mi:
 
 label d9_zavtrak_w_dv_usw:
 
+    $ wnfh_Data.FlagSet("d9_zavtrak_w_dv_usw", True)
+
     "Зайдя в столовую, я, как обычно, взял себе поесть и стал искать, куда бы приземлиться."
     "Мой взгляд зацепился за Алису, которая хитро мне улыбалась и приглашающе махала."
 
@@ -190,6 +192,7 @@ label d9_zavtrak_w_dv_usw:
         show dv normal pioneer at right with dspr
 
         me "Полагаю, что отрабатывать на складе."
+        dv "Серьёзно?"
         me "Ты разве не слышала? Об этом же на всю округу объявили."
 
         "Она отрицательно покачала головой."
@@ -261,7 +264,17 @@ label d9_zavtrak_w_dv_usw:
 
                 "Через некоторое время она закончила смеяться."
     
-            dv "Ладно, занят так занят."
+            show dv normal pioneer at right with dspr
+
+            dv "Ладно, я это вообще всё к тому[wp]"
+            dv "Может вечером погуляем?"
+            
+            "Я пожал плечами."
+
+            me "Это надо будет смотреть на месте уже."
+            me "Всё же я не знаю, насколько сильно меня загрузят."
+            dv "Хорошо, тогда на площади вечером пересечёмся и там посмотрим."
+            me "Так и поступим."
 
     else:
 

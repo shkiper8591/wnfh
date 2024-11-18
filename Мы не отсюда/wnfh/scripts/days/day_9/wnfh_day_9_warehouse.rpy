@@ -23,7 +23,7 @@ label d9_warehouse:
 
     stop ambience fadeout 2.0
     scene bg int_warehouse_day_wnfh
-    show usw normal pioneer at center far
+    show usw normal pioneer far at center
     with dissolve2
     play ambience ambience_int_cabin_evening fadein 2.0
 
@@ -432,7 +432,7 @@ label d9_warehouse:
 
     stop music fadeout 5.0
 
-    shot sl normal pioneer at left with dspr
+    show sl normal pioneer at left with dspr
     show usw normalsmile pioneer at right with dissolve
 
     "В это время, с ноги, на склад ворвалась Ульяна."
@@ -470,7 +470,7 @@ label d9_warehouse:
 
     usw "Странно, я думала тебе Алиса нравится[wp]"
 
-    if wnfh_Data.getChoice_points_sum("dv") >= 3:
+    if wnfh_Data.getChoice_points_sum("dv") >= 4:
 
         "Я подозрительно посмотрел на Ульяну."
         th "Неужели так очевидно?"
@@ -484,7 +484,7 @@ label d9_warehouse:
     usw "Кажется, лишнего сказала, да?"
     me "Даже не знаю[wp]"
 
-    if wnfh_Data.getChoice_points_sum("dv") >= 3:
+    if wnfh_Data.getChoice_points_sum("dv") >= 4:
 
         me "Может ты и права."
         usw "То что лишнего сказала?"

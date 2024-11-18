@@ -1,5 +1,4 @@
 init -4 python:
-
     ## Создание листов ##
     
     def wnfh_form_files_list(path):
@@ -510,6 +509,8 @@ init 1:
     $ wnfh_music_list["emotional_one"]                          = wnfh_MUSIC + "Such an emotional one.mp3"
     $ wnfh_music_list["chilling_out"]                           = wnfh_MUSIC + "Chillin' Out.mp3"
     $ wnfh_music_list["chill_morning_1"]                        = wnfh_MUSIC + "Wnfh - that is what weekday mornings feel like.mp3"
+    $ wnfh_music_list["this_one_sounds_sad"]                    = wnfh_MUSIC + "Wnfh - this one sounds sad.mp3"
+    $ wnfh_music_list["argument"]                               = wnfh_MUSIC + "Wnfh - argument.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

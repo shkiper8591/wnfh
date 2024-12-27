@@ -277,7 +277,7 @@ init 2:
                                                 right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
                                                 thumb wnfh_bars["tumb"][0]
                                                 hover_thumb wnfh_bars["tumb"][0]
-                                                xmaximum 1.0 ymaximum 1.0
+                                                xmaximum 1.0 ymaximum 36
                                                 yanchor 0.5 ypos 0.5
                                         #for bar in wnfh_preferences_audio_bars[0:3]:
                                         #    frame:

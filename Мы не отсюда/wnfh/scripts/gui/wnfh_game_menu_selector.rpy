@@ -1,4 +1,5 @@
 init 2:
+    $ wnft_user_time = wnfh_get_usertime()
     screen wnfh_game_menu_selector():
 
         modal True tag menu
@@ -10,6 +11,8 @@ init 2:
         default wnfh_screen_5 = False
         default wnfh_screen_6 = False
 
+        on "show" action Function(update_usertime)
+        
         python:
             wnfh_screen_variable = [
                 wnfh_screen_1,
@@ -30,15 +33,24 @@ init 2:
                 ["Выход из игры",       [ShowMenu('quit')]                                     ],
      
             ]
-        #frame: # =============================================== Часики
-        #    background background_color
-        #    area(0.5, 0.03, 120, 40)
-        #    xanchor 0.5 yanchor 0.5
-        #    text wnfh_get_usertime():
-        #        xalign 0.5
-        #        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-        #        size 30
+
         add wnfh_gui["tint_elements"]["vignette"]
+
+        frame: # =============================================== Часики
+            if persistent.wnfh_debug_color:
+                background frame_black
+            else:
+                background frame_transparent
+            area(0.5, 0.03, 120, 40)
+            xanchor 0.5 yanchor 0.5
+            text wnft_user_time:
+                xalign 0.5
+                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                size 30
+        
+        timer 1:
+            repeat True
+            action Function(update_usertime)
 
         if persistent.wnfh_widget_lp:
 

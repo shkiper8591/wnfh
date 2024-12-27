@@ -317,7 +317,9 @@ init 2:
         # Лена
         
         make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'es:<emotion>'])
+        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'mod:<emotion>'])
         make_sprites_for('un', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'])
+        make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
 
         # Алиса
 

@@ -1,5 +1,5 @@
 init 0:
-    $ mods["wnfh_main"]=u"Мы не отсюда"
+    $ mods["wnfh_main"]=u"Мы не отсюда (В разработке)"
 init python:
     def wnfh_set_time(time_of_day="day", sprite_time=None):
         if sprite_time == None:

@@ -11,3 +11,6 @@ init python:
             return str(hour) + ":" + str(mins)
         else:
             return str(hour) + " " + str(mins)
+    def update_usertime():
+        global wnft_user_time
+        wnft_user_time = wnfh_get_usertime()

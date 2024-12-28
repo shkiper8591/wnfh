@@ -35,7 +35,7 @@ init 2:
                 action Return()
 
             # achievements
-            if debag_switch:
+            if debug_switch:
                 imagebutton:
                     action [Hide("wnfh_achievements", transition=dissolve), Start("wnfh_reset")]
                     idle wnfh_gui["banners"]["relation_up"]

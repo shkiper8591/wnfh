@@ -100,9 +100,9 @@ init 2:
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
                 text init_splash():
-                    style "wnfh_splashes"
+                    style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
-            if debag_switch:
+            if debug_switch:
                 frame: # ======================================================= # Амогус
                     if persistent.wnfh_debug_color:
                         background frame_black

@@ -406,7 +406,8 @@ init -1001 python :
                     #self.ShowErrors("Лавпонты персонажа "+ person +"отсутствуют")
                     pass
                 except TypeError:
-                    self.ShowErrors("Передан неверный тип данных "+ str(person))
+                    #self.ShowErrors("Передан неверный тип данных "+ str(person))
+                    pass
                 except Exception:
                     raise Exception('Ошибка подсчёта лавпойнтов персонажа {0} - метод (getChoice_points_sum(self, person))').format(person)
             return sum

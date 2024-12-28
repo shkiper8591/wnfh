@@ -424,22 +424,57 @@ init -5:
             ypos 0.08
             ease_quart 1.0 ypos -0.2
 
+    transform atl_wnfh_widget_clock:
+        subpixel True
+        on show:
+            xpos 1.2
+            ease_quart 1.0 xpos 0.9
+        on hide:
+            xpos 0.9
+            ease_quart 1.0 xpos 1.2
+
+    transform atl_wnfh_widget_music:
+        subpixel True
+        on show:
+            xpos -0.3
+            ease_quart 1.0 xpos 0.286
+        on hide:
+            xpos 0.286
+            ease_quart 1.0 xpos -0.3
+
     transform atl_wnfh_game_menu_selector(pause):
         subpixel True
-        choice:
-            xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
-        choice:
-            xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
-        pause (1 + pause)/6
-        ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0
+        truecenter
+        on start:
+            choice:
+                xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+            choice:
+                xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+            pause (1 + pause)/6
+            ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0
+        on hide:
+            xpos 0.5 ypos 0.5 alpha 1.0
+            choice:
+                pause (1 + pause)/6
+                ease_quart 1 xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+            choice:
+                pause (1 + pause)/6
+                ease_quart 1 xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
 
     transform wjuh_bg:
         subpixel True
-        yzoom 0.0 xzoom 0.0
-        block:
-            ease_quart 0.5 xzoom 1.0
-        block:
-            ease_quart 0.5 yzoom 1.0
+        on start:
+            yzoom 0.0 xzoom 0.0
+            block:
+                ease_quart 0.5 xzoom 1.0
+            block:
+                ease_quart 0.5 yzoom 1.0
+        on hide:
+            yzoom 1.0 xzoom 1.0
+            block:
+                ease_quart 0.5 xzoom 0.0
+            block:
+                ease_quart 0.5 yzoom 0.0
 
     transform wjuh_line:
         subpixel True
@@ -489,7 +524,22 @@ init -5:
     transform wnfh_pass:
         subpixel True
         pass
-init -3:
+
     transform govno_ebanoe:
-        on hover:
-            ImageReference(wnfh_gui["tint_elements"]["button_hover"])
+        on hide:
+            ease_quart 1.0 ypos 1.0 alpha 0.0
+    transform govno_ebanoe2:
+        on hide:
+            ease_quart 1.0 ypos 2.0 alpha 0.0
+
+    transform govno_ebanoe2:
+        on hide:
+            ease_quart 1.0 ypos 2.0 alpha 0.0
+
+    transform wnfh_gradient:
+        on show:
+            alpha 0.0
+            ease_quart 0.5 alpha 1.0
+        on hide:
+            alpha 1.0
+            ease_quart 0.5 alpha 0.0

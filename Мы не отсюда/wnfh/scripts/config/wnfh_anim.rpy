@@ -445,36 +445,20 @@ init -5:
     transform atl_wnfh_game_menu_selector(pause):
         subpixel True
         truecenter
-        on start:
-            choice:
-                xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
-            choice:
-                xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
-            pause (1 + pause)/6
-            ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0
-        on hide:
-            xpos 0.5 ypos 0.5 alpha 1.0
-            choice:
-                pause (1 + pause)/6
-                ease_quart 1 xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
-            choice:
-                pause (1 + pause)/6
-                ease_quart 1 xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+        choice:
+            xpos 0.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+        choice:
+            xpos 1.0 xanchor 0.5 yanchor 0.5 alpha 0.0
+        pause (1 + pause)/6
+        ease_quart 1 xpos 0.5 ypos 0.5 alpha 1.0
 
     transform wjuh_bg:
         subpixel True
-        on start:
-            yzoom 0.0 xzoom 0.0
-            block:
-                ease_quart 0.5 xzoom 1.0
-            block:
-                ease_quart 0.5 yzoom 1.0
-        on hide:
-            yzoom 1.0 xzoom 1.0
-            block:
-                ease_quart 0.5 xzoom 0.0
-            block:
-                ease_quart 0.5 yzoom 0.0
+        yzoom 0.0 xzoom 0.0
+        block:
+            ease_quart 0.5 xzoom 1.0
+        block:
+            ease_quart 0.5 yzoom 1.0
 
     transform wjuh_line:
         subpixel True
@@ -543,3 +527,11 @@ init -5:
         on hide:
             alpha 1.0
             ease_quart 0.5 alpha 0.0
+
+    transform wnfh_adv_box:
+        on replace:
+            ypos 1.2
+            ease_quart 1 ypos 0.99
+        on hide:
+            ypos 0.99
+            ease_quart 1 ypos 1.2

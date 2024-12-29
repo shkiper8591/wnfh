@@ -123,10 +123,7 @@ init 2:
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
-            if persistent.wnfh_debug_color:
-                background frame_black
-            else:
-                background frame_transparent
+           background debug_frame["black"]
             vbox: # ================================================ Фон таблички из трёх кусков
                 pos (0.5, 0.5)
                 xanchor 0.5 yanchor 0.5
@@ -184,10 +181,7 @@ init 2:
                         frame:
                             area(0.5, 0.0, 0.9, 80)
                             xanchor 0.5 yanchor 0.0
-                            if persistent.wnfh_debug_color:
-                                background frame_black
-                            else:
-                                background frame_transparent
+                            background debug_frame["black"]
 
                         frame: # ======================== Заголовок "Аудио"
                             area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 10)
@@ -251,37 +245,6 @@ init 2:
                                                 hover_thumb wnfh_bars["tumb"][0]
                                                 xmaximum 1.0 ymaximum 36
                                                 yanchor 0.5 ypos 0.5
-                                        #for bar in wnfh_preferences_audio_bars[0:3]:
-                                        #    frame:
-                                        #        if persistent.wnfh_debug_color:
-                                        #            background frame_red
-                                        #        else:
-                                        #            background frame_transparent
-                                        #        area(0.0, 0.5, 0.2, 1.0)
-                                        #        yanchor 0.5
-                                        #        text bar[1]:
-                                        #            pos(0.5, 0.5)
-                                        #            style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                        #            xanchor 0.5
-                                        #            size 30
-                                        #            kerning 1
-                                        #            min_width 200
-                                        #            layout "tex"
-                                        #            #action Play("sound", wnfh_gui["sound"]["plimp"]) 
-                                        #    frame:
-                                        #        if persistent.wnfh_debug_color:
-                                        #            background frame_green
-                                        #        else:
-                                        #            background frame_transparent
-                                        #        area(1.0, 0.5, 485, 1.0)
-                                        #        xanchor 1.0 yanchor 0.5
-                                        #        bar value bar[2]:
-                                        #            left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                        #            right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                        #            thumb wnfh_bars["tumb"][0]
-                                        #            hover_thumb wnfh_bars["tumb"][0]
-                                        #            xmaximum 1.0 ymaximum 1.0
-                                        #            yanchor 0.5 ypos 0.5
 
                 frame: # ============================ Правый блок
                     area(1.0, 0.5, 0.5, 0.5)
@@ -374,10 +337,7 @@ init 2:
                 frame: # ============================ Центральный блок
                     area(0.5, 1.0, 1.0, 0.5)
                     xanchor 0.5 yanchor 1.0
-                    if persistent.wnfh_debug_color:
-                        background frame_purpl
-                    else:
-                        background frame_transparent
+                    background debug_frame["purple"]
                     vbox:
                         pos (0.5, 0.0)
                         xanchor 0.5 yanchor 0.0
@@ -385,10 +345,7 @@ init 2:
                         frame: # ======================== Заголовок "Текст"
                             area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 10)
                             xanchor 0.5 yanchor 0.0
-                            if persistent.wnfh_debug_color:
-                                background frame_black
-                            else:
-                                background frame_transparent
+                            background debug_frame["black"]
                             vbox: # ================================================ Фон таблички из трёх кусков
                                 pos (0.5, 0.5)
                                 xanchor 0.5 yanchor 0.5
@@ -415,10 +372,7 @@ init 2:
                         frame:
                             area(0.5, 0.0, 0.8, 335)
                             xanchor 0.5 yanchor 0.0
-                            if persistent.wnfh_debug_color:
-                                background frame_black
-                            else:
-                                background frame_transparent
+                            background debug_frame["black"]
                             vbox:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
@@ -427,7 +381,4 @@ init 2:
                                     frame:
                                         area(0.5, 0.0, 1.0, 315/6)
                                         xanchor 0.5 yanchor 0.0
-                                        if persistent.wnfh_debug_color:
-                                            background frame_black
-                                        else:
-                                            background frame_transparent
+                                        background debug_frame["black"]

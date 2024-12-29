@@ -98,10 +98,7 @@ init 2:
             #frame: # ================================================ Фрейм таблички
                 area(0.5, 0.08, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
                 xanchor 0.5 yanchor 0.5
-                if persistent.wnfh_debug_color:
-                    background frame_black
-                else:
-                    background frame_transparent
+                background debug_frame["black"]
                 vbox: # ================================================ Фон таблички из трёх кусков
                     pos (0.5, 0.5)
                     xanchor 0.5 yanchor 0.5
@@ -124,10 +121,7 @@ init 2:
                     for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
                         #frame at wnfh_frames_elements["widget_lp_box_bg"][6]:
                         frame:
-                            if persistent.wnfh_debug_color:
-                                background frame_black
-                            else:
-                                background frame_transparent
+                            background debug_frame["black"]
                             area(0.5, 0.5, 160, wnfh_frames_elements["widget_lp_box_bg"][2])
                             xanchor 0.5 yanchor 0.5
                             hbox: # ================================================ Ебальники с очками
@@ -150,10 +144,7 @@ init 2:
                                             xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
                                             zoom 0.1
                                 frame: # ================================================ Очки
-                                    if persistent.wnfh_debug_color:
-                                        background frame_blue
-                                    else:
-                                        background frame_transparent
+                                    background debug_frame["blue"]
                                     area(1.0, 0.5, 60, 90)
                                     xanchor 1.0 yanchor 0.5
                                     text str(wnfh_Data.getChoice_points_sum(character)):
@@ -166,10 +157,7 @@ init 2:
         frame at govno_ebanoe: # ================================================ Фрейм кнопок
             area(0.5, 0.5, 600, 600)
             xanchor 0.5 yanchor 0.5
-            if persistent.wnfh_debug_color:
-                background frame_black
-            else:
-                background frame_transparent
+            background debug_frame["black"]
             vbox: # ================================================ Вбокс блока кнопок
                 pos (0.5, 0.5)
                 xanchor 0.5 yanchor 0.5
@@ -178,10 +166,7 @@ init 2:
                     frame at atl_wnfh_game_menu_selector(index): # ================================================ Фрейм, как один элемент вбокса
                         area(0.5, 0.5, 300, 60)
                         xanchor 0.5 yanchor 0.5
-                        if persistent.wnfh_debug_color:
-                            background frame_blue
-                        else:
-                            background frame_transparent 
+                        background debug_frame["blue"] 
                         vbox: # ================================================ Вбокс кнопок
                             pos (0.5, 0.5)
                             xanchor 0.5 yanchor 0.5
@@ -207,10 +192,7 @@ init 2:
                                 null height 20
 
                             area(0.5, 0.5, wnfh_frames_elements["game_menu_selector_button_bg"][1], wnfh_frames_elements["game_menu_selector_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
-                            if persistent.wnfh_debug_color:
-                                background frame_purpl
-                            else:
-                                background frame_transparent
+                            background debug_frame["purple"]
                             textbutton button[0]: # ================================================ Текст кнопок
                                 xalign 0.5 yanchor 0.5 ypos 0.5
                                 text_line_leading 5 text_line_spacing 3

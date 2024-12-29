@@ -69,12 +69,9 @@ init 2:
                 "hide":  [wnfh_gui["tint_elements"]["db_button_hide"]   ,HideInterface()                                                                              ],
             }
 
-        frame:
+        frame at wnfh_adv_box:
             area(0.5, 0.99, 1.0, 185)
-            if persistent.wnfh_debug_color:
-                background frame_black
-            else:
-                background frame_transparent
+            background debug_frame["black"]
             xanchor 0.5 yanchor 1.0 padding(0, 0)
 
             frame: # ======================== Диалоговое окно
@@ -84,10 +81,7 @@ init 2:
                     area(0.5, 1.0, 1500, 185)
     
                 xanchor 0.5 yanchor 1.0 padding(0, 0)
-                if persistent.wnfh_debug_color:
-                    background frame_black
-                else:
-                    background frame_transparent
+                background debug_frame["black"]
                 vbox:
                     xanchor 0.5 yanchor 1.0
                     xpos 0.5 ypos 1.0
@@ -96,22 +90,14 @@ init 2:
                     frame:
                         area(0.5, 0.5, wnfh_frames_elements["db_line_lower"][1], wnfh_frames_elements["db_line_lower"][2])
                         xanchor 0.5 yanchor 0.5 padding(0, 0)
-                        
-                        if persistent.wnfh_debug_color:
-                            background frame_green
-                        else:
-                            background frame_transparent
+                        background debug_frame["green"]
                         add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                     frame:
                         at (wnfh_frames_elements["db_bg"][6])[say_anim()]
                         area(0.5, 0.5, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2], wnfh_frames_elements["db_bg"][2]+50)[say_size()]) 
                         xanchor 0.5 yanchor 0.5 padding(0, 0)
-                        
-                        if persistent.wnfh_debug_color:
-                            background frame_red
-                        else:
-                            background frame_transparent
+                        background debug_frame["red"]
                         add Frame(wnfh_frames_elements["db_bg"][0], left=wnfh_frames_elements["db_bg"][3], top=0):
                             matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_bg"][4]])
                     hbox:
@@ -121,21 +107,13 @@ init 2:
                             at (wnfh_frames_elements["db_mid_line"][6])[say_anim()]
                             area(1.0, 1.0, (wnfh_frames_elements["db_mid_line"][1], wnfh_frames_elements["db_mid_line"][1]-100)[say_size()], wnfh_frames_elements["db_mid_line"][2])
                             xanchor 1.0 yanchor 1.0 padding(0, 0)
-                            
-                            if persistent.wnfh_debug_color:
-                                background frame_green
-                            else:
-                                background frame_transparent
+                            background debug_frame["green"]
                             add Frame(wnfh_frames_elements["db_mid_line"][0], left=wnfh_frames_elements["db_mid_line"][3], right=55, top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_mid_line"][4]])
                         frame: # ======================== Кнопки
                             area(1.0, 0.5, wnfh_frames_elements["db_brow_line"][1], wnfh_frames_elements["db_brow_line"][2])
                             xanchor 1.0 yanchor 0.5 padding(0, 0)
-                            
-                            if persistent.wnfh_debug_color:
-                                background frame_blue
-                            else:
-                                background frame_transparent
+                            background debug_frame["blue"]
                             add Frame(wnfh_frames_elements["db_brow_bg"][0], left=wnfh_frames_elements["db_brow_bg"][3], right=55, top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg"][4]])
                                 xzoom -1.0
@@ -167,35 +145,26 @@ init 2:
                         frame:
                             area(0.0, 0.5, wnfh_frames_elements["db_brow_bg3"][1], wnfh_frames_elements["db_brow_bg3"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
-                            
-                            if persistent.wnfh_debug_color:
-                                background frame_blue
-                            else:
-                                background frame_transparent
+                            background debug_frame["blue"]
                             add Frame(wnfh_frames_elements["db_brow_bg3"][0], left=wnfh_frames_elements["db_brow_bg3"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg3"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line3"][0], left=wnfh_frames_elements["db_brow_line3"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line3"][4]])
+
                         frame:
                             at (wnfh_frames_elements["db_brow_bg2"][6])[say_anim()]
                             area(0.0, 0.5, (wnfh_frames_elements["db_brow_bg2"][1], wnfh_frames_elements["db_brow_bg2"][1]+100)[say_size()], wnfh_frames_elements["db_brow_bg2"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
-                            
-                            if persistent.wnfh_debug_color:
-                                background frame_blue
-                            else:
-                                background frame_transparent
+                            background debug_frame["blue"]
                             add Frame(wnfh_frames_elements["db_brow_bg2"][0], left=wnfh_frames_elements["db_brow_bg2"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg2"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line2"][4]])
+
                         frame:
                             area(0.0, 0.5, wnfh_frames_elements["db_brow_bg1"][1], wnfh_frames_elements["db_brow_bg1"][2])
                             xanchor 0.0 yanchor 0.5 padding(0, 0)
-                            if persistent.wnfh_debug_color:
-                                background frame_blue
-                            else:
-                                background frame_transparent
+                            background debug_frame["blue"]
                             add Frame(wnfh_frames_elements["db_brow_bg1"][0], left=wnfh_frames_elements["db_brow_bg1"][3], top=0):
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg1"][4]])
                             add Frame(wnfh_frames_elements["db_brow_line1"][0], left=wnfh_frames_elements["db_brow_line1"][3], top=0):
@@ -212,36 +181,22 @@ init 2:
                                         anchor (0.0, 0.0) pos (20, 0.0)
                                         size (28, 35)[say_size()]
                                         line_spacing 1
-                            
-                        
-                        
-                            
-                     
-
-                    
-        
-                    
                 frame: # ======================== Текст
                     at (wnfh_frames_elements["db_bg"][6])[say_anim()]
                     area(0.5, 1.0, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2]+5, wnfh_frames_elements["db_bg"][2]+55)[say_size()])
                     xanchor 0.5 yanchor 1.0
-                    if persistent.wnfh_debug_color:
-                        background frame_red
-                    else:
-                        background frame_transparent
+                    background debug_frame["red"]
                     text what id "what":
                         anchor (0.0, 0.0) pos (20, 0.0)
                         xmaximum wnfh_frames_elements["db_bg"][1]-40
                         size (28, 35)[say_size()]
                         line_spacing 1
+
             frame: # ======================== Кнопка логов
                 at (wnfh_db_buttons_small, wnfh_db_buttons_large, None)[say_anim()]
                 area(0.0, (0.65, 0.5)[say_size()], 0.07, 0.5)
                 xanchor 0.0 yanchor 0.5
-                if persistent.wnfh_debug_color:
-                    background frame_blue
-                else:
-                    background frame_transparent
+                background debug_frame["blue"]
                 imagebutton:
                     idle wnfh_say_buttons["backward"][0]
                     hover wnfh_say_buttons["backward"][1]
@@ -252,10 +207,7 @@ init 2:
                 at (wnfh_db_buttons_small, wnfh_db_buttons_large, None)[say_anim()]
                 area(1.0, (0.65, 0.5)[say_size()], 0.07, 0.5)
                 xanchor 1.0 yanchor 0.5 
-                if persistent.wnfh_debug_color:
-                    background frame_blue
-                else:
-                    background frame_transparent
+                background debug_frame["blue"]
                 if not config.skipping:
                     imagebutton:
                         idle wnfh_say_buttons["forward"][0]
@@ -325,18 +277,11 @@ init 2:
             if persistent.font_size == "large":
                 area(0.5, 1.0, 1.0, 200)
             xanchor 0.5 yanchor 1.0
-            if persistent.wnfh_debug_color:
-                background frame_black
-            else:
-                background frame_transparent
+            background debug_frame["black"]
             frame: # ======================== Кнопочки
                 area(0.0, 0.5, 0.07, 1.0)
                 xanchor 0.0 yanchor 0.5
-                if persistent.wnfh_debug_color:
-                    background frame_blue
-                else:
-                    background frame_transparent
-
+                background debug_frame["blue"]
                 imagebutton:
                     idle wnfh_say_buttons["backward"][0]
                     hover wnfh_say_buttons["backward"][1]
@@ -346,11 +291,7 @@ init 2:
             frame: # ======================== Кнопочки
                 area(1.0, 0.5, 0.07, 1.0)
                 xanchor 1.0 yanchor 0.5
-                if persistent.wnfh_debug_color:
-                    background frame_blue
-                else:
-                    background frame_transparent
-
+                background debug_frame["blue"]
                 if not config.skipping:
                     imagebutton:
                         idle wnfh_say_buttons["forward"][0]
@@ -369,10 +310,7 @@ init 2:
             frame: # ======================== Главный блок
                 area(0.5, 1.0, 1555, 1080)
                 xanchor 0.5 yanchor 1.0
-                if persistent.wnfh_debug_color:
-                    background frame_green
-                else:
-                    background frame_transparent
+                background debug_frame["green"]
                 vbox:
                     anchor (0.5, 1.0) pos (0.5, 1.0)
                     add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
@@ -386,10 +324,7 @@ init 2:
                         xalign 0.5
     
                 frame: # ======================== Текст
-                    if persistent.wnfh_debug_color:
-                        background frame_red
-                    else:
-                        background frame_transparent
+                    background debug_frame["red"]
                     area(0.5, 1.0, 0.96, 0.96)
                     xanchor 0.5 yanchor 1.0 
                     vbox:

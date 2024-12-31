@@ -1,5 +1,14 @@
 init 2:  
     screen wnfh_say: 
+
+        $ debug_frame = {
+            "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
+            "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
+            "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
+            "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
+            "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        }
+
         default wnfh_play_animation= False
 
         python:
@@ -171,10 +180,7 @@ init 2:
                                 matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line1"][4]])
                             frame: # ======================== Имя
                                 area(0.0, 0.0, (wnfh_frames_elements["db_brow_line"][1]-40, wnfh_frames_elements["db_brow_line"][1]+50)[say_size()], wnfh_frames_elements["db_brow_line"][2])
-                                if persistent.wnfh_debug_color:
-                                    background frame_green
-                                else:
-                                    background frame_transparent
+                                background debug_frame["green"]
                                 if who:
                                     text who id "who":
                                         #anchor (0.0, 0.0) pos (-(wnfh_frames_elements["db_brow_bg2"][1]+5, wnfh_frames_elements["db_brow_bg2"][1]+105)[say_size()], 0.0)

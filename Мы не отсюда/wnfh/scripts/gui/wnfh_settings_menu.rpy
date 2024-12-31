@@ -23,6 +23,9 @@ init -5:
     if persistent.wnfh_mat_filter == None:
         $ persistent.wnfh_mat_filter = 0
 
+    if persistent.all_sound == None:
+        $ persistent.all_sound = "mute"
+
     if persistent.wnfh_hentai_mod == None:
         $ persistent.wnfh_hentai_mod = 0
 
@@ -85,9 +88,9 @@ init 2:
                 ["hentai_mod" ,"Отображение хентая" ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,145      ,1    ],
             ]
             wnfh_preferences_audio_bars = [
-                ["music"      ,"Музыка"   ,Preference("music volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
-                ["sound"      ,"Звуки"    ,Preference("sound volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
-                ["ambience"   ,"Эмбиент"  ,Preference("voice volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 545, 1],
+                ["music"   ,"Музыка"          ,Preference("music volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+                ["sfx"     ,"Звуки"           ,Preference("sound volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+                ["voice"   ,"Эмбиент"         ,Preference("voice volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ]
             wnfh_preferences_audio_buttons = [
                 ["ap_misic"            ,"///"  ,AnimatedValue(value=persistent.wnfh_ap_misic, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
@@ -234,6 +237,19 @@ init 2:
                                                 kerning 1
                                                 xmaximum 600
                                                 layout "tex"
+                                        frame:
+                                            background debug_frame["blue"]
+                                            area(200, 0.5, 90, 1.0)
+                                            xanchor 0.0 yanchor 0.5
+                                            text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
+                                                pos(1.0, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xanchor 1.0
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+
                                         frame:
                                             background debug_frame["green"]
                                             area(1.0, 0.5, wnfh_preferences_audio_bars[element][5]+12, 1.0)

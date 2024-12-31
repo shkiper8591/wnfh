@@ -70,12 +70,14 @@ init 2:
                     ],
             })
             wnfh_db_buttons = {
-                "minus": [wnfh_gui["tint_elements"]["db_button_minus"]  ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]  ],
-                "plus":  [wnfh_gui["tint_elements"]["db_button_plus"]   ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]  ],
-                "save":  [wnfh_gui["tint_elements"]["db_button_save"]   ,ShowMenu('save')                                                                             ],
-                "load":  [wnfh_gui["tint_elements"]["db_button_load"]   ,ShowMenu('load')                                                                      ],
-                "menu":  [wnfh_gui["tint_elements"]["db_button_menu"]   ,ShowMenu('game_menu_selector')                                                               ],
-                "hide":  [wnfh_gui["tint_elements"]["db_button_hide"]   ,HideInterface()                                                                              ],
+                "minus": [wnfh_gui["tint_elements"]["db_button_minus"]    ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]  ],
+                "plus":  [wnfh_gui["tint_elements"]["db_button_plus"]     ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]  ],
+                "mute":  [wnfh_gui["tint_elements"]["db_button_mute"]     ,[Preference("all mute", "enable"),  SetField(persistent, "all_sound", "unmute")]               ],
+                "unmute":[wnfh_gui["tint_elements"]["db_button_unmute"]   ,[Preference("all mute", "disable"), SetField(persistent, "all_sound", "mute")]             ],
+                "save":  [wnfh_gui["tint_elements"]["db_button_save"]     ,ShowMenu('save')                                                                             ],
+                "load":  [wnfh_gui["tint_elements"]["db_button_load"]     ,ShowMenu('load')                                                                             ],
+                "menu":  [wnfh_gui["tint_elements"]["db_button_menu"]     ,ShowMenu('game_menu_selector')                                                               ],
+                "hide":  [wnfh_gui["tint_elements"]["db_button_hide"]     ,HideInterface()                                                                              ],
             }
 
         frame at wnfh_adv_box:
@@ -137,6 +139,18 @@ init 2:
                                         idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
                                         hover im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                         action wnfh_db_buttons[i][1]
+
+                                if persistent.all_sound == "mute":
+                                    imagebutton:
+                                        idle im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                        hover im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                        action wnfh_db_buttons["mute"][1]
+                                elif persistent.all_sound == "unmute":
+                                    imagebutton:
+                                        idle im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                        hover im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                        action wnfh_db_buttons["unmute"][1]
+                                
                                 if persistent.font_size == "small":
                                     imagebutton:
                                         idle im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
@@ -147,6 +161,8 @@ init 2:
                                         idle im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
                                         hover im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                         action wnfh_db_buttons["minus"][1]
+
+                                
                     hbox:
                         xanchor 0.0 yanchor 0.0
                         xpos 0.0 ypos 1.0

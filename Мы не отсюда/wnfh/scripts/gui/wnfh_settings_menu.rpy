@@ -123,7 +123,7 @@ init 2:
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
-           background debug_frame["black"]
+            background debug_frame["black"]
             vbox: # ================================================ Фон таблички из трёх кусков
                 pos (0.5, 0.5)
                 xanchor 0.5 yanchor 0.5

@@ -108,6 +108,10 @@ init -4 python:
         "db_brow_bg1":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg1"]   ,25            ,35          ,0                 ,2             ,frame_green      ,wnfh_pass],
         "db_brow_bg2":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg2"]   ,220           ,35          ,2                 ,2             ,frame_green      ,[wnfh_db_blue_small,wnfh_db_blue_large,None]],
         "db_brow_bg3":                            [wnfh_gui["tint_elements"]["frame_db_brow_bg3"]   ,55            ,35          ,0                 ,2             ,frame_green      ,wnfh_pass],
+        "back_button_line":                       [wnfh_gui["tint_elements"]["frame_line"]          ,170           ,4           ,22                ,1             ,frame_red        ,wnfh_pass],
+        "back_button_bg":                         [wnfh_gui["tint_elements"]["frame_bg"]            ,150           ,50          ,25                ,2             ,frame_green      ,wnfh_pass],
+        "back_button_gradient":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,150           ,50          ,25                ,0             ,frame_red        ,wnfh_pass],
+        
         "settings_bar_null":                      [wnfh_gui["tint_elements"]["frame_bar_null"]      ,40            ,40          ,13                ,1             ,frame_green      ,wnfh_pass],
         "settings_bar_full":                      [wnfh_gui["tint_elements"]["frame_bar_full"]      ,40            ,40          ,13                ,0             ,frame_green      ,wnfh_pass],
         "settings_bar_bg":                        [wnfh_gui["tint_elements"]["frame_bar_bg"]        ,40            ,40          ,13                ,2             ,frame_green      ,wnfh_pass],

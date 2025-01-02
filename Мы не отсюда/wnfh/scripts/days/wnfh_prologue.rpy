@@ -5,9 +5,9 @@ label wnfh_prologue:
     $ wnfh_set_name("dv", "Рыжая")
     scene black
     $ renpy.notify("ввиду того, что один уёбок отказался помогать искать фон, тут чёрный экран")
-    $ wnfh_set_time()
+    $ wnfh_set_time("sunset")
     play ambience ambience_ext_road_night fadein 2.0
-    $ renpy.pause(1.0)
+    $ renpy.pause(1.0, hard=True)
     window hide dissolve
     play sound sfx_close_door_clubs_nextroom
 

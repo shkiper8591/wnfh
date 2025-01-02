@@ -55,6 +55,8 @@ init 2:
             "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
         }
         
+        default wnfh_button_states = [False for i in range(1)]
+
         python:
 
             def menu_img_status(imgf, condition="hover"):
@@ -72,13 +74,13 @@ init 2:
                 "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
                 
                 "bar_full": [im.Composite(
-                    (22, 22),
+                    (25, 25),
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
 
                 "bar_null": [im.Composite(
-                    (22, 22),
+                    (25, 25),
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
                     (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
@@ -117,11 +119,47 @@ init 2:
             ]
         add wnfh_gui["tint_elements"]["vignette"]
 
-        textbutton wnfh_preferences_button[0][1]:
-            area(0.1, 0.1, 0.1, 0.1)
-            xanchor 0.5 yanchor 0.5
-            padding(0, 0)
-            action wnfh_preferences_button[0][2]
+        for index, button in enumerate(wnfh_preferences_button[0:1]):
+            frame:
+                area(0.1, 0.08, 150, 60)
+                xanchor 0.5 yanchor 0.5
+                background debug_frame["blue"] 
+                vbox: # ================================================ Вбокс кнопок
+                    pos (0.5, 0.5)
+                    xanchor 0.5 yanchor 0.5
+                    spacing 0
+                    for element in ["back_button_line", "back_button_bg", "back_button_line"]:
+                        frame:
+                            if persistent.wnfh_debug_color:
+                                background wnfh_frames_elements[element][5]
+                            else:
+                                background frame_transparent
+                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                frame: # ================================================ Тонировка при наведении
+                    if wnfh_button_states[index]:
+                        add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                            xalign 0.5 yalign 0.5 alpha 0.6
+                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
+                        add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                            xalign 0.5 yalign 0.5 alpha 0.1
+                    else:
+                        null height 20
+                    area(0.5, 0.5, wnfh_frames_elements["back_button_bg"][1], wnfh_frames_elements["back_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
+                    background debug_frame["purple"]
+                    textbutton button[1]: # ================================================ Текст кнопок
+                        xalign 0.5 yanchor 0.5 ypos 0.5
+                        text_line_leading 5 text_line_spacing 3
+                        text_min_width 390
+                        text_text_align 0.5
+                        text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                        yoffset 2
+                        background None
+                        hover_sound wnfh_gui["sound"]["plimp"]
+                        hovered ToggleDict(wnfh_button_states, index)
+                        unhovered ToggleDict(wnfh_button_states, index)
+                        action button[2]
 
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
@@ -222,8 +260,8 @@ init 2:
                                 spacing 2
                                 for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
                                     frame:
-                                        area(0.5, 0.0, 1.0, 230/4)
-                                        xanchor 0.5 yanchor 0.0
+                                        area(0.5, 0.5, 1.0, 230/4)
+                                        xanchor 0.5 yanchor 0.5
                                         background debug_frame["black"]
                                         frame:
                                             background debug_frame["red"]
@@ -259,7 +297,7 @@ init 2:
                                                 right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
                                                 thumb wnfh_bars["tumb"][0]
                                                 hover_thumb wnfh_bars["tumb"][0]
-                                                xmaximum 1.0 ymaximum 36
+                                                xmaximum 1.0 ymaximum 39
                                                 yanchor 0.5 ypos 0.5
 
                 frame: # ============================ Правый блок
@@ -309,8 +347,8 @@ init 2:
                                 spacing 2
                                 for element in range(len(wnfh_preferences_widget_buttons)):
                                     frame:
-                                        area(0.5, 0.0, 1.0, 230/4)
-                                        xanchor 0.5 yanchor 0.0
+                                        area(0.5, 0.5, 1.0, 230/4)
+                                        xanchor 0.5 yanchor 0.5
                                         background debug_frame["black"]
                                         frame:
                                             background debug_frame["red"]
@@ -333,7 +371,7 @@ init 2:
                                                 right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
                                                 thumb wnfh_bars["tumb"][0]
                                                 hover_thumb wnfh_bars["tumb"][0]
-                                                xmaximum 1.0 ymaximum 1.0
+                                                xmaximum 1.0 ymaximum 39
                                                 yanchor 0.5 ypos 0.5
                                             frame:
                                                 background debug_frame["black"]

@@ -25,7 +25,6 @@ init 2:
                 ["Загрузить",           [ShowMenu('load')]                                     ],
                 ["Настройки",           [ShowMenu('preferences'), Hide('game_menu_selector')]  ],
                 ["Выход из игры",       [ShowMenu('quit')]                                     ],
-     
             ]
 
         add wnfh_gui["tint_elements"]["vignette"]

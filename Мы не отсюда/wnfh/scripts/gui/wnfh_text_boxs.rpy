@@ -12,11 +12,7 @@ init 2:
         default wnfh_play_animation= False
 
         python:
-            persistent.sprite_time = renpy.store.wnfh_spritetime  
-            if "temv_incrimental" not in globals():
-                global temv_incrimental
-                temv_incrimental = 1000
-                persistent.temv_incrimental = 0
+            persistent.sprite_time = renpy.store.wnfh_spritetime  #проверить
             global wnfh_test_1
             wnfh_test_1 = wnfh_play_animation
             wnfh_chars_define()
@@ -292,7 +288,6 @@ init 2:
                         [(95, 83), [[(0, 0), "button_bg_2", 2], [(0, 0), "button_hover", 0], [(0, 0), "button_line", 1],[(20, 0), "button_line", 1]]],
                     ],
             })
-        $ timeofday = renpy.store.wnfh_tymeofday
         frame: # ======================== Главный фрейм
             if persistent.font_size == "small":
                 area(0.5, 1.0, 1.0, 150)

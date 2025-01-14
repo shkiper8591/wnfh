@@ -490,11 +490,4 @@ init 0 python:
                 
         def render(self, width, height, st, at):
             return renpy.Render(400, 400)
-
-    store.mousePosition= getMousePosition()
-
-    def checkEvent():
-        ui.add(mousePosition)
-    config.overlay_functions.append(checkEvent) 
-    
     

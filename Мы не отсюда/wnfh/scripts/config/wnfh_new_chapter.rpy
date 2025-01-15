@@ -1,6 +1,6 @@
 init 0:
-    #$ mods["wnfh_main"]=u"Мы не отсюда (В разработке)"
-    $ mods["wnfh_main"]=u"{font=wnfh/fonts/IntroDemo-BlackCAPS.otf}{color=#FF97BB}{size=50}Мы не отсюда{/size}{/color}{/font}"
+    $ mods["wnfh_main"]=u"Мы не отсюда (В разработке)"
+    #$ mods["wnfh_main"]=u"{font=wnfh/fonts/IntroDemo-BlackCAPS.otf}{color=#FF97BB}{size=50}Мы не отсюда{/size}{/color}{/font}"
 init python:
     def wnfh_set_time(time_of_day="day", sprite_time=None):
         if sprite_time == None:

@@ -2,6 +2,14 @@ init 2:
     screen wnfh_choice(*args):
         modal True
 
+        $ debug_frame = {
+            "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
+            "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
+            "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
+            "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
+            "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        }
+        
         default wnfh_button_states = [False for i in range(len(args))]
 
         key 'K_PAGEDOWN':
@@ -22,7 +30,7 @@ init 2:
                 wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set,"rollback":False})
             
         frame:
-            background #0000
+            background debug_frame["black"]
             area(0.5, 0.5, 0.7, 0.8)
             xanchor 0.5 yanchor 0.5
             #grid 1 len(args)-1:
@@ -35,7 +43,7 @@ init 2:
                         pass
                     else:
                         frame:
-                            background #0000
+                            background debug_frame["black"]
                             area(0.5, 0.5, 1.0, 80)
                             xanchor 0.5 yanchor 0.5
 

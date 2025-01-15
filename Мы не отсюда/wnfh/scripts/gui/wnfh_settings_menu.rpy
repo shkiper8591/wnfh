@@ -232,7 +232,7 @@ init 2:
                             vbox: # ================================================ Фон таблички из трёх кусков
                                 pos (0.5, 0.5)
                                 xanchor 0.5 yanchor 0.5
-                                spacing
+                                spacing 0
                                 for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
                                     frame at wnfh_frames_elements[element][6]:
                                     #frame:

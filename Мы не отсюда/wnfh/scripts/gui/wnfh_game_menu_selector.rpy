@@ -204,3 +204,4 @@ init 2:
                                 hovered ToggleDict(wnfh_button_states, index)
                                 unhovered ToggleDict(wnfh_button_states, index)
                                 action button[1]
+                                at wnfh_mm_button_hover_atl()

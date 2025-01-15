@@ -160,6 +160,7 @@ init 2:
                         hovered ToggleDict(wnfh_button_states, index)
                         unhovered ToggleDict(wnfh_button_states, index)
                         action button[2]
+                        at wnfh_mm_button_hover_atl()
 
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)

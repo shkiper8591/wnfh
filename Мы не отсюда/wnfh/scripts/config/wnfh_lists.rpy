@@ -6,20 +6,6 @@ init -4 python:
     
     wnfh_gui = dict()
 
-    """
-    Для удобства я разбил список GUI на несколько частей,
-    каждая для своего экрана меню.
-    
-    img - для главного меню
-    achievements - меню ачивок
-    gallery - галерея
-    settings - настройки
-    
-    Так же в этот список я засунул звук,
-    который будет воспроизводиться при наведении на кнопку.
-    
-    Ну и ссылки сюда же засунул
-    """
     wnfh_choice_tint_color = {
         #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
         "day":      ["#FFDD7D", "#80A055", "#000000",   None    ], 
@@ -27,13 +13,6 @@ init -4 python:
         "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
         "prologue": ["#98D8DA", "#BEE8E9", "#000A20", "#A1C7D1" ], 
     }
-    
-    
-
-    #wnfh_gui["frames"] {
-    #    #Тег              #Элементы
-    #    "yesno_box" [wnfh_gui["frames_elements"]["frame_line"], wnfh_gui["frames_elements"]["frame_bg"], wnfh_gui["frames_elements"]["frame_line"]]
-    #}
 
     wnfh_gui["tint_elements"] = {img:(wnfh_TINT_ELEMENTS + img + ".png") for img in [
 

@@ -110,7 +110,7 @@ label d8_evening_2_w_dv:
     dv "Отлично! Идём скорее."
 
     window hide dissolve
-    show bg ext_music_club_night_wnfh 
+    show bg ext_musclub_night_2_wnfh 
     show dv normal pioneer at center
     with dissolve
     stop music fadeout 5.0
@@ -150,7 +150,7 @@ label d8_evening_2_w_dv:
 
     dv "Ой, какой ты скучный."
 
-    show bg ext_music_club_verandah_night_wnfh with dissolve
+    show bg ext_musclub_verandah_night_wnfh with dissolve
 
     "Подойдя к двери, я аккуратно дёрнул ручку. Дабы удоствериться, точно ли она закрыта."
     "А то зная неряшливость Мику, всякое может случиться."
@@ -262,7 +262,7 @@ label d8_evening_2_w_dv:
 
     stop music fadeout 5.0
     stop ambience fadeout 2.0
-    scene bg ext_music_club_verandah_night_wnfh
+    scene bg ext_musclub_verandah_night_wnfh
     show dv normal pioneer at center
     with dspr
     play ambience ambience_camp_center_night fadein 2.0

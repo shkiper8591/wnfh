@@ -8,6 +8,8 @@ label wnfh_sprites_test:
     "Чей спрайт нам нужно отладить?"
     
     menu:
+        "дабл спрайты":
+            jump double
         "Кати":
             jump kat
         "Светы":
@@ -18,6 +20,15 @@ label wnfh_sprites_test:
             jump us
         "Лены":
             jump un
+label double:
+
+    "Испытание бобёр номер один."
+
+    show dv normal pioneer at left
+    show dv normal pioneer at right as dv2
+
+    "испытание началось"
+
 label us:
     "Какую тушку нам нужно просмотреть?"
     

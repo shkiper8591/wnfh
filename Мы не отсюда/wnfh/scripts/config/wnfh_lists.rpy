@@ -500,6 +500,7 @@ init 1:
     $ wnfh_music_list["chill_morning_1"]                        = wnfh_MUSIC + "Wnfh - that is what weekday mornings feel like.mp3"
     $ wnfh_music_list["this_one_sounds_sad"]                    = wnfh_MUSIC + "Wnfh - this one sounds sad.mp3"
     $ wnfh_music_list["argument"]                               = wnfh_MUSIC + "Wnfh - argument.mp3"
+    $ wnfh_music_list["angus_story"]                            = wnfh_MUSIC + "Alec Holowka - Angus Story.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

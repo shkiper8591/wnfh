@@ -561,7 +561,7 @@ label d9_editorial:
     $ renpy.pause(0.5)
     stop ambience fadeout 2.5
     scene bg int_editorial_day_wnfh
-    play ambience_library_day fadein 2.5 
+    play ambience ambience_library_day fadein 2.5 
     show un dr_normal background
     with dissolve2
     $ renpy.pause(0.3)

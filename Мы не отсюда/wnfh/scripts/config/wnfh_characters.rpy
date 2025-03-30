@@ -1,6 +1,6 @@
 init -265 python:
     # Нормальные троеточия
-    wp = "{w=-.25}.{w=-.25}.{w=-.25}."
+    wp = "{w=-0.25}.{w=-0.25}.{w=-0.25}."
 
     if not hasattr(renpy.store,'wnfh_tymeofday'):
         renpy.store.wnfh_tymeofday = "night"

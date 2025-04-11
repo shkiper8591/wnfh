@@ -147,4 +147,5 @@ label d9_walk_w_kat:
 
     th "Погуляли, блин! Надеюсь, я не испачкаюсь уж через чур."
 
-    jump d9_ending
+    window hide dissolve
+    jump d9_ending_kat

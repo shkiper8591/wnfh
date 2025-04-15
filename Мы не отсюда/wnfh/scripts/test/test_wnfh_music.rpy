@@ -53,14 +53,17 @@ label wnfh_justmusic:
 label wnfh_sfx_test:
 
     "Тест звуков."
-    "Два горна одновременно на разных дорожках с задержкой в 0.1"
+    "Тест воспроизведения звука формата .mp3"
 
+    play sound wnfh_sfx_list["smishnaya_zaglushka"]
 
-    $ wnfh_set_volume(channel="sound", value=0.5)
-    $ wnfh_set_volume(channel="sound2", value=0.5)
-    play sound sfx_dinner_horn_processed
-    $ renpy.pause (0.1)
-    play sound2 sfx_dinner_horn_processed
+    #"Два горна одновременно на разных дорожках с задержкой в 0.1"
+
+    #$ wnfh_set_volume(channel="sound", value=0.5)
+    #$ wnfh_set_volume(channel="sound2", value=0.5)
+    #play sound sfx_dinner_horn_processed
+    #$ renpy.pause (0.1)
+    #play sound2 sfx_dinner_horn_processed
 
     "Тест начался."
 

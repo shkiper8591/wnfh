@@ -85,7 +85,7 @@ label d9_me_un_evening:
     with dissolve2
     play ambience ambience_camp_center_evening fadein 2.5
     play music wnfh_music_list["old_manor"] fadein 5.0
-    renpy.pause(1.0)
+    $ renpy.pause(1.0)
     window show dissolve
 
     "Быстрым шагом, она провела меня на остановку и отвела в сторону."
@@ -161,7 +161,7 @@ label d9_me_un_evening_1:
     un "А теперь слушай меня очень внимательно."
     un "Тебя ждёт два варианта развития событий:"
     un "Либо, ты идёшь на сотрудничество и живёшь прекрасно."
-    un "Либо[wp] Тебя перезапишут."
+    un "Либо[wp] Тебя заберут."
 
     "Ужас полностью сковал меня, что я даже не мог ничего сказать."
     "И дело даже не только в том, что мне в живот упирается оружие."

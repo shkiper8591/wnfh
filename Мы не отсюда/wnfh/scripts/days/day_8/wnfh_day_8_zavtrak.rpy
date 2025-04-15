@@ -61,8 +61,6 @@ label d8_zavtrak:
         jump d8_zavtrak_w_un
 
 label d8_zavtrak_w_un:
-
-    $ wnfh_Data.FlagSet("dinner_w_un") 
     
     show un smile pioneer:
         xcenter 1.2
@@ -369,6 +367,8 @@ label d8_mi_no_1:
     jump d8_begunok_canon
 
 label d8_zavtrak_s_el_sh:
+
+    $ wnfh_Data.FlagSet("zavtrak_w_males", True)
 
     window show dissolve
     th "Пожалуй, пойду к своим, с ними как-то поуютнее будет."

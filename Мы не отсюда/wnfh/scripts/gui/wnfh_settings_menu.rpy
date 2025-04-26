@@ -104,8 +104,8 @@ init 2:
                 ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
             ]
             wnfh_preferences_text_bars = [
-                ["text_speed"       ,"Скорость текста"     ,Preference("text speed")         ],
-                ["autoforward_time" ,"Время автопереходов" ,Preference("auto-forward time")  ],
+                [preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+                [preferences.afm_time  ,"Время автопереходов" , "сек" ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ]
             wnfh_preferences_text_buttons = [
                 ["autoforward" ,"Автопереход"  ,[Preference("auto-forward after click", "enable"),  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ]],
@@ -432,8 +432,56 @@ init 2:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
                                 spacing 2
-                                for element in range(len(wnfh_preferences_text_bars) + len(wnfh_preferences_text_buttons)):
+                                for element in range(len(wnfh_preferences_text_bars)): #+ len(wnfh_preferences_text_buttons)):
                                     frame:
-                                        area(0.5, 0.0, 1.0, 315/6)
+                                        area(0.5, 0.0, 1.0, 315/6) #+ len(wnfh_preferences_text_buttons))
                                         xanchor 0.5 yanchor 0.0
                                         background debug_frame["black"]
+                                        frame:
+                                            background debug_frame["red"]
+                                            area(0.0, 0.5, 500, 1.0)
+                                            xanchor 0.0 yanchor 0.5
+                                            text wnfh_preferences_text_bars[element][1]:
+                                                pos(0.0, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xanchor 0.0
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+                                        frame:
+                                            background debug_frame["blue"]
+                                            area(0.5, 0.5, 60, 1.0)
+                                            xanchor 1.0 yanchor 0.5
+                                            text "{}".format(int(wnfh_preferences_text_bars[element][0])):
+                                                pos(0.5, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xanchor 0.5
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+                                        frame:
+                                            background debug_frame["purple"]
+                                            area(0.5, 0.5, 200, 1.0)
+                                            xanchor 0.0 yanchor 0.5
+                                            text wnfh_preferences_text_bars[element][2]:
+                                                pos(0.0, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xanchor 0.0
+                                                size 15
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+
+                                        frame:
+                                            background debug_frame["green"]
+                                            area(1.0, 0.5, wnfh_preferences_text_bars[element][6]+12, 1.0)
+                                            xanchor 1.0 yanchor 0.5
+                                            bar value wnfh_preferences_text_bars[element][3]:
+                                                left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                thumb wnfh_bars["tumb"][0]
+                                                hover_thumb wnfh_bars["tumb"][0]
+                                                xmaximum 1.0 ymaximum 39
+                                                yanchor 0.5 ypos 0.5

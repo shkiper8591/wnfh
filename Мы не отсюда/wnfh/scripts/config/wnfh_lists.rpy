@@ -505,6 +505,11 @@ init 1:
     $ wnfh_music_list["lack_of_air"]                            = wnfh_MUSIC + "Wnfh - Lack of air.mp3"
     $ wnfh_music_list["chill_day_1"]                            = wnfh_MUSIC + "Wnfh - What a beautiful weather outside!1.mp3"
     $ wnfh_music_list["strashilka_1"]                           = wnfh_MUSIC + "Alec Holowka - The Hole At The Center Of Everything.mp3"
+    $ wnfh_music_list["sad_1"]                                  = wnfh_MUSIC + "Wnfh - sad1(based).mp3"
+    $ wnfh_music_list["sad_1_slowed"]                           = wnfh_MUSIC + "Wnfh - sad1(slowed).mp3"
+    $ wnfh_music_list["sad_1_super_slowed"]                     = wnfh_MUSIC + "Wnfh - sad1(super slowed).mp3"
+    $ wnfh_music_list["evening_1"]                              = wnfh_MUSIC + "Wnfh - Soiree.mp3"
+    $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

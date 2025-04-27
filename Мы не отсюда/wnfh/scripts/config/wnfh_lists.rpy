@@ -531,6 +531,7 @@ init 1:
     $ wnfh_ambience_list["salute"]                              = wnfh_AMBIENCE + "ambience_salute.mp3"
     $ wnfh_ambience_list["veter_v_pole"]                        = wnfh_AMBIENCE + "veter-v-pole.mp3"
     $ wnfh_ambience_list["ambience_int_old_building"]           = wnfh_AMBIENCE + "ambience_int_old_building.mp3"
+    $ wnfh_ambience_list["ambient_city_street_day"]             = wnfh_AMBIENCE + "ambient_city_street_day.mp3"
     #$ wnfh_ambience_list[""] = wnfh_AMBIENCE + ".mp3"
     
     ## Рандомизация мявков

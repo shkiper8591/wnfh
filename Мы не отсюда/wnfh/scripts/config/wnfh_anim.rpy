@@ -349,13 +349,14 @@ init -5:
         ease 0.2 zoom 1.0
 
     transform wnfh_mm_button_hover_atl(z = 1.0):
+        subpixel True
         pos(0.5, 0.5)
         anchor(0.5, 0.5)
         on hover:
-            ease 0.15 zoom (z - 0.15)
-            ease 0.15 zoom (z - 0.02)
+            easein_quad 0.15 zoom (z - 0.15)
+            easein_quad 0.15 zoom (z - 0.02)
         on idle:
-            ease 0.15 zoom z
+            ease 0.30 zoom z
             
     transform wnfh_splash_anim(x, y, rot):
         block:

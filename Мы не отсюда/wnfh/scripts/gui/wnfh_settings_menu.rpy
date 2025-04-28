@@ -258,10 +258,10 @@ init 2:
                             vbox:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
-                                spacing 2
+                                spacing 0
                                 for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
                                     frame:
-                                        area(0.5, 0.5, 1.0, 230/4)
+                                        area(0.5, 0.5, 1.0, 228/4)
                                         xanchor 0.5 yanchor 0.5
                                         background debug_frame["black"]
                                         frame:
@@ -271,6 +271,7 @@ init 2:
                                             text wnfh_preferences_audio_bars[element][1]:
                                                 pos(0.0, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 0.0
                                                 size 30
                                                 kerning 1
@@ -283,6 +284,7 @@ init 2:
                                             text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
                                                 pos(1.0, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 1.0
                                                 size 30
                                                 kerning 1
@@ -345,10 +347,10 @@ init 2:
                             vbox:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
-                                spacing 2
+                                spacing 0
                                 for element in range(len(wnfh_preferences_widget_buttons)):
                                     frame:
-                                        area(0.5, 0.5, 1.0, 230/4)
+                                        area(0.5, 0.5, 1.0, 228/4)
                                         xanchor 0.5 yanchor 0.5
                                         background debug_frame["black"]
                                         frame:
@@ -358,6 +360,7 @@ init 2:
                                             text wnfh_preferences_widget_buttons[element][1]:
                                                 pos(0.0, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 0.0
                                                 size 30
                                                 kerning 1
@@ -380,15 +383,13 @@ init 2:
                                                 xanchor 0.0 yanchor 0.5
                                                 padding(0, 0)
                                                 hbox:
-                                                    for i in range(wnfh_preferences_widget_buttons[element][6]+1):
+                                                    for i in range(wnfh_preferences_widget_buttons[element][6]):
                                                         button:
-                                                            area(0.5, 0.5, (wnfh_preferences_widget_buttons[element][5]) / (wnfh_preferences_widget_buttons[element][6]+1), 1.0)
+                                                            area(0.5, 0.5, (wnfh_preferences_widget_buttons[element][5]) / (wnfh_preferences_widget_buttons[element][6]), 1.0)
                                                             xanchor 0.5 yanchor 0.5
                                                             padding(0, 0)
-                                                            action SetField(persistent, "wnfh_" + wnfh_preferences_widget_buttons[element][0], i)
+                                                            action ToggleField(persistent, "wnfh_" + wnfh_preferences_widget_buttons[element][0], i, i+1)
                                                             background debug_frame["red"]
-                                                            if persistent.wnfh_debug_color:
-                                                                text str(i) align (0.5, 0.5)
                 frame: # ============================ Центральный блок
                     area(0.5, 1.0, 1.0, 0.5)
                     xanchor 0.5 yanchor 1.0
@@ -425,17 +426,17 @@ init 2:
                                 min_width 200
                                 layout "tex"
                         frame:
-                            area(0.5, 0.0, 0.8, 335)
+                            area(0.5, 0.0, 0.8, 370)
                             xanchor 0.5 yanchor 0.0
                             background debug_frame["black"]
                             vbox:
                                 pos (0.5, 0.0)
                                 xanchor 0.5 yanchor 0.0
-                                spacing 2
+                                spacing 0
                                 for element in range(len(wnfh_preferences_text_bars)): #+ len(wnfh_preferences_text_buttons)):
                                     frame:
-                                        area(0.5, 0.0, 1.0, 315/6) #+ len(wnfh_preferences_text_buttons))
-                                        xanchor 0.5 yanchor 0.0
+                                        area(0.5, 0.5, 1.0, 342/6) #+ len(wnfh_preferences_text_buttons))
+                                        xanchor 0.5 yanchor 0.5
                                         background debug_frame["black"]
                                         frame:
                                             background debug_frame["red"]
@@ -444,6 +445,7 @@ init 2:
                                             text wnfh_preferences_text_bars[element][1]:
                                                 pos(0.0, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 0.0
                                                 size 30
                                                 kerning 1
@@ -456,6 +458,7 @@ init 2:
                                             text "{}".format(int(wnfh_preferences_text_bars[element][0])):
                                                 pos(0.5, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 0.5
                                                 size 30
                                                 kerning 1
@@ -468,6 +471,7 @@ init 2:
                                             text wnfh_preferences_text_bars[element][2]:
                                                 pos(0.0, 0.5)
                                                 style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
                                                 xanchor 0.0
                                                 size 15
                                                 kerning 1

@@ -114,12 +114,17 @@ init 2:
                 ["mat_filter"  ,"Мат-фильтр"   ,[SetField(persistent, "whfh_mat_filter", 0)        ,SetField(persistent, "whfh_mat_filter", 1) ,SetField(persistent, "whfh_mat_filter", 2) ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,248  ,2],
             ]
             wnfh_preferences_text_buttons_states = {
-                "autoforward":  [preferences, "afm_enable", {False:   0      ,True:    1}],
-                "skip":         [preferences, "skip_unseen", {False:   0      ,True:    1}],
-                "font":         [persistent, "font_size", {"small": 0      ,"large": 1}], # ГОВНО КАКОЕ-ТО! persistent.font_size
+                "autoforward":  [preferences, "afm_enable",     {False:   0      ,True:    1}],
+                "skip":         [preferences, "skip_unseen",    {False:   0      ,True:    1}],
+                "font":         [persistent, "font_size",       {"small": 0      ,"large": 1}], # ГОВНО КАКОЕ-ТО! persistent.font_size
                 "mat_filter":   [persistent, "wnfh_mat_filter", {0:       0      ,1:       1        ,2: 2}]
             }
-
+            wnfh_preferences_display_labels = {
+                "autoforward": { 0: "ВЫКЛ",           1: "ВКЛ"              },
+                "skip":        { 0: "Всё",            1: "Виденное ранее"   },
+                "font":        { 0: "Обычный",        1: "Крупный"          },
+                "mat_filter":  { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
+            }
             if main_menu:
                 wnfh_preferences_button = [
                     ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences')]]
@@ -128,6 +133,25 @@ init 2:
                 wnfh_preferences_button = [
                     ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences')]]
                 ]
+            mm_backgrounds = {
+                "night":  wnfh_gui["main_menu"]["mm_bg_night"],
+                "sunset": wnfh_gui["main_menu"]["mm_bg_sunset"],
+                "day":    wnfh_gui["main_menu"]["mm_bg_day"],
+            }
+
+        $ current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
+        $ time_period = (
+            "night"  if (current_hour >= 22 or current_hour < 8) else
+            "sunset" if (current_hour < 12)                      else
+            "day"    if (current_hour < 19)                      else
+            "sunset"
+        )
+        $ renpy.store.wnfh_tymeofday = time_period
+
+        if main_menu:
+            frame:
+                background mm_backgrounds[time_period] # ================== Фон в клавном меню
+                area(0.0, 0.0, 1.0, 1.0)
 
         default wnfh_preferences_text_buttons_states_current = {
             "autoforward":  wnfh_preferences_text_buttons_states["autoforward"][2][preferences.afm_enable],
@@ -515,7 +539,7 @@ init 2:
                                         background debug_frame["black"]
                                         frame:
                                             background debug_frame["red"]
-                                            area(0.0, 0.5, 600, 1.0)
+                                            area(0.0, 0.5, 500, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_text_buttons[element][1]:
                                                 pos(0.0, 0.5)
@@ -526,13 +550,26 @@ init 2:
                                                 kerning 1
                                                 xmaximum 600
                                                 layout "tex"
+                                        $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
+                                        $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
+                                        frame:
+                                            background debug_frame["blue"]
+                                            area(0.5, 0.5, 440, 1.0)
+                                            xanchor 0.5 yanchor 0.5
+                                            text wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value]:
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                xalign 0.5 yalign 0.5
+                                                line_leading 4
+                                                xanchor 0.5
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
                                         frame:
                                             background debug_frame["green"]
                                             area(1.0, 0.5, wnfh_preferences_text_buttons[element][5]+12, 1.0)
                                             xanchor 1.0 yanchor 0.5
-                                            $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
-                                            $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
-                                            bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]), 0.1): # wnfh_preferences_text_buttons[element][2]:
+                                            bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_text_buttons[element][2]:
                                                 left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
                                                 right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
                                                 thumb wnfh_bars["tumb"][0]

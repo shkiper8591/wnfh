@@ -69,19 +69,33 @@ init 2:
                 ["red", im.Scale(wnfh_gui["poligon"]["red"], 100, 100), [Start("wnfh_test")]],
                 
             ]
+            mm_backgrounds = {
+                "night":  wnfh_gui["main_menu"]["mm_bg_night"],
+                "sunset": wnfh_gui["main_menu"]["mm_bg_sunset"],
+                "day":    wnfh_gui["main_menu"]["mm_bg_day"],
+            }
        
             menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
 
-        default splash = random.choice(wnfh_splashes)
+
+        $ current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
+        $ time_period = (
+            "night"  if (current_hour >= 22 or current_hour < 8) else
+            "sunset" if (current_hour < 12)                      else
+            "day"    if (current_hour < 19)                      else
+            "sunset"
+        )
+        $ renpy.store.wnfh_tymeofday = time_period
+
+        default splash = random.choice(wnfh_splashes) # =============== Для сплешей
 
         frame:
-            background wnfh_gui["main_menu"]["mm_bg4"]
+            background mm_backgrounds[time_period] # ================== Фон в клавном меню
             area(0.0, 0.0, 1.0, 1.0)
-            at wnfh_bg_spawn_atl
-        frame:
-            background None
-            #background wnfh_gui["main_menu"]["gradient"]
-            area(0.0, 0.0, 1.0, 1.0)
+        #frame: # ======================================================= # Вдруг нахуй пригодится
+        #    background None
+        #    background wnfh_gui["main_menu"]["gradient"]
+        #    area(0.0, 0.0, 1.0, 1.0)
     
             frame: # ======================================================= # Сплэши
                 if persistent.wnfh_debug_color:

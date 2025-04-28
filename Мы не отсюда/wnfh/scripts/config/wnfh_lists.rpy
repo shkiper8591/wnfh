@@ -97,7 +97,7 @@ init -4 python:
         "settings_bar_tumb":                      [wnfh_gui["tint_elements"]["frame_bar_tumb"]      ,40            ,40          ,5                 ,1             ,frame_green      ,wnfh_pass],
         "settings_main_title_bg":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,880           ,140         ,25                ,2             ,frame_red        ,wnfh_pass],
         "settings_main_title_line":               [wnfh_gui["tint_elements"]["frame_line"]          ,900           ,4           ,22                ,1             ,frame_green      ,wnfh_pass],
-        "settings_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,850         ,25                ,2             ,frame_black      ,wjuh_bg],
+        "settings_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
         "settings_box_line":                      [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "settings_title_bg":                      [wnfh_gui["tint_elements"]["frame_bg"]            ,660           ,70          ,25                ,2             ,frame_red        ,wnfh_pass],
         "settings_title_line":                    [wnfh_gui["tint_elements"]["frame_line"]          ,680           ,4           ,22                ,1             ,frame_green      ,wnfh_pass],
@@ -117,9 +117,9 @@ init -4 python:
     }
     # Для главного меню
     wnfh_gui["main_menu"] = {img:(wnfh_MAIN_MENU + img + ".png") for img in [
-        "mm_bg",
-        "mm_bg2",
-        "mm_bg4",
+        "mm_bg_night",
+        "mm_bg_sunset",
+        "mm_bg_day",
         "gradient",
         "achievements",
         "discord",

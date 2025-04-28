@@ -105,14 +105,21 @@ init 2:
             ]
             wnfh_preferences_text_bars = [
                 [preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
-                [preferences.afm_time  ,"Время автопереходов" , "сек" ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+                [preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ]
             wnfh_preferences_text_buttons = [
-                ["autoforward" ,"Автопереход"  ,[Preference("auto-forward after click", "enable"),  [Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]      , _preferences.afm_time != 0     ]],
-                ["skip"        ,"Пропускать"   ,[Preference("skip", "all"),                         Preference("skip", "seen")                                                                   , _preferences.skip_unseen        ], NullAction()        ],
-                ["font"        ,"Шрифт"        ,[SetField(persistent, "font_size", "large"),        SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ]],
-                ["mat_filter"  ,"Мат-фильтр"   ,AnimatedValue(value=persistent.wnfh_mat_filter, range=2.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,248      ,2    ],
+                ["autoforward" ,"Автопереход"  ,[Preference("auto-forward after click", "enable")  ,[Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
+                ["skip"        ,"Пропускать"   ,[Preference("skip", "all")                         ,Preference("skip", "seen")                                                             ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
+                ["font"        ,"Шрифт"        ,[SetField(persistent, "font_size", "large")        ,SetField(persistent, "font_size", "small")                                             ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
+                ["mat_filter"  ,"Мат-фильтр"   ,[SetField(persistent, "whfh_mat_filter", 0)        ,SetField(persistent, "whfh_mat_filter", 1) ,SetField(persistent, "whfh_mat_filter", 2) ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,248  ,2],
             ]
+            wnfh_preferences_text_buttons_states = {
+                "autoforward":  [preferences, "afm_enable", {False:   0      ,True:    1}],
+                "skip":         [preferences, "skip_unseen", {False:   0      ,True:    1}],
+                "font":         [persistent, "font_size", {"small": 0      ,"large": 1}], # ГОВНО КАКОЕ-ТО! persistent.font_size
+                "mat_filter":   [persistent, "wnfh_mat_filter", {0:       0      ,1:       1        ,2: 2}]
+            }
+
             if main_menu:
                 wnfh_preferences_button = [
                     ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences')]]
@@ -121,6 +128,14 @@ init 2:
                 wnfh_preferences_button = [
                     ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences')]]
                 ]
+
+        default wnfh_preferences_text_buttons_states_current = {
+            "autoforward":  wnfh_preferences_text_buttons_states["autoforward"][2][preferences.afm_enable],
+            "skip":         wnfh_preferences_text_buttons_states["skip"][2][preferences.skip_unseen],
+            "font":         wnfh_preferences_text_buttons_states["font"][2][persistent.font_size],
+            "mat_filter":   wnfh_preferences_text_buttons_states["mat_filter"][2][persistent.wnfh_mat_filter]
+        }
+
         add wnfh_gui["tint_elements"]["vignette"]
 
         for index, button in enumerate(wnfh_preferences_button[0:1]):
@@ -493,3 +508,47 @@ init 2:
                                                 hover_thumb wnfh_bars["tumb"][0]
                                                 xmaximum 1.0 ymaximum 39
                                                 yanchor 0.5 ypos 0.5
+                                for element in range(len(wnfh_preferences_text_buttons)):
+                                    frame:
+                                        area(0.5, 0.5, 1.0, 342/6)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["black"]
+                                        frame:
+                                            background debug_frame["red"]
+                                            area(0.0, 0.5, 600, 1.0)
+                                            xanchor 0.0 yanchor 0.5
+                                            text wnfh_preferences_text_buttons[element][1]:
+                                                pos(0.0, 0.5)
+                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                                line_leading 4
+                                                xanchor 0.0
+                                                size 30
+                                                kerning 1
+                                                xmaximum 600
+                                                layout "tex"
+                                        frame:
+                                            background debug_frame["green"]
+                                            area(1.0, 0.5, wnfh_preferences_text_buttons[element][5]+12, 1.0)
+                                            xanchor 1.0 yanchor 0.5
+                                            $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
+                                            $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
+                                            bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]), 0.1): # wnfh_preferences_text_buttons[element][2]:
+                                                left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                thumb wnfh_bars["tumb"][0]
+                                                hover_thumb wnfh_bars["tumb"][0]
+                                                xmaximum 1.0 ymaximum 39
+                                                yanchor 0.5 ypos 0.5
+                                            frame:
+                                                background debug_frame["black"]
+                                                area(0.0, 0.5, 1.0, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                padding(0, 0)
+                                                hbox:
+                                                    for i in range(wnfh_preferences_text_buttons[element][6]):
+                                                        button:
+                                                            area(0.5, 0.5, (wnfh_preferences_text_buttons[element][5]) / (wnfh_preferences_text_buttons[element][6]), 1.0)
+                                                            xanchor 0.5 yanchor 0.5
+                                                            padding(0, 0)
+                                                            action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()), ]
+                                                            background debug_frame["red"]

@@ -18,9 +18,9 @@ screen wnfh_say:
         def say_size():
             return int(persistent.font_size <= "large")
         def MatrixConverter(dictionary_obj):
-            main_dick={}
+            main_dick = {}
             for button in dictionary_obj:
-                temp_array=[]
+                temp_array = []
                 for obj in dictionary_obj[button]:
                     compozite = []
                     compozite.append(obj[0])
@@ -32,14 +32,14 @@ screen wnfh_say:
                         if obj[-1] is True:
                             flip_args = True
                         else:
-                            flip_args=None
+                            flip_args = None
                     except Exception as E:
                         flip_args = None
                     if flip_args != None:
                         temp_array.append(im.Flip(compozite_obj,flip=True,horizontal=True))
                     else:
                         temp_array.append(compozite_obj)
-                main_dick[button]=temp_array
+                main_dick[button] = temp_array
             return main_dick
         #print(MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)]))
         #MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)],flip=True,horizontal=True)

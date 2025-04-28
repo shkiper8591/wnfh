@@ -19,7 +19,7 @@ init 2:
         
         python:
             wnfh_game_menu_selector_buttons = [
-                ["В главное меню мода", [MainMenu(), SetDict(wnfh_button_states, 0, False)]                                           ],
+                ["В главное меню мода", [MainMenu(), SetDict(wnfh_button_states, 0, False)]    ],
                 ["Схема",               [ShowMenu('wnfh_schematic')]                           ],
                 ["Сохранить",           [ShowMenu('save')]                                     ],
                 ["Загрузить",           [ShowMenu('load')]                                     ],

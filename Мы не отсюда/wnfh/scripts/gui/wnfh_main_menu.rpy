@@ -18,12 +18,12 @@ init 2:
                 ["exit"    ,"Выход в БЛ"     ,[Start("wnfh_exit")]                                  ],
             ]
             wnfh_mm_right_buttons = [
-                ["saves"        ,"Загрузить"  ,[ShowMenu("wnfh_load", _transition=dissolve)]   ],
-                ["preferences"  ,"Настройки"  ,[ShowMenu("wnfh_preferences", _transition=dissolve)]   ],
+                ["saves"        ,"Загрузить"  ,[ShowMenu("load", _transition=dissolve)]   ],
+                ["preferences"  ,"Настройки"  ,[ShowMenu("preferences", main_menu = True), Hide('main_menu')]   ],
             ]
 
             wnfh_mm_mid_buttons = [
-                ["play"    ,"Начать историю"    ,[Hide("wnfh_menu", transition=dissolve), Start("wnfh_prologue")]  ],
+                ["play"    ,"Начать историю"    ,[Hide("main_menu", transition=dissolve), Start("wnfh_prologue")]  ],
             ]
             
             wnfh_mm_down_buttons = [
@@ -72,6 +72,8 @@ init 2:
        
             menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
 
+        default splash = random.choice(wnfh_splashes)
+
         frame:
             background wnfh_gui["main_menu"]["mm_bg4"]
             area(0.0, 0.0, 1.0, 1.0)
@@ -80,18 +82,7 @@ init 2:
             background None
             #background wnfh_gui["main_menu"]["gradient"]
             area(0.0, 0.0, 1.0, 1.0)
-            
-            #frame: # ======================================================= # Часики
-            #    background background_color
-            #    area(0.5, 0.03, 120, 40)
-            #    xanchor 0.5 yanchor 0.5
-            #    text wnfh_get_usertime():
-            #        xalign 0.5
-            #        style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-            #        size 30
-            
     
-
             frame: # ======================================================= # Сплэши
                 if persistent.wnfh_debug_color:
                     background frame_black
@@ -99,7 +90,7 @@ init 2:
                     background frame_transparent
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
-                text init_splash():
+                text splash:
                     style "wnfh_choice_" + renpy.store.wnfh_tymeofday
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
             if debug_switch:

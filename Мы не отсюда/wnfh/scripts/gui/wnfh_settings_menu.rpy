@@ -43,7 +43,7 @@ init -5:
     
 
 init 2:
-    screen wnfh_preferences:
+    screen wnfh_preferences(main_menu = False):
 
         modal True #tag menu
 
@@ -113,10 +113,14 @@ init 2:
                 ["font"        ,"Шрифт"        ,[SetField(persistent, "font_size", "large"),        SetField(persistent, "font_size", "small")                                                   , persistent.font_size == "large" ]],
                 ["mat_filter"  ,"Мат-фильтр"   ,AnimatedValue(value=persistent.wnfh_mat_filter, range=2.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,248      ,2    ],
             ]
-
-            wnfh_preferences_button = [
-                ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences')]]
-            ]
+            if main_menu:
+                wnfh_preferences_button = [
+                    ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences')]]
+                ]
+            else:
+                wnfh_preferences_button = [
+                    ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences')]]
+                ]
         add wnfh_gui["tint_elements"]["vignette"]
 
         for index, button in enumerate(wnfh_preferences_button[0:1]):

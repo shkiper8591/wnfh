@@ -25,7 +25,6 @@ init python:
         if day in range(0, 15):
             renpy.pause(1.0, hard=True)
             renpy.movie_cutscene(wnfh_video_list["backdrop"][day], delay=10.0)
-        
         elif day == u"Тест":
             renpy.pause(1.0, hard=True)
             renpy.movie_cutscene(wnfh_video_list["backdrop"]["test"], delay=191.0)

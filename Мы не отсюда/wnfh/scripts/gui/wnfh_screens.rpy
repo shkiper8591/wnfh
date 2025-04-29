@@ -1,3 +1,6 @@
+init -1 python:
+    wnfh_old_main_menu_music = config.main_menu_music
+    
 init python:
     SCREENS = [
         "main_menu",
@@ -16,10 +19,13 @@ init python:
         #"help",
     ]
     def wnfh_screen_save():  # Функция сохранения экранов из оригинала.
+        #global wnfh_old_main_menu_music
         for name in SCREENS:
             renpy.display.screen.screens[
                 ("wnfh_old_" + name, None)
             ] = renpy.display.screen.screens[(name, None)]
+
+        #wnfh_old_main_menu_music = config.main_menu_music
 
 
     def wnfh_screen_act():  # Функция замены экранов из оригинала на собственные.
@@ -32,14 +38,19 @@ init python:
             renpy.display.screen.screens[(name, None)] = renpy.display.screen.screens[
                 ("wnfh_" + name, None)
             ]
+
+        config.main_menu_music = wnfh_music_list["day_1"]
+
     def wnfh_screens_diact():  # Функция обратной замены.
         # Пытаемся заменить экраны.
+        global wnfh_old_main_menu_music
         try:
             config.window_title = u"Бесконечное лето"
             for name in SCREENS:
                 renpy.display.screen.screens[(name, None)] = renpy.display.screen.screens[
                     ("wnfh_old_" + name, None)
                 ]
+            config.main_menu_music = wnfh_old_main_menu_music
             #config.mouse["default"] = [ ("images/misc/mouse/1.png", 0, 0) ]
             #default_mouse = "default"
             #config.main_menu_music = "sound/music/blow_with_the_fires.ogg"

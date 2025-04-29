@@ -1,5 +1,6 @@
 label wnfh_prologue:
     
+    $ wnfh_new_chapter(0)
     stop music fadeout 3.5
     $ wnfh_set_name("kat", "Новенькая")
     $ wnfh_set_name("dv", "Рыжая")

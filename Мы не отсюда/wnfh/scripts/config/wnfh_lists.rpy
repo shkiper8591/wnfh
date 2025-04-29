@@ -367,7 +367,7 @@ init 1:
         "pegi":wnfh_VIDEO + "pegi.webm",
     }
     
-    $ wnfh_video_list["backdrop"] = {dn:(wnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(1, 14)}
+    $ wnfh_video_list["backdrop"] = {dn:(wnfh_VIDEO + "backdrop_day_" + str(dn) + ".webm") for dn in range(0, 14)}
     $ wnfh_video_list["backdrop"]["test"] = wnfh_VIDEO + "backdrop_test.webm"
     
     image null = Null(0, 0) # Я не ебу что это, не помню нахуй это писал, но пусть будет

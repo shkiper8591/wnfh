@@ -1,22 +1,21 @@
 init python:
 
+    import builtins, random
+
     config.top_layers.append("wnfh_layer_debugOverlay")
 
     wnfh_var_defaultDebug = {
         "enabled":      False,
         "perf":         True,
+        "curLine":      True,
+        "cursorPos":    False,
         "channels":     False,
     }
     if persistent.wnfh_var_debug is None or persistent.wnfh_var_debug.keys() != wnfh_var_defaultDebug.keys():
         persistent.wnfh_var_debug = wnfh_var_defaultDebug
 
     def wnfh_func_toggleDebug():
-        if persistent.wnfh_var_debug["enabled"]:
-            renpy.play(wnfh_sfx_ui_switchOff)
-            persistent.wnfh_var_debug["enabled"] = False
-        else:
-            renpy.play(wnfh_sfx_ui_switchOn)
-            persistent.wnfh_var_debug["enabled"] = True
+        persistent.wnfh_var_debug["enabled"] = not persistent.wnfh_var_debug["enabled"]
 
     class wnfh_class_debugDisplay(renpy.Displayable):
         def __init__(self, type, enabled):
@@ -27,6 +26,8 @@ init python:
         def render(self, width, height, st, at):
             varList = {
                 "perf":         ["performance",             wnfh_func_debug_perf],
+                "curLine":      ["current file and line",   wnfh_func_debug_curLine],
+                "cursorPos":    ["cursor position (x, y)",  wnfh_func_debug_cursorPos],
                 "channels":     ["channels info",           wnfh_func_debug_channelLister],
             }
             renpy.redraw(self, .01)
@@ -52,6 +53,14 @@ init python:
             cur_time = ift[-1] * 1000
             max_time = max(ift) * 1000
         return "\n-   {0:.1f} fps\n-   {1:.1f} fps avg\n-   {2:.1f} fps min\n-   {3:.3f} ms\n-   {4:.3f} ms max".format(fps, avg_fps, min_fps, cur_time, max_time)
+
+    def wnfh_func_debug_curLine():
+        current = renpy.get_filename_line()
+        return "\n    file: {}\n    line: {}".format(current[0].split("/")[-1], current[1])
+
+    def wnfh_func_debug_cursorPos():
+        pos = renpy.get_mouse_pos()
+        return "{}, {} ({}, {})".format(pos[0], pos[1], builtins.round(pos[0]/1920., 3), builtins.round(pos[1]/1080., 3))
 
     def wnfh_func_debug_channelLister():
         emits = []
@@ -131,7 +140,7 @@ screen wnfh_screen_debug_overlay:
                 hbox:
                     text "wnfh debug panel"
                     textbutton "close" action SetDict(persistent.wnfh_var_debug, "enabled", False)
-                for i in ["perf", "channels"]:
+                for i in ["perf", "curLine", "cursorPos", "channels"]:
                     if persistent.wnfh_var_debug[i]:
                         hbox:
                             textbutton "-" action SetDict(persistent.wnfh_var_debug, i, False)

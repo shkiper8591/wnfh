@@ -43,8 +43,9 @@ init python:
             #config.mouse["default"] = [ ("images/misc/mouse/1.png", 0, 0) ]
             #default_mouse = "default"
             #config.main_menu_music = "sound/music/blow_with_the_fires.ogg"
-        except:  # Если возникают ошибки, то мы выходим из игры, чтобы избежать Traceback
-            renpy.quit()
+        except Exception as e:  # Если возникают ошибки, то мы выходим из игры, чтобы избежать Traceback
+            #renpy.quit()
+            raise e
     # Функция для автоматического включения кастомного интерфейса при загрузке сохранения с названием Вашего мода
     def wnfh_activate_after_load():
         global save_name

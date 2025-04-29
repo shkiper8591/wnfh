@@ -1,6 +1,7 @@
 init 1000 python:
     if debug_switch:
         config.developer = True
+        persistent.wnfh_var_debug["enabled"] = True
 init -5:
     $ global frame_transparent
     $ global frame_black
@@ -65,11 +66,6 @@ init 2:
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
 
-            wnfh_underwrites = {
-                "skip": [_preferences.skip_unseen, "Прочитанное", "Всё"],
-                "font": [persistent.font_size == "large", "Обычный", "Жирный"]
-            }
-
             wnfh_bars = {
                 "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
                 
@@ -121,7 +117,7 @@ init 2:
             }
             wnfh_preferences_display_labels = {
                 "autoforward": { 0: "ВЫКЛ",           1: "ВКЛ"              },
-                "skip":        { 0: "Всё",            1: "Виденное ранее"   },
+                "skip":        { 0: "Виденное ранее", 1: "Всё"   },
                 "font":        { 0: "Обычный",        1: "Крупный"          },
                 "mat_filter":  { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
             }
@@ -138,17 +134,15 @@ init 2:
                 "sunset": wnfh_gui["main_menu"]["mm_bg_sunset"],
                 "day":    wnfh_gui["main_menu"]["mm_bg_day"],
             }
-
-        $ current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
-        $ time_period = (
-            "night"  if (current_hour >= 22 or current_hour < 8) else
-            "sunset" if (current_hour < 12)                      else
-            "day"    if (current_hour < 19)                      else
-            "sunset"
-        )
-        $ renpy.store.wnfh_tymeofday = time_period
-
+    
         if main_menu:
+            default current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
+            default time_period = (
+                "night"  if (current_hour >= 22 or current_hour < 8) else
+                "sunset" if (current_hour < 12)                      else
+                "day"    if (current_hour < 19)                      else
+                "sunset"
+            )
             frame:
                 background mm_backgrounds[time_period] # ================== Фон в клавном меню
                 area(0.0, 0.0, 1.0, 1.0)

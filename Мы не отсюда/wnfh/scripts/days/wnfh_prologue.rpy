@@ -11,6 +11,7 @@ label wnfh_prologue:
     $ renpy.pause(1.0, hard=True)
     play music wnfh_music_list["waking_up"] fadein 2.5
     window show dissolve
+    $ renpy.show_screen("wnfh_screen_debug_overlay")
 
     "Тишина и благодать[wp]"
     "Словно блаженный сон. Постель такая мягкая. Приятный ветерок щекочит нос."

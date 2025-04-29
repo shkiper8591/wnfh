@@ -85,15 +85,14 @@ init 2:
             #menu_hovered_action_cat = Play("sound", wnfh_SFX + "meow" + str(randrange(6)) + ".ogg")
 
 
-        $ current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
-        $ time_period = (
+        default current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
+        default time_period = (
             "night"  if (current_hour >= 22 or current_hour < 8) else
             "sunset" if (current_hour < 12)                      else
             "day"    if (current_hour < 19)                      else
             "sunset"
         )
         $ renpy.store.wnfh_tymeofday = time_period
-
         default splash = random.choice(wnfh_splashes) # =============== Для сплешей
 
         frame:
@@ -109,7 +108,7 @@ init 2:
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
                 text splash:
-                    style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                    style "wnfh_choice_" + time_period
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
             if debug_switch:
                 frame: # ======================================================= # Амогус
@@ -147,7 +146,7 @@ init 2:
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
                                     background None
-                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                    text_style "wnfh_choice_" + time_period
                                     action [button[2]]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
@@ -163,7 +162,7 @@ init 2:
                         xanchor 0.5 yanchor 0.5
                         textbutton wnfh_mm_left_buttons[2][1]:
                             background None
-                            text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                            text_style "wnfh_choice_" + time_period
                             action wnfh_mm_left_buttons[2][2]
                             hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
@@ -180,7 +179,7 @@ init 2:
                         xanchor 0.5 yanchor 0.0
                         textbutton wnfh_mm_mid_buttons[0][1]:
                             background None
-                            text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                            text_style "wnfh_choice_" + time_period
                             action wnfh_mm_mid_buttons[0][2]
                             hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
@@ -221,7 +220,7 @@ init 2:
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
                                     background None
-                                    text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
+                                    text_style "wnfh_choice_" + time_period
                                     action [button[2]]
                                     hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
@@ -256,7 +255,6 @@ label wnfh_main:
     return # С помощью return попадаем в главное меню игры.
     #scene cg d8_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)
-    $ init_splash()
 
 
 label wnfh_exit:

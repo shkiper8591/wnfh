@@ -359,6 +359,7 @@ init -5:
             ease 0.30 zoom z
             
     transform wnfh_splash_anim(x, y, rot):
+        subpixel True
         block:
             rotate rot
             pos(x, y)

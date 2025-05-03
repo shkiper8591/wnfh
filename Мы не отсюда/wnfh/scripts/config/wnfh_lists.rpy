@@ -8,6 +8,13 @@ init -4 python:
 
     wnfh_choice_tint_color = {
         #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
+        "day":      ["#FF00FF", "#AA00FF", "#220022",   None    ], 
+        "sunset":   ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
+        "night":    ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
+        "prologue": ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
+} 
+    wnfh_tint_color = {
+        #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
         "day":      ["#FFDD7D", "#80A055", "#000000",   None    ], 
         "sunset":   ["#DCD168", "#CDAF69", "#150A0B", "#EFD1FF" ],
         "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
@@ -35,6 +42,7 @@ init -4 python:
         "db_button_hide",
         #Виньетка
         "vignette",
+        #Фреймы
         "frame_bg",
         "frame_line",
         "frame_gradient",

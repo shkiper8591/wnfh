@@ -15,7 +15,7 @@ init -4:
         xpos 0.876 ypos 0.98
         xanchor 1.0 yanchor 1.0
         xsize 27 ysize 40
-        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][0])
+        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][0])
         contains:
             subpixel True
             alpha 0.0
@@ -101,7 +101,7 @@ init -3 python:
         else:
             who_suffix = ""
         ctc = "wnfh_ctc_animation"
-        what_color = wnfh_choice_tint_color[timeofday][0]
+        what_color = wnfh_tint_color[timeofday][0]
         drop_shadow = (2, 2)
         for i, j in wnfh_characters.items():
             if i == "narrator":
@@ -129,9 +129,9 @@ init -3 python:
         else:
             who_suffix = ""
         ctc = "wnfh_ctc_animation"
-        what_color = wnfh_choice_tint_color[timeofday][0]
+        what_color = wnfh_tint_color[timeofday][0]
         drop_shadow = (2, 2)
-        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], wnfh_choice_tint_color[timeofday][1], wnfh_characters[second][1], wnfh_characters[second][0])
+        character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], wnfh_tint_color[timeofday][1], wnfh_characters[second][1], wnfh_characters[second][0])
         gl[first + "_" + second] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, who_suffix=who_suffix, ctc=ctc, ctc_position="fixed")
 
     for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:

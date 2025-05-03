@@ -37,35 +37,35 @@ init 2:
                 ["vk", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://vk.com/blwnfh")]],
 
                 ["steam", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")]],
 
                 ["discord", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [OpenURL("https://discord.gg/KfaK7pmRSK")]],
 
                 ["achievements", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                     ), 60, 60), 
                 [ShowMenu("wnfh_achievements", _transition=dissolve)]],
 
                 ["seledka", im.Scale(im.Composite(
                     (130, 130),
                     (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_choice_tint_color',0,renpy.store.wnfh_tymeofday)))
+                    (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                     ), 60, 60),
                 [Jump("technical_chocolatki")]],
             ]
@@ -98,17 +98,13 @@ init 2:
         frame:
             background mm_backgrounds[time_period] # ================== Фон в клавном меню
             area(0.0, 0.0, 1.0, 1.0)
-        #frame: # ======================================================= # Вдруг нахуй пригодится
-        #    background None
-        #    background wnfh_gui["main_menu"]["gradient"]
-        #    area(0.0, 0.0, 1.0, 1.0)
-    
             frame: # ======================================================= # Сплэши
                 background debug_frame["black"]
                 area(0.65, 0.05, 0.45, 50)
                 xanchor 0.5 yanchor 0.0
                 text splash:
-                    style "wnfh_choice_" + time_period
+                    style "wnfh_text_" + time_period
+                    size 20
                     at wnfh_splash_anim(0.5, 0.0, -3.0)
             if debug_switch:
                 frame: # ======================================================= # Амогус
@@ -145,10 +141,9 @@ init 2:
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
-                                    background None
-                                    text_style "wnfh_choice_" + time_period
+                                    style "wnfh_buttons"
+                                    text_style "wnfh_text_" + time_period
                                     action [button[2]]
-                                    hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
                 frame:
                     background debug_frame["black"]
@@ -161,10 +156,9 @@ init 2:
                         area(0.5, 0.5, 1.0, 1.0)
                         xanchor 0.5 yanchor 0.5
                         textbutton wnfh_mm_left_buttons[2][1]:
-                            background None
-                            text_style "wnfh_choice_" + time_period
+                            style "wnfh_buttons"
+                            text_style "wnfh_text_" + time_period
                             action wnfh_mm_left_buttons[2][2]
-                            hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
                 
                 frame: # ======================================================= # Центральный блок
@@ -178,10 +172,9 @@ init 2:
                         area(0.5, 0.0, 1.0, 0.7)
                         xanchor 0.5 yanchor 0.0
                         textbutton wnfh_mm_mid_buttons[0][1]:
-                            background None
-                            text_style "wnfh_choice_" + time_period
+                            style "wnfh_buttons"
+                            text_style "wnfh_text_" + time_period
                             action wnfh_mm_mid_buttons[0][2]
-                            hover_sound wnfh_gui["sound"]["plimp"]
                             at wnfh_mm_button_hover_atl()
                     frame:
                         background debug_frame["black"]
@@ -206,7 +199,7 @@ init 2:
                 
                 
                 frame: # ======================================================= # Правый блок
-                    background debug_frame["red"]
+                    background debug_frame["black"]
                     area(1.0, 0.4, 0.42, 0.4)
                     xanchor 1.0 yanchor 0.5
                     
@@ -219,10 +212,9 @@ init 2:
                                 area(0.5, 0.5, 0.33, 1.0)
                                 xanchor 0.5 yanchor 0.5
                                 textbutton button[1]:
-                                    background None
-                                    text_style "wnfh_choice_" + time_period
+                                    style "wnfh_buttons"
+                                    text_style "wnfh_text_" + time_period
                                     action [button[2]]
-                                    hover_sound wnfh_gui["sound"]["plimp"]
                                     at wnfh_mm_button_hover_atl()
                 frame:
                     background debug_frame["black"]

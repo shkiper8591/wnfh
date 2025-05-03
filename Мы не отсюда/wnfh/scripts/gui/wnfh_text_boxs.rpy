@@ -26,7 +26,7 @@ screen wnfh_say:
                     compozite.append(obj[0])
                     for obj_index in range(len(obj[1])):
                         compozite.append(obj[1][obj_index][0])
-                        compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
+                        compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
                     compozite_obj = im.Composite(*compozite)
                     try:
                         if obj[-1] is True:
@@ -92,14 +92,14 @@ screen wnfh_say:
                     xanchor 0.5 yanchor 0.5 padding(0, 0)
                     background debug_frame["green"]
                     add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                 frame:
                     at (wnfh_frames_elements["db_bg"][6])[say_anim()]
                     area(0.5, 0.5, wnfh_frames_elements["db_bg"][1], (wnfh_frames_elements["db_bg"][2], wnfh_frames_elements["db_bg"][2]+50)[say_size()]) 
                     xanchor 0.5 yanchor 0.5 padding(0, 0)
                     background debug_frame["red"]
                     add Frame(wnfh_frames_elements["db_bg"][0], left=wnfh_frames_elements["db_bg"][3], top=0):
-                        matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_bg"][4]])
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_bg"][4]])
                 hbox:
                     xanchor 1.0 yanchor 0.5
                     xpos 1.0 ypos 0.5        
@@ -109,45 +109,45 @@ screen wnfh_say:
                         xanchor 1.0 yanchor 1.0 padding(0, 0)
                         background debug_frame["green"]
                         add Frame(wnfh_frames_elements["db_mid_line"][0], left=wnfh_frames_elements["db_mid_line"][3], right=55, top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_mid_line"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_mid_line"][4]])
                     frame: # ======================== Кнопки
                         area(1.0, 0.5, wnfh_frames_elements["db_brow_line"][1], wnfh_frames_elements["db_brow_line"][2])
                         xanchor 1.0 yanchor 0.5 padding(0, 0)
                         background debug_frame["blue"]
                         add Frame(wnfh_frames_elements["db_brow_bg"][0], left=wnfh_frames_elements["db_brow_bg"][3], right=55, top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg"][4]])
                             xzoom -1.0
                         add Frame(wnfh_frames_elements["db_brow_line"][0], left=wnfh_frames_elements["db_brow_line"][3], right=55, top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line"][4]])
                             xzoom -1.0
                         hbox:
                             anchor (0.5, 0.5) pos (0.5, 0.5)
                             spacing 20
                             for i in ["hide", "save", "menu", "load"]:
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                    hover im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                     action wnfh_db_buttons[i][1]
                             if persistent.all_sound == "mute":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                    hover im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                     action wnfh_db_buttons["mute"][1]
                             elif persistent.all_sound == "unmute":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                    hover im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                     action wnfh_db_buttons["unmute"][1]
                             
                             if persistent.font_size == "small":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                    hover im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                     action wnfh_db_buttons["plus"][1]
                             elif persistent.font_size == "large":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                                    hover im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
                                     action wnfh_db_buttons["minus"][1]
                             
                 hbox:
@@ -159,26 +159,26 @@ screen wnfh_say:
                         xanchor 0.0 yanchor 0.5 padding(0, 0)
                         background debug_frame["blue"]
                         add Frame(wnfh_frames_elements["db_brow_bg3"][0], left=wnfh_frames_elements["db_brow_bg3"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg3"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg3"][4]])
                         add Frame(wnfh_frames_elements["db_brow_line3"][0], left=wnfh_frames_elements["db_brow_line3"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line3"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line3"][4]])
                     frame:
                         at (wnfh_frames_elements["db_brow_bg2"][6])[say_anim()]
                         area(0.0, 0.5, (wnfh_frames_elements["db_brow_bg2"][1], wnfh_frames_elements["db_brow_bg2"][1]+100)[say_size()], wnfh_frames_elements["db_brow_bg2"][2])
                         xanchor 0.0 yanchor 0.5 padding(0, 0)
                         background debug_frame["blue"]
                         add Frame(wnfh_frames_elements["db_brow_bg2"][0], left=wnfh_frames_elements["db_brow_bg2"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg2"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg2"][4]])
                         add Frame(wnfh_frames_elements["db_brow_line2"][0], left=wnfh_frames_elements["db_brow_line2"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line2"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line2"][4]])
                     frame:
                         area(0.0, 0.5, wnfh_frames_elements["db_brow_bg1"][1], wnfh_frames_elements["db_brow_bg1"][2])
                         xanchor 0.0 yanchor 0.5 padding(0, 0)
                         background debug_frame["blue"]
                         add Frame(wnfh_frames_elements["db_brow_bg1"][0], left=wnfh_frames_elements["db_brow_bg1"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg1"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_bg1"][4]])
                         add Frame(wnfh_frames_elements["db_brow_line1"][0], left=wnfh_frames_elements["db_brow_line1"][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line1"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line1"][4]])
                         frame: # ======================== Имя
                             area(0.0, 0.0, (wnfh_frames_elements["db_brow_line"][1]-40, wnfh_frames_elements["db_brow_line"][1]+50)[say_size()], wnfh_frames_elements["db_brow_line"][2])
                             background debug_frame["green"]
@@ -242,7 +242,7 @@ screen wnfh_nvl:
                     compozite.append(obj[0])
                     for obj_index in range(len(obj[1])):
                         compozite.append(obj[1][obj_index][0])
-                        compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
+                        compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
                     compozite_obj = im.Composite(*compozite)
                     try:
                         if obj[-1] is True:
@@ -316,13 +316,13 @@ screen wnfh_nvl:
             vbox:
                 anchor (0.5, 1.0) pos (0.5, 1.0)
                 add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
-                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
+                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                     xalign 0.5 yanchor 1.0 ypos 1.0
                 add (wnfh_gui["tint_elements"]["frame_bg"]):
-                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][2])
+                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][2])
                     xalign 0.5 yzoom 10.0
                 add Frame(wnfh_frames_elements["db_line_lower"][0], left=wnfh_frames_elements["db_line_lower"][3], top=0):
-                    matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
+                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_line_lower"][4]])
                     xalign 0.5
 
             frame: # ======================== Текст

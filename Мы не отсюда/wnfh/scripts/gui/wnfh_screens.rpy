@@ -39,7 +39,12 @@ init python:
                 ("wnfh_" + name, None)
             ]
 
-        config.main_menu_music = wnfh_music_list["day_1"]
+        config.main_menu_music = (
+            wnfh_music_list["this_one_sounds_sad"]  if (wnfh_get_usertime("hour") >= 22 or wnfh_get_usertime("hour") < 8) else
+            wnfh_music_list["wnfh_morning_1"]       if (wnfh_get_usertime("hour") < 12)                                   else
+            wnfh_music_list["day_1"]                if (wnfh_get_usertime("hour") < 19)                                   else
+            wnfh_music_list["wnfh_morning_1"]
+        )
 
     def wnfh_screens_diact():  # Функция обратной замены.
         # Пытаемся заменить экраны.

@@ -67,18 +67,18 @@ init 2:
                     return im.Alpha(imgf, 0.38)
 
             wnfh_bars = {
-                "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
+                "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
                 
                 "bar_full": [im.Composite(
                     (25, 25),
-                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
 
                 "bar_null": [im.Composite(
                     (25, 25),
-                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
-                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_choice_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
+                    (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                     )],
             }
             wnfh_preferences_other_buttons = [
@@ -156,7 +156,7 @@ init 2:
 
         add wnfh_gui["tint_elements"]["vignette"]
 
-        for index, button in enumerate(wnfh_preferences_button[0:1]):
+        for index, button in enumerate(wnfh_preferences_button[0:1]): # ================================================ Кнопка Назад
             frame:
                 area(0.1, 0.08, 150, 60)
                 xanchor 0.5 yanchor 0.5
@@ -173,12 +173,12 @@ init 2:
                                 background frame_transparent
                             area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                             add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
                 frame: # ================================================ Тонировка при наведении
                     if wnfh_button_states[index]:
                         add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
                             xalign 0.5 yalign 0.5 alpha 0.6
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
                         add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
                             xalign 0.5 yalign 0.5 alpha 0.1
                     else:
@@ -186,18 +186,13 @@ init 2:
                     area(0.5, 0.5, wnfh_frames_elements["back_button_bg"][1], wnfh_frames_elements["back_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
                     background debug_frame["purple"]
                     textbutton button[1]: # ================================================ Текст кнопок
-                        xalign 0.5 yanchor 0.5 ypos 0.5
-                        text_line_leading 5 text_line_spacing 3
-                        text_min_width 390
-                        text_text_align 0.5
-                        text_style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                        yoffset 2
-                        background None
-                        hover_sound wnfh_gui["sound"]["plimp"]
+                        style "wnfh_buttons"
+                        text_style "wnfh_text_" + renpy.store.wnfh_tymeofday
                         hovered ToggleDict(wnfh_button_states, index)
                         unhovered ToggleDict(wnfh_button_states, index)
                         action button[2]
                         at wnfh_mm_button_hover_atl()
+                        #text_min_width 390
 
         frame at atl_wnfh_widget_lp_down:
             area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
@@ -216,15 +211,10 @@ init 2:
                             background frame_transparent
                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])             
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])             
             text "Настройки":
-                pos(0.5, 0.55)
-                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                xanchor 0.5
-                size 100
-                kerning 1
-                min_width 200
-                layout "tex"
+                style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
+
         frame at govno_ebanoe2:
             area(0.5, 0.97, 1.0, 0.8)
             xanchor 0.5 yanchor 1.0
@@ -242,7 +232,7 @@ init 2:
                             background frame_transparent
                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]]) 
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]]) 
             frame at wjuh_bg:
                 area(0.5, 0.5, 0.98, 1.0)
                 xanchor 0.5 yanchor 0.5
@@ -279,15 +269,10 @@ init 2:
                                             background frame_transparent
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
                             text "Аудио":
-                                pos(0.5, 0.55)
-                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                xanchor 0.5
-                                size 50
-                                kerning 1
-                                min_width 200
-                                layout "tex"
+                                style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+
                         frame: # ====================== Кнопки ползунки и кнопки аудио
                             area(0.5, 0.0, 0.9, 250)
                             xanchor 0.5 yanchor 0.0
@@ -306,27 +291,13 @@ init 2:
                                             area(0.0, 0.5, 200, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_audio_bars[element][1]:
-                                                pos(0.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.0
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         frame:
                                             background debug_frame["blue"]
                                             area(200, 0.5, 90, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
-                                                pos(1.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 1.0
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
                                         frame:
                                             background debug_frame["green"]
@@ -368,15 +339,9 @@ init 2:
                                             background frame_transparent
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
                             text "Виджеты": # ============================ Виджеты
-                                pos(0.5, 0.55)
-                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                xanchor 0.5
-                                size 50
-                                kerning 1
-                                min_width 200
-                                layout "tex"
+                                style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
                         frame:
                             area(0.5, 0.0, 0.9, 250)
                             xanchor 0.5 yanchor 0.0
@@ -395,14 +360,7 @@ init 2:
                                             area(0.0, 0.5, 600, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_widget_buttons[element][1]:
-                                                pos(0.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.0
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         frame:
                                             background debug_frame["green"]
                                             area(1.0, 0.5, wnfh_preferences_widget_buttons[element][5]+12, 1.0)
@@ -452,16 +410,10 @@ init 2:
                                             background frame_transparent
                                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                            matrixcolor TintMatrix(wnfh_choice_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
 
                             text "Текст":
-                                pos(0.5, 0.55)
-                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                xanchor 0.5
-                                size 50
-                                kerning 1
-                                min_width 200
-                                layout "tex"
+                                style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
                         frame:
                             area(0.5, 0.0, 0.8, 370)
                             xanchor 0.5 yanchor 0.0
@@ -480,40 +432,19 @@ init 2:
                                             area(0.0, 0.5, 500, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_text_bars[element][1]:
-                                                pos(0.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.0
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         frame:
                                             background debug_frame["blue"]
                                             area(0.5, 0.5, 60, 1.0)
                                             xanchor 1.0 yanchor 0.5
                                             text "{}".format(int(wnfh_preferences_text_bars[element][0])):
-                                                pos(0.5, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.5
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         frame:
                                             background debug_frame["purple"]
                                             area(0.5, 0.5, 200, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_text_bars[element][2]:
-                                                pos(0.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.0
-                                                size 15
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_measure_unit_" + renpy.store.wnfh_tymeofday
 
                                         frame:
                                             background debug_frame["green"]
@@ -536,14 +467,7 @@ init 2:
                                             area(0.0, 0.5, 500, 1.0)
                                             xanchor 0.0 yanchor 0.5
                                             text wnfh_preferences_text_buttons[element][1]:
-                                                pos(0.0, 0.5)
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                line_leading 4
-                                                xanchor 0.0
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
                                         $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
                                         frame:
@@ -551,14 +475,7 @@ init 2:
                                             area(0.5, 0.5, 440, 1.0)
                                             xanchor 0.5 yanchor 0.5
                                             text wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value]:
-                                                style "wnfh_choice_" + renpy.store.wnfh_tymeofday
-                                                xalign 0.5 yalign 0.5
-                                                line_leading 4
-                                                xanchor 0.5
-                                                size 30
-                                                kerning 1
-                                                xmaximum 600
-                                                layout "tex"
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                         frame:
                                             background debug_frame["green"]
                                             area(1.0, 0.5, wnfh_preferences_text_buttons[element][5]+12, 1.0)

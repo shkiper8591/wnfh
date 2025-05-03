@@ -464,30 +464,3 @@ init -998 python:
             raise "Ебалан выбор оформлен неверно"
             sys.exit(1)
         return data_set
-
-#init -1 python:
-    #def cords():     
-    #    ui.button(clicked=None, style="wnfh_menu", xpos=0.93, ypos=0.11, xanchor=1.0, xminimum=120)
-    #    ui.text("%s: %d" % ("Мыш X",store.mousex), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
-    #    
-    #    ui.button(clicked=None, style="wnfh_menu", xpos=1.0, ypos=0.11, xanchor=1.0, xminimum=120)
-    #    ui.text("%s: %d" % ("Мыш Y",store.mousey), style="wnfh_lp_counter", color=wnfh_characters["mz"][1])
-
-    # config.overlay_functions.append(cords)
-
-init 0 python:
-
-    class getMousePosition(renpy.Displayable):
-
-        def __init__(self):
-            renpy.Displayable.__init__(self)
-
-        def event(self, ev, x, y, st):
-            import pygame
-            import os
-            if ev.type == pygame.MOUSEMOTION: 
-                renpy.restart_interaction()
-                
-        def render(self, width, height, st, at):
-            return renpy.Render(400, 400)
-    

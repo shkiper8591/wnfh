@@ -134,6 +134,7 @@ init -4 python:
         "seledka",
         "steam",
         "vk",
+        "telegramm",
         "exit"
         ]}
     

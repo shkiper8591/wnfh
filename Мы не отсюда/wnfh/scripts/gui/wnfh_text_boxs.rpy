@@ -6,7 +6,9 @@ screen wnfh_say:
         "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
         "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
     }
+
     default wnfh_play_animation = False
+    
     python:
         persistent.sprite_time = renpy.store.wnfh_spritetime  #проверить
         global wnfh_test_1
@@ -36,7 +38,7 @@ screen wnfh_say:
                     except Exception as E:
                         flip_args = None
                     if flip_args != None:
-                        temp_array.append(im.Flip(compozite_obj,flip=True,horizontal=True))
+                        temp_array.append(im.Flip(compozite_obj, flip=True, horizontal=True))
                     else:
                         temp_array.append(compozite_obj)
                 main_dick[button] = temp_array

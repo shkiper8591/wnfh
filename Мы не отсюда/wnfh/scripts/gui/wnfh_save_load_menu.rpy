@@ -132,9 +132,10 @@ screen wnfh_load(main_menu = False):
             xanchor 0.5 yanchor 0.5
             background debug_frame["black"]
 
-            viewport:
+            viewport id "load":
+                draggable True
                 mousewheel True
-                scrollbars None
+                scrollbars "vertical"
                 vbox:
                     area (0.5, 0.0, 1.0, 1.0)
                     xanchor 0.5 yanchor 0.0

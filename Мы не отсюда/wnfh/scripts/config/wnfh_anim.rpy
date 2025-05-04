@@ -514,13 +514,12 @@ init -5:
     transform govno_ebanoe:
         on hide:
             ease_quart 1.0 ypos 1.0 alpha 0.0
-    transform govno_ebanoe2:
-        on hide:
-            ease_quart 1.0 ypos 2.0 alpha 0.0
 
     transform govno_ebanoe2:
         on hide:
             ease_quart 1.0 ypos 2.0 alpha 0.0
+
+
 
     transform wnfh_gradient:
         on show:

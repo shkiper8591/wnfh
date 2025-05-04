@@ -13,6 +13,11 @@ screen wnfh_load(main_menu = False):
     default wnfh_button_states = [False for i in range(1)]
 
     python:
+        save_load_elements = [
+            ["chapter"  ,"Глава 1"          ],
+            ["date"     ,"12 июля 1989г"    ],
+            ["filetime" ,"04/05/2025 15:12" ]
+        ]
         if main_menu:
             wnfh_preferences_button = [
                 ["back", "Назад", [ShowMenu('main_menu'), Hide('load')]]
@@ -103,6 +108,88 @@ screen wnfh_load(main_menu = False):
 
         text "Загрузить":
             style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
+
+    frame at govno_ebanoe2:
+        area(0.5, 0.97, 1.0, 0.8)
+        xanchor 0.5 yanchor 1.0
+        background debug_frame["red"]
+        vbox: # ================================================ Фон таблички из трёх кусков
+            pos (0.5, 0.5)
+            xanchor 0.5 yanchor 0.5
+            spacing 0
+            for element in ["save_load_box_line", "save_load_box_bg", "save_load_box_line"]:
+                frame at wnfh_frames_elements[element][6]:
+                #frame:
+                    if persistent.wnfh_debug_color:
+                        background wnfh_frames_elements[element][5]
+                    else:
+                        background frame_transparent
+                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        frame at wjuh_bg:
+            area(0.5, 0.5, 0.98, 1.0)
+            xanchor 0.5 yanchor 0.5
+            background debug_frame["black"]
+
+            viewport:
+                mousewheel True
+                scrollbars None
+                vbox:
+                    area (0.5, 0.0, 1.0, 1.0)
+                    xanchor 0.5 yanchor 0.0
+                    spacing 0
+                    for element in range(10):
+                        frame:
+                            area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
+                            xanchor 0.5 yanchor 0.0
+                            background debug_frame["purple"]
+                            vbox: # ================================================ Фон таблички из трёх кусков
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 0
+                                for element in ["save_load_element_line", "save_load_element_bg", "save_load_element_line"]:
+                                    frame at wnfh_frames_elements[element][6]:
+                                    #frame:
+                                        if persistent.wnfh_debug_color:
+                                            background wnfh_frames_elements[element][5]
+                                        else:
+                                            background frame_transparent
+                                        area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                            
+                            
+                            vbox:
+                                pos (0.03, 0.5)
+                                xanchor 0.0 yanchor 0.5
+                                spacing 1
+                                for element in range(len(save_load_elements)):
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text save_load_elements[element][1]:
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                            frame:
+                                area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
+                                xanchor 1.0 yanchor 0.5
+                                background debug_frame["red"]
+                            vbox:
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 2
+                                frame:
+                                    area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
+                                    xanchor 0.5 yanchor 0.5
+                                    background debug_frame["green"]
+                                frame:
+                                    area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
+                                    xanchor 0.5 yanchor 1.0
+                                    background debug_frame["purple"]
+                
+
+
 
     #python:
     #    style.wnfh_save_load_button = Style(style.button)

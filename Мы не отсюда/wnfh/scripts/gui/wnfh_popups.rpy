@@ -33,15 +33,15 @@ screen wnfh_yesno_prompt:
                 pos (0.5, 0.5)
                 xanchor 0.5 yanchor 0.5
                 spacing 0
-                for i in ["yesno_prompt_box_line", "yesno_prompt_box_bg", "yesno_prompt_box_line"]:
-                    frame at wnfh_frames_elements[i][6]:
+                for element in ["yesno_prompt_box_line", "yesno_prompt_box_bg", "yesno_prompt_box_line"]:
+                    frame at wnfh_frames_elements[element][6]:
                         if persistent.wnfh_debug_color:
                             background wnfh_frames_elements[element][5]
                         else:
                             background frame_transparent 
-                        area(0.5, 0.0, wnfh_frames_elements[i][1], wnfh_frames_elements[i][2]) padding(0, 0) xanchor 0.5
-                        add Frame(wnfh_frames_elements[i][0], left=wnfh_frames_elements[i][3], top=0):
-                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[i][4]])
+                        area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
 
             frame at wjuh_bg: # ================================================ Текст таблички
                 area(0.5, 0.5, 1000, 190)

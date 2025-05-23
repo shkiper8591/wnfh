@@ -523,6 +523,7 @@ init 1:
     $ wnfh_music_list["sad_1_super_slowed"]                     = wnfh_MUSIC + "Wnfh - sad1(super slowed).mp3"
     $ wnfh_music_list["evening_1"]                              = wnfh_MUSIC + "Wnfh - Soiree.mp3"
     $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
+    $ wnfh_music_list["classic_bossa"]                          = wnfh_MUSIC + "_Blacksmith_ - Classic Bossa.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

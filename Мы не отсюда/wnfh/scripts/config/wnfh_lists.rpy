@@ -425,6 +425,7 @@ init 1:
     $ wnfh_sfx_list["slow_helicopter_loop"]                     = wnfh_SFX + "slow-helicopter-loop.ogg"
     $ wnfh_sfx_list["budilnik"]                                 = wnfh_SFX + "budilnik.ogg"
     $ wnfh_sfx_list["smishnaya_zaglushka"]                      = wnfh_SFX + "2Alphys - phone impr.mp3"
+    $ wnfh_sfx_list["meow5"] = wnfh_SFX + "meow5.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
     
@@ -524,6 +525,7 @@ init 1:
     $ wnfh_music_list["evening_1"]                              = wnfh_MUSIC + "Wnfh - Soiree.mp3"
     $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
     $ wnfh_music_list["classic_bossa"]                          = wnfh_MUSIC + "_Blacksmith_ - Classic Bossa.mp3"
+    $ wnfh_music_list["kilometri_leta"]                         = wnfh_MUSIC + "kilometri leta - svati.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

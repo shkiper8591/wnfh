@@ -137,9 +137,9 @@ screen wnfh_load(main_menu = False):
                 mousewheel True
                 scrollbars "vertical"
                 vbox:
-                    area (0.5, 0.0, 1.0, 1.0)
-                    xanchor 0.5 yanchor 0.0
-                    spacing 0
+                    pos (0.5, 0.5)
+                    xanchor 0.5 yanchor 0.5
+                    spacing 5
                     for element in range(10):
                         frame:
                             area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)

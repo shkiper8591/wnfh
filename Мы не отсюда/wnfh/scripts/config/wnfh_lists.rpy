@@ -115,6 +115,9 @@ init -4 python:
         "save_load_element_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,1680          ,162         ,25                ,2             ,frame_black      ,wjuh_bg], 
         "save_load_element_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
 
+        "achievements_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
+        "achievements_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+
 
 
 
@@ -213,6 +216,7 @@ init -4 python:
         "alarm",
         "zaebist",
         "handass",
+        "placeholder",
     ]}
 
     
@@ -262,13 +266,15 @@ init -4 python:
         }
     wnfh_ach_list = {
         #Тэг ачивки  #0 Иконка                              #1 Заголовк              #2 Подпись                          #3 Трофей                                #4 Персонаж
-        "payday":   [wnfh_gui["achievements"]["payday"]    ,"Конфетный вор"         ,"Было весело"                      ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"           ],
-        "spirt":    [wnfh_gui["achievements"]["spirt"]     ,"Где мне найти спирт?"  ,"Живая вода"                       ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"           ],   
-        "bkrr":     [wnfh_gui["achievements"]["bkrr"]      ,"Да, это именно то, о чём ты подумал"            ,"Это отсылка на\n«Булки, Кефир, Рок-н-ролл»"              ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],     
-        "post":     [wnfh_gui["achievements"]["post"]      ,"Груз доставлен"        ,"Почти без повреждений"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],       
-        "alarm":    [wnfh_gui["achievements"]["alarm"]     ,"Das Boot"              ,"Доплавался, блин"                 ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"           ],
-        "zaebist":  [wnfh_gui["achievements"]["zaebist"]   ,"Всё идёт по плану"     ,"При коммунизме всё будет заебись" ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"           ],
-        "handass":  [wnfh_gui["achievements"]["handass"]   ,"Рукожоп"               ,"Ну как так-то?"                   ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"           ],
+        "payday":   [wnfh_gui["achievements"]["payday"]    ,"Конфетный вор"                       ,"Было весело"                                ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],
+        "spirt":    [wnfh_gui["achievements"]["spirt"]     ,"Где мне найти спирт?"                ,"Живая вода"                                 ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],   
+        "bkrr":     [wnfh_gui["achievements"]["bkrr"]      ,"Да, это именно то, о чём ты подумал" ,"Это отсылка на\n«Булки, Кефир, Рок-н-ролл»" ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],     
+        "post":     [wnfh_gui["achievements"]["post"]      ,"Груз доставлен"                      ,"Почти без повреждений"                      ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],       
+        "alarm":    [wnfh_gui["achievements"]["alarm"]     ,"Das Boot"                            ,"Доплавался, блин"                           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
+        "zaebist":  [wnfh_gui["achievements"]["zaebist"]   ,"Всё идёт по плану"                   ,"При коммунизме всё будет заебись"           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
+        "handass":  [wnfh_gui["achievements"]["handass"]   ,"Рукожоп"                             ,"Ну как так-то?"                             ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],
+        "seledka":  [wnfh_gui["achievements"]["placeholder"]   ,"Теперь ты Селёдка"                   ,"Селёдка присоединилась к отряду"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],
+
     }
     # Аватарки
     wnfh_gui["avatars"] = {img:(wnfh_AVATARS + img + ".png") for img in [

@@ -10,18 +10,19 @@ screen wnfh_game_menu_selector():
         "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
         "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
     }
-    default wnfh_button_states = [False for i in range(6)]
+    default wnfh_button_states = [False for i in range(7)]
     
     on "show" action Function(update_usertime)
     
     python:
         wnfh_game_menu_selector_buttons = [
             ["В главное меню мода", [MainMenu(), SetDict(wnfh_button_states, 0, False)]      ],
-            ["Схема",               [ShowMenu('wnfh_schematic'), Hide('game_menu_selector')] ],
-            ["Сохранить",           [ShowMenu('save'),           Hide('game_menu_selector')] ],
-            ["Загрузить",           [ShowMenu('load'),           Hide('game_menu_selector')] ],
-            ["Настройки",           [ShowMenu('preferences'),    Hide('game_menu_selector')] ],
-            ["Выход из игры",       [ShowMenu('quit')]                                       ],
+            ["Схема",               [ShowMenu('wnfh_schematic'),    Hide('game_menu_selector')] ],
+            ["Сохранить",           [ShowMenu('save'),              Hide('game_menu_selector')] ],
+            ["Загрузить",           [ShowMenu('load'),              Hide('game_menu_selector')] ],
+            ["Достижения",          [ShowMenu('wnfh_achievements'), Hide('game_menu_selector')] ],
+            ["Настройки",           [ShowMenu('preferences'),       Hide('game_menu_selector')] ],
+            ["Выход из игры",       [ShowMenu('quit')]                                          ],
         ]
 
     add wnfh_gui["tint_elements"]["vignette"]
@@ -152,7 +153,7 @@ screen wnfh_game_menu_selector():
             pos (0.5, 0.5)
             xanchor 0.5 yanchor 0.5
             spacing 5
-            for index, button in enumerate(wnfh_game_menu_selector_buttons[0:6]):
+            for index, button in enumerate(wnfh_game_menu_selector_buttons[0:7]):
                 frame at atl_wnfh_game_menu_selector(index): # ================================================ Фрейм, как один элемент вбокса
                     area(0.5, 0.5, 300, 60)
                     xanchor 0.5 yanchor 0.5

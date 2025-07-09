@@ -1,242 +1,162 @@
-init 2:
+screen wnfh_achievements():
+    modal True #tag menu
     
-    screen wnfh_achievements():
-        $ debug_frame = {
-            "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-            "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-            "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-            "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-            "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+    $ debug_frame = {
+        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
+        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
+        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
+        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
+        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+    }
+    
+    default wnfh_button_states = [False for i in range(1)]
+
+    python:
+        mm_backgrounds = {
+            "night":  wnfh_gui["main_menu"]["mm_bg_night"],
+            "sunset": wnfh_gui["main_menu"]["mm_bg_sunset"],
+            "day":    wnfh_gui["main_menu"]["mm_bg_day"],
         }
-        tag menu
-        modal True
 
-        key "game_menu":
-            action NullAction()
+        if main_menu:
+            wnfh_achievements_button = [
+                ["back", "Назад", [ShowMenu('main_menu'), Hide('wnfh_achievements')]]
+            ]
+        else:
+            wnfh_achievements_button = [
+                ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('wnfh_achievements')]]
+            ]
 
-        key "screenshot":
-            action NullAction()
+    if main_menu:
+        default current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
 
-        $ columns = len(characters_banners_idle)
-        $ rows = 1
-        
+        default time_period = (
+            "night"  if (current_hour >= 22 or current_hour < 8) else
+            "sunset" if (current_hour < 12)                      else
+            "day"    if (current_hour < 19)                      else
+            "sunset"
+        )
 
-        # Основные элементы   
         frame:
-            background im.Blur(wnfh_gui["main_menu"]["mm_bg_night"], 1.5)
-            area (0.0, 0.0, 1.0, 1.0)
-            #text u"Достижения {size=-4}{k=0.0}(%s / %s){/k}{/size}" % (wnfh_check_achievements(), len(wnfh_ach_list)):
-            text "Достижения":
-                align(0.5, 0.055)
-                style "wnfh_text"
-                size 80
-                kerning 1
-                # back
+            background mm_backgrounds[time_period] # ================== Фон в главном меню
+            area(0.0, 0.0, 1.0, 1.0)
 
-            imagebutton:
-                idle wnfh_gui["save_load"]["back_idle"]
-                hover wnfh_gui["save_load"]["back_hover"]
-                xalign 0.05 yalign 0.08
-                action Return()
+    add wnfh_gui["tint_elements"]["vignette"]
 
-            # achievements
-            if debug_switch:
-                imagebutton:
-                    action [Hide("wnfh_achievements", transition=dissolve), Start("wnfh_reset")]
-                    idle wnfh_gui["banners"]["relation_up"]
-                    hover wnfh_gui["banners"]["relation_down"]
-            
-            frame:
-                background debug_frame["black"]
-                area(-10, 200, 1920, 750)
-            
+    for index, button in enumerate(wnfh_achievements_button[0:1]): # ================================================ Кнопка Назад
+        frame:
+            area(0.1, 0.08, 150, 60)
+            xanchor 0.5 yanchor 0.5
+            background debug_frame["blue"] 
+            vbox: # ================================================ Вбокс кнопок
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 0
+                for element in ["back_button_line", "back_button_bg", "back_button_line"]:
+                    frame:
+                        if persistent.wnfh_debug_color:
+                            background wnfh_frames_elements[element][5]
+                        else:
+                            background frame_transparent
+                        area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+
+            frame: # ================================================ Тонировка при наведении
+                if wnfh_button_states[index]:
+                    add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                        xalign 0.5 yalign 0.5 alpha 0.6
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
+                    add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                        xalign 0.5 yalign 0.5 alpha 0.1
+                else:
+                    null height 20
+                area(0.5, 0.5, wnfh_frames_elements["back_button_bg"][1], wnfh_frames_elements["back_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
+                background debug_frame["purple"]
+                textbutton button[1]: # ================================================ Текст кнопок
+                    style "wnfh_buttons"
+                    text_style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                    hovered ToggleDict(wnfh_button_states, index)
+                    unhovered ToggleDict(wnfh_button_states, index)
+                    action button[2]
+                    at wnfh_mm_button_hover_atl()
+
+    frame at atl_wnfh_widget_lp_down:
+        area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
+        xanchor 0.5 yanchor 0.5
+        background debug_frame["black"]
+        vbox: # ================================================ Фон таблички из трёх кусков
+            pos (0.5, 0.5)
+            xanchor 0.5 yanchor 0.5
+            spacing 0
+            for element in ["settings_main_title_line", "settings_main_title_bg", "settings_main_title_line"]:
+                #frame at wnfh_frames_elements[element][6]:
                 frame:
-                    background debug_frame["black"]
-                    left_margin 10
-                    
-                    viewport id "menu_ach_viewport":
-                        
-                        draggable True
-                        mousewheel "horizontal"
-                        scrollbars "horizontal"
-                        grid columns rows:
-                        
-                            spacing 15
-                            for index, person_baner in enumerate(characters_banners_idle):
-                                for name in wnfh_characters.keys():
-                                    if name in person_baner:
-                                        $ character = name
-                                frame:
-                                    background debug_frame["black"]
-                                    area(0.0, 0.0, 300, 700)
-                                    imagebutton:
-                                        action ShowMenu("wnfh_achievements_window", character=character)
-                                        idle wnfh_gui["banners"][characters_banners_idle[index]]
-                                        hover wnfh_gui["banners"][characters_banners_hover[index]]
-                                        hover_sound wnfh_gui["sound"]["plimp"]
-                                        at wnfh_ach_char_banners(1.0, 0.5, 0.5)
-                                    frame:
-                                        background debug_frame["blue"]
-                                        area(0.0, 620, 288, 80)
-                                        grid 1 1:
-                                            xanchor 0.5
-                                            xalign 0.5
-                                            frame:
-                                                background debug_frame["red"]
-                                                area(0.0, 0.0, 120, 70)
-                                                add wnfh_gui["banners"]["trophy_white"]:
-                                                    zoom 0.4
-                                                    align(0.5, 0.5)
-                                            #frame:
-                                            #    background debug_frame["green"]
-                                            #    area(0.0, 0.0, 120, 70)
-                                            #    $ znak = 0
-                                            #    $ sum_znak_elem = 0
-                                            #    for element in wnfh_ach_list:
-                                            #        if wnfh_ach_list[element][4] == character:  
-                                            #            if persistent.wnfh_ach[element[0]]:
-                                            #                $ znak += 1
-                                            #            $ sum_znak_elem += 1
-                                            #    text "{}/{}".format(str(znak),str(sum_znak_elem)):
-                                            #        align(0.4, 0.5)
-                                            #        style "wnfh_settings_underwrites"
-                                            #        size 60
-                                            #        kerning 1
+                    if persistent.wnfh_debug_color:
+                        background wnfh_frames_elements[element][5]
+                    else:
+                        background frame_transparent
+                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+
+        text "Достижения":
+            style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
     
-    screen wnfh_achievements_window(character):
-        tag menu
-        modal True
+    frame at govno_ebanoe2:
+        area(0.5, 0.97, 1.0, 0.8)
+        xanchor 0.5 yanchor 1.0
+        background debug_frame["black"]
+        vbox: # ================================================ Фон таблички из трёх кусков
+            pos (0.5, 0.5)
+            xanchor 0.5 yanchor 0.5
+            spacing 0
+            for element in ["achievements_box_line", "achievements_box_bg", "achievements_box_line"]:
+                frame at wnfh_frames_elements[element][6]:
+                #frame:
+                    if persistent.wnfh_debug_color:
+                        background wnfh_frames_elements[element][5]
+                    else:
+                        background frame_transparent
+                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        frame at wjuh_bg:
+            area(0.5, 0.5, 0.98, 1.0)
+            xanchor 0.5 yanchor 0.5
+            background debug_frame["black"]
+            frame:
+                area(0.05, 0.0, 400, 0.98)
+                xanchor 0.0 yanchor 0.0
+                background debug_frame["blue"]
+                text "Список персонажей":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.45, 0.0, 400, 0.70)
+                xanchor 0.5 yanchor 0.0
+                background debug_frame["red"]
+                text "Спрайт":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.45, 1.0, 600, 200)
+                xanchor 0.5 yanchor 1.0
+                background debug_frame["red"]
+                text "Ульяна. Человек, которая отчаянно старается сохранить юный задор, совмещая его со взрослыми ответственностями. Удается ей это с переменным успехом. Однако, она не подаёт виду, что новые ответственности нещадно давят на неё.":
+                    style "wnfh_ach_title_2_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.95, 0.0, 600, 600)
+                xanchor 1.0 yanchor 0.0
+                background debug_frame["green"]
+                text "Галерея":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.95, 1.0, 600, 200)
+                xanchor 1.0 yanchor 1.0
+                background debug_frame["purple"]
+                text "Достижения":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
-        key "game_menu":
-            action NullAction()
 
-        key "screenshot":
-            action NullAction()
-
-        $ columns = len(characters_banners_idle)
-        $ rows = 1
-
-        # Основные элементы   
-        frame:
-            background im.Blur(wnfh_gui["main_menu"]["mm_bg_night"], 1.5)
-            area (0.0, 0.0, 1.0, 1.0)
-            text str(wnfh_characters[character][0]):
-                align(0.5, 0.055)
-                style "wnfh_text"
-                size 80
-                kerning 1
-            imagebutton:
-                action ShowMenu("wnfh_achievements")
-                idle wnfh_gui["achievements"]["back"]
-                hover wnfh_gui["achievements"]["back"]
-                hover_sound wnfh_gui["sound"]["plimp"]
-                at wnfh_menu_pos_atl(0.5, 0.1, 0.082, 0.0)
-            #grid 3 1:
-            #    xalign 0.5
-            #    for i in ["trophy_bronz","trophy_silver","trophy_gold"]:
-            #        frame:
-            #            background "#0005"
-            #            area(0.0, 145, 550, 70)
-            #            xmargin 30
-            #            grid 2 1:
-            #                xalign 0.5
-            #                frame:
-            #                    background debug_frame["red"]
-            #                    area(0.0, 0.0, 200, 60)
-            #                    xmargin 5
-            #                    if i == "trophy_bronz":
-            #                        text "Обычные":
-            #                            style "wnfh_settings_underwrites"
-            #                            size 40
-            #                            kerning 1
-            #                    elif i == "trophy_silver":
-            #                        text "Особые":
-            #                            style "wnfh_settings_underwrites"
-            #                            size 40
-            #                            kerning 1
-            #                    else:
-            #                        text "Концовки":
-            #                            style "wnfh_settings_underwrites"
-            #                            size 40
-            #                            kerning 1
-            #                    
-            #                frame:
-            #                    background debug_frame["green"]
-            #                    area(0.0, 0.0, 200, 60)
-            #                    
-            #                    add wnfh_gui["banners"][i]:
-            #                        zoom 0.4
-            #                        xalign 1.0
-            #                    $ znak = 0
-            #                    $ sum_znak_elem = 0
-            #                    for element in wnfh_ach_list:
-            #                        if element[4] == i and element[5] == character:  
-            #                            if persistent.wnfh_ach[element[0]]:
-            #                                $ znak += 1
-            #                            $ sum_znak_elem += 1
-            #                    text "{}/{}".format(str(znak),str(sum_znak_elem)):
-            #                        align(0.5, 0.5)
-            #                        style "wnfh_settings_underwrites"
-            #                        size 40
-            #                        kerning 1
-#
-            #grid 3 1:
-            #    xalign 0.5
-            #    for trof in ["trophy_bronz","trophy_silver","trophy_gold"]:
-            #        frame:
-            #            background debug_frame["black"]
-            #            area(0.0, 0.3, 550, 730)
-            #            xmargin 30
-            #            viewport id "menu_ach_list":
-            #                draggable True
-            #                mousewheel True
-            #                scrollbars "vertical"
-            #                $ temp = 0
-            #                for element in wnfh_ach_list:
-            #                    if element[4] == trof and element[5] == character:
-            #                        $ temp += 1
-            #                grid 1 temp:
-            #                    for element in wnfh_ach_list:
-            #                        if element[4] == trof and element[5] == character:
-            #                            if persistent.wnfh_ach[element[0]]:
-            #                                frame:
-            #                                    default ach_hovered = False
-            #                                    #background debug_frame["black"]
-            #                                    area(0.0, 0.0, 460, 111)
-            #                                    imagebutton:
-            #                                        action NullAction()
-            #                                        idle "wnfh_ach_menu_" + element[0]
-            #                                        hover "wnfh_ach_menu_" + element[0]
-            #                                        hovered ToggleScreenVariable("ach_hovered")
-            #                                        unhovered ToggleScreenVariable("ach_hovered")
-            #                                        hover_sound wnfh_gui["sound"]["plimp"]
-            #                                        #zoom 0.98
-            #                                    frame:
-            #                                        background debug_frame["black"]
-            #                                        area(0.2, 0.0, 340, 99)
-            #                                        if ach_hovered:
-            #                                            text element[3]:
-            #                                                style "wnfh_settings_underwrites"
-            #                                                size 15
-            #                                                kerning 1
-            #                                                min_width 330
-            #                                                text_align 1.0
-            #                                                layout "tex"
-            #                                        else:
-            #                                            text element[2]:
-            #                                                style "wnfh_settings_underwrites"
-            #                                                size 15
-            #                                                kerning 1
-            #                                                min_width 330
-            #                                                text_align 1.0
-            #                                                layout "tex"
-            #                                    
-            #                            else:
-            #                                frame:
-            #                                    background debug_frame["black"]
-            #                                    area(0.0, 0.0, 500, 100)
-            #                                    add "wnfh_ach_lock"
-
-label wnfh_reset:
-    $ wnfh_reset_achievements()
-    return
+#label wnfh_reset:
+#    $ wnfh_reset_achievements()
+#    return

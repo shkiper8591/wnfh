@@ -116,6 +116,7 @@ init -4 python:
         "save_load_element_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
 
         "achievements_char_list_bg":              [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,2             ,frame_black      ,wjuh_bg],
+        "achievements_char_list_bg_2":              [wnfh_gui["tint_elements"]["frame_bg"]          ,450           ,40          ,25                ,2             ,frame_black      ,wjuh_bg],
         "achievements_char_list_gradient":        [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,0             ,frame_black      ,wnfh_pass],
         "achievements_char_list_line":            [wnfh_gui["tint_elements"]["frame_line"]          ,470           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "achievements_box_bg":                    [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
@@ -124,13 +125,6 @@ init -4 python:
         "achievements_vbar_full":                 [wnfh_gui["tint_elements"]["frame_bar_full"]      ,40            ,40          ,13                ,0             ,frame_green      ,wnfh_pass],
         "achievements_vbar_bg":                   [wnfh_gui["tint_elements"]["frame_bar_bg"]        ,40            ,40          ,13                ,2             ,frame_green      ,wnfh_pass],
         "achievements_vbar_tumb":                 [wnfh_gui["tint_elements"]["frame_bar_tumb"]      ,40            ,40          ,5                 ,1             ,frame_green      ,wnfh_pass],
-
-
-
-
-
-
-
 
     }
     wnfh_frames_size = {

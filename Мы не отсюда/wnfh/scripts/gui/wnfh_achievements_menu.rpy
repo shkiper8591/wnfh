@@ -195,20 +195,33 @@ screen wnfh_achievements():
                                             area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                             add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
                                                 matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                                frame:
-                                    area (0.0, 0.5, wnfh_frames_elements["achievements_char_list_bg"][2] * 2, wnfh_frames_elements["achievements_char_list_bg"][2])
+                                #$ w = wnfh_frames_elements["achievements_char_list_bg"][2] * 2.5
+                                #$ h = wnfh_frames_elements["achievements_char_list_bg"][2]
+
+                                viewport:
+                                    xmaximum 200
+                                    ymaximum 80
+                                
+                                    pos (0.01, 0.5)
                                     xanchor 0.0 yanchor 0.5
-                                    background debug_frame["green"]
+                                
+                                    add debug_frame["green"]
+                                
                                     if renpy.store.wnfh_tymeofday == "day":
-                                        add wnfh_gui["avatars"][character]:
-                                            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
-                                            zoom 0.19
+                                        add Transform(
+                                            wnfh_gui["avatars"][character],
+                                            xpos = 0.5, ypos = 0.8,
+                                            xanchor = 0.5, yanchor = 0.5,
+                                            zoom = 0.25
+                                        )
                                     else:
-                                        add wnfh_gui["avatars"][character]:
-                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                                            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
-                                            zoom 0.19
-    
+                                        add Transform(
+                                            wnfh_gui["avatars"][character],
+                                            matrixcolor = TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3]),
+                                            xpos = 0.5, ypos = 0.8,
+                                            xanchor = 0.5, yanchor = 0.5,
+                                            zoom = 0.25
+                                        )
                                 frame: # ================================================ Тонировка при наведении
                                     if wnfh_button_states[index]:
                                         add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
@@ -242,11 +255,18 @@ screen wnfh_achievements():
                         anchor (0.5, 0.5)
 
             #frame:
-            #    area(0.45, 0.0, 400, 0.70)
-            #    xanchor 0.5 yanchor 0.0
-            #    background debug_frame["blue"]
-            #    text "Спрайт":
-            #        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            #    area (0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][2] * 2, wnfh_frames_elements["achievements_char_list_bg"][2])
+            #    xanchor 0.5 yanchor 0.5
+            #    background debug_frame["green"]
+            #    if renpy.store.wnfh_tymeofday == "day":
+            #        add wnfh_gui["avatars"][character]:
+            #            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
+            #            zoom 0.19
+            #    else:
+            #        add wnfh_gui["avatars"][character]:
+            #            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+            #            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
+            #            zoom 0.19
             #frame:
             #    area(0.45, 1.0, 600, 200)
             #    xanchor 0.5 yanchor 1.0

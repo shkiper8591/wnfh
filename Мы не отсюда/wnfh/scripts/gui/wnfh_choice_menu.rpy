@@ -53,7 +53,7 @@ screen wnfh_choice(*args):
                             xalign 0.5
 
                         if wnfh_button_states[i]:
-                            add (wnfh_gui["choice"]["gradient"]):
+                            add wnfh_gui["choice"]["gradient"]:
                                 xalign 0.5
                                 matrixcolor TintMatrix(wnfh_characters[args[i][0]][1])
                         else:

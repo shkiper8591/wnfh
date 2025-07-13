@@ -522,12 +522,11 @@ init -5:
 
 
     transform wnfh_gradient:
-        on show:
-            alpha 0.0
-            ease_quart 0.5 alpha 1.0
-        on hide:
-            alpha 1.0
-            ease_quart 0.5 alpha 0.0
+        subpixel True
+        alpha 0.0
+        ease_quart 0.2 alpha 1.0
+
+
 
     transform wnfh_adv_box:
         on replace:

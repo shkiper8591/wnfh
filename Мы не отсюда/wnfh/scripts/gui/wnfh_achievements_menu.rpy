@@ -198,6 +198,28 @@ screen wnfh_achievements():
                                 #$ w = wnfh_frames_elements["achievements_char_list_bg"][2] * 2.5
                                 #$ h = wnfh_frames_elements["achievements_char_list_bg"][2]
 
+                                
+                                frame: # ================================================ Тонировка при наведении
+                                    if wnfh_button_states[index]:
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
+                                            xalign 0.5 yalign 0.5 alpha 0.6
+                                            matrixcolor TintMatrix(wnfh_characters[character][1])
+                                            at wnfh_gradient
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
+                                            xalign 0.5 yalign 0.5 alpha 0.1
+                                            at wnfh_gradient
+                                    else:
+                                        null height 20
+                                    area(0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][1], wnfh_frames_elements["achievements_char_list_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
+                                    background debug_frame["purple"]
+                                    textbutton wnfh_characters[character][0]: # ================================================ Текст кнопок
+                                        style "wnfh_buttons"
+                                        text_style "wnfh_ach_title_1_" + renpy.store.wnfh_tymeofday
+                                        text_text_align 1.0
+                                        hovered ToggleDict(wnfh_button_states, character)
+                                        unhovered ToggleDict(wnfh_button_states, character)
+                                        #action button[2]
+                                        at wnfh_mm_button_hover_atl()
                                 viewport:
                                     xmaximum 200
                                     ymaximum 80
@@ -222,25 +244,6 @@ screen wnfh_achievements():
                                             xanchor = 0.5, yanchor = 0.5,
                                             zoom = 0.25
                                         )
-                                frame: # ================================================ Тонировка при наведении
-                                    if wnfh_button_states[index]:
-                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
-                                            xalign 0.5 yalign 0.5 alpha 0.6
-                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["achievements_char_list_gradient"][4]])
-                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
-                                            xalign 0.5 yalign 0.5 alpha 0.1
-                                    else:
-                                        null height 20
-                                    area(0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][1], wnfh_frames_elements["achievements_char_list_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
-                                    background debug_frame["purple"]
-                                    textbutton wnfh_characters[character][0]: # ================================================ Текст кнопок
-                                        style "wnfh_buttons"
-                                        text_style "wnfh_ach_title_1_" + renpy.store.wnfh_tymeofday
-                                        text_text_align 1.0
-                                        hovered ToggleDict(wnfh_button_states, character)
-                                        unhovered ToggleDict(wnfh_button_states, character)
-                                        #action button[2]
-                                        at wnfh_mm_button_hover_atl()
                 frame:
                     background debug_frame["green"]
                     area(1.0, 0.5, 50, 1.0)

@@ -117,7 +117,7 @@ init -4 python:
 
         "achievements_char_list_bg":              [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,2             ,frame_black      ,wjuh_bg],
         "achievements_char_list_bg_2":              [wnfh_gui["tint_elements"]["frame_bg"]          ,450           ,40          ,25                ,2             ,frame_black      ,wjuh_bg],
-        "achievements_char_list_gradient":        [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,0             ,frame_black      ,wnfh_pass],
+        "achievements_char_list_gradient":        [wnfh_gui["tint_elements"]["frame_gradient"]      ,450           ,80          ,25                ,0             ,frame_black      ,wnfh_pass],
         "achievements_char_list_line":            [wnfh_gui["tint_elements"]["frame_line"]          ,470           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "achievements_box_bg":                    [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
         "achievements_box_line":                  [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],

@@ -177,8 +177,10 @@ screen wnfh_game_menu_selector():
                             add Frame(wnfh_frames_elements["game_menu_selector_button_gradient"][0], left=wnfh_frames_elements["game_menu_selector_button_gradient"][3], top=0):
                                 xalign 0.5 yalign 0.5 alpha 0.6
                                 matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["game_menu_selector_button_gradient"][4]])
+                                at wnfh_gradient
                             add Frame(wnfh_frames_elements["game_menu_selector_button_gradient"][0], left=wnfh_frames_elements["game_menu_selector_button_gradient"][3], top=0):
                                 xalign 0.5 yalign 0.5 alpha 0.1
+                                at wnfh_gradient
                         else:
                             null height 20
                         area(0.5, 0.5, wnfh_frames_elements["game_menu_selector_button_bg"][1], wnfh_frames_elements["game_menu_selector_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5

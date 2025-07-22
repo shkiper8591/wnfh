@@ -1,4 +1,6 @@
-init python:    
+init 5 python:
+    wnfh_chars_define()
+    
     def say_anim():     
         amd = int(persistent.font_size <= "large") if wnfh_test_1 else 2
         return amd

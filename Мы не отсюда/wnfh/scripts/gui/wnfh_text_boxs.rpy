@@ -1,11 +1,11 @@
-screen wnfh_say: 
+screen wnfh_say(who, what, two_windows = False):
     $ debug_frame = {
-        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
-    }
+            "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
+            "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
+            "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
+            "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
+            "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        }
 
     default wnfh_play_animation = False
     
@@ -13,8 +13,6 @@ screen wnfh_say:
         persistent.sprite_time = renpy.store.wnfh_spritetime  #проверить
         global wnfh_test_1
         wnfh_test_1 = wnfh_play_animation
-        wnfh_chars_define()
-        
         #print(MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)]))
         #MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)],flip=True,horizontal=True)
         wnfh_say_buttons  = MatrixConverter({

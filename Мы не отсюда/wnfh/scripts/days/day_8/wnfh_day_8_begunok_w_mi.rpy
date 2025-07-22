@@ -360,7 +360,7 @@ label d8_begunok_w_mi:
 
     kat "Кроме тех двух рыжих[wp]"
 
-    if wnfh_Data.FlagGet("d7_kat_oblil_me") == True:
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         jump d8_begunok_w_mi_choices
     else:

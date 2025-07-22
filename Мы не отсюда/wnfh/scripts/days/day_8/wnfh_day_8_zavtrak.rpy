@@ -53,7 +53,7 @@ label d8_zavtrak:
         call screen wnfh_choice(
             ["mi", "Сесть с Мику", "Наладим диалог со звездой эстрады", "d8_zavtrak_s_miku", {"mi":1}],
             ["neutral", "Сесть с парнями", "Пожалуй, подсяду к товарищам", "d8_zavtrak_s_el_sh"],
-            ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д2"]
+            ["d8_choice_n1", "С кем сесть в столовой. Завтрак. Д8"]
             ) with sphere_blure_dissolve2
 
     elif wnfh_Data.getChoice_points_sum("un") >= 3:

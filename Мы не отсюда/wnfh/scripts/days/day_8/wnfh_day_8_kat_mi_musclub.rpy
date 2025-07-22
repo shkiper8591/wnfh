@@ -11,6 +11,7 @@ label d8_kat_mi_musclub:
     show kat normal pioneer at center
     with sphere_blure_dissolve2
     play music music_list["memories_piano_outdoors"] fadein 5.0
+    $ wnfh_Data.FlagSet("d8_me_in_musclub", True)
     $ renpy.notify("МУЗЫКА МАКСИМАЛЬНО УСЛОВНАЯ, ТУТ НУЖНА БУДЕТ ДРУГАЯ, БОЛЕЕ ВЕСЁЛАЯ! А ЕЩЁ ЖЕЛАТЕЛЬНО СОБСТВЕННОГО ПРОИЗВОДСТВА (импортозамещение лол)")
     $ renpy.pause(0.5)
     window show dissolve

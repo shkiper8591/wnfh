@@ -4,7 +4,7 @@ label d8_evening_2:
     play ambience ambience_camp_center_evening fadein 2.0
     play music music_list["dance_of_fireflies"] fadein 5.0
 
-    if wnfh_Data.getChoice_result_number("d8_choice_n10") == 1:
+    if wnfh_Data.FlagGet("d8_me_in_musclub") == True:
 
         "Мы вернулись на площадь, Катя помахала мне на прощание и ушла в сторону домиков."
         #КОСЯК: логичней сменить выбор с 10 на 9 с учётом всего, что я указал в файле с вечерней прогулкой.
@@ -12,7 +12,7 @@ label d8_evening_2:
         if wnfh_Data.getChoice_result_number("d8_choice_n11") == 1:
 
             jump d8_evening_2_w_dv
-    
+
         else:
 
             jump d8_ending

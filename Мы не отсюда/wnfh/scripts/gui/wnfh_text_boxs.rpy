@@ -14,35 +14,7 @@ screen wnfh_say:
         global wnfh_test_1
         wnfh_test_1 = wnfh_play_animation
         wnfh_chars_define()
-        def say_anim():     
-            amd = int(persistent.font_size <= "large") if wnfh_test_1 else 2
-            return amd
-        def say_size():
-            return int(persistent.font_size <= "large")
-        def MatrixConverter(dictionary_obj):
-            main_dick = {}
-            for button in dictionary_obj:
-                temp_array = []
-                for obj in dictionary_obj[button]:
-                    compozite = []
-                    compozite.append(obj[0])
-                    for obj_index in range(len(obj[1])):
-                        compozite.append(obj[1][obj_index][0])
-                        compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
-                    compozite_obj = im.Composite(*compozite)
-                    try:
-                        if obj[-1] is True:
-                            flip_args = True
-                        else:
-                            flip_args = None
-                    except Exception as E:
-                        flip_args = None
-                    if flip_args != None:
-                        temp_array.append(im.Flip(compozite_obj, flip=True, horizontal=True))
-                    else:
-                        temp_array.append(compozite_obj)
-                main_dick[button] = temp_array
-            return main_dick
+        
         #print(MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)]))
         #MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)],flip=True,horizontal=True)
         wnfh_say_buttons  = MatrixConverter({
@@ -127,29 +99,29 @@ screen wnfh_say:
                             spacing 20
                             for i in ["hide", "save", "menu", "load"]:
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons[i][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle Transform(wnfh_db_buttons[i][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_db_buttons[i][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons[i][1]
                             if persistent.all_sound == "mute":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["mute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle Transform(wnfh_db_buttons["mute"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_db_buttons["mute"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["mute"][1]
                             elif persistent.all_sound == "unmute":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["unmute"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle Transform(wnfh_db_buttons["unmute"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_db_buttons["unmute"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["unmute"][1]
                             
                             if persistent.font_size == "small":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["plus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle Transform(wnfh_db_buttons["plus"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_db_buttons["plus"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["plus"][1]
                             elif persistent.font_size == "large":
                                 imagebutton:
-                                    idle im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
-                                    hover im.MatrixColor(wnfh_db_buttons["minus"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', 1, renpy.store.wnfh_tymeofday)))
+                                    idle Transform(wnfh_db_buttons["minus"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_db_buttons["minus"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["minus"][1]
                             
                 hbox:

@@ -414,9 +414,21 @@ init -1001 python :
         """
         Удаление значения из словаря, не знаю зачем но может понадобится вручную удалять выбор
         """
-        def AddLove_points(self,lovepoints):
-            self.BD_INIT_MODULE[BD_INIT_MODULE.keys[-1]+random.randint(100000)] = {'type':'PointsSet', "Влияние на персонажей":lovepoints}
+        def AddLove_points(self, lovepoints):
+            if not hasattr(self, 'BD_INIT_MODULE'):
+                self.BD_INIT_MODULE = {}
+            keys_list = list(self.BD_INIT_MODULE.keys())
+            if keys_list:
+                new_key = "{}_{}".format(keys_list[-1], random.randint(0, 100000))
+            else:
+                new_key = "points_{}".format(random.randint(0, 100000))
+
+            self.BD_INIT_MODULE[new_key] = {
+                'type': 'PointsSet',
+                "Влияние на персонажей": lovepoints
+            }
             self.dumpSave()
+            self.dumpdb()
 
         def delete(self , key):
             if not key in self.BD_INIT_MODULE:

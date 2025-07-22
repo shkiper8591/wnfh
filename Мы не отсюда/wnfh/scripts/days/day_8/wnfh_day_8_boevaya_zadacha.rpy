@@ -237,8 +237,7 @@ label d8_boevaya_zadacha:
     if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         me "К тому же, я сам в такой ситуации буквально вчера был, потому прекрасно понимаю, каково это."
-        $ renpy.notify("Тут стоит выдача лавпоинтов Кати, но оно сломано (почему-то), поэтому закоменчено.")
-        #$ wnfh_Data.AddLove_points({"kat":1})
+        $ wnfh_Data.AddLove_points({"kat":1})
 
     show kat smile pioneer close at left
     show mt normal pioneer close at right
@@ -278,8 +277,7 @@ label d8_boevaya_zadacha:
     mt "Что скажешь, Семён? Верим?"
     me "Думаю, верим."
 
-    $ renpy.notify("Тут стоит выдача лавпоинтов Кати, но оно сломано (почему-то), поэтому закоменчено.")
-    #$ wnfh_Data.AddLove_points({"kat":1})
+    $ wnfh_Data.AddLove_points({"kat":1})
 
     mt "В таком случае меняем план."
     mt "Вы вдвоём отнесёте коробки в администрацию."

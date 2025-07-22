@@ -136,7 +136,7 @@ screen wnfh_say(who, what, two_windows = False):
                             matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["db_brow_line3"][4]])
                     frame:
                         at (wnfh_frames_elements["db_brow_bg2"][6])[say_anim()]
-                        area(0.0, 0.5, (wnfh_frames_elements["db_brow_bg2"][1], wnfh_frames_elements["db_brow_bg2"][1]+100)[say_size()], wnfh_frames_elements["db_brow_bg2"][2])
+                        area(0.0, 0.5, (wnfh_frames_elements["db_brow_bg2"][1], wnfh_frames_elements["db_brow_bg2"][1]+90)[say_size()], wnfh_frames_elements["db_brow_bg2"][2])
                         xanchor 0.0 yanchor 0.5 padding(0, 0)
                         background debug_frame["blue"]
                         add Frame(wnfh_frames_elements["db_brow_bg2"][0], left=wnfh_frames_elements["db_brow_bg2"][3], top=0):

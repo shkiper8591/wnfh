@@ -492,10 +492,10 @@ init -5:
     transform wnfh_db_blue_small:
         subpixel True
         xsize 320
-        ease 0.5 xsize 220
+        ease 0.5 xsize 230
     transform wnfh_db_blue_large:
         subpixel True
-        xsize 220
+        xsize 230
         ease 0.5 xsize 320
 
     transform wnfh_db_buttons_small:

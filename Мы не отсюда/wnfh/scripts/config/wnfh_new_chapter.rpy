@@ -12,6 +12,10 @@ init python:
         renpy.store.wnfh_spritetime = sprite_time
         renpy.store.wnfh_tymeofday = time_of_day
         wnfh_chars_define()
+
+        for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
+            wnfh_double_char_define(i[0], i[1], i[2])
+
     def wnfh_new_chapter(day):
         # renpy.block_rollback()
         wnfh_set_mode()

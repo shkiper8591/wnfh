@@ -176,7 +176,7 @@ label d9_editorial:
     show mz fun pioneer glasses at left with dspr
 
     mz "Сходите в спортзал и клубы, поспрашиваете там, как дела, чего достигли. Только без особого фанатизма, ладно?"
-    me_kat_d "Ладно." 
+    me_kat "Ладно." 
     mz "Всё, к обеду жду сданную работу."
 
     hide mz with dissolve

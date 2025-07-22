@@ -134,8 +134,7 @@ init -3 python:
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (wnfh_characters[first][1], wnfh_characters[first][0], wnfh_tint_color[timeofday][1], wnfh_characters[second][1], wnfh_characters[second][0])
         gl[first + "_" + second] = Character(character, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, who_suffix=who_suffix, ctc=ctc, ctc_position="fixed")
 
-    for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
-        wnfh_double_char_define(i[0], i[1], i[2])
+    
     
     ## Функции для переобувания в воздухе ##
     # Переименование персонажа

@@ -206,7 +206,6 @@ init -4 python:
         "map_available",
         "map_selected",
         "map_mask",
-
     ]}
 
     wnfh_gui["poligon"] = {img:(wnfh_IMAGES + "hentai/" + img + ".png") for img in [

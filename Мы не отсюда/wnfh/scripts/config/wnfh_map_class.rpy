@@ -1,15 +1,53 @@
-init python:
-    import renpy.exports as renpy
-    from renpy.display.im import AlphaMask
+init -2 python:
+    class MapZone:
+        def __init__(self, name, mask_path):
+            self.name = name
+            self.label = None
+            self.available = False
+            self.visits = 0
+            self.mask = mask_path   # например: "map_mask_house_5.png"
+            self.chibi = None
+            self.center = (0.5, 0.5)
 
-    def _on_map_click():
-        x, y = renpy.get_mouse_pos()
-        mask_img = wnfh_gui["map"]["map_mask"]
-        mask_surf = renpy.loader.load(mask_img).get_surface()
-        try:
-            pixel = mask_surf.get_at((x, y))
-        except Exception:
-            return
-        if pixel.a > 0:
-            renpy.jump("map_clicked")
-        return
+    wnfh_zones = {}
+    wnfh_global_map_result = None
+
+    def add_to_db(zone):
+        data_set = wnfh_find_Operand()
+
+    def _wnfh_click_zone(name):
+        global wnfh_global_map_result
+        zone = wnfh_zones[name]
+        zone.visits += 1
+        wnfh_global_map_result = name
+
+    def wnfh_init_map_zones():
+        wnfh_zones.clear()
+        for i in range(1, 62):
+            key = "house_%d" % i
+            wnfh_zones[key] = MapZone(key, wnfh_MASKS + "map_mask_house_%d.png" % i)
+
+    def wnfh_set_zone(name, label):
+        z = wnfh_zones[name]
+        z.available = True
+        z.label = label
+
+    def wnfh_reset_zone(name):
+        z = wnfh_zones[name]
+        z.available = False
+        z.label = None
+
+    def wnfh_set_chibi(name, icon, center=None):
+        z = wnfh_zones[name]
+        z.chibi = icon
+        if center:
+            z.center = center
+
+    def wnfh_reset_chibi(name):
+        wnfh_zones[name].chibi = None
+
+    def wnfh_show_map():
+        renpy.call_screen("wnfh_map_screen")
+        return wnfh_global_map_result
+
+    wnfh_init_map_zones()

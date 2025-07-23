@@ -23,6 +23,7 @@ screen wnfh_choice(*args):
         def  wnfh_add_to_bd(data):
             data_set = wnfh_find_Operand(data,"prod",str(data[1][0]))
             wnfh_Data.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей":data_set,"rollback":False})
+        
         def  wnfh_add_to_bd_test(data):
             data_set = wnfh_find_Operand(data,"test",str(data[1][0]))
             wnfh_Data_test.write(str(data[1][0]),{"type":"choice","Название выбора":str(data[1][1]),"Выбранно":data[2]+1,"Текст выбора":data[0][1],"Влияние на персонажей": data_set,"rollback":False})

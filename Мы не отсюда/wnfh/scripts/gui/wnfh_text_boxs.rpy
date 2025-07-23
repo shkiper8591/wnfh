@@ -77,7 +77,7 @@ screen wnfh_say(who, what, two_windows = False):
                     xpos 1.0 ypos 0.5        
                     frame:
                         at (wnfh_frames_elements["db_mid_line"][6])[say_anim()]
-                        area(1.0, 1.0, (wnfh_frames_elements["db_mid_line"][1], wnfh_frames_elements["db_mid_line"][1]-100)[say_size()], wnfh_frames_elements["db_mid_line"][2])
+                        area(1.0, 1.0, (wnfh_frames_elements["db_mid_line"][1], wnfh_frames_elements["db_mid_line"][1]-90)[say_size()], wnfh_frames_elements["db_mid_line"][2])
                         xanchor 1.0 yanchor 1.0 padding(0, 0)
                         background debug_frame["green"]
                         add Frame(wnfh_frames_elements["db_mid_line"][0], left=wnfh_frames_elements["db_mid_line"][3], right=55, top=0):

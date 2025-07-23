@@ -86,7 +86,7 @@ init -4 python:
         "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]          ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]          ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]            ,1500          ,100         ,25                ,2             ,frame_black      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
-        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]   ,840           ,4           ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
+        "db_mid_line":                            [wnfh_gui["tint_elements"]["frame_db_mid_line"]   ,830           ,4           ,22                ,1             ,frame_green      ,[wnfh_db_green_small,wnfh_db_green_large,None]],
         "db_brow_line":                           [wnfh_gui["tint_elements"]["frame_db_brow_line"]  ,360           ,35          ,25                ,1             ,frame_green      ,wnfh_pass],
         "db_brow_line1":                          [wnfh_gui["tint_elements"]["frame_db_brow_line1"] ,25            ,35          ,0                 ,1             ,frame_green      ,wnfh_pass],
         "db_brow_line2":                          [wnfh_gui["tint_elements"]["frame_db_brow_line2"] ,300           ,35          ,2                 ,1             ,frame_green      ,wnfh_pass],

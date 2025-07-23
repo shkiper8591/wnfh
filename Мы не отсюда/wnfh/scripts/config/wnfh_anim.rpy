@@ -483,10 +483,10 @@ init -5:
     transform wnfh_db_green_small:
         subpixel True
         xsize 742
-        ease 0.5 xsize 842
+        ease 0.5 xsize 832
     transform wnfh_db_green_large:
         subpixel True
-        xsize 842
+        xsize 832
         ease 0.5 xsize 742
 
     transform wnfh_db_blue_small:

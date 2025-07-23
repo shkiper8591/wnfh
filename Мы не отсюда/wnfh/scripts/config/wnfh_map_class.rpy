@@ -1,15 +1,15 @@
 init python:
-    import json, renpy
+    import renpy.exports as renpy
     from renpy.display.im import AlphaMask
 
-    # Загружаем JSON‑индекс fullsize RGBA масок
-    try:
-        idx_fn = renpy.loader.transfn("masks/map_mask_index.json")
-        with open(idx_fn, encoding="utf-8") as f:
-            mask_index = json.load(f)
-    except Exception:
-        mask_index = {}
-
-    def _on_house_click(house_id):
-        # Переход при клике на дом
-        renpy.jump("you_clicked_" + house_id)
+    def _on_map_click():
+        x, y = renpy.get_mouse_pos()
+        mask_img = wnfh_gui["map"]["map_mask"]
+        mask_surf = renpy.loader.load(mask_img).get_surface()
+        try:
+            pixel = mask_surf.get_at((x, y))
+        except Exception:
+            return
+        if pixel.a > 0:
+            renpy.jump("map_clicked")
+        return

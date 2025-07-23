@@ -1,5 +1,4 @@
 label wnfh_map_test:
-    # Тестовый лейбл для вызова экрана карты
     call screen wnfh_map_screen()
     return
 

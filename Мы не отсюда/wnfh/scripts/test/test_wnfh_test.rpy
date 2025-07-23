@@ -28,6 +28,8 @@ label wnfh_test_main_menu:
     scene black
     
     menu:
+        "Карту?":
+            jump wnfh_map_test
         "Анимации?":
             jump wnfh_test_anim
         "Спрайты?":

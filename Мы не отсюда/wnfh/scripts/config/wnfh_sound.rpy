@@ -19,4 +19,4 @@ init python:
 
     # Второй канал для эмбиента
 
-    renpy.music.register_channel("ambience_2", "sfx", True)
+    #renpy.music.register_channel("ambience_2", "sfx", True)

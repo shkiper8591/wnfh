@@ -71,12 +71,12 @@ label wnfh_prologue:
     stop ambience fadeout 2.5
     stop music fadeout 2.5
     play music wnfh_music_list["day_1"] fadein 2.5
-    scene int_indoor_day_wnfh with sphere_blure_dissolve
+    scene bg int_indoor_day_wnfh with sphere_blure_dissolve2
     $ renpy.pause(0.3)
-    scene ext_outdoor_day_wnfh with slide_right_dissolve
+    scene bg ext_outdoor_day_wnfh with slide_right_blure_dissolve2
     $ renpy.pause(0.3)
     play ambience wnfh_ambience_list["ambient_city_street_day"] fadein 2.0
-    scene bg ext_bus_stop_day_wnfh with santa_barbara_out_dissolve2
+    scene bg ext_bus_stop_day_wnfh with santa_barbara_out_blure_dissolve2 
     $ renpy.pause(0.3)
     window show dissolve
 

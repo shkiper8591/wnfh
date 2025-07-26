@@ -195,8 +195,6 @@ screen wnfh_achievements():
                                             area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                                             add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
                                                 matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                                #$ w = wnfh_frames_elements["achievements_char_list_bg"][2] * 2.5
-                                #$ h = wnfh_frames_elements["achievements_char_list_bg"][2]
 
                                 
                                 frame: # ================================================ Тонировка при наведении

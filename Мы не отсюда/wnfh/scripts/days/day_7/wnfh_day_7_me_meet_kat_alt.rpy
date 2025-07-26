@@ -50,6 +50,8 @@ label d7_me_meet_kat_alt:
 
     show kat grin casual shirt with dspr
 
+    $ wnfh_set_name("kat", "Катя")
+
     kat "Екатерина, но все зовут Катей, и ты зови!"
     
     "На лице девушки появилась ехидная улыбка."

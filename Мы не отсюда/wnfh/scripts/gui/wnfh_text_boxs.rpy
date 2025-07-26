@@ -154,7 +154,6 @@ screen wnfh_say(who, what, two_windows = False):
                             background debug_frame["green"]
                             if who:
                                 text who id "who":
-                                    #anchor (0.0, 0.0) pos (-(wnfh_frames_elements["db_brow_bg2"][1]+5, wnfh_frames_elements["db_brow_bg2"][1]+105)[say_size()], 0.0)
                                     anchor (0.0, 0.0) pos (20, 0.0)
                                     size (28, 35)[say_size()]
                                     line_spacing 1

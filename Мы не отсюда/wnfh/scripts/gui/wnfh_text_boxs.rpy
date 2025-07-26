@@ -13,8 +13,6 @@ screen wnfh_say(who, what, two_windows = False):
         persistent.sprite_time = renpy.store.wnfh_spritetime  #проверить
         global wnfh_test_1
         wnfh_test_1 = wnfh_play_animation
-        #print(MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)]))
-        #MatrixConverter(Matrix=[["button_bg_1",2],["button_line",1]],size=(73, 83),position=[(0,0),(1,2)],flip=True,horizontal=True)
         wnfh_say_buttons  = MatrixConverter({
             "backward":
                 [

@@ -483,4 +483,27 @@ init 2:
         "chair"
         right
         yalign 0.0
+    
+    ## Ручка Алисы: камень
+    image hand_dv_stone = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_dv_stone.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_dv_stone.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_dv_stone.png")
+    ## Ручка Алисы: ножницы
+    image hand_dv_shear = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_dv_shear.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_dv_shear.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_dv_shear.png")
+    ## Ручка Алисы: бумага
+    image hand_dv_paper = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_dv_paper.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_dv_paper.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_dv_paper.png")
+    ## Рука Семы: камень
+    image hand_me_stone = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_me_stone.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_me_stone.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_me_stone.png")
+    ## Рука Семы: ножницы
+    image hand_me_shear = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_me_shear.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_me_shear.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_me_shear.png")
+    ## Рука Семы: бумага
+    image hand_me_paper = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "hand_me_paper.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "hand_me_paper.png", wnfh_tint["night"]), True, wnfh_OTHER + "hand_me_paper.png")
+    ## Черная шторка
+    image black_curtain_knb = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "black_curtain_knb.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "black_curtain_knb.png", wnfh_tint["night"]), True, wnfh_OTHER + "black_curtain_knb.png")
+    image black_curtain_knb_up:
+        "black_curtain_knb"
+    image black_curtain_knb_down:
+        "black_curtain_knb"
+    ## ЦУ-Е-ФА!!!
+    image knb_game_text_1 = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "knb/1.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "knb/1.png", wnfh_tint["night"]), True, wnfh_OTHER + "knb/1.png")
+    image knb_game_text_2 = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "knb/2.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "knb/2.png", wnfh_tint["night"]), True, wnfh_OTHER + "knb/2.png")
+    image knb_game_text_3 = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "knb/3.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "knb/3.png", wnfh_tint["night"]), True, wnfh_OTHER + "knb/3.png")
 

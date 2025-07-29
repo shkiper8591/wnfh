@@ -439,7 +439,8 @@ init 1:
     $ wnfh_sfx_list["slow_helicopter_loop"]                     = wnfh_SFX + "slow-helicopter-loop.ogg"
     $ wnfh_sfx_list["budilnik"]                                 = wnfh_SFX + "budilnik.ogg"
     $ wnfh_sfx_list["smishnaya_zaglushka"]                      = wnfh_SFX + "2Alphys - phone impr.mp3"
-    $ wnfh_sfx_list["meow5"] = wnfh_SFX + "meow5.ogg"
+    $ wnfh_sfx_list["meow5"]                                    = wnfh_SFX + "meow5.ogg"
+    $ wnfh_sfx_list["wave_of_the_hand_knb_game"]                = wnfh_SFX + "wave-of-the-hand-knb.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
     

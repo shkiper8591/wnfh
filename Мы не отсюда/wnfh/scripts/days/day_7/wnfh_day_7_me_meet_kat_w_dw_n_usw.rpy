@@ -65,8 +65,34 @@ label d7_me_meet_kat_w_dw_n_usw:
     me "Ты шутишь?"
     dv "Я абсолютно серьёзно."
     me "Я туда не полезу!"
-
+    
+    # H606 изменить ручку Алисы, сделать больше под ее кожу.
+    
     "Цыкнув и закатив глаза, Алиса выставила перед собой кулак."
+    
+    window hide dissolve
+    hide dv with dissolve
+    show bg ext_clubs_day with dspr:
+        subpixel True
+        ease 2.0 zoom 1.2
+    show black_curtain_knb_down with dspr:
+        subpixel True
+        ypos 1.0
+        ease 1.5 ypos 0.85
+    show black_curtain_knb_up with dspr:
+        subpixel True
+        ypos -1.0
+        ease 1.5 ypos -0.85
+    $ renpy.pause(1.5)
+    show hand_dv_stone:
+        subpixel True
+        align (0.5,0.5)
+        pos (0, 1)
+        zoom 0.55
+        rotate 45
+        ease 0.7 rotate 0 pos (0.2,0.7)
+    $ renpy.pause(0.5)
+    window show dissolve
 
     dv "Давай на цу-е-фа."
 
@@ -77,7 +103,99 @@ label d7_me_meet_kat_w_dw_n_usw:
     dv "Ты с дубу рухнул? У нас времени мало, так что один раз."
 
     "Грустно вздохнув, мы занесли свои кулаки и под отсчёт «цу-е-фа», остановились."
+
+    window hide dissolve
+    show hand_me_stone:
+        subpixel True
+        align (0.5,0.5)
+        pos (1, 1)
+        zoom 0.65
+        rotate -45
+        ease 0.7 rotate 0 pos (0.75,0.7)
+    play sound wnfh_sfx_list["wave_of_the_hand_knb_game"]
+    $ renpy.pause(0.25)
+    show knb_game_text_1 with dspr
+    show hand_dv_stone:
+        subpixel True
+        align (0.5, 0.5)
+        pos (0.2, 0.7)
+        zoom 0.55
+        rotate 0
+        ease 0.15 rotate -20 pos (0.15, 0.5)
+        ease 0.15 rotate 5 pos (0.18, 0.71)
+        ease 0.15 rotate -20 pos (0.15, 0.5)
+        ease 0.15 rotate 5 pos (0.18, 0.71)
+        ease 0.15 rotate -20 pos (0.15, 0.5)
+        ease 0.15 rotate 5 pos (0.18, 0.71)
+    show hand_me_stone:
+        subpixel True
+        align (0.5,0.5)
+        pos (0.75, 0.7)
+        zoom 0.65
+        rotate 0
+        ease 0.15 rotate 20 pos (0.8, 0.5)
+        ease 0.15 rotate -5 pos (0.73, 0.71)
+        ease 0.15 rotate 20 pos (0.8, 0.5)
+        ease 0.15 rotate -5 pos (0.72, 0.71)
+        ease 0.15 rotate 20 pos (0.8, 0.5)
+        ease 0.15 rotate -5 pos (0.73, 0.71)
+    $ renpy.pause(0.25)
+    show knb_game_text_2 with dspr
+    $ renpy.pause(0.2)
+    hide hand_dv_stone
+    show hand_dv_paper:
+        subpixel True
+        align (0.5, 0.5)
+        pos (0.18, 0.71)
+        zoom 0.55
+        rotate 5
+        ease 0.3 rotate 0 pos (0.2, 0.7)
+    show  hand_me_stone:
+        subpixel True
+        align (0.5, 0.5)
+        pos (0.73, 0.71)
+        zoom 0.65
+        rotate -5
+        ease 0.3 rotate 0 pos (0.75, 0.7)
+    show knb_game_text_3 with dspr
+    $ renpy.pause(0.25)
+    hide knb_game_text_1
+    hide knb_game_text_2
+    hide knb_game_text_3
+    with dspr
+    window show dissolve
+
     "Я показывал «камень», а Алиса «бумагу». Я проиграл."
+
+    window hide dissolve
+    show hand_dv_paper:
+        subpixel True
+        align (0.5, 0.5)
+        pos (0.2, 0.7)
+        zoom 0.55
+        rotate 0
+        ease 1.0 rotate 45 pos (0.0, 1.2)
+    show  hand_me_stone:
+        subpixel True
+        align (0.5, 0.5)
+        pos (0.75, 0.7)
+        zoom 0.65
+        rotate 0
+        ease 1.0 rotate -45 pos (1.0, 1.2)
+    show black_curtain_knb_down with dspr:
+        subpixel True
+        ypos 0.85
+        ease 1.5 ypos 1.0
+    show black_curtain_knb_up with dspr:
+        subpixel True
+        ypos -0.85
+        ease 1.5 ypos -1.0
+    show bg ext_clubs_day with dspr:
+        subpixel True
+        ease 2.0 zoom 1.0
+    $ renpy.pause(2.0)
+    show dv normal pioneer at center with dissolve
+    window show dissolve
 
     dv "Лезь давай, заодно, будешь и обливать."
     me "Так, погоди-ка, это уже лишнее."

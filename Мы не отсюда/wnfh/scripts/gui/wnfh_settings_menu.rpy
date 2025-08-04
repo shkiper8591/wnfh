@@ -41,6 +41,9 @@ init -5:
 
     if persistent.wnfh_debug_color == None:
         $ persistent.wnfh_debug_color = 0
+
+    if persistent.wnfh_quality_settings == None:
+        $ persistent.wnfh_quality_settings = 0 # 1 высокое качество, 0 низкое качетсво
     
 
 screen wnfh_preferences(main_menu = False):

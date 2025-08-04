@@ -71,15 +71,19 @@ label d7_me_meet_kat_w_dw_n_usw:
     "Цыкнув и закатив глаза, Алиса выставила перед собой кулак."
     
     window hide dissolve
-    hide dv with dissolve
-    show bg ext_clubs_day with dspr:
+    show bg ext_clubs_day:
         subpixel True
-        ease 2.0 zoom 1.2
-    show black_curtain_knb_down with dspr:
+        zoom 1.2
+        blur 10.0
+    show dv normal pioneer:
+        subpixel True
+        blur 10.0
+    with dissolve2
+    show black_curtain_knb_down:
         subpixel True
         ypos 1.0
         ease 1.5 ypos 0.85
-    show black_curtain_knb_up with dspr:
+    show black_curtain_knb_down as black_curtain_knb_up:
         subpixel True
         ypos -1.0
         ease 1.5 ypos -0.85

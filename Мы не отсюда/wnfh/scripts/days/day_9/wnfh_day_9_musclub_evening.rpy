@@ -503,7 +503,7 @@ label d9_musclub_evening_2:
         stop ambience fadeout 5.0
         scene black with sphere_blure_dissolve5
         $ renpy.pause(1.0, hard=True)
-        jump wnfh_day_10_musclub_morning
+        jump d10_musclub_morning
 
 
     else:
@@ -597,4 +597,4 @@ label d9_musclub_evening_2:
         stop ambience fadeout 5.0
         scene black with sphere_blure_dissolve5
         $ renpy.pause(1.0, hard=True)
-        jump wnfh_day_10_musclub_morning
+        jump d10_musclub_morning

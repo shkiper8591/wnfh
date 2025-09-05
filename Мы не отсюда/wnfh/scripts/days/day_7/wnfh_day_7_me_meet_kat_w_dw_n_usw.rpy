@@ -69,16 +69,20 @@ label d7_me_meet_kat_w_dw_n_usw:
     # H606 изменить ручку Алисы, сделать больше под ее кожу.
     
     "Цыкнув и закатив глаза, Алиса выставила перед собой кулак."
-    
+
     window hide dissolve
+    show bg ext_clubs_day behind dv:
+        subpixel True
+        ease 1.5 zoom 1.2
+    $ renpy.pause(1.5)
     show bg ext_clubs_day:
         subpixel True
         zoom 1.2
-        blur 10.0
+        blur 30
     show dv normal pioneer:
         subpixel True
-        blur 10.0
-    with dissolve2
+        blur 30
+    with dissolve
     show black_curtain_knb_down:
         subpixel True
         ypos 1.0
@@ -194,6 +198,14 @@ label d7_me_meet_kat_w_dw_n_usw:
         subpixel True
         ypos -0.85
         ease 1.5 ypos -1.0
+    show bg ext_clubs_day:
+        subpixel True
+        zoom 1.2
+        blur 0
+    show dv normal pioneer:
+        subpixel True
+        blur 0
+    with dissolve
     show bg ext_clubs_day with dspr:
         subpixel True
         ease 2.0 zoom 1.0

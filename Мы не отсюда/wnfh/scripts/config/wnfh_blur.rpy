@@ -1,4 +1,4 @@
-default preferences.graphics_blur = 2  # 0-2
+# default preferences.graphics_blur = 1  # 0-2
 
 init python hide:
 
@@ -220,15 +220,16 @@ init python hide:
         # Apply Blur
 
         blur = (self.state.blur or None)
-        graphics_blur = preferences.graphics_blur
+        # graphics_blur = preferences.graphics_blur
+        graphics_blur = persistent.wnfh_quality_settings
 
         if blur is not None:
 
-            if graphics_blur == 2:
+            if graphics_blur == 1:
                 rv = gaussian_blur(rv, blur)    # 17.0%         36.0%  <-- High GPU load
 
-            elif graphics_blur == 1:
-                rv = noisy_blur(rv, blur)       # 13.0%         17.0%
+            # elif graphics_blur == 1:
+            #     rv = noisy_blur(rv, blur)       # 13.0%         17.0%
 
             elif graphics_blur == 0:
                 rv = renpy_blur(rv, blur)       # 9.0%          9.0%

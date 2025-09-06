@@ -747,18 +747,18 @@ label d9_me_alt_un_ending_sl:
             me "Ты чего?"
             un "Я-Я[wp] Семён, я очень боюсь."
             me "Не переживай, ничего плохого не случится."
-            me "Просто запри на все замки двери и окна."
-            me "Я не слышал, чтобы Славя умела взламывать замки, а значит если и будет к тебе проникать, то громко."
-            un "И как мне это поможет?"
-            me "Проснёшься, убежишь, заорёшь на весь лагерь."
+            me "Очевидно, что никто не будет тебя убивать."
+            un "Н-Не знаю[wp] Я[wp]"
 
             "Было видно, что мой ответ её не сильно устраивал."
             "Но и как-то перечить мне, похоже, сил у неё уже не было."
+            "Взяв её за плечи, я наклонился к ней поближе."
 
-            un "Ладно, хорошо."
-            me "Всё, пойдём тогда, спать очень хочется."
+            me "Всё будет хорошо, я тебе обещаю."
+            me "Просто мы все устали и на эмоциях."
+            un "Л-Ладно[wp]"
+            me "Пойдём, я провожу тебя, чтобы спокойнее было."
 
-            window hide dissolve
             jump d9_me_alt_un_ending_end
 
     else:
@@ -767,9 +767,9 @@ label d9_me_alt_un_ending_sl:
         "Вечер был очень насыщен на события, и у меня было ощущение, будто я усну стоя."
 
         mt "Идём тогда, Семён, не забудь закрыть клубы."
+        mt "А ещё, попрошу тебя проводить Лену до дома."
         me "Так точно."
 
-        window hide dissolve
         jump d9_me_alt_un_ending_end
 
 label d9_me_alt_un_ending_route:
@@ -828,7 +828,6 @@ label d9_me_alt_un_ending_route:
     "Поразмыслить над тем, что ещё за нафиг «Сёмочка», я не успел, так как почти моментально отрубился."
 
     window hide dissolve
-    window hide dissolve
     show blink with None
     stop ambience fadeout 2.5
     $ renpy.pause(2.5, hard=True)
@@ -837,4 +836,92 @@ label d9_me_alt_un_ending_route:
 
 label d9_me_alt_un_ending_end:
 
-    "placeholder"
+    "Славя и Ольга быстрым шагом покинули клуб."
+    "Я же накрыл себя и Лену брезентом, и мы последовали вслед за ними."
+    
+    window hide dissolve
+    stop ambience fadeout 2.0
+    scene bg black with dissolve2
+    play ambience wnfh_ambience_list["thunder1"] fadein 2.0
+    $ renpy.pause(1.0)
+    scene bg ext_house_of_un_rain_wnfh with dissolve2
+    window show dissolve
+    
+    "Ливень на улице вынудил нас двигаться быстро."
+    "Настолько быстро, что я даже не и заметил, как мы уже стояли перед домиком Лены."
+
+    me "Вот и твоя остановка."
+
+    "Не хотя, Лена вышла из под брезента и поднялась к входной двери."
+
+    me "Ну всё, я пошёл."
+    un "Постой!"
+    me "Что такое?"
+    un "Прости, что я такая дура[wp]"
+
+    "Сказала она, и зашла внутрь."
+    "Потупившись немного на месте, я побежал к себе домой."
+
+    th "Простить? Что же, я подумаю над этим, когда весь этот сранный кошмар закончится."
+
+    window hide dissolve
+    scene bg ext_house_of_mt_night with dissolve
+    $ renpy.pause(0.3)
+    window show dissolve
+
+    "Добежав до дома, меня, стоя во входе, встречала Ольга."
+
+    window hide dissolve
+    stop ambience fadeout 1.0
+    $ renpy.pause(1.0)
+    $ wnfh_set_time()
+    scene bg int_house_of_mt_night
+    show mt surprise pioneer at center
+    with dissolve
+    play ambience ambience_int_cabin_night fadein 1.0
+    $ renpy.pause(0.3)
+    window show dissolve
+
+    "Сбросив брезент на землю, я, слегка оттолкнув вожатую, вбежал во внутрь дома."
+
+    mt "Зашибёшь же так!"
+    me "Извините, просто очень надоело под дождём мокнуть."
+
+    show mt sad pioneer at center with dspr
+
+    mt "У тебя хотя бы импровизированный зонт был."
+    me "И всё равно я промок до нитки."
+
+    "Без лишних слов, Ольга подошла к шкафу откуда достала полотенце."
+    "После чего она передала мне это полотенце."
+
+    me "Благодарю."
+
+    hide mt with dissolve
+
+    "Сняв с себя всю мокрую одежду, я стал вытераться."
+    "По ходу этого дела, я также заметил, что этим же, без капли смущения, занималась и Ольга."
+
+    show mt normal nightdress at center with dissolve
+
+    "Когда я закончил вытираться, вожатая уже переоделась в свою ночнушку."
+    "Она взяла мою форму и повесила её сушится на вешалке."
+
+    mt "Пора спать, завтра нам предстоит много работы."
+    me "Да уж."
+
+    "Без лишних раздумий я завалился в постель."
+
+    scene bg int_house_of_mt_night2 with dspr
+
+    "Ольга выключила свет и тоже легла спать."
+
+    mt "Спокойной ночи."
+    me "И вам того же."
+
+    window hide dissolve
+    show blink with None
+    stop ambience fadeout 2.0
+    $ renpy.pause(2.5, hard=True)
+    scene black
+    jump d10_morning

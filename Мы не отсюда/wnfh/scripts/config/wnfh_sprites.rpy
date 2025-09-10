@@ -322,6 +322,9 @@ init 2:
         make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'mod:<emotion>'])
         make_sprites_for('un', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'])
         make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'])
+        make_sprites_for('un', 'underwear', ['es:body', 'mod:underwear', 'es:<emotion>'])
+        make_sprites_for('un', 'underwear', ['es:body', 'mod:underwear', 'mod:<emotion>'], distances = ['normal']) 
+        make_sprites_for('un', 'underwear', ['es:body', 'mod:underwear', 'mod:<emotion>'], exclude = ['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise', 'sad_smile', 'angry2', 'grin', 'laugh', 'rage', 'serious', 'smile3']) 
 
         # Алиса
 

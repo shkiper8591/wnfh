@@ -18,7 +18,7 @@ init -4 python:
         "day":      ["#FFDD7D", "#80A055", "#000000",   None    ], 
         "sunset":   ["#DCD168", "#CDAF69", "#150A0B", "#EFD1FF" ],
         "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
-        "rain":     ["#919191", "#5B5B5B", "#000000", "#C6C6C6" ], 
+        "rain":     ["#C6C6C6", "#9E9E9E", "#000000", "#C6C6C6" ], 
         "prologue": ["#98D8DA", "#BEE8E9", "#000A20", "#A1C7D1" ], 
     }
 

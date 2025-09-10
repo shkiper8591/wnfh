@@ -1,7 +1,8 @@
 init python:
     wnfh_tint = {
-            "sunset":im.matrix.tint(0.94, 0.82, 1.0),
-            "night":im.matrix.tint(0.63, 0.78, 0.82)
+            "sunset": im.matrix.tint(*converter_hex('wnfh_tint_color', 3, "sunset")),
+            "night": im.matrix.tint(*converter_hex('wnfh_tint_color', 3, "night")),
+            "rain": im.matrix.tint(*converter_hex('wnfh_tint_color', 3, "rain")),
         }
         
 init 2:
@@ -143,6 +144,7 @@ init 2:
                 ConditionSwitch(
                     "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, wnfh_tint["sunset"]),
                     "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, wnfh_tint["night"]),
+                    "persistent.sprite_time == 'rain'", im.MatrixColor(composite_image, wnfh_tint["rain"]),
                     True, composite_image,
                 )
             )

@@ -96,8 +96,8 @@ screen wnfh_preferences(main_menu = False):
             ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
         ]
         wnfh_preferences_text_bars = [
-            [preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
-            [preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+            ["text_speed"        ,preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+            ["auto_forward_time" ,preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
         ]
         wnfh_preferences_text_buttons = [
             ["autoforward" ,"Автопереход"  ,[Preference("auto-forward after click", "enable")  ,[Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
@@ -126,13 +126,32 @@ screen wnfh_preferences(main_menu = False):
             "mat_filter":  { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
             "gaphics_mod": { 0: "Хуёвый графон",  1: "База",    2: "Ультра HD 4К пожар RTX 5090" },
         }
+
+        wnfh_button_tits = {
+            "music":               ["музыка", "текст2"],
+            "sfx":                 ["звуки", "текст2"],
+            "voice":               ["эмбиент", "текст2"],
+            "ap_misic":            ["текст1", "текст2"],
+            "widget_lp":           ["текст1", "текст2"],       
+            "widget_clock":        ["текст1", "текст2"],    
+            "widget_music_player": ["текст1", "текст2"],
+            "debug_color":         ["текст1", "текст2"],
+            "text_speed":          ["текст1", "текст2"],
+            "auto_forward_time":   ["текст1", "текст2"],
+            "autoforward":         ["автопереход", "текст2"],
+            "skip":                ["пропуск", "текст2"],
+            "font":                ["шрифт", renpy.displayable(wnfh_gui["achievements"]["handass"]), "текст2"],
+            "mat_filter":          ["мат фильтр", "текст2"],
+            "gaphics_mod":         ["текст1", "текст2"],
+        }
+
         if main_menu:
             wnfh_preferences_button = [
-                ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences')]]
+                ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences'), Hide('wnfh_preferences_tits')]]
             ]
         else:
             wnfh_preferences_button = [
-                ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences')]]
+                ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences'), Hide('wnfh_preferences_tits')]]
             ]
         mm_backgrounds = {
             "night":  wnfh_gui["main_menu"]["mm_bg_night"],
@@ -376,7 +395,7 @@ screen wnfh_preferences(main_menu = False):
                                                     background debug_frame["red"]
                                                     area(0.0, 0.5, 0.4, 1.0)
                                                     xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_text_bars[element][1]:
+                                                    text wnfh_preferences_text_bars[element][2]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                                         text_align 0.0
                                                         #size 25
@@ -384,20 +403,20 @@ screen wnfh_preferences(main_menu = False):
                                                     background debug_frame["blue"]
                                                     area(0.5, 0.5, 60, 1.0)
                                                     xanchor 1.0 yanchor 0.5
-                                                    text "{}".format(int(wnfh_preferences_text_bars[element][0])):
+                                                    text "{}".format(int(wnfh_preferences_text_bars[element][1])):
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                                 frame:
                                                     background debug_frame["purple"]
                                                     area(0.5, 0.5, 200, 1.0)
                                                     xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_text_bars[element][2]:
+                                                    text wnfh_preferences_text_bars[element][3]:
                                                         style "wnfh_measure_unit_" + renpy.store.wnfh_tymeofday
             
                                                 frame:
                                                     background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_text_bars[element][6]+12, 1.0)
+                                                    area(1.0, 0.5, wnfh_preferences_text_bars[element][7]+12, 1.0)
                                                     xanchor 1.0 yanchor 0.5
-                                                    bar value wnfh_preferences_text_bars[element][3]:
+                                                    bar value wnfh_preferences_text_bars[element][4]:
                                                         left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
                                                         right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
                                                         thumb wnfh_bars["tumb"][0]
@@ -450,6 +469,7 @@ screen wnfh_preferences(main_menu = False):
                                                                     padding(0, 0)
                                                                     action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()), ]
                                                                     background debug_frame["red"]
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]])
     
                         frame: # ============================ Третий блок
                             area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_widget_buttons) * 65)
@@ -490,7 +510,7 @@ screen wnfh_preferences(main_menu = False):
                                         spacing 0
                                         for element in range(len(wnfh_preferences_widget_buttons)):
                                             frame:
-                                                area(0.5, 0.5, 1.0, 60)
+                                                area(0.5, 0.5, 1.0, 57)
                                                 xanchor 0.5 yanchor 0.5
                                                 background debug_frame["black"]
                                                 frame:
@@ -566,7 +586,7 @@ screen wnfh_preferences(main_menu = False):
                                         spacing 0
                                         for element in range(len(wnfh_preferences_other_buttons)):
                                             frame:
-                                                area(0.5, 0.5, 1.0, 60)
+                                                area(0.5, 0.5, 1.0, 57)
                                                 xanchor 0.5 yanchor 0.5
                                                 background debug_frame["black"]
                                                 frame:
@@ -622,3 +642,47 @@ screen wnfh_preferences(main_menu = False):
                         xmaximum 33 ymaximum 1.0
                         pos (0.5, 0.5)
                         anchor (0.5, 0.5)
+            frame: # ================================================ РАЗДЕЛИТЕЛЬ
+                area (0.811, 0.0, wnfh_frames_elements["achievements_char_list_bg_2"][1] + 40, wnfh_frames_elements["achievements_char_list_bg_2"][2] + 20)
+                xanchor 0.5 yanchor 0.0
+                background debug_frame["blue"]
+                vbox: # ================================================ Фон таблички из трёх кусков
+                    pos (0.5, 0.5)
+                    xanchor 0.5 yanchor 0.5
+                    spacing 0
+                    for element in ["achievements_char_list_line", "achievements_char_list_bg_2", "achievements_char_list_line"]:
+                        frame at wnfh_frames_elements[element][6]:
+                        #frame:
+                            if persistent.wnfh_debug_color:
+                                background wnfh_frames_elements[element][5]
+                            else:
+                                background frame_transparent
+                            area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                text "Подсказки":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+
+screen wnfh_preferences_tits(dick):
+
+    $ debug_frame = {
+        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
+        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
+        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
+        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
+        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+    }
+
+    frame:
+        background debug_frame["green"]
+        area(0.80, 0.236, 600, 0.702)
+        xanchor 0.5 yanchor 0.0
+        vbox:
+            xalign 0.5
+            for part in dick:
+                if type(part) is str:
+                    text part:
+                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                else:
+                    add part:
+                        xalign 0.5

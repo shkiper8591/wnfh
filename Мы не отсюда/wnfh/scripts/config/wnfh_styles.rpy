@@ -50,6 +50,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_text_night is wnfh_text:
         color wnfh_tint_color["night"][0]
+    style wnfh_text_rain is wnfh_text:
+        color wnfh_tint_color["rain"][0]
     style wnfh_text_prologue is wnfh_text:
         color wnfh_tint_color["prologue"][0]
     
@@ -59,6 +61,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_title_1_night is wnfh_title_1:
         color wnfh_tint_color["night"][0]
+    style wnfh_title_1_rain is wnfh_title_1:
+        color wnfh_tint_color["rain"][0]
     style wnfh_title_1_prologue is wnfh_title_1:
         color wnfh_tint_color["prologue"][0]
 
@@ -68,6 +72,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_title_2_night is wnfh_title_2:
         color wnfh_tint_color["night"][0]
+    style wnfh_title_2_rain is wnfh_title_2:
+        color wnfh_tint_color["rain"][0]
     style wnfh_title_2_prologue is wnfh_title_2:
         color wnfh_tint_color["prologue"][0]
 
@@ -77,6 +83,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_ach_title_1_night is wnfh_ach_title_1:
         color wnfh_tint_color["night"][0]
+    style wnfh_ach_title_1_rain is wnfh_ach_title_1:
+        color wnfh_tint_color["rain"][0]
     style wnfh_ach_title_1_prologue is wnfh_ach_title_1:
         color wnfh_tint_color["prologue"][0]
 
@@ -86,6 +94,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_ach_title_2_night is wnfh_ach_title_2:
         color wnfh_tint_color["night"][0]
+    style wnfh_ach_title_2_rain is wnfh_ach_title_2:
+        color wnfh_tint_color["rain"][0]
     style wnfh_ach_title_2_prologue is wnfh_ach_title_2:
         color wnfh_tint_color["prologue"][0]
 
@@ -95,6 +105,8 @@ init -2:
         color wnfh_tint_color["sunset"][0]
     style wnfh_measure_unit_night is wnfh_measure_unit:
         color wnfh_tint_color["night"][0]
+    style wnfh_measure_unit_rain is wnfh_measure_unit:
+        color wnfh_tint_color["rain"][0]
     style wnfh_measure_unit_prologue is wnfh_measure_unit:
         color wnfh_tint_color["prologue"][0]
     

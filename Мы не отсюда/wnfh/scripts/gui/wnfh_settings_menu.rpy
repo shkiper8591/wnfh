@@ -24,6 +24,9 @@ init -5:
     if persistent.wnfh_mat_filter == None:
         $ persistent.wnfh_mat_filter = 0
 
+    if persistent.wnfh_copyright_misic == None:
+        $ persistent.wnfh_copyright_misic = 0
+
     if persistent.all_sound == None:
         $ persistent.all_sound = "mute"
 
@@ -87,7 +90,7 @@ screen wnfh_preferences(main_menu = False):
             ["voice"   ,"Эмбиент"         ,Preference("voice volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
         ]
         wnfh_preferences_audio_buttons = [
-            ["ap_misic"            ,"///"  ,AnimatedValue(value=persistent.wnfh_ap_misic, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+            ["copyright_misic"     ,"Режим стримера"      ,[SetField(persistent, "whfh_copyright_misic", 0)  ,SetField(persistent, "whfh_copyright_misic", 1)]  ,wnfh_bars["bar_full"][0]   ,wnfh_bars["bar_null"][0]   ,145  ,1],
         ]
         wnfh_preferences_widget_buttons = [
             ["widget_lp"           ,"Очки персонажей"     ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
@@ -119,19 +122,23 @@ screen wnfh_preferences(main_menu = False):
         wnfh_preferences_other_buttons_states = {
             "gaphics_mod":   [persistent, "wnfh_quality_settings", {0: 0, 1: 1, 2: 2}]
         }
+        wnfh_preferences_audio_buttons_states = {
+            "copyright_misic":   [persistent, "wnfh_copyright_misic", {0: 0, 1: 1}]
+        }
         wnfh_preferences_display_labels = {
-            "autoforward": { 0: "ВЫКЛ",           1: "ВКЛ"              },
-            "skip":        { 0: "Виденное ранее", 1: "Всё"   },
-            "font":        { 0: "Обычный",        1: "Крупный"          },
-            "mat_filter":  { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
-            "gaphics_mod": { 0: "Хуёвый графон",  1: "База",    2: "Ультра HD 4К пожар RTX 5090" },
+            "autoforward":     { 0: "ВЫКЛ",           1: "ВКЛ"              },
+            "skip":            { 0: "Виденное ранее", 1: "Всё"   },
+            "font":            { 0: "Обычный",        1: "Крупный"          },
+            "mat_filter":      { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
+            "gaphics_mod":     { 0: "Хуёвый графон",  1: "База",    2: "Ультра HD 4К пожар RTX 5090" },
+            "copyright_misic": { 0: "Любая музыка",   1: "Безопасная"          },
         }
 
         wnfh_button_tits = {
-            "music":               ["музыка", "текст2"],
-            "sfx":                 ["звуки", "текст2"],
-            "voice":               ["эмбиент", "текст2"],
-            "ap_misic":            ["текст1", "текст2"],
+            "music":               ["Крутилка для саундтрека. Не регулирует качество, только громкость"],
+            "sfx":                 ["Здесь живут всякие «дзынь», «хлоп» и иже с ними. Хотите тишины? Сдвиньте в ноль и игра внезапно станет артхаусом"],
+            "voice":               ["Тут регулируется «атмосфера». Хотите нормально слышать окружение — выкрутите в максимум, хотите PowerPoint-презентацию — в минимум"],
+            "copyright_misic":     ["Режим музыки без авторских прав. Отключает всю музыку, которая может повредить стримерам и контент мейкерам", "Останется только наша собственная музыка и та, на которую не будут ругаться площадки"],
             "widget_lp":           ["текст1", "текст2"],       
             "widget_clock":        ["текст1", "текст2"],    
             "widget_music_player": ["текст1", "текст2"],
@@ -181,6 +188,10 @@ screen wnfh_preferences(main_menu = False):
     }
     default wnfh_preferences_other_buttons_states_current = {
         "gaphics_mod":   wnfh_preferences_other_buttons_states["gaphics_mod"][2][persistent.wnfh_quality_settings]
+    }
+
+    default wnfh_preferences_audio_buttons_states_current = {
+        "copyright_misic":   wnfh_preferences_audio_buttons_states["copyright_misic"][2][persistent.wnfh_copyright_misic]
     }
 
     add wnfh_gui["tint_elements"]["vignette"]
@@ -281,7 +292,7 @@ screen wnfh_preferences(main_menu = False):
                         spacing 0
                  
                         frame: # ============================ Первый блок
-                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_audio_bars) * 65)
+                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_audio_bars) * 65 + len(wnfh_preferences_audio_buttons) * 65)
                             xanchor 0.5 yanchor 0.0
                             background debug_frame["green"]
                             vbox:
@@ -311,7 +322,7 @@ screen wnfh_preferences(main_menu = False):
                                         style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
             
                                 frame: # ====================== Кнопки ползунки и кнопки аудио
-                                    area(0.5, 0.0, 0.9, len(wnfh_preferences_audio_bars) * 60)
+                                    area(0.5, 0.0, 0.9, len(wnfh_preferences_audio_bars) * 60 + len(wnfh_preferences_audio_buttons) * 60)
                                     xanchor 0.5 yanchor 0.0
                                     background debug_frame["black"]
                                     vbox:
@@ -347,7 +358,56 @@ screen wnfh_preferences(main_menu = False):
                                                         hover_thumb wnfh_bars["tumb"][0]
                                                         xmaximum 1.0 ymaximum 39
                                                         yanchor 0.5 ypos 0.5
-    
+                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_bars[element][0]])
+
+                                        for element in range(len(wnfh_preferences_audio_buttons)):
+                                            frame:
+                                                area(0.5, 0.5, 1.0, 57)
+                                                xanchor 0.5 yanchor 0.5
+                                                background debug_frame["black"]
+                                                frame:
+                                                    background debug_frame["red"]
+                                                    area(0.0, 0.5, 0.4, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    text wnfh_preferences_audio_buttons[element][1]:
+                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            
+                                                $ pref_current_value = getattr(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1])
+                                                $ pref_integer_value = wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2][pref_current_value]
+                                                frame:
+                                                    background debug_frame["blue"]
+                                                    area(0.5, 0.5, 0.3, 1.0)
+                                                    xanchor 0.5 yanchor 0.5
+                                                    text wnfh_preferences_display_labels[wnfh_preferences_audio_buttons[element][0]][pref_integer_value]:
+                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                        size 20
+            
+                                                frame:
+                                                    background debug_frame["green"]
+                                                    area(1.0, 0.5, wnfh_preferences_audio_buttons[element][5]+12, 1.0)
+                                                    xanchor 1.0 yanchor 0.5
+                                                    bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_audio_buttons[element][2]:
+                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                        thumb wnfh_bars["tumb"][0]
+                                                        hover_thumb wnfh_bars["tumb"][0]
+                                                        xmaximum 1.0 ymaximum 39
+                                                        yanchor 0.5 ypos 0.5
+                                                    frame:
+                                                        background debug_frame["black"]
+                                                        area(0.0, 0.5, 1.0, 1.0)
+                                                        xanchor 0.0 yanchor 0.5
+                                                        padding(0, 0)
+                                                        hbox:
+                                                            for i in range(wnfh_preferences_audio_buttons[element][6]):
+                                                                button:
+                                                                    area(0.5, 0.5, (wnfh_preferences_audio_buttons[element][5]) / (wnfh_preferences_audio_buttons[element][6]), 1.0)
+                                                                    xanchor 0.5 yanchor 0.5
+                                                                    padding(0, 0)
+                                                                    action [wnfh_CycleField(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2].keys()), ]
+                                                                    background debug_frame["red"]
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_buttons[element][0]])
+
                         frame: # ============================ Второй блок
                             area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_text_bars) * 65 + len(wnfh_preferences_text_buttons) * 65)
                             xanchor 0.5 yanchor 0.0
@@ -423,6 +483,7 @@ screen wnfh_preferences(main_menu = False):
                                                         hover_thumb wnfh_bars["tumb"][0]
                                                         xmaximum 1.0 ymaximum 39
                                                         yanchor 0.5 ypos 0.5
+                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_bars[element][0]])
             
                                         for element in range(len(wnfh_preferences_text_buttons)):
                                             frame:
@@ -470,6 +531,7 @@ screen wnfh_preferences(main_menu = False):
                                                                     action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()), ]
                                                                     background debug_frame["red"]
                                                                     hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]])
+                                                                    
     
                         frame: # ============================ Третий блок
                             area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_widget_buttons) * 65)
@@ -543,6 +605,7 @@ screen wnfh_preferences(main_menu = False):
                                                                     padding(0, 0)
                                                                     action ToggleField(persistent, "wnfh_" + wnfh_preferences_widget_buttons[element][0], i, i+1)
                                                                     background debug_frame["red"]
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_widget_buttons[element][0]])
             
                         
             
@@ -630,6 +693,7 @@ screen wnfh_preferences(main_menu = False):
                                                                     padding(0, 0)
                                                                     action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()), ]
                                                                     background debug_frame["red"]
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]])
                 frame:
                     background debug_frame["green"]
                     area(1.0, 0.5, 50, 1.0)
@@ -642,7 +706,7 @@ screen wnfh_preferences(main_menu = False):
                         xmaximum 33 ymaximum 1.0
                         pos (0.5, 0.5)
                         anchor (0.5, 0.5)
-            frame: # ================================================ РАЗДЕЛИТЕЛЬ
+            frame: # ================================================ ПОДСКАЗКИ
                 area (0.811, 0.0, wnfh_frames_elements["achievements_char_list_bg_2"][1] + 40, wnfh_frames_elements["achievements_char_list_bg_2"][2] + 20)
                 xanchor 0.5 yanchor 0.0
                 background debug_frame["blue"]
@@ -677,12 +741,22 @@ screen wnfh_preferences_tits(dick):
         background debug_frame["green"]
         area(0.80, 0.236, 600, 0.702)
         xanchor 0.5 yanchor 0.0
-        vbox:
-            xalign 0.5
-            for part in dick:
-                if type(part) is str:
+        has vbox
+        xalign 0.5
+        for part in dick:
+            if type(part) is str:
+                frame:
+                    background debug_frame["red"]
+                    xpos 0.5 ypos 0.0
+                    xsize 550
+                    xanchor 0.5 yanchor 0.0
                     text part:
                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                else:
-                    add part:
-                        xalign 0.5
+                        size 15
+                        text_align 0.0
+                        xalign 0.0
+                        
+                        
+            else:
+                add part:
+                    xalign 0.5

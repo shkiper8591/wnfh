@@ -1,11 +1,13 @@
 screen wnfh_main_menu():
     modal True tag menu
     $ debug_frame = {
-        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
+        "red":       frame_red        if persistent.wnfh_debug_color else frame_transparent,
+        "green":     frame_green      if persistent.wnfh_debug_color else frame_transparent,
+        "blue":      frame_blue       if persistent.wnfh_debug_color else frame_transparent,
+        "purple":    frame_purpl      if persistent.wnfh_debug_color else frame_transparent,
+        "yellow":    frame_yellow     if persistent.wnfh_debug_color else frame_transparent,
+        "turquoise": frame_turquoise  if persistent.wnfh_debug_color else frame_transparent,
     }
     python:
         #from random import randrange

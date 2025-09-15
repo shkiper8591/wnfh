@@ -2,11 +2,13 @@ screen wnfh_achievements():
     modal True #tag menu
     
     $ debug_frame = {
-        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
+        "red":       frame_red        if persistent.wnfh_debug_color else frame_transparent,
+        "green":     frame_green      if persistent.wnfh_debug_color else frame_transparent,
+        "blue":      frame_blue       if persistent.wnfh_debug_color else frame_transparent,
+        "purple":    frame_purpl      if persistent.wnfh_debug_color else frame_transparent,
+        "yellow":    frame_yellow     if persistent.wnfh_debug_color else frame_transparent,
+        "turquoise": frame_turquoise  if persistent.wnfh_debug_color else frame_transparent,
     }
     
     default wnfh_button_states = [False for i in range(30)]
@@ -199,15 +201,21 @@ screen wnfh_achievements():
                                 
                                 frame: # ================================================ Тонировка при наведении
                                     if wnfh_button_states[index]:
-                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], right=400, top=0):
                                             xalign 0.5 yalign 0.5 alpha 0.6
                                             matrixcolor TintMatrix(wnfh_characters[character][1])
                                             at wnfh_gradient
-                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], top=0):
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], right=400, top=0):
                                             xalign 0.5 yalign 0.5 alpha 0.1
                                             at wnfh_gradient
                                     else:
-                                        null height 20
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], right=400, top=0):
+                                            xalign 0.5 yalign 0.5 alpha 0.6
+                                            matrixcolor TintMatrix(wnfh_characters[character][1])
+                                            at wnfh_gradient
+                                        add Frame(wnfh_frames_elements["achievements_char_list_gradient"][0], left=wnfh_frames_elements["achievements_char_list_gradient"][3], right=400, top=0):
+                                            xalign 0.5 yalign 0.5 alpha 0.1
+                                            at wnfh_gradient
                                     area(0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][1], wnfh_frames_elements["achievements_char_list_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
                                     background debug_frame["purple"]
                                     textbutton wnfh_characters[character][0]: # ================================================ Текст кнопок
@@ -255,37 +263,37 @@ screen wnfh_achievements():
                         pos (0.5, 0.5)
                         anchor (0.5, 0.5)
 
-            #frame:
-            #    area (0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][2] * 2, wnfh_frames_elements["achievements_char_list_bg"][2])
-            #    xanchor 0.5 yanchor 0.5
-            #    background debug_frame["green"]
-            #    if renpy.store.wnfh_tymeofday == "day":
-            #        add wnfh_gui["avatars"][character]:
-            #            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
-            #            zoom 0.19
-            #    else:
-            #        add wnfh_gui["avatars"][character]:
-            #            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-            #            xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
-            #            zoom 0.19
-            #frame:
-            #    area(0.45, 1.0, 600, 200)
-            #    xanchor 0.5 yanchor 1.0
-            #    background debug_frame["blue"]
-            #    text "Ульяна. Человек, которая отчаянно старается сохранить юный задор, совмещая его со взрослыми ответственностями. Удается ей это с переменным успехом. Однако, она не подаёт виду, что новые ответственности нещадно давят на неё.":
-            #        style "wnfh_ach_title_2_" + renpy.store.wnfh_tymeofday
-            #frame:
-            #    area(0.95, 0.0, 600, 600)
-            #    xanchor 1.0 yanchor 0.0
-            #    background debug_frame["green"]
-            #    text "Галерея":
-            #        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            #frame:
-            #    area(0.95, 1.0, 600, 200)
-            #    xanchor 1.0 yanchor 1.0
-            #    background debug_frame["purple"]
-            #    text "Достижения":
-            #        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            frame:
+                area (0.5, 0.5, wnfh_frames_elements["achievements_char_list_bg"][2] * 2, wnfh_frames_elements["achievements_char_list_bg"][2])
+                xanchor 0.5 yanchor 0.5
+                background debug_frame["green"]
+                if renpy.store.wnfh_tymeofday == "day":
+                    add wnfh_gui["avatars"][character]:
+                        xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
+                        zoom 0.19
+                else:
+                    add wnfh_gui["avatars"][character]:
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+                        xanchor 0.5 yanchor 0.5 xpos 0.5 ypos 0.8
+                        zoom 0.19
+            frame:
+                area(0.45, 1.0, 600, 200)
+                xanchor 0.5 yanchor 1.0
+                background debug_frame["blue"]
+                text "Ульяна. Человек, которая отчаянно старается сохранить юный задор, совмещая его со взрослыми ответственностями. Удается ей это с переменным успехом. Однако, она не подаёт виду, что новые ответственности нещадно давят на неё.":
+                    style "wnfh_ach_title_2_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.95, 0.0, 600, 600)
+                xanchor 1.0 yanchor 0.0
+                background debug_frame["green"]
+                text "Галерея":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+            frame:
+                area(0.95, 1.0, 600, 200)
+                xanchor 1.0 yanchor 1.0
+                background debug_frame["purple"]
+                text "Достижения":
+                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
 
 #label wnfh_reset:

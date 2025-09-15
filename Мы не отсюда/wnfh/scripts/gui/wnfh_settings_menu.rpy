@@ -2,25 +2,7 @@ init 1000 python:
     if debug_switch:
         config.developer = True
         persistent.wnfh_var_debug["enabled"] = True
-init -5:
-    $ global frame_transparent
-    $ global frame_black
-    $ global frame_red
-    $ global frame_green
-    $ global frame_blue
-    $ global frame_purpl
-
-    $ global debug_switch
-
-    $ frame_transparent = "#0000"
-    $ frame_black       = "#0005"
-    $ frame_red         = "#F005"
-    $ frame_green       = "#0F05"
-    $ frame_blue        = "#00F5"
-    $ frame_purpl       = "#F0F5"
- 
-    $ debug_switch = 1 
-
+init -5: 
     if persistent.wnfh_mat_filter == None:
         $ persistent.wnfh_mat_filter = 0
 
@@ -30,8 +12,8 @@ init -5:
     if persistent.all_sound == None:
         $ persistent.all_sound = "mute"
 
-    if persistent.wnfh_hentai_mod == None:
-        $ persistent.wnfh_hentai_mod = 0
+    if persistent.wnfh_erotic_mod == None:
+        $ persistent.wnfh_erotic_mod = 0
 
     if persistent.wnfh_widget_lp == None:
         $ persistent.wnfh_widget_lp = 0
@@ -54,11 +36,13 @@ screen wnfh_preferences(main_menu = False):
     modal True #tag menu
     
     $ debug_frame = {
-        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
+        "red":       frame_red        if persistent.wnfh_debug_color else frame_transparent,
+        "green":     frame_green      if persistent.wnfh_debug_color else frame_transparent,
+        "blue":      frame_blue       if persistent.wnfh_debug_color else frame_transparent,
+        "purple":    frame_purpl      if persistent.wnfh_debug_color else frame_transparent,
+        "yellow":    frame_yellow     if persistent.wnfh_debug_color else frame_transparent,
+        "turquoise": frame_turquoise  if persistent.wnfh_debug_color else frame_transparent,
     }
     
     default wnfh_button_states = [False for i in range(1)]
@@ -84,6 +68,7 @@ screen wnfh_preferences(main_menu = False):
                 )],
         }
         
+        # АУДИО
         wnfh_preferences_audio_bars = [
             ["music"   ,"Музыка"          ,Preference("music volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ["sfx"     ,"Звуки"           ,Preference("sound volume"), wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
@@ -92,12 +77,11 @@ screen wnfh_preferences(main_menu = False):
         wnfh_preferences_audio_buttons = [
             ["copyright_misic"     ,"Режим стримера"      ,[SetField(persistent, "whfh_copyright_misic", 0)  ,SetField(persistent, "whfh_copyright_misic", 1)]  ,wnfh_bars["bar_full"][0]   ,wnfh_bars["bar_null"][0]   ,145  ,1],
         ]
-        wnfh_preferences_widget_buttons = [
-            ["widget_lp"           ,"Очки персонажей"     ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-            ["widget_clock"        ,"Часы"                ,AnimatedValue(value=persistent.wnfh_widget_clock, range=1.0, delay=0.1)        ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-            ["widget_music_player" ,"Текущий трек"        ,AnimatedValue(value=persistent.wnfh_widget_music_player, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-            ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
-        ]
+        wnfh_preferences_audio_buttons_states = {
+            "copyright_misic":   [persistent, "wnfh_copyright_misic", {0: 0, 1: 1}]
+        }
+
+        # ТЕКСТ
         wnfh_preferences_text_bars = [
             ["text_speed"        ,preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ["auto_forward_time" ,preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
@@ -108,32 +92,50 @@ screen wnfh_preferences(main_menu = False):
             ["font"        ,"Шрифт"        ,[SetField(persistent, "font_size", "large")        ,SetField(persistent, "font_size", "small")                                             ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
             ["mat_filter"  ,"Мат-фильтр"   ,[SetField(persistent, "whfh_mat_filter", 0)        ,SetField(persistent, "whfh_mat_filter", 1) ,SetField(persistent, "whfh_mat_filter", 2) ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,248  ,2],
         ]
-        wnfh_preferences_other_buttons = [
-            #["fullscreen" ,"Полный экран"       ,Preference("display", "fullscreen"),  Preference("display", "window"), _preferences.fullscreen],
-            #["hentai_mod" ,"Отображение хентая" ,AnimatedValue(value=persistent.wnfh_hentai_mod, range=1.0, delay=0.1)   ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]        ,145      ,1    ],
-            ["gaphics_mod" ,"Крутая графика"     ,[SetField(persistent, "wnfh_quality_settings", 0)        ,SetField(persistent, "wnfh_quality_settings", 1) ,SetField(persistent, "wnfh_quality_settings", 2) ]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
-        ]
         wnfh_preferences_text_buttons_states = {
-            "autoforward":  [preferences, "afm_enable",     {False:   0      ,True:    1}],
-            "skip":         [preferences, "skip_unseen",    {False:   0      ,True:    1}],
-            "font":         [persistent, "font_size",       {"small": 0      ,"large": 1}], # ГОВНО КАКОЕ-ТО! persistent.font_size
-            "mat_filter":   [persistent, "wnfh_mat_filter", {0:       0      ,1:       1        ,2: 2}]
+            "autoforward":  [preferences ,"afm_enable"       ,{False:   0  ,True:    1       } ],
+            "skip":         [preferences ,"skip_unseen"      ,{False:   0  ,True:    1       } ],
+            "font":         [persistent  ,"font_size"        ,{"small": 0  ,"large": 1       } ], # ГОВНО КАКОЕ-ТО! persistent.font_size
+            "mat_filter":   [persistent  ,"wnfh_mat_filter"  ,{0:       0  ,1:       1  ,2: 2} ]
         }
+        #ВИДЖЕТЫ
+        wnfh_preferences_widget_buttons = [
+            ["widget_lp"           ,"Очки персонажей"     ,AnimatedValue(value=persistent.wnfh_widget_lp, range=1.0, delay=0.1)           ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+            ["widget_clock"        ,"Часы"                ,AnimatedValue(value=persistent.wnfh_widget_clock, range=1.0, delay=0.1)        ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+            ["widget_music_player" ,"Текущий трек"        ,AnimatedValue(value=persistent.wnfh_widget_music_player, range=1.0, delay=0.1) ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+            
+        ]
+
+        # ПРОЧЕЕ
+        wnfh_preferences_other_buttons = [
+            ["fullscreen"  ,"Полный экран"    ,[Preference("display", "fullscreen")               ,Preference("display", "window")]                                                                     ,wnfh_bars["bar_full"][0]   ,wnfh_bars["bar_null"][0]   ,145  ,1],
+            ["erotic_mod"  ,"Эротика"         ,[SetField(persistent, "wnfh_erotic_mod", 0)        ,SetField(persistent, "wnfh_erotic_mod", 1)]                                                          ,wnfh_bars["bar_full"][0]   ,wnfh_bars["bar_null"][0]   ,145  ,1],
+            ["gaphics_mod" ,"Крутая графика"  ,[SetField(persistent, "wnfh_quality_settings", 0)  ,SetField(persistent, "wnfh_quality_settings", 1) ,SetField(persistent, "wnfh_quality_settings", 2)]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,248  ,1],
+        ]
         wnfh_preferences_other_buttons_states = {
-            "gaphics_mod":   [persistent, "wnfh_quality_settings", {0: 0, 1: 1, 2: 2}]
+            "gaphics_mod":   [persistent  ,"wnfh_quality_settings" ,{0:     0  ,1:    1  ,2: 2} ],
+            "erotic_mod":    [persistent  ,"wnfh_erotic_mod"       ,{0:     0  ,1:    1       } ],
+            "fullscreen":    [preferences ,"fullscreen"            ,{False: 0  ,True: 1       } ]
         }
-        wnfh_preferences_audio_buttons_states = {
-            "copyright_misic":   [persistent, "wnfh_copyright_misic", {0: 0, 1: 1}]
-        }
+        
+        # ИНСТРУМЕНТЫ РАЗРАБОТЧИКОВ
+        wnfh_preferences_devtools_buttons = [
+            ["debug_color"         ,"Цветовая индикация"  ,AnimatedValue(value=persistent.wnfh_debug_color, range=1.0, delay=0.1)         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 145, 1],
+        ]
+
+        # ПОДПИСИ
         wnfh_preferences_display_labels = {
-            "autoforward":     { 0: "ВЫКЛ",           1: "ВКЛ"              },
-            "skip":            { 0: "Виденное ранее", 1: "Всё"   },
-            "font":            { 0: "Обычный",        1: "Крупный"          },
-            "mat_filter":      { 0: "Без цензуры",    1: "Цензура", 2: "Литературная замена" },
-            "gaphics_mod":     { 0: "Хуёвый графон",  1: "База",    2: "Ультра HD 4К пожар RTX 5090" },
-            "copyright_misic": { 0: "Любая музыка",   1: "Безопасная"          },
+            "autoforward":     { 0: "ВЫКЛ",           1: "ВКЛ"                                               },
+            "skip":            { 0: "Виденное ранее", 1: "Всё"                                               },
+            "font":            { 0: "Обычный",        1: "Крупный"                                           },
+            "mat_filter":      { 0: "Без цензуры",    1: "Цензура",     2: "Литературная замена"             },
+            "gaphics_mod":     { 0: "Хуёвый графон",  1: "База",        2: "Ультра HD 4К пожар RTX 5090"     },
+            "copyright_misic": { 0: "Любая музыка",   1: "Безопасная"                                        },
+            "erotic_mod":      { 0: "Для пуританок",  1: "Возможно присутствие небольшого количества сисек"  },
+            "fullscreen":      { 0: "Оконный",        1: "Полноэкранный"                                     },
         }
 
+        # ПОДСКАЗКИ
         wnfh_button_tits = {
             "music":               ["Крутилка для саундтрека. Не регулирует качество, только громкость"],
             "sfx":                 ["Здесь живут всякие «дзынь», «хлоп» и иже с ними. Хотите тишины? Сдвиньте в ноль и игра внезапно станет артхаусом"],
@@ -150,9 +152,11 @@ screen wnfh_preferences(main_menu = False):
             "font":                ["шрифт", renpy.displayable(wnfh_gui["achievements"]["handass"]), "текст2"],
             "mat_filter":          ["мат фильтр", "текст2"],
             "gaphics_mod":         ["текст1", "текст2"],
+            "erotic_mod":          ["текст1", "текст2"],
+            "fullscreen":          ["текст1", "текст2"],
         }
 
-        if main_menu:
+        if main_menu: # ==================== Костыль для совместимости окна с главным меню
             wnfh_preferences_button = [
                 ["back", "Назад", [ShowMenu('main_menu'), Hide('preferences'), Hide('wnfh_preferences_tits')]]
             ]
@@ -160,6 +164,8 @@ screen wnfh_preferences(main_menu = False):
             wnfh_preferences_button = [
                 ["back", "Назад", [ShowMenu('game_menu_selector'), Hide('preferences'), Hide('wnfh_preferences_tits')]]
             ]
+
+        # =================================== Разные фоны под разное время суток
         mm_backgrounds = {
             "night":  wnfh_gui["main_menu"]["mm_bg_night"],
             "sunset": wnfh_gui["main_menu"]["mm_bg_sunset"],
@@ -167,7 +173,7 @@ screen wnfh_preferences(main_menu = False):
         }
 
     if main_menu:
-        default current_hour = wnfh_get_usertime("hour") # ======================= Главное меню подстраивается под время суток компьютера
+        default current_hour = wnfh_get_usertime("hour") # ======================= Меню настроек открытое из главное меню подстраивается под время суток компьютера
 
         default time_period = (
             "night"  if (current_hour >= 22 or current_hour < 8) else
@@ -180,19 +186,23 @@ screen wnfh_preferences(main_menu = False):
             background mm_backgrounds[time_period] # ================== Фон в главном меню
             area(0.0, 0.0, 1.0, 1.0)
 
-    default wnfh_preferences_text_buttons_states_current = {
+
+    default wnfh_preferences_audio_buttons_states_current = { # ========================================= Я не помню что это, но оно определённо нужно
+        "copyright_misic":   wnfh_preferences_audio_buttons_states["copyright_misic"][2][persistent.wnfh_copyright_misic]
+    }
+    default wnfh_preferences_text_buttons_states_current = { 
         "autoforward":  wnfh_preferences_text_buttons_states["autoforward"][2][preferences.afm_enable],
         "skip":         wnfh_preferences_text_buttons_states["skip"][2][preferences.skip_unseen],
         "font":         wnfh_preferences_text_buttons_states["font"][2][persistent.font_size],
         "mat_filter":   wnfh_preferences_text_buttons_states["mat_filter"][2][persistent.wnfh_mat_filter]
     }
     default wnfh_preferences_other_buttons_states_current = {
-        "gaphics_mod":   wnfh_preferences_other_buttons_states["gaphics_mod"][2][persistent.wnfh_quality_settings]
+        "gaphics_mod":   wnfh_preferences_other_buttons_states["gaphics_mod"][2][persistent.wnfh_quality_settings],
+        "erotic_mod":   wnfh_preferences_other_buttons_states["erotic_mod"][2][persistent.wnfh_erotic_mod],
+        "fullscreen":   wnfh_preferences_other_buttons_states["fullscreen"][2][preferences.fullscreen]
     }
 
-    default wnfh_preferences_audio_buttons_states_current = {
-        "copyright_misic":   wnfh_preferences_audio_buttons_states["copyright_misic"][2][persistent.wnfh_copyright_misic]
-    }
+    
 
     add wnfh_gui["tint_elements"]["vignette"]
 
@@ -694,6 +704,83 @@ screen wnfh_preferences(main_menu = False):
                                                                     action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()), ]
                                                                     background debug_frame["red"]
                                                                     hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]])
+                        if debug_switch:
+                            frame: # ============================ Пятый блок
+                                area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_devtools_buttons) * 65 + 100) 
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["turquoise"]
+                                vbox:
+                                    pos (0.5, 0.0)
+                                    xanchor 0.5 yanchor 0.0
+                                    spacing 0
+                                    frame: # ======================== Заголовок "Инструменты разработчиков"
+                                        area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
+                                        xanchor 0.5 yanchor 0.0
+                                        background debug_frame["black"]
+                                        vbox: # ================================================ Фон таблички из трёх кусков
+                                            pos (0.5, 0.5)
+                                            xanchor 0.5 yanchor 0.5
+                                            spacing 0
+                                            for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                                frame at wnfh_frames_elements[element][6]:
+                                                #frame:
+                                                    if persistent.wnfh_debug_color:
+                                                        background wnfh_frames_elements[element][5]
+                                                    else:
+                                                        background frame_transparent
+                                                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                
+                                        text "Инструменты разработчиков":
+                                            style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+                                            size 35
+                
+                                    frame:
+                                        area(0.5, 0.0, 0.9, 250)
+                                        xanchor 0.5 yanchor 0.0
+                                        background debug_frame["black"]
+                                        vbox:
+                                            pos (0.5, 0.0)
+                                            xanchor 0.5 yanchor 0.0
+                                            spacing 0
+                                            for element in range(len(wnfh_preferences_devtools_buttons)):
+                                                frame:
+                                                    area(0.5, 0.5, 1.0, 57)
+                                                    xanchor 0.5 yanchor 0.5
+                                                    background debug_frame["black"]
+                                                    frame:
+                                                        background debug_frame["red"]
+                                                        area(0.0, 0.5, 600, 1.0)
+                                                        xanchor 0.0 yanchor 0.5
+                                                        text wnfh_preferences_devtools_buttons[element][1]:
+                                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    frame:
+                                                        background debug_frame["green"]
+                                                        area(1.0, 0.5, wnfh_preferences_devtools_buttons[element][5]+12, 1.0)
+                                                        xanchor 1.0 yanchor 0.5
+                                                        bar value wnfh_preferences_devtools_buttons[element][2]:
+                                                            left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                            right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                            thumb wnfh_bars["tumb"][0]
+                                                            hover_thumb wnfh_bars["tumb"][0]
+                                                            xmaximum 1.0 ymaximum 39
+                                                            yanchor 0.5 ypos 0.5
+                                                        frame:
+                                                            background debug_frame["black"]
+                                                            area(0.0, 0.5, 1.0, 1.0)
+                                                            xanchor 0.0 yanchor 0.5
+                                                            padding(0, 0)
+                                                            hbox:
+                                                                for i in range(wnfh_preferences_devtools_buttons[element][6]):
+                                                                    button:
+                                                                        area(0.5, 0.5, (wnfh_preferences_devtools_buttons[element][5]) / (wnfh_preferences_devtools_buttons[element][6]), 1.0)
+                                                                        xanchor 0.5 yanchor 0.5
+                                                                        padding(0, 0)
+                                                                        action ToggleField(persistent, "wnfh_" + wnfh_preferences_devtools_buttons[element][0], i, i+1)
+                                                                        background debug_frame["red"]
+                                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_devtools_buttons[element][0]])
+
                 frame:
                     background debug_frame["green"]
                     area(1.0, 0.5, 50, 1.0)
@@ -730,11 +817,13 @@ screen wnfh_preferences(main_menu = False):
 screen wnfh_preferences_tits(dick):
 
     $ debug_frame = {
-        "black":  frame_black  if persistent.wnfh_debug_color else frame_transparent,
-        "red":    frame_red    if persistent.wnfh_debug_color else frame_transparent,
-        "green":  frame_green  if persistent.wnfh_debug_color else frame_transparent,
-        "blue":   frame_blue   if persistent.wnfh_debug_color else frame_transparent,
-        "purple": frame_purpl  if persistent.wnfh_debug_color else frame_transparent
+        "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
+        "red":       frame_red        if persistent.wnfh_debug_color else frame_transparent,
+        "green":     frame_green      if persistent.wnfh_debug_color else frame_transparent,
+        "blue":      frame_blue       if persistent.wnfh_debug_color else frame_transparent,
+        "purple":    frame_purpl      if persistent.wnfh_debug_color else frame_transparent,
+        "yellow":    frame_yellow     if persistent.wnfh_debug_color else frame_transparent,
+        "turquoise": frame_turquoise  if persistent.wnfh_debug_color else frame_transparent,
     }
 
     frame:
@@ -747,9 +836,9 @@ screen wnfh_preferences_tits(dick):
             if type(part) is str:
                 frame:
                     background debug_frame["red"]
-                    xpos 0.5 ypos 0.0
-                    xsize 550
+                    xpos 0.5 ypos 0.0 xsize 550
                     xanchor 0.5 yanchor 0.0
+                    yfill False
                     text part:
                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                         size 15

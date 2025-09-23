@@ -6,7 +6,7 @@ label wnfh_prologue:
     $ wnfh_set_name("dv", "Рыжая")
     scene black
     $ renpy.notify("Данный файл, во многом, представляет из себя заглушку. Здесь почти нет фонов, эмбиента, музыки и спрайтов. Имейте это ввиду!")
-    $ wnfh_set_time("rain")
+    $ wnfh_set_time("")
     play ambience ambience_int_cabin_day fadein 2.0 
     $ renpy.pause(1.0, hard=True)
     play music wnfh_music_list["waking_up"] fadein 2.5
@@ -597,6 +597,11 @@ label wnfh_prologue:
 
     "Мои мысли всё больше охватывало отчаяние."
     "Одновременно с тем, пока я занимался самокопанием, пионеры успокоились и линейка продолжилась."
+
+    hide mt
+    hide sv
+    with dissolve
+
     "Однако, недолго она длилась и люди стали дружно идти в одну сторону."
     "В полном непонимании, я остался стоять, провожая их взглядом."
 
@@ -765,7 +770,7 @@ label wnfh_prologue:
     me "Или что там пили в совке когда хреново? Водку?"
     mt "Мы тоже пьём аспирин."
 
-    hide bg ext_road_day
+    show bg ext_no_bus
     show mt normal pioneer panama at center
     with dissolve
 
@@ -811,7 +816,7 @@ label wnfh_prologue:
     stop ambience fadeout 5.0
     stop music fadeout 5.0
     $ renpy.pause(0.3)
-    scene int_house_of_mt_day_clean_wnfh with slide_diagonal_blure_dissolve5
+    scene bg int_house_of_mt_day_clean_wnfh with slide_diagonal_blure_dissolve5
     play ambience ambience_int_cabin_day fadein 5.0
     $ renpy.pause(0.5)
     window show dissolve
@@ -1046,6 +1051,7 @@ label wnfh_prologue:
 
 
     window hide dissolve2
+    stop music fadeout 2.0
     $ renpy.pause(2.0, hard=True)
     $ wnfh_set_time("sunset")
     play ambience ambience_camp_center_evening fadein 2.0

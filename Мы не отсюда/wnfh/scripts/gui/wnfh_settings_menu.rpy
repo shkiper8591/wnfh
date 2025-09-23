@@ -83,7 +83,7 @@ screen wnfh_preferences(main_menu = False):
 
         # ТЕКСТ
         wnfh_preferences_text_bars = [
-            ["text_speed"        ,preferences.text_cps  ,"Скорость текста"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+            ["text_speed"        ,preferences.text_cps  ,"Скорость"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
             ["auto_forward_time" ,preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
         ]
         wnfh_preferences_text_buttons = [
@@ -141,19 +141,19 @@ screen wnfh_preferences(main_menu = False):
             "sfx":                 ["Здесь живут всякие «дзынь», «хлоп» и иже с ними. Хотите тишины? Сдвиньте в ноль и игра внезапно станет артхаусом"],
             "voice":               ["Тут регулируется «атмосфера». Хотите нормально слышать окружение — выкрутите в максимум, хотите PowerPoint-презентацию — в минимум"],
             "copyright_misic":     ["Режим музыки без авторских прав. Отключает всю музыку, которая может повредить стримерам и контент мейкерам", "Останется только наша собственная музыка и та, на которую не будут ругаться площадки"],
-            "widget_lp":           ["текст1", "текст2"],       
+            "widget_lp":           ["текст1", "текст2"],      
             "widget_clock":        ["текст1", "текст2"],    
             "widget_music_player": ["текст1", "текст2"],
             "debug_color":         ["текст1", "текст2"],
             "text_speed":          ["текст1", "текст2"],
             "auto_forward_time":   ["текст1", "текст2"],
-            "autoforward":         ["автопереход", "текст2"],
-            "skip":                ["пропуск", "текст2"],
-            "font":                ["шрифт", renpy.displayable(wnfh_gui["achievements"]["handass"]), "текст2"],
-            "mat_filter":          ["мат фильтр", "текст2"],
-            "gaphics_mod":         ["текст1", "текст2"],
-            "erotic_mod":          ["текст1", "текст2"],
-            "fullscreen":          ["текст1", "текст2"],
+            "autoforward":         ["автопереход", "текст2", "Подсказка: [value]"],
+            "skip":                ["пропуск", "текст2", "Подсказка: [value]"],
+            "font":                ["шрифт", renpy.displayable(wnfh_gui["achievements"]["handass"]), "текст2", "Подсказка: [value]"],
+            "mat_filter":          ["мат фильтр", "текст2", "Подсказка: [value]"],
+            "gaphics_mod":         ["текст1", "текст2", "Подсказка: [value]"],
+            "erotic_mod":          ["текст1", "текст2", "Подсказка: [value]"],
+            "fullscreen":          ["текст1", "текст2", "Подсказка: [value]"],
         }
 
         if main_menu: # ==================== Костыль для совместимости окна с главным меню
@@ -341,19 +341,19 @@ screen wnfh_preferences(main_menu = False):
                                         spacing 0
                                         for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
                                             frame:
-                                                area(0.5, 0.5, 1.0, 228/4)
+                                                area(0.5, 0.5, 1.0, 57)
                                                 xanchor 0.5 yanchor 0.5
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 200, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_audio_bars[element][1]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                                         text_align 0.0
                                                 frame:
                                                     background debug_frame["blue"]
-                                                    area(200, 0.5, 90, 1.0)
+                                                    area(0.35, 0.5, 100, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -377,7 +377,7 @@ screen wnfh_preferences(main_menu = False):
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.4, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_audio_buttons[element][1]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -449,7 +449,7 @@ screen wnfh_preferences(main_menu = False):
                                         style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
             
                                 frame:
-                                    area(0.5, 0.0, 1.0, 370)
+                                    area(0.5, 0.0, 0.9, 370)
                                     xanchor 0.5 yanchor 0.0
                                     background debug_frame["black"]
                                     vbox:
@@ -458,12 +458,12 @@ screen wnfh_preferences(main_menu = False):
                                         spacing 0
                                         for element in range(len(wnfh_preferences_text_bars)): #+ len(wnfh_preferences_text_buttons)):
                                             frame:
-                                                area(0.5, 0.5, 1.0, 342/6) #+ len(wnfh_preferences_text_buttons))
+                                                area(0.5, 0.5, 1.0, 57) #+ len(wnfh_preferences_text_buttons))
                                                 xanchor 0.5 yanchor 0.5
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.4, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_text_bars[element][2]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -471,8 +471,8 @@ screen wnfh_preferences(main_menu = False):
                                                         #size 25
                                                 frame:
                                                     background debug_frame["blue"]
-                                                    area(0.5, 0.5, 60, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
+                                                    area(0.35, 0.5, 100, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
                                                     text "{}".format(int(wnfh_preferences_text_bars[element][1])):
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                                 frame:
@@ -497,12 +497,12 @@ screen wnfh_preferences(main_menu = False):
             
                                         for element in range(len(wnfh_preferences_text_buttons)):
                                             frame:
-                                                area(0.5, 0.5, 1.0, 342/6)
+                                                area(0.5, 0.5, 1.0, 57)
                                                 xanchor 0.5 yanchor 0.5
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.4, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_text_buttons[element][1]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -518,7 +518,7 @@ screen wnfh_preferences(main_menu = False):
             
                                                 frame:
                                                     background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_text_buttons[element][5]+12, 1.0)
+                                                    area(1.0, 0.5, wnfh_preferences_text_buttons[element][5] + 12, 1.0)
                                                     xanchor 1.0 yanchor 0.5
                                                     bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_text_buttons[element][2]:
                                                         left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
@@ -538,9 +538,14 @@ screen wnfh_preferences(main_menu = False):
                                                                     area(0.5, 0.5, (wnfh_preferences_text_buttons[element][5]) / (wnfh_preferences_text_buttons[element][6]), 1.0)
                                                                     xanchor 0.5 yanchor 0.5
                                                                     padding(0, 0)
-                                                                    action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()), ]
+                                                                    action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0],
+                                                                                            wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1],
+                                                                                            wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()),
+                                                                                            Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]],
+                                                                                                value = wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][(pref_integer_value+1) % (wnfh_preferences_text_buttons[element][6]+1)])]
+
                                                                     background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]])
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value])
                                                                     
     
                         frame: # ============================ Третий блок
@@ -587,7 +592,7 @@ screen wnfh_preferences(main_menu = False):
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 600, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_widget_buttons[element][1]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -664,7 +669,7 @@ screen wnfh_preferences(main_menu = False):
                                                 background debug_frame["black"]
                                                 frame:
                                                     background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.4, 1.0)
+                                                    area(0.0, 0.5, 0.35, 1.0)
                                                     xanchor 0.0 yanchor 0.5
                                                     text wnfh_preferences_other_buttons[element][1]:
                                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -701,9 +706,13 @@ screen wnfh_preferences(main_menu = False):
                                                                     area(0.5, 0.5, (wnfh_preferences_other_buttons[element][5]) / (wnfh_preferences_other_buttons[element][6]), 1.0)
                                                                     xanchor 0.5 yanchor 0.5
                                                                     padding(0, 0)
-                                                                    action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()), ]
+                                                                    action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0],
+                                                                        wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1],
+                                                                        wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()),
+                                                                        Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]],
+                                                                            value = wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])]
                                                                     background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]])
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])
                         if debug_switch:
                             frame: # ============================ Пятый блок
                                 area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_devtools_buttons) * 65 + 100) 
@@ -751,7 +760,7 @@ screen wnfh_preferences(main_menu = False):
                                                     background debug_frame["black"]
                                                     frame:
                                                         background debug_frame["red"]
-                                                        area(0.0, 0.5, 600, 1.0)
+                                                        area(0.0, 0.5, 0.35, 1.0)
                                                         xanchor 0.0 yanchor 0.5
                                                         text wnfh_preferences_devtools_buttons[element][1]:
                                                             style "wnfh_text_" + renpy.store.wnfh_tymeofday
@@ -814,7 +823,7 @@ screen wnfh_preferences(main_menu = False):
                 text "Подсказки":
                     style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
-screen wnfh_preferences_tits(dick):
+screen wnfh_preferences_tits(dick, value=""):
 
     $ debug_frame = {
         "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,

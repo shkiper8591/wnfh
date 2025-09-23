@@ -10,6 +10,14 @@ controls{
       keyboardKey:i=57
     }
 
+    ID_AGM{
+      keyboardKey:i=57
+    }
+
+    ID_AGM{
+      joyButton:i=16
+    }
+
     ID_AGM_LOCK{
       keyboardKey:i=56
       keyboardKey:i=45
@@ -75,8 +83,24 @@ controls{
       keyboardKey:i=57
     }
 
+    ID_CONTINUE_SETUP{
+      keyboardKey:i=57
+    }
+
+    ID_CONTINUE_SETUP{
+      joyButton:i=12
+    }
+
     ID_CONTROL_MODE{
       keyboardKey:i=35
+    }
+
+    ID_COUNTERMEASURES_CHAFF{
+      mouseButton:i=5
+    }
+
+    ID_COUNTERMEASURES_FLARES{
+      mouseButton:i=6
     }
 
     ID_DESIGNATE_TARGET{
@@ -122,8 +146,9 @@ controls{
       keyboardKey:i=19
     }
 
-    ID_FLARES{
-      mouseButton:i=6
+    ID_FLARES{}
+    ID_FLIGHTMENU_SETUP{
+      joyButton:i=4
     }
 
     ID_FUEL_TANKS{
@@ -191,12 +216,11 @@ controls{
     }
 
     ID_MANEUVERABILITY_MODE{
-      keyboardKey:i=63
+      mouseButton:i=3
     }
 
     ID_OPEN_VISUAL_WEAPON_SELECTOR{
-      keyboardKey:i=42
-      keyboardKey:i=30
+      mouseButton:i=4
     }
 
     ID_PLANE_NIGHT_VISION{
@@ -242,6 +266,14 @@ controls{
     ID_ROCKETS_SERIES_HELICOPTER{
       keyboardKey:i=29
       keyboardKey:i=19
+    }
+
+    ID_SCOUT{
+      mouseButton:i=4
+    }
+
+    ID_SCOUT_UAV{
+      mouseButton:i=4
     }
 
     ID_SCREENSHOT{}
@@ -320,6 +352,10 @@ controls{
       keyboardKey:i=19
     }
 
+    ID_SENSOR_SWITCH_TANK{
+      keyboardKey:i=63
+    }
+
     ID_SENSOR_TARGET_LOCK{
       keyboardKey:i=58
     }
@@ -367,10 +403,18 @@ controls{
       keyboardKey:i=21
     }
 
+    ID_SHOW_MULTIFUNC_WHEEL_MENU{
+      joyButton:i=14
+    }
+
     ID_SHOW_VOICE_MESSAGE_LIST{}
     ID_SHOW_VOICE_MESSAGE_LIST{
       keyboardKey:i=29
       keyboardKey:i=20
+    }
+
+    ID_SHOW_VOICE_MESSAGE_LIST{
+      joyButton:i=15
     }
 
     ID_SHOW_VOICE_MESSAGE_LIST_SQUAD{
@@ -378,12 +422,20 @@ controls{
       keyboardKey:i=37
     }
 
+    ID_SLAVE_UNIT_SPAWN{
+      keyboardKey:i=46
+    }
+
+    ID_SLAVE_UNIT_SWITCH{
+      keyboardKey:i=207
+    }
+
     ID_SQUAD_TARGET_DESIGNATION{
       keyboardKey:i=41
     }
 
     ID_START_SUPPORT_PLANE{
-      keyboardKey:i=22
+      keyboardKey:i=199
     }
 
     ID_START_UGV{}
@@ -431,6 +483,10 @@ controls{
       keyboardKey:i=8
     }
 
+    ID_SWITCH_SHOOTING_CYCLE_COUNTER_MEASURE{
+      keyboardKey:i=201
+    }
+
     ID_SWITCH_SHOOTING_CYCLE_PRIMARY{
       keyboardKey:i=56
       keyboardKey:i=5
@@ -438,6 +494,10 @@ controls{
 
     ID_SWITCH_SHOOTING_CYCLE_SECONDARY{
       keyboardKey:i=5
+    }
+
+    ID_SWITCH_SHOOTING_CYCLE_SECONDARY{
+      keyboardKey:i=209
     }
 
     ID_SWITCH_SHOOTING_CYCLE_SECONDARY_HELICOPTER{
@@ -451,6 +511,10 @@ controls{
 
     ID_TANK_SWITCH_FUSE_MODE{
       keyboardKey:i=43
+    }
+
+    ID_TANK_SWITCH_FUSE_MODE{
+      keyboardKey:i=209
     }
 
     ID_TARGETING_HOLD_GM{}
@@ -524,11 +588,20 @@ controls{
       keyboardKey:i=48
     }
 
+    ID_TOGGLE_UAV_CAMERA{
+      mouseButton:i=3
+    }
+
     ID_TOGGLE_VIEW_HUMAN{
       keyboardKey:i=42
     }
 
     ID_TRACKER_RESET_POSITION{}
+    ID_UNLOCK_TARGETING{
+      keyboardKey:i=42
+      keyboardKey:i=20
+    }
+
     ID_VOICE_MESSAGE_1{
       keyboardKey:i=2
     }
@@ -565,6 +638,11 @@ controls{
       keyboardKey:i=58
     }
 
+    ID_WEAPON_LOCK{
+      keyboardKey:i=56
+      keyboardKey:i=45
+    }
+
     ID_WEAPON_LOCK_HELICOPTER{
       keyboardKey:i=56
       keyboardKey:i=45
@@ -574,12 +652,33 @@ controls{
       keyboardKey:i=33
     }
 
+    ID_WEAPON_LOCK_TANK{
+      keyboardKey:i=56
+      keyboardKey:i=45
+    }
+
     ailerons_rangeMax{
       keyboardKey:i=32
     }
 
     ailerons_rangeMin{
       keyboardKey:i=30
+    }
+
+    buoyancy_rangeMax{
+      keyboardKey:i=32
+    }
+
+    buoyancy_rangeMax{
+      joyButton:i=24
+    }
+
+    buoyancy_rangeMin{
+      keyboardKey:i=30
+    }
+
+    buoyancy_rangeMin{
+      joyButton:i=24
     }
 
     elevator_rangeMax{
@@ -628,6 +727,22 @@ controls{
     head_pos_z_rangeMax{}
     head_pos_z_rangeMin{
       keyboardKey:i=71
+    }
+
+    helicopter_buoyancy_rangeMax{
+      keyboardKey:i=32
+    }
+
+    helicopter_buoyancy_rangeMax{
+      joyButton:i=24
+    }
+
+    helicopter_buoyancy_rangeMin{
+      keyboardKey:i=30
+    }
+
+    helicopter_buoyancy_rangeMin{
+      joyButton:i=23
     }
 
     helicopter_cyclic_pitch_rangeMax{
@@ -723,6 +838,11 @@ controls{
     vtol_rangeMin{
       keyboardKey:i=208
     }
+
+    weapon_aim_heading_rangeMax{}
+    weapon_aim_heading_rangeMin{}
+    weapon_aim_pitch_rangeMax{}
+    weapon_aim_pitch_rangeMin{}
   }
 
   axes{
@@ -769,6 +889,14 @@ controls{
       relative:b=yes
     }
 
+    sensor_cue_x{
+      axisId:i=2
+    }
+
+    sensor_cue_z{
+      axisId:i=3
+    }
+
     ship_sight_distance{
       mouseAxisId:i=4
     }
@@ -785,8 +913,15 @@ controls{
       mouseAxisId:i=-1
     }
 
-    zoom{
-      mouseAxisId:i=2
+    weapon_aim_heading{
+      axisId:i=0
+      innerDeadzone:r=0
+    }
+
+    weapon_aim_pitch{
+      axisId:i=1
+      innerDeadzone:r=0
+      inverse:b=yes
     }
   }
 
@@ -818,20 +953,30 @@ controls{
   deviceMapping{
     joystick{
       connected:b=yes
+      devId:t="x360"
+      axesOffset:i=0
+      name:t="Controller 1"
+      buttonsOffset:i=0
+      buttonsCount:i=28
+      axesCount:i=7
+    }
+
+    joystick{
+      connected:b=no
       devId:t="0738:2221"
-      axesOffset:i=8
+      axesOffset:i=7
       name:t="Saitek Pro Flight X-56 Rhino Stick"
-      buttonsOffset:i=36
+      buttonsOffset:i=28
       buttonsCount:i=21
       axesCount:i=7
     }
 
     joystick{
-      connected:b=yes
+      connected:b=no
       devId:t="0738:A221"
-      axesOffset:i=0
+      axesOffset:i=14
       name:t="Saitek Pro Flight X-56 Rhino Throttle"
-      buttonsOffset:i=0
+      buttonsOffset:i=49
       buttonsCount:i=36
       axesCount:i=8
     }
@@ -839,9 +984,9 @@ controls{
     joystick{
       connected:b=no
       devId:t="046D:C215"
-      axesOffset:i=15
+      axesOffset:i=22
       name:t="Logitech Extreme 3D"
-      buttonsOffset:i=57
+      buttonsOffset:i=85
       buttonsCount:i=16
       axesCount:i=6
     }

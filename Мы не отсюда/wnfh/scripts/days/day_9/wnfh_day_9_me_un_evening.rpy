@@ -118,7 +118,7 @@ label d9_me_un_evening:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["neutral", "Сознаться", "Она наверняка что-то знает!", "d9_me_un_evening_1", {None}],
+        ["neutral", "Открыться", "Она наверняка что-то знает!", "d9_me_un_evening_1", {None}],
         ["neutral", "Отрицать", "Сыграю дурочка, авось пронесёт", "d9_me_un_evening_2", {None}],
         ["d9_choice_n1", "Лена ставит Семёна в неудобное положение"]
         ) with sphere_blure_dissolve2
@@ -344,6 +344,8 @@ label d9_me_un_evening_resist:
         jump d9_me_alt_un_ending_mt
 
 label d9_me_un_evening_agree:
+
+    $ wnfh_Data.FlagSet("d9_under_rain") == False
 
     th "Говорит, словно у меня есть какой-то выбор. Как я вообще попадаю в подобные ситуации?"
 

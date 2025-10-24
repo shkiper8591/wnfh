@@ -1,0 +1,7 @@
+if persistent.wnfh_mat_filter == 0:  
+elif persistent.wnfh_mat_filter == 1: 
+else: 
+
+0 = Без цензуры
+1 = Цензура
+элз = Литературная замена

@@ -1,5 +1,6 @@
 label d9_editorial:
     
+    $ wnfh_Data.FlagSet("journalist") == True
     window hide dissolve
     stop ambience fadeout 2.5
     hide mi

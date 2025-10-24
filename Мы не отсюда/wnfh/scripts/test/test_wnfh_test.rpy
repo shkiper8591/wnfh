@@ -30,6 +30,8 @@ label wnfh_test_main_menu:
     menu:
         "Карту?":
             jump wnfh_map_test
+        "Фоны":
+            jump wnfh_background
         "Анимации?":
             jump wnfh_test_anim
         "Спрайты?":

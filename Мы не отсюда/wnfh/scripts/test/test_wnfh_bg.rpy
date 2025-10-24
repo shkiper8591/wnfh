@@ -1,15 +1,14 @@
 label wnfh_background:
-    scene bg int_editorial_day_cat with dissolve2
-    show un dr dr_normal_wk background with dspr
-    show kat wr wr_normal_wk background with dspr
-    me "Всем привет!"
-    show un dr dr_smile background with dspr
-    un "Привет Семён."
-    show un dr dr_normal_wk background with dspr
-    show kat wr wr_smile background with dspr
-    kat "Приветик."
-    show kat wr wr_normal_wk background with dspr
-    "Спрайты работают, заебумба"
+
+    scene bg ext_square_day
+
+    "Проверка перехода 3 2 1"
+
+    scene black with slide_right_dissolve
+    scene bg ext_warehouse_day_opendoor_wnfh with slide_right_dissolve2
+
+    "Проверка успешная, возвращаемся на базу"
+
     jump wnfh_test_main_menu
     
     

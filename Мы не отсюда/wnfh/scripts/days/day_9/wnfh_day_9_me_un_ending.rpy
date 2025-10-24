@@ -367,7 +367,7 @@ label d9_me_alt_un_ending_mt:
         th "Эта дура по уши влюблена в меня!"
 
 
-          if persistent.wnfh_mat_filter == 0:
+        if persistent.wnfh_mat_filter == 0:
 
             th "Блять, ну зачем так всё усложнять-то, а?!"
 

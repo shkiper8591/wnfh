@@ -1,4 +1,4 @@
-init -4 python:
+init -4 python: 
     ## Создание листов ##
     
     def wnfh_form_files_list(path):

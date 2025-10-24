@@ -141,7 +141,7 @@ label d10_morning:
         show un normal pioneer at left
         show mt normal pioneer at right
         with santa_barbara_in_blure_dissolve2
-        play ambience_int_cabin_day faden 2.0
+        play ambience ambience_int_cabin_day fadein 2.0
         $ renpy.notify("В идеале, в данной сцене у ОД должен быть серьёзный ебальник. Однако, такового у неё не имеется, за сим постанавляю либо изобрести таковой, либо найти! Третьего варианта (забить хуй) не даётся.")
         $ renpy.pause(.5, hard=True)
         play music wnfh_music_list["crimes_2"] fadein 2.0

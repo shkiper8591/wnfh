@@ -281,7 +281,7 @@ init -4 python:
         "alarm":    [wnfh_gui["achievements"]["alarm"]     ,"Das Boot"                            ,"Доплавался, блин"                           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
         "zaebist":  [wnfh_gui["achievements"]["zaebist"]   ,"Всё идёт по плану"                   ,"При коммунизме всё будет заебись"           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
         "handass":  [wnfh_gui["achievements"]["handass"]   ,"Рукожоп"                             ,"Ну как так-то?"                             ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],
-        "seledka":  [wnfh_gui["achievements"]["placeholder"]   ,"Теперь ты Селёдка"                   ,"Селёдка присоединилась к отряду"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],
+        "seledka":  [wnfh_gui["achievements"]["placeholder"]   ,"Теперь ты — Селёдка"                   ,"Селёдка присоединяется к отряду"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],
 
     }
     # Аватарки

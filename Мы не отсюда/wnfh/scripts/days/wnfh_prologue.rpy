@@ -6,7 +6,7 @@ label wnfh_prologue:
     $ wnfh_set_name("dv", "Рыжая")
     scene black
     $ renpy.notify("Данный файл, во многом, представляет из себя заглушку. Здесь почти нет фонов, эмбиента, музыки и спрайтов. Имейте это ввиду!")
-    #$ wnfh_set_time("") Я хз, что это, но из-за этой строки игра вылетает, потому закомментил.
+    $ wnfh_set_time()
     play ambience ambience_int_cabin_day fadein 2.0 
     $ renpy.pause(1.0, hard=True)
     play music wnfh_music_list["waking_up"] fadein 2.5

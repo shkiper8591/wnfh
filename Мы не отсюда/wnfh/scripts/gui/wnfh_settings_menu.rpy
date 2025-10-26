@@ -95,7 +95,7 @@ screen wnfh_preferences(main_menu = False):
         wnfh_preferences_text_buttons_states = {
             "autoforward":  [preferences ,"afm_enable"       ,{False:   0  ,True:    1       } ],
             "skip":         [preferences ,"skip_unseen"      ,{False:   0  ,True:    1       } ],
-            "font":         [persistent  ,"font_size"        ,{"small": 0  ,"large": 1       } ], # ГОВНО КАКОЕ-ТО! persistent.font_size
+            "font":         [persistent  ,"font_size"        ,{"small": 0  ,"large": 1       } ], # ГОВНО КАКОЕ-ТО!
             "mat_filter":   [persistent  ,"wnfh_mat_filter"  ,{0:       0  ,1:       1  ,2: 2} ]
         }
         #ВИДЖЕТЫ
@@ -140,13 +140,13 @@ screen wnfh_preferences(main_menu = False):
             "music":               ["Крутилка для саундтрека. Не регулирует качество, только громкость"],
             "sfx":                 ["Здесь живут всякие «дзынь», «хлоп» и иже с ними. Хотите тишины? Сдвиньте в ноль и игра внезапно станет артхаусом"],
             "voice":               ["Тут регулируется «атмосфера». Хотите нормально слышать окружение — выкрутите в максимум, хотите PowerPoint-презентацию — в минимум"],
-            "copyright_misic":     ["Режим музыки без авторских прав. Отключает всю музыку, которая может повредить стримерам и контент мейкерам", "Останется только наша собственная музыка и та, на которую не будут ругаться площадки"],
+            "copyright_misic":     ["Режим музыки без авторских прав. Отключает всю музыку, которая может повредить стримерам и контент мейкерам", "Останется только наша собственная музыка и та, на которую не будут ругаться площадки", "Подсказка: [value]"],
             "widget_lp":           ["текст1", "текст2"],      
             "widget_clock":        ["текст1", "текст2"],    
             "widget_music_player": ["текст1", "текст2"],
             "debug_color":         ["текст1", "текст2"],
-            "text_speed":          ["текст1", "текст2"],
-            "auto_forward_time":   ["текст1", "текст2"],
+            "text_speed":          ["текст1", "текст2", "Подсказка: [value]"],
+            "auto_forward_time":   ["текст1", "текст2", "Подсказка: [value]"],
             "autoforward":         ["автопереход", "текст2", "Подсказка: [value]"],
             "skip":                ["пропуск", "текст2", "Подсказка: [value]"],
             "font":                ["шрифт", renpy.displayable(wnfh_gui["achievements"]["handass"]), "текст2", "Подсказка: [value]"],
@@ -394,7 +394,7 @@ screen wnfh_preferences(main_menu = False):
             
                                                 frame:
                                                     background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_audio_buttons[element][5]+12, 1.0)
+                                                    area(1.0, 0.5, wnfh_preferences_audio_buttons[element][5] + 12, 1.0)
                                                     xanchor 1.0 yanchor 0.5
                                                     bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_audio_buttons[element][2]:
                                                         left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
@@ -686,7 +686,7 @@ screen wnfh_preferences(main_menu = False):
             
                                                 frame:
                                                     background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_other_buttons[element][5]+12, 1.0)
+                                                    area(1.0, 0.5, wnfh_preferences_other_buttons[element][5] + 12, 1.0)
                                                     xanchor 1.0 yanchor 0.5
                                                     bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_other_buttons[element][2]:
                                                         left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
@@ -766,7 +766,7 @@ screen wnfh_preferences(main_menu = False):
                                                             style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                                     frame:
                                                         background debug_frame["green"]
-                                                        area(1.0, 0.5, wnfh_preferences_devtools_buttons[element][5]+12, 1.0)
+                                                        area(1.0, 0.5, wnfh_preferences_devtools_buttons[element][5] + 12, 1.0)
                                                         xanchor 1.0 yanchor 0.5
                                                         bar value wnfh_preferences_devtools_buttons[element][2]:
                                                             left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])

@@ -10,6 +10,10 @@ controls{
       keyboardKey:i=57
     }
 
+    ID_ACTION_BAR_ITEM_6{
+      keyboardKey:i=33
+    }
+
     ID_AGM{
       keyboardKey:i=57
     }
@@ -175,6 +179,11 @@ controls{
 
     ID_GUIDED_BOMBS_LOCK_HELICOPTER{
       keyboardKey:i=33
+    }
+
+    ID_HELI_GUNNER_NIGHT_VISION{
+      keyboardKey:i=29
+      keyboardKey:i=18
     }
 
     ID_HUMAN_NIGHT_VISION{
@@ -347,11 +356,6 @@ controls{
       keyboardKey:i=10
     }
 
-    ID_SENSOR_SWITCH_HELICOPTER{
-      keyboardKey:i=56
-      keyboardKey:i=19
-    }
-
     ID_SENSOR_SWITCH_TANK{
       keyboardKey:i=63
     }
@@ -371,11 +375,6 @@ controls{
     ID_SENSOR_TARGET_SWITCH{}
     ID_SENSOR_TARGET_SWITCH{
       keyboardKey:i=21
-    }
-
-    ID_SENSOR_TARGET_SWITCH_HELICOPTER{
-      keyboardKey:i=56
-      keyboardKey:i=20
     }
 
     ID_SENSOR_TARGET_SWITCH_TANK{
@@ -427,7 +426,7 @@ controls{
     }
 
     ID_SLAVE_UNIT_SWITCH{
-      keyboardKey:i=207
+      keyboardKey:i=209
     }
 
     ID_SQUAD_TARGET_DESIGNATION{
@@ -435,7 +434,7 @@ controls{
     }
 
     ID_START_SUPPORT_PLANE{
-      keyboardKey:i=199
+      keyboardKey:i=5
     }
 
     ID_START_UGV{}
@@ -560,6 +559,10 @@ controls{
       keyboardKey:i=48
     }
 
+    ID_TOGGLE_CONSTRUCTION_MODE{
+      keyboardKey:i=7
+    }
+
     ID_TOGGLE_GM_CROSSHAIR_LIGHTING{
       keyboardKey:i=26
     }
@@ -602,6 +605,10 @@ controls{
       keyboardKey:i=20
     }
 
+    ID_UNLOCK_TARGETING_AT_POINT_HELICOPTER{
+      keyboardKey:i=209
+    }
+
     ID_VOICE_MESSAGE_1{
       keyboardKey:i=2
     }
@@ -638,11 +645,6 @@ controls{
       keyboardKey:i=58
     }
 
-    ID_WEAPON_LOCK{
-      keyboardKey:i=56
-      keyboardKey:i=45
-    }
-
     ID_WEAPON_LOCK_HELICOPTER{
       keyboardKey:i=56
       keyboardKey:i=45
@@ -650,11 +652,6 @@ controls{
 
     ID_WEAPON_LOCK_HELICOPTER{
       keyboardKey:i=33
-    }
-
-    ID_WEAPON_LOCK_TANK{
-      keyboardKey:i=56
-      keyboardKey:i=45
     }
 
     ailerons_rangeMax{
@@ -670,7 +667,7 @@ controls{
     }
 
     buoyancy_rangeMax{
-      joyButton:i=24
+      joyButton:i=42
     }
 
     buoyancy_rangeMin{
@@ -678,7 +675,7 @@ controls{
     }
 
     buoyancy_rangeMin{
-      joyButton:i=24
+      joyButton:i=42
     }
 
     elevator_rangeMax{
@@ -734,7 +731,7 @@ controls{
     }
 
     helicopter_buoyancy_rangeMax{
-      joyButton:i=24
+      joyButton:i=42
     }
 
     helicopter_buoyancy_rangeMin{
@@ -742,7 +739,7 @@ controls{
     }
 
     helicopter_buoyancy_rangeMin{
-      joyButton:i=23
+      joyButton:i=41
     }
 
     helicopter_cyclic_pitch_rangeMax{
@@ -952,11 +949,21 @@ controls{
 
   deviceMapping{
     joystick{
-      connected:b=yes
-      devId:t="x360"
+      connected:b=no
+      devId:t="054C:0CE6"
       axesOffset:i=0
-      name:t="Controller 1"
+      name:t="DualSense Wireless Controller"
       buttonsOffset:i=0
+      buttonsCount:i=18
+      axesCount:i=8
+    }
+
+    joystick{
+      connected:b=no
+      devId:t="x360"
+      axesOffset:i=8
+      name:t="Controller 1"
+      buttonsOffset:i=18
       buttonsCount:i=28
       axesCount:i=7
     }
@@ -964,9 +971,9 @@ controls{
     joystick{
       connected:b=no
       devId:t="0738:2221"
-      axesOffset:i=7
+      axesOffset:i=15
       name:t="Saitek Pro Flight X-56 Rhino Stick"
-      buttonsOffset:i=28
+      buttonsOffset:i=46
       buttonsCount:i=21
       axesCount:i=7
     }
@@ -974,9 +981,9 @@ controls{
     joystick{
       connected:b=no
       devId:t="0738:A221"
-      axesOffset:i=14
+      axesOffset:i=22
       name:t="Saitek Pro Flight X-56 Rhino Throttle"
-      buttonsOffset:i=49
+      buttonsOffset:i=67
       buttonsCount:i=36
       axesCount:i=8
     }
@@ -984,9 +991,9 @@ controls{
     joystick{
       connected:b=no
       devId:t="046D:C215"
-      axesOffset:i=22
+      axesOffset:i=30
       name:t="Logitech Extreme 3D"
-      buttonsOffset:i=85
+      buttonsOffset:i=103
       buttonsCount:i=16
       axesCount:i=6
     }

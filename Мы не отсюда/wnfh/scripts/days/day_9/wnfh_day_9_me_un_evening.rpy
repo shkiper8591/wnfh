@@ -125,7 +125,6 @@ label d9_me_un_evening:
 
 label d9_me_un_evening_1:
 
-    $ wnfh_Data.FlagSet("me_stukach", True)
     window show dissolve
     stop music fadeout 5.0
 
@@ -178,6 +177,8 @@ label d9_me_un_evening_1:
         ) with sphere_blure_dissolve2
 
 label d9_me_un_evening_resist:
+
+    $ wnfh_Data.FlagSet("me_stukach", False)
 
     "В сложившейся ситуации, я попытался себя успокоить и мыслить рационально."
     "Разумеется, это было очень сложно. Но что-то в душе мне подсказывало, что она блефует."
@@ -345,7 +346,8 @@ label d9_me_un_evening_resist:
 
 label d9_me_un_evening_agree:
 
-    $ wnfh_Data.FlagSet("d9_under_rain") == False
+    $ wnfh_Data.FlagSet("d9_under_rain", False)
+    $ wnfh_Data.FlagSet("me_stukach", True)
 
     th "Говорит, словно у меня есть какой-то выбор. Как я вообще попадаю в подобные ситуации?"
 
@@ -395,6 +397,9 @@ label d9_me_un_evening_agree:
     jump d9_ending_un
 
 label d9_me_un_evening_2:
+
+    $ wnfh_Data.FlagSet("d9_under_rain", False)
+    $ wnfh_Data.FlagSet("me_suppose", True)
 
     window show dissolve
 

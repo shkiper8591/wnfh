@@ -1,7 +1,7 @@
 label d9_me_dv_date:
 
-    $ wnfh_Data.FlagSet("dv_route") == True
-    $ wnfh_Data.FlagSet("d9_under_rain") == True
+    $ wnfh_Data.FlagSet("dv_route", True)
+    $ wnfh_Data.FlagSet("d9_under_rain", True)
     stop ambience fadeout 5.0
     scene bg ext_path2_sunset_wnfh
     show dv smile pioneer at center

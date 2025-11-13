@@ -5,18 +5,17 @@ label d7_ending:
     scene bg ext_lenin_square_night_wnfh with slide_left_blure_dissolve2
     play ambience ambience_camp_center_night fadein 3
 
-    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
+    if wnfh_Data.getChoice_result_number("d7_choice_n15") == 2:
 
         jump d7_ending_un
 
-    elif wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
+    elif wnfh_Data.getChoice_result_number("d7_choice_n15") == 1:
 
         jump d7_ending_dv
 
     else:
 
         jump d7_ending_main
-        #КОСЯК: здесь нужен не выбор 8, а выборы 13 и 15.
 
 label d7_ending_un:
     
@@ -44,12 +43,12 @@ label d7_ending_dv:
  
     window show dissolve
 
-    "Выйдя на площадь, я задумался над встречей с Алисой на сцене."
+    "Выйдя на площадь, я задумался над разговором с Алисой."
 
     th "Как-то она странно себя вела[wp]"
     th "Вроде как обычно, но при этом[wp] Что-то вот не то."
-    th "Будто желала что-то сказать помимо предложения посидеть под гитарку."
-    th "Но либо не стала, либо расхотела. {w}Впрочем, завтра, вероятнее всего, я всё сам узнаю. Если соглашусь, разумеется."
+    th "Будто хотела что-то сказать помимо предложения посидеть под гитарку."
+    th "Но либо передумала, либо просто не стала. {w}Впрочем, завтра, вероятнее всего, я всё сам узнаю. Если соглашусь, разумеется."
 
     show bg ext_houses_night_wnfh with dissolve2
 

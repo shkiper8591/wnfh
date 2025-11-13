@@ -64,7 +64,7 @@ label d7_me_kat_sdacha_kati_w_un:
 
     me "Всё нормально, вы нас особо не напрягли."
     un "Правда-правда."
-    mt "Ну хорошо, тогда можете идти, дальше я тут сама справлюсь."
+    mt "Ну хорошо, тогда можете идти, дальше я сама справлюсь."
 
     hide mt
     hide kat
@@ -76,7 +76,7 @@ label d7_me_kat_sdacha_kati_w_un:
 
     show un shy pioneer at center with dspr
 
-    un "С-Семён."
+    un "С-Семён[wp]"
     me "М?"
 
     show un smile pioneer at center with dspr
@@ -94,14 +94,16 @@ label d7_me_kat_sdacha_kati_w_un:
 
 label d7_un_yes_1_lbl:
 
+    me "Да, почему бы и нет."
+
     show un laugh pioneer at center with dspr
 
     un "Замечательно!"
 
     show un smile pioneer at center with dspr
 
-    un "А то скучновато одной постоянно гулять по лагерю."
-    me "А как же Мику? Почему её не позовёшь гулять? Соседки, как-никак."
+    un "А то скучновато одной гулять по лагерю."
+    me "А как же Мику? Почему её не позовёшь? Соседки, как-никак."
 
     show un smile2 pioneer at center with dspr
 
@@ -131,12 +133,12 @@ label d7_un_no_1_lbl:
 
     show un sad pioneer at center with dspr
 
+    me "Прости, дела есть на сегодня."
     un "Оу[wp]"
-    me "Прости, дела просто есть на сегодня."
 
     if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
         me "Да и не очень хочется шастать по лагерю, будучи обмазанным йодом."
-        un "Да[wp]"
+        un "Тоже верно[wp]"
 
     show un shy pioneer at center with dspr
 

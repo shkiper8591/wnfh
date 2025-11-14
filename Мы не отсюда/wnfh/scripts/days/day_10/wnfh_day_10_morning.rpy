@@ -147,7 +147,7 @@ label d10_morning:
 
             "Это звучало словно смертный приговор."
 
-        if wnfh_Data.FlagGet("journalist") == True
+        if wnfh_Data.FlagGet("journalist") == True:
 
             me "Но я в клубе журналистики уже состою."
 

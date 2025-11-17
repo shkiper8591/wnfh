@@ -16,13 +16,13 @@ screen wnfh_game_menu_selector():
     
     python:
         wnfh_game_menu_selector_buttons = [
-            ["В главное меню мода", [MainMenu(), SetDict(wnfh_button_states, 0, False)]      ],
-            ["Схема",               [ShowMenu('wnfh_schematic'),    Hide('game_menu_selector')] ],
-            ["Сохранить",           [ShowMenu('save'),              Hide('game_menu_selector')] ],
-            ["Загрузить",           [ShowMenu('load'),              Hide('game_menu_selector')] ],
-            ["Достижения",          [ShowMenu('wnfh_achievements'), Hide('game_menu_selector')] ],
-            ["Настройки",           [ShowMenu('preferences'),       Hide('game_menu_selector')] ],
-            ["Выход из игры",       [ShowMenu('quit')]                                          ],
+            ['yesno_prompt'      ,"В главное меню мода" ,[MainMenu(), SetDict(wnfh_button_states, 0, False)] ],
+            ['wnfh_schematic'    ,"Схема"               ,[ToggleScreen('wnfh_schematic')]                    ],
+            ['save'              ,"Сохранить"           ,[ToggleScreen('save')]                              ],
+            ['load'              ,"Загрузить"           ,[ToggleScreen('load')]                              ],
+            ['wnfh_achievements' ,"Достижения"          ,[ToggleScreen('wnfh_achievements')]                 ],
+            ['preferences'       ,"Настройки"           ,[ToggleScreen('preferences')]                       ],
+            ['quit'              ,"Выход из игры"       ,[ToggleScreen('quit')]                              ],
         ]
 
     add wnfh_gui["tint_elements"]["vignette"]
@@ -88,9 +88,9 @@ screen wnfh_game_menu_selector():
                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
     if persistent.wnfh_widget_lp:
-        frame at atl_wnfh_widget_lp_down: # ================================================ Фрейм таблички
-        #frame: # ================================================ Фрейм таблички
-            area(0.5, 0.08, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
+        #frame at atl_wnfh_widget_lp_down: # ================================================ Фрейм таблички
+        frame: # ================================================ Фрейм таблички
+            area(0.5, 0.28, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
             background debug_frame["black"]
             vbox: # ================================================ Фон таблички из трёх кусков
@@ -145,11 +145,28 @@ screen wnfh_game_menu_selector():
                                     style "wnfh_lp_counter"
                                     color wnfh_characters[character][1]
 
-    frame at govno_ebanoe: # ================================================ Фрейм кнопок
-        area(0.5, 0.5, 600, 600)
+    frame: # ================================================ Фрейм таблички
+        area(0.5, 0.08, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
         xanchor 0.5 yanchor 0.5
         background debug_frame["black"]
-        vbox: # ================================================ Вбокс блока кнопок
+        vbox: # ================================================ Фон таблички из трёх кусков
+            pos (0.5, 0.5)
+            xanchor 0.5 yanchor 0.5
+            spacing 0
+            for element in ["widget_lp_box_line", "widget_lp_box_bg", "widget_lp_box_line"]:
+                frame:
+                    if persistent.wnfh_debug_color:
+                        background wnfh_frames_elements[element][5]
+                    else:
+                        background frame_transparent
+                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+    frame at govno_ebanoe: # ================================================ Фрейм кнопок
+        area(0.5, 0.08, 1920, 100)
+        xanchor 0.5 yanchor 0.5
+        background debug_frame["black"]
+        hbox: # ================================================ Хбокс блока кнопок
             pos (0.5, 0.5)
             xanchor 0.5 yanchor 0.5
             spacing 5
@@ -169,9 +186,9 @@ screen wnfh_game_menu_selector():
                                 else:
                                     background frame_transparent
                                 area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                add Frame(wnfh_frames_elements[element][0], left = wnfh_frames_elements[element][3], top = 0):
                                     matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-
+    
                     frame: # ================================================ Тонировка при наведении
                         if wnfh_button_states[index]:
                             add Frame(wnfh_frames_elements["game_menu_selector_button_gradient"][0], left=wnfh_frames_elements["game_menu_selector_button_gradient"][3], top=0):
@@ -185,12 +202,12 @@ screen wnfh_game_menu_selector():
                             null height 20
                         area(0.5, 0.5, wnfh_frames_elements["game_menu_selector_button_bg"][1], wnfh_frames_elements["game_menu_selector_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
                         background debug_frame["purple"]
-
-                        textbutton button[0]: # ================================================ Текст кнопок
+    
+                        textbutton button[1]: # ================================================ Текст кнопок
                             text_style "wnfh_text_" + renpy.store.wnfh_tymeofday
                             style "wnfh_buttons"
-                            text_min_width 390
+                            text_min_width 290
                             hovered ToggleDict(wnfh_button_states, index)
                             unhovered ToggleDict(wnfh_button_states, index)
-                            action button[1]
+                            action [Hide(list[0]) for list in wnfh_game_menu_selector_buttons] + button[2]
                             at wnfh_mm_button_hover_atl()

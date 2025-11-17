@@ -1,5 +1,5 @@
 screen wnfh_achievements():
-    modal True #tag menu
+    #modal True #tag menu
     
     $ debug_frame = {
         "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
@@ -57,7 +57,7 @@ screen wnfh_achievements():
             background mm_backgrounds[time_period] # ================== Фон в главном меню
             area(0.0, 0.0, 1.0, 1.0)
 
-    add wnfh_gui["tint_elements"]["vignette"]
+    #add wnfh_gui["tint_elements"]["vignette"]
 
     for index, button in enumerate(wnfh_achievements_button[0:1]): # ================================================ Кнопка Назад
         frame:
@@ -77,7 +77,7 @@ screen wnfh_achievements():
                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
                             matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-
+#
             frame: # ================================================ Тонировка при наведении
                 if wnfh_button_states[index]:
                     add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
@@ -280,7 +280,8 @@ screen wnfh_achievements():
                 area(0.45, 1.0, 600, 200)
                 xanchor 0.5 yanchor 1.0
                 background debug_frame["blue"]
-                text "Ульяна. Человек, которая отчаянно старается сохранить юный задор, совмещая его со взрослыми ответственностями. Удается ей это с переменным успехом. Однако, она не подаёт виду, что новые ответственности нещадно давят на неё.":
+                text "какой-то текст":
+                #text "Ульяна. Человек, которая отчаянно старается сохранить юный задор, совмещая его со взрослыми ответственностями. Удается ей это с переменным успехом. Однако, она не подаёт виду, что новые ответственности нещадно давят на неё.":
                     style "wnfh_ach_title_2_" + renpy.store.wnfh_tymeofday
             frame:
                 area(0.95, 0.0, 600, 600)

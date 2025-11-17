@@ -33,8 +33,8 @@ screen wnfh_say(who, what, two_windows = False):
         wnfh_db_buttons = {
             "minus": [wnfh_gui["tint_elements"]["db_button_minus"]    ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "small")]  ],
             "plus":  [wnfh_gui["tint_elements"]["db_button_plus"]     ,[SetScreenVariable("wnfh_play_animation", True),SetField(persistent, "font_size", "large")]  ],
-            "mute":  [wnfh_gui["tint_elements"]["db_button_mute"]     ,[Preference("all mute", "enable"),  SetField(persistent, "all_sound", "unmute")]               ],
-            "unmute":[wnfh_gui["tint_elements"]["db_button_unmute"]   ,[Preference("all mute", "disable"), SetField(persistent, "all_sound", "mute")]             ],
+            "mute":  [wnfh_gui["tint_elements"]["db_button_mute"]     ,[Preference("all mute", "enable"),  SetField(persistent, "all_sound", "unmute")]             ],
+            "unmute":[wnfh_gui["tint_elements"]["db_button_unmute"]   ,[Preference("all mute", "disable"), SetField(persistent, "all_sound", "mute")]               ],
             "save":  [wnfh_gui["tint_elements"]["db_button_save"]     ,ShowMenu('save')                                                                             ],
             "load":  [wnfh_gui["tint_elements"]["db_button_load"]     ,ShowMenu('load')                                                                             ],
             "menu":  [wnfh_gui["tint_elements"]["db_button_menu"]     ,ShowMenu('game_menu_selector')                                                               ],

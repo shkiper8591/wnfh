@@ -1,6 +1,6 @@
 screen wnfh_load(main_menu = False):
 
-    modal True
+    #modal True
 
     $ debug_frame = {
         "black":     frame_black      if persistent.wnfh_debug_color else frame_transparent,
@@ -49,18 +49,56 @@ screen wnfh_load(main_menu = False):
             background mm_backgrounds[time_period] # ================== Фон в главном меню
             area(0.0, 0.0, 1.0, 1.0)
 
-    add wnfh_gui["tint_elements"]["vignette"]
-
-    for index, button in enumerate(wnfh_preferences_button[0:1]): # ================================================ Кнопка Назад
-        frame:
-            area(0.1, 0.08, 150, 60)
+    if main_menu:
+        add wnfh_gui["tint_elements"]["vignette"]
+        for index, button in enumerate(wnfh_preferences_button[0:1]): # ================================================ Кнопка Назад
+            frame:
+                area(0.1, 0.08, 150, 60)
+                xanchor 0.5 yanchor 0.5
+                background debug_frame["blue"] 
+                vbox: # ================================================ Вбокс кнопок
+                    pos (0.5, 0.5)
+                    xanchor 0.5 yanchor 0.5
+                    spacing 0
+                    for element in ["back_button_line", "back_button_bg", "back_button_line"]:
+                        frame:
+                            if persistent.wnfh_debug_color:
+                                background wnfh_frames_elements[element][5]
+                            else:
+                                background frame_transparent 
+                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        
+                frame: # ================================================ Тонировка при наведении
+                    if wnfh_button_states[index]:
+                        add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                            xalign 0.5 yalign 0.5 alpha 0.6
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
+                        add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
+                            xalign 0.5 yalign 0.5 alpha 0.1
+                    else:
+                        null height 20
+                    area(0.5, 0.5, wnfh_frames_elements["back_button_bg"][1], wnfh_frames_elements["back_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
+                    background debug_frame["purple"]
+        
+                    textbutton button[1]: # ================================================ Текст кнопок
+                        style "wnfh_buttons"
+                        text_style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                        hovered ToggleDict(wnfh_button_states, index)
+                        unhovered ToggleDict(wnfh_button_states, index)
+                        action button[2]
+                        at wnfh_mm_button_hover_atl()
+        
+        frame at atl_wnfh_widget_lp_down: # ============================ Заголовок
+            area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
             xanchor 0.5 yanchor 0.5
-            background debug_frame["blue"] 
-            vbox: # ================================================ Вбокс кнопок
+            background debug_frame["black"]
+            vbox: # ================================================ Фон таблички из трёх кусков
                 pos (0.5, 0.5)
                 xanchor 0.5 yanchor 0.5
                 spacing 0
-                for element in ["back_button_line", "back_button_bg", "back_button_line"]:
+                for element in ["settings_main_title_line", "settings_main_title_bg", "settings_main_title_line"]:
                     frame:
                         if persistent.wnfh_debug_color:
                             background wnfh_frames_elements[element][5]
@@ -68,48 +106,10 @@ screen wnfh_load(main_menu = False):
                             background frame_transparent 
                         area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
                         add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-
-            frame: # ================================================ Тонировка при наведении
-                if wnfh_button_states[index]:
-                    add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
-                        xalign 0.5 yalign 0.5 alpha 0.6
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements["back_button_gradient"][4]])
-                    add Frame(wnfh_frames_elements["back_button_gradient"][0], left=wnfh_frames_elements["back_button_gradient"][3], top=0):
-                        xalign 0.5 yalign 0.5 alpha 0.1
-                else:
-                    null height 20
-                area(0.5, 0.5, wnfh_frames_elements["back_button_bg"][1], wnfh_frames_elements["back_button_bg"][2]) padding(0, 0) xanchor 0.5 yanchor 0.5
-                background debug_frame["purple"]
-
-                textbutton button[1]: # ================================================ Текст кнопок
-                    style "wnfh_buttons"
-                    text_style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                    hovered ToggleDict(wnfh_button_states, index)
-                    unhovered ToggleDict(wnfh_button_states, index)
-                    action button[2]
-                    at wnfh_mm_button_hover_atl()
-
-    frame at atl_wnfh_widget_lp_down: # ============================ Заголовок
-        area(0.5, 0.08, wnfh_frames_elements["settings_main_title_bg"][1] + 40, wnfh_frames_elements["settings_main_title_bg"][2] + 20)
-        xanchor 0.5 yanchor 0.5
-        background debug_frame["black"]
-        vbox: # ================================================ Фон таблички из трёх кусков
-            pos (0.5, 0.5)
-            xanchor 0.5 yanchor 0.5
-            spacing 0
-            for element in ["settings_main_title_line", "settings_main_title_bg", "settings_main_title_line"]:
-                frame:
-                    if persistent.wnfh_debug_color:
-                        background wnfh_frames_elements[element][5]
-                    else:
-                        background frame_transparent 
-                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]]) 
-
-        text "Загрузить":
-            style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]]) 
+        
+            text "Загрузить":
+                style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
 
     frame at govno_ebanoe2:
         area(0.5, 0.97, 1.0, 0.8)

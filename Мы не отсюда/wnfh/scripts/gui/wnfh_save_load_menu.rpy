@@ -114,7 +114,7 @@ screen wnfh_load(main_menu = False):
     frame at govno_ebanoe2:
         area(0.5, 0.97, 1.0, 0.8)
         xanchor 0.5 yanchor 1.0
-        background debug_frame["red"]
+        background debug_frame["black"]
         vbox: # ================================================ Фон таблички из трёх кусков
             pos (0.5, 0.5)
             xanchor 0.5 yanchor 0.5
@@ -137,7 +137,7 @@ screen wnfh_load(main_menu = False):
             viewport id "load":
                 draggable True
                 mousewheel True
-                scrollbars "vertical"
+                scrollbars None
                 vbox:
                     pos (0.5, 0.5)
                     xanchor 0.5 yanchor 0.5

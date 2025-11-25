@@ -19,7 +19,7 @@ label d8_kat_mi_musclub:
     "Подойдя к музклубу, мы услышали доносящуюся оттуда музыку."
 
     me "Похоже, Мику коротает время в ожидании тебя."
-    kat "А, это Мику? Красиво играет."
+    kat "Красиво играет."
     me "Ну, в конце концов она половину жизни посвятила музыке."
 
     show kat confused pioneer at center with dspr
@@ -35,8 +35,8 @@ label d8_kat_mi_musclub:
     stop music fadeout 5.0
     stop ambience fadeout 2.0
     scene bg int_musclub_day
-    show kat smile pioneer close at left
-    show mi normal pioneer at right
+    show kat normal pioneer close at left
+    show mi smile pioneer at right
     with slide_right_blure_dissolve2
     play ambience ambience_music_club_day fadein 2.0
     play music music_list["so_good_to_be_careless"] fadein 5.0
@@ -65,7 +65,7 @@ label d8_kat_mi_musclub:
 
     show mi surprise pioneer at right with dspr
 
-    mi "Кстати, что это были за коробки? А то я сижу тут голову ломаю, размышляя над этим, прям покоя они мне не дают."
+    mi "Кстати, что это были за коробки? А то я сижу тут голову ломаю, прям покоя они мне не дают."
 
     show kat smile pioneer close at left with dspr
 
@@ -80,7 +80,7 @@ label d8_kat_mi_musclub:
     show mi grin pioneer at right with dspr
 
     mi "Хотя в душе я надеялась, что вы несёте какие-нибудь вкусняшки для празднества."
-    mi "Правда, я прекрасно понимала, что вряд ли этот день празднуют у вас."
+    mi "Правда, я прекрасно понимала, что этот день у вас не празднуют."
 
     "Я на секунду призадумался."
     "Мне не совсем было понятно, о каком празднике вообще может идти речь."
@@ -106,8 +106,7 @@ label d8_kat_mi_musclub:
 
     th "Япония — член соцблока? Да и разве оккупация не закончилась в пятидесятые?"
 
-    "В моей голове возник конфликт историй."
-    "И, видимо, из-за этого конфликта у меня знатно так разболелась голова."
+    "Из-за возникшего в моих мыслях конфликта историй у меня знатно так разболелась голова."
 
     th "Вот же зараза, как не вовремя-то!"
 
@@ -117,14 +116,14 @@ label d8_kat_mi_musclub:
 
     th "Что ж, Семён, придётся потерпеть. Боль адская, но бывало и хуже, верно?"
 
-    show mi normal pioneer at right with dspr
+    show mi smile pioneer at right with dspr
 
     mi "Ну да ладно, вы пришли сюда сыграть со мной, так ведь?"
 
     show kat joy pioneer at left with dspr
 
     kat "Именно так!"
-    me "Поддерживаю[wp] Правда, я даже не помню, как на гитаре играть[wp]"
+    me "Поддерживаю. Правда, я даже не помню, как на гитаре играть[wp]"
 
     show mi shocked pioneer at right
     show kat normal pioneer at left 
@@ -149,12 +148,11 @@ label d8_kat_mi_musclub:
 
     kat "Правда, а почему?"
     me "Что почему?"
-    kat "Ну, ты не заходил к ней. Вы же друзья."
+    kat "Ну, ты не заходил к ней. Вы вроде неплохо так общаетесь."
 
-    "Я невольно усмехнулся от такого заявления."
+    "Я невольно усмехнулся."
 
-    me "По правде говоря, мы с Мику не более чем знакомые."
-    me "Она просто дружелюбна ко всем, и я, в общем-то, тоже."
+    me "Мику просто дружелюбна ко всем, и я, в общем-то, тоже."
     me "Вот и получается, что со стороны это может выглядеть как дружба."
 
     show kat thinking pioneer at left with dspr
@@ -168,8 +166,6 @@ label d8_kat_mi_musclub:
     kat "Как-то это печально выходит. Она явно хороший человек, а ты не дружишь с ней."
 
     "На это я только пожал плечами."
-
-    me "Возможно."
 
     th "Ещё бы давалась мне эта самая дружба[wp]"
 
@@ -185,10 +181,9 @@ label d8_kat_mi_musclub:
     th "Вот это я понимаю — уход за вещами!"
 
     "Мику же взяла из угла другую гитару, куда более модную и красивую."
+    "При виде этого чуда я не сдержал шутейки."
 
-    me "Вот значит как[wp] Нам старьё какое-то, а у тебя вон какой агрегат."
-
-    "В шутку сказал я."
+    me "Вот значит как[wp] Нам старьё какое-то, а у тебя вон какой агрегат!"
 
     show mi sad pioneer at right with dspr
 
@@ -196,10 +191,10 @@ label d8_kat_mi_musclub:
     
     show kat serious pioneer at left with dspr
 
-    kat "Да, Семён, она вон как старается."
+    kat "Да, Семён, она вон как старается!"
     me "Дамы, что вам известно о таком понятии как {b}юмор{/b}?"
 
-    show kat thinking pioneer at left
+    show kat pockerface pioneer at left
     show mi upset pioneer at right
     with dspr
 
@@ -217,8 +212,6 @@ label d8_kat_mi_musclub:
 
     kat "Ух[wp] Даже не знаю[wp] Может, что-нибудь спокойное?"
 
-    show kat normal pioneer at left with dspr
-
     mi "Хорошо. Семён, а у тебя какие мысли?"
 
     "В это время я пытался поудобнее взяться за гитару."
@@ -231,6 +224,7 @@ label d8_kat_mi_musclub:
     mi "Давай помогу тебе."
 
     show mi upset pioneer at right with dspr
+    show kat normal pioneer at left with dspr
 
     "Мику сделала шаг в мою сторону, но я жестом остановил её."
  
@@ -245,6 +239,9 @@ label d8_kat_mi_musclub:
     play music wnfh_music_list["emotional_indie_guitar"] noloop fadein 2.5
     $ renpy.notify("Условная гитарка, нужно будет заменить на трек собственного производства")
 
+    show mi surprise pioneer at right with dspr
+    show kat confused pioneer at left with dspr
+
     "И, к моему же удивлению, у меня что-то да получилось. Вроде даже неплохо!"
 
     th "Ха, а руки-то помнят!"
@@ -252,30 +249,28 @@ label d8_kat_mi_musclub:
     "Всё моё внимание было сосредоточено на игре. Но даже так я чувствовал на себе заворожённые взгляды девушек."
     "Данный факт заставил меня немного застесняться."
 
-    th "Как же звёзды, собирающие целые стадионы, не волнуются, что могут опозориться на огромную аудиторию?"
-    th "Хотя, наверное, у звёзд уже достаточно опыта, чтобы не волноваться о таких пустяках."
+    th "Как же звёзды, собирающие целые стадионы, не волнуются, что могут опозориться на глазах огромной аудитории?"
+    th "Хотя, наверное, у звёзд уже достаточно опыта, чтобы держать себя в руках."
 
     stop music fadeout 5.0
 
     "Вскоре я доиграл. Руки немного побаливали, особенно пальцы, хотя я даже не напрягался толком."
     
+    show mi happy pioneer at right with dspr
     show kat smile pioneer at left with dspr
 
     "И меня встретили аплодисменты, от которых даже стало тепло на душе."
 
-    me "Ещё никто не аплодировал моей плохой игре на гитаре."
-    kat "Плохой? Ты очень даже хорошо сыграл!"
+    me "Ещё никто не аплодировал моему бренчанию[wp]"
+    kat "Бренчанию? Ты очень даже хорошо сыграл!"
     mi "Ага! Так даже и не скажешь, что ты позабыл это дело."
 
     show mi dontlike pioneer at right
     show kat serious pioneer at left
     with dspr
 
-    mi "Может ты нас обманывал, чтобы ничего не делать, и при этом просто так музыку слушать?"
+    mi "Может, ты нас обманывал, чтобы ничего не делать, и при этом просто так музыку слушать?"
     kat "Да!"
-
-    "Звонко поддержала Катя свою подругу."
-
     me "Чего? Делать мне, по-вашему, больше нечего?"
 
     show mi grin pioneer at right
@@ -298,18 +293,17 @@ label d8_kat_mi_musclub:
 
     "А потом мы играли и играли, даже пели песни."
     "Я и знать не знал, что у меня столько задора на исполнение музыки."
-    $ renpy.notify("Тут стоит проверка ЛП. Там довольно условные числа, которые нужно будет скорректировать исходя из баланса.")
 
-    if wnfh_Data.getChoice_points_sum("kat") >= 4:
-        show cg d8_me_dance_musclub_w_kat
+    if wnfh_Data.getChoice_points_sum("kat") >= 5:
+        show cg d8_me_dance_musclub_w_kat with dissolve
         "Даже с Катей потанцевал по её инициативе. {w=0.5}Хотя танцор из меня такой себе, и мои движения больше походили на пьяную пляску."
 
-    elif wnfh_Data.getChoice_points_sum("mi") >= 4:
-        show cg d8_me_dance_musclub_w_mi
-        "Ещё я немного потанцевал с Мику. {w=0.5}Впрочем, мне было о-о-очень далеко до Мику и грации её движений."
+    elif wnfh_Data.getChoice_points_sum("mi") >= 2:
+        show cg d8_me_dance_musclub_w_mi with dissolve
+        "Ещё я немного потанцевал с Мику. {w=0.5}Впрочем, мне было о-о-очень далеко до её грации."
 
     else:
-        show cg d8_me_dance_musclub_alone
+        show cg d8_me_dance_musclub_alone with dissolve
         "Я даже немного потанцевал под музыку. {w=0.5}Правда, танцем это было сложно назвать, но меня никто и не учил танцевать!"
 
 
@@ -337,16 +331,13 @@ label d8_kat_mi_musclub:
     show mi upset pioneer at right with dspr
 
     mi "Я только не знаю, кто с сахаром пьёт, кто нет, да и вроде конфеты сладкие, но на всякий случай, если что, сахар тут."
-
-    show mi serious pioneer at right with dspr
-
     "Она указала не небольшую фарфоровую вазу."
 
     show kat joy pioneer at left with dspr
 
     kat "Вкусно!"
 
-    "Сказала Катя, уже потягивая чай."
+    "Катя уже потягивала чай."
 
     show mi happy pioneer at right with dspr
 
@@ -359,6 +350,8 @@ label d8_kat_mi_musclub:
     mi "Семён, куда ты столько сыпешь?!"
     me "Люблю сладкий чай."
     mi "Кошма-а-ар[wp]"
+
+    show cg tsgchaepitie11 with dissolve
 
     "Так мы чаёвничали на протяжении минут десяти или пятнадцати."
     "Мику подливала нам чай, угощала сладостями и рассказывала всякие интересности."
@@ -375,12 +368,17 @@ label d8_kat_mi_musclub:
         
         if wnfh_Data.getChoice_result_number("d8_choice_n8") == 1:
 
-            th "И тем более после того, как стало ясно, что это военные[wp] {w=0.5}Интересно, что они тут искали?"
+            th "И тем более после того, как стало ясно, что это военные[wp] {w=0.5}Они ведь не просто так что-то здесь искали."
 
     th "Да и даже если ничего со мной не случится, куда я пойду-то?"
     th "Получается, только и остаётся мне сидеть на попе ровно и надеяться на чудо[wp]"
 
+    show mi smile pioneer at right
+    show kat smile pioneer at left
+
     kat "[wp]Семён, вот скажи, кто появился раньше: единороги или драконы?"
+
+    hide cg tsgchaepitie11 with dissolve
 
     "Несколько секунд я с серьёзным видом размышлял над этим вопросом, пока не задумался над его абсурдностью."
 
@@ -393,11 +391,11 @@ label d8_kat_mi_musclub:
     "Девушки моментом засмеялись."
 
     show mi normal pioneer at right with dspr
+    show kat smile pioneer at left with dspr
 
     kat "Да ничего, просто ты какой-то[wp]"
 
     show kat thinking pioneer at left
-    show mi serious pioneer at right
     with dspr
 
     kat "Загадочный, наверное?"
@@ -416,10 +414,11 @@ label d8_kat_mi_musclub:
 
     th "Сколько раз самому себе говорил не увлекаться подобными мыслями? Каждый раз плохо заканчивается."
 
+    play sound sfx_open_door_clubs
+    show dv normal pioneer2 far at center with dissolve
     show kat normal pioneer at left
     show mi normal pioneer at right
     with dspr
-    show dv normal pioneer2 far at center with dissolve
 
     "В это время в дверь постучали, и к нам вошла Алиса."
 
@@ -437,11 +436,11 @@ label d8_kat_mi_musclub:
         kat "Здравствуй."
 
     dv "Так-с, мне нужно украсть у вас Семёна на пару слов."
-    mi "Хорошо, мы тут всё равно пока что ничего не делаем."
+    mi "Хорошо, мы тут всё равно пока ничего не делаем."
 
     hide dv with dspr
 
-    "Алиса поманила меня пальцем за собой и вышла на улицу."
+    "Алиса поманила меня рукой за собой и вышла на улицу."
 
     th "Ох, блин[wp] Надеюсь, меня не ждёт очередной план ограбления Монте-Карло."
 
@@ -467,14 +466,10 @@ label d8_kat_mi_musclub:
 
     dv "Ах да, чуть не забыла. Хочешь сходить сегодня вечером на сцену поиграть?"
 
-    if wnfh_Data.getChoice_result_number("d7_choice_n8") == 2:
+    if wnfh_Data.getChoice_result_number("d7_choice_n15") == 1:
 
         dv "Между прочим, сам просил тебе завтра напомнить. Ну, то есть, уже сегодня, хех."
-        #КОСЯК: снова не тот выбор. Нужны не 8, а 13 и 15, плюс переставить значение с 2 на 1.
 
-    show dv normal pioneer2 at center with dspr
-
-    dv "Ну так что?"
 
     window hide dissolve
     call screen wnfh_choice(
@@ -498,7 +493,7 @@ label d8_me_dv_yes_near_musclub:
 
     show dv smile pioneer2 at center with dspr
 
-    dv "Что же, тогда организуй пару гитар нам."
+    dv "Что ж, тогда организуй пару гитар нам."
     me "А почему я?"
 
     show dv normal pioneer2 at center with dspr
@@ -509,7 +504,7 @@ label d8_me_dv_yes_near_musclub:
 
     dv "У тебя[wp] Уже налажены связи."
 
-    "Сказала она, уводя взгляд куда-то в сторону."
+    "Алиса увела взгляд куда-то в сторону."
     "Тут и ежу было понятно, что у неё есть какая-то причина не делать этого лично."
 
     me "У тебя что-то случилось?"
@@ -533,9 +528,9 @@ label d8_me_dv_yes_near_musclub:
     me "А как так вышло?"
     dv "Это личное."
 
-    show dv normal pioneer2 at center with dspr
+    show dv normal pioneer2 close at center with dspr
 
-    "Алиса прошла пару шагов вперёд."
+    "Алиса подошла на пару шагов."
 
     dv "В общем, пожалуйста, договорись, а с меня зачтётся."
     me "Да? И как же?"
@@ -554,16 +549,16 @@ label d8_me_dv_no_near_musclub:
 
     me "Ты уж прости, но у меня другие дела будут вечером."
 
-    show dv sad pioneer2 at center with dspr
+    show dv guilty pioneer2 at center with dspr
 
     dv "Блин, ну вот[wp]"
 
-    show dv guilty pioneer2 at center with dspr
+    show dv sad pioneer2 at center with dspr
 
     dv "А от этих дел никак нельзя отвертеться?"
-    me "Боюсь, за такое мне отвертят голову."
+    me "Боюсь, за такое мне голову отвертят."
 
-    show dv sad pioneer2 at center with dspr
+    show dv guilty pioneer2 at center with dspr
 
     dv "Понятно[wp]"
 
@@ -578,8 +573,6 @@ label d8_me_dv_no_near_musclub:
     "Алиса потрепыхала мне волосы и медленным шагом удалилась вглубь лагеря."
 
     me "А причёску портить было лишним."
-
-    "Пробубнил я себе под нос."
 
 label d8_kat_mi_musclub_continue:
 
@@ -602,12 +595,9 @@ label d8_kat_mi_musclub_continue:
     kat "Мы? Да ни в коем случае! Правда, Мику?"
 
     show mi shy pioneer far at right
-    show kat guilty pioneer far at left
     with dspr
 
     mi "Ну, вообще чуть-чуть подслушали, интересно просто стало, что Алисе могло потребоваться от тебя."
-
-    "Обломала Мику Катю своей честностью."
 
     show mi angry pioneer far at right with dspr
 
@@ -617,7 +607,7 @@ label d8_kat_mi_musclub_continue:
 
     else:
 
-        mi "Кстати, правильно сделал, что отказался идти с ней на сцену! Она такая[wp] Такая[wp] Плохая, в общем!"
+        mi "Кстати, правильно сделал, что отказался идти с ней. Она такая[wp] Такая[wp] Плохая, в общем!"
 
     show mi angry pioneer at right
     show kat normal pioneer at left
@@ -639,7 +629,7 @@ label d8_kat_mi_musclub_continue:
 
     "Мы с Катей переглянулись."
     
-    th "Как бы то ни было, а если даже Мику обиделась, значит это что-то серьёзное."
+    th "Как бы то ни было, если даже Мику обиделась, значит это что-то серьёзное."
     th "И есть у меня ощущение, что во всём этом виновата сама Алиса."
     th "С другой стороны, она бы не стала так просто ссориться с человеком-синонимом к слову «доброта»."
 
@@ -660,7 +650,7 @@ label d8_kat_mi_musclub_continue:
 
     show mi smile pioneer at right with dspr
 
-    mi "Действительно время быстро течёт, когда сидишь с товарищами!"
+    mi "Действительно время быстро летит, когда проводишь его с товарищами!"
 
     show mi sad pioneer at right with dspr
 

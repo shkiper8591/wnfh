@@ -230,7 +230,7 @@ label d7_un_zavtrak:
 
     window hide dissolve
     call screen wnfh_choice(
-        ["un", "Нет, не стоит", "Одному проще и быстрее", "d7_un_no_2_lbl", {"un":-1}],
+        ["neutral", "Нет, не стоит", "Одному проще и быстрее", "d7_un_no_2_lbl", {"un":-1}],
         ["un", "Да, давай", "В компании будет веселее", "d7_un_yes_2_lbl", {"un":1}],
         ["d7_choice_n3", "Пойти встречать с Леной"]
         ) with sphere_blure_dissolve2
@@ -488,7 +488,7 @@ label d7_dv_usw_zavtrak:
 
     call screen wnfh_choice(
         ["dv", "Чёрт возьми, да!", "Звучит очень весело, хе-хе", "d7_dv_yes_1", {"dv":1}],
-        ["dv", "Думаю, нет", "Не хочу портить себе репутацию", "d7_dv_no_1", {"dv":-1}],
+        ["neutral", "Думаю, нет", "Не хочу портить себе репутацию", "d7_dv_no_1", {"dv":-1}],
         ["d7_choice_n8", "Алиса предлагает облить пополнение в лагере."]
         ) with sphere_blure_dissolve2
 

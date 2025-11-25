@@ -8,7 +8,7 @@ label d8_posle_obeda:
     window show dissolve
     
     "Выйдя на улицу, я вдохнул свежего летнего воздуха."
-    "Самое то после тесной и душной столовой, где не продохнуть от смешавшихся запахов еды и[wp] Пота, наверное?"
+    "Самое то после тесной и душной столовой, где не продохнуть от смешавшихся запахов еды и[wp] пота, наверное?"
     "В любом случае, желания зацикливаться на этом у меня не было совершенно."
     
     th "Больше всего я сейчас хочу пойти и отдохнуть, а потом уже можно будет заняться чем-нибудь полезным."
@@ -27,7 +27,8 @@ label d8_posle_obeda:
     th "Люблю время жора в лагере. Людей на улице нет, кругом тишь да гладь."
     th "А ещё ветерок такой приятный, обдувает со всех сторон, отчего жара совсем не чувствуется."
     th "Конечно, на солнце припекает, но не так сильно, как если бы ветра не было."
-    th "М-да[wp] Интересно, как там сейчас дома? Наверное, всё так же сыро да холодно. Северная столица же."
+    th "М-да[wp] Интересно, как там сейчас дома? Тоже тепло, наверное, лето же."
+    #Возможно косяк: а голова у нашего товарища перестала болеть? Оставляю тег, так как не знаю сюжетных механик.
 
     show bg ext_houses_day with dissolve
 
@@ -35,7 +36,8 @@ label d8_posle_obeda:
 
     th "Надо что-то делать с моим положением. Ведь не может так вечно продолжаться?"
     th "Да и рано или поздно меня поймают, и что тогда? Что я скажу? «Здрасьте, я гость из будущего»?"
-    th "Меня же никто не поймёт, в лучшем случае посмеются. В худшем[wp] В психиатрическую лечебницу отправят, наверное."
+    th "В лучшем случае они ничего не поймут и посмеются. В худшем[wp] Как там Ольга Дмитриевна сказала? Ассимилируют?"
+    th "Нет, даже думать об этом не хочу."
 
     window hide dissolve
     scene bg ext_house_of_mt_day with dissolve2
@@ -95,34 +97,39 @@ label d8_posle_obeda_mt_angry:
 
     $ wnfh_Data.FlagSet("mt_angry") == True
 
+    show mt normal pioneer at center with dissolve
+
     "В это же время пришла и Ольга Дмитриевна."
 
-    show mt angry pioneer panama at center with dspr
+    show mt angry pioneer at center with dspr
 
     "И в ту же секунду, как она завидела меня, её лицо резко изменилось на недовольное."
 
     mt "Ага, вот и наш герой!"
-    mt "Злостный нарушитель моих поручений."
+    mt "Злостный нарушитель поручений!"
     mt "Надо же тебе было опять начать отлынивать от дела!"
     mt "Что я тебе говорила вчера?"
 
     "С каждым предложением тон вожатой становился всё злее и злее."
 
-    show mt rage pioneer panama at center with dspr
-    # надо бы сделать анимацию мол камера пошатнулась
+    with vpunch
+    show mt rage pioneer at center with dspr
+
     mt "ЧТОБЫ ТЫ ДАЖЕ НЕ ДУМАЛ СВАЛИТЬ ЗАДАНИЕ НА КОГО-НИБУДЬ ДРУГОГО!"
 
-    "Во весь голос заорала она, да так, что небось на другом конце лагеря было слышно."
+    "Казалось, её крики на другом конце лагеря было слышно."
     "Ольга Дмитриевна сделала шаг в мою сторону."
     "Было ясно — дело набирает нехороший оборот. И нужно бежать, вот только был один нюанс — вожатая закрывала собой проход."
     # тут надо эффект мол Семён уходит в свои фантазии.
-    th "Твою же мать, думай, думай, Семён, давай[wp] Как там говорится-то[wp]"
+    th "Твою ж мать, думай, думай, Семён, давай[wp] Как там говорится-то[wp]"
+
+    show mt rage pioneer close at center with dspr
 
     "Пока я стоял столбом и думал, что делать, вожатая успела сделать ещё один шаг ко мне и приблизиться на опасно близкую дистанцию."
 
     play music wnfh_music_list["estafeta"] fadein 5.0
 
-    th "Когда закрывается одна дверь, открывается другая[wp] Окно!"
+    th "Когда закрывается одна дверь, открывается другая[wp] {w}Окно!"
 
     "Я быстренько обернулся назад. Окно было открыто, а значит, набрав достаточную скорость, можно было перелететь стол и выпрыгнуть на улицу!"
 
@@ -138,10 +145,10 @@ label d8_posle_obeda_mt_angry:
     "Вылетев на улицу, я кубарем покатился по земле, но быстро поднялся на ноги и побежал вокруг дома."
 
     scene bg ext_house_of_mt_day 
-    show mt rage pioneer panama far at center
+    show mt rage pioneer far at center
     with dspr
 
-    "Оббежав дом, я увидел стоящую на крыльце разъярённую вожатую[wp] {w}С кувалдой в руках!"
+    "Оббежав дом, я увидел стоящую на крыльце разъярённую вожатую[wp] {w}со здоровенным молотом в руках!"
 
     mt "Ну-ка стой!"
     me "Сами стойте!"
@@ -174,11 +181,10 @@ label d8_posle_obeda_mt_angry:
     me "Шурик, спасай!"
     mt "Я же тебя предупреждала!"
 
-    "Донеслось из-за спины."
     "Сил и вариантов отступления уже не оставалось."
     "Так что из последних сил я залез к дедушке Ленину."
 
-    show mt angry pioneer panama at center with dissolve
+    show mt angry pioneer at center with dissolve
     show sv angry pioneer glasses at cright
     show sh normal pioneer at fright
     with dspr
@@ -187,19 +193,17 @@ label d8_posle_obeda_mt_angry:
     mt "Думаешь, спрячешься от меня? Я тебе такое устрою!"
 
     scene bg int_house_of_mt_day
-    show mt angry pioneer panama at center
+    show mt angry pioneer at center
 
     mt "Семён!"
 
     "Её рёв разнёсся эхом по всему домику, от чего в ушах зазвенело, и я выпал из своей фантазии."
     
-    me "Зачем же так громко[wp]"
+    th "Зачем же так громко[wp]"
     
-    "Пробурчал я себе под нос."
-    
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
-    mt "Очнулся, наконец[wp] {w}Давай, садись за стол, будет у нас с тобой серьёзный разговор."
+    mt "Очнулся, наконец. {w}Давай, садись за стол, будет у нас с тобой серьёзный разговор."
     
     "Я быстренько оглянулся назад."
     "Окно было плотно закрыто, и только форточка была нараспашку."
@@ -211,7 +215,7 @@ label d8_posle_obeda_mt_angry:
     
     mt "Семён, ответь мне, пожалуйста, на один вопрос."
 
-    show mt sad pioneer panama at center with dspr
+    show mt sad pioneer at center with dspr
 
     mt "Я настолько плохой человек? Или делаю что-то не так? Что за неуважение ко мне и моим поручениям?"
     mt "Разве я так много попросила? Просто проводи девочку, симпатичную, между прочим, покажи ей где что и всё."
@@ -220,15 +224,15 @@ label d8_posle_obeda_mt_angry:
     "Заметив это, Ольга взяла с подоконника стакан и поставила его рядом со мной."
     "После чего из принесённой с собой бутылки она налила мне немного яблочного сока."
     
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
     mt "На вот, чтобы не грустил."
 
-    show mt angry pioneer panama at center with dspr
+    show mt angry pioneer at center with dspr
 
     mt "Но не думай, что это прощение! Это пряник."
     
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
     mt "А кнут сейчас озвучу."
     
@@ -242,7 +246,7 @@ label d8_posle_obeda_mt_angry:
     
     me "А это ещё зачем?"
 
-    show mt grin pioneer panama at center with dspr
+    show mt grin pioneer at center with dspr
 
     mt "Чтобы спокойным был, когда узнаешь о своём наказании."
     
@@ -252,26 +256,29 @@ label d8_posle_obeda_mt_angry:
     
     me "Так что?"
 
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
-    mt "Итак, Семён. Весь следующий день, после завтрака, с перерывом на обед и до ужина, будешь ты[wp]"
+    mt "Итак, Семён. Завтра с утра и до ужина с перерывом на обед ты будешь[wp]"
 
-    show mt smile pioneer panama at center with dspr
+    show mt smile pioneer at center with dspr
 
     mt "Красить деревья!"
 
     "Я посмотрел на вожатую озадаченным взглядом."
 
     me "Все?"
+
+    show mt normal pioneer at center with dspr
+
     mt "Ну нет, только те, что на территории лагеря и у ворот."
     me "Ясно[wp] Что ж, ладно."
 
-    show mt smile pioneer panama at center with dspr
+    show mt smile pioneer at center with dspr
 
     mt "Вот и славненько."
     mt "Завтра подойдёшь к складу, тебе выдадут всё необходимое."
 
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
     mt "И помни, Семён — это я ещё добрая."
     
@@ -279,15 +286,15 @@ label d8_posle_obeda_mt_angry:
     
     me "Хорошо, запомню[wp] А теперь можно я прилягу отдохнуть?"
 
-    show mt smile pioneer panama at center with dspr
+    show mt smile pioneer at center with dspr
 
     mt "Конечно нет!"
     
-    "Добрым и ласковым голоском произнесла она."
+    "Печальный вердикт был вынесен на удивление ласковым голоском."
 
     th "Вот же су[wp]"
 
-    show mt normal pioneer panama at center with dspr
+    show mt normal pioneer at center with dspr
 
     mt "У меня для тебя есть боевая задача."
     mt "Как понимаешь, возможности отказаться у тебя нет."
@@ -296,16 +303,16 @@ label d8_posle_obeda_mt_angry:
 
 label d8_posle_obeda_mt_normal:
 
-    show mt normal pioneer panama at center with dissolve
+    show mt normal pioneer at center with dissolve
 
     "В это же время вошла Ольга Дмитриевна."
 
-    show mt sad pioneer panama at center with dspr
+    show mt sad pioneer at center with dspr
 
     "Завидев меня, она взволнованно оглядела меня."
     
     me "Всё хорошо?"
-    mt "Вообще-то это мой вопрос к тебе."
+    mt "Вообще-то я хотела у тебя то же самое спросить."
     mt "Мне Лена сообщила, что тебе плохо стало и ты остался в медпункте."
     mt "Я ходила туда, чтобы проведать тебя, но Виолетта сказала мне, что ты уже ушёл домой."
     

@@ -202,7 +202,7 @@ label d7_me_search_dv_house:
     
     window hide dissolve
     call screen wnfh_choice(
-        ["dv", "Продолжить наблюдать", "Ничем хорошим это не кончится", "d7_me_peeking", {"dv":-1, "usw":-1}],
+        ["neutral", "Продолжить наблюдать", "Ничем хорошим это не кончится", "d7_me_peeking", {"dv":-1, "usw":-1}],
         ["dv", "Дать о себе знать", "Лучше не рисковать", "d7_me_knock", {"dv":1, "usw":1}],
         ["d7_choice_n11", "Подсмотреть за рыжими или нет"]
         ) with sphere_blure_dissolve2

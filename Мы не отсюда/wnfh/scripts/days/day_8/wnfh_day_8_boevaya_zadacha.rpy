@@ -34,11 +34,9 @@ label d8_boevaya_zadacha:
     mt "Да так, разные лагерные."
     mt "Почему-то администрация решила, что я у них тут главная по доставке."
 
-    "Крайне недовольным голосом проговорила она."
-
     show bg ext_houses_day with dissolve
 
-    me "Я так понимаю, это уже не первый раз так[wp]"
+    me "Я так понимаю, это уже не первый раз так?"
     mt "Правильно понимаешь. Мужа уже замучала просьбами съездить за ними в райцентр."
     me "А почему так?"
 
@@ -47,10 +45,15 @@ label d8_boevaya_zadacha:
     mt "Чёрт его знает."
     mt "Просто им же ещё и не откажешь, обидятся и навялят разной рутины."
     me "И как же вы эти документы носили?"
-    mt "Муж помогал, но сейчас у меня есть образцовый пионер, который всем ребятам пример, верно?"
+    mt "Муж помогал."
+
+    show mt smile pioneer at center with dspr
+
+    mt "Но сейчас у меня есть образцовый пионер, который всем ребятам пример, верно?"
     me "Верно[wp]"
 
     show bg ext_lenin_square_day_wnfh with dissolve2
+    show mt normal pioneer at center with dspr
 
     "Проходя через площадь, я заметил Алису с Ульяной. Те тоже меня увидели и начали звать к себе."
     "Но когда они поняли, что я с вожатой, они резко притихли."
@@ -86,9 +89,6 @@ label d8_boevaya_zadacha:
 
     usw "И что же это значит?"
     dv "По мелочи, значит[wp]"
-
-    "Тихо пробубнила себе под нос Алиса."
-
     me "М?"
     dv "Да неважно."
 
@@ -182,19 +182,23 @@ label d8_boevaya_zadacha:
     scene bg ext_clubs_day with dissolve2
     play ambience ambience_camp_center_day fadein 3.5
     play music music_list["always_ready"] fadein 5.0
+    play sound sfx_water_emerge
     window show dissolve
 
     "Как только я зашёл за ворота, меня тут же обдали водой."
-    "А если быть точнее, вода по большей части коснулась только коробок с документами."
+    "Правда, на меня мало что попало — большую часть приняли на себя коробки."
     "Я был настолько удивлён произошедшим, что даже не знал, как быть, поэтому просто встал."
     "Наконец, я выглянул из-за коробок и посмотрел, кто же является виновником торжества."
 
     show kat scared pioneer at left with dissolve
 
     "На своё удивление, я обнаружил там стоящую Катю, а немного поодаль — давших дёру рыжих."
+
+    show kat scared pioneer far at left with dspr
+
     "Увидев, что её заметили, Катя решила ретироваться, но тут вмешалась вожатая."
 
-    show mt rage pioneer close at right with dissolve
+    show mt rage pioneer at right with dissolve
 
     mt "Это что тут творится?! Тайнаковская, а ну стоять!"
 
@@ -203,12 +207,12 @@ label d8_boevaya_zadacha:
 
     th "Кажется, вода не сильно повредила бумаги[wp] Видимо, картон поглотил весь урон. Разве что верхней, ничем не прикрытой, нормально так досталось[wp] Ну, надеюсь, они были не слишком важными."
 
-    show mt angry pioneer close at right with dspr
+    show mt angry pioneer at right with dspr
 
     mt "Иди-ка сюда."
     #mt "Ком цу мир."
 
-    show kat sad pioneer close at left with dspr 
+    show kat sad pioneer at left with dspr 
 
     "Медленно и неохотно Катя подошла к нам."
 
@@ -239,13 +243,13 @@ label d8_boevaya_zadacha:
         me "К тому же, я сам в такой ситуации буквально вчера был, потому прекрасно понимаю, каково это."
         $ wnfh_Data.AddLove_points({"kat":1})
 
-    show kat smile pioneer close at left
-    show mt normal pioneer close at right
+    show kat smile pioneer at left
+    show mt normal pioneer at right
     with dspr
 
     mt "Что ж, звучит складно[wp]"
 
-    show kat guilty pioneer close at left with dspr
+    show kat guilty pioneer at left with dspr
 
     kat "Правда, я не совсем случайно тут оказалась[wp] Вернее, случайно, но не случайно."
 
@@ -260,7 +264,7 @@ label d8_boevaya_zadacha:
 
     mt "Так, а кто облил-то?"
 
-    show kat thinking pioneer close at left with dspr
+    show kat thinking pioneer at left with dspr
 
     kat "Алиса окатила из ведра, после чего она что-то сказала[wp]"
 
@@ -268,7 +272,7 @@ label d8_boevaya_zadacha:
 
     kat "Вроде «Кажется, ошибочка вышла», а потом убежала вместе с Ульяной, всучив мне ведро."
 
-    show kat sad pioneer close at left with dspr
+    show kat sad pioneer at left with dspr
 
     kat "Так вот всё и было[wp]"
 
@@ -283,11 +287,11 @@ label d8_boevaya_zadacha:
     mt "Вы вдвоём отнесёте коробки в администрацию."
     mt "А я[wp]"
 
-    show mt angry pioneer close at right with dspr
+    show mt angry pioneer at right with dspr
 
     mt "Я выхожу на тропу войны! Ух, я им устрою!"
 
-    show mt normal pioneer close at right with dspr
+    show mt normal pioneer at right with dspr
 
     mt "Кстати, там документы не пострадали?"
     me "Не особо. Только те, что наверху лежали."
@@ -298,7 +302,7 @@ label d8_boevaya_zadacha:
     mt "Ладно, давайте, несите их, а я пошла."
 
     hide mt 
-    show kat sad pioneer close at center
+    show kat sad pioneer at center
     with dissolve
     stop music fadeout 5.0
 
@@ -361,14 +365,14 @@ label d8_boevaya_zadacha_1:
     "Она задумчиво глядела в окно."
 
     kat "Всё-таки это я облила тебя, а не Алиса."
-    kat "Просто[wp] Знаешь, было такое чувство[wp] Обиды, что ли?"
+    kat "Просто[wp] Знаешь, было такое чувство[wp] обиды, что ли?"
     kat "Меня облили, а я ничего в ответ не сделала[wp]"
 
     if wnfh_Data.getChoice_result_number("d7_choice_n9") == 1:
 
         kat "И даже после твоих извинений в глубине души осталась некая неприязнь[wp]"
 
-    kat "А Алиса с Ульяной воспользовались моей обидой и подначили меня на обливание."
+    kat "А Алиса с Ульяной воспользовались моей обидой и подначили меня на, скажем так, ответку."
     kat "Но после того, как я сделала это, обида пусть и ушла, но её заменило чувство стыда. {w=0.5}Мне очень стыдно[wp]"
 
     show kat sad pioneer at center with dspr
@@ -422,12 +426,12 @@ label d8_boevaya_zadacha_2:
 
     kat "Им, видите ли, казалось, что пополнение очередное приехало, а по итогу я тут со стыда сгораю!"
 
-    "Катя перевела свой взгляд на меня."
-
     show kat smile pioneer at center with dspr
 
+    "Катя перевела свой взгляд на меня."
+
     kat "Кажется, я немного ушла от темы."
-    kat "Семён, я прошу у тебя прощения за мой необдуманный поступок!"
+    kat "Семён, я прошу у тебя прощения за мой необдуманный поступок."
 
     show kat smile pioneer close at center with dspr
 
@@ -443,9 +447,9 @@ label d8_boevaya_zadacha_2:
 
     show kat smile pioneer close at center with dspr
 
-    kat "Спасибо! Прям камень с плеч!"
+    kat "Спасибо! Прям камень с плеч."
     me "Та не за что."
-    kat "Ну слушай, раз уж мы все помирились[wp]"
+    kat "Ну слушай, раз уж мы уладили все вопросы[wp]"
 
     jump d8_boevaya_zadacha_3
 
@@ -455,24 +459,22 @@ label d8_boevaya_zadacha_3:
 
     kat "Не хочешь пойти со мной к Мику?"
 
-    if wnfh_Data.FlagGet("d8_obed_me_kat_mi") == True:
+    if wnfh_Data.getChoice_result_number("d8_choice_n2") == 1:
 
-        kat "Тем более она тебя приглашала к нам, а ты, вроде как, согласился."
+        kat "Тем более она сама тебя приглашала, а ты, вроде как, согласился."
+        me "Что ж, раз дел у меня никаких нет[wp]"
+
         jump d8_boevaya_zadacha_3_yes
 
-    window hide dissolve
-    call screen wnfh_choice(
-        ["kat", "Да, почему бы и нет", "Для души нет ничего лучше музыки", "d8_boevaya_zadacha_3_yes", {"kat":1, "mi":1}],
-        ["neutral", "Думаю, откажусь", "Я даже не помню, как на гитаре играть!", "d8_boevaya_zadacha_3_no", {"kat":-1, "mi":-1}],
-        ["d8_choice_n10", "Катя зовёт в музклуб"]
-        ) with sphere_blure_dissolve2
+    else:
+
+        call screen wnfh_choice(
+            ["kat", "Да, почему бы и нет", "Для души нет ничего лучше музыки", "d8_boevaya_zadacha_3_yes", {"kat":1, "mi":1}],
+            ["neutral", "Думаю, откажусь", "Я даже не помню, как на гитаре играть!", "d8_boevaya_zadacha_3_no", {"kat":-1, "mi":-1}],
+            ["d8_choice_n10", "Катя зовёт в музклуб"]
+            ) with sphere_blure_dissolve2
 
 label d8_boevaya_zadacha_3_yes:
-
-    window show dissolve
-    if wnfh_Data.FlagGet("d8_obed_me_kat_mi") == True:
-
-        me "Что ж, раз дел у меня никаких нет[wp]"
 
     me "Хорошо, пойдём побренчим. Благо, идти тут недалеко."
 
@@ -482,8 +484,7 @@ label d8_boevaya_zadacha_3_yes:
 
     show kat smile pioneer close at center with dspr
 
-    kat "Тогда не будем терять времени."
-    kat "А то Мику меня уже заждалась небось."
+    kat "Тогда не будем терять время, а то Мику уже заждалась небось."
 
     window hide dissolve
     jump d8_kat_mi_musclub

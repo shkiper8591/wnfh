@@ -65,7 +65,7 @@ label d7_me_kat_sdacha_kati:
         window hide dissolve
         call screen wnfh_choice(
             ["dv", "Сдаться", "Всё равно она рано или поздно узнает", "d7_mt_sdalsya", {"kat": 1}],
-            ["dv", "Сдать", "Они подставили меня. Мой черёд", "d7_mt_sdat", {"dv": -1, "usw": -1}],
+            ["neutral", "Сдать", "Они подставили меня. Мой черёд", "d7_mt_sdat", {"dv": -1, "usw": -1}],
             ["d7_choice_n20", "Сдать или не сдать рыжих."]
             ) with sphere_blure_dissolve2
     else:

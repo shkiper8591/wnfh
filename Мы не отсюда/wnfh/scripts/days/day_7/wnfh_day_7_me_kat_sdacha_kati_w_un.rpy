@@ -87,8 +87,8 @@ label d7_me_kat_sdacha_kati_w_un:
     window hide dissolve 
     call screen wnfh_choice(
         ["un", "Да, конечно", "Прогулка — полезное занятие", "d7_un_yes_1_lbl", {"un":1}],        
-        ["un", "Пожалуй, нет", "Прогулка после обеда? Увольте!", "d7_un_no_1_lbl", {"un":-1}],
-        ["neutral", "Я подумаю", "Я же не знаю, что будет после обеда", "d7_un_neutral_1_lbl"],
+        ["neutral", "Пожалуй, нет", "Прогулка после обеда? Увольте!", "d7_un_no_1_lbl", {"un":-1}],
+        ["un", "Я подумаю", "Я же не знаю, что будет после обеда", "d7_un_neutral_1_lbl"],
         ["d7_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 

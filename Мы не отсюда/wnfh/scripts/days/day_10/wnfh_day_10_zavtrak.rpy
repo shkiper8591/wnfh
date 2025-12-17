@@ -1,4 +1,5 @@
 label d10_zavtrak_raspredelitelnya_shlyapa_hogwartsa:
+    $ wnfh_set_time("")
 
     if wnfh_Data.FlagGet("journalist") == True:
 

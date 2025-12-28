@@ -300,7 +300,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     "Мои рыжие подруги уже сверкали пятками, и я собирался присоединится к ним."
     "Я резво выпрыгнул из кустов, кое-как встал на ноги и только собирался побежать[wp]."
 
-    show sh serious pioneer at right with dissolve
+    show sh serious pioneer at right behind kat with dissolve
     play sound sfx_punch_medium
 
     "[wp]как врезался в своего товарища — Шурика."
@@ -434,9 +434,9 @@ label d7_sh_no_1:
         ease 0.8 xcenter 0.4
     $ renpy.pause(1.0)
     show sv happy pioneer glasses tablet:
-        ease 1.0 xcenter -0.2
+        ease 1.0 xcenter 1.5
     show kat sad casual shirt:
-        ease 1.0 xcenter -0.2
+        ease 1.0 xcenter 1.5
 
     "Она отошла к новенькой, что-то сказала ей и повела за собой."
 

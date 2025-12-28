@@ -80,8 +80,6 @@ label d9_me_alt_un_ending_mt:
 
     th "Да уж, в такой тоскливой обстановке до вечера можно и со скуки помереть."
 
-    play music wnfh_music_list["shadow_of_lies"] fadein 5.0
-
     me "Слушай, раз уж война окончена[wp] Может, поговорим о произошедшем?"
 
     "После моего вопроса Лена уткнулась взглядом в пол."
@@ -128,7 +126,6 @@ label d9_me_alt_un_ending_mt:
     me "Сейчас главное дождаться ночи[wp]"
 
     stop ambience fadeout 1.0
-    stop music fadeout 4.0
     play sound sfx_thunder_crack
     play ambience wnfh_ambience_list["rain_in_building"] fadein 2.5
 
@@ -919,8 +916,6 @@ label d9_me_alt_un_ending_sl:
 
     "Поставив стакан на стол, я вновь уселся рядом с Леной."
 
-    play music wnfh_music_list["the_nothing"] fadein 5.0
-
     me "Вот скажи, как тебя угораздило во всё это вляпаться?"
 
     show un sad_smile pioneer close with dspr
@@ -1066,7 +1061,7 @@ label d9_me_alt_un_ending_sl:
         "Нависла тишина, которую уже никто не стал прерывать."
 
     show sl serious pioneer at left
-    show mt normal pioneer at right
+    show mt normal pioneer at right behind un
     show un sad pioneer:
        xcenter 0.5 ycenter 0.7
     with dissolve
@@ -1096,8 +1091,6 @@ label d9_me_alt_un_ending_sl:
     mt "Мы с Леной будем придумывать ей новое амплуа."
 
     "Мы с Леной одновременно одобрительно кивнули."
-
-    stop music fadeout 5.0
 
     mt "Отлично. А пока развяжите уже, наконец, девчонку, у неё уже небось всё затекло."
     me "Есть."
@@ -1156,7 +1149,6 @@ label d9_me_alt_un_ending_sl:
     un "А на самом деле уже почти полтора месяца прошло[wp]"
 
     window hide dissolve
-    play music wnfh_music_list["giving_up_hope"] fadein 5.0
     show sl angry pioneer
     with dspr
     $ renpy.pause(0.1)
@@ -1267,8 +1259,6 @@ label d9_me_alt_un_ending_sl:
     sl "Сомнительный аргумент."
 
     th "Да чёрт возьми, что с тобой случилось, Славь? У тебя какие-то личные счёты с ней?"
-
-    stop music fadeout 5.0
     $ renpy.pause(1.0)
 
     mt "В общем, товарищи, до отбоя осталось совсем немного."

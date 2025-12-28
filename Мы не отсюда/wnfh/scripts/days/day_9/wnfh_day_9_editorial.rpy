@@ -128,7 +128,7 @@ label d9_editorial:
 
     mz "Вот твоё рабочее место, садись давай."
 
-    show kat wr wr_normal background at center with dspr
+    show kat wr wr_normal background at center behind mz with dspr
 
     "Повинуясь, Катя села за стол и положила руки на клавиши."
     #КОСЯК визуала: спрайт Кати расчитан на наличие листа в машинке, потому тут у неё не хватает куска плеча.

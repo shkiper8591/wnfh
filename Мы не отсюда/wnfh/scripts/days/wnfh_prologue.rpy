@@ -483,7 +483,6 @@ label wnfh_prologue:
     me "Да, так и было[wp]"
 
     show mt sad pioneer panama close at center with dspr
-    play music wnfh_music_list["wolf_at_the_door"] fadein 5.0
 
     "Она встала и стала медленно подходить ко мне."
 
@@ -538,8 +537,6 @@ label wnfh_prologue:
     mt "Да и магии никакой тут нет."
 
     th "Блин, стать крутым королём-колдуном как в большинстве исекаях не получится. Ну, что есть, то есть."
-
-    stop music fadeout 6.0
 
     mt "Присаживайся, нам ещё многое нужно обсудить."
 
@@ -952,17 +949,15 @@ label wnfh_prologue:
 
     hide usw
     hide dv
-    hide bg ext_meadow_day_wnfh
+    show bg ext_camp_entrance_sunset
     with dissolve2
     stop ambience fadeout 2.0
     stop music fadeout 5.0
+    $ wnfh_set_time("sunset")
 
     "Когда время стало близиться к вечеру, мы решили повернуть назад в сторону лагеря."
 
     window hide dissolve
-    $ renpy.pause(2.0, hard=True)
-    $ wnfh_set_time("sunset")
-    $ renpy.pause(2.0, hard=True)
     scene bg ext_lenin_square_sunset_wnfh
     show dv normal pioneer at center
     with dissolve2
@@ -1232,7 +1227,7 @@ label wnfh_prologue:
     $ renpy.pause(0.3)
     $ wnfh_set_time()
     $ renpy.pause(.5, hard=True)
-    play music music_list["farewell_to_the_past"] fadein 2.5
+    play music music_list["farewell_to_the_past_edit"] fadein 2.5
     window show dissolve
 
     "А так всё было[wp]{w=2.0} нормально?"

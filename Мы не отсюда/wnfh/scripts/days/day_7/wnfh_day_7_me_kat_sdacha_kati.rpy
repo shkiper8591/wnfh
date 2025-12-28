@@ -2,6 +2,7 @@ label d7_me_kat_sdacha_kati:
 
     window hide dissolve
     scene bg ext_house_of_mt_day
+    show kat normal pioneer at left
     show mt dc_reading dc background
     with slide_left_blure_dissolve2
     window show dissolve
@@ -40,6 +41,9 @@ label d7_me_kat_sdacha_kati:
     
     mt "Подожди, а где ещё один пионер?"
     me "Ещё? На остановке никого больше не было."
+
+    show kat thinking pioneer with dspr
+
     kat "Да, я одна приехала."
     
     show mt normal pioneer at right with dspr
@@ -50,6 +54,9 @@ label d7_me_kat_sdacha_kati:
     show mt smile with dspr
     
     mt "Ты уж прости меня, что не встретила тебя лично, дела были."
+
+    show kat normal pioneer with dspr
+
     kat "Ничего, всё нормально."
     mt "Так, а где твоя одежда? Ну, в которой ты приехала."
     kat "Сушится, только рюкзак сухой более-менее остался."
@@ -57,6 +64,7 @@ label d7_me_kat_sdacha_kati:
     show mt surprise pioneer at right with dspr
     
     mt "В смысле «сушится»?"
+
     if wnfh_Data.getChoice_result_number("d7_choice_n8") == 1:
         show mt angry pioneer at right with dspr
         mt "Семён, ну-ка объясни ситуацию."
@@ -144,7 +152,10 @@ label d7_mt_sdalsya:
     
     mt "Хорошо, потом придумаю что-нибудь для тебя, а пока мне надо заняться Екатериной."
 
-    hide mt with dspr
+    hide mt
+    hide kat
+    with dspr
+    play sound sfx_close_door_1
 
     "Ольга Дмитриевна увела Катю к себе в домик."
     "Я же отправился на поиски двух злодеек."

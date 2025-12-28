@@ -425,7 +425,7 @@ label d8_me_dv_avantyra_pizdec:
         th "Что-то зачастил я падать[wp]"
 
     show cg d8_dv_military_2 with dissolve
-    play music wnfh_music_list["rise_of_the_mechs"] fadein 4.5
+    play music wnfh_music_list["corridors"] fadein 4.5
 
     scientist "Хм? Кажется, здесь кто-то есть!"
 

@@ -349,7 +349,7 @@ label d7_sl_probejka:
     play sound sfx_open_door_1
     scene bg int_aidpost_sunset_wnfh with door_blure_dissolve2
     show sl normal sport at right
-    show cs normal glasses at left
+    show cs normal medcoat glasses at left
     with dissolve2 
     play ambience ambience_medstation_inside_day fadein 2.0
     window show dissolve
@@ -364,11 +364,11 @@ label d7_sl_probejka:
     cs "Что случилось?"
     me "Решил на пробежку сходить. Споткнулся, упал, очнулся — гипс."
 
-    show cs smile glasses with dspr
+    show cs smile medcoat glasses with dspr
 
     cs "Гипса я что-то на тебе не вижу."
 
-    show cs normal glasses with dspr
+    show cs normal medcoat glasses with dspr
     show sl sad sport at right with dspr
 
     sl "Это всё из-за меня. Я совсем забыла, что новичкам лучше не бегать по просёлочной дороге в свой первый раз."
@@ -418,7 +418,7 @@ label d7_sl_probejka:
     "Я медленно прошёл вдоль помещения медпункта и уселся на кушетку."
     "Виола сделала ещё пару пометок и, положив журнал на стол, подошла ко мне."
 
-    show cs normal close at center
+    show cs normal medcoat close at center
     with dissolve
     hide sl
 
@@ -433,23 +433,23 @@ label d7_sl_probejka:
     #cs "Помнишь свой сегодняшний сон? Ну так вот[wp]"
     cs "Нет, конечно же! Что за глупые вопросы, Семён?"
 
-    show cs normal at center with dissolve
+    show cs normal medcoat at center with dissolve
 
     "Отойдя к своему столу, Виола достала из ящика бутылочку йода, кусочек ваты и стерильное полотенце."
     "Йод и вату она оставила на столе, а полотенце смочила в раковине."
     
-    show cs normal close with dissolve
+    show cs normal medcoat close with dissolve
 
     "Вернувшись ко мне, Виола стала протирать мне раны на ногах."
     "Приятная прохлада от влаги немного снимала жгучую боль."
 
     me "Как же хорошо[wp]"
     
-    show cs smile close with dspr
+    show cs smile medcoat close with dspr
 
     cs "Подожди ещё, скоро йодом обработаю тебя, вот тогда будет тебе хорошо."
     
-    show cs normal close with dspr
+    show cs normal medcoat close with dspr
 
     cs "Так, теперь давай руки."
 
@@ -460,7 +460,7 @@ label d7_sl_probejka:
     me "Нет, обычным лёгким бегом."
     cs "Чудеса какие-то."
 
-    show cs smile close with dspr
+    show cs smile medcoat close with dspr
 
     cs "А ты ответь мне вот на что[wp]"
 
@@ -490,7 +490,7 @@ label d7_sl_probejka:
     me "Да, полы у вас шикарные. А ещё хочу сказать, что ваши домыслы далеки от реальности."
     cs "Всё шутки шутишь."
 
-    show cs normal close with dspr
+    show cs normal medcoat close with dspr
 
     "Виола вновь вернулась ко мне и принялась обрабатывать раны йодом."
     "И вся та приятная прохлада вмиг улетучилась, сменившись пощипыванием."
@@ -504,7 +504,7 @@ label d7_sl_probejka:
 
     "Виола чуть ли не моментально намазала мне руки йодом, я даже не успел особо боли почувствовать."
 
-    show cs smile close with dspr
+    show cs smile medcoat close with dspr
 
     cs "Ну вот и всё. Разве что синяк остался, но с ним я ничего сделать не могу. Да и не видно его особо."
     me "Что ж, спасибо вам большое."
@@ -512,7 +512,7 @@ label d7_sl_probejka:
 
     th "Да уж, вид у меня теперь просто шикарный. Будто в говне измазался."
 
-    show cs normal with dissolve
+    show cs normal medcoat with dissolve
     play sound sfx_dinner_horn_processed
 
     cs "Похоже, кому-то пора на завтрак."

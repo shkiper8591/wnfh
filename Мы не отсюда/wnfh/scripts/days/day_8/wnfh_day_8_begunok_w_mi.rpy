@@ -52,7 +52,7 @@ label d8_begunok_w_mi:
     kat "Вот как[wp] Ну, мне музыка тоже нравится, так что может и будет у тебя пополнение."
 
     show mi laugh pioneer at left
-    show kat confused pioneer at right
+    show kat confused pioneer at right behind mi
     with dspr
 
     mi "Здорово-здорово-здорово!"

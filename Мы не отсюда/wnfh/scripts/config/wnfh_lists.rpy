@@ -583,13 +583,6 @@ init 1:
     $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
     $ wnfh_music_list["classic_bossa"]                          = wnfh_MUSIC + "_Blacksmith_ - Classic Bossa.mp3"
     $ wnfh_music_list["kilometri_leta"]                         = wnfh_MUSIC + "Svaty - kilometri leta.mp3"
-    $ wnfh_music_list["shadow_of_lies"]                         = wnfh_MUSIC + "Audio Network - Shadow of Lies.mp3"
-    $ wnfh_music_list["street_killer"]                          = wnfh_MUSIC + "Audio Network - Street Killer.mp3"
-    $ wnfh_music_list["the_search"]                             = wnfh_MUSIC + "Audio Network - The Search.mp3"
-    $ wnfh_music_list["rise_of_the_mechs"]                      = wnfh_MUSIC + "Audio Network - Rise Of The Mechs.mp3"
-    $ wnfh_music_list["wolf_at_the_door"]                       = wnfh_MUSIC + "Secession Studios - Wolf at the Door.mp3"
-    $ wnfh_music_list["the_nothing"]                            = wnfh_MUSIC + "Big Al's Jams - The Nothing.mp3"
-    $ wnfh_music_list["giving_up_hope"]                         = wnfh_MUSIC + "ToxiSector - giving up hope.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

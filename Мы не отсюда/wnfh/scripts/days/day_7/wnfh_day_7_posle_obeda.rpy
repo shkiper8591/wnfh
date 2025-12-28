@@ -405,11 +405,12 @@ label d7_un_yes_3_lbl:
     cs "Так и скажи, что хочешь просто остаться и побыть с ним."
     un "Д-Да[wp]"
 
-    scene bg int_aidpost_day
+    scene int_aidpost_day
     show unblink
-    show cs normal glasses at left
+    $ renpy.pause(1.0)
+    show cs normal medcoat glasses at left
     show un shy pioneer at right
-    with None
+    with dissolve
 
     "В это время я нашёл в себе силы приоткрыть глаза."
 
@@ -428,22 +429,28 @@ label d7_un_yes_3_lbl:
 
     "Она грустно вздохнула напоследок и вышла из медпункта."
 
-    show cs smile at center with dspr
+    show cs smile medcoat glasses at center with dspr
 
     cs "«Сёмочка»?"
     me "Не спрашивайте, пожалуйста."
 
-    show cs normal at center with dspr
+    show cs normal medcoat glasses at center with dspr
 
     cs "Ладно, пионэр[wp] Давай-ка займёмся тобой."
 
-    "Виола подошла к шкафчику, откуда взяла белую тряпку и смочила её."
+    show cs normal medcoat far at cright with dspr
+    play sound wnfh_sfx_list["sink_fast"]
+
+    "Виола отложила очки в сторону и подошла к шкафчику, откуда взяла белую тряпку и смочила её."
+
+    show cs normal medcoat at center with dspr
+
     "Из того же шкафа она взяла стакан, набрала в него воды, подошла ко мне и протянула его."
     "Я через силу приподнялся и взял его."
 
     me "А у вас, случаем, нет таблеточки от головы?"
 
-    show cs smile at center with dspr
+    show cs smile medcoat at center with dspr
 
     cs "Спрашиваешь ещё! Разумеется есть, сейчас дам."
     me "Хм, а Лена сказала мне, что их у вас нет."
@@ -455,7 +462,7 @@ label d7_un_yes_3_lbl:
 
     me "Ох, спасибо[wp]"
 
-    show cs normal at center with dspr
+    show cs normal medcoat at center with dspr
 
     cs "Ага, теперь давай обратно ложись."
 
@@ -480,7 +487,7 @@ label d7_un_yes_3_lbl:
     play ambience ambience_medstation_inside_night fadein 2.0
     play sound sfx_close_door_1
     scene bg int_aidpost_sunset_wnfh
-    show cs smile far at center
+    show cs smile medcoat far at center
     show unblink
     with None
     window show dissolve 
@@ -490,7 +497,7 @@ label d7_un_yes_3_lbl:
 
     cs "Ха, какая же забавная девчушка."
 
-    show cs smile at center with dspr
+    show cs smile medcoat at center with dspr
 
     "Подойдя к своему рабочему месту, она посмотрела на меня."
 
@@ -510,7 +517,7 @@ label d7_un_yes_3_lbl:
     cs "Я так посмотрю, тебя только это и волнует."
     me "Ну знаете ли! Остаток дня голодным ходить не очень хочется."
 
-    show cs normal at center with dspr
+    show cs normal medcoat at center with dspr
 
     cs "Не беспокойся по этому поводу."
     me "Почему это?"
@@ -521,7 +528,7 @@ label d7_un_yes_3_lbl:
     cs "Одна неравнодушная девушка передала тебе немного еды."
     me "Лена, что ли?"
 
-    show cs smile at center with dspr
+    show cs smile medcoat at center with dspr
 
     cs "Отлично, солнце не расплавило тебе мозги. Значит, жить будешь."
 

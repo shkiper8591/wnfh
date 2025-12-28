@@ -61,7 +61,7 @@
     "Наконец, на лице Мику появилась скромная, но всё же улыбка."
     "Она поднялась и, взяв пакет, положила его рядом с собой."
 
-    show mi serious pioneer far at right with dissolve
+    show mi serious pioneer far at right behind kat with dissolve
 
     mi "Да, можно и поговорить."
 
@@ -208,14 +208,14 @@
 
     play sound sfx_open_door_strong
     show kat sad pioneer at left
-    show cs normal at right
+    show cs normal medcoat at right
     with dissolve
 
     "Виола бесцеремонно ворвалась в музклуб и стала хищно озираться по помещению клуба."
 
     cs "Так, вот наша потерпевшая."
 
-    show cs normal far at right with dspr
+    show cs normal medcoat far at right with dspr
 
     "Подойдя к Мику, Виола стала осматривать её."
     "Она сняла с её лба оставленное мной полотенце и убрала остатки крови ватой, после чего обработала рану йодом."
@@ -237,7 +237,7 @@
 
     cs "Потеряла сознание, говоришь[wp]"
 
-    show mi upset pioneer far at center with dissolve
+    show mi upset pioneer far at center behind kat with dissolve
 
     "К этому времени Мику начала очухиваться."
 
@@ -337,7 +337,7 @@
     play sound wnfh_sfx_list["knock_arrival"]
     show kat normal pioneer at left
     show mi normal pioneer at right
-    show un smile pioneer far at center
+    show un smile pioneer far at center behind mi
     with dissolve
 
     "Тут к нам в музклуб вошла гостья. Ей оказалась Лена."

@@ -420,7 +420,7 @@ label d8_kat_mi_musclub:
     th "Сколько раз самому себе говорил не увлекаться подобными мыслями? Каждый раз плохо заканчивается."
 
     play sound sfx_open_door_clubs
-    show dv normal pioneer2 far at center with dissolve
+    show dv normal pioneer2 far at center behind mi with dissolve
     show kat normal pioneer at left
     show mi normal pioneer at right
     with dspr

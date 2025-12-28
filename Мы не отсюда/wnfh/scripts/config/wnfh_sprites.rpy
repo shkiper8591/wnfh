@@ -305,6 +305,11 @@ init 2:
         make_sprites_for('mt', 'dress panama', ['mod:body', 'es:dress', 'es:<emotion>', 'es:panama'])
         make_sprites_for('mt', 'swim panama', ['mod:body', 'es:swim', 'es:<emotion>', 'es:panama'])
         make_sprites_for('mt', 'body panama', ['mod:body', 'es:<emotion>', 'es:panama'])
+
+        # Виола
+        make_sprites_for('cs', 'medcoat', ['es:body', 'es:<emotion>'])
+        make_sprites_for('cs', 'medcoat glasses', ['es:body', 'es:<emotion>', 'es:glasses'])
+        make_sprites_for('cs', 'medcoat stethoscope', ['es:body', 'es:<emotion>', 'es:stethoscope'])
         
         # Ульяна
         make_sprites_for('usw', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])

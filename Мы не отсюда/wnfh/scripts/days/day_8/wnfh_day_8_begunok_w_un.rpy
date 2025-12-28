@@ -311,7 +311,7 @@ label d8_begunok_w_un_cont:
     play sound sfx_open_dooor_campus_1
     $ renpy.pause(1.0)
     show bg int_house_of_mt_day
-    show mt sad pioneer far at center
+    show mt sad pioneer far at center behind un
     with door_blure_dissolve
     play ambience ambience_int_cabin_day fadein 3.5
     play sound wnfh_sfx_list["writing_loop"] loop fadein 0.5
@@ -553,7 +553,7 @@ label d8_begunok_w_un_2:
     mt "Так-то лучше!"
 
     window hide dissolve
-    hide mt with dissolve2
+    hide mt with dissolve
 
     stop music fadeout 5.0
     jump d8_obed_me_kat_un

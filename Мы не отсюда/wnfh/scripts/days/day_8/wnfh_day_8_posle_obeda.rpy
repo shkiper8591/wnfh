@@ -28,7 +28,6 @@ label d8_posle_obeda:
     th "А ещё ветерок такой приятный, обдувает со всех сторон, отчего жара совсем не чувствуется."
     th "Конечно, на солнце припекает, но не так сильно, как если бы ветра не было."
     th "М-да[wp] Интересно, как там сейчас дома? Тоже тепло, наверное, лето же."
-    #Возможно косяк: а голова у нашего товарища перестала болеть? Оставляю тег, так как не знаю сюжетных механик.
 
     show bg ext_houses_day with dissolve
 
@@ -37,7 +36,7 @@ label d8_posle_obeda:
     th "Надо что-то делать с моим положением. Ведь не может так вечно продолжаться?"
     th "Да и рано или поздно меня поймают, и что тогда? Что я скажу? «Здрасьте, я гость из будущего»?"
     th "В лучшем случае они ничего не поймут и посмеются. В худшем[wp] Как там Ольга Дмитриевна сказала? Ассимилируют?"
-    th "Нет, даже думать об этом не хочу."
+    th "Нет, даже думать об этом не хочу. {w}Да и заработать очередную дозу мигрени неохота."
 
     window hide dissolve
     scene bg ext_house_of_mt_day with dissolve2
@@ -48,7 +47,8 @@ label d8_posle_obeda:
 
     stop ambience fadeout 3.5
     stop music fadeout 5.0
-    scene bg int_house_of_mt_day with dissolve2
+    play sound sfx_open_dooor_campus_2
+    scene bg int_house_of_mt_day with door_blure_dissolve
     play ambience ambience_int_cabin_day fadein 3.5
 
     "Вожатой, что не удивительно, внутри не было."
@@ -57,7 +57,7 @@ label d8_posle_obeda:
 
     if wnfh_Data.FlagGet("d8_begunok") == False:
 
-        if wnfh_Data.getChoice_points_sum("un") <= 5:
+        if wnfh_Data.getChoice_points_sum("un") <= 4:
 
             jump d8_posle_obeda_mt_angry
     
@@ -67,6 +67,7 @@ label d8_posle_obeda:
     else:
         
         show mt sad pioneer at center with dissolve
+        play sound sfx_open_dooor_campus_1
     
         "В это же время пришла и Ольга Дмитриевна."
     
@@ -98,6 +99,7 @@ label d8_posle_obeda_mt_angry:
     $ wnfh_Data.FlagSet("mt_angry") == True
 
     show mt normal pioneer at center with dissolve
+    play sound sfx_open_dooor_campus_1
 
     "В это же время пришла и Ольга Дмитриевна."
 
@@ -150,15 +152,29 @@ label d8_posle_obeda_mt_angry:
 
     "Оббежав дом, я увидел стоящую на крыльце разъярённую вожатую[wp] {w}со здоровенным молотом в руках!"
 
+    $ wnfh_Data.get_achievement("shaokahn")
+    $ renpy.pause(1.0, hard=True)
+
     mt "Ну-ка стой!"
     me "Сами стойте!"
 
     scene bg ext_houses_day at wnfh_running
 
     "Я разогнался как только мог и побежал на площадь, надеясь найти там своё спасение."
+
     "Позади же я чётко слышал, как бежала за мной вожатая. И самое страшное — она меня уверенно так догоняла!"
 
-    th "Ну почему я не занимаюсь спортом?!"
+    if persistent.wnfh_mat_filter == 0:
+
+       th "Блять, блять, блять[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
+
+    elif persistent.wnfh_mat_filter == 1:
+
+        th "Б@$#ь, б@$#ь, б@$#ь[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
+
+    else: 
+            
+        th "Чёрт, чёрт, чёрт[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
 
     scene bg ext_lenin_square_day_wnfh
     show sh smile pioneer far at fright
@@ -221,7 +237,13 @@ label d8_posle_obeda_mt_angry:
     mt "Разве я так много попросила? Просто проводи девочку, симпатичную, между прочим, покажи ей где что и всё."
     
     "Я же сидел и слушал всё это, опустив взгляд."
+
+    play sound wnfh_sfx_list["glass_put"]
+
     "Заметив это, Ольга взяла с подоконника стакан и поставила его рядом со мной."
+
+    play sound wnfh_sfx_list["pour_in_a_glass"]
+
     "После чего из принесённой с собой бутылки она налила мне немного яблочного сока."
     
     show mt normal pioneer at center with dspr
@@ -241,6 +263,8 @@ label d8_posle_obeda_mt_angry:
     th "Блин, какой же всё-таки вкусный[wp] Вот умели в Союзе продукты делать!"
     
     mt "Вот."
+
+    play sound wnfh_sfx_list["glass_put"]
     
     "Сказала она и положила на стол баночку с валерьянкой."
     
@@ -304,6 +328,7 @@ label d8_posle_obeda_mt_angry:
 label d8_posle_obeda_mt_normal:
 
     show mt normal pioneer at center with dissolve
+    play sound sfx_open_dooor_campus_1
 
     "В это же время вошла Ольга Дмитриевна."
 

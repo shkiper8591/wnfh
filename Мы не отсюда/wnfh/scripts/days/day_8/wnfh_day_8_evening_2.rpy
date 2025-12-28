@@ -76,6 +76,8 @@ label d8_evening_2_w_dv:
 
     dv "А то!"
 
+    play sound sfx_punch_medium
+
     "Она посмеялась со своей же шутки и легонько стукнула меня по плечу."
 
     show dv smile pioneer at center with dspr
@@ -208,6 +210,8 @@ label d8_evening_2_w_dv:
     dv "Ну да, в этом и суть."
     me "Ох, блин, на что я подписался[wp]"
 
+    play sound wnfh_sfx_list["dv_musclub_break"]
+
     "Вскоре послышался тихий хруст, и Алиса отворила дверь."
     "Она сунула отвёртку под ремень."
 
@@ -285,6 +289,7 @@ label d8_evening_2_w_dv:
     scene bg ext_musclub_verandah_night_wnfh
     show dv scared pioneer at center
     with dspr
+    play sound wnfh_sfx_list["mi_musclub_awaken"]
     play ambience ambience_camp_center_night fadein 2.0
 
     "В тот же момент я выскочил на улицу, а из музклуба раздался девичий крик."
@@ -424,6 +429,7 @@ label d8_evening_2_w_dv:
     me "Старался."
 
     show dv surprise pioneer close at center with dspr
+    play sound wnfh_sfx_list["sarcastic_clap"]
 
     "Вдруг, совершенно неожиданно, со стороны скамеек послышались медленные аплодисменты."
     "Мы синхронно повернулись на источник звука."
@@ -464,6 +470,7 @@ label d8_evening_2_w_dv:
     if wnfh_Data.getChoice_result_number("d7_choice_optional_1") == 2:
 
         un "А вот с тобой, Семён, мы вроде как вчера договаривались. Обидно, что ты даже не вспомнил."
+        #Сюда бы ещё минус ЛП Лены по логике.
 
 
     "Гордо подняв подбородок вверх, она бросила на нас недовольный взгляд."

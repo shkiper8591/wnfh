@@ -24,16 +24,20 @@ label d8_begunok_w_mi:
     show mi happy pioneer at left with dspr
 
     mi "Да, я с вами за компанию прогуляюсь, благо, никто не запрещает так делать. Заодно лучше познакомимся, я Мику Хатсунова."
-    kat "Катя Та[wp]{nw=2.5}"
+
+    show kat interested pioneer at right with dspr
+
+    kat "Какая интересная фамилия. {w}А я Катя Та[wp]{nw=2.5}"
+    mi "Да, знаю, мне часто так говорят. Ну не прям часто, но иногда. Просто у меня папа русский, а мама — японка, и потому они пришли к такому, так сказать, компромиссу, хи-хи."
     mi "Занимаюсь здесь, ну, в лагере, музыкой, которую просто обожаю! Думаю, что это — дело всей моей жизни, ведь это так прекрасно! Звучание нот, что разносится по музкружку[wp]"
     me "Ладно, Мику, думаю, тебе стоит придержать рассказ, чтобы было о чём поболтать во время заполнения листа."
-    
-    show kat interested pioneer at right with dspr
 
     "Катя встала с лавочки и подошла поближе к нам."
     
     kat "Что ж, с чего тогда нам лучше начать?"
     me "Ну, зависит от того, какие позиции нам нужно посетить."
+
+    play sound wnfh_sfx_list["perelistovanie"]
     
     "Она достала аккуратно сложенный листок и, развернув его, стала рассматривать."
     
@@ -60,10 +64,13 @@ label d8_begunok_w_mi:
     show mi grin pioneer at left with dspr
 
     mi "Согласна! А посему пойдёмте сразу ко мне, всё покажу и расскажу, как у меня классно!"
+
+    show mi grin pioneer:
+        ease 1.0 xcenter 1.2 
+    show kat confused pioneer:
+        ease 1.0 xcenter 1.2 
     
     "Мику схватила ещё не отошедшую от удивления Катю под локоть и повела в сторону музклуба."
-    
-    # Тут надо бы анимацию того как Катя и Мику быстро уходят за правый край экрана 
 
     th "Да уж, не соврала: заскучать она нам точно не даст."
     
@@ -119,6 +126,9 @@ label d8_begunok_w_mi:
 
     kat "Нисколько."
     me "Удивительно[wp]"
+
+    play sound sfx_unlock_door_campus
+
     mi "Чего вы там стоите? Идёмте!"
     
     "Музыкантша уже открыла дверь и убежала внутрь музклуба."
@@ -194,10 +204,11 @@ label d8_begunok_w_mi:
     show mi normal pioneer at right with dspr
 
     mi "Давай его сюда, я распишусь, что ты у меня была."
+
+    show mi normal pioneer:
+        ease 1.5 xcenter 1.2
     
     "Катя отдала лист музыкантше, и та ускакала к подоконнику подписывать его."
-    
-    show mi serious pioneer at right with dspr
 
     mi "Кстати, не хочешь ко мне вступить? Будем вместе музыку сочинять, играть и пить чай с конфетами."
 
@@ -205,11 +216,10 @@ label d8_begunok_w_mi:
 
     kat "Знаешь, а давай!"
 
-    show mi happy pioneer at right with dspr
-
     mi "Отлично!"
     
-    # надо сделать анимацию того как мику отходит в сторону потом возвращается
+    show mi happy pioneer:
+        ease 1.5 xcenter 0.7
 
     "Мику с особым усердием поставила подпись в обходном листе и, прибежав обратно к нам, вернула его Кате."
     
@@ -218,13 +228,13 @@ label d8_begunok_w_mi:
     me "Так, теперь клубы[wp]"
     me "Вернее, клуб."
 
-    show mi smile pioneer at right with dspr
+    show mi smile pioneer with dspr
 
     mi "О, давно хотела заглянуть к вам, но боялась потревожить, вы же постоянно что-то делаете там у себя, если судить по доносящимся звукам."
     me "Да, мы постоянно чем-то заняты. Но навещать нас можно, нас это не сильно потревожит."
     me "Это вот плотники не любят, когда их тревожат, сразу злиться начинают."
     
-    show mi happy pioneer at right with dspr
+    show mi happy pioneer with dspr
 
     mi "Хорошо, запомню!"
     me "Ну что ж, на выход, получается[wp]"
@@ -239,6 +249,8 @@ label d8_begunok_w_mi:
     play ambience ambience_camp_center_day fadein 3.0
     window show dissolve
     # хз какую тут музыку поставить, так что пооооооооох
+
+    play sound wnfh_sfx_list["key_closing"]
 
     "Мы вышли из музклуба, и Мику быстренько заперла за нами дверь."
 
@@ -257,18 +269,16 @@ label d8_begunok_w_mi:
 
     "Быстренько срезав через пролесок, мы вышли к зданию нашего клуба."
 
+    window hide
+    stop ambience fadeout 0.5
+    stop music fadeout 2
     scene black with dissolve2
-
-    "Ну а дальше, дорогой мой читатель, всё было как обычно."
-    "И не думайте, что я прерываю историю на самом интересном месте! Самое интересное уже было, поверьте мне, я-то знаю."
-    "Да и я надеюсь, вы не думали, что тут будет целое заполнение бегунка, верно? Отлично, всё равно выбора у вас нет."
-    "Собственно, пропустим всю эту тягомотину!"
-
-    window hide dissolve
+    $ renpy.pause(1.0)
     scene bg ext_house_of_mt_day
     show kat normal pioneer at left
     show mi normal pioneer at right
     with dissolve2
+    play ambience ambience_camp_center_day fadein 3 
     window show dissolve
 
     "Закончив заполнять этот треклятый бегунок, мы пришли к домику вожатой."
@@ -288,7 +298,9 @@ label d8_begunok_w_mi:
     show kat normal pioneer at left
     show mt normal pioneer at right
     with door_blure_dissolve
+    $ renpy.pause(1.0)
     play ambience ambience_int_cabin_day fadein 3.5
+    play sound wnfh_sfx_list["writing_loop"] loop fadein 0.5
 
     "Ольга Дмитриевна тихо-мирно сидела за столом и сортировала документы, попутно делая записи в каком-то журнале."
 
@@ -305,6 +317,7 @@ label d8_begunok_w_mi:
     kat "До свидания!"
 
     stop ambience fadeout 3.5
+    stop sound fadeout 0.5
     scene bg ext_house_of_mt_day
     show kat normal pioneer at left
     show mi normal pioneer at right
@@ -355,15 +368,12 @@ label d8_begunok_w_mi:
     kat "Знаешь, здесь довольно хорошо."
     kat "И люди хорошие[wp]"
 
-    show kat upset pioneer close at center with dspr
-    #КОСЯК: разговоры про рыжих лучше опустить в принципе, если Семён встречал Катю с Леной.
-
-    kat "Кроме тех двух рыжих[wp]"
-
     if wnfh_Data.FlagGet("d7_kat_oblivanie") == "me_oblil":
 
         jump d8_begunok_w_mi_choices
-    else:
+
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
+
         me "Ха, зря ты на них обижаешься, на самом деле."
         me "Они девчата хорошие, просто иногда любят почудить."
     
@@ -382,6 +392,10 @@ label d8_begunok_w_mi:
         jump d8_begunok_w_mi_ending
 
 label d8_begunok_w_mi_choices:
+
+    show kat upset pioneer close at center with dspr
+
+    kat "Кроме тех двух рыжих[wp]"
 
     show kat obida pioneer close at center with dspr
 
@@ -403,7 +417,6 @@ label d8_begunok_w_mi_choices:
             ["neutral", "Промолчать", "Меня подставили!", "d8_me_kat_silent_2", {"kat": -1}],
             ["d8_choice_n5", "Катя намекает на извинение V2"]
             ) with sphere_blure_dissolve2
-        #Мудак подходит под фильтр? Хз, но на всякий отмечу.
 
 label d8_me_kat_appologize_1:
 

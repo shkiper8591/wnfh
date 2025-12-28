@@ -392,8 +392,8 @@ label d8_zavtrak_s_el_sh:
     
     show left d8_breakfast_half tray foods behind shakers with dspr
 
-    show el sad with dspr 
-    show sh upset with dspr
+    show el sad pioneer with dspr 
+    show sh upset pioneer with dspr
     
     "После моего вопроса ребята немного пали духом. Стало ясно, что ничего они не придумали."
     
@@ -404,8 +404,8 @@ label d8_zavtrak_s_el_sh:
     
     "Шурик огляделся по сторонам и, видимо, удостоверившись, что никто не будет подслушивать, вернул свой взгляд обратно на меня."
     
-    show el normal with dspr
-    show sh serious with dspr
+    show el normal pioneer with dspr
+    show sh serious pioneer with dspr
 
     show mid d8_breakfast_half tray foods with dspr
     
@@ -415,7 +415,7 @@ label d8_zavtrak_s_el_sh:
     sh "Поэтому мы сделаем так, чтобы она ничего не узнала." 
     sh "А для этого[wp]{nw=2.5}"
 
-    show sh normal with dspr
+    show sh normal pioneer with dspr
 
     me "Шурик, стой!"
     

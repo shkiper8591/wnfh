@@ -9,7 +9,6 @@ label d7_me_meet_kat_w_dw_n_usw:
     $ wnfh_Data.FlagSet("d7_kat_oblivanie", "me_oblil")
     with dissolve2
     play ambience ambience_camp_center_day fadein 3.0
-    #play music music_list["timid_girl"] fadein 3.5
     $ renpy.pause(1)
     show bg ext_dining_hall_away_day with dissolve2 
     $ renpy.pause(1)
@@ -233,6 +232,9 @@ label d7_me_meet_kat_w_dw_n_usw:
     show dv smile pioneer with dspr
 
     dv "Так, давай-ка мы тебе поможем."
+
+    with vpunch
+    play sound sfx_bush_body_fall
     
     "Алиса резко толкнула меня под дерево."
     "И, на удивление, я никак не поранился о ветки. Да и за кустами оказалось много свободного места."
@@ -298,16 +300,26 @@ label d7_me_meet_kat_w_dw_n_usw:
     "Мои рыжие подруги уже сверкали пятками, и я собирался присоединится к ним."
     "Я резво выпрыгнул из кустов, кое-как встал на ноги и только собирался побежать[wp]."
 
-    show sh serious at right with dissolve
+    show sh serious pioneer at right with dissolve
+    play sound sfx_punch_medium
 
     "[wp]как врезался в своего товарища — Шурика."
     "В его глазах читалось возмущение."
     
     sh "Семён, вот что-что, а такого я от тебя не ожидал. Взял и окатил девушку из ведра!"
     sh "Это неподобающее поведение не только для пионера, но и для советского гражданина!"
-    
-    th "Вот блять, нотаций от Шурика мне ещё не хватало[wp]"
-    #Фильтр
+
+    if persistent.wnfh_mat_filter == 0:
+
+       th "Вот блять, нотаций от Шурика мне ещё не хватало[wp]"
+
+    elif persistent.wnfh_mat_filter == 1:
+
+        th "Вот б@$#ь, нотаций от Шурика мне ещё не хватало[wp]"
+
+    else: 
+            
+        th "Вот блин, нотаций от Шурика мне ещё не хватало[wp]"
     
     sh "Тем более, как я понимаю, она у нас новенькая, а ты своим поступком портишь ей впечатление о лагере и местном контингенте."
     sh "А это повлияет на репутацию лагеря! Она же теперь точно понесёт весть о том, что тут людей из ведра обливают на входе."
@@ -319,7 +331,7 @@ label d7_me_meet_kat_w_dw_n_usw:
     
     "Он взял меня за плечи и развернул лицом к новенькой, которая всё ещё стояла в шоке и пыталась хоть как-то избавиться от влаги."
 
-    show sh normal at right with dspr
+    show sh normal pioneer at right with dspr
     
     sh "Иди и извинись перед ней. {w}Искренне."
     
@@ -369,16 +381,16 @@ label d7_sh_no_1:
 
     me "Слушай, меня Алиса с Ульяной знатно так подставили, пусть они извиняются!"
 
-    show sh serious at right with dspr
+    show sh serious pioneer at right with dspr
 
     sh "Но облил-то её ты. Это тоже накладывает ответственность."
     me "Меня заставили это сделать под угрозами быть облитым вместо неё!"
 
-    show sh normal at right with dspr
+    show sh normal pioneer at right with dspr
 
     sh "Понятно[wp]"
 
-    show sh serious at right with dspr
+    show sh serious pioneer at right with dspr
 
     sh "Ну, иди тогда, ищи этих рыжих и заставь их извиниться перед новенькой, а я пока проведу её к складу."
     
@@ -431,11 +443,11 @@ label d7_sh_no_1:
     sh "Да уж, Семён, не завидую я твоему положению."
     me "И не говори[wp]"
 
-    show sh laugh at right with dspr
+    show sh laugh pioneer at right with dspr
 
     sh "Ну, зато ты спас наш клуб от визита Светы!"
     
-    show sh normal_smile at right with dspr
+    show sh normal_smile pioneer at right with dspr
 
     sh "Пойдём к нам тогда, у меня как раз есть работёнка для тебя."
     

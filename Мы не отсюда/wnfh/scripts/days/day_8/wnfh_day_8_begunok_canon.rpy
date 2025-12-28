@@ -55,7 +55,6 @@ label d8_begunok_canon:
     
     window hide
     stop ambience fadeout 0.5
-    #34 крутой переход
     play sound sfx_open_door_1
     scene bg int_clubs_male_day with door_blure_dissolve2
     play ambience ambience_medstation_inside_day fadein 3
@@ -63,12 +62,12 @@ label d8_begunok_canon:
     window show
 
     ## В клубах
-    kat "Тут же никого нет[wp] {w}Кто подписывать-то будет?"
+    kat "Тут же никого нет[wp] Кто подписывать-то будет?"
     
     show kat surprise with dspr
+    play sound wnfh_sfx_list["signature_writing"]
 
     "Я мягко отнял у Кати бегунок и, взяв ручку со стола, подписал его."
-    #33 звук подписывания бумаги
     
     kat "А так разве можно?"
     me "Мне как члену клуба можно."
@@ -95,7 +94,7 @@ label d8_begunok_canon:
     
     # Какая-нибудь пианинко на фоне (может кавер хатсуне мику?)))))))
     kat "Красиво играет."
-    me "Да, это наша девочка-оркестр. {w}Мику зовут."
+    me "Да, это наша девочка-оркестр. Мику зовут."
     kat "Наверное, это о ней мне Лена рассказывала."
     kat "Это же она с длинными аквамариновыми волосами?"
     me "Да-да-да, всё верно."
@@ -190,7 +189,7 @@ label d8_begunok_canon:
     show mi normal with dspr
     show kat normal with dspr
     
-    "Я громко прокашлялся, и девочки перевели взгляд на меня. {w}Видимо, за своими разговорами они забыли обо мне."
+    "Я громко прокашлялся, и девочки перевели взгляд на меня. Видимо, за своими разговорами они забыли обо мне."
     
     me "Мику, подпишешь Кате обходной?"
     mi "Конечно! Давай его сюда!"
@@ -230,28 +229,21 @@ label d8_begunok_canon:
     mi "Хорошо, не буду задерживать! А тебя, Катя, тогда жду тут после обеда, договорились?"
     
     "Катя одобрительно кивнула, и мы покинули кружок."
-    "Мы, преисполненные хорошим настроением, отправились в сторону медпункта."
+    "Преисполненные хорошим настроением, мы отправились в сторону медпункта."
     
     window hide
     stop ambience fadeout 0.5
     stop music fadeout 2
     play ambience ambience_camp_center_day fadein 3
     scene black with door_invert_blure_dissolve
-    play sound sfx_close_door_1
     $ renpy.pause(1.0)
-    window show
-    
-    "И вы, читатель, надеюсь, тоже преисполнены хорошим настроением."
-    "Собственно, ради того, чтобы сохранить ваше хорошее настроение, я предлагаю вам сделку."
-    "Вы не заставляете меня писать две тысячи строк о захватывающем дух заполнении бегунка, а я, в свою очередь, не заставляю вас это читать."
-    "Ну ладно, не буду вас задерживать, продолжаем!"
-    
-    window hide dissolve
-    play sound sfx_open_door_1
-    scene bg ext_house_of_mt_day at wnfh_entrance
+    scene bg ext_house_of_mt_day at wnfh_entrance with dissolve2
     stop ambience fadeout 0.5
     scene bg int_house_of_mt_day with door_blure_dissolve2
     play ambience ambience_int_cabin_day fadein 3
+    play sound sfx_open_dooor_campus_1
+    $ renpy.pause(1.0)
+    play sound wnfh_sfx_list["writing_loop"] loop fadein 0.5
     window show dissolve
     
     ## Сдача бегунка вожатой
@@ -269,13 +261,14 @@ label d8_begunok_canon:
     
     "И Ольга Дмитриевна просто положила его в стопку к другим бумагам, даже не посмотрев."
     
-    mt "Молодцы, ребята. Обходной я потом посмотрю, когда с делами закончу. {w}Куда-нибудь успела записаться?"
+    mt "Молодцы, ребята. Обходной я потом посмотрю, когда с делами закончу. Куда-нибудь успела записаться?"
     
     show kat smile with dspr
     
     kat "Да, я в музкружок записалась."
     
     show mt smile with dspr
+    stop sound fadeout 0.5
     
     mt "Молодец, а то Мику там совсем скучает одна."
     me "Ладно, мы теперь свободны?"
@@ -299,21 +292,26 @@ label d8_begunok_canon:
     show kat smile2 pioneer close at center with dspr
     
     kat "Уютненько, люди хорошие."
-    
-    show kat obida pioneer close at center with dspr
-    
-    kat "Кроме тех двух[wp]"
-    kat "Ну, тех, которые из ведра меня на входе окатили."
-    me "Алиса с Ульяной?"
-    kat "Ага."
-    me "Зря ты о них так, просто дурачатся."
-    me "Так-то люди они хорошие."
-    kat "Возможно, но того, что они — хулиганьё, это не отменяет!"
-    
-    "Катя недовольно сложила руки."
 
-    me "Да ладно тебе, подружитесь ещё."
-    #КОСЯК: нужны вариации. Если встретили с Леной или Семён облил, эту часть нужно скрыть.
+    if wnfh_Data.FlagGet("d7_kat_oblivanie") == "dv_oblila":
+
+        show kat obida pioneer close at center with dspr
+    
+        kat "Кроме тех двух[wp]"
+        kat "Ну, тех, которые из ведра меня на входе окатили."
+        me "Алиса с Ульяной?"
+        kat "Ага."
+        me "Зря ты о них так, просто дурачатся."
+        me "Так-то люди они хорошие."
+        kat "Возможно, но того, что они — хулиганьё, это не отменяет!"
+    
+        "Катя недовольно сложила руки."
+
+        me "Да ладно тебе, подружитесь ещё."
+
+    else:
+
+        kat "А так[wp] Пока не знаю, что сказать."
     
     "Между нами повисла тишина."
     

@@ -86,9 +86,9 @@ label d7_me_kat_sdacha_kati_w_un:
 
     window hide dissolve 
     call screen wnfh_choice(
-        ["un", "Да, конечно", "Прогулка — полезное занятие", "d7_un_yes_1_lbl", {"un":1}],        
+        ["un", "Да, конечно", "Приятное и полезное занятие", "d7_un_yes_1_lbl", {"un":1}],        
         ["neutral", "Пожалуй, нет", "Прогулка после обеда? Увольте!", "d7_un_no_1_lbl", {"un":-1}],
-        ["un", "Я подумаю", "Я же не знаю, что будет после обеда", "d7_un_neutral_1_lbl"],
+        ["un", "Я подумаю", "Мало ли, что будет после обеда", "d7_un_neutral_1_lbl"],
         ["d7_choice_n5", "Погулять ли с Леной"]
         ) with dissolve2
 
@@ -131,9 +131,10 @@ label d7_un_yes_1_lbl:
 
 label d7_un_no_1_lbl:
 
+    me "Прости, дела есть на сегодня."
+
     show un sad pioneer at center with dspr
 
-    me "Прости, дела есть на сегодня."
     un "Оу[wp]"
 
     if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:

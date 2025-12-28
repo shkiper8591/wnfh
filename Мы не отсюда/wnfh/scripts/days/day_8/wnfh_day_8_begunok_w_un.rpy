@@ -166,6 +166,7 @@ label d8_begunok_w_un:
     "Сказала она, вручая лист, который библиотекарша тут же принялась подписывать."
 
     show kat confused pioneer at cright with dspr
+    play sound wnfh_sfx_list["signature_writing"]
 
     mz "Я знаю."
 
@@ -200,7 +201,7 @@ label d8_begunok_w_un:
     "Или же раздумывала над каким-то очередным хитрым выражением, которым можно опустить её лицом в грязь."
     "Но, на удивление, Женя ничего не сказала и просто кивнула."
 
-    show un laugh pioneer at fright with dspr
+    show un smile3 pioneer at fright with dspr
 
     un "Спасибо! С меня шоколадка за срыв сроков."
 
@@ -231,7 +232,7 @@ label d8_begunok_w_un:
     un "Хоть бы извинился, а то после твоего побега ей пришлось просить помощи у Сергея[wp]"
 
     "Разумеется, мне было стыдно за то, что я сбежал из библиотеки после собственного косяка[wp] Но моя гордость не позволяет принять этот факт."
-    th "Но вот сейчас, когда я узнал, что ещё и Сергею пришлось убирать за мной, мне стало неловко уже перед ним."
+    th "Но вот сейчас, когда я узнал, что ещё и Серому пришлось убирать за мной, мне стало неловко уже перед ним."
     th "Зато теперь я знаю, откуда растут ноги у его с Женей романа."
 
     show un angry2 pioneer at right 
@@ -289,24 +290,17 @@ label d8_begunok_w_un_cont:
 
     "Хорошо, что идти тут было недалеко — до медпункта мы дошли за считаные минуты."
 
-    stop music fadeout 3.5
-    stop ambience fadeout 3.5
-    window hide dissolve
+    window hide
+    stop ambience fadeout 0.5
+    stop music fadeout 2
     scene black with dissolve2
-    window show dissolve
-    play music wnfh_music_list["sharkle_dream"] fadein 3.5
-
-    "Знаете, что делает хорошую историю воистину хорошей? Уважение к читателю."
-    "Мне нравится эта философия, поэтому я не буду вас мучать долгим и мучительным рассказом о бегунке. Всё равно ничего интересного более не происходило."
-    "А посему я возьму на себя власть отправить нас в конец всего это мероприятия."
-
-    stop music fadeout 3.5
-    window hide dissolve
-    scene bg ext_house_of_mt_day
+    $ renpy.pause(1.0)
+    scene bg ext_house_of_mt_day with dissolve2
+    stop ambience fadeout 0.5
     show kat normal pioneer at left
     show un smile pioneer at right
     with dissolve2
-    play ambience ambience_camp_center_day fadein 3.5
+    play ambience ambience_camp_center_day fadein 3
     window show dissolve
     play music wnfh_music_list["the_bridge"] fadein 3.5
 
@@ -314,16 +308,20 @@ label d8_begunok_w_un_cont:
     "Куда, собственно, мы незамедлительно вошли."
 
     stop ambience fadeout 3.5
+    play sound sfx_open_dooor_campus_1
+    $ renpy.pause(1.0)
     show bg int_house_of_mt_day
     show mt sad pioneer far at center
-    with dissolve2
+    with door_blure_dissolve
     play ambience ambience_int_cabin_day fadein 3.5
+    play sound wnfh_sfx_list["writing_loop"] loop fadein 0.5
 
     "Внутри, как и следовало ожидать, за столом сидела вожатая и заполняла какие-то документы."
 
     kat "Вот и мы!"
 
-    show mt surprise pioneer far at center with dspr 
+    show mt surprise pioneer far at center with dspr
+    stop sound fadeout 0.5 
 
     "Ольга Дмитриевна оторвала свой взгляд от бумаг и удивлённым взглядом уставилась на Лену."
 
@@ -518,7 +516,8 @@ label d8_begunok_w_un_2:
 
     "Мне же в плане поднятия своей тушки повезло несколько меньше[wp]"
     
-    play sound sfx_open_door_strong
+    with vpunch
+    play sound wnfh_sfx_list["door_hit_fall"]
     show kat scared pioneer at left
     show un shocked pioneer at right
     with dspr
@@ -563,10 +562,8 @@ label d8_begunok_w_un_1:
 
     "Лена посмотрела на меня каким-то осуждающим взглядом."
 
-    hide un with dissolve2
-
-    # Надо анимацию Лене
-    $ renpy.notify("Тут надо анимацию того как уходит Лена вправо")
+    show un normal pioneer:
+        ease_quart 2.5 xcenter 1.9
 
     "И, гордо хмыкнув, развернулась и пошла в сторону центра лагеря."
 
@@ -578,8 +575,8 @@ label d8_begunok_w_un_1:
         
         kat "Наверное, я тоже пойду."
         
-        hide kat with dissolve
-        $ renpy.notify("Надо Кате анимацию как она уходит вправо")
+        show kat confused pioneer:
+            ease_quart 2.5 xcenter 1.9
         
         "Она ушла вслед за Леной, оставив меня одного."
         
@@ -722,7 +719,7 @@ label d8_begunok_w_un_flagcheck_ne_oblil:
     kat "Нет, к сожалению."
     kat "Мне тяжело друзей заводить."
 
-    if wnfh_Data.getChoice_points_sum("kat") == 3:
+    if wnfh_Data.getChoice_points_sum("kat") >= 3:
 
         kat "Разве что с тобой вроде как сдружилась ещё."
 
@@ -746,7 +743,6 @@ label d8_begunok_w_un_flagcheck_me_oblil:
     $ wnfh_Data.AddLove_points({"kat":1})
 
     show kat normal pioneer at left with dspr
-    $ renpy.notify("Возможно тут следует дать Кате анимацию передвижения, но щас кароче лень этим маяцаааа")
     "Катя проводила взглядом ушедшую Лену и села рядом со мной."
     
     kat "Соглашусь, пожалуй, с тобой. Устала я ходить[wp]"
@@ -808,11 +804,11 @@ label d8_begunok_w_un_appologize:
 
     "Катя насмешливо хмыкнула."
 
-    if wnfh_Data.getChoice_points_sum("kat") == 3:
+    if wnfh_Data.getChoice_points_sum("kat") >= 3:
 
         show kat happy pioneer at left with dspr
 
-        kat "Хорошо, я прощу тебя."
+        kat "Хорошо, прощаю."
 
     else:
 
@@ -830,7 +826,7 @@ label d8_begunok_w_un_appologize:
 label d8_begunok_w_un_silience:
 
     window show dissolve
-    show kat poсkerface pioneer at left with dspr
+    show kat pockerface pioneer at left with dspr
     
     "Я предпочёл промолчать в ответ на этот очевиднеший намёк и грустно уткнулся взглядом в землю, где стал разглядывать пробегающих муравьёв."
     "Пионерка не отрывала с меня взор ещё несколько секунд. Но, поняв, что ничего она от меня не услышит, Катя также уткнула взгляд в землю."

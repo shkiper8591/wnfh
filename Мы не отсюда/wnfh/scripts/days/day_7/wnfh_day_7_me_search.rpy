@@ -15,13 +15,12 @@ label d7_me_search:
     th "Вообще они могут быть где угодно, но в этих трёх местах шанс их нахождения больше всего, и их стоит проверить в первую очередь."
 
     ## Можно стилизовать под карту, но пока будет так
-    #КОСЯК: флаги просмотра локаций приводят к трейсам.
 
     window hide dissolve
     call screen wnfh_choice(
-        ["dv", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
-        ["dv", "Спортплощадка", "Чуть менее очевидное", "d7_me_search_dv_sport"],
-        ["dv", "Пляж", "Наименее очевидное", "d7_me_search_dv_beach"],
+        ["neutral", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
+        ["neutral", "Спортплощадка", "Чуть менее очевидное", "d7_me_search_dv_sport"],
+        ["neutral", "Пляж", "Наименее очевидное", "d7_me_search_dv_beach"],
         ["d7_choice_n10", "Где искать рыжих"]
         ) with sphere_blure_dissolve2
 
@@ -32,27 +31,29 @@ label d7_me_search_2:
     $ renpy.pause(0.3)
     window show dissolve
 
-    "Вернувшись на площадь, я стал раздумывать над оставшимися вариантами."
+    "Дорога снова привела меня в центр."
+
+    th "Ну и хорошо, отсюда удобнее продолжить поиск. Вопрос в том, где их искать?"
 
     if wnfh_Data.getChoice_result_number("d7_choice_n10") == 2:
 
         call screen wnfh_choice(
-        ["dv", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
-        ["dv", "Пляж", "Наименее очевидное", "d7_me_search_dv_beach"],
+        ["neutral", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
+        ["neutral", "Пляж", "Наименее очевидное", "d7_me_search_dv_beach"],
         ["d7_choice_n12", "Где искать рыжих_2"]
         ) with sphere_blure_dissolve2        
 
     else:
 
         call screen wnfh_choice(
-        ["dv", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
-        ["dv", "Спортплощадка", "Чуть менее очевидное", "d7_me_search_dv_sport"],
+        ["neutral", "Их домик", "Самое очевидное", "d7_me_search_dv_house"],
+        ["neutral", "Спортплощадка", "Чуть менее очевидное", "d7_me_search_dv_sport"],
         ["d7_choice_n13", "Где искать рыжих_3"]
         ) with sphere_blure_dissolve2
 
 label d7_me_search_3:
 
-    $ wnfh_Data.FlagSet("d7_search_3", True)
+    scene bg ext_lenin_square_day_wnfh with dissolve2
 
     "Так, остальные варианты я осмотрел. Остался один — их домик."
     "Куда я и направился."
@@ -60,8 +61,6 @@ label d7_me_search_3:
     jump d7_me_search_dv_house
 
 label d7_me_search_dv_beach:
-    
-    $ wnfh_Data.FlagSet("d7_beach_check", True)
     
     th "Вряд ли я их там найду[wp] Хотя в такую жаркую погоду искупаться — самое то."
     th "А посему, думаю, я могу их там найти[wp] Ну или хотя бы следы их пребывания."
@@ -71,17 +70,16 @@ label d7_me_search_dv_beach:
     scene bg ext_beach_day with dissolve2
     play ambience ambience_lake_shore_day fadein 3.5
     window show dissolve
-    # возможно стоит придумать что-то интересное на пляже, но мне как-то лень.
 
-    "Придя на пляж, я нисколько не удивился, не найдя здесь никого."
-    "Здесь царила абсолютная тишина."
-    #КОСЯК: ну не прям косяк, но в такую жаркую погоду в людном лагере пляж будет забит. Думаю, следует добавить людей. Семён видит толпу, осматривает, не находит рыжих и идёт дальше.
+    "Придя на пляж, я нисколько не удивился, увидев отдыхающих на берегу."
+    "Кто-то плескался, кто-то просто загорал. Говоря вкратце, пионеры наслаждались жарким летним днём."
+    "Однако искомые рыжие макушки я так и не увидел."
 
     me "Ну, чего и следовало ожидать. Зря пришёл только."
 
     "Я постоял, посмотрел по сторонам, почесал репу и пошёл обратно."
 
-    if wnfh_Data.FlagDataGet("d7_sport_check") == True:
+    if wnfh_Data.getChoice_result_number("d7_choice_n10") == 2:
 
         jump d7_me_search_3
 
@@ -90,8 +88,6 @@ label d7_me_search_dv_beach:
         jump d7_me_search_2
 
 label d7_me_search_dv_sport:
-    
-    $ wnfh_Data.FlagSet("d7_sport_check", True)
 
     th "Думаю, есть шанс встретить их на площадке, раз они так любят заниматься спортом."
 
@@ -171,7 +167,7 @@ label d7_me_search_dv_sport:
 
     "Резко развернувшись на месте на сто восемьдесят, я зашагал обратно."
 
-    if wnfh_Data.FlagDataGet("d7_beach_check") == True:
+    if wnfh_Data.getChoice_result_number("d7_choice_n10") == 3:
 
         jump d7_me_search_3
 

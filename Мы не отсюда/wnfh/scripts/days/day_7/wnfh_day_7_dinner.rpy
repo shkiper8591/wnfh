@@ -36,7 +36,6 @@ label d7_un_zavtrak:
         th "Особенно сейчас, пока я весь украшен пятнами йода."
     
     window hide dissolve
-    # show un normal pioneer at center with dissolve
     show chair_l behind un
     show chair_r
     show un normal pioneer at wnfh_sit_left behind table
@@ -176,8 +175,9 @@ label d7_un_zavtrak:
         ease 2.0 xcenter 0.9
     play music music_list["two_glasses_of_melancholy"] fadein 1.5
 
-    th "Какое-то полнейшее невезение у Лены, кто-то да обязательно перебьёт."
-    #Не совсем косяк, но эту фразу лучше залочить за вторым выбором, ибо если не будет диалога на площади, это прерывание будет первым, и фраза потеряет смысл.
+    if wnfh_Data.getChoice_result_number("d7_choice_n1") == 2:
+
+        th "Какое-то полнейшее невезение у Лены, кто-то да обязательно перебьёт."
     
     mt "Семён! Вот ты где! У меня для тебя важное партзадание!"
 

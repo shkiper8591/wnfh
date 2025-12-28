@@ -25,6 +25,7 @@ label d8_boevaya_zadacha:
     stop ambience fadeout 3.5
     show bg ext_house_of_mt_day with dissolve
     play ambience ambience_camp_center_day fadein 3.5
+    play sound wnfh_sfx_list["key_closing"]
 
     "Мы вышли на улицу, и вожатая закрыла за собой дверь."
 
@@ -108,32 +109,30 @@ label d8_boevaya_zadacha:
     me "А вот и я."
     mt "Отлично, пойдём скорее."
 
-    stop music fadeout 5.0
     stop ambience fadeout 3.5
     scene bg ext_camp_entrance_car_wnfh
     show mt smile pioneer at right
     with dissolve2
     play ambience ambience_camp_entrance_day fadein 3.5
-    $ wnfh_set_name("voice", "Николай")
     $ renpy.notify("В идеале тут должен быть спрайт мужа ОД, но пока что вместо него целое нихуя")
     "На лагерной остановке — кто бы сомневался — стоял автомобиль."
     "Рядом с ним стоял мужчина, который смотрел куда-то вдаль и курил."
 
     mt "Здравствуй, Коленька."
-    voice "Привет, дорогая."
+    mthusb "Привет, дорогая."
 
     "Вожатая подошла к своему супругу и приобняла его."
 
-    voice "Слушай, твои эти директора совсем с дуба рухнули."
+    mthusb "Слушай, твои эти директора совсем с дуба рухнули."
     mt "Что такое?"
-    voice "Да блин, три коробки каких-то бумаг, каждая, наверное, кило пять."
+    mthusb "Да блин, три коробки каких-то бумаг, каждая, наверное, кило пять."
 
     th "Ёлки-палки, во что меня ввязали[wp]"
 
     show mt grin pioneer at right with dspr
 
     mt "Как хорошо, что у меня есть пионер, который поможет мне!"
-    voice "Эксплуатацией занимаешься?"
+    mthusb "Эксплуатацией занимаешься?"
     me "Да вообще жуть."
 
     show mt angry pioneer at right with dspr
@@ -149,23 +148,25 @@ label d8_boevaya_zadacha:
     "«Коленька», докурив сигарету, протянул мне руку."
     "Я даже удивился сначала, но руку всё же пожал."
 
-    voice "Николай."
+    mthusb "Николай."
     me "Семён."
-    voice "Ну, крепись, Семён."
+    mthusb "Ну, крепись, Семён."
 
     "Он открыл заднюю дверь машины и вытащил оттуда три коробки, которые поставил на землю."
 
-    voice "Ну всё, я поехал, а то майор мне[wp]"
+    mthusb "Ну всё, я поехал, а то майор мне[wp]"
 
     show mt smile pioneer at right with dspr
 
     mt "Не будем говорить, что майор тебе. Спасибо тебе огромное!"
 
     show bg ext_no_bus with dissolve
+    play sound wnfh_sfx_list["mthusb_leave"]
 
     "Ольга и Николай чмокнулись на прощание, после чего он сел в авто и уехал."
 
     show mt sad pioneer at center with dspr
+    stop music fadeout 5.0
 
     mt "Так, теперь нужно придумать, как это всё дотащить."
 
@@ -247,7 +248,7 @@ label d8_boevaya_zadacha:
     show mt normal pioneer at right
     with dspr
 
-    mt "Что ж, звучит складно[wp]"
+    mt "Ладно, допустим[wp]"
 
     show kat guilty pioneer at left with dspr
 
@@ -301,7 +302,9 @@ label d8_boevaya_zadacha:
     mt "М-да[wp] Плохо, тут были нужные[wp] Но, думаю, их ещё можно спасти."
     mt "Ладно, давайте, несите их, а я пошла."
 
-    hide mt 
+    show mt normal pioneer:
+        ease 1.0 xcenter 1.2 
+    $ renpy.pause(0.5)
     show kat sad pioneer at center
     with dissolve
     stop music fadeout 5.0

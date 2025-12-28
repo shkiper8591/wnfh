@@ -170,6 +170,9 @@ label d8_obed_me_dv:
 
     usw "Обязательно!"
 
+    $ wnfh_Data.get_achievement("apple")
+    $ renpy.pause(1.0, hard=True)
+
     show usw normalsmile pioneer at right with dspr
 
     me "Ну что, когда там уже обед?"

@@ -14,6 +14,7 @@ label d8_ending:
     scene bg int_house_of_mt_night 
     show mt normal nightdress at center
     with dissolve2
+    play sound sfx_open_dooor_campus_1
     play ambience ambience_int_cabin_night fadein 2.0
     $ renpy.pause(0.3)
     window show dissolve 
@@ -24,7 +25,7 @@ label d8_ending:
     mt "Ох, хоть бы сегодня он пришёл вовремя."
     me "Это вы про меня?"
 
-    show mt surprise nightdress at center with dspr
+    show mt shocked nightdress at center with dspr
 
     "Ольга Дмитриевна от испуга резко повернулась и схватилась за сердце."
 
@@ -50,6 +51,7 @@ label d8_ending:
     $ wnfh_set_time("night")
 
     show bg int_house_of_mt_night2 with dspr
+    play sound sfx_click_1
     hide mt with dissolve
 
     "Ольга Дмитриевна выключила свет и тоже легла в постель."
@@ -81,6 +83,7 @@ label d8_ending_dv:
     scene bg int_house_of_mt_night
     show mt walk_1 wlk background
     with dissolve
+    play sound sfx_open_dooor_campus_1
     play ambience ambience_int_cabin_night fadein 2.0
     $ renpy.pause(0.3)
     window hide dissolve
@@ -148,6 +151,7 @@ label d8_ending_dv:
 
     $ wnfh_set_time("night")
     show bg int_house_of_mt_night2 with dspr
+    play sound sfx_click_1
 
     "Ольге Дмитриевне оставалось лишь печально вздохнуть."
     "Она выключила свет, подошла к своей кровати и легла."

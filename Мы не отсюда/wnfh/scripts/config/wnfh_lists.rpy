@@ -225,6 +225,8 @@ init -4 python:
         "zaebist",
         "handass",
         "placeholder",
+        "shaokahn",
+        "apple",
     ]}
 
     
@@ -273,15 +275,19 @@ init -4 python:
         ] + characters_banners_idle + characters_banners_hover
         }
     wnfh_ach_list = {
-        #Тэг ачивки  #0 Иконка                              #1 Заголовк              #2 Подпись                          #3 Трофей                                #4 Персонаж
-        "payday":   [wnfh_gui["achievements"]["payday"]    ,"Конфетный вор"                       ,"Было весело"                                ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],
-        "spirt":    [wnfh_gui["achievements"]["spirt"]     ,"Где мне найти спирт?"                ,"Живая вода"                                 ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],   
-        "bkrr":     [wnfh_gui["achievements"]["bkrr"]      ,"Да, это именно то, о чём ты подумал" ,"Это отсылка на\n«Булки, Кефир, Рок-н-ролл»" ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],     
-        "post":     [wnfh_gui["achievements"]["post"]      ,"Груз доставлен"                      ,"Почти без повреждений"                      ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],       
-        "alarm":    [wnfh_gui["achievements"]["alarm"]     ,"Das Boot"                            ,"Доплавался, блин"                           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
-        "zaebist":  [wnfh_gui["achievements"]["zaebist"]   ,"Всё идёт по плану"                   ,"При коммунизме всё будет заебись"           ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
-        "handass":  [wnfh_gui["achievements"]["handass"]   ,"Рукожоп"                             ,"Ну как так-то?"                             ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],
-        "seledka":  [wnfh_gui["achievements"]["placeholder"]   ,"Теперь ты — Селёдка"                   ,"Селёдка присоединяется к отряду"            ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],
+     #Уже в игре
+        #Тег ачивки  #0 Иконка                                    #1 Заголовк                 #2 Подпись                               #3 Трофей                                #4 Персонаж 
+        "seledka":   [wnfh_gui["achievements"]["placeholder"]     ,"Теперь ты — Селёдка"      ,"Селёдка присоединяется к отряду"       ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],    
+        "handass":   [wnfh_gui["achievements"]["handass"]         ,"Рукожоп"                  ,"Ну как так-то?"                        ,wnfh_gui["banners"]["trophy_bronz"]     ,"sl"   ],
+        "post":      [wnfh_gui["achievements"]["post"]            ,"Груз доставлен"           ,"Почти без повреждений"                 ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],
+        "bkrr":      [wnfh_gui["achievements"]["bkrr"]            ,"Да, это отсылка"          ,"Именно то, о чём вы подумали"          ,wnfh_gui["banners"]["trophy_bronz"]     ,"mt"   ], 
+        "apple":     [wnfh_gui["achievements"]["apple"]           ,"Добыча приключенца"       ,"+75 к выносливости"                    ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],
+        "shaokahn":  [wnfh_gui["achievements"]["shaokahn"]        ,"Тебе кабздец"             ,"Официально"                            ,wnfh_gui["banners"]["trophy_silver"]    ,"mt"   ],    
+     #Ещё не в игре       
+        "payday":    [wnfh_gui["achievements"]["payday"]          ,"Конфетный вор"            ,"Было весело"                           ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],
+        "spirt":     [wnfh_gui["achievements"]["spirt"]           ,"Где мне найти спирт?"     ,"Живая вода"                            ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],   
+        "alarm":     [wnfh_gui["achievements"]["alarm"]           ,"Das Boot"                 ,"Доплавался, блин"                      ,wnfh_gui["banners"]["trophy_silver"]    ,"kat"  ],
+        "zaebist":   [wnfh_gui["achievements"]["zaebist"]         ,"Всё идёт по плану"        ,"При коммунизме всё будет заебись"      ,wnfh_gui["banners"]["trophy_silver"]    ,"dv"   ],
 
     }
     # Аватарки
@@ -423,7 +429,7 @@ init 1:
     $ wnfh_sfx_list["apchhi"]                                   = wnfh_SFX + "apchhi.ogg"
     $ wnfh_sfx_list["oskolki"]                                  = wnfh_SFX + "oskolki.ogg"
     $ wnfh_sfx_list["zastelayut"]                               = wnfh_SFX + "bed-sheet-movement.ogg"
-    $ wnfh_sfx_list["postavilichtoto"]                          = wnfh_SFX + "postavilichtoto.ogg"
+    $ wnfh_sfx_list["postavilchtoto"]                           = wnfh_SFX + "postavilchtoto.ogg"
     $ wnfh_sfx_list["perelistovanie"]                           = wnfh_SFX + "perelistovanie.ogg"
     $ wnfh_sfx_list["microphone"]                               = wnfh_SFX + "micro.ogg"
     $ wnfh_sfx_list["pogrom"]                                   = wnfh_SFX + "zvuk-padeniya-na-mebel-i-pogrom.ogg"
@@ -442,11 +448,47 @@ init 1:
     $ wnfh_sfx_list["smishnaya_zaglushka"]                      = wnfh_SFX + "2Alphys - phone impr.mp3"
     $ wnfh_sfx_list["meow5"]                                    = wnfh_SFX + "meow5.ogg"
     $ wnfh_sfx_list["wave_of_the_hand_knb_game"]                = wnfh_SFX + "wave-of-the-hand-knb.ogg"
+    $ wnfh_sfx_list["cracking_knuckles"]                        = wnfh_SFX + "cracking_knuckles.ogg"
+    $ wnfh_sfx_list["un_gun"]                                   = wnfh_SFX + "un_gun.ogg"
+    $ wnfh_sfx_list["door_hit_fall"]                            = wnfh_SFX + "door_hit_fall.ogg"
+    $ wnfh_sfx_list["sh_radio_break"]                           = wnfh_SFX + "sh_radio_break.ogg"
+    $ wnfh_sfx_list["journal_close"]                            = wnfh_SFX + "journal_close.ogg"
+    $ wnfh_sfx_list["rope_tight"]                               = wnfh_SFX + "rope_tight.ogg"
+    $ wnfh_sfx_list["rope_cut"]                                 = wnfh_SFX + "rope_cut.ogg"
+    $ wnfh_sfx_list["mz_clap"]                                  = wnfh_SFX + "mz_clap.ogg"
+    $ wnfh_sfx_list["sarcastic_clap"]                           = wnfh_SFX + "sarcastic_clap.ogg"
+    $ wnfh_sfx_list["paper_bag"]                                = wnfh_SFX + "paper_bag.ogg"
+    $ wnfh_sfx_list["kat_dv_oblila"]                            = wnfh_SFX + "kat_dv_oblila.ogg"
+    $ wnfh_sfx_list["concrete_footsteps"]                       = wnfh_SFX + "concrete_footsteps.ogg"
+    $ wnfh_sfx_list["signature_writing"]                        = wnfh_SFX + "signature_writing.ogg"
+    $ wnfh_sfx_list["key_closing"]                              = wnfh_SFX + "key_closing.ogg"
+    $ wnfh_sfx_list["mthusb_leave"]                             = wnfh_SFX + "mthusb_leave.ogg"
+    $ wnfh_sfx_list["writing_loop"]                             = wnfh_SFX + "writing_loop.ogg"
+    $ wnfh_sfx_list["dv_musclub_break"]                         = wnfh_SFX + "dv_musclub_break.ogg"
+    $ wnfh_sfx_list["mi_musclub_awaken"]                        = wnfh_SFX + "mi_musclub_awaken.ogg"
+    $ wnfh_sfx_list["fall_in_grass"]                            = wnfh_SFX + "fall_in_grass.ogg"
+    $ wnfh_sfx_list["sugar_stir"]                               = wnfh_SFX + "sugar_stir.ogg"
+    $ wnfh_sfx_list["me_sh_razgrebaem"]                         = wnfh_SFX + "me_sh_razgrebaem.ogg"
+    $ wnfh_sfx_list["furniture_move_loop"]                      = wnfh_SFX + "furniture_move_loop.ogg"
+    $ wnfh_sfx_list["glass_put"]                                = wnfh_SFX + "glass_put.ogg"
+    $ wnfh_sfx_list["pour_in_a_glass"]                          = wnfh_SFX + "pour_in_a_glass.ogg"
+    $ wnfh_sfx_list["tape_rewind"]                              = wnfh_SFX + "tape_rewind.ogg"
+    $ wnfh_sfx_list["typewriter_paper"]                         = wnfh_SFX + "typewriter_paper.ogg"
+    $ wnfh_sfx_list["typewriter_typing"]                        = wnfh_SFX + "typewriter_typing.ogg"
+    $ wnfh_sfx_list["usw_whistle"]                              = wnfh_SFX + "usw_whistle.ogg"
+    $ wnfh_sfx_list["me_tazik"]                                 = wnfh_SFX + "me_tazik.ogg"
+    $ wnfh_sfx_list["wood_hit"]                                 = wnfh_SFX + "wood_hit.ogg"
+    $ wnfh_sfx_list["mi_hit_storeroom"]                         = wnfh_SFX + "mi_hit_storeroom.ogg"
+    $ wnfh_sfx_list["sink_fast"]                                = wnfh_SFX + "sink_fast.ogg"
+    $ wnfh_sfx_list["knock_arrival"]                            = wnfh_SFX + "knock_arrival.ogg"
+    $ wnfh_sfx_list["warehouse_seledka"]                        = wnfh_SFX + "warehouse_seledka.ogg"
+    $ wnfh_sfx_list["hiss"]                                     = wnfh_SFX + "hiss.ogg"
+    $ wnfh_sfx_list["broom_throw"]                              = wnfh_SFX + "broom_throw.ogg"
     #$ wnfh_sfx_list[""] = wnfh_SFX + ".ogg"
     
     
     # MUSIC Лист
-    $ wnfh_music_list["technical_chocolatki"]                   = wnfh_MUSIC + "technical_chocolatki.mp3"
+    $ wnfh_music_list["technical_chocolatki"]                   = wnfh_MUSIC + "Cocktail Shakers - Girl from Petaluma.mp3"
     $ wnfh_music_list["angus_climbs_the_hill"]                  = wnfh_MUSIC + "Alec Holowka - Angus Climbs the Hill.mp3"
     $ wnfh_music_list["church_hill"]                            = wnfh_MUSIC + "Alec Holowka - Church Hill.mp3"
     $ wnfh_music_list["crimes"]                                 = wnfh_MUSIC + "Alec Holowka - Crimes.mp3"
@@ -465,14 +507,13 @@ init 1:
     $ wnfh_music_list["fireflies_on_the_porch"]                 = wnfh_MUSIC + "Alec Holowka - Fireflies on the Porch.mp3"
     $ wnfh_music_list["the_cars_you_might_think"]               = wnfh_MUSIC + "The Cars - You Might Think.ogg"
     $ wnfh_music_list["proximity"]                              = wnfh_MUSIC + "Alec Holowka - Proximity.mp3"
-    $ wnfh_music_list["we_dont_care"]                           = wnfh_MUSIC + "We Dont Care.ogg"
+    $ wnfh_music_list["we_dont_care"]                           = wnfh_MUSIC + "The Diamond Arm - The Song About Hares.ogg"
     $ wnfh_music_list["sharkle_dream"]                          = wnfh_MUSIC + "Alec Holowka - Sharkle Dream.mp3"
     $ wnfh_music_list["the_hole_at_the_center_of_everything"]   = wnfh_MUSIC + "Alec Holowka - The Hole At The Center Of Everything.mp3"
-    $ wnfh_music_list["major_grom"]                             = wnfh_MUSIC + "Move Like A Devil.mp3"
+    $ wnfh_music_list["major_grom"]                             = wnfh_MUSIC + "Roman Seliverstov - Move Like A Devil.mp3"
     $ wnfh_music_list["ratne_igre"]                             = wnfh_MUSIC + "Kerber - Ratne Igre.mp3"
-    $ wnfh_music_list["international"]                          = wnfh_MUSIC + "international.mp3"
-    $ wnfh_music_list["strange"]                                = wnfh_MUSIC + "strange.ogg"
-    $ wnfh_music_list["major_grom_2"]                           = wnfh_MUSIC + "ya znayu kto ti.mp3"
+    $ wnfh_music_list["international"]                          = wnfh_MUSIC + "Arkady Kots - International.mp3"
+    $ wnfh_music_list["strange"]                                = wnfh_MUSIC + "Sergey Eybog - Uvao 2 Theme 2.ogg"
     $ wnfh_music_list["santa_barbara"]                          = wnfh_MUSIC + "santa barbara music.mp3"
     $ wnfh_music_list["back_in_black"]                          = wnfh_MUSIC + "AC-DC - Back in black.mp3"
     $ wnfh_music_list["dance_of_the_moonlight_jellies"]         = wnfh_MUSIC + "ConcernedApe - Dance of the Moonlight Jellies.mp3"
@@ -489,13 +530,13 @@ init 1:
     $ wnfh_music_list["rain"]                                   = wnfh_MUSIC + "Max LL - Rain.mp3"
     $ wnfh_music_list["shallow_waters_night"]                   = wnfh_MUSIC + "Max LL - Shallow Waters (Night).mp3"
     $ wnfh_music_list["the_swarms_of_hades"]                    = wnfh_MUSIC + "Max LL - The Swarms of Hades.mp3"
-    $ wnfh_music_list["razbor_poletov"]                         = wnfh_MUSIC + "razbor poletov - svati.mp3"                                  
+    $ wnfh_music_list["razbor_poletov"]                         = wnfh_MUSIC + "Svaty - razbor poletov.mp3"                                  
     $ wnfh_music_list["trevoga_1"]                              = wnfh_MUSIC + "Wnfh - Sense of anxiety.mp3"                                         ## НАШЕ ##
-    $ wnfh_music_list["sport2"]                                 = wnfh_MUSIC + "sport2 - svati.mp3"
-    $ wnfh_music_list["estafeta"]                               = wnfh_MUSIC + "estafeta - svati.mp3" 
+    $ wnfh_music_list["sport2"]                                 = wnfh_MUSIC + "Svaty - sport2.mp3"
+    $ wnfh_music_list["estafeta"]                               = wnfh_MUSIC + "Svaty - estafeta.mp3" 
     $ wnfh_music_list["country_shop"]                           = wnfh_MUSIC + "ConcernedApe - Country Shop.mp3"
-    $ wnfh_music_list["ya_znayu_kto_ti"]                        = wnfh_MUSIC + "ya znayu kto ti.mp3"
-    $ wnfh_music_list["candy_store"]                            = wnfh_MUSIC + "Candy_store.mp3"
+    $ wnfh_music_list["ya_znayu_kto_ti"]                        = wnfh_MUSIC + "Super Collection Orchestra - I know who you are.mp3"
+    $ wnfh_music_list["candy_store"]                            = wnfh_MUSIC + "Heathers the Musical - Candy store.mp3"
     $ wnfh_music_list["hide_and_seek"]                          = wnfh_MUSIC + "Sergey Eybog - Hide and Seek.mp3"
     $ wnfh_music_list["warm_evening"]                           = wnfh_MUSIC + "Sergey Eybog - Warm Evening.mp3"
     $ wnfh_music_list["paranoid"]                               = wnfh_MUSIC + "Black Sabbath - Paranoid.mp3"
@@ -507,9 +548,9 @@ init 1:
     $ wnfh_music_list["friends_of_the_deceased_moon"]           = wnfh_MUSIC + "_Blacksmith_ - Friends of the Deceased Moon.mp3"
     $ wnfh_music_list["angus_at_home"]                          = wnfh_MUSIC + "Alec Holowka - Angus at Home.mp3"
     $ wnfh_music_list["the_hill_camp_morning"]                  = wnfh_MUSIC + "_Blacksmith_ - The Hill Camp Morning.mp3"
-    $ wnfh_music_list["clean_up"]                               = wnfh_MUSIC + "Clean up.mp3"
-    $ wnfh_music_list["dealing_with_destruction"]               = wnfh_MUSIC + "Dealing With Destruction.mp3"
-    $ wnfh_music_list["corridors"]                              = wnfh_MUSIC + "Corridors.mp3"
+    $ wnfh_music_list["clean_up"]                               = wnfh_MUSIC + "Chernobyl - Clean Up.mp3"
+    $ wnfh_music_list["dealing_with_destruction"]               = wnfh_MUSIC + "Chernobyl - Dealing With Destruction.mp3"
+    $ wnfh_music_list["corridors"]                              = wnfh_MUSIC + "Chernobyl - Corridors.mp3"
     $ wnfh_music_list["violin_solo"]                            = wnfh_MUSIC + "ConcernedApe - Violin Solo.mp3"
     $ wnfh_music_list["the_valley_comes_alive"]                 = wnfh_MUSIC + "ConcernedApe - Spring (The Valley Comes Alive).mp3"
     $ wnfh_music_list["the_sun_can_bend_an_orange_sky"]         = wnfh_MUSIC + "ConcernedApe - Summer (The Sun Can Bend an Orange Sky).mp3"
@@ -524,10 +565,10 @@ init 1:
     $ wnfh_music_list["time_to_say_goodbye"]                    = wnfh_MUSIC + "Wnfh - Time to say goodbye.mp3"
     $ wnfh_music_list["good_morning_1"]                         = wnfh_MUSIC + "Wnfh - Good morning!1.mp3"
     $ wnfh_music_list["the_historical_society"]                 = wnfh_MUSIC + "Alec Holowka - The Historical Society.mp3"
-    $ wnfh_music_list["i_wanna_rock"]                           = wnfh_MUSIC + "Twisted_Sister_-_I_Wanna_Rock.mp3"
-    $ wnfh_music_list["kinda_scary"]                            = wnfh_MUSIC + "Kinda Scary(1).mp3"
-    $ wnfh_music_list["emotional_one"]                          = wnfh_MUSIC + "Such an emotional one.mp3"
-    $ wnfh_music_list["chilling_out"]                           = wnfh_MUSIC + "Chillin' Out.mp3"
+    $ wnfh_music_list["i_wanna_rock"]                           = wnfh_MUSIC + "Twisted Sister - I Wanna Rock.mp3"
+    $ wnfh_music_list["kinda_scary"]                            = wnfh_MUSIC + "Wnfh - Kinda Scary.mp3"
+    $ wnfh_music_list["emotional_one"]                          = wnfh_MUSIC + "Wnfh - Such an emotional one.mp3"
+    $ wnfh_music_list["chilling_out"]                           = wnfh_MUSIC + "Wnfh - Chillin' Out.mp3"
     $ wnfh_music_list["chill_morning_1"]                        = wnfh_MUSIC + "Wnfh - that is what weekday mornings feel like.mp3"
     $ wnfh_music_list["this_one_sounds_sad"]                    = wnfh_MUSIC + "Wnfh - this one sounds sad.mp3"
     $ wnfh_music_list["argument"]                               = wnfh_MUSIC + "Wnfh - argument.mp3"
@@ -541,7 +582,14 @@ init 1:
     $ wnfh_music_list["evening_1"]                              = wnfh_MUSIC + "Wnfh - Soiree.mp3"
     $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
     $ wnfh_music_list["classic_bossa"]                          = wnfh_MUSIC + "_Blacksmith_ - Classic Bossa.mp3"
-    $ wnfh_music_list["kilometri_leta"]                         = wnfh_MUSIC + "kilometri leta - svati.mp3"
+    $ wnfh_music_list["kilometri_leta"]                         = wnfh_MUSIC + "Svaty - kilometri leta.mp3"
+    $ wnfh_music_list["shadow_of_lies"]                         = wnfh_MUSIC + "Audio Network - Shadow of Lies.mp3"
+    $ wnfh_music_list["street_killer"]                          = wnfh_MUSIC + "Audio Network - Street Killer.mp3"
+    $ wnfh_music_list["the_search"]                             = wnfh_MUSIC + "Audio Network - The Search.mp3"
+    $ wnfh_music_list["rise_of_the_mechs"]                      = wnfh_MUSIC + "Audio Network - Rise Of The Mechs.mp3"
+    $ wnfh_music_list["wolf_at_the_door"]                       = wnfh_MUSIC + "Secession Studios - Wolf at the Door.mp3"
+    $ wnfh_music_list["the_nothing"]                            = wnfh_MUSIC + "Big Al's Jams - The Nothing.mp3"
+    $ wnfh_music_list["giving_up_hope"]                         = wnfh_MUSIC + "ToxiSector - giving up hope.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     
@@ -554,7 +602,7 @@ init 1:
     $ wnfh_ambience_list["beach_children"]                      = wnfh_AMBIENCE + "beach_children.mp3"
     $ wnfh_ambience_list["water_stream"]                        = wnfh_AMBIENCE + "water_stream_closer.mp3"
     $ wnfh_ambience_list["water_drop"]                          = wnfh_AMBIENCE + "water_drop.mp3"
-    $ wnfh_ambience_list["rain_night"]                          = wnfh_AMBIENCE + "ambience_rain_night.mp3"
+    $ wnfh_ambience_list["rain_night"]                          = wnfh_AMBIENCE + "ambience_rain_night.ogg"
     $ wnfh_ambience_list["rain"]                                = wnfh_AMBIENCE + "rain.mp3"
     $ wnfh_ambience_list["rain_in_building"]                    = wnfh_AMBIENCE + "rain_in_building.mp3"
     $ wnfh_ambience_list["dush"]                                = wnfh_AMBIENCE + "ambience_showers.mp3"
@@ -562,8 +610,11 @@ init 1:
     $ wnfh_ambience_list["skvoznyak"]                           = wnfh_AMBIENCE + "skvoznyak.mp3"
     $ wnfh_ambience_list["salute"]                              = wnfh_AMBIENCE + "ambience_salute.mp3"
     $ wnfh_ambience_list["veter_v_pole"]                        = wnfh_AMBIENCE + "veter-v-pole.mp3"
-    $ wnfh_ambience_list["ambience_int_old_building"]           = wnfh_AMBIENCE + "ambience_int_old_building.mp3"
+    $ wnfh_ambience_list["ambience_int_old_building"]           = wnfh_AMBIENCE + "ambience_int_old_building.ogg"
     $ wnfh_ambience_list["ambient_city_street_day"]             = wnfh_AMBIENCE + "ambient_city_street_day.ogg"
+    $ wnfh_ambience_list["sporthall"]                           = wnfh_AMBIENCE + "sporthall.ogg"
+    $ wnfh_ambience_list["forest_lake_day"]                     = wnfh_AMBIENCE + "forest_lake_day.ogg"
+    $ wnfh_ambience_list["forest_lake_night"]                   = wnfh_AMBIENCE + "forest_lake_night.ogg"
     #$ wnfh_ambience_list[""] = wnfh_AMBIENCE + ".mp3"
     
     ## Рандомизация мявков

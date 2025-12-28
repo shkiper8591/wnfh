@@ -168,6 +168,7 @@ label d7_me_meet_kat_w_un:
     show sv angry pioneer glasses tablet at left
     play sound sfx_open_door_1
     with door_blure_dissolve2
+    play music wnfh_music_list["razbor_poletov"] fadein 2.5
     play ambience ambience_int_cabin_evening fadein 2.0
     window show dissolve
 
@@ -240,6 +241,7 @@ label d7_me_meet_kat_w_un:
     me "Есть."
 
     window hide dissolve
+    stop music fadeout 3.0
     stop ambience fadeout 2.0
     scene bg ext_clubs_day
     show un serious pioneer at cright
@@ -292,6 +294,7 @@ label d7_me_meet_kat_w_un:
     un "Или в столовой[wp]"
     me "Ну там вряд ли, скорее уж в спортзале."
 
+    with vpunch
     show kat rage casual shirt at left with dspr
     show un scared pioneer at right with dspr
 

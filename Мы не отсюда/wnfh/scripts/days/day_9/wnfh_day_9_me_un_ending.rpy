@@ -461,7 +461,7 @@ label d9_me_alt_un_ending_mt:
 
         elif persistent.wnfh_mat_filter == 1:
 
-            th "Б@$#ь, ну зачем так всё усложнять-то, а?!"
+            th "Б***ь, ну зачем так всё усложнять-то, а?!"
 
         else: 
             

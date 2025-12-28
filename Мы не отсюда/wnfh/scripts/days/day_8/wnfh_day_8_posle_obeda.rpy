@@ -164,17 +164,7 @@ label d8_posle_obeda_mt_angry:
 
     "Позади же я чётко слышал, как бежала за мной вожатая. И самое страшное — она меня уверенно так догоняла!"
 
-    if persistent.wnfh_mat_filter == 0:
-
-       th "Блять, блять, блять[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
-
-    elif persistent.wnfh_mat_filter == 1:
-
-        th "Б@$#ь, б@$#ь, б@$#ь[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
-
-    else: 
-            
-        th "Чёрт, чёрт, чёрт[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
+    th "Чёрт, чёрт, чёрт[wp] {w=0.5}Ну почему я не занимаюсь спортом?!"
 
     scene bg ext_lenin_square_day_wnfh
     show sh smile pioneer far at fright

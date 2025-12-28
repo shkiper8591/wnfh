@@ -315,7 +315,7 @@ label d7_me_meet_kat_w_dw_n_usw:
 
     elif persistent.wnfh_mat_filter == 1:
 
-        th "Вот б@$#ь, нотаций от Шурика мне ещё не хватало[wp]"
+        th "Вот б***ь, нотаций от Шурика мне ещё не хватало[wp]"
 
     else: 
             

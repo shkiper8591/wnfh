@@ -325,12 +325,17 @@ label d9_warehouse:
     "Недолго так просидев, она снова подняла глаза на меня, не спуская взгляд."
 
     me "Что-то не так?"
+
+    show sl surprise pioneer at center with dspr
+
     sl "М? Н-Нет, просто задумалась."
     sl "Мы так редко общаемся[wp] И то как будто только по делам."
     
     "Я призадумался."
 
     th "Да, тут она права, как ни крути[wp]"
+
+    show sl normal pioneer at center with dspr
 
     if wnfh_Data.getChoice_result_number("d7_choice_n1") == 1:
 
@@ -438,7 +443,7 @@ label d9_warehouse:
     me "Просто у меня нет никакого СССР."
     me "К тому времени он уже давно распался на отдельные республики. {w}Потому девяностые стали временем хаоса, разрухи и конфликтов."
 
-    show sl sad pioneer at center with dspr
+    show sl guilty pioneer at center with dspr
 
     "Такой ход событий сильно расстроил Славю. Кажется, она даже немного испугалась."
 

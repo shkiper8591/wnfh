@@ -369,7 +369,7 @@ label d7_sl_probejka:
     cs "Гипса я что-то на тебе не вижу."
 
     show cs normal medcoat glasses with dspr
-    show sl sad sport at right with dspr
+    show sl guilty sport at right with dspr
 
     sl "Это всё из-за меня. Я совсем забыла, что новичкам лучше не бегать по просёлочной дороге в свой первый раз."
     sl "Я просто хотела пробежаться в чьей-нибудь компании[wp] И чтобы Семёну это пошло на пользу."
@@ -861,7 +861,7 @@ label d7_sl_otkaz:
     un "Ну, погоди тогда[wp]"
     
     show dv surprise pioneer2 close with dspr
-    show un normal pioneer close:
+    show un smirk pioneer close:
         ease 0.3 ycenter 0.5
     with dspr
     play music music_list["always_ready"] fadein 3
@@ -927,11 +927,15 @@ label d7_sl_otkaz:
     un "Опять за своё?"
     dv "Зачем нужно было устраивать всё это?"
     un "Мне казалось, я доходчиво объяснила."
+
+    show un mad pioneer close with dspr
+    
     un "Может, мне стоит повторить?"
     dv "Семён, ну скажи ты ей!"
     #th "Да отвалите от меня все!"
     me "Пожалуй, соглашусь с Алисой."
     me "Устроила тут цирк какой-то. {w}Можно же было и более дипломатично поступить."
+
     un "Ах более дипломатично, значит[wp]"
     
     "Лена глубоко вздохнула и встала с лавочки."

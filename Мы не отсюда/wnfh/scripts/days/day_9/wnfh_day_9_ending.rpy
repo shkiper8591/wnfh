@@ -82,10 +82,11 @@ label d9_ending:
     mt "Скажем так, такие люди очень легко могут быть завербованы."
     me "Завербованы?"
 
-    #тут надо сделать типа вспышку и крутой переход на новый фон, круто придумал, да???
     window hide dissolve
     stop ambience fadeout 2.5
-    show bg int_house_of_mt_night2 with dspr
+    show bg int_house_of_mt_night2
+    show mt normal pioneer at center
+    with flash
     $ wnfh_set_time("night")
     play sound sfx_thunder_crack
     play ambience wnfh_ambience_list["rain_in_building"] fadein 2.5

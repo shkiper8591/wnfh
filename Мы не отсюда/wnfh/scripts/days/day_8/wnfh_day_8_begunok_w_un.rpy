@@ -27,19 +27,31 @@ label d8_begunok_w_un:
     
     un "Что ж, медпункт и библиотека тут поблизости, можем сразу туда сходить."
 
+    show d8_kat_un_map1 with dissolve
+
     "В голове я нарисовал себе карту лагеря."
 
-    # возможно тут следует показать карту под какой-нибудь смешной звук
-    # а потом сделать анимацию как Семён представляет себе путь по лагерю
-
-    show black with dissolve
-    $ renpy.notify("Тут должна быть карта с анимацией")
     th "Если так прикинуть, то эффективнее выйдет начать с дальнего края «Совёнка»."
-    th "И потом, если идти зигзагами от музклуба[wp] Да[wp]"
-    th "После чего посетим клубы, пройдём через площадь — вот мы уже в библиотеке, и медпункт совсем рядом[wp]"
+
+    hide d8_kat_un_map1
+    show d8_kat_un_map2
+    with dissolve
+
+    th "Начнём с нашего клуба, а там[wp] Да[wp]"
+
+    hide d8_kat_un_map2
+    show d8_kat_un_map3
+    with dissolve
+
+    th "После чего посетим музыкальный, от него зигзагами через площадь — вот мы уже в медпункте, и библиотека совсем рядом[wp]"
+
+    hide d8_kat_un_map3
+    show d8_kat_un_map4
+    with dissolve
+
     th "А оттуда прямо к домику вожатой! По-моему, всё идеально складывается."
 
-    hide black
+    hide d8_kat_un_map4
     show kat smile pioneer far at left
     show un smile pioneer far at right
     with sphere_blure_dissolve2

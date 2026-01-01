@@ -342,6 +342,8 @@ init 2:
         # Славя
         make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['guilty', 'rage'])
         make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ['guilty', 'rage'])
+        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions = ['guilty', 'rage'])
+        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'es:<emotion>'], exclude = ['guilty', 'rage'])
         
         # Шурик
         make_sprites_for('sh', 'pioneer', ['es:body', 'es:<emotion>'])
@@ -484,6 +486,11 @@ init 2:
     image to be continued = wnfh_OTHER + "to_be_continued.png"
     ## Юля
     image technical chocolatki = wnfh_OTHER + "technical_chocolatki.png"
+    ## Карта для бегунка с Леной
+    image d8_kat_un_map1 =  wnfh_OTHER + "d8_kat_un_map1.png"
+    image d8_kat_un_map2 =  wnfh_OTHER + "d8_kat_un_map2.png"
+    image d8_kat_un_map3 =  wnfh_OTHER + "d8_kat_un_map3.png"
+    image d8_kat_un_map4 =  wnfh_OTHER + "d8_kat_un_map4.png"
     ## Я не ебу как это по-русски нормально назвать
     image shakers = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(wnfh_OTHER + "shakers.png", wnfh_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(wnfh_OTHER + "shakers.png", wnfh_tint["night"]), True, wnfh_OTHER + "shakers.png")
     ## Стол

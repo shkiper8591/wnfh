@@ -278,7 +278,7 @@ init -4 python:
      #Уже в игре
         #Тег ачивки  #0 Иконка                                    #1 Заголовк                 #2 Подпись                               #3 Трофей                                #4 Персонаж 
         "seledka":   [wnfh_gui["achievements"]["placeholder"]     ,"Теперь ты — Селёдка"      ,"Селёдка присоединяется к отряду"       ,wnfh_gui["banners"]["trophy_bronz"]     ,"usw"  ],    
-        "handass":   [wnfh_gui["achievements"]["handass"]         ,"Рукожоп"                  ,"Ну как так-то?"                        ,wnfh_gui["banners"]["trophy_bronz"]     ,"sl"   ],
+        "handass":   [wnfh_gui["achievements"]["handass"]         ,"Рукожоп"                  ,"Ну как так-то?"                        ,wnfh_gui["banners"]["trophy_bronz"]     ,"me"   ],
         "post":      [wnfh_gui["achievements"]["post"]            ,"Груз доставлен"           ,"Почти без повреждений"                 ,wnfh_gui["banners"]["trophy_bronz"]     ,"kat"  ],
         "bkrr":      [wnfh_gui["achievements"]["bkrr"]            ,"Да, это отсылка"          ,"Именно то, о чём вы подумали"          ,wnfh_gui["banners"]["trophy_bronz"]     ,"mt"   ], 
         "apple":     [wnfh_gui["achievements"]["apple"]           ,"Добыча приключенца"       ,"+75 к выносливости"                    ,wnfh_gui["banners"]["trophy_silver"]    ,"usw"  ],

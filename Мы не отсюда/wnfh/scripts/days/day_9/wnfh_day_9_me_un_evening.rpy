@@ -69,6 +69,8 @@ label d9_me_un_evening:
     un "Не знаю. Просто так, наверное."
     me "Ну, хорошее настроение — это всегда прекрасно."
 
+    play sound sfx_pat_shoulder_hard
+    $ renpy.pause(1.0)
     show un normal pioneer close at center with dspr
     stop music fadeout 2.5
 

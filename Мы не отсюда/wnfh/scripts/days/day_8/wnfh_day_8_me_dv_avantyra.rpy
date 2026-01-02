@@ -230,6 +230,7 @@ label d8_me_dv_avantyra:
     me "Вот знал я, что не стоило мне[wp]"
 
     show dv laugh pioneer2 at center with dspr
+    play sound sfx_pat_shoulder_hard
 
     dv "Да не сцы ты!"
 

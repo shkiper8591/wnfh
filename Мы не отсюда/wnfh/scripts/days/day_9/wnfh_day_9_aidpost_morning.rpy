@@ -279,6 +279,8 @@ label d9_aidpost_morning_vzlom_jopi:
         me "Вряд ли получится."
         dv "В таком случае[wp]"
 
+        play sound sfx_pat_shoulder_hard
+
         "Алиса положила руку мне на плечо."
 
         show dv laugh pioneer at center with dspr

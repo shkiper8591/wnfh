@@ -76,7 +76,7 @@ label d8_evening_2_w_dv:
 
     dv "А то!"
 
-    play sound sfx_punch_medium
+    play sound sfx_pat_shoulder_hard
 
     "Она посмеялась со своей же шутки и легонько стукнула меня по плечу."
 
@@ -423,6 +423,8 @@ label d8_evening_2_w_dv:
     window show dissolve
 
     dv "Не знала, что ты так могёшь!"
+
+    play sound sfx_pat_shoulder_hard
 
     "Алиса по-дружески стукнула меня по плечу."
 

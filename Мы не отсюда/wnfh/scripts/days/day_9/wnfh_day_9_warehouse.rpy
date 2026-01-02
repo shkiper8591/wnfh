@@ -702,6 +702,7 @@ label d9_warehouse:
     me "Наверное."
 
     show mt normal pioneer panama close at center with dspr
+    play sound sfx_pat_shoulder_hard
 
     "Она подошла ближе и похлопала мне по плечу."
 

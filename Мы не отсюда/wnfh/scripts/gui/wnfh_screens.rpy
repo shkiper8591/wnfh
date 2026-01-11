@@ -8,7 +8,7 @@ init python:
         "quit",
         "say",
         "preferences",
-        #"save",
+        "save",
         "load",
         "nvl",
         #"choice",

@@ -92,6 +92,7 @@ init -3 python:
         "neutral":      [u"Костыль ебаный", "#BCBCBC"], #Самый настоящий костыль
     }
     
+    wnfh_character_order = ["kat", "un", "mi", "dv", "usw", "sl", "mt", "din", "sv", "mz"]
     #Честно спизженный код, лежит на всякий случай
     #renpy.image("wnfh_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
     #renpy.image("wnfh_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))

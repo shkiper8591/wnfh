@@ -87,63 +87,63 @@ screen wnfh_game_menu_selector():
                 xmaximum wnfh_frames_elements["widget_music_box_bg"][1]
                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
-    if persistent.wnfh_widget_lp:
-        #frame at atl_wnfh_widget_lp_down: # ================================================ Фрейм таблички
-        frame: # ================================================ Фрейм таблички
-            area(0.5, 0.28, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
-            xanchor 0.5 yanchor 0.5
-            background debug_frame["black"]
-            vbox: # ================================================ Фон таблички из трёх кусков
-                pos (0.5, 0.5)
-                xanchor 0.5 yanchor 0.5
-                spacing 0
-                for element in ["widget_lp_box_line", "widget_lp_box_bg", "widget_lp_box_line"]:
-                    frame:
-                        if persistent.wnfh_debug_color:
-                            background wnfh_frames_elements[element][5]
-                        else:
-                            background frame_transparent
-                        area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-
-            hbox: # ================================================ Ебальники с очками
-                spacing 5
-                anchor (0.5, 0.5) pos (0.5, 0.5)
-                $ character_order = ["kat", "un", "mi", "dv", "usw", "sl", "mt", "din", "sv", "mz"]
-                $ character_with_img = [character for character in character_order]
-                for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
-                    frame:
-                        background debug_frame["black"]
-                        area(0.5, 0.5, 160, wnfh_frames_elements["widget_lp_box_bg"][2])
-                        xanchor 0.5 yanchor 0.5
-                        hbox: # ================================================ Ебальники с очками
-                            spacing 0
-                            anchor (0.5, 0.5) pos (0.5, 0.5)
-                            frame: # ================================================ Ебальники
-                                if persistent.wnfh_debug_color:
-                                    background wnfh_characters[character][1]
-                                else:
-                                    background frame_transparent
-                                area(0.0, 0.5, 70, 90)
-                                xanchor 0.0 yanchor 0.5
-                                if renpy.store.wnfh_tymeofday == "day":
-                                    add (wnfh_gui["avatars"][character]):
-                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                        zoom 0.1
-                                else:
-                                    add (wnfh_gui["avatars"][character]):
-                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                        zoom 0.1
-
-                            frame: # ================================================ Очки
-                                background debug_frame["blue"]
-                                area(1.0, 0.5, 60, 90)
-                                xanchor 1.0 yanchor 0.5
-                                text str(wnfh_Data.getChoice_points_sum(character)):
-                                    style "wnfh_lp_counter"
-                                    color wnfh_characters[character][1]
+    #if persistent.wnfh_widget_lp:
+    #    #frame at atl_wnfh_widget_lp_down: # ================================================ Фрейм таблички
+    #    frame: # ================================================ Фрейм таблички
+    #        area(0.5, 0.28, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)
+    #        xanchor 0.5 yanchor 0.5
+    #        background debug_frame["black"]
+    #        vbox: # ================================================ Фон таблички из трёх кусков
+    #            pos (0.5, 0.5)
+    #            xanchor 0.5 yanchor 0.5
+    #            spacing 0
+    #            for element in ["widget_lp_box_line", "widget_lp_box_bg", "widget_lp_box_line"]:
+    #                frame:
+    #                    if persistent.wnfh_debug_color:
+    #                        background wnfh_frames_elements[element][5]
+    #                    else:
+    #                        background frame_transparent
+    #                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+    #                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+    #                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+#
+    #        hbox: # ================================================ Ебальники с очками
+    #            spacing 5
+    #            anchor (0.5, 0.5) pos (0.5, 0.5)
+    #            
+    #            $ character_with_img = [character for character in wnfh_character_order]
+    #            for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
+    #                frame:
+    #                    background debug_frame["black"]
+    #                    area(0.5, 0.5, 160, wnfh_frames_elements["widget_lp_box_bg"][2])
+    #                    xanchor 0.5 yanchor 0.5
+    #                    hbox: # ================================================ Ебальники с очками
+    #                        spacing 0
+    #                        anchor (0.5, 0.5) pos (0.5, 0.5)
+    #                        frame: # ================================================ Ебальники
+    #                            if persistent.wnfh_debug_color:
+    #                                background wnfh_characters[character][1]
+    #                            else:
+    #                                background frame_transparent
+    #                            area(0.0, 0.5, 70, 90)
+    #                            xanchor 0.0 yanchor 0.5
+    #                            if renpy.store.wnfh_tymeofday == "day":
+    #                                add (wnfh_gui["avatars"][character]):
+    #                                    xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+    #                                    zoom 0.1
+    #                            else:
+    #                                add (wnfh_gui["avatars"][character]):
+    #                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+    #                                    xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+    #                                    zoom 0.1
+#
+    #                        frame: # ================================================ Очки
+    #                            background debug_frame["blue"]
+    #                            area(1.0, 0.5, 60, 90)
+    #                            xanchor 1.0 yanchor 0.5
+    #                            text str(wnfh_Data.getChoice_points_sum(character)):
+    #                                style "wnfh_lp_counter"
+    #                                color wnfh_characters[character][1]
 
     frame: # ================================================ Фрейм таблички
         area(0.5, 0.08, wnfh_frames_elements["widget_lp_box_bg"][1] + 40, wnfh_frames_elements["widget_lp_box_bg"][2] + 20)

@@ -323,7 +323,7 @@ label d9_me_un_evening_resist:
 
     "Лена ёрзала на месте, отчаянно пытаясь распутаться. Но ничего у неё не выходило."
 
-    show un mad pioneer with dspr
+    show un mad_wnfh pioneer with dspr
 
     "Однако в скором времени, видимо, приняв свою беспомощность, она подуспокоилась и просто пилила меня взглядом."
     "И пока я переводил дыхание, на улице послышались разговоры."
@@ -424,7 +424,7 @@ label d9_me_un_evening_agree:
 
     me "Х-Хорошо, я согласен."
 
-    show un smirk pioneer close at center with dspr
+    show un smirk_wnfh pioneer close at center with dspr
 
     "На мой ответ она тихонько хихикнула."
 
@@ -512,7 +512,7 @@ label d9_me_un_evening_2:
     un "Мне показалось, что ты не местный. А я всегда интересовалась, как живётся в других краях."
     me "Прости, если разочаровал."
 
-    show un sad_smile pioneer at center with dspr
+    show un sad_smile_wnfh pioneer at center with dspr
 
     "Она грустно вздохнула."
 

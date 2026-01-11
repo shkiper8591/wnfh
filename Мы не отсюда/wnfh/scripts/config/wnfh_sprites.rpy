@@ -27,7 +27,7 @@ init 2:
                 'confused': 3, 'excitement': 3, 'shy': 3,
             },
             'mt': {
-                'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1,'sad_smile': 1,
+                'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1,'sad_smile_wnfh': 1,
                 'angry': 2, 'rage': 2, 'shocked': 2,
                 'grin': 3, 'laugh': 3, 'scared': 3,
                 'dc_reading': 4, 'dc_smotrit': 4,
@@ -40,8 +40,8 @@ init 2:
                 'normal': 3, 'serious': 3, 'surprise': 3,
             },
             'un': {
-                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'smirk': 1, 'mad': 1,
-                'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'sad_smile': 2,
+                'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'smile': 1, 'smile2': 1, 'smirk_wnfh': 1, 'mad_wnfh': 1,
+                'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'sad_smile_wnfh': 2,
                 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
                 'dr_normal': 4, 'dr_normal_wk': 4, 'dr_smile': 4, 'dr_serious': 4, 'dr_shy_normal': 4, 'dr_shy_normal_wk': 4, 'dr_shy_smile': 4,
             },
@@ -55,7 +55,7 @@ init 2:
             },
             'mi': {
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1,
-                'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_cry': 2, 'smile': 2,
+                'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_cry_wnfh': 2, 'smile': 2,
                 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
                 'dnr_cleaning': 4,
             },
@@ -76,8 +76,8 @@ init 2:
             },
             'sl': {
                 'normal': 1, 'serious': 1, 'smile': 1,
-                'happy': 2, 'laugh': 2, 'shy': 2, 'smile2': 2, 'guilty': 2,
-                'angry': 3, 'sad': 3, 'surprise': 3, 'rage': 3,
+                'happy': 2, 'laugh': 2, 'shy': 2, 'smile2': 2, 'guilty_wnfh': 2,
+                'angry': 3, 'sad': 3, 'surprise': 3, 'rage_wnfh': 3,
                 'scared': 4, 'tender': 4,
                 'wh_normal': 5, 'wh_smotrit': 5, 'wh_snizu': 5, 'wh_snizu2': 5, 'wh_tyanetsa': 5,
             },
@@ -280,12 +280,12 @@ init 2:
         
         ## Новые старые спрайты
         # Мику
-        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'body', ['mod:body', 'mod:<emotion>'], emotions = ['sad_cry'])
-        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_cry']) 
-        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'es:<emotion>'], exclude = ['sad_cry'])  
-        make_sprites_for('mi', 'body', ['mod:body', 'es:<emotion>'], exclude = ['sad_cry'])  
+        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_cry_wnfh'])
+        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'mod:<emotion>'], emotions = ['sad_cry_wnfh'])
+        make_sprites_for('mi', 'body', ['mod:body', 'mod:<emotion>'], emotions = ['sad_cry_wnfh'])
+        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_cry_wnfh']) 
+        make_sprites_for('mi', 'swim', ['mod:body', 'es:swim', 'es:<emotion>'], exclude = ['sad_cry_wnfh'])  
+        make_sprites_for('mi', 'body', ['mod:body', 'es:<emotion>'], exclude = ['sad_cry_wnfh'])  
 
         # Женя
         make_sprites_for('mz', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
@@ -294,10 +294,10 @@ init 2:
         make_sprites_for('mz', 'body glasses', ['mod:body', 'mod:<emotion>', 'mod:glasses'])
         
         # Оля
-        make_sprites_for('mt', 'nightdress', ['mod:body', 'mod:nightdress', 'es:<emotion>'], exclude = ['sad_smile']) 
-        make_sprites_for('mt', 'nightdress', ['mod:body', 'mod:nightdress', 'mod:<emotion>'], emotions = ['sad_smile'])
-        make_sprites_for('mt', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_smile']) 
-        make_sprites_for('mt', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_smile'])
+        make_sprites_for('mt', 'nightdress', ['mod:body', 'mod:nightdress', 'es:<emotion>'], exclude = ['sad_smile_wnfh']) 
+        make_sprites_for('mt', 'nightdress', ['mod:body', 'mod:nightdress', 'mod:<emotion>'], emotions = ['sad_smile_wnfh'])
+        make_sprites_for('mt', 'pioneer', ['mod:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_smile_wnfh']) 
+        make_sprites_for('mt', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_smile_wnfh'])
         make_sprites_for('mt', 'dress', ['mod:body', 'es:dress', 'es:<emotion>'])
         make_sprites_for('mt', 'swim', ['mod:body', 'es:swim', 'es:<emotion>'])
         make_sprites_for('mt', 'body', ['mod:body', 'es:<emotion>'])
@@ -328,22 +328,22 @@ init 2:
         make_sprites_for('usw', 'body bant', ['mod:body2', 'mod:<emotion>'])
         
         # Лена
-        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'es:<emotion>'], exclude = ['sad_smile', 'smirk', 'mad']) 
-        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'mod:<emotion>'], emotions = ['sad_smile', 'smirk', 'mad'])
-        make_sprites_for('un', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_smile', 'smirk', 'mad'])
-        make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_smile', 'smirk', 'mad']) 
-        make_sprites_for('un', 'underwear', ['mod:body', 'mod:underwear', 'es:<emotion>'], exclude = ['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise', 'sad_smile', 'angry2', 'grin', 'laugh', 'rage', 'serious', 'smile3']) 
-        make_sprites_for('un', 'underwear', ['mod:body', 'mod:underwear', 'mod:<emotion>'], emotions = ['sad_smile', 'smirk', 'mad'])
+        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'es:<emotion>'], exclude = ['sad_smile_wnfh', 'smirk_wnfh', 'mad_wnfh']) 
+        make_sprites_for('un', 'apron', ['mod:body', 'mod:apron', 'mod:<emotion>'], emotions = ['sad_smile_wnfh', 'smirk_wnfh', 'mad_wnfh'])
+        make_sprites_for('un', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['sad_smile_wnfh', 'smirk_wnfh', 'mad_wnfh'])
+        make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ['sad_smile_wnfh', 'smirk_wnfh', 'mad_wnfh']) 
+        make_sprites_for('un', 'underwear', ['mod:body', 'mod:underwear', 'es:<emotion>'], exclude = ['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise', 'sad_smile_wnfh', 'angry2', 'grin', 'laugh', 'rage', 'serious', 'smile3', 'smirk_wnfh', 'mad_wnfh']) 
+        make_sprites_for('un', 'underwear', ['mod:body', 'mod:underwear', 'mod:<emotion>'], emotions = ['sad_smile_wnfh', 'smirk_wnfh', 'mad_wnfh'])
 
         # Алиса
         make_sprites_for('dv', 'sport', ['mod:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'sport isolenta', ['mod:body', 'mod:sport', 'es:<emotion>', 'mod:isolenta'])
 
         # Славя
-        make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['guilty', 'rage'])
-        make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ['guilty', 'rage'])
-        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions = ['guilty', 'rage'])
-        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'es:<emotion>'], exclude = ['guilty', 'rage'])
+        make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions = ['guilty_wnfh', 'rage_wnfh'])
+        make_sprites_for('sl', 'pioneer', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude = ['guilty_wnfh', 'rage_wnfh'])
+        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions = ['guilty_wnfh', 'rage_wnfh'])
+        make_sprites_for('sl', 'sport', ['es:body', 'es:sport', 'es:<emotion>'], exclude = ['guilty_wnfh', 'rage_wnfh'])
         
         # Шурик
         make_sprites_for('sh', 'pioneer', ['es:body', 'es:<emotion>'])

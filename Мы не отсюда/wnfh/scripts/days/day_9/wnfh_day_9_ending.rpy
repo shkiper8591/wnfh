@@ -142,7 +142,7 @@ label d9_ending:
     mt "Или, по крайней мере, больше головой думать, а не как вы, мужики, обычно любите."
     me "Обещаю."
 
-    show mt sad_smile pioneer at center with dspr
+    show mt sad_smile_wnfh pioneer at center with dspr
 
     mt "Вот и молодец."
 

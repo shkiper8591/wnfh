@@ -760,7 +760,7 @@ label d9_me_alt_un_ending_sl:
 
     mt "А что я буду объяснять военным, с которыми она работает?"
 
-    show sl guilty pioneer with dspr
+    show sl guilty_wnfh pioneer with dspr
 
     "После такого замечания Славя замялась."
 
@@ -802,7 +802,7 @@ label d9_me_alt_un_ending_sl:
 
     show un surprise pioneer
     show sl surprise pioneer
-    show mt sad_smile pioneer
+    show mt sad_smile_wnfh pioneer
     with dspr
 
     "После услышанного вожатая нервно посмеялась."
@@ -918,7 +918,7 @@ label d9_me_alt_un_ending_sl:
 
     me "Вот скажи, как тебя угораздило во всё это вляпаться?"
 
-    show un sad_smile pioneer close with dspr
+    show un sad_smile_wnfh pioneer close with dspr
 
     "Она неловко усмехнулась."
 
@@ -964,7 +964,7 @@ label d9_me_alt_un_ending_sl:
         un "Но вечером того же дня я вспомнила про одного милого одинокого парня, что вёл себя несколько отлично от других."
         me "Да блин, я же стараюсь вроде."
 
-        show un sad_smile pioneer close with dspr
+        show un sad_smile_wnfh pioneer close with dspr
 
         un "Плохо стараешься."
         me "Спасибо."
@@ -1115,7 +1115,7 @@ label d9_me_alt_un_ending_sl:
 
     "Высвободившись, Лена встала, выпрямилась и тут же обняла Ольгу Дмитриевну."
 
-    show mt sad_smile pioneer at right with dspr
+    show mt sad_smile_wnfh pioneer at right with dspr
 
     "Первые несколько секунд вожатая пребывала в недоумении, но когда услышала всхлипы, по-матерински обняла её."
 
@@ -1152,7 +1152,7 @@ label d9_me_alt_un_ending_sl:
     show sl angry pioneer
     with dspr
     $ renpy.pause(0.1)
-    show sl rage pioneer:
+    show sl rage_wnfh pioneer:
        ease_quart 0.9 xcenter 0.4
     show un scared pioneer:
        ease_quart 0.7 xcenter 0.6

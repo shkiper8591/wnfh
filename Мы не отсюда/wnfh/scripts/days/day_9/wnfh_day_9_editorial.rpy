@@ -694,8 +694,8 @@ label d9_editorial:
 
     window hide dissolve
     #stop ambience fadeout 2.5
-    show bg int_editorial_sunset_wnfh with dissolve2
     $ wnfh_set_time("sunset")
+    show bg int_editorial_sunset_wnfh with dissolve2
     $ renpy.pause(0.3, hard=True)
     #play ambience ambience_cabin_evening fadein 2.5
     window show dissolve

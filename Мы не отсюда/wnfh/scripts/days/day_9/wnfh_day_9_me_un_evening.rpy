@@ -329,8 +329,10 @@ label d9_me_un_evening_resist:
     "И пока я переводил дыхание, на улице послышались разговоры."
 
     play sound sfx_click_2
+    $ wnfh_set_time("night")
     show bg int_clubs_male2_night_nolight with dspr
     $ renpy.pause(0.3, hard=True)
+    $ wnfh_set_time("sunset")
     scene bg int_clubs_male_sunset with dspr
 
     "Мигом подскочив, я выключил свет и подбежал к окну, пытаясь разглядеть хоть что-то через грязное стекло."

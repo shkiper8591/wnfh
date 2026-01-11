@@ -86,8 +86,8 @@ label d9_ending:
     stop ambience fadeout 2.5
     show bg int_house_of_mt_night2
     show mt normal pioneer at center
-    with flash
     $ wnfh_set_time("night")
+    with flash
     play sound sfx_thunder_crack
     play ambience wnfh_ambience_list["rain_in_building"] fadein 2.5
     $ renpy.pause(0.3)

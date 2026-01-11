@@ -121,6 +121,7 @@
     kat "Кажется, у Мику беда."
     me "Есть такое[wp]"
 
+    $ wnfh_set_time("night")
     scene bg int_musclub_storeroom
     hide kat
     show mi cry pioneer at right
@@ -165,6 +166,7 @@
 
     "Одобрительно кивнув, Катя пулей выбежала из музклуба."
 
+    $ wnfh_set_time("sunset")
     scene bg int_musclub_sunset_wnfh with dspr
 
     "Вытащив Мику, я уложил её на стулья возле рояля. Разумеется, предварительно скинув валявшийся на них хлам."
@@ -396,10 +398,10 @@
     me "Возможно, возможно."
 
     window hide dissolve
-    $ wnfh_set_time("rain")
-    $ renpy.pause(0.3)
     stop ambience fadeout 2.5
-    show bg int_musclub_rain_wnfh with dissolve2
+    $ wnfh_set_time("rain")
+    show bg int_musclub_rain_wnfh
+    with dissolve2
     play ambience wnfh_ambience_list["rain_in_building"] fadein 2.5
     $ renpy.pause(0.3)
     show mi normal pioneer at center with dspr

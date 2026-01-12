@@ -64,20 +64,25 @@ init -1001 python :
             self.achievements_init()
         #def __missing__(self,key):
         #    self.display("не найдено значение "+str(key))
-        def ShowErrors(self,text):
+
+        def ShowErrors(self, text):
             text = text.replace("{","").replace("}","")
+
             ui.textbutton("{color=#E1DD7D}{b}"+text+"{/b}{/color}",background="#00000080",xmaximum=700)
-        def display(self,data):
+        
+        def display(self, data):
             if self.ShowDebug == True:
                 self.ShowErrors(str(data))
             return 0
+        
         def load(self, location):
             #if os.path.exists(location):
             if  self.path_enviroment in globals():
                 self.open_f()
             #else:
             #    raise Exception("Объявите верное название default переменных согласно вашему пути в файле data_base")
-        def load_json(self,type):
+        
+        def load_json(self, type):
             #"""
             #возвращает выгруженный json в качестве объекта словаря
             #Возможно будет использоваться для генерации схемы
@@ -114,7 +119,7 @@ init -1001 python :
         """
         Запись json
         """
-        def get_achievement(self,name):
+        def get_achievement(self, name):
             data = self.load_json("ach")
             if data[name]["Получено"] is False:
                 renpy.show_screen("wnfh_get_achievement",name)
@@ -125,11 +130,11 @@ init -1001 python :
         def achievements_clear(self):
             self.achievements_init(True)
 
-        def set_achievement(self,name,data):
+        def set_achievement(self, name, мdata):
             data[name]["Получено"] = True
             self.dump_achievements(data)
 
-        def achievements_init(self,clear = False):
+        def achievements_init(self, clear = False):
             out_data = self.load_json("ach")
             in_data={}
             dic_names = ["Иконка ","Заголовок","Подпись","Трофей","Персонаж"]
@@ -228,11 +233,13 @@ init -1001 python :
             except KeyError:
                 self.ShowErrors("При попытке получить значение флага {0} получено исключение \
                 - вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, "\n, ".join(self.BD_INIT_MODULE.keys())))
+        
         def write(self , key , value):
             self.BD_INIT_MODULE[str(key)] = value
             self.dumpdb()
             self.dumpSave()
             return True
+        
         def get(self , key):
             try:
                 return self.BD_INIT_MODULE[key]
@@ -388,11 +395,13 @@ init -1001 python :
             #if len(temp_data) > len(self.BD_INIT_MODULE):
             #    self.BD_INIT_MODULE = temp_data
             #    self.dumpSave()
+        
         def rollback_block(self,key):
             try:
                 return self.BD_INIT_MODULE[key]["rollback"]
             except Exception:
                 return False
+        
         def getChoice_points_sum(self, person):
             sum = 0
             self.open_f()

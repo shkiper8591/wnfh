@@ -15,11 +15,7 @@ init python:
 
         for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
             wnfh_double_char_define(i[0], i[1], i[2])
-
-    def wnfh_new_chapter():
-        #wnfh_set_mode()
-        #wnfh_mute(1.0)
-
+            
 init -1 python:
     def wnfh_set_mode(mode=adv):
         nvl_clear()

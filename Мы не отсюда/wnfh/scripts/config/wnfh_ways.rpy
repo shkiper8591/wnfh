@@ -14,12 +14,10 @@ init -5 python:
     wnfh_BANNERS = wnfh_GUI + "banners/"
     wnfh_MAIN_MENU = wnfh_GUI + "main_menu/"
     wnfh_GALLERY = wnfh_GUI + "gallery/"
-    wnfh_SAVELOAD = wnfh_GUI + "save_load/"
-    wnfh_SETTINGS = wnfh_GUI + "settings/"
     wnfh_MAP = wnfh_GUI + "map/"
     wnfh_MASKS = wnfh_MAP + "masks/"
     wnfh_AVATARS = wnfh_GUI + "avatars/"
-    wnfh_CHOICE = wnfh_GUI + "choice/"
+    wnfh_CHOICE = wnfh_GUI + "choice/" # Перевести выбора на новую систему
     wnfh_TINT_ELEMENTS = wnfh_GUI + "tint_elements/"
 
     wnfh_TRANSITIONS = wnfh_IMAGES + "transitions/"

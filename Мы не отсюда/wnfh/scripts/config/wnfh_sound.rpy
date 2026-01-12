@@ -4,6 +4,7 @@ init python:
 
     from random import choice
     
+    # Второй канал для эмбиента
     renpy.music.register_channel("ambience_2", "sfx", True)
 
     # Замутить каналы
@@ -23,7 +24,3 @@ init python:
     # Проигрывать рандомную музыку (нахуя?)
     def wnfh_play_random(list, channel="sound"):
         renpy.play(random.choice(list), channel=channel)
-
-
-
-    # Второй канал для эмбиента

@@ -1,5 +1,5 @@
 init -2 python:
-    class MapZone:
+    class wnfh_MapZone:
         def __init__(self, name, mask_path):
             self.name = name
             self.label = None
@@ -25,7 +25,7 @@ init -2 python:
         wnfh_zones.clear()
         for i in range(1, 62):
             key = "house_%d" % i
-            wnfh_zones[key] = MapZone(key, wnfh_MASKS + "map_mask_house_%d.png" % i)
+            wnfh_zones[key] = wnfh_MapZone(key, wnfh_MASKS + "map_mask_house_%d.png" % i)
 
     def wnfh_set_zone(name, label):
         z = wnfh_zones[name]

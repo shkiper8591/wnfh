@@ -130,7 +130,7 @@ init -1001 python :
         def achievements_clear(self):
             self.achievements_init(True)
 
-        def set_achievement(self, name, мdata):
+        def set_achievement(self, name, data):
             data[name]["Получено"] = True
             self.dump_achievements(data)
 
@@ -189,29 +189,6 @@ init -1001 python :
             self.dumpSave()
             self.dumpdb()
             return True
-        """
-        Описание:
-        1) wnfh_Data.FlagDataGet("d8_zavtrak_s_lenoy")
-        Получение значения и иницатора флага
-        -----------------------------------
-        -> функция принимает:
-            1) название флага
-        -----------------------------------
-        <- возвращает:
-            1) Значение флага
-            2) Инициатор создания флага
-        Пример: (True,"1d_2")
-        """
-        def FlagDataGet(self,key=None):
-            self.open_f()
-            try:
-                data = self.BD_INIT_MODULE[key]['value'],self.BD_INIT_MODULE[key]['initiator']
-                self.display(data)
-                return data
-            except KeyError:
-                raise Exception("При попытке получить значение флага {0} получено исключение \
-                                #- вероятно неверно прописано название флага либо его ещё не существует. Проверьте json {1}".format(key, str(self.BD_INIT_MODULE)))
-
         """
         Описание:
         1) wnfh_Data.FlagGet("d8_zavtrak_s_lenoy")
@@ -367,18 +344,7 @@ init -1001 python :
                 #return "Не надено"
             except Exception as e:
                 raise Exception("Непредвиденная ошибка при попытке получить лавпойнты персонажа {0} в выборе {1}").format(person,key)
-        """
-        Описание:
-        1) getChoice_points_sum("uv"):
-        -----------------------------------
-        -> функция принимает:
-            1) Наименование персонажа
-        -----------------------------------
-        <- возвращает:
-            1) Колличество лавпонтов персонажа по всем выборам
-        Пример: 
-            1) 3       
-        """
+        
         def rolback_fix(self,name):
             temp_data = self.load_json("cho")
             try:
@@ -401,7 +367,18 @@ init -1001 python :
                 return self.BD_INIT_MODULE[key]["rollback"]
             except Exception:
                 return False
-        
+        """
+        Описание:
+        1) getChoice_points_sum("uv"):
+        -----------------------------------
+        -> функция принимает:
+            1) Наименование персонажа
+        -----------------------------------
+        <- возвращает:
+            1) Колличество лавпонтов персонажа по всем выборам
+        Пример: 
+            1) 3       
+        """
         def getChoice_points_sum(self, person):
             sum = 0
             self.open_f()

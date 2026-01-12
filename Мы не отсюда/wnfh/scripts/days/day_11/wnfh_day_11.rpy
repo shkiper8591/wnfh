@@ -1,5 +1,4 @@
 label wnfh_day_11:
-    $ wnfh_new_chapter(5)
     $ wnfh_set_time("sunset")
     $ renpy.pause(1.0)
     play ambience ambience_int_cabin_evening fadein 3

@@ -6,6 +6,7 @@ label d7_me_free:
 
     "Медленным шагом я отправился на площадь."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "В ожидании обеда")
     scene bg ext_lenin_square_day_wnfh with dissolve2
 
     "Придя к Ленину, я некоторое время рассматривал его."

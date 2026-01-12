@@ -11,7 +11,7 @@ label wnfh_intro:
 
 label wnfh_day_7:
     
-    $ wnfh_new_chapter(1)
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Утро")
     $ wnfh_set_name("el", "Сергей")
     $ wnfh_set_name("me", "Семён")
     $ wnfh_set_mode()
@@ -243,6 +243,7 @@ label d7_sl_probejka:
     
     # Бежит #
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Пробежка со Славей")
     scene bg ext_path_sunset at wnfh_running
     # может тут надо цг? 
     "Мы выбежали на небольшой пролесок."
@@ -730,6 +731,7 @@ label d7_sl_otkaz:
     "Ольга Дмитриевна быстрым шагом ушла куда-то в сторону умывальников."
     "Я же отправился туда, куда мне было велено."
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Утро на площади")
     window hide
     scene bg ext_houses_day with slide_left_blure_dissolve2
     $ renpy.pause(2.0, hard=True)

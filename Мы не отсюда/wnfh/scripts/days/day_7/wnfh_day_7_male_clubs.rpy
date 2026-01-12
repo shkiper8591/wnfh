@@ -1,5 +1,6 @@
 label d7_male_clubs:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Работа в клубах")
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg ext_clubs_day with santa_barbara_in_blure_dissolve2

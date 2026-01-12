@@ -1,5 +1,6 @@
 label d7_me_doma:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Спасительный пакет")
     window hide
     scene bg ext_houses_day with slide_down_blure_dissolve2
     $ renpy.pause(2.0)

@@ -1,6 +1,5 @@
-label d10_musclub_morning:
+﻿label d10_musclub_morning:
 
-    $ wnfh_new_chapter(4)
     $ wnfh_set_time("sunset")
     play ambience ambience_int_cabin_day fadein 2.5
     $ renpy.pause(1.5, hard=True)

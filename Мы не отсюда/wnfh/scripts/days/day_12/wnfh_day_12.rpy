@@ -43,7 +43,6 @@ label wnfh_day_12_dream:
     scene black with dissolve2
     
 label wnfh_day_12:
-    $ wnfh_new_chapter(6)
     $ wnfh_set_time("sunset")
     $ wnfh_set_name("kat", "Катя")
     $ wnfh_set_name("me", "Семён")

@@ -1,5 +1,6 @@
 label d7_obed:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Обед")
     window hide dissolve
     scene bg ext_dining_hall_away_day with slide_right_blure_dissolve2
     window show dissolve

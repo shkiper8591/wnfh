@@ -1,7 +1,6 @@
 label wnfh_prologue:
     
-    $ wnfh_set_slot_data(chapter = 0, game_date = "11-06-2025", scene = "Квартира Семёна")
-    $ wnfh_new_chapter(0)
+    $ wnfh_set_slot_data(chapter = 0, game_date = "05-06-2023", scene = "Утренние сборы")
     stop music fadeout 3.5
     $ wnfh_set_name("kat", "Новенькая")
     $ wnfh_set_name("dv", "Рыжая")
@@ -70,6 +69,7 @@ label wnfh_prologue:
 
     "Одевшись и взяв всё необходимое, а именно ручку, телефон и мои — уже порядком старенькие — наушники Sony, я отправился в путь."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "05-06-2023", scene = "В путь")
     window hide dissolve
     stop ambience fadeout 2.5
     stop music fadeout 2.5
@@ -186,6 +186,7 @@ label wnfh_prologue:
     "Я уже было потянулся за телефоном, чтобы переключить трек, но сил даже на это не было."
     "Поэтому я легонько ткнул девушку в плечо и попросил разбудить меня возле университета."
     
+    $ wnfh_set_slot_data(chapter = 0, game_date = "17-07-1989", scene = "Прибытие")
     stop sound fadeout 2.0
     stop music fadeout 2.0
     window hide dissolve
@@ -398,6 +399,7 @@ label wnfh_prologue:
 
     "Без лишних слов я пошёл вслед за вожатой."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "17-07-1989", scene = "Ответы вожатой")
     window hide dissolve
     stop music fadeout 2.0
     scene bg ext_house_of_mt_day with dissolve2
@@ -584,6 +586,7 @@ label wnfh_prologue:
 
     mt "Пойдём уже."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "17-07-1989", scene = "Знакомство с лагерем")
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg ext_lenin_square_day_wnfh 
@@ -755,6 +758,7 @@ label wnfh_prologue:
     "Я отнёс вещи в домик и стал просто скитаться по лагерю, не зная, что делать."
     "В один момент скитания вывели меня туда, где всё началось — на остановку."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "17-07-1989", scene = "Оценка ситуации")
     window hide dissolve
     play ambience ambience_camp_entrance_day fadein 2.0
     scene bg ext_no_bus with dissolve2
@@ -833,6 +837,7 @@ label wnfh_prologue:
 
     "Я молча поднялся и пошёл вслед за ней."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "17-07-1989", scene = "Похождения с рыжими")
     window hide dissolve
     scene black with dissolve2
     stop ambience fadeout 5.0
@@ -1052,6 +1057,7 @@ label wnfh_prologue:
 
     "Опустив глаза на землю, я поплёся в сторону своего нового дома."
 
+    $ wnfh_set_slot_data(chapter = 0, game_date = "22-07-1989", scene = "Субботний вечер")
     window hide dissolve
     stop ambience fadeout 2.0
     scene black with door_invert_blure_dissolve2

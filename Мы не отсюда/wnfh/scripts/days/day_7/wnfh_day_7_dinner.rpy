@@ -1,5 +1,6 @@
 label d7_zavtrak:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Завтрак")
     window hide dissolve
     stop music fadeout 3.5
     stop ambience fadeout 2.0

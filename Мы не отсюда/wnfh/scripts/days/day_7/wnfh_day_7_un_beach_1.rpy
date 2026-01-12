@@ -9,6 +9,7 @@ label d7_un_beach_1:
 
 label d7_un_beach_2:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Вечер на пляже")
     window hide
     stop ambience fadeout 0.5
     scene bg ext_houses_sunset with slide_left_blure_dissolve2

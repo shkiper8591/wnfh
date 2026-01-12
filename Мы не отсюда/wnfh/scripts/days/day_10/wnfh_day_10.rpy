@@ -1,5 +1,4 @@
 label wnfh_day_10:
-    $ wnfh_new_chapter(4)
     $ wnfh_set_time("sunset")
     scene black
     play ambience ambience_day_countryside_ambience fadein 3

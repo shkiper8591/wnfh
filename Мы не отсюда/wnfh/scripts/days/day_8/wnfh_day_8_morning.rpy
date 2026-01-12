@@ -1,6 +1,5 @@
 label wnfh_day_8:
     
-    $ wnfh_new_chapter(2)
     $ wnfh_set_name("kat", "Катя")
     $ wnfh_set_time("sunset")
     scene expression wnfh_wakeup("int_house_of_mt_sunset")

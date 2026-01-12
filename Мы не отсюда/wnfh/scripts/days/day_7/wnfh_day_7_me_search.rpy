@@ -1,5 +1,6 @@
 label d7_me_search:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "В поисках рыжих")
     window hide dissolve
     stop ambience fadeout 3.5
     scene bg ext_lenin_square_day_wnfh with slide_right_blure_dissolve2

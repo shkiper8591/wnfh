@@ -1,5 +1,6 @@
 label d7_me_dv_usw_on_beach:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "День на пляже")
     window hide dissolve
     stop ambience fadeout 3.5
     show bg ext_beach_day with slide_diagonal_blure_dissolve2

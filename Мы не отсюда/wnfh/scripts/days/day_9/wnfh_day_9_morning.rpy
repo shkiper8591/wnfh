@@ -1,6 +1,5 @@
 label d9_morning:
 
-    $ wnfh_new_chapter(3)
     $ wnfh_set_time("sunset")
     scene bg int_house_of_mt_sunset
     show unblink

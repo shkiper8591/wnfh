@@ -35,6 +35,7 @@ label d7_un_progulka:
 
     "Мы зашагали в сторону домиков."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Прогулка с Леной")
     window hide dissolve
     show bg ext_houses_day with dissolve2
     window show dissolve

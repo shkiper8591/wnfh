@@ -1,5 +1,6 @@
 label d7_ending:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 0.5
     scene bg ext_lenin_square_night_wnfh with slide_left_blure_dissolve2

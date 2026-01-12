@@ -1,5 +1,6 @@
 label d7_me_kat_sdacha_kati_w_un:
         
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Сдача новенькой")
     window hide dissolve
     scene bg ext_house_of_mt_day
     show mt dc_reading dc background

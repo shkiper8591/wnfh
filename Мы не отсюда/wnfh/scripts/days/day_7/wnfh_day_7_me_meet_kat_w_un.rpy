@@ -1,5 +1,6 @@
 label d7_me_meet_kat_w_un:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Встреча пополнения")
     window hide dissolve
     $ wnfh_set_time()
     stop ambience fadeout 2.0

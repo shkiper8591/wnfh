@@ -1,5 +1,6 @@
 label d7_me_kat_sdacha_kati:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Сдача новенькой")
     window hide dissolve
     scene bg ext_house_of_mt_day
     show kat normal pioneer at left

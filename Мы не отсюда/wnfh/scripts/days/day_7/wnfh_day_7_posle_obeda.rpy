@@ -1,5 +1,6 @@
 label d7_posle_obeda:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Послеобеденный отдых")
     window hide
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_day with sphere_invert_blure_dissolve2
@@ -275,6 +276,8 @@ label d7_un_no_4_lbl:
     jump d7_me_v_medpunkte
 
 label d7_un_yes_3_lbl:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "23-07-1989", scene = "Скорая помощь")
 
     "Я глубоко вздохнул."
 

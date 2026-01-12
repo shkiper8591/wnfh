@@ -29,6 +29,7 @@ init -4 python:
         "im_line",
         "im_gradient",
         #Кнопки
+        "trash",
         "button_bg_1",
         "button_bg_2",
         "button_line",

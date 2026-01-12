@@ -15,6 +15,20 @@ screen wnfh_load(main_menu = False):
     default wnfh_button_states = [False for i in range(1)]
 
     python:
+        wnfh_bars = {
+            "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
+
+            "bar_full": [im.Composite(
+                (25, 25),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                )],
+            "bar_null": [im.Composite(
+                (25, 25),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                )],
+        }
         save_load_elements = [
             ["chapter"  ,"Глава 1"          ],
             ["date"     ,"12 июля 1989г"    ],
@@ -151,6 +165,13 @@ screen wnfh_load(main_menu = False):
                                 area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
                                 xanchor 0.5 yanchor 0.0
                                 background debug_frame["purple"]
+                                if slot_info:
+                                    imagebutton:
+                                        pos (0.99, 0.5)
+                                        xanchor 0.0 yanchor 0.5
+                                        idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                        hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
+                                        action FileDelete(name = slot_num, page = "WNFH_Saves")
                                 vbox: # ================================================ Фон таблички из трёх кусков
                                     pos (0.5, 0.5)
                                     xanchor 0.5 yanchor 0.5
@@ -199,9 +220,15 @@ screen wnfh_load(main_menu = False):
                                     area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
                                     xanchor 1.0 yanchor 0.5
                                     background debug_frame["red"]
-                                    add FileScreenshot(slot_num, page="WNFH_Saves"):
-                                        xoffset -6 yoffset -6
-                                        size (300, 162)
+                                    if renpy.store.wnfh_tymeofday == "day":
+                                        add FileScreenshot(slot_num, page="WNFH_Saves"):
+                                            xoffset -6 yoffset -6
+                                            size (300, 162)
+                                    else:
+                                        add FileScreenshot(slot_num, page="WNFH_Saves"):
+                                            xoffset -6 yoffset -6
+                                            size (300, 162)
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
                                 vbox:
                                     pos (0.5, 0.5)
                                     xanchor 0.5 yanchor 0.5
@@ -237,6 +264,7 @@ screen wnfh_load(main_menu = False):
                                                 background debug_frame["purple"]
                                                 text "Виджет лавпоинтов отключен":
                                                     style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    size 20
                                         else:
                                             frame:
                                                 area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
@@ -280,6 +308,18 @@ screen wnfh_load(main_menu = False):
                                                                         style "wnfh_lp_counter"
                                                                         color wnfh_characters[character][1]
                                                                         size 30
+            frame:
+                background debug_frame["green"]
+                area(0.95, 0.5, 50, 1.0)
+                xanchor 0.0 yanchor 0.5
+                vbar value YScrollValue("load"):
+                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    thumb wnfh_bars["tumb"][0]
+                    hover_thumb wnfh_bars["tumb"][0]
+                    xmaximum 33 ymaximum 1.0
+                    pos (0.5, 0.5)
+                    anchor (0.5, 0.5)
                 
 screen wnfh_save(main_menu = False):
 
@@ -298,6 +338,20 @@ screen wnfh_save(main_menu = False):
     default wnfh_button_states = [False for i in range(1)]
 
     python:
+        wnfh_bars = {
+            "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
+
+            "bar_full": [im.Composite(
+                (25, 25),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_full"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_full"][4], renpy.store.wnfh_tymeofday))),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                )],
+            "bar_null": [im.Composite(
+                (25, 25),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
+                )],
+        }
         save_load_elements = [
             ["chapter"  ,"Глава 1"          ],
             ["date"     ,"12 июля 1989г"    ],
@@ -417,7 +471,7 @@ screen wnfh_save(main_menu = False):
             xanchor 0.5 yanchor 0.5
             background debug_frame["black"]
 
-            viewport id "load":
+            viewport id "save":
                 draggable True
                 mousewheel True
                 scrollbars None
@@ -434,6 +488,13 @@ screen wnfh_save(main_menu = False):
                                 area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
                                 xanchor 0.5 yanchor 0.0
                                 background debug_frame["purple"]
+                                if slot_info:
+                                    imagebutton:
+                                        pos (0.99, 0.5)
+                                        xanchor 0.0 yanchor 0.5
+                                        idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                        hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
+                                        action FileDelete(name = slot_num, page = "WNFH_Saves")
                                 vbox: # ================================================ Фон таблички из трёх кусков
                                     pos (0.5, 0.5)
                                     xanchor 0.5 yanchor 0.5
@@ -520,6 +581,7 @@ screen wnfh_save(main_menu = False):
                                                 background debug_frame["purple"]
                                                 text "Виджет лавпоинтов отключен":
                                                     style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    size 20
                                         else:
                                             frame:
                                                 area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
@@ -563,6 +625,17 @@ screen wnfh_save(main_menu = False):
                                                                         style "wnfh_lp_counter"
                                                                         color wnfh_characters[character][1]
                                                                         size 30
-                
+            frame:
+                background debug_frame["green"]
+                area(0.95, 0.5, 50, 1.0)
+                xanchor 0.0 yanchor 0.5
+                vbar value YScrollValue("save"):
+                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    thumb wnfh_bars["tumb"][0]
+                    hover_thumb wnfh_bars["tumb"][0]
+                    xmaximum 33 ymaximum 1.0
+                    pos (0.5, 0.5)
+                    anchor (0.5, 0.5)    
 
 

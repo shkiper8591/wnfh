@@ -28,6 +28,7 @@ label d9_day_alone:
         th "Не то чтобы я жаловался, но иногда хочется чем-то себя занять."
         th "Впрочем, я знаю одно место, где мне всегда рады."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Разведка с Шуриком")
     window hide dissolve
     stop ambience fadeout 2.5
     scene bg ext_clubs_day with dissolve2

@@ -84,6 +84,7 @@ label d9_me_un_evening:
 
     "Ничего не ответив, она повела меня за собой."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Откровения")
     window hide dissolve
     stop ambience fadeout 2.5
     scene bg ext_no_bus_sunset
@@ -160,6 +161,7 @@ label d9_me_un_evening_1:
     me "Слушай, а откуда ты тогда?"
     me "Я вот из 2023-го[wp]{nw=1.5}"
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Неприятный сюрприз")
     play music wnfh_music_list["strashilka_1"] fadein 5.0
     show un normal pioneer close at center with dspr
     play sound wnfh_sfx_list["un_gun"]

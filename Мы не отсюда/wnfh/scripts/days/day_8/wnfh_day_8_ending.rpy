@@ -1,5 +1,6 @@
 label d8_ending:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 2.0
     $ wnfh_set_time()
@@ -70,6 +71,7 @@ label d8_ending:
 
 label d8_ending_dv:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Завершение дня")
     scene bg ext_house_of_mt_night with dissolve2
 
     "Я дошёл до домика вожатой и остановился на входе."

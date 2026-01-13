@@ -1,5 +1,6 @@
 label d9_me_dv_date:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Вечер с Алисой")
     $ wnfh_Data.FlagSet("dv_route", True)
     stop ambience fadeout 5.0
     scene bg ext_path2_sunset_wnfh
@@ -225,7 +226,9 @@ label d9_me_dv_date:
     $ renpy.pause(0.5, hard=True)
     stop ambience fadeout 5.0
     window show dissolve
-    hide black with dissolve
+    hide black
+    show bg ext_polyana_night
+    with dissolve
     play ambience wnfh_ambience_list["forest_lake_night"] fadein 2.5
     $ renpy.notify("Тут должен быть ночной вариант фона с лесным озером")
 
@@ -237,14 +240,12 @@ label d9_me_dv_date:
 
     window hide dissolve
     $ renpy.pause(0.3)
+    play sound sfx_thunder_crack
     stop ambience fadeout 2.5
     play ambience wnfh_ambience_list["rain_night"] fadein 2.5
-    $ renpy.pause(0.3)
+    $ renpy.pause(0.7)
     show dv surprise pioneer close at center with dspr
     window show dissolve
-
-    "В это же время «лёгкий дождик» наращивал силы и чётко давал понять, что грядёт самый настоящий ливень."
-    "Помимо этого в свои права вступала ночь — в лесу явно начинало смеркаться."
 
     dv "Ладно, поняла."
 

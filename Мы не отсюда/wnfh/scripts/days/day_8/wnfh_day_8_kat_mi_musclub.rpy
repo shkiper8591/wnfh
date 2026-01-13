@@ -1,5 +1,6 @@
 label d8_kat_mi_musclub:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Посиделки в музклубе")
     stop music fadeout 5.0
     stop ambience fadeout 2.0
     scene bg ext_admin_day_wnfh with santa_barbara_in_blure_dissolve2

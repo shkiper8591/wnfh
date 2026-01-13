@@ -1,5 +1,6 @@
 label d9_zavtrak:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завтрак")
     scene bg ext_dining_hall_near_sunset with dissolve2
     $ renpy.pause(0.3)
     scene ext_dining_hall_near_sunset with dissolve

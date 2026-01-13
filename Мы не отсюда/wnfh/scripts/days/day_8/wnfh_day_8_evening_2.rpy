@@ -50,6 +50,7 @@ label d8_evening_2_w_dv:
 
     th "Надеюсь, мне не придётся ждать до следующего утра."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Ночной концерт")
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg ext_lenin_square_night_wnfh with dissolve2
@@ -473,7 +474,6 @@ label d8_evening_2_w_dv:
 
         un "А вот с тобой, Семён, мы вроде как вчера договаривались. Обидно, что ты даже не вспомнил."
         #Сюда бы ещё минус ЛП Лены по логике.
-
 
     "Гордо подняв подбородок вверх, она бросила на нас недовольный взгляд."
 

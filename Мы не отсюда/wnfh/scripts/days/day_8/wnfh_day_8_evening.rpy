@@ -15,6 +15,7 @@ label d8_evening:
 
 label d8_evening_w_kat:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Прогулка с Катей")
     play ambience ambience_camp_center_evening fadein 2.0
     play music music_list["silhouette_in_sunset"] fadein 5.0
     scene bg ext_dining_hall_near_sunset
@@ -207,6 +208,7 @@ label d8_evening_w_kat:
 
 label d8_evening_alone:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Вечерняя прогулка")
     play ambience ambience_camp_center_evening fadein 2.0
     play music music_list["silhouette_in_sunset"] fadein 5.0
     scene bg ext_dining_hall_near_sunset

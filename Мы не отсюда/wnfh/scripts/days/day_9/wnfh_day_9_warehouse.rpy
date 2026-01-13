@@ -1,5 +1,6 @@
 label d9_warehouse:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Отработка на складе")
     $ wnfh_set_time()
     stop ambience fadeout 5.0
     stop music fadeout 5.0

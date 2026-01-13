@@ -1,5 +1,6 @@
 ﻿label d9_musclub_evening:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Вечер в музклубе")
     stop ambience fadeout 5.0
     scene black with dissolve2
     $ renpy.pause(1.0)
@@ -514,6 +515,7 @@
 
 label d9_musclub_evening_2:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     scene black with dissolve2
     $ renpy.pause(0.3, hard=True)
     $ wnfh_set_time("night")

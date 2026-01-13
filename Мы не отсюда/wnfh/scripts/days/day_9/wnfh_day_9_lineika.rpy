@@ -1,5 +1,6 @@
 label d9_lineika:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Линейка")
     scene bg ext_lenin_square_sunset_wnfh
     show mt normal pioneer panama at left
     show sl normal pioneer at fright

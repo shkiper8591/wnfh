@@ -16,6 +16,7 @@ label d8_male_clubs:
 
     th "Если я хочу чем-то заняться, то мне к пацанам. У них всегда найдётся работёнка."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Рабочий день с парнями")
     window hide dissolve
     scene bg ext_clubs_day with dissolve2
     $ renpy.pause(0.3)

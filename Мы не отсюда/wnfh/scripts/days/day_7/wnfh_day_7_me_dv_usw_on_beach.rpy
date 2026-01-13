@@ -79,6 +79,7 @@ label d7_me_dv_usw_on_beach:
     "Собрав всю волю в кулак, я остановился и погрузился под воду."
 
     window hide
+    $ wnfh_set_volume("music", value=0.2, fade=0.8)
     stop ambience fadeout 1.5
     play sound sfx_shoulder_dive_water
     show bg ext_underwater
@@ -98,6 +99,7 @@ label d7_me_dv_usw_on_beach:
 
     window hide
     stop ambience fadeout 1.5
+    $ wnfh_set_volume("music", value=1.0, fade=0.8)
     show bg ext_beach_water_day_wnfh
     show usw angry swim at right
     with dissolve

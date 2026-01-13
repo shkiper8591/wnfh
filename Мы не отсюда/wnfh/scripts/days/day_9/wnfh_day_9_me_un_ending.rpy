@@ -8,6 +8,7 @@ label d9_me_alt_un_ending_mt:
     "Потупившись ещё какое-то время на месте, она огляделась вокруг и двинула вслед за ней."
     "Убедившись, что они ушли, я вернулся обратно к моей пленнице."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Раскрытие мотивов")
     window hide dissolve
     stop ambience fadeout 1.0
     scene bg int_clubs_male2_night_nolight
@@ -206,15 +207,17 @@ label d9_me_alt_un_ending_mt:
     th "Тоже мне, юмористка, блин. Одна шутка охренительнее другой."
 
     play sound sfx_click_1
-    show bg int_clubs_male2_night_nolight with dspr
+    $ wnfh_set_time("night")
+    show bg int_clubs_male2_night_nolight
+    with dspr
 
     "Накинув на нас двоих брезент, и выключив свет, мы пошли на выход."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     show bg int_clubs_male_night_lights_wnfh
     hide un
     with dspr
     $ renpy.pause(0.5)
-    $ wnfh_set_time("night")
     play sound sfx_click_1
     show bg int_clubs_male_night_wnfh with dspr
     $ renpy.pause(0.5)
@@ -523,6 +526,7 @@ label d9_me_alt_un_ending_sl:
     sl "Что такое?"
     me "Идём за мной."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Суд над пленной")
     window hide dissolve
     stop ambience fadeout 1.0
     show bg int_clubs_male_sunset
@@ -1408,6 +1412,7 @@ label d9_me_alt_un_ending_route:
 
     "Мы с Леной накинули тот самый кусок брезента на себя и помчались домой."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 2.0
     scene bg black with dissolve2
@@ -1479,6 +1484,7 @@ label d9_me_alt_un_ending_route:
 
 label d9_me_alt_un_ending_end:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 2.0
     $ wnfh_set_time("night")

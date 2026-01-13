@@ -1,5 +1,6 @@
 label d9_morning:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Утро")
     $ wnfh_set_time("sunset")
     scene bg int_house_of_mt_sunset
     show unblink

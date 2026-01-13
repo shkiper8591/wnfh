@@ -1,5 +1,6 @@
 label d8_zavtrak:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Завтрак")
     window hide
     stop ambience fadeout 0.5
     scene bg ext_dining_hall_near_sunset with slide_right_blure_dissolve2

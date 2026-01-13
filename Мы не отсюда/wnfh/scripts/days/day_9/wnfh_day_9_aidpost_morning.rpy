@@ -1,5 +1,6 @@
 label d9_aidpost_morning:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Поход за таблетками")
     stop music fadeout 5.0
     window hide dissolve
     scene bg ext_lenin_square_sunset_wnfh with dissolve2

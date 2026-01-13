@@ -1,5 +1,6 @@
 label d9_ending:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 2.5
     scene bg ext_house_of_mt_sunset with dissolve2
@@ -165,12 +166,14 @@ label d9_ending:
 
 label d9_ending_dv:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     window hide dissolve
     scene bg ext_house_of_mt_night with dissolve2
     $ renpy.pause(0.3)
     stop ambience fadeout 2.0
     play sound sfx_open_dooor_campus_2
     scene bg int_house_of_mt_night
+    camera at SRD_screen_raindrops_effect("False")
     show mt sad nightdress at center
     with dissolve
     play ambience wnfh_ambience_list["rain_in_building"] fadein 2.5
@@ -258,6 +261,7 @@ label d9_ending_dv:
 label d9_ending_kat:
 #Если что, я этот кусок ещё не тестил, так что хз, есть тут трейсы или прочая дичь.
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     scene bg ext_houses_night_wnfh at wnfh_running
     $ renpy.pause(1.0)
     window show dissolve
@@ -423,6 +427,7 @@ label d9_ending_kat:
 
 label d9_ending_un:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Завершение дня")
     window hide dissolve
     stop ambience fadeout 2.5
     scene bg ext_house_of_mt_sunset with dissolve2

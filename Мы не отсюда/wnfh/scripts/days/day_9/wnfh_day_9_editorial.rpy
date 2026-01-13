@@ -1,5 +1,6 @@
 label d9_editorial:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Клуб журналистики")
     $ wnfh_Data.FlagSet("journalist") == True
     window hide dissolve
     stop ambience fadeout 2.5

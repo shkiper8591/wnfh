@@ -1,5 +1,6 @@
 label d9_musclub:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Утро в музклубе")
     window hide dissolve
     stop music fadeout 5.0
     $ renpy.pause(1.0, hard=True)

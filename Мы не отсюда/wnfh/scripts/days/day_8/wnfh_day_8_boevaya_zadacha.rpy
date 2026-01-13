@@ -22,6 +22,7 @@ label d8_boevaya_zadacha:
 
     th "Ну, может, оно и к лучшему — ночью спать нормально буду."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Боевая задача")
     stop ambience fadeout 3.5
     show bg ext_house_of_mt_day with dissolve
     play ambience ambience_camp_center_day fadein 3.5

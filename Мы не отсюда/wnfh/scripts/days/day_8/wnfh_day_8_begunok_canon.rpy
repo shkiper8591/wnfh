@@ -1,5 +1,6 @@
 label d8_begunok_canon:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Заполнение обходного")
     window hide dissolve
     hide mid d8_breakfast_empty with dissolve
     $ renpy.pause(1.0)
@@ -231,6 +232,7 @@ label d8_begunok_canon:
     "Катя одобрительно кивнула, и мы покинули кружок."
     "Преисполненные хорошим настроением, мы отправились в сторону медпункта."
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Сдача обходного")
     window hide
     stop ambience fadeout 0.5
     stop music fadeout 2

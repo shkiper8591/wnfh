@@ -1,5 +1,6 @@
 label d9_evening:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "25-07-1989", scene = "Вечер")
     $ wnfh_set_time("sunset")
     scene bg ext_lenin_square_sunset_wnfh with Dissolve(5.0)
     play ambience ambience_camp_center_evening fadein 5.0

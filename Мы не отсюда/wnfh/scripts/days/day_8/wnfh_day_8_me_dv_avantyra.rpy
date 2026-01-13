@@ -2,6 +2,7 @@ label d8_me_dv_avantyra:
 
     $ wnfh_Data.FlagSet("d8_begunok", False)
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Яблочная авантюра")
     window hide dissolve
     scene bg ext_lenin_square_day_wnfh with slide_up_blure_dissolve2
     $ renpy.pause(1.5)

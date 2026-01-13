@@ -1,9 +1,10 @@
 label d8_begunok_w_un:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Заполнение обходного")
     window hide dissolve
     hide mid d8_breakfast_empty with dissolve
     $ renpy.pause(1.0)
     stop ambience fadeout 2.5
-    
     scene bg ext_dining_hall_near_day 
     show kat normal pioneer at left
     show un normal pioneer at right
@@ -302,6 +303,7 @@ label d8_begunok_w_un_cont:
 
     "Хорошо, что идти тут было недалеко — до медпункта мы дошли за считаные минуты."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Сдача обходного")
     window hide
     stop ambience fadeout 0.5
     stop music fadeout 2

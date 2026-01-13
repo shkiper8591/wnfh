@@ -1,5 +1,6 @@
 label wnfh_day_8:
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Утро")
     $ wnfh_set_name("kat", "Катя")
     $ wnfh_set_time("sunset")
     scene expression wnfh_wakeup("int_house_of_mt_sunset")
@@ -201,6 +202,7 @@ label wnfh_day_8:
     
     "Я быстрым шагом отправился на линейку."
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Линейка")
     window hide
     stop ambience fadeout 0.5
     scene bg ext_house_of_mt_sunset with door_invert_blure_dissolve

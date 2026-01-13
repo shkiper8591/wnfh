@@ -1,4 +1,5 @@
 label d8_obed_me_alone_alt:
+
     $ wnfh_Data.FlagSet("d8_obed_me_alone", "alone_alt")
     window hide dissolve
     stop ambience fadeout 5.0
@@ -26,6 +27,7 @@ label d8_obed_me_alone_alt:
     
     "Но, разумеется, никакого «чуда» на меня не свалилось."
     
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     play sound sfx_dinner_horn_processed
     window hide dissolve
     stop ambience fadeout 2.0
@@ -38,6 +40,7 @@ label d8_obed_me_alone_alt:
     $ renpy.pause(0.5)
     window show dissolve
     $ renpy.notify("Срочники проебали тут столы и подносы.")
+    
     "Обед как обед: взял еду, нашёл место и сел. Вот и всё."
     "Даже из друзей ни с кем не пересёкся, но мне как-то всё равно было."
 
@@ -51,6 +54,8 @@ label d8_obed_me_alone_alt:
     jump d8_posle_obeda
 
 label d8_obed_me_alone:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     $ wnfh_Data.FlagSet("d8_obed_me_alone", "alone_canon")
     window hide dissolve
     scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2
@@ -58,7 +63,7 @@ label d8_obed_me_alone:
     scene bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
     window show dissolve
-    $ renpy.notify("Срочники проебали тут столы и подносы.")
+
     "Придя к столовой, я никого не увидел у входа."
 
     th "Однажды и я получу суперспособность оказываться у столовой сразу после призыва на поесть. Нужно только подождать[wp]"
@@ -69,6 +74,7 @@ label d8_obed_me_alone:
     play ambience ambience_dining_hall_full fadein 2.0
     $ renpy.pause(0.5)
     window show dissolve
+    $ renpy.notify("Срочники проебали тут столы и подносы.")
     
     "Обед прошёл вполне обыденно: взял еду, сел за стол и всё."
     "Даже ни с кем из товарищей по отряду не пересёкся, что удивительно. Впрочем, я и не пытался их искать."
@@ -181,6 +187,7 @@ label d8_obed_me_dv:
 
     usw "Да вот с минуты на минуту начаться должен. Можем уже пойти занимать места."
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     window hide dissolve
     stop ambience fadeout 3.5
     scene bg int_dining_hall_day
@@ -192,6 +199,7 @@ label d8_obed_me_dv:
     play sound sfx_dinner_horn_processed
     window show dissolve
     $ renpy.notify("Срочники проебали тут столы и подносы.")
+
     "Горн прозвучал, как только мы вошли в столовую."
     "Взяв по подносу, мы уселись у окошка."
     "Разумеется, меня посадили так, чтобы солнце слепило прямо в глаз, но спорить было бесполезно."
@@ -288,6 +296,8 @@ label d8_obed_me_dv:
     jump d8_posle_obeda
 
 label d8_obed_me_kat_un:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     $ wnfh_Data.FlagSet("d8_obed_me_kat_un", True)
     window hide dissolve
     show bg ext_dining_hall_away_day 
@@ -376,6 +386,8 @@ label d8_obed_me_kat_un:
     jump d8_posle_obeda
 
 label d8_obed_me_kat_mi:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     $ wnfh_Data.FlagSet("d8_obed_me_kat_mi", True)
     window hide dissolve
     scene bg ext_dining_hall_away_day
@@ -396,8 +408,8 @@ label d8_obed_me_kat_mi:
 
     "Зайдя в столовую, я отработал стандартную, уже обкатанную схему."
     "Буфет, поднос, столик. Какая-то круговая порука[wp]"
-
     $ renpy.notify("Срочники проебали тут столы. А ещё баги с стульями")
+
     show chair_r at chair_move_out behind mi
     $ renpy.pause(0.3, hard=True)
     show mi normal pioneer at sit_down_right
@@ -507,6 +519,8 @@ label d8_obed_me_kat_mi:
     jump d8_posle_obeda
 
 label d8_obed_me_kat:
+
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Обед")
     $ wnfh_Data.FlagSet("d8_obed_me_kat", True)
     window hide
     scene bg ext_dining_hall_away_day with slide_up_blure_dissolve2

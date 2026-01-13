@@ -1,5 +1,6 @@
 label d8_posle_obeda:
 
+    $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Послеобеденный отдых")
     window hide dissolve
     stop ambience fadeout 3.5
     scene bg ext_dining_hall_near_day with slide_right_blure_dissolve2

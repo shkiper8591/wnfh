@@ -77,7 +77,7 @@ label d10_morning_pizdyli:
     stop ambience fadeout 1.0
     scene black with dissolve2
     $ renpy.pause(0.5, hard=True)
-    $ wnfh_set_time()
+    $ wnfh_set_time("")
     play ambience ambience_camp_center_day fadein 1.0
     scene bg ext_musclub_day
     show mi normal pioneer

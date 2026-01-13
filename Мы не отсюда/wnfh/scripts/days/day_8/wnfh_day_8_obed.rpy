@@ -37,7 +37,7 @@ label d8_obed_me_alone_alt:
     play ambience ambience_dining_hall_full fadein 2.0
     $ renpy.pause(0.5)
     window show dissolve
-    
+    $ renpy.notify("Срочники проебали тут столы и подносы.")
     "Обед как обед: взял еду, нашёл место и сел. Вот и всё."
     "Даже из друзей ни с кем не пересёкся, но мне как-то всё равно было."
 
@@ -58,7 +58,7 @@ label d8_obed_me_alone:
     scene bg ext_dining_hall_near_day with dissolve
     $ renpy.pause(1.0)
     window show dissolve
-
+    $ renpy.notify("Срочники проебали тут столы и подносы.")
     "Придя к столовой, я никого не увидел у входа."
 
     th "Однажды и я получу суперспособность оказываться у столовой сразу после призыва на поесть. Нужно только подождать[wp]"
@@ -191,7 +191,7 @@ label d8_obed_me_dv:
     $ renpy.pause(0.5)
     play sound sfx_dinner_horn_processed
     window show dissolve
-
+    $ renpy.notify("Срочники проебали тут столы и подносы.")
     "Горн прозвучал, как только мы вошли в столовую."
     "Взяв по подносу, мы уселись у окошка."
     "Разумеется, меня посадили так, чтобы солнце слепило прямо в глаз, но спорить было бесполезно."
@@ -397,6 +397,7 @@ label d8_obed_me_kat_mi:
     "Зайдя в столовую, я отработал стандартную, уже обкатанную схему."
     "Буфет, поднос, столик. Какая-то круговая порука[wp]"
 
+    $ renpy.notify("Срочники проебали тут столы. А ещё баги с стульями")
     show chair_r at chair_move_out behind mi
     $ renpy.pause(0.3, hard=True)
     show mi normal pioneer at sit_down_right

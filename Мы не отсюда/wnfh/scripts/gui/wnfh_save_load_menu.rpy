@@ -173,7 +173,7 @@ screen wnfh_load(main_menu = False):
                                         hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                         action FileDelete(name = slot_num, page = "WNFH_Saves")
                                 else:
-                                    text str(slot_num) + ". Пустой слот":
+                                    text str(slot_num + 1) + ". Пустой слот":
                                         style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                 vbox: # ================================================ Фон таблички из трёх кусков
                                     pos (0.5, 0.5)
@@ -499,6 +499,9 @@ screen wnfh_save(main_menu = False):
                                         idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                         hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                         action FileDelete(name = slot_num, page = "WNFH_Saves")
+                                else:
+                                    text str(slot_num + 1) + ". Пустой слот":
+                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
                                 vbox: # ================================================ Фон таблички из трёх кусков
                                     pos (0.5, 0.5)
                                     xanchor 0.5 yanchor 0.5

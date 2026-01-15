@@ -40,23 +40,32 @@ label d9_zavtrak_w_kat_mi:
 
         "Как заметил машущую мне Мику, что сидела рядом с Катей. Намёк был ясен."
 
-    # тут надо поставить завтрак и подстроить под это спрайты.
-    show kat normal pioneer at left
-    show mi normal pioneer at right
+    window hide dissolve
+    show chair_l behind kat
+    show chair_r behind mi
+    show kat normal pioneer at wnfh_sit_left behind table
+    show mi normal pioneer at wnfh_sit_right behind table
+    show table
+    show shakers
+    show left d7_breakfast_half tray foods behind shakers
+    show right d7_breakfast_half tray foods behind shakers
     with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mid d7_breakfast_full tray spoon foods with dissolve
+    window show dissolve
 
     "Подойдя к столу, я расположился напротив них."
 
     me "Доброе утро, Мику. И снова здравствуй, Катя."
     mi "Приветик."
 
-    show kat smile pioneer at left with dspr
+    show kat smile pioneer with dspr
 
     kat "Здравствуйте, Ваше Величество."
 
     "Катя не скрывала насмешки."
 
-    show mi upset pioneer at right with dspr
+    show mi upset pioneer with dspr
 
     "Мику же, словно услышав что-то пошлое, непонимающе посмотрела на подругу."
 
@@ -65,25 +74,30 @@ label d9_zavtrak_w_kat_mi:
 
     "Хитро похихикав, Катя угукнула."
 
-    show mi sad pioneer at right with dspr
+    show mid d7_breakfast_full tray foods
+    show mi sad pioneer 
+    with dspr
 
     mi "Ну вот, а мне теперь любопытно."
 
-    show kat normal pioneer at left with dspr
+    show kat normal pioneer with dspr
 
     kat "Потом как-нибудь расскажу."
     me "А лучше вовсе не рассказывать."
     me "В любом случае, я, так понимаю, вам нужен, раз махали мне."
 
-    show mi normal pioneer at right with dspr
+    show mi normal pioneer with dspr
 
     "Девушки синхроно отрицательно покачали головой."
     mi "Просто хотели позвать тебя к нам в музклуб после завтрака."
     mi "У меня столько планов на сегодня! А ещё есть одна идея, о которой я хочу вам поведать, но[wp]"
 
-    show mi grin pioneer at right with dspr
+    show mi grin pioneer with dspr
 
     mi "Пожалуй, подержу немного интригу, хи-хи."
+
+    show mid d7_breakfast_half tray foods with dspr
+
     kat "Ну так что, согласен?"
 
     if wnfh_Data.FlagGet("mt_angry") == True:
@@ -92,15 +106,15 @@ label d9_zavtrak_w_kat_mi:
 
         me "Вы на линейке были? Я же наказан."
 
-        show kat upset pioneer at left
-        show mi sad pioneer at right
+        show kat upset pioneer
+        show mi sad pioneer
         with dspr
 
         "Подружки тут же упали духом."
 
         mi "Ну во-о-от[wp]"
 
-        show kat happy pioneer at left with dspr
+        show kat happy pioneer with dspr
 
         kat "А может, ты просто сбежишь к нам?"
 
@@ -108,15 +122,25 @@ label d9_zavtrak_w_kat_mi:
 
         me "Боюсь, за такое меня будет ждать уже высшая мера наказания."
 
-        show kat upset pioneer at left with dspr
+        show kat upset pioneer with dspr
 
         "Она грустно вздохнула."
 
         mi "Ну, может быть, в следующий раз получится?"
         me "Может быть."
 
+        window hide dissolve
+        $ renpy.pause(0.5)
+        show left d7_breakfast_empty tray spoon foods
+        show right d7_breakfast_empty tray spoon foods
+        show mid d7_breakfast_empty tray spoon foods
+        with dissolve
+        window show dissolve
+
         "Без особого энтузиазма мы доели свои порции."
         "И, распрощавшись с девочками, я покинул столовую, отправившись к складу."
+
+        hide mid with dissolve
 
         jump d9_warehouse
 
@@ -124,8 +148,8 @@ label d9_zavtrak_w_kat_mi:
         
         me "Ну, дел на сегодня особо нет, так что[wp] Почему бы и нет?"
 
-        show kat smile pioneer at left
-        show mi happy pioneer at right
+        show kat smile pioneer
+        show mi happy pioneer
         with dspr
 
         mi "Превосходно!"
@@ -135,16 +159,28 @@ label d9_zavtrak_w_kat_mi:
             kat "Надеюсь, посидим так же хорошо, как вчера."
             me "Надеюсь."
 
-        show mi normal pioneer at right with dspr
+        show mi normal pioneer with dspr
 
         mi "Ну что ж, в таком случае предлагаю прислушаться к поговорке «Когда я ем, я глух и нем»!"
         #me "Погоди-погоди, а попиздеть?"
 
-        show kat grin pioneer at left with dspr
+        show kat grin pioneer with dspr
 
         kat "Поддерживаю!"
 
         "Я же молча согласился с девушками, и мы принялись уплетать завтрак."
+
+        window hide dissolve
+        $ renpy.pause(0.5)
+        show left d7_breakfast_empty tray spoon foods
+        show right d7_breakfast_empty tray spoon foods
+        show mid d7_breakfast_empty tray spoon foods
+        with dissolve
+        $ renpy.pause(0.5)
+        hide left
+        hide right
+        hide mid
+        with dissolve
 
         jump d9_musclub
 
@@ -155,7 +191,17 @@ label d9_zavtrak_w_dv_usw:
     "Зайдя в столовую, я, как обычно, взял себе поесть и стал искать, куда бы приземлиться."
     "Мой взгляд зацепился за Алису, которая хитро мне улыбалась и приглашающе махала."
 
-    show dv smile pioneer at right with dissolve
+    window hide dissolve
+    show chair_l
+    show chair_r behind dv
+    show dv smile pioneer at wnfh_sit_right behind table
+    show table
+    show shakers
+    show right d7_breakfast_half tray foods behind shakers
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mid d7_breakfast_full tray spoon foods with dissolve
+    window show dissolve
 
     dv "Снова здравствуй, больной ты наш."
     me "Привет-привет."
@@ -169,13 +215,15 @@ label d9_zavtrak_w_dv_usw:
 
         dv "Пустяки."
 
-    "Будучи сильно голодным, я принялся уплетать завтрак."
+    show mid d7_breakfast_full tray foods with dspr
 
-    show dv normal pioneer at right with dspr
+    "Будучи сильно голодным, я без промедлений принялся уплетать завтрак."
+
+    show dv normal pioneer with dspr
 
     dv "Итак[wp]"
 
-    show dv grin pioneer at right with dspr
+    show dv grin pioneer with dspr
 
     dv "Какие планы на сегодня?"
 
@@ -185,7 +233,7 @@ label d9_zavtrak_w_dv_usw:
 
         me "Полагаю, что отрабатывать на складе."
 
-        show dv normal pioneer at right with dspr
+        show dv normal pioneer with dspr
 
         dv "Серьёзно?"
         me "Ты разве не слышала? Об этом же на всю округу объявили."
@@ -194,22 +242,24 @@ label d9_zavtrak_w_dv_usw:
 
         if wnfh_Data.getChoice_result_number("d8_choice_n11") == 1:
             
-            show dv guilty pioneer at right with dspr
+            show dv guilty pioneer with dspr
 
             dv "Я тогда немного увлеклась разговором с Мику."
             dv "Ну как разговором[wp] Скорее, ссорой на пониженных тонах."
             dv "Как можешь догадаться, она не в восторге от вчерашнего."
+
+            show mid d7_breakfast_half tray foods with dspr
 
             "Я хмыкнул."
 
             me "Этого следовало ожидать."
             dv "Да уж[wp]"
 
-            show dv sad pioneer at right with dspr
+            show dv sad pioneer with dspr
 
             dv "Даже стыдно как-то[wp]"
 
-            show dv shy pioneer at right with dspr
+            show dv shy pioneer with dspr
 
             "Отложив столовые приборы, я положил свою руку на ладонь Алисы."
 
@@ -223,12 +273,12 @@ label d9_zavtrak_w_dv_usw:
             dv "Не знаю[wp] Мы ж теперь вроде как ненавидим друг друга."
             me "А почему?"
 
-            show dv guilty pioneer at right with dspr
+            show dv guilty pioneer with dspr
 
             dv "Я ж ещё тогда сказала — это личное."
             me "Прости, но я не смогу помочь, не зная, откуда у конфликта корни растут."
 
-            show dv normal pioneer at right with dspr
+            show dv normal pioneer with dspr
 
             dv "Да ладно, забудь. Как-нибудь справимся."
 
@@ -241,7 +291,7 @@ label d9_zavtrak_w_dv_usw:
             dv "Да так, о всякой всячине."
             dv "О спорте там, о его пользе для здоровья[wp]"
 
-            show dv grin pioneer at right with dspr
+            show dv grin pioneer with dspr
     
             dv "О том, что кое-кому не помешало бы начать заниматься им на регулярной основе."
 
@@ -253,20 +303,23 @@ label d9_zavtrak_w_dv_usw:
 
                 me "Ой, да иди ты со своими шуточками."
 
-                show dv laugh pioneer at right with dspr
+                show dv laugh pioneer with dspr
 
                 dv "Да ладно тебе, Семён, все мы тут взрослые."
                 dv "Я бы на твоём месте тоже не устояла перед Славиной задницей."
 
                 "Моя подруга рассмеялась с собственных слов, я же залился красной краской."
 
-                show dv smile pioneer at right with dspr
+                show dv smile pioneer with dspr
 
                 "Через некоторое время она успокоилась."
     
-            show dv normal pioneer at right with dspr
+            show dv normal pioneer with dspr
 
             dv "Ладно, я это вообще всё к чему[wp]"
+
+            show mid d7_breakfast_half tray foods with dspr
+
             dv "Может, вечером погуляем?"
             
             "Я пожал плечами."
@@ -282,7 +335,7 @@ label d9_zavtrak_w_dv_usw:
 
         me "Вроде никаких."
 
-        show dv smile pioneer at right with dspr
+        show dv smile pioneer with dspr
 
         "Лицо Алисы тут же расплылось в её фирменной широкой улыбке."
         "Сразу можно было заподозрить что-то неладное."
@@ -293,6 +346,8 @@ label d9_zavtrak_w_dv_usw:
 
             me "Опять к яблоням твоим?"
             dv "Не-е-е."
+
+        show mid d7_breakfast_half tray foods with dspr
 
         me "А куда?"
         dv "А вот это уже сюрприз!"
@@ -315,7 +370,7 @@ label d9_zavtrak_w_dv_usw:
         dv "Замечательно! Тогда вечером на площади встретимся."
         me "А я думал, мы после завтрака пойдём."
 
-        show dv normal pioneer at right with dspr
+        show dv normal pioneer with dspr
 
         "Она грустно вздохнула."
 
@@ -323,40 +378,59 @@ label d9_zavtrak_w_dv_usw:
         dv "И разобраться с ними надо до середины дня."
         me "Понятно."
 
-    show usw normal pioneer at left with dissolve
-    show dv surprise pioneer at right with dspr
+    show usw normal pioneer at left behind chair_l:
+        xcenter -0.2
+        ease_quart 1.2 xcenter 0.3
+    show dv surprise pioneer
+    with dspr
 
     "В это время к нашему столу подбежала вся запыхавшаяся Ульяна."
+
+    show usw normal pioneer at go_to_chair_left behind table
+    $ renpy.pause(1.0, hard=True)
+    show chair_l at chair_move_out behind usw
+    $ renpy.pause(0.3, hard=True)
+    show usw normal pioneer at sit_down_left
+    $ renpy.pause(0.3, hard=True)
+    show chair_l at chair_move_in
+    $ renpy.pause(0.3, hard=True)
+    show left d7_breakfast_full tray spoon foods behind shakers
+    with dissolve
+
     "Поставив поднос на стол, она изнемождённо плюхнулась на стул и глубоко вздохнула."
 
     dv "Улька, ты чего, марафон бежала?"
     usw "Да[wp] Нет[wp] Почти."
 
-    show dv normal pioneer at right with dspr
+    show dv normal pioneer with dspr
 
     usw "Неважно, в общем. А вы тут чем маетесь?"
     me "Завтракаем."
 
-    show usw normalsmile pioneer at left with dspr
+    show left d7_breakfast_full tray foods
+    show usw normalsmile pioneer
+    with dspr
 
     "Она хлопнула себя по лбу."
 
     usw "Как же я сама не догадалась?"
     dv "Так куда так спешила?"
 
-    show usw sad pioneer at left with dspr
+    show usw sad pioneer with dspr
 
     "Улька тяжело вздохнула."
 
     usw "Долго рассказывать, но мне нужно было метнуться сначала туда, потом обратно, а затем снова туда."
     usw "И при этом ещё успеть на завтрак."
 
-    show usw upset pioneer at left with dspr
+    show usw upset pioneer with dspr
 
     usw "Впрочем, сама виновата. Могла ещё вчера всё сделать, и бегать бы не пришлось."
     me "Так и зачем это всё?"
 
-    show usw normalsmile pioneer at left with dspr
+    show left d7_breakfast_half tray foods
+    show usw normalsmile pioneer
+    with dspr
 
     usw "Чтобы зарегистрироваться на участие в футбольном матче."
 
@@ -365,16 +439,26 @@ label d9_zavtrak_w_dv_usw:
 
     me "Звучит весело. И когда всё это дело будет?"
 
-    show usw normal pioneer at left with dspr
+    show usw normal pioneer with dspr
 
     usw "Через два дня."
+
+    show right d7_breakfast_empty tray spoon foods with dspr
+
     usw "А завтра будет день интенсивных тренировок."
+
+    show dv normal pioneer at get_up
+    show chair_r at chair_move_out
+    hide right 
+    with dissolve
 
     "В это время Алиса, взяв поднос в руки, встала из-за стола."
 
     dv "Что же, товарищи, я пойду."
 
     if wnfh_Data.FlagGet("mt_angry") == True:
+
+        show dv smile pioneer with dspr
 
         dv "Желаю вам весёлого времяпровождения!"
 
@@ -393,7 +477,9 @@ label d9_zavtrak_w_dv_usw:
 
         dv "Да, именно вёчера!"
 
-    hide dv with dissolve
+    show dv smile pioneer:
+        ease_quart 2.0 xcenter 1.2
+    with dspr
 
     "Алиса быстрым шагом удалилась из столовой."
 
@@ -402,6 +488,7 @@ label d9_zavtrak_w_dv_usw:
         usw "Так, быстро доедаем и шуруем на склад, у нас там куча дел!"
         me "Несомненно."
 
+        hide dv
         window hide dissolve
 
         jump d9_warehouse
@@ -417,7 +504,9 @@ label d9_zavtrak_w_dv_usw:
         usw "Да ладно, мне-то как другу можно рассказать!"
         me "Я серьёзно, она не сказала."
 
-        show usw grin pioneer at left with dspr
+        show usw grin pioneer at left
+        hide dv
+        with dspr
 
         usw "Ясно, свиданку устроили!"
 
@@ -435,18 +524,23 @@ label d9_zavtrak_w_un:
 
     "Спустя полминуты я заметил свободный стул рядом с Леной."
 
-    # поставьте тут стол и завтрак пжлст >_<
-    show un normal pioneer at center with dissolve
+    show chair_l
+    show chair_r behind un
+    show un normal pioneer at wnfh_sit_right behind table
+    show table
+    show shakers
+    show right d7_breakfast_half tray foods behind shakers
+    with dissolve
 
     "Она уныло ковыряла ложкой еду и, судя по виду, витала где-то в облаках."
 
     me "Здравствуй."
 
-    show un shy pioneer at center with dspr
+    show un shy pioneer with dspr
 
     "Похоже, моё приветствие выбило её из размышлений."
 
-    show un smile pioneer at center with dspr
+    show un smile pioneer with dspr
 
     "Она посмотрела на меня, и на её лице сразу появилась улыбка."
 
@@ -454,40 +548,44 @@ label d9_zavtrak_w_un:
     me "Можно сесть?"
     un "Конечно."
 
+    show mid d7_breakfast_full tray spoon foods with dissolve
+
     "Услышав одобрение, я сразу же занял место."
 
     if wnfh_Data.getChoice_result_number("d8_choice_n11") == 1:
 
         me "Честно говоря, я боялся, что ты меня прогонишь."
 
-        show un surprise pioneer at center with dspr
+        show un surprise pioneer with dspr
 
         un "За что?"
         me "Ну, за вчерашнее музыкальное представление."
 
-        show un shy pioneer at center with dspr
+        show un shy pioneer with dspr
 
         "Она слегка задумалась."
 
-        show un grin pioneer at center with dspr
+        show un grin pioneer with dspr
 
         un "А, так ты про это[wp] Не бери в голову, я не умею долго обижаться."
         me "Это хорошо."
 
-        show un smile3 pioneer at center with dspr
+        show un smile3 pioneer with dspr
 
         un "Тем более играли вы очень даже хорошо."
 
-        show un normal pioneer at center with dspr
+        show un normal pioneer with dspr
 
         un "Конечно, неприятно было очнуться посреди ночи от галдежа."
         un "И этим вы много кому сон подпортили."
+
+        show mid d7_breakfast_half tray foods with dspr
 
         "Я тяжело вздохнул."
 
         me "Да, как-то не подумали[wp]"
 
-        show un smile pioneer at center with dspr
+        show un smile pioneer with dspr
 
         un "Ну, зато была весёлая ночка."
 
@@ -495,13 +593,15 @@ label d9_zavtrak_w_un:
 
         me "Ты какая-то задумчивая. Что-то случилось?"
 
-        show un shy pioneer at center with dspr
+        show un shy pioneer with dspr
 
         un "Оу, нет, ничего не случилось, просто[wp]"
 
-        show un smile2 pioneer at center with dspr
+        show un smile2 pioneer with dspr
 
         un "Просто задумалась!"
+
+        show mid d7_breakfast_half tray foods with dspr
 
         "Несмотря на добрую улыбку на лице Лены, мне слабо верилось в то, что у неё всё в порядке."
 
@@ -511,23 +611,23 @@ label d9_zavtrak_w_un:
 
             me "О чём же, если не секрет?"
     
-            show un smile pioneer at center with dspr
+            show un smile pioneer with dspr
     
             un "Да я вот в клуб журналистики записалась художником."
     
-            show un grin pioneer at center with dspr
+            show un grin pioneer with dspr
     
             un "Буду рисовать иллюстрации и красиво всё оформлять."
             me "Ясно, а чего же ты тогда волнуешься?"
 
-            show un shy pioneer at center with dspr
+            show un shy pioneer with dspr
 
             "Лена словно обомлела после моего вопроса."
 
             un "Да не волнуюсь я[wp]"
             me "Лен, не нужно обманывать, у тебя же всё на лице написано."
 
-            show un sad pioneer at center with dspr
+            show un sad pioneer with dspr
 
             "Она грустно вздохнула."
 
@@ -544,7 +644,7 @@ label d9_zavtrak_w_un:
             me "И, собственно, Женя, если что, скорректирует тебя в твоей иллюстрации или оформлении. Так что всё всем понравится."
             me "В общем, не нужно себя накручивать. В коллективе тебя всегда поддержат."
 
-            show un sad_smile_wnfh pioneer at center with dspr
+            show un sad_smile_wnfh pioneer with dspr
 
             "Мои слова немного подбодрили Лену, если судить по её виду."
 
@@ -556,7 +656,7 @@ label d9_zavtrak_w_un:
             "Но всё же мне было ясно: если она пытается скрыть своё состояние, на то есть веские причины."
             "Поэтому я решил не развивать эту тему."
 
-    show un smile2 pioneer at center with dspr
+    show un smile2 pioneer with dspr
 
     un "А у тебя как дела?"
         
@@ -573,22 +673,31 @@ label d9_zavtrak_w_un:
 
         me "Всё как обычно, ничего нового."
 
-        show un shy pioneer at center with dspr
+        show un shy pioneer with dspr
 
         un "Грустно это как-то[wp]"
         me "Не знаю, мне нормально."
+
+    show right d7_breakfast_empty tray spoon foods with dspr
+    $ renpy.pause(0.5)
+    show un smile pioneer at get_up
+    show chair_r at chair_move_out
+    hide right 
+    with dissolve
 
     "Неожиданно для меня Лена встала из-за стола с подносом в руках."
 
     un "Что ж, меня ждут дела. До встречи, Семён."
     me "Пока."
 
-    hide un with dissolve
+    show un smile pioneer:
+        ease_quart 2.0 xcenter 1.2
 
     "Когда она удалилась, я задумался."
 
     th "Как я мог проиграть в скорости поедания завтрака? Надо исправляться!"
 
+    hide un
     window hide dissolve
 
     if wnfh_Data.FlagGet("mt_angry") == True:

@@ -4,7 +4,7 @@ label d9_day_alone:
     stop ambience fadeout 2.5
     stop music fadeout 2.5
     play ambience ambience_camp_center_evening fadein 2.0
-    scene bg ext_dining_hall_near_day with dissolve
+    scene bg ext_dining_hall_near_day with dissolve2
     $ renpy.pause(0.5, hard=True)
     scene bg ext_lenin_square_day_wnfh with dissolve
     $ renpy.pause(0.5, hard=True)

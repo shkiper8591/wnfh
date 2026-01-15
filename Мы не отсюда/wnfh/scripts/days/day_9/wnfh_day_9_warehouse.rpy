@@ -25,7 +25,7 @@ label d9_warehouse:
 
     stop ambience fadeout 2.0
     scene bg int_warehouse_day_wnfh
-    show usw normal pioneer far at center
+    show usw normal pioneer far at left
     with dissolve2
     play ambience ambience_int_cabin_evening fadein 2.0
 
@@ -38,8 +38,6 @@ label d9_warehouse:
     else:
 
         "Ульяна сразу подошла к рабочему столу."
-
-        usw "Пришли."
 
     usw "Так, перейдём сразу к делу, так что иди сюда."
 

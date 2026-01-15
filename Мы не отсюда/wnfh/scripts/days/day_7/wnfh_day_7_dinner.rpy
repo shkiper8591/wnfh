@@ -27,7 +27,6 @@ label d7_zavtrak:
         ) with sphere_blure_dissolve2
 
 label d7_un_zavtrak:
-    # мне короче лень ставить завтраки, у тебя, Стас, в этом опыта больше, ты и ставь. Got it?
     window show dissolve
     th "Думаю, лучше сяду с главной стесняшей всея лагеря."
     th "А то Алиса с Ульяной – страшное комбо, они же достанут меня своими шутками."
@@ -108,8 +107,9 @@ label d7_un_zavtrak:
 
         "Я продолжил уплетать свою овсянку."
 
-        show mid d11_breakfast_half tray foods with dspr
-        show un shy pioneer with dspr
+        show mid d11_breakfast_half tray foods
+        show un shy pioneer
+        with dspr
 
         un "И ещё, Сём[wp]"
         me "В третий раз благодарить меня не надо, я и с первого раза понял."
@@ -173,7 +173,7 @@ label d7_un_zavtrak:
 
     show mt normal pioneer behind chair_r:
         xcenter 1.2
-        ease 2.0 xcenter 0.9
+        ease 2.0 xcenter 0.7
     play music music_list["two_glasses_of_melancholy"] fadein 1.5
 
     if wnfh_Data.getChoice_result_number("d7_choice_n1") == 2:
@@ -199,22 +199,19 @@ label d7_un_zavtrak:
     me "Я вас внимательно слушаю."
     mt "К нам скоро приедет автобус, а я никак не успеваю его встретить."
 
-    show mt sad pioneer at right with dspr
+    show mt sad pioneer with dspr
 
     mt "Поэтому прошу, пожалуйста, встреть наше пополнение и сопроводи ко мне."
     me "А как же Света?"
     mt "Занята."
     me "А Славя?"
 
-    show mt angry pioneer at right with dspr
+    show mt angry pioneer with dspr
 
     mt "Семён, если я прошу тебя, значит больше мне некого! Хоть иногда соображай!"
     mt "Если хочешь, можешь взять кого-нибудь с собой за компанию, чтобы скучно не было."
     mt "Но задание есть задание, и оно должно быть выполнено, ясно?"
     me "Ясно."
-
-    show mt angry pioneer:
-        xcenter 0.8 ycenter 0.5
 
     mt "Всё тогда, быстрее доедай и шагай на остановку. У тебя десять минут."
 
@@ -248,7 +245,7 @@ label d7_un_no_2_lbl:
     un "Ну ладно[wp]"
 
     $ renpy.pause(1.0, hard=True)
-    show mid d11_breakfast_empty tray foods with dspr 
+    show mid d11_breakfast_empty tray spoon foods with dspr 
 
     "Менее чем за минуту я управлися с овсянкой, а чай прикончил и вовсе за один глоток."
 
@@ -275,7 +272,7 @@ label d7_un_yes_2_lbl:
     "Я же съел всё меньше чем за минуту, а подостывший чай и вовсе выпил за один глоток."
 
     $ renpy.pause(1.0, hard=True)
-    show mid d11_breakfast_empty tray foods with dspr
+    show mid d11_breakfast_empty tray spoon foods with dspr
     show un shocked pioneer with dspr
 
     un "В-Вау."
@@ -315,8 +312,7 @@ label d7_dv_usw_zavtrak:
     dv "Садись."
     usw "Конечно!"
     
-    show mid d11_breakfast_full tray spoon foods
-    with dissolve
+    show mid d11_breakfast_full tray spoon foods with dissolve
     #34 звук того, что он поставил поднос на стол
     
     th "Ох, не нравится мне всё это. По-любому опять что-то затеяли и хотят меня к себе завербовать."
@@ -358,10 +354,12 @@ label d7_dv_usw_zavtrak:
     show dv angry pioneer at wnfh_sit_right behind table with dspr
     
     dv "Да я те щас!"
+
+    play sound sfx_pat_shoulder_hard
+    $ renpy.pause(0.5)
+    show usw upset pioneer with dspr
     
     "Алиса дала подруге лёгкий подзатыльник."
-    
-    show usw upset pioneer at wnfh_sit_left behind table with dspr
     
     usw "Ой, да ладно тебе, пошутить уже нельзя?"
     dv "Нет, такие шутки нельзя шутить!"
@@ -410,8 +408,9 @@ label d7_dv_usw_zavtrak:
     
     mt "К нам пополнение приезжает, надо его встретить и сопроводить ко мне."
     
-    show dv smile pioneer at wnfh_sit_right behind table with dspr
-    show usw smile pioneer at wnfh_sit_left behind table with dspr
+    show dv smile pioneer
+    show usw smile pioneer
+    with dspr
     
     "После её слов Ульяна и Алиса быстренько перекинулись хитрыми взглядами."
     

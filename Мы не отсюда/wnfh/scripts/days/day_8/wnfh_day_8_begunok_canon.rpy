@@ -2,8 +2,6 @@ label d8_begunok_canon:
 
     $ wnfh_set_slot_data(chapter = 1, game_date = "24-07-1989", scene = "Заполнение обходного")
     window hide dissolve
-    hide mid d8_breakfast_empty with dissolve
-    $ renpy.pause(1.0)
     stop ambience fadeout 2.0
     $ wnfh_set_time()
     scene bg ext_dining_hall_near_day

@@ -81,7 +81,7 @@ label d8_zavtrak_w_un:
     kat "Верно."
     me "Можешь с нами сесть, если хочешь."
 
-    show un smile2 pioneer at right with dspr
+    show un smile2 pioneer with dspr
 
     "На моё предложение Лена слегка усмехнулась."
     un "Хах, я как раз хотела об этом спросить."
@@ -94,12 +94,39 @@ label d8_zavtrak_w_un:
     me "Сейчас втиснемся куда-нибудь."
 
     show kat normal pioneer 
-    show un smile pioneer at right
-    with dspr
+    show un smile pioneer
+    show chair_r
+    show chair_l
+    show table
+    show shakers
+    with dissolve
 
     "Пробираясь сквозь толпу пионеров, мы вышли к столу, где, на удивление, сидело не так много людей."
+
+    show kat normal pioneer at go_to_chair_left behind table
+    show un smile pioneer at go_to_chair_right behind chair_r
+    $ renpy.pause(1.0, hard=True)
+    
+    show chair_r at chair_move_out behind un
+    $ renpy.pause(0.3, hard=True)
+    show chair_l at chair_move_out behind kat
+    $ renpy.pause(0.7, hard=True)
+    
+    show kat normal pioneer at sit_down_left
+    $ renpy.pause(0.3, hard=True)
+    show un smile pioneer at sit_down_right
+    $ renpy.pause(1.0, hard=True)
+    
+    show chair_l at chair_move_in
+    $ renpy.pause(0.3, hard=True)
+    show chair_r at chair_move_in
+    show left d8_breakfast_full tray spoon foods behind shakers
+    show right d8_breakfast_full tray spoon foods behind shakers
+    show mid d8_breakfast_full tray spoon foods
+    with dissolve
+
     "Здесь мы и расположились, аккуратно поставив свои подносы."
-    #короче копчённый (стас), я тебе сценарий написал и в благородство играть не буду. Расставишь для меня столы с едой и мы в расчёте. 
+
     me "Ну что, Кать, как прошёл первый день в лагере?"
 
     show kat thinking with dspr
@@ -107,16 +134,20 @@ label d8_zavtrak_w_un:
     "Она глубоко вздохнула."
     kat "Эх, ну как-как[wp]"
 
-    show kat upset pioneer with dspr
+    show left d8_breakfast_full tray foods
+    show right d8_breakfast_full tray foods
+    show mid d8_breakfast_full tray foods
+    show kat upset pioneer
+    with dspr
 
     kat "Нормально, наверное?"
     kat "Показали мне домик, где я какое-то время обживалась."
 
-    show un grin pioneer at right with dspr
+    show un smile3 pioneer at right with dspr
 
     un "А потом пришла я, вытащила её гулять и заодно получше познакомиться."
 
-    show un smile3 pioneer at right with dspr
+    show un grin pioneer at right with dspr
 
     un "Хочу сказать, что это было довольно сложной задачей."
     me "Ха, и почему же?"
@@ -132,11 +163,12 @@ label d8_zavtrak_w_un:
     un "У тебя была куча времени на это."
     kat "Двадцать минут?"
 
-    show un grin pioneer at right with dspr
+    show un grin pioneer with dspr
 
     un "Целых двадцать минут!"
 
-    show un smile pioneer at right with dspr
+    show mid d8_breakfast_half tray foods
+    show un smile pioneer with dspr
 
     "Тихонько посмеявшись, Лена легонько похлопала Катю по плечу."
 
@@ -146,7 +178,7 @@ label d8_zavtrak_w_un:
 
     kat "Я? Я не обижаюсь."
 
-    show mt normal pioneer:
+    show mt normal pioneer behind chair_r:
         xcenter 1.2
         ease_quart 2.0 xcenter 0.88
     show kat normal pioneer
@@ -159,7 +191,9 @@ label d8_zavtrak_w_un:
     mt "И меня очень интересует, почему вы всё ещё тут сидите, а не собираете подписи?"
     me "Так мы завтракаем."
 
-    show mt angry with dspr
+    show right d8_breakfast_half tray foods
+    show mt angry
+    with dspr
 
     mt "Ну так побыстрее давайте! Чем раньше вы сдадите мне этот лист, тем лучше будет и мне, и вам!"
     mt "Намёк ясен, Семён?"
@@ -168,7 +202,9 @@ label d8_zavtrak_w_un:
 
     me "Ясен."
 
-    show mt grin with dspr
+    show left d8_breakfast_half tray foods
+    show mt grin
+    with dspr
 
     mt "Вот и славно."
 
@@ -178,6 +214,9 @@ label d8_zavtrak_w_un:
     "Злорадоно похихикав на прощание, Ольга Дмитриевна быстро удалилась вглубь столовой."
 
     me "Ну что ж, Кать, ты слышала её. Так что давай, ускоряемся."
+
+    show mid d8_breakfast_empty tray spoon foods
+    with dspr
 
     "Не желая терять драгоценное время, я стал уплетать завтрак в ускоренном темпе, расправившись с ним меньше чем за три минуты."
     "После чего я с облегчением вздохнул и посмотрел на Катину тарелку[wp] Которая была ещё наполовину полная."
@@ -206,7 +245,16 @@ label d8_un_yes_1:
     un "Отлично, спасибо вам."
     me "Та пожалуйста."
 
-    "Как только Катя закончила с завтраком, мы отправились на выход из столовой."
+    show left d8_breakfast_empty tray spoon foods
+    show right d8_breakfast_empty tray spoon foods
+    with dspr
+
+    "Как только девочки закончили с завтраком, мы отправились на выход из столовой."
+
+    hide left d8_breakfast_empty
+    hide right d8_breakfast_empty
+    hide mid d8_breakfast_empty
+    with dissolve
     
     jump d8_begunok_w_un
 
@@ -221,7 +269,14 @@ label d8_un_no_1:
     un "Вот как[wp] Ну ладно тогда, может, потом прогуляемся[wp]"
     me "Несомненно."
 
+    show left d8_breakfast_empty tray spoon foods
+    with dspr
+
     "Катя закончила с завтраком, после чего мы покинули столовую."
+
+    hide left d8_breakfast_empty
+    hide mid d8_breakfast_empty
+    with dissolve
 
     jump d8_begunok_canon
 
@@ -233,23 +288,35 @@ label d8_zavtrak_s_miku:
     
     "Взяв поднос с едой, я направился к Мику, которая грустно ковырялась ложкой в еде."
 
-    show mi upset pioneer at center with dissolve
+    show chair_r behind mi
+    show chair_l
+    show table
+    show shakers
+    show right d8_breakfast_half tray foods behind shakers
+    show mi upset pioneer at wnfh_sit_right behind table
+    with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show
     
     me "Не занято?"
     
     "Мику подняла на меня сонный взгляд и сквозь зевок ответила."
     
     mi "А? Привет, Семён. Да, конечно, садись."
+
+    show mid d8_breakfast_full tray spoon foods with dissolve
     
     "Поставив поднос, я сел за стол."
 
-    show mi sad pioneer at center with dspr
+    show mi sad pioneer with dspr
     
     me "Я так понимаю, кто-то сегодня плохо спал."
     mi "Угу."
     me "Можно узнать, как так вышло?"
 
-    show mi upset pioneer at center with dspr
+    show mi upset pioneer
+    show mid d8_breakfast_full tray foods
+    with dspr
 
     mi "Ну, ничего такого уж интересного[wp] Кошмары просто снились и всё."
     mi "Правда то, что там было, никак из головы не выходит[wp]"
@@ -261,7 +328,7 @@ label d8_zavtrak_s_miku:
 
     "Мику мимолётно бросила на меня испуганный взгляд."
 
-    show mi sad pioneer at center with dspr
+    show mi sad pioneer with dspr
     
     mi "Мне снились[wp] {w}ужасные вещи[wp] о которых я предпочту не говорить."
 
@@ -270,7 +337,9 @@ label d8_zavtrak_s_miku:
 
     me "Как скажешь."
 
-    show mi normal pioneer at center with dspr
+    show mid d8_breakfast_half tray foods
+    show mi normal pioneer
+    with dspr
 
     mi "Ну, а у тебя как дела?"
     
@@ -278,7 +347,9 @@ label d8_zavtrak_s_miku:
     
     me "Да всё нормально, в общем-то. Буду провожатым для новенькой, хотя ты это и так знаешь."
     
-    show mi grin pioneer at center with dspr
+    show right d8_breakfast_half tray spoon foods
+    show mi grin pioneer
+    with dspr
 
     mi "О! Да, знаю, это раз. И два[wp] Можно с вами? За компанию. Заодно покажу и расскажу ей о всех достопримечательностях нашего лагеря! И да, заранее отвечая на твой вопрос: да, их тут больше, чем статуя Ленина!"
     
@@ -300,15 +371,15 @@ label d8_mi_yes_1:
     
     me "Конечно, почему нет."
 
-    show mi smile pioneer at center with dspr
+    show mi smile pioneer with dspr
     
     mi "Отличненько! Со мной вы точно не заскучаете!"
     me "Хочешь сказать, что в моей компании Катя заскучает?"
     mi "Я имею в виду, что втроём всяко будет веселее, чем вдвоём."
     me "Ну, тут даже не поспорить."
 
-    show mi normal pioneer at center with dspr
-    show mt normal pioneer:
+    show mi normal pioneer with dspr
+    show mt normal pioneer behind chair_r:
         ease_quart 2.0 xcenter 0.78
 
     "В этот момент к нашему столу подошла вожатая."
@@ -321,13 +392,19 @@ label d8_mi_yes_1:
     
     "После моего ответа Ольга Дмитриевна тут же удалилась обратно вглубь столовой, а я активно принялся за свой завтрак."
     
-    show mi dontlike pioneer at center with dspr
+    show mi dontlike pioneer with dspr
 
     mi "Фи-и-и! Как ты можешь есть эту гадость?"
     me "А мне очень даже нравится."
     mi "Фи."
+
+    show mid d8_breakfast_empty tray spoon foods with dspr
     
     "Закончив с завтраком, мы с Мику отнесли свои подносы и пошли на выход."
+
+    hide right d8_breakfast_half 
+    hide mid d8_breakfast_empty
+    with dissolve
     
     jump d8_begunok_w_mi
 
@@ -335,14 +412,14 @@ label d8_mi_no_1:
     
     me "Да хватит тебе, Мику, мы быстро справимся. Даже поболтать не успеем, как бегунок будет заполнен."
 
-    show mi sad pioneer at center with dspr
+    show mi sad pioneer with dspr
 
     mi "Эх, ну ладненько[wp] Хотя бы навестите меня в кружке."
     me "Обязательно."
     
     "Мику грустно вздохнула, а я активно принялся уплетать свой завтрак."
     
-    show mi upset pioneer at center with dspr
+    show mi upset pioneer with dspr
 
     mi "И как ты только ешь эту гадость?"
     me "О чём ты? Вкусно же."
@@ -350,9 +427,11 @@ label d8_mi_no_1:
     me "Без обид, конечно, но у тебя, как у японки, вкусы другие, вот и всё."
     mi "Возможно[wp]"
     
-    hide mi with dissolve
+    show mid d8_breakfast_empty tray spoon foods with dissolve
 
     "Закончив с завтраком, я попрощался с музыкантшей и, отнеся поднос, вышел из столовой."
+
+    hide mid d8_breakfast_empty with dissolve
 
     jump d8_begunok_canon
 
@@ -423,12 +502,9 @@ label d8_zavtrak_s_el_sh:
     "Краем глаза я заметил подходящую к нашему столу вожатую." 
     "И очень не хотелось бы, чтобы она услышала наши разговоры о том, как не попасться ей."
     
-    window hide
     show mt normal pioneer behind chair_r:
         xcenter 1.2
         ease_quart 3.0 xcenter 0.5
-    $ renpy.pause(1.5)
-    window show
 
     "Вскоре она подошла к нам."
     
@@ -438,20 +514,19 @@ label d8_zavtrak_s_el_sh:
     th "Нет у вас, всё же, совести."
     
     me "Да, хорошо." 
-    
-    "Вожатая удалилась так же быстро, как и пришла."
-    
-    window hide
+
     show mt normal pioneer behind chair_r:
         ease_quart 3.0 xcenter 1.2
-    $ renpy.pause(1.5)
-    window show
+    
+    "Вожатая удалилась так же быстро, как и пришла."
     
     me "После обеда расскажешь, а то меня вожатая опять на фронт отправляет."
     sh "Будем ждать."
     
-    show mid d8_breakfast_empty tray foods with dissolve
+    show mid d8_breakfast_empty tray spoon foods with dissolve
 
     "Быстренько всё доев, я попрощался с парнями и пошёл на выход из столовой."
+
+    hide mid d8_breakfast_empty with dissolve
     
     jump d8_begunok_canon

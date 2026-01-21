@@ -20,9 +20,9 @@ screen wnfh_main_menu():
         
 
         wnfh_mm_left_buttons = [
-            ["galary"  ,"Галерея"   ,[Jump("technical_chocolatki")]                        ],
-            ["scheme"  ,"Схема"     ,[ShowMenu("wnfh_schematic", _transition=dissolve)]    ],
-            ["exit"    ,"Выход в БЛ"     ,[Start("wnfh_exit")]                                  ],
+            ["galary"  ,"Галерея"      ,[Jump("technical_chocolatki")]                        ],
+            ["scheme"  ,"Схема"        ,[ShowMenu("wnfh_schematic", _transition=dissolve)]    ],
+            ["exit"    ,"Выход в БЛ"   ,[Start("wnfh_exit")]                                  ],
         ]
 
         wnfh_mm_right_buttons = [
@@ -63,12 +63,12 @@ screen wnfh_main_menu():
                 ), 60, 60),
             [OpenURL("https://discord.gg/KfaK7pmRSK")]],
 
-            ["achievements", im.Scale(im.Composite(
+            ["logbook", im.Scale(im.Composite(
                 (130, 130),
                 (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
                 (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60), 
-            [ShowMenu("wnfh_achievements", _transition=dissolve)]],
+            [ShowMenu("wnfh_logbook", _transition=dissolve)]],
 
             ["seledka", im.Scale(im.Composite(
                 (130, 130),

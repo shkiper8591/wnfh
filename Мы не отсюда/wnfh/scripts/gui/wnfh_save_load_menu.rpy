@@ -317,8 +317,8 @@ screen wnfh_load(main_menu = False):
                 area(0.95, 0.5, 50, 1.0)
                 xanchor 0.0 yanchor 0.5
                 vbar value YScrollValue("load"):
-                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
-                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
                     thumb wnfh_bars["tumb"][0]
                     hover_thumb wnfh_bars["tumb"][0]
                     xmaximum 33 ymaximum 1.0
@@ -637,8 +637,8 @@ screen wnfh_save(main_menu = False):
                 area(0.95, 0.5, 50, 1.0)
                 xanchor 0.0 yanchor 0.5
                 vbar value YScrollValue("save"):
-                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
-                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
                     thumb wnfh_bars["tumb"][0]
                     hover_thumb wnfh_bars["tumb"][0]
                     xmaximum 33 ymaximum 1.0

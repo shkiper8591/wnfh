@@ -56,7 +56,7 @@ screen wnfh_preferences(main_menu = False):
             if condition == "insensitive":
                 return im.Alpha(imgf, 0.38)
         wnfh_bars = {
-            "tumb": [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
+            "tumb":    [im.MatrixColor(wnfh_frames_elements["settings_bar_tumb"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_tumb"][4], renpy.store.wnfh_tymeofday)))],
 
             "bar_full": [im.Composite(
                 (25, 25),
@@ -65,7 +65,7 @@ screen wnfh_preferences(main_menu = False):
                 )],
             "bar_null": [im.Composite(
                 (25, 25),
-                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_bg"][4], renpy.store.wnfh_tymeofday))),
+                (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_bg"][0],   im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_bg"][4],   renpy.store.wnfh_tymeofday))),
                 (0, 0), im.MatrixColor(wnfh_frames_elements["settings_bar_null"][0], im.matrix.tint(*converter_hex('wnfh_tint_color', wnfh_frames_elements["settings_bar_null"][4], renpy.store.wnfh_tymeofday))),
                 )],
         }
@@ -85,8 +85,8 @@ screen wnfh_preferences(main_menu = False):
 
         # ТЕКСТ
         wnfh_preferences_text_bars = [
-            ["text_speed"        ,preferences.text_cps  ,"Скорость"     , "символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
-            ["auto_forward_time" ,preferences.afm_time  ,"Время автопереходов" , "сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+            ["text_speed"        ,preferences.text_cps  ,"Скорость"            ,"символов/сек" ,Preference("text speed")         ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
+            ["auto_forward_time" ,preferences.afm_time  ,"Время автопереходов" ,"сек"          ,Preference("auto-forward time")  ,wnfh_bars["bar_full"][0], wnfh_bars["bar_null"][0], 500, 1],
         ]
         wnfh_preferences_text_buttons = [
             ["autoforward" ,"Автопереход"  ,[Preference("auto-forward after click", "enable")  ,[Preference("auto-forward time", 0), Preference("auto-forward after click", "disable")]]  ,wnfh_bars["bar_full"][0]       ,wnfh_bars["bar_null"][0]   ,145  ,1],
@@ -797,22 +797,22 @@ screen wnfh_preferences(main_menu = False):
                     area(1.0, 0.5, 50, 1.0)
                     xanchor 0.0 yanchor 0.5
                     vbar value YScrollValue("settings_list"):
-                        top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
-                        bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["achievements_vbar_null"][1], wnfh_frames_elements["achievements_vbar_null"][1])
+                        top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                        bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
                         thumb wnfh_bars["tumb"][0]
                         hover_thumb wnfh_bars["tumb"][0]
                         xmaximum 33 ymaximum 1.0
                         pos (0.5, 0.5)
                         anchor (0.5, 0.5)
             frame: # ================================================ ПОДСКАЗКИ
-                area (0.811, 0.0, wnfh_frames_elements["achievements_char_list_bg_2"][1] + 40, wnfh_frames_elements["achievements_char_list_bg_2"][2] + 20)
+                area (0.811, 0.0, wnfh_frames_elements["logbook_char_list_bg_2"][1] + 40, wnfh_frames_elements["logbook_char_list_bg_2"][2] + 20)
                 xanchor 0.5 yanchor 0.0
                 background debug_frame["blue"]
                 vbox: # ================================================ Фон таблички из трёх кусков
                     pos (0.5, 0.5)
                     xanchor 0.5 yanchor 0.5
                     spacing 0
-                    for element in ["achievements_char_list_line", "achievements_char_list_bg_2", "achievements_char_list_line"]:
+                    for element in ["logbook_char_list_line", "logbook_char_list_bg_2", "logbook_char_list_line"]:
                         frame at wnfh_frames_elements[element][6]:
                         #frame:
                             if persistent.wnfh_debug_color:

@@ -9,7 +9,7 @@ label technical_chocolatki:
     play music wnfh_music_list["technical_chocolatki"] fadein 3
     "Ведутся работы"
     stop music
-    jump wnfh_main_menu
+    #jump wnfh_main_menu
 
 
 

@@ -1,4 +1,4 @@
-screen wnfh_time_skip(timeskip, timeskip_size = 30, timeskip_transition = dissolve):
+screen wnfh_time_skip(ts, ts_size = 30, ts_transition = dissolve, ts_text_spd = False, ts_timer = 5):
     add "black"
     frame:
         background debug_frame["red"]
@@ -6,6 +6,7 @@ screen wnfh_time_skip(timeskip, timeskip_size = 30, timeskip_transition = dissol
         xanchor 0.5 yanchor 0.5
         text timeskip:
             style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            size timeskip_size
+            size ts_size
+            slow_cps ts_text_spd
 
-    timer 5 action Hide("wnfh_time_skip", transition = timeskip_transition)
+    timer ts_timer action Hide("wnfh_time_skip", ts = timeskip_transition)

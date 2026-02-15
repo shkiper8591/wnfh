@@ -26,7 +26,7 @@ screen wnfh_game_menu_selector():
             ['yesno_prompt'      ,"Выход" ,[MainMenu(), SetDict(wnfh_button_states, 0, False)] ],
         ]
 
-    add wnfh_gui["tint_elements"]["vignette"]
+    add wnfh_gui["main_menu"]["vignette"]
 
     
     on "show" action ToggleScreen('wnfh_logbook')

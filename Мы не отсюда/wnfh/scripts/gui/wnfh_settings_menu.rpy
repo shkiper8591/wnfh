@@ -208,7 +208,7 @@ screen wnfh_preferences(main_menu = False):
 
     
     if main_menu:
-        add wnfh_gui["tint_elements"]["vignette"]
+        add wnfh_gui["main_menu"]["vignette"]
         for index, button in enumerate(wnfh_preferences_button[0:1]): # ================================================ Кнопка Назад
             frame:
                 area(0.1, 0.08, 150, 60)

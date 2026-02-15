@@ -125,205 +125,203 @@ screen wnfh_load(main_menu = False):
             text "Загрузить":
                 style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
 
-    frame at govno_ebanoe2:
-        area(0.5, 0.97, 1.0, 0.8)
-        xanchor 0.5 yanchor 1.0
-        background debug_frame["black"]
-        vbox: # ================================================ Фон таблички из трёх кусков
-            pos (0.5, 0.5)
-            xanchor 0.5 yanchor 0.5
-            spacing 0
-            for element in ["save_load_box_line", "save_load_box_bg", "save_load_box_line"]:
-                frame at wnfh_frames_elements[element][6]:
-                #frame:
-                    if persistent.wnfh_debug_color:
-                        background wnfh_frames_elements[element][5]
-                    else:
-                        background frame_transparent
-                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-        frame at wjuh_bg:
-            area(0.5, 0.5, 0.98, 1.0)
-            xanchor 0.5 yanchor 0.5
+        frame at govno_ebanoe2:
+            area(0.5, 0.97, 1.0, 0.8)
+            xanchor 0.5 yanchor 1.0
             background debug_frame["black"]
-
-            viewport id "load":
-                draggable True
-                mousewheel True
-                scrollbars None
-                vbox:
-                    pos (0.5, 0.5)
-                    xanchor 0.5 yanchor 0.5
-                    spacing 5
-                    for slot_num in range(10):
-                        $ slot_info = wnfh_get_slot_extra_data("{}-{}".format("WNFH_Saves", slot_num))
-                        button:
-                            background "#0000"
-                            action FileLoad(name = slot_num, page = "WNFH_Saves")
-                            frame:
-                                area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
-                                xanchor 0.5 yanchor 0.0
-                                background debug_frame["purple"]
-                                if slot_info:
-                                    imagebutton:
-                                        pos (0.99, 0.5)
-                                        xanchor 0.0 yanchor 0.5
-                                        idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
-                                        hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
-                                        action FileDelete(name = slot_num, page = "WNFH_Saves")
-                                else:
-                                    text str(slot_num + 1) + ". Пустой слот":
-                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                vbox: # ================================================ Фон таблички из трёх кусков
-                                    pos (0.5, 0.5)
-                                    xanchor 0.5 yanchor 0.5
-                                    spacing 0
-                                    for element in ["save_load_element_line", "save_load_element_bg", "save_load_element_line"]:
-                                        frame at wnfh_frames_elements[element][6]:
-                                        #frame:
-                                            if persistent.wnfh_debug_color:
-                                                background wnfh_frames_elements[element][5]
-                                            else:
-                                                background frame_transparent
-                                            area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                                
-                                vbox:
-                                    pos (0.03, 0.5)
+            vbox: # ================================================ Фон таблички из трёх кусков
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 0
+                for element in ["save_load_box_line", "save_load_box_bg", "save_load_box_line"]:
+                    frame at wnfh_frames_elements[element][6]:
+                    #frame:
+                        if persistent.wnfh_debug_color:
+                            background wnfh_frames_elements[element][5]
+                        else:
+                            background frame_transparent
+                        area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+    frame at wjuh_bg:
+        area(0.5, 0.11, 0.98, 0.85)
+        xanchor 0.5 yanchor 0.0
+        background debug_frame["black"]
+        viewport id "load":
+            draggable True
+            mousewheel True
+            scrollbars None
+            vbox:
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 5
+                for slot_num in range(10):
+                    $ slot_info = wnfh_get_slot_extra_data("{}-{}".format("WNFH_Saves", slot_num))
+                    button:
+                        background "#0000"
+                        action FileLoad(name = slot_num, page = "WNFH_Saves")
+                        frame:
+                            area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
+                            xanchor 0.5 yanchor 0.0
+                            background debug_frame["purple"]
+                            if slot_info:
+                                imagebutton:
+                                    pos (0.99, 0.5)
                                     xanchor 0.0 yanchor 0.5
-                                    spacing 1
-                                    if not slot_info:
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                    else:
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text slot_info["chapter"]:
+                                    idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
+                                    action FileDelete(name = slot_num, page = "WNFH_Saves")
+                            else:
+                                text str(slot_num + 1) + ". Пустой слот":
+                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                            vbox: # ================================================ Фон таблички из трёх кусков
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 0
+                                for element in ["save_load_element_line", "save_load_element_bg", "save_load_element_line"]:
+                                    frame at wnfh_frames_elements[element][6]:
+                                    #frame:
+                                        if persistent.wnfh_debug_color:
+                                            background wnfh_frames_elements[element][5]
+                                        else:
+                                            background frame_transparent
+                                        area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                            
+                            vbox:
+                                pos (0.03, 0.5)
+                                xanchor 0.0 yanchor 0.5
+                                spacing 1
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                else:
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text slot_info["chapter"]:
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text slot_info["game_date"]:
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text FileTime(name = str(slot_num), format = '%d/%m/%y | %H:%M', page = "WNFH_Saves"):
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                            #size 10
+                            frame:
+                                area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
+                                xanchor 1.0 yanchor 0.5
+                                background debug_frame["red"]
+                                if renpy.store.wnfh_tymeofday == "day":
+                                    add FileScreenshot(slot_num, page="WNFH_Saves"):
+                                        xoffset -6 yoffset -6
+                                        size (300, 162)
+                                else:
+                                    add FileScreenshot(slot_num, page="WNFH_Saves"):
+                                        xoffset -6 yoffset -6
+                                        size (300, 162)
+                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+                            vbox:
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 2
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["green"]
+                                        
+                                else:
+                                    frame:
+                                        area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["green"]
+                                        if len(str(slot_info["scene"])) < 45:
+                                            text slot_info["scene"]:
                                                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text slot_info["game_date"]:
+                                        elif len(str(slot_info["scene"])) >= 45:
+                                            text slot_info["scene"]:
                                                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text FileTime(name = str(slot_num), format = '%d/%m/%y | %H:%M', page = "WNFH_Saves"):
-                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                #size 10
-                                frame:
-                                    area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
-                                    xanchor 1.0 yanchor 0.5
-                                    background debug_frame["red"]
-                                    if renpy.store.wnfh_tymeofday == "day":
-                                        add FileScreenshot(slot_num, page="WNFH_Saves"):
-                                            xoffset -6 yoffset -6
-                                            size (300, 162)
-                                    else:
-                                        add FileScreenshot(slot_num, page="WNFH_Saves"):
-                                            xoffset -6 yoffset -6
-                                            size (300, 162)
-                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                                vbox:
-                                    pos (0.5, 0.5)
-                                    xanchor 0.5 yanchor 0.5
-                                    spacing 2
-                                    if not slot_info:
-                                        frame:
-                                            area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["green"]
-                                            
-                                    else:
-                                        frame:
-                                            area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["green"]
-                                            if len(str(slot_info["scene"])) < 45:
-                                                text slot_info["scene"]:
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                            elif len(str(slot_info["scene"])) >= 45:
-                                                text slot_info["scene"]:
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                    size 20
-                                    if not slot_info:
+                                                size 20
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
+                                        xanchor 0.5 yanchor 1.0
+                                        background debug_frame["purple"]
+                                else:
+                                    if persistent.wnfh_widget_lp == 0:
                                         frame:
                                             area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
                                             xanchor 0.5 yanchor 1.0
                                             background debug_frame["purple"]
-
+                                            text "Виджет лавпоинтов отключен":
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                size 20
                                     else:
-                                        if persistent.wnfh_widget_lp == 0:
-                                            frame:
-                                                area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
-                                                xanchor 0.5 yanchor 1.0
-                                                background debug_frame["purple"]
-                                                text "Виджет лавпоинтов отключен":
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                    size 20
-                                        else:
-                                            frame:
-                                                area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
-                                                xanchor 0.5 yanchor 1.0
-                                                background debug_frame["purple"]
-                                                hbox: # ================================================ Ебальники с очками
-                                                    spacing 5
-                                                    anchor (0.5, 0.5) pos (0.5, 0.5)
-                                                    
-                                                    $ character_with_img = [character for character in wnfh_character_order]
-                                                    for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
-                                                        frame:
-                                                            background debug_frame["black"]
-                                                            area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
-                                                            xanchor 0.5 yanchor 0.5
-                                                            hbox: # ================================================ Ебальники с очками
-                                                                spacing 0
-                                                                anchor (0.5, 0.5) pos (0.5, 0.5)
-                                                                frame: # ================================================ Ебальники
-                                                                    if persistent.wnfh_debug_color:
-                                                                        background wnfh_characters[character][1]
-                                                                    else:
-                                                                        background frame_transparent
-                                                                    area(0.0, 0.5, 40, 70)
-                                                                    xanchor 0.0 yanchor 0.5
-                                                                    if renpy.store.wnfh_tymeofday == "day":
-                                                                        add (wnfh_gui["avatars"][character]):
-                                                                            xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                                                            zoom 0.05
-                                                                    else:
-                                                                        add (wnfh_gui["avatars"][character]):
-                                                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                                                                            xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                                                            zoom 0.05
-                                    
-                                                                frame: # ================================================ Очки
-                                                                    background debug_frame["blue"]
-                                                                    area(1.0, 0.5, 40, 70)
-                                                                    xanchor 1.0 yanchor 0.5
-                                                                    text slot_info["lp_info"][character]:
-                                                                        style "wnfh_lp_counter"
-                                                                        color wnfh_characters[character][1]
-                                                                        size 30
-            frame:
-                background debug_frame["green"]
-                area(0.95, 0.5, 50, 1.0)
-                xanchor 0.0 yanchor 0.5
-                vbar value YScrollValue("load"):
-                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                    thumb wnfh_bars["tumb"][0]
-                    hover_thumb wnfh_bars["tumb"][0]
-                    xmaximum 33 ymaximum 1.0
-                    pos (0.5, 0.5)
-                    anchor (0.5, 0.5)
+                                        frame:
+                                            area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
+                                            xanchor 0.5 yanchor 1.0
+                                            background debug_frame["purple"]
+                                            hbox: # ================================================ Ебальники с очками
+                                                spacing 5
+                                                anchor (0.5, 0.5) pos (0.5, 0.5)
+                                                
+                                                $ character_with_img = [character for character in wnfh_character_order]
+                                                for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
+                                                    frame:
+                                                        background debug_frame["black"]
+                                                        area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
+                                                        xanchor 0.5 yanchor 0.5
+                                                        hbox: # ================================================ Ебальники с очками
+                                                            spacing 0
+                                                            anchor (0.5, 0.5) pos (0.5, 0.5)
+                                                            frame: # ================================================ Ебальники
+                                                                if persistent.wnfh_debug_color:
+                                                                    background wnfh_characters[character][1]
+                                                                else:
+                                                                    background frame_transparent
+                                                                area(0.0, 0.5, 40, 70)
+                                                                xanchor 0.0 yanchor 0.5
+                                                                if renpy.store.wnfh_tymeofday == "day":
+                                                                    add (wnfh_gui["avatars"][character]):
+                                                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                                                        zoom 0.05
+                                                                else:
+                                                                    add (wnfh_gui["avatars"][character]):
+                                                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+                                                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                                                        zoom 0.05
+                                
+                                                            frame: # ================================================ Очки
+                                                                background debug_frame["blue"]
+                                                                area(1.0, 0.5, 40, 70)
+                                                                xanchor 1.0 yanchor 0.5
+                                                                text slot_info["lp_info"][character]:
+                                                                    style "wnfh_lp_counter"
+                                                                    color wnfh_characters[character][1]
+                                                                    size 30
+        frame:
+            background debug_frame["green"]
+            area(0.95, 0.5, 50, 1.0)
+            xanchor 0.0 yanchor 0.5
+            vbar value YScrollValue("load"):
+                top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                thumb wnfh_bars["tumb"][0]
+                hover_thumb wnfh_bars["tumb"][0]
+                xmaximum 33 ymaximum 1.0
+                pos (0.5, 0.5)
+                anchor (0.5, 0.5)
                 
 screen wnfh_save(main_menu = False):
 
@@ -452,197 +450,195 @@ screen wnfh_save(main_menu = False):
             text "Загрузить":
                 style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
 
-    frame at govno_ebanoe2:
-        area(0.5, 0.97, 1.0, 0.8)
-        xanchor 0.5 yanchor 1.0
-        background debug_frame["black"]
-        vbox: # ================================================ Фон таблички из трёх кусков
-            pos (0.5, 0.5)
-            xanchor 0.5 yanchor 0.5
-            spacing 0
-            for element in ["save_load_box_line", "save_load_box_bg", "save_load_box_line"]:
-                frame at wnfh_frames_elements[element][6]:
-                #frame:
-                    if persistent.wnfh_debug_color:
-                        background wnfh_frames_elements[element][5]
-                    else:
-                        background frame_transparent
-                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-        frame at wjuh_bg:
-            area(0.5, 0.5, 0.98, 1.0)
-            xanchor 0.5 yanchor 0.5
+        frame at govno_ebanoe2:
+            area(0.5, 0.97, 1.0, 0.8)
+            xanchor 0.5 yanchor 1.0
             background debug_frame["black"]
-
-            viewport id "save":
-                draggable True
-                mousewheel True
-                scrollbars None
-                vbox:
-                    pos (0.5, 0.5)
-                    xanchor 0.5 yanchor 0.5
-                    spacing 5
-                    for slot_num in range(10):
-                        $ slot_info = wnfh_get_slot_extra_data("{}-{}".format("WNFH_Saves", slot_num))
-                        button:
-                            background "#0000"
-                            action wnfh_FileSave(name = slot_num, extra_info = wnfh_create_slot_extra_data(), page = "WNFH_Saves")
-                            frame:
-                                area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
-                                xanchor 0.5 yanchor 0.0
-                                background debug_frame["purple"]
-                                if slot_info:
-                                    imagebutton:
-                                        pos (0.99, 0.5)
-                                        xanchor 0.0 yanchor 0.5
-                                        idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
-                                        hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
-                                        action FileDelete(name = slot_num, page = "WNFH_Saves")
-                                else:
-                                    text str(slot_num + 1) + ". Пустой слот":
-                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                vbox: # ================================================ Фон таблички из трёх кусков
-                                    pos (0.5, 0.5)
-                                    xanchor 0.5 yanchor 0.5
-                                    spacing 0
-                                    for element in ["save_load_element_line", "save_load_element_bg", "save_load_element_line"]:
-                                        frame at wnfh_frames_elements[element][6]:
-                                        #frame:
-                                            if persistent.wnfh_debug_color:
-                                                background wnfh_frames_elements[element][5]
-                                            else:
-                                                background frame_transparent
-                                            area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                                
-                                vbox:
-                                    pos (0.03, 0.5)
+            vbox: # ================================================ Фон таблички из трёх кусков
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 0
+                for element in ["save_load_box_line", "save_load_box_bg", "save_load_box_line"]:
+                    frame at wnfh_frames_elements[element][6]:
+                    #frame:
+                        if persistent.wnfh_debug_color:
+                            background wnfh_frames_elements[element][5]
+                        else:
+                            background frame_transparent
+                        area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+    frame at wjuh_bg:
+        area(0.5, 0.11, 0.98, 0.85)
+        xanchor 0.5 yanchor 0.0
+        background debug_frame["black"]
+        viewport id "save":
+            draggable True
+            mousewheel True
+            scrollbars None
+            vbox:
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 5
+                for slot_num in range(10):
+                    $ slot_info = wnfh_get_slot_extra_data("{}-{}".format("WNFH_Saves", slot_num))
+                    button:
+                        background "#0000"
+                        action wnfh_FileSave(name = slot_num, extra_info = wnfh_create_slot_extra_data(), page = "WNFH_Saves")
+                        frame:
+                            area (0.5, 0.0, wnfh_frames_elements["save_load_element_bg"][1] + 40, wnfh_frames_elements["save_load_element_bg"][2] + 20)
+                            xanchor 0.5 yanchor 0.0
+                            background debug_frame["purple"]
+                            if slot_info:
+                                imagebutton:
+                                    pos (0.99, 0.5)
                                     xanchor 0.0 yanchor 0.5
-                                    spacing 1
-                                    if not slot_info:
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                    else:
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text slot_info["chapter"]:
+                                    idle Transform(wnfh_gui["tint_elements"]["trash"],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
+                                    hover Transform(wnfh_gui["tint_elements"]["trash"], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
+                                    action FileDelete(name = slot_num, page = "WNFH_Saves")
+                            else:
+                                text str(slot_num + 1) + ". Пустой слот":
+                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                            vbox: # ================================================ Фон таблички из трёх кусков
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 0
+                                for element in ["save_load_element_line", "save_load_element_bg", "save_load_element_line"]:
+                                    frame at wnfh_frames_elements[element][6]:
+                                    #frame:
+                                        if persistent.wnfh_debug_color:
+                                            background wnfh_frames_elements[element][5]
+                                        else:
+                                            background frame_transparent
+                                        area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                            
+                            vbox:
+                                pos (0.03, 0.5)
+                                xanchor 0.0 yanchor 0.5
+                                spacing 1
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                else:
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text slot_info["chapter"]:
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text slot_info["game_date"]:
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                    frame:
+                                        area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["blue"]
+                                        text FileTime(name = str(slot_num), format = '%d/%m/%y | %H:%M', page = "WNFH_Saves"):
+                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                            #size 10
+                            frame:
+                                area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
+                                xanchor 1.0 yanchor 0.5
+                                background debug_frame["red"]
+                                add FileScreenshot(slot_num, page="WNFH_Saves"):
+                                    xoffset -6 yoffset -6
+                                    size (300, 162)
+                            vbox:
+                                pos (0.5, 0.5)
+                                xanchor 0.5 yanchor 0.5
+                                spacing 2
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["green"]
+                                else:
+                                    frame:
+                                        area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
+                                        xanchor 0.5 yanchor 0.5
+                                        background debug_frame["green"]
+                                        if len(str(slot_info["scene"])) < 45:
+                                            text slot_info["scene"]:
                                                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text slot_info["game_date"]:
+                                        elif len(str(slot_info["scene"])) >= 45:
+                                            text slot_info["scene"]:
                                                 style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                        frame:
-                                            area (0.5, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2]/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["blue"]
-                                            text FileTime(name = str(slot_num), format = '%d/%m/%y | %H:%M', page = "WNFH_Saves"):
-                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                #size 10
-                                frame:
-                                    area (0.97, 0.5, 300, wnfh_frames_elements["save_load_element_bg"][2])
-                                    xanchor 1.0 yanchor 0.5
-                                    background debug_frame["red"]
-                                    add FileScreenshot(slot_num, page="WNFH_Saves"):
-                                        xoffset -6 yoffset -6
-                                        size (300, 162)
-                                vbox:
-                                    pos (0.5, 0.5)
-                                    xanchor 0.5 yanchor 0.5
-                                    spacing 2
-                                    if not slot_info:
-                                        frame:
-                                            area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["green"]
-                                    else:
-                                        frame:
-                                            area (0.5, 0.5, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 1/3)
-                                            xanchor 0.5 yanchor 0.5
-                                            background debug_frame["green"]
-                                            if len(str(slot_info["scene"])) < 45:
-                                                text slot_info["scene"]:
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                            elif len(str(slot_info["scene"])) >= 45:
-                                                text slot_info["scene"]:
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                    size 20
-                                    if not slot_info:
+                                                size 20
+                                if not slot_info:
+                                    frame:
+                                        area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
+                                        xanchor 0.5 yanchor 1.0
+                                        background debug_frame["purple"]
+                                else:
+                                    if persistent.wnfh_widget_lp == 0:
                                         frame:
                                             area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
                                             xanchor 0.5 yanchor 1.0
                                             background debug_frame["purple"]
-
+                                            text "Виджет лавпоинтов отключен":
+                                                style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                size 20
                                     else:
-                                        if persistent.wnfh_widget_lp == 0:
-                                            frame:
-                                                area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
-                                                xanchor 0.5 yanchor 1.0
-                                                background debug_frame["purple"]
-                                                text "Виджет лавпоинтов отключен":
-                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                    size 20
-                                        else:
-                                            frame:
-                                                area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
-                                                xanchor 0.5 yanchor 1.0
-                                                background debug_frame["purple"]
-                                                hbox: # ================================================ Ебальники с очками
-                                                    spacing 5
-                                                    anchor (0.5, 0.5) pos (0.5, 0.5)
-                                                    
-                                                    $ character_with_img = [character for character in wnfh_character_order]
-                                                    for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
-                                                        frame:
-                                                            background debug_frame["black"]
-                                                            area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
-                                                            xanchor 0.5 yanchor 0.5
-                                                            hbox: # ================================================ Ебальники с очками
-                                                                spacing 0
-                                                                anchor (0.5, 0.5) pos (0.5, 0.5)
-                                                                frame: # ================================================ Ебальники
-                                                                    if persistent.wnfh_debug_color:
-                                                                        background wnfh_characters[character][1]
-                                                                    else:
-                                                                        background frame_transparent
-                                                                    area(0.0, 0.5, 40, 70)
-                                                                    xanchor 0.0 yanchor 0.5
-                                                                    if renpy.store.wnfh_tymeofday == "day":
-                                                                        add (wnfh_gui["avatars"][character]):
-                                                                            xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                                                            zoom 0.05
-                                                                    else:
-                                                                        add (wnfh_gui["avatars"][character]):
-                                                                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                                                                            xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                                                            zoom 0.05
-                                    
-                                                                frame: # ================================================ Очки
-                                                                    background debug_frame["blue"]
-                                                                    area(1.0, 0.5, 40, 70)
-                                                                    xanchor 1.0 yanchor 0.5
-                                                                    text slot_info["lp_info"][character]:
-                                                                        style "wnfh_lp_counter"
-                                                                        color wnfh_characters[character][1]
-                                                                        size 30
-            frame:
-                background debug_frame["green"]
-                area(0.95, 0.5, 50, 1.0)
-                xanchor 0.0 yanchor 0.5
-                vbar value YScrollValue("save"):
-                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                    thumb wnfh_bars["tumb"][0]
-                    hover_thumb wnfh_bars["tumb"][0]
-                    xmaximum 33 ymaximum 1.0
-                    pos (0.5, 0.5)
-                    anchor (0.5, 0.5)    
+                                        frame:
+                                            area (0.5, 1.0, 1000, wnfh_frames_elements["save_load_element_bg"][2] * 2/3)
+                                            xanchor 0.5 yanchor 1.0
+                                            background debug_frame["purple"]
+                                            hbox: # ================================================ Ебальники с очками
+                                                spacing 5
+                                                anchor (0.5, 0.5) pos (0.5, 0.5)
+                                                
+                                                $ character_with_img = [character for character in wnfh_character_order]
+                                                for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
+                                                    frame:
+                                                        background debug_frame["black"]
+                                                        area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
+                                                        xanchor 0.5 yanchor 0.5
+                                                        hbox: # ================================================ Ебальники с очками
+                                                            spacing 0
+                                                            anchor (0.5, 0.5) pos (0.5, 0.5)
+                                                            frame: # ================================================ Ебальники
+                                                                if persistent.wnfh_debug_color:
+                                                                    background wnfh_characters[character][1]
+                                                                else:
+                                                                    background frame_transparent
+                                                                area(0.0, 0.5, 40, 70)
+                                                                xanchor 0.0 yanchor 0.5
+                                                                if renpy.store.wnfh_tymeofday == "day":
+                                                                    add (wnfh_gui["avatars"][character]):
+                                                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                                                        zoom 0.05
+                                                                else:
+                                                                    add (wnfh_gui["avatars"][character]):
+                                                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+                                                                        xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                                                        zoom 0.05
+                                
+                                                            frame: # ================================================ Очки
+                                                                background debug_frame["blue"]
+                                                                area(1.0, 0.5, 40, 70)
+                                                                xanchor 1.0 yanchor 0.5
+                                                                text slot_info["lp_info"][character]:
+                                                                    style "wnfh_lp_counter"
+                                                                    color wnfh_characters[character][1]
+                                                                    size 30
+        frame:
+            background debug_frame["green"]
+            area(0.95, 0.5, 50, 1.0)
+            xanchor 0.0 yanchor 0.5
+            vbar value YScrollValue("save"):
+                top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                thumb wnfh_bars["tumb"][0]
+                hover_thumb wnfh_bars["tumb"][0]
+                xmaximum 33 ymaximum 1.0
+                pos (0.5, 0.5)
+                anchor (0.5, 0.5)    
 
 

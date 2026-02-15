@@ -7,17 +7,18 @@ init -4 python:
     wnfh_gui = dict()
 
     wnfh_choice_tint_color = {
-        #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
-        "day":      ["#FF00FF", "#AA00FF", "#220022",   None    ], 
-        "sunset":   ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
-        "night":    ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
-        "prologue": ["#FF00FF", "#AA00FF", "#220022", "#AA00FF" ],
+        #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты   #4 курсоры
+        "day":      ["#FF00FF", "#AA00FF", "#220022",   None      , "#84FF00" ], 
+        "sunset":   ["#FF00FF", "#AA00FF", "#220022", "#AA00FF"   , "#FFF800" ],
+        "night":    ["#FF00FF", "#AA00FF", "#220022", "#AA00FF"   , "#00FFFF" ],
+        "rain":     ["#C6C6C6", "#9E9E9E", "#000000", "#C6C6C6"   , "#9E9E9E" ],
+        "prologue": ["#FF00FF", "#AA00FF", "#220022", "#AA00FF"   , "#BEE8E9" ],
 } 
     wnfh_tint_color = {
-        #timeset      #0 текст   #1 рамки   #2 фон     #3 спрайты
-        "day":      ["#FFDD7D", "#80A055", "#000000",   None    ], 
+        #timeset     #0 текст   #1 рамки   #2 фоны    #3 спрайты
+        "day":      ["#FFDD7D", "#80A055", "#000000", "#FFFFFF" ], 
         "sunset":   ["#DCD168", "#CDAF69", "#150A0B", "#EFD1FF" ],
-        "night":    ["#3CCFA2", "#36B198", "#000A20", "#A1C7D1" ],
+        "night":    ["#3CCFA2", "#009F89", "#000A20", "#A1C7D1" ],
         "rain":     ["#C6C6C6", "#9E9E9E", "#000000", "#C6C6C6" ], 
         "prologue": ["#98D8DA", "#BEE8E9", "#000A20", "#A1C7D1" ], 
     }
@@ -65,6 +66,11 @@ init -4 python:
         "indicator_star",
         "indicator_molot",
         "indicator_serp",
+        #Курсор
+        "cursor_line",
+        "cursor_bg",
+        "paw_line",
+        "paw_bg"
 
     ]}
 
@@ -125,7 +131,7 @@ init -4 python:
         "logbook_char_list_bg_2":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,40          ,25                ,2             ,frame_black      ,wjuh_bg],
         "logbook_char_list_gradient":             [wnfh_gui["tint_elements"]["frame_gradient"]      ,450           ,80          ,25                ,0             ,frame_black      ,wnfh_pass],
         "logbook_char_list_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,470           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "logbook_box_bg":                         [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
+        "logbook_box_bg":                         [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,1020         ,25                ,2             ,frame_black      ,wjuh_bg],
         "logbook_box_line":                       [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "logbook_vbar_null":                      [wnfh_gui["tint_elements"]["frame_bar_null"]      ,40            ,40          ,13                ,1             ,frame_green      ,wnfh_pass],
         "logbook_vbar_full":                      [wnfh_gui["tint_elements"]["frame_bar_full"]      ,40            ,40          ,13                ,0             ,frame_green      ,wnfh_pass],

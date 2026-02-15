@@ -153,7 +153,21 @@ init -3 python:
 
 
 init python:
+    def wnfh_mouse_dynamic_displayable(st, at):
+        return Fixed(
+            Transform(wnfh_gui["tint_elements"]["cursor_bg"], matrixcolor=TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][2])),
+            Transform(wnfh_gui["tint_elements"]["cursor_line"], matrixcolor=TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][0])),
+        ), 0.5
+
+    def wnfh_mouse_dynamic_displayable_pressed(st, at):
+        return Fixed(
+            Transform(wnfh_gui["tint_elements"]["paw_bg"], matrixcolor=TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][2])),
+            Transform(wnfh_gui["tint_elements"]["paw_line"], matrixcolor=TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][0])),
+        ), 0.5
+
+    
     def wnfh_set_time(time_of_day="day", sprite_time=None):
+        #config.mouse_displayable = MouseDisplayable(, 0, 0)
         if sprite_time == None:
             if time_of_day == "prologue":
                 sprite_time = "night"
@@ -163,6 +177,8 @@ init python:
         renpy.store.wnfh_tymeofday = time_of_day
         wnfh_chars_define()
 
+        config.mouse_displayable = MouseDisplayable(DynamicDisplayable(wnfh_mouse_dynamic_displayable), 0, 0).add("button", DynamicDisplayable(wnfh_mouse_dynamic_displayable_pressed), 10, 8)
+        
         for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
             wnfh_double_char_define(i[0], i[1], i[2])
             

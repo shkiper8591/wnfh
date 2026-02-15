@@ -5,6 +5,7 @@ init 0:
 
 label wnfh_main:
     window hide
+    $ wnfh_set_time()
     stop ambience fadeout 3
     stop sound fadeout 3
     stop sound_loop fadeout 3
@@ -19,6 +20,7 @@ label wnfh_main:
 
 label wnfh_exit:
     window hide # Скрываем текстбокс.
+    $ config.mouse_displayable = None
     stop music fadeout 3 # Останавливаем музыку.
     scene black with fade # Переходим на сцену с чёрным экраном.
     $ wnfh_screens_diact() # Делаем обратную замену экранов мода на оригинальные.

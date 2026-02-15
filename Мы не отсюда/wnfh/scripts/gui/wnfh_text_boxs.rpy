@@ -98,27 +98,32 @@ screen wnfh_say(who, what, two_windows = False):
                                     idle Transform(wnfh_db_buttons[i][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                     hover Transform(wnfh_db_buttons[i][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons[i][1]
+                                    mouse "button"
                             if persistent.all_sound == "mute":
                                 imagebutton:
                                     idle Transform(wnfh_db_buttons["mute"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                     hover Transform(wnfh_db_buttons["mute"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["mute"][1]
+                                    mouse "button"
                             elif persistent.all_sound == "unmute":
                                 imagebutton:
                                     idle Transform(wnfh_db_buttons["unmute"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                     hover Transform(wnfh_db_buttons["unmute"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["unmute"][1]
+                                    mouse "button"
                             
                             if persistent.font_size == "small":
                                 imagebutton:
                                     idle Transform(wnfh_db_buttons["plus"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                     hover Transform(wnfh_db_buttons["plus"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["plus"][1]
+                                    mouse "button"
                             elif persistent.font_size == "large":
                                 imagebutton:
                                     idle Transform(wnfh_db_buttons["minus"][0],  matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][0]))
                                     hover Transform(wnfh_db_buttons["minus"][0], matrixcolor = TintMatrix(wnfh_tint_color[ renpy.store.wnfh_tymeofday][1]))
                                     action wnfh_db_buttons["minus"][1]
+                                    mouse "button"
                             
                 hbox:
                     xanchor 0.0 yanchor 0.0
@@ -178,6 +183,7 @@ screen wnfh_say(who, what, two_windows = False):
                 xanchor 1.0 yanchor 0.5 
                 xpos 1.0 ypos 0.5
                 action ShowMenu("text_history")
+                mouse "button"
         frame: # ======================== Кнопка перемотки
             at (wnfh_db_buttons_small, wnfh_db_buttons_large, None)[say_anim()]
             area(1.0, (0.65, 0.5)[say_size()], 0.07, 0.5)
@@ -190,6 +196,7 @@ screen wnfh_say(who, what, two_windows = False):
                     xanchor 0.0 yanchor 0.5
                     xpos 0.0 ypos 0.5
                     action Skip()
+                    mouse "button"
             else:
                 imagebutton:
                     idle wnfh_say_buttons["fast_forward"][0]
@@ -197,6 +204,7 @@ screen wnfh_say(who, what, two_windows = False):
                     xanchor 0.0 yanchor 0.5
                     xpos 0.0 ypos 0.5
                     action Skip()
+                    mouse "button"
                
     
 
@@ -260,6 +268,7 @@ screen wnfh_nvl:
                 xanchor 1.0 yanchor 0.5 
                 xpos 1.0 ypos 0.5
                 action ShowMenu("text_history")
+                mouse "button"
         frame: # ======================== Кнопочки
             area(1.0, 0.5, 0.07, 1.0)
             xanchor 1.0 yanchor 0.5
@@ -271,13 +280,15 @@ screen wnfh_nvl:
                     xanchor 0.0 yanchor 0.5
                     xpos 0.0 ypos 0.5
                     action Skip()
+                    mouse "button"
             else:
                 imagebutton:
                     idle wnfh_say_buttons["fast_forward"][0]
                     hover wnfh_say_buttons["fast_forward"][1]
                     xanchor 0.0 yanchor 0.5
                     xpos 0.0 ypos 0.5
-                    action Skip()  
+                    action Skip()
+                    mouse "button"  
         frame: # ======================== Главный блок
             area(0.5, 1.0, 1555, 1080)
             xanchor 0.5 yanchor 1.0

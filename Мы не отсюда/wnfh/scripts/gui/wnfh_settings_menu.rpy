@@ -268,562 +268,540 @@ screen wnfh_preferences(main_menu = False):
             text "Настройки":
                 style "wnfh_title_1_" + renpy.store.wnfh_tymeofday
 
-    frame at govno_ebanoe2:
-        area(0.5, 0.97, 1.0, 0.8)
-        xanchor 0.5 yanchor 1.0
+    frame at wjuh_bg:
+        area(0.5, 0.11, 0.98, 0.85)
+        xanchor 0.5 yanchor 0.0
         background debug_frame["black"]
-        vbox: # ================================================ Фон таблички из трёх кусков
-            pos (0.5, 0.5)
-            xanchor 0.5 yanchor 0.5
-            spacing 0
-            for element in ["settings_box_line", "settings_box_bg", "settings_box_line"]:
-                frame at wnfh_frames_elements[element][6]:
-                #frame:
-                    if persistent.wnfh_debug_color:
-                        background wnfh_frames_elements[element][5]
-                    else:
-                        background frame_transparent
-                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-        frame at wjuh_bg:
-            area(0.5, 0.5, 0.98, 1.0)
-            xanchor 0.5 yanchor 0.5
+        frame:
+            area(0.01, 0.0, 1100, 0.98)
+            xanchor 0.0 yanchor 0.0
             background debug_frame["black"]
-            frame:
-                area(0.01, 0.0, 1100, 0.98)
-                xanchor 0.0 yanchor 0.0
-                background debug_frame["black"]
-                viewport id "settings_list":
-                    draggable True
-                    mousewheel True
-                    scrollbars None
-                    vbox:
-                        pos (0.5, 0.5)
-                        xanchor 0.5 yanchor 0.5
-                        spacing 0
-                 
-                        frame: # ============================ Первый блок
-                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_audio_bars) * 65 + len(wnfh_preferences_audio_buttons) * 65)
+            viewport id "settings_list":
+                draggable True
+                mousewheel True
+                scrollbars None
+                vbox:
+                    pos (0.5, 0.5)
+                    xanchor 0.5 yanchor 0.5
+                    spacing 0
+             
+                    frame: # ============================ Первый блок
+                        area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_audio_bars) * 65 + len(wnfh_preferences_audio_buttons) * 65)
+                        xanchor 0.5 yanchor 0.0
+                        background debug_frame["green"]
+                        vbox:
+                            pos (0.5, 0.0)
                             xanchor 0.5 yanchor 0.0
-                            background debug_frame["green"]
-                            vbox:
-                                pos (0.5, 0.0)
+                            spacing 0
+                            frame: # ======================== Заголовок "Аудио"
+                                area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
                                 xanchor 0.5 yanchor 0.0
-                                spacing 0
-                                frame: # ======================== Заголовок "Аудио"
-                                    area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox: # ================================================ Фон таблички из трёх кусков
-                                        pos (0.5, 0.5)
-                                        xanchor 0.5 yanchor 0.5
-                                        spacing 0
-                                        for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
-                                            frame at wnfh_frames_elements[element][6]:
-                                            #frame:
-                                                if persistent.wnfh_debug_color:
-                                                    background wnfh_frames_elements[element][5]
-                                                else:
-                                                    background frame_transparent
-                                                area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-            
-                                    text "Аудио":
-                                        style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
-            
-                                frame: # ====================== Кнопки ползунки и кнопки аудио
-                                    area(0.5, 0.0, 0.9, len(wnfh_preferences_audio_bars) * 60 + len(wnfh_preferences_audio_buttons) * 60)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox:
-                                        pos (0.5, 0.0)
-                                        xanchor 0.5 yanchor 0.0
-                                        spacing 0
-                                        for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57)
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_audio_bars[element][1]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                        text_align 0.0
-                                                frame:
-                                                    background debug_frame["blue"]
-                                                    area(0.35, 0.5, 100, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_audio_bars[element][5]+12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value wnfh_preferences_audio_bars[element][2]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_bars[element][0]])
-
-                                        for element in range(len(wnfh_preferences_audio_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57)
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_audio_buttons[element][1]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            
-                                                $ pref_current_value = getattr(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1])
-                                                $ pref_integer_value = wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2][pref_current_value]
-                                                frame:
-                                                    background debug_frame["blue"]
-                                                    area(0.5, 0.5, 0.3, 1.0)
-                                                    xanchor 0.5 yanchor 0.5
-                                                    text wnfh_preferences_display_labels[wnfh_preferences_audio_buttons[element][0]][pref_integer_value]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                        size 20
-            
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_audio_buttons[element][5] + 12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_audio_buttons[element][2]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                    frame:
-                                                        background debug_frame["black"]
-                                                        area(0.0, 0.5, 1.0, 1.0)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        padding(0, 0)
-                                                        hbox:
-                                                            for i in range(wnfh_preferences_audio_buttons[element][6]):
-                                                                button:
-                                                                    area(0.5, 0.5, (wnfh_preferences_audio_buttons[element][5]) / (wnfh_preferences_audio_buttons[element][6]), 1.0)
-                                                                    xanchor 0.5 yanchor 0.5
-                                                                    padding(0, 0)
-                                                                    action [wnfh_CycleField(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2].keys()), ]
-                                                                    background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_buttons[element][0]])
-
-                        frame: # ============================ Второй блок
-                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_text_bars) * 65 + len(wnfh_preferences_text_buttons) * 65)
-                            xanchor 0.5 yanchor 0.0
-                            background debug_frame["purple"]
-                            vbox:
-                                pos (0.5, 0.0)
+                                background debug_frame["black"]
+                                vbox: # ================================================ Фон таблички из трёх кусков
+                                    pos (0.5, 0.5)
+                                    xanchor 0.5 yanchor 0.5
+                                    spacing 0
+                                    for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                        frame at wnfh_frames_elements[element][6]:
+                                        #frame:
+                                            if persistent.wnfh_debug_color:
+                                                background wnfh_frames_elements[element][5]
+                                            else:
+                                                background frame_transparent
+                                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        
+                                text "Аудио":
+                                    style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+        
+                            frame: # ====================== Кнопки ползунки и кнопки аудио
+                                area(0.5, 0.0, 0.9, len(wnfh_preferences_audio_bars) * 60 + len(wnfh_preferences_audio_buttons) * 60)
                                 xanchor 0.5 yanchor 0.0
-                                spacing 0
-                                frame: # ======================== Заголовок "Текст"
-                                    area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox: # ================================================ Фон таблички из трёх кусков
-                                        pos (0.5, 0.5)
-                                        xanchor 0.5 yanchor 0.5
-                                        spacing 0
-                                        for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
-                                            frame at wnfh_frames_elements[element][6]:
-                                            #frame:
-                                                if persistent.wnfh_debug_color:
-                                                    background wnfh_frames_elements[element][5]
-                                                else:
-                                                    background frame_transparent
-                                                area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-            
-                                    text "Текст":
-                                        style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
-            
-                                frame:
-                                    area(0.5, 0.0, 0.9, 370)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox:
-                                        pos (0.5, 0.0)
-                                        xanchor 0.5 yanchor 0.0
-                                        spacing 0
-                                        for element in range(len(wnfh_preferences_text_bars)): #+ len(wnfh_preferences_text_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57) #+ len(wnfh_preferences_text_buttons))
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_text_bars[element][2]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                        text_align 0.0
-                                                        #size 25
-                                                frame:
-                                                    background debug_frame["blue"]
-                                                    area(0.35, 0.5, 100, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text "{}".format(int(wnfh_preferences_text_bars[element][1])):
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                frame:
-                                                    background debug_frame["purple"]
-                                                    area(0.5, 0.5, 200, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_text_bars[element][3]:
-                                                        style "wnfh_measure_unit_" + renpy.store.wnfh_tymeofday
-            
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_text_bars[element][7]+12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value wnfh_preferences_text_bars[element][4]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_bars[element][0]])
-            
-                                        for element in range(len(wnfh_preferences_text_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57)
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_text_buttons[element][1]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            
-                                                $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
-                                                $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
-                                                frame:
-                                                    background debug_frame["blue"]
-                                                    area(0.5, 0.5, 0.3, 1.0)
-                                                    xanchor 0.5 yanchor 0.5
-                                                    text wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_text_buttons[element][5] + 12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_text_buttons[element][2]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                    frame:
-                                                        background debug_frame["black"]
-                                                        area(0.0, 0.5, 1.0, 1.0)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        padding(0, 0)
-                                                        hbox:
-                                                            for i in range(wnfh_preferences_text_buttons[element][6]):
-                                                                button:
-                                                                    area(0.5, 0.5, (wnfh_preferences_text_buttons[element][5]) / (wnfh_preferences_text_buttons[element][6]), 1.0)
-                                                                    xanchor 0.5 yanchor 0.5
-                                                                    padding(0, 0)
-                                                                    action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0],
-                                                                                            wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1],
-                                                                                            wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()),
-                                                                                            Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]],
-                                                                                                value = wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][(pref_integer_value+1) % (wnfh_preferences_text_buttons[element][6]+1)])]
-
-                                                                    background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value])
-                                                                    
-    
-                        frame: # ============================ Третий блок
-                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_widget_buttons) * 65)
-                            xanchor 0.5 yanchor 0.0
-                            background debug_frame["blue"]
-                            vbox:
-                                pos (0.5, 0.0)
-                                xanchor 0.5 yanchor 0.0
-                                spacing 0
-                                frame: # ======================== Заголовок "Виджеты"
-                                    area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox: # ================================================ Фон таблички из трёх кусков
-                                        pos (0.5, 0.5)
-                                        xanchor 0.5 yanchor 0.5
-                                        spacing 0
-                                        for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
-                                            frame at wnfh_frames_elements[element][6]:
-                                                if persistent.wnfh_debug_color:
-                                                    background wnfh_frames_elements[element][5]
-                                                else:
-                                                    background frame_transparent
-                                                area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-            
-                                    text "Виджеты": # ============================ Виджеты
-                                        style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
-            
-                                frame:
-                                    area(0.5, 0.0, 0.9, 250)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox:
-                                        pos (0.5, 0.0)
-                                        xanchor 0.5 yanchor 0.0
-                                        spacing 0
-                                        for element in range(len(wnfh_preferences_widget_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57)
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_widget_buttons[element][1]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_widget_buttons[element][5]+12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value wnfh_preferences_widget_buttons[element][2]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                    frame:
-                                                        background debug_frame["black"]
-                                                        area(0.0, 0.5, 1.0, 1.0)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        padding(0, 0)
-                                                        hbox:
-                                                            for i in range(wnfh_preferences_widget_buttons[element][6]):
-                                                                button:
-                                                                    area(0.5, 0.5, (wnfh_preferences_widget_buttons[element][5]) / (wnfh_preferences_widget_buttons[element][6]), 1.0)
-                                                                    xanchor 0.5 yanchor 0.5
-                                                                    padding(0, 0)
-                                                                    action ToggleField(persistent, "wnfh_" + wnfh_preferences_widget_buttons[element][0], i, i+1)
-                                                                    background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_widget_buttons[element][0]])
-            
-                        
-            
-                        frame: # ============================ Четвёртый блок
-                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_other_buttons) * 65 + 100) 
-                            xanchor 0.5 yanchor 0.0
-                            background debug_frame["red"]
-                            vbox:
-                                pos (0.5, 0.0)
-                                xanchor 0.5 yanchor 0.0
-                                spacing 0
-                                frame: # ======================== Заголовок "Прочее"
-                                    area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox: # ================================================ Фон таблички из трёх кусков
-                                        pos (0.5, 0.5)
-                                        xanchor 0.5 yanchor 0.5
-                                        spacing 0
-                                        for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
-                                            frame at wnfh_frames_elements[element][6]:
-                                            #frame:
-                                                if persistent.wnfh_debug_color:
-                                                    background wnfh_frames_elements[element][5]
-                                                else:
-                                                    background frame_transparent
-                                                area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-            
-                                    text "Прочее":
-                                        style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
-            
-                                frame:
-                                    area(0.5, 0.0, 0.9, 250)
-                                    xanchor 0.5 yanchor 0.0
-                                    background debug_frame["black"]
-                                    vbox:
-                                        pos (0.5, 0.0)
-                                        xanchor 0.5 yanchor 0.0
-                                        spacing 0
-                                        for element in range(len(wnfh_preferences_other_buttons)):
-                                            frame:
-                                                area(0.5, 0.5, 1.0, 57)
-                                                xanchor 0.5 yanchor 0.5
-                                                background debug_frame["black"]
-                                                frame:
-                                                    background debug_frame["red"]
-                                                    area(0.0, 0.5, 0.35, 1.0)
-                                                    xanchor 0.0 yanchor 0.5
-                                                    text wnfh_preferences_other_buttons[element][1]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-            
-                                                $ pref_current_value = getattr(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1])
-                                                $ pref_integer_value = wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2][pref_current_value]
-                                                frame:
-                                                    background debug_frame["blue"]
-                                                    area(0.5, 0.5, 0.3, 1.0)
-                                                    xanchor 0.5 yanchor 0.5
-                                                    text wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value]:
-                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                        size 20
-            
-                                                frame:
-                                                    background debug_frame["green"]
-                                                    area(1.0, 0.5, wnfh_preferences_other_buttons[element][5] + 12, 1.0)
-                                                    xanchor 1.0 yanchor 0.5
-                                                    bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_other_buttons[element][2]:
-                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                        thumb wnfh_bars["tumb"][0]
-                                                        hover_thumb wnfh_bars["tumb"][0]
-                                                        xmaximum 1.0 ymaximum 39
-                                                        yanchor 0.5 ypos 0.5
-                                                    frame:
-                                                        background debug_frame["black"]
-                                                        area(0.0, 0.5, 1.0, 1.0)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        padding(0, 0)
-                                                        hbox:
-                                                            for i in range(wnfh_preferences_other_buttons[element][6]):
-                                                                button:
-                                                                    area(0.5, 0.5, (wnfh_preferences_other_buttons[element][5]) / (wnfh_preferences_other_buttons[element][6]), 1.0)
-                                                                    xanchor 0.5 yanchor 0.5
-                                                                    padding(0, 0)
-                                                                    action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0],
-                                                                        wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1],
-                                                                        wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()),
-                                                                        Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]],
-                                                                            value = wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])]
-                                                                    background debug_frame["red"]
-                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])
-                        if debug_switch:
-                            frame: # ============================ Пятый блок
-                                area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_devtools_buttons) * 65 + 100) 
-                                xanchor 0.5 yanchor 0.0
-                                background debug_frame["turquoise"]
+                                background debug_frame["black"]
                                 vbox:
                                     pos (0.5, 0.0)
                                     xanchor 0.5 yanchor 0.0
                                     spacing 0
-                                    frame: # ======================== Заголовок "Инструменты разработчиков"
-                                        area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
-                                        xanchor 0.5 yanchor 0.0
-                                        background debug_frame["black"]
-                                        vbox: # ================================================ Фон таблички из трёх кусков
-                                            pos (0.5, 0.5)
+                                    for element in range(len(wnfh_preferences_audio_bars)): # + len(wnfh_preferences_audio_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57)
                                             xanchor 0.5 yanchor 0.5
-                                            spacing 0
-                                            for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
-                                                frame at wnfh_frames_elements[element][6]:
-                                                #frame:
-                                                    if persistent.wnfh_debug_color:
-                                                        background wnfh_frames_elements[element][5]
-                                                    else:
-                                                        background frame_transparent
-                                                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                
-                                        text "Инструменты разработчиков":
-                                            style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
-                                            size 35
-                
-                                    frame:
-                                        area(0.5, 0.0, 0.9, 250)
-                                        xanchor 0.5 yanchor 0.0
-                                        background debug_frame["black"]
-                                        vbox:
-                                            pos (0.5, 0.0)
-                                            xanchor 0.5 yanchor 0.0
-                                            spacing 0
-                                            for element in range(len(wnfh_preferences_devtools_buttons)):
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_audio_bars[element][1]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    text_align 0.0
+                                            frame:
+                                                background debug_frame["blue"]
+                                                area(0.35, 0.5, 100, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text "{}%".format(int(preferences.get_volume(wnfh_preferences_audio_bars[element][0]) * 100.0)):
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_audio_bars[element][5]+12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value wnfh_preferences_audio_bars[element][2]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
+                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_bars[element][0]])
+                                    for element in range(len(wnfh_preferences_audio_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57)
+                                            xanchor 0.5 yanchor 0.5
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_audio_buttons[element][1]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+        
+                                            $ pref_current_value = getattr(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1])
+                                            $ pref_integer_value = wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2][pref_current_value]
+                                            frame:
+                                                background debug_frame["blue"]
+                                                area(0.5, 0.5, 0.3, 1.0)
+                                                xanchor 0.5 yanchor 0.5
+                                                text wnfh_preferences_display_labels[wnfh_preferences_audio_buttons[element][0]][pref_integer_value]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    size 20
+        
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_audio_buttons[element][5] + 12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_audio_buttons[element][2]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
                                                 frame:
-                                                    area(0.5, 0.5, 1.0, 57)
-                                                    xanchor 0.5 yanchor 0.5
                                                     background debug_frame["black"]
-                                                    frame:
-                                                        background debug_frame["red"]
-                                                        area(0.0, 0.5, 0.35, 1.0)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        text wnfh_preferences_devtools_buttons[element][1]:
-                                                            style "wnfh_text_" + renpy.store.wnfh_tymeofday
-                                                    frame:
-                                                        background debug_frame["green"]
-                                                        area(1.0, 0.5, wnfh_preferences_devtools_buttons[element][5] + 12, 1.0)
-                                                        xanchor 1.0 yanchor 0.5
-                                                        bar value wnfh_preferences_devtools_buttons[element][2]:
-                                                            left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
-                                                            right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
-                                                            thumb wnfh_bars["tumb"][0]
-                                                            hover_thumb wnfh_bars["tumb"][0]
-                                                            xmaximum 1.0 ymaximum 39
-                                                            yanchor 0.5 ypos 0.5
-                                                        frame:
-                                                            background debug_frame["black"]
-                                                            area(0.0, 0.5, 1.0, 1.0)
-                                                            xanchor 0.0 yanchor 0.5
-                                                            padding(0, 0)
-                                                            hbox:
-                                                                for i in range(wnfh_preferences_devtools_buttons[element][6]):
-                                                                    button:
-                                                                        area(0.5, 0.5, (wnfh_preferences_devtools_buttons[element][5]) / (wnfh_preferences_devtools_buttons[element][6]), 1.0)
-                                                                        xanchor 0.5 yanchor 0.5
-                                                                        padding(0, 0)
-                                                                        action ToggleField(persistent, "wnfh_" + wnfh_preferences_devtools_buttons[element][0], i, i+1)
-                                                                        background debug_frame["red"]
-                                                                        hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_devtools_buttons[element][0]])
+                                                    area(0.0, 0.5, 1.0, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    padding(0, 0)
+                                                    hbox:
+                                                        for i in range(wnfh_preferences_audio_buttons[element][6]):
+                                                            button:
+                                                                area(0.5, 0.5, (wnfh_preferences_audio_buttons[element][5]) / (wnfh_preferences_audio_buttons[element][6]), 1.0)
+                                                                xanchor 0.5 yanchor 0.5
+                                                                padding(0, 0)
+                                                                action [wnfh_CycleField(wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][0], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][1], wnfh_preferences_audio_buttons_states[wnfh_preferences_audio_buttons[element][0]][2].keys()), ]
+                                                                background debug_frame["red"]
+                                                                hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_audio_buttons[element][0]])
+                    frame: # ============================ Второй блок
+                        area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_text_bars) * 65 + len(wnfh_preferences_text_buttons) * 65)
+                        xanchor 0.5 yanchor 0.0
+                        background debug_frame["purple"]
+                        vbox:
+                            pos (0.5, 0.0)
+                            xanchor 0.5 yanchor 0.0
+                            spacing 0
+                            frame: # ======================== Заголовок "Текст"
+                                area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox: # ================================================ Фон таблички из трёх кусков
+                                    pos (0.5, 0.5)
+                                    xanchor 0.5 yanchor 0.5
+                                    spacing 0
+                                    for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                        frame at wnfh_frames_elements[element][6]:
+                                        #frame:
+                                            if persistent.wnfh_debug_color:
+                                                background wnfh_frames_elements[element][5]
+                                            else:
+                                                background frame_transparent
+                                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        
+                                text "Текст":
+                                    style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+        
+                            frame:
+                                area(0.5, 0.0, 0.9, 370)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox:
+                                    pos (0.5, 0.0)
+                                    xanchor 0.5 yanchor 0.0
+                                    spacing 0
+                                    for element in range(len(wnfh_preferences_text_bars)): #+ len(wnfh_preferences_text_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57) #+ len(wnfh_preferences_text_buttons))
+                                            xanchor 0.5 yanchor 0.5
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_text_bars[element][2]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    text_align 0.0
+                                                    #size 25
+                                            frame:
+                                                background debug_frame["blue"]
+                                                area(0.35, 0.5, 100, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text "{}".format(int(wnfh_preferences_text_bars[element][1])):
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                            frame:
+                                                background debug_frame["purple"]
+                                                area(0.5, 0.5, 200, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_text_bars[element][3]:
+                                                    style "wnfh_measure_unit_" + renpy.store.wnfh_tymeofday
+        
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_text_bars[element][7]+12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value wnfh_preferences_text_bars[element][4]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
+                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_bars[element][0]])
+        
+                                    for element in range(len(wnfh_preferences_text_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57)
+                                            xanchor 0.5 yanchor 0.5
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_text_buttons[element][1]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+        
+                                            $ pref_current_value = getattr(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0], wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1])
+                                            $ pref_integer_value = wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2][pref_current_value]
+                                            frame:
+                                                background debug_frame["blue"]
+                                                area(0.5, 0.5, 0.3, 1.0)
+                                                xanchor 0.5 yanchor 0.5
+                                                text wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+        
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_text_buttons[element][5] + 12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_text_buttons[element][2]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
+                                                frame:
+                                                    background debug_frame["black"]
+                                                    area(0.0, 0.5, 1.0, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    padding(0, 0)
+                                                    hbox:
+                                                        for i in range(wnfh_preferences_text_buttons[element][6]):
+                                                            button:
+                                                                area(0.5, 0.5, (wnfh_preferences_text_buttons[element][5]) / (wnfh_preferences_text_buttons[element][6]), 1.0)
+                                                                xanchor 0.5 yanchor 0.5
+                                                                padding(0, 0)
+                                                                action [wnfh_CycleField(wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][0],
+                                                                                        wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][1],
+                                                                                        wnfh_preferences_text_buttons_states[wnfh_preferences_text_buttons[element][0]][2].keys()),
+                                                                                        Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]],
+                                                                                            value = wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][(pref_integer_value+1) % (wnfh_preferences_text_buttons[element][6]+1)])]
+                                                                background debug_frame["red"]
+                                                                hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_text_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_text_buttons[element][0]][pref_integer_value])
+                                                                
 
-                frame:
-                    background debug_frame["green"]
-                    area(1.0, 0.5, 50, 1.0)
-                    xanchor 0.0 yanchor 0.5
-                    vbar value YScrollValue("settings_list"):
-                        top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                        bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
-                        thumb wnfh_bars["tumb"][0]
-                        hover_thumb wnfh_bars["tumb"][0]
-                        xmaximum 33 ymaximum 1.0
-                        pos (0.5, 0.5)
-                        anchor (0.5, 0.5)
-            frame: # ================================================ ПОДСКАЗКИ
-                area (0.811, 0.0, wnfh_frames_elements["logbook_char_list_bg_2"][1] + 40, wnfh_frames_elements["logbook_char_list_bg_2"][2] + 20)
-                xanchor 0.5 yanchor 0.0
-                background debug_frame["blue"]
-                vbox: # ================================================ Фон таблички из трёх кусков
+                    frame: # ============================ Третий блок
+                        area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_widget_buttons) * 65)
+                        xanchor 0.5 yanchor 0.0
+                        background debug_frame["blue"]
+                        vbox:
+                            pos (0.5, 0.0)
+                            xanchor 0.5 yanchor 0.0
+                            spacing 0
+                            frame: # ======================== Заголовок "Виджеты"
+                                area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox: # ================================================ Фон таблички из трёх кусков
+                                    pos (0.5, 0.5)
+                                    xanchor 0.5 yanchor 0.5
+                                    spacing 0
+                                    for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                        frame at wnfh_frames_elements[element][6]:
+                                            if persistent.wnfh_debug_color:
+                                                background wnfh_frames_elements[element][5]
+                                            else:
+                                                background frame_transparent
+                                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        
+                                text "Виджеты": # ============================ Виджеты
+                                    style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+        
+                            frame:
+                                area(0.5, 0.0, 0.9, 250)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox:
+                                    pos (0.5, 0.0)
+                                    xanchor 0.5 yanchor 0.0
+                                    spacing 0
+                                    for element in range(len(wnfh_preferences_widget_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57)
+                                            xanchor 0.5 yanchor 0.5
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_widget_buttons[element][1]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_widget_buttons[element][5]+12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value wnfh_preferences_widget_buttons[element][2]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
+                                                frame:
+                                                    background debug_frame["black"]
+                                                    area(0.0, 0.5, 1.0, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    padding(0, 0)
+                                                    hbox:
+                                                        for i in range(wnfh_preferences_widget_buttons[element][6]):
+                                                            button:
+                                                                area(0.5, 0.5, (wnfh_preferences_widget_buttons[element][5]) / (wnfh_preferences_widget_buttons[element][6]), 1.0)
+                                                                xanchor 0.5 yanchor 0.5
+                                                                padding(0, 0)
+                                                                action ToggleField(persistent, "wnfh_" + wnfh_preferences_widget_buttons[element][0], i, i+1)
+                                                                background debug_frame["red"]
+                                                                hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_widget_buttons[element][0]])
+        
+                    
+        
+                    frame: # ============================ Четвёртый блок
+                        area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_other_buttons) * 65 + 100) 
+                        xanchor 0.5 yanchor 0.0
+                        background debug_frame["red"]
+                        vbox:
+                            pos (0.5, 0.0)
+                            xanchor 0.5 yanchor 0.0
+                            spacing 0
+                            frame: # ======================== Заголовок "Прочее"
+                                area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox: # ================================================ Фон таблички из трёх кусков
+                                    pos (0.5, 0.5)
+                                    xanchor 0.5 yanchor 0.5
+                                    spacing 0
+                                    for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                        frame at wnfh_frames_elements[element][6]:
+                                        #frame:
+                                            if persistent.wnfh_debug_color:
+                                                background wnfh_frames_elements[element][5]
+                                            else:
+                                                background frame_transparent
+                                            area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+        
+                                text "Прочее":
+                                    style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+        
+                            frame:
+                                area(0.5, 0.0, 0.9, 250)
+                                xanchor 0.5 yanchor 0.0
+                                background debug_frame["black"]
+                                vbox:
+                                    pos (0.5, 0.0)
+                                    xanchor 0.5 yanchor 0.0
+                                    spacing 0
+                                    for element in range(len(wnfh_preferences_other_buttons)):
+                                        frame:
+                                            area(0.5, 0.5, 1.0, 57)
+                                            xanchor 0.5 yanchor 0.5
+                                            background debug_frame["black"]
+                                            frame:
+                                                background debug_frame["red"]
+                                                area(0.0, 0.5, 0.35, 1.0)
+                                                xanchor 0.0 yanchor 0.5
+                                                text wnfh_preferences_other_buttons[element][1]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+        
+                                            $ pref_current_value = getattr(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0], wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1])
+                                            $ pref_integer_value = wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2][pref_current_value]
+                                            frame:
+                                                background debug_frame["blue"]
+                                                area(0.5, 0.5, 0.3, 1.0)
+                                                xanchor 0.5 yanchor 0.5
+                                                text wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value]:
+                                                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                    size 20
+        
+                                            frame:
+                                                background debug_frame["green"]
+                                                area(1.0, 0.5, wnfh_preferences_other_buttons[element][5] + 12, 1.0)
+                                                xanchor 1.0 yanchor 0.5
+                                                bar value AnimatedValue(pref_integer_value, len(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2]) - 1, 0.1): # wnfh_preferences_other_buttons[element][2]:
+                                                    left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                    right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                    thumb wnfh_bars["tumb"][0]
+                                                    hover_thumb wnfh_bars["tumb"][0]
+                                                    xmaximum 1.0 ymaximum 39
+                                                    yanchor 0.5 ypos 0.5
+                                                frame:
+                                                    background debug_frame["black"]
+                                                    area(0.0, 0.5, 1.0, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    padding(0, 0)
+                                                    hbox:
+                                                        for i in range(wnfh_preferences_other_buttons[element][6]):
+                                                            button:
+                                                                area(0.5, 0.5, (wnfh_preferences_other_buttons[element][5]) / (wnfh_preferences_other_buttons[element][6]), 1.0)
+                                                                xanchor 0.5 yanchor 0.5
+                                                                padding(0, 0)
+                                                                action [wnfh_CycleField(wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][0],
+                                                                    wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][1],
+                                                                    wnfh_preferences_other_buttons_states[wnfh_preferences_other_buttons[element][0]][2].keys()),
+                                                                    Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]],
+                                                                        value = wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])]
+                                                                background debug_frame["red"]
+                                                                hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_other_buttons[element][0]], value=wnfh_preferences_display_labels[wnfh_preferences_other_buttons[element][0]][pref_integer_value])
+                    if debug_switch:
+                        frame: # ============================ Пятый блок
+                            area(0.5, 0.0, 1.0, (wnfh_frames_elements["settings_title_bg"][2] + 10) + len(wnfh_preferences_devtools_buttons) * 65 + 100) 
+                            xanchor 0.5 yanchor 0.0
+                            background debug_frame["turquoise"]
+                            vbox:
+                                pos (0.5, 0.0)
+                                xanchor 0.5 yanchor 0.0
+                                spacing 0
+                                frame: # ======================== Заголовок "Инструменты разработчиков"
+                                    area(0.5, 0.0, wnfh_frames_elements["settings_title_bg"][1] + 40, wnfh_frames_elements["settings_title_bg"][2] + 20)
+                                    xanchor 0.5 yanchor 0.0
+                                    background debug_frame["black"]
+                                    vbox: # ================================================ Фон таблички из трёх кусков
+                                        pos (0.5, 0.5)
+                                        xanchor 0.5 yanchor 0.5
+                                        spacing 0
+                                        for element in ["settings_title_line", "settings_title_bg", "settings_title_line"]:
+                                            frame at wnfh_frames_elements[element][6]:
+                                            #frame:
+                                                if persistent.wnfh_debug_color:
+                                                    background wnfh_frames_elements[element][5]
+                                                else:
+                                                    background frame_transparent
+                                                area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                                add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                                    matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+            
+                                    text "Инструменты разработчиков":
+                                        style "wnfh_title_2_" + renpy.store.wnfh_tymeofday
+                                        size 35
+            
+                                frame:
+                                    area(0.5, 0.0, 0.9, 250)
+                                    xanchor 0.5 yanchor 0.0
+                                    background debug_frame["black"]
+                                    vbox:
+                                        pos (0.5, 0.0)
+                                        xanchor 0.5 yanchor 0.0
+                                        spacing 0
+                                        for element in range(len(wnfh_preferences_devtools_buttons)):
+                                            frame:
+                                                area(0.5, 0.5, 1.0, 57)
+                                                xanchor 0.5 yanchor 0.5
+                                                background debug_frame["black"]
+                                                frame:
+                                                    background debug_frame["red"]
+                                                    area(0.0, 0.5, 0.35, 1.0)
+                                                    xanchor 0.0 yanchor 0.5
+                                                    text wnfh_preferences_devtools_buttons[element][1]:
+                                                        style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                                                frame:
+                                                    background debug_frame["green"]
+                                                    area(1.0, 0.5, wnfh_preferences_devtools_buttons[element][5] + 12, 1.0)
+                                                    xanchor 1.0 yanchor 0.5
+                                                    bar value wnfh_preferences_devtools_buttons[element][2]:
+                                                        left_bar Frame(wnfh_bars["bar_full"][0], wnfh_frames_elements["settings_bar_full"][1], wnfh_frames_elements["settings_bar_full"][1])
+                                                        right_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["settings_bar_null"][1], wnfh_frames_elements["settings_bar_null"][1])
+                                                        thumb wnfh_bars["tumb"][0]
+                                                        hover_thumb wnfh_bars["tumb"][0]
+                                                        xmaximum 1.0 ymaximum 39
+                                                        yanchor 0.5 ypos 0.5
+                                                    frame:
+                                                        background debug_frame["black"]
+                                                        area(0.0, 0.5, 1.0, 1.0)
+                                                        xanchor 0.0 yanchor 0.5
+                                                        padding(0, 0)
+                                                        hbox:
+                                                            for i in range(wnfh_preferences_devtools_buttons[element][6]):
+                                                                button:
+                                                                    area(0.5, 0.5, (wnfh_preferences_devtools_buttons[element][5]) / (wnfh_preferences_devtools_buttons[element][6]), 1.0)
+                                                                    xanchor 0.5 yanchor 0.5
+                                                                    padding(0, 0)
+                                                                    action ToggleField(persistent, "wnfh_" + wnfh_preferences_devtools_buttons[element][0], i, i+1)
+                                                                    background debug_frame["red"]
+                                                                    hovered Show("wnfh_preferences_tits", dick = wnfh_button_tits[wnfh_preferences_devtools_buttons[element][0]])
+            frame:
+                background debug_frame["green"]
+                area(1.0, 0.5, 50, 1.0)
+                xanchor 0.0 yanchor 0.5
+                vbar value YScrollValue("settings_list"):
+                    top_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                    bottom_bar Frame(wnfh_bars["bar_null"][0], wnfh_frames_elements["logbook_vbar_null"][1], wnfh_frames_elements["logbook_vbar_null"][1])
+                    thumb wnfh_bars["tumb"][0]
+                    hover_thumb wnfh_bars["tumb"][0]
+                    xmaximum 33 ymaximum 1.0
                     pos (0.5, 0.5)
-                    xanchor 0.5 yanchor 0.5
-                    spacing 0
-                    for element in ["logbook_char_list_line", "logbook_char_list_bg_2", "logbook_char_list_line"]:
-                        frame at wnfh_frames_elements[element][6]:
-                        #frame:
-                            if persistent.wnfh_debug_color:
-                                background wnfh_frames_elements[element][5]
-                            else:
-                                background frame_transparent
-                            area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                text "Подсказки":
-                    style "wnfh_text_" + renpy.store.wnfh_tymeofday
+                    anchor (0.5, 0.5)
+        frame: # ================================================ ПОДСКАЗКИ
+            area (0.811, 0.0, wnfh_frames_elements["logbook_char_list_bg_2"][1] + 40, wnfh_frames_elements["logbook_char_list_bg_2"][2] + 20)
+            xanchor 0.5 yanchor 0.0
+            background debug_frame["blue"]
+            vbox: # ================================================ Фон таблички из трёх кусков
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 0
+                for element in ["logbook_char_list_line", "logbook_char_list_bg_2", "logbook_char_list_line"]:
+                    frame at wnfh_frames_elements[element][6]:
+                    #frame:
+                        if persistent.wnfh_debug_color:
+                            background wnfh_frames_elements[element][5]
+                        else:
+                            background frame_transparent
+                        area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                        add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                            matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+            text "Подсказки":
+                style "wnfh_text_" + renpy.store.wnfh_tymeofday
 
 screen wnfh_preferences_tits(dick, value=""):
 

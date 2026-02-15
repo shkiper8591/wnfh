@@ -67,67 +67,46 @@ screen wnfh_logbook():
     on "show" action Show("wnfh_logbook_main")
     on "hide" action Hide("wnfh_logbook_main")
 
-    frame at govno_ebanoe2:
-        area(0.5, 0.97, 1.0, 0.8)
-        xanchor 0.5 yanchor 1.0
-        background debug_frame["black"]
-        vbox: # ================================================ Фон таблички из трёх кусков
-            pos (0.5, 0.5)
-            xanchor 0.5 yanchor 0.5
-            spacing 0
-            for element in ["logbook_box_line", "logbook_box_bg", "logbook_box_line"]:
-                frame at wnfh_frames_elements[element][6]:
-                #frame:
-                    if persistent.wnfh_debug_color:
-                        background wnfh_frames_elements[element][5]
-                    else:
-                        background frame_transparent
-                    area(0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-        frame at wjuh_bg:
-            area(0.5, 0.5, 0.98, 1.0)
-            xanchor 0.5 yanchor 0.5
-            background debug_frame["black"]
-            frame:
-                area(0.01, 0.0, 500, 0.98)
-                xanchor 0.0 yanchor 0.0
-                background debug_frame["red"]
-                viewport id "logbook_char_list":
-                    draggable True
-                    mousewheel True
-                    scrollbars None
-                    vbox:
-                        pos (0.5, 0.5)
-                        xanchor 0.5 yanchor 0.5
-                        spacing 0
-                        for button in range(len(wnfh_logbook_sections)):
-                            frame:
-                                area (0.5, 0.0, wnfh_frames_elements["logbook_char_list_bg"][1] + 40, wnfh_frames_elements["logbook_char_list_bg"][2] + 20)
-                                xanchor 0.5 yanchor 0.0
-                                background debug_frame["blue"]
-                                vbox: # ================================================ Фон таблички из трёх кусков
-                                    pos (0.5, 0.5)
-                                    xanchor 0.5 yanchor 0.5
-                                    spacing 0
-                                    for element in ["logbook_char_list_line", "logbook_char_list_bg", "logbook_char_list_line"]:
-                                        frame at wnfh_frames_elements[element][6]:
-                                        #frame:
-                                            if persistent.wnfh_debug_color:
-                                                background wnfh_frames_elements[element][5]
-                                            else:
-                                                background frame_transparent
-                                            area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
-                                            add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
-                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
-                                textbutton wnfh_logbook_sections[button][1] + " >": # ================================================ Текст кнопок
-                                    style "wnfh_buttons"
-                                    text_style "wnfh_ach_title_1_" + renpy.store.wnfh_tymeofday
-                                    text_text_align 1.0
-                                    #hovered ToggleDict(wnfh_button_states, character)
-                                    #unhovered ToggleDict(wnfh_button_states, character)
-                                    action None
-                                    at wnfh_mm_button_hover_atl()
+    
+    frame at wjuh_bg:
+        area(0.01, 0.11, 500, 0.98)
+        xanchor 0.0 yanchor 0.0
+        background debug_frame["red"]
+        viewport id "logbook_char_list":
+            draggable True
+            mousewheel True
+            scrollbars None
+            vbox:
+                pos (0.5, 0.5)
+                xanchor 0.5 yanchor 0.5
+                spacing 0
+                for button in range(len(wnfh_logbook_sections)):
+                    frame:
+                        area (0.5, 0.0, wnfh_frames_elements["logbook_char_list_bg"][1] + 40, wnfh_frames_elements["logbook_char_list_bg"][2] + 20)
+                        xanchor 0.5 yanchor 0.0
+                        background debug_frame["blue"]
+                        vbox: # ================================================ Фон таблички из трёх кусков
+                            pos (0.5, 0.5)
+                            xanchor 0.5 yanchor 0.5
+                            spacing 0
+                            for element in ["logbook_char_list_line", "logbook_char_list_bg", "logbook_char_list_line"]:
+                                frame at wnfh_frames_elements[element][6]:
+                                #frame:
+                                    if persistent.wnfh_debug_color:
+                                        background wnfh_frames_elements[element][5]
+                                    else:
+                                        background frame_transparent
+                                    area (0.5, 0.0, wnfh_frames_elements[element][1], wnfh_frames_elements[element][2]) padding(0, 0) xanchor 0.5
+                                    add Frame(wnfh_frames_elements[element][0], left=wnfh_frames_elements[element][3], top=0):
+                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][wnfh_frames_elements[element][4]])
+                        textbutton wnfh_logbook_sections[button][1] + " >": # ================================================ Текст кнопок
+                            style "wnfh_buttons"
+                            text_style "wnfh_ach_title_1_" + renpy.store.wnfh_tymeofday
+                            text_text_align 1.0
+                            #hovered ToggleDict(wnfh_button_states, character)
+                            #unhovered ToggleDict(wnfh_button_states, character)
+                            action None
+                            at wnfh_mm_button_hover_atl()
 
 
 screen wnfh_logbook_main():
@@ -145,7 +124,7 @@ screen wnfh_logbook_main():
 
     on "show" action Function(update_usertime)
     frame at govno_ebanoe2:
-        area(0.95, 0.181, 1250, 823)
+        area(0.95, 0.11, 1250, 823)
         xanchor 1.0 yanchor 0.0
         background debug_frame["yellow"] 
         if persistent.wnfh_widget_clock:

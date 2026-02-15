@@ -15,7 +15,6 @@ init 5 python:
                 compozite.append(obj[0])
                 for obj_index in range(len(obj[1])):
                     compozite.append(obj[1][obj_index][0])
-                    #compozite.append(im.MatrixColor(wnfh_gui["tint_elements"][obj[1][obj_index][1]], im.matrix.tint(*converter_hex('wnfh_tint_color', obj[1][obj_index][2], renpy.store.wnfh_tymeofday))))
                     compozite.append(Transform(wnfh_gui["tint_elements"][obj[1][obj_index][1]], matrixcolor = TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][obj[1][obj_index][2]])))
                 compozite_obj = wnfh_Composite(*compozite)
                 try:

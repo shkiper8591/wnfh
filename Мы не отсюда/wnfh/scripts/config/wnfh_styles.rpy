@@ -114,6 +114,8 @@ init -2:
     style wnfh_buttons is wnfh_text:
         background None
         hover_sound wnfh_gui["sound"]["plimp"]
+        mouse "button"
+
 
     style wnfh_splashs is wnfh_text:
         size 20

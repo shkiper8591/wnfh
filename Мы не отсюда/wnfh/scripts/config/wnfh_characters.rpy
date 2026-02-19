@@ -167,7 +167,6 @@ init python:
 
     
     def wnfh_set_time(time_of_day="day", sprite_time=None):
-        #config.mouse_displayable = MouseDisplayable(, 0, 0)
         if sprite_time == None:
             if time_of_day == "prologue":
                 sprite_time = "night"

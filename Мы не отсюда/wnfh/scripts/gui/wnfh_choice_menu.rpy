@@ -67,8 +67,8 @@ screen wnfh_choice(*args):
                                 style "wnfh_buttons"
                                 text_min_width 1100
                                 text_line_leading 16 text_line_spacing 11
-                                hovered ToggleDict(wnfh_button_states, index)
-                                unhovered ToggleDict(wnfh_button_states, index)
+                                hovered SetDict(wnfh_button_states, index, True)
+                                unhovered SetDict(wnfh_button_states, index, False)
                                 action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd, [args[index], args[len(args) -1], index]), Jump(args[index][3]))
                         else:
                             textbutton args[index][1]:
@@ -76,8 +76,8 @@ screen wnfh_choice(*args):
                                 style "wnfh_buttons"
                                 text_min_width 1100
                                 text_line_leading 16 text_line_spacing 11
-                                hovered ToggleDict(wnfh_button_states, index)
-                                unhovered ToggleDict(wnfh_button_states, index)
+                                hovered SetDict(wnfh_button_states, index, True)
+                                unhovered SetDict(wnfh_button_states, index, False)
                                 action (Hide("wnfh_choice_0", dissolve), Function(wnfh_add_to_bd, [args[index], args[len(args) -1], index]), Jump(args[index][3]))
 
     add wnfh_gui["main_menu"]["vignette"]

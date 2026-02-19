@@ -13,6 +13,7 @@ label wnfh_main:
     scene bg black with fade2 # Переходим на сцену с чёрным экраном.
     $ wnfh_screens_save_act() # Сохраняем экраны из оригинала и заменяем на собственные.
     $ persistent._file_page = "WNFH_Saves" # Имена наших слотов сейвов
+    
     return # С помощью return попадаем в главное меню игры.
     #scene cg d8_me_kat_boathouse_wnfh with dissolve
     $ renpy.pause(2)

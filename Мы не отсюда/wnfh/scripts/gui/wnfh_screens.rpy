@@ -30,6 +30,7 @@ init python:
 
     def wnfh_screen_act():  # Функция замены экранов из оригинала на собственные.
         config.window_title = u"Мы не отсюда"  # Здесь вводите название Вашего мода.
+        wnfh_set_time()
         for (
             name
         ) in (

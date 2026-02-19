@@ -1,5 +1,5 @@
 label wnfh_prologue:
-    
+    $ store.save_name = "Мы не отсюда" # Отслеживание названия сохранения для правильной замены экранов после загрузки сохранений
     $ wnfh_set_slot_data(chapter = 0, game_date = "05-06-2023", scene = "Утренние сборы")
     stop music fadeout 3.5
     $ wnfh_set_name("kat", "Новенькая")

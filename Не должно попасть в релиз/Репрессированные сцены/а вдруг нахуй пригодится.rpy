@@ -832,7 +832,7 @@ label a_vdrug_nahui_prigoditsya_2:
     $ renpy.pause(1.0)
     window show
 
-label a_vdrug_nahui_prigoditsya_3
+label a_vdrug_nahui_prigoditsya_3:
 
     scene black
     $ renpy.pause(1.0)

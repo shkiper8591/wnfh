@@ -37,43 +37,43 @@ screen wnfh_main_menu():
         wnfh_mm_down_buttons = [
             ["vk", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["vk"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["vk"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
             [OpenURL("https://vk.com/blwnfh")]],
 
             ["telegramm", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["telegramm"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["telegramm"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["telegramm"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["telegramm"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
             [OpenURL("https://t.me/blwnfh")]],
 
             ["steam", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["steam"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["steam"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["steam"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
             [OpenURL("https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115")]],
 
             ["discord", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["discord"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["discord"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["discord"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
             [OpenURL("https://discord.gg/KfaK7pmRSK")]],
 
             ["logbook", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["achievements"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["achievements"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["achievements"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60), 
             [ShowMenu("wnfh_logbook", _transition=dissolve)]],
 
             ["seledka", im.Scale(im.Composite(
                 (130, 130),
-                (6, 6), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(0.0, 0.0, 0.0,)),
-                (0, 0), im.MatrixColor(wnfh_gui["main_menu"]["seledka"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
+                (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["seledka"], im.matrix.tint(0.0, 0.0, 0.0,)),
+                (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["seledka"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
             [Jump("technical_chocolatki")]],
         ]

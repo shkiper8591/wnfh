@@ -39,9 +39,16 @@ init -4 python:
         "db_button_load",
         "db_button_menu",
         "db_button_hide",
+        "achievements",
+        "discord",
+        "seledka",
+        "steam",
+        "vk",
+        "telegramm",
         #Фреймы
         "frame_bg",
         "frame_line",
+        "frame_double_line",
         "frame_gradient",
         "frame_db_mid_line",
         "frame_db_brow_line",
@@ -64,7 +71,7 @@ init -4 python:
         "cursor_line",
         "cursor_bg",
         "paw_line",
-        "paw_bg"
+        "paw_bg",
 
     ]}
 
@@ -76,11 +83,9 @@ init -4 python:
         "yesno_prompt_button_line":               [wnfh_gui["tint_elements"]["frame_line"]          ,270           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "yesno_prompt_button_gradient":           [wnfh_gui["tint_elements"]["frame_gradient"]      ,250           ,60          ,25                ,0             ,frame_blue        ,wjuh_bg],
         
-        "game_menu_selector_box_bg":              [wnfh_gui["tint_elements"]["frame_bg"]            ,1700          ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
-        "game_menu_selector_box_line":            [wnfh_gui["tint_elements"]["frame_line"]          ,1720          ,4           ,25                ,1             ,frame_green        ,wjuh_line],
         "game_menu_selector_button_bg":           [wnfh_gui["tint_elements"]["frame_bg"]            ,280           ,50          ,25                ,2             ,frame_black        ,wjuh_bg],
-        "game_menu_selector_button_line":         [wnfh_gui["tint_elements"]["frame_line"]          ,300           ,4           ,22                ,1             ,frame_green        ,wjuh_line],
         "game_menu_selector_button_gradient":     [wnfh_gui["tint_elements"]["frame_gradient"]      ,280           ,50          ,25                ,0             ,frame_blue         ,wjuh_bg],
+        "game_menu_selector_button_double_line":  [wnfh_gui["tint_elements"]["frame_double_line"]   ,300           ,4           ,22                ,1             ,frame_green        ,wjuh_line],
         
         "widget_lp_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]            ,850           ,200         ,25                ,2             ,frame_black        ,wjuh_bg],
         "widget_lp_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]          ,870           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
@@ -120,16 +125,18 @@ init -4 python:
         "settings_title_line":                    [wnfh_gui["tint_elements"]["frame_line"]          ,680           ,4           ,22                ,1             ,frame_green      ,wnfh_pass],
         
         "save_load_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
-        "save_load_box_line":                     [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "save_load_element_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,1680          ,162         ,25                ,2             ,frame_black      ,wjuh_bg], 
-        "save_load_element_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "save_load_box_double_line":              [wnfh_gui["tint_elements"]["frame_double_line"]   ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "save_load_element_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,1680          ,162         ,25                ,2             ,frame_black      ,wjuh_bg],
+        "save_load_element_gradient":             [wnfh_gui["tint_elements"]["frame_gradient"]            ,1680          ,162         ,25                ,0             ,frame_black      ,wjuh_bg], 
+        "save_load_element_double_line":          [wnfh_gui["tint_elements"]["frame_double_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "save_load_element_line":          [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
 
         "logbook_char_list_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,2             ,frame_black      ,wjuh_bg],
         "logbook_char_list_bg_2":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,40          ,25                ,2             ,frame_black      ,wjuh_bg],
         "logbook_char_list_gradient":             [wnfh_gui["tint_elements"]["frame_gradient"]      ,450           ,80          ,25                ,0             ,frame_black      ,wnfh_pass],
         "logbook_char_list_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,470           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "logbook_box_bg":                         [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,1020        ,25                ,2             ,frame_black      ,wjuh_bg],
-        "logbook_box_line":                       [wnfh_gui["tint_elements"]["frame_line"]          ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "logbook_box_bg":                         [wnfh_gui["tint_elements"]["frame_bg"]            ,1870          ,1020        ,25                ,2             ,frame_black      ,wjuh_bg],
+        "logbook_box_double_line":                [wnfh_gui["tint_elements"]["frame_double_line"]   ,1890          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "logbook_vbar_null":                      [wnfh_gui["tint_elements"]["frame_bar_null"]      ,40            ,40          ,13                ,1             ,frame_green      ,wnfh_pass],
         "logbook_vbar_full":                      [wnfh_gui["tint_elements"]["frame_bar_full"]      ,40            ,40          ,13                ,0             ,frame_green      ,wnfh_pass],
         "logbook_vbar_bg":                        [wnfh_gui["tint_elements"]["frame_bar_bg"]        ,40            ,40          ,13                ,2             ,frame_green      ,wnfh_pass],
@@ -149,12 +156,6 @@ init -4 python:
         "mm_bg_sunset",
         "mm_bg_day",
         "gradient",
-        "achievements",
-        "discord",
-        "seledka",
-        "steam",
-        "vk",
-        "telegramm",
         "exit",
         #Виньетка
         "vignette",
@@ -228,7 +229,6 @@ init -4 python:
         "trophy_silver",
         "trophy_gold",
         "trophy_platina",
-        "trophy_white",
         "kit"
         
         #Тут срез для ачивок в файле wnfh_achievements_menu

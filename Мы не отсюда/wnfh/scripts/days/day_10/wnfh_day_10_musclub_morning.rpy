@@ -1,5 +1,5 @@
 ﻿label d10_musclub_morning:
-
+    $ wnfh_set_slot_data(chapter = 2, game_date = "26-07-1989", scene = "Утро у Мику")
     $ wnfh_set_time("sunset")
     play ambience ambience_int_cabin_day fadein 2.5
     $ renpy.pause(1.5, hard=True)

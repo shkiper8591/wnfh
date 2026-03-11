@@ -14,11 +14,13 @@ label technical_chocolatki:
 
 
 label wnfh_test:
-    $ wnfh_new_chapter("Тест")
+
     $ wnfh_set_time()
-    scene black
+    stop music fadeout 1.0
+    scene int_clubs_male_day with dissolve
+    play music wnfh_music_list["chilling_out"] fadein 1.0
     
-    "Добро пожаловать в полигон!"
+    "Добро пожаловать в клубную мастерскую!"
     "Что мы хотим отладить?"
     window hide
     jump wnfh_test_main_menu
@@ -30,7 +32,7 @@ label wnfh_test_main_menu:
     menu:
         "Карту?":
             jump wnfh_map_test
-        "Фоны":
+        "Фоны?":
             jump wnfh_background
         "Анимации?":
             jump wnfh_test_anim
@@ -48,11 +50,11 @@ label wnfh_test_main_menu:
             jump wnfh_test_ach
         "Дни?":    
             jump wnfh_test_days
-        "Карта?":
+        "Карту?":
             jump wnfh_test_map
-        "Переходы":
+        "Переходы?":
             jump wnfh_test_transitions
-        "Анимированные шейдеры":
+        "Анимированные шейдеры?":
             jump wnfh_test_shaders
         "Покинуть меню отладки":
             return

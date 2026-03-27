@@ -264,10 +264,6 @@ label d10_un_lr_stresstalk:
 
         un "Ой[wp]"
 
-        "От удивления я аж встал."
-
-        me "Катю?"
-
     else:
 
         me "Не знаю, что она задумала, но в нашей ситуации нужно быть готовыми к худшему сценарию."
@@ -276,6 +272,7 @@ label d10_un_lr_stresstalk:
         show un sad pioneer at center with dspr
     
         "Расстроенно вздохнув, Лена, немного примяв траву, уселась на землю."
+        "Также примяв траву, я присел напротив неё"
 
         un "Надеюсь ты ошибаешься[wp]"
         un "Я же ведь ничего плохого не сделала даже."
@@ -286,17 +283,49 @@ label d10_un_lr_stresstalk:
 
         un "Ой[wp]"
 
-    "Я ЗАЕБАВСЯ ПIСАТИ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    "Deep down in Louisiana, close to New Orleans"
-    "Way back up in the woods among the evergreens"
-    "There stood a log cabin made of earth and wood"
-    "Where lived a country boy named Johnny B. Goode"
-    "Who never ever learned to read or write so well"
-    "But he could play guitar just a-ringin' a bell"
-    "Go, go"
-    "Go, Johnny, go, go"
-    "Go, Johnny, go, go"
-    "Go, Johnny, go, go"
-    "Go, Johnny, go, go"
-    "Johnny B. Goode"
-    "Шизофрения гейминг"
+    "От удивления я аж встал."
+
+    me "Катю?"
+
+    show un shy normal pioneer at center with dspr
+
+    un "Д-Да[wp]"
+    me "А чего же ты о ней вчера не рассказала?"
+    
+    show un surprise pioneer at center with dspr
+
+    un "Не до неё было как-то знаешь ли."
+
+    show un normal pioneer at center with dspr
+
+    un "Да и знаю только, что она одна из нас, но не более."
+    me "То есть ты её не завербовала, как пыталась меня?"
+    un "Нет. Вчера у меня был выбор между тобой и ей."
+    un "Решала выбрать тебя, так как ты мне первым попался."
+    me "Ясно[wp]"
+
+    th "Нужно будет доложить об этом Ольге при первой же возможности."
+
+    me "Значит, план действий следующий будет."
+    me "Мы пойдём сейчас к вожатой, доложим что случайно нашли Катю."
+    un "Почему так?"
+    me "Чтобы лишний раз не подставлять тебя."
+    me "А то выходит так, что ты умолчала."
+    un "Поняла. А потом что?"
+    me "Потом узнаем где Славя, и я схожу к ней потолковать."
+    me "Разведую обстановку, и узнаю что у неё в мыслях."
+    me "Так что, предлагаю не терять ни минуты."
+
+    show un shy pioneer at center with dspr
+
+    "Я протянул Лене руку, чтобы помочь той подняться."
+    "Лена, почему, удивлённо посмотрела на мою ладонь, а потом на меня."
+    "Несколько секунд потупившись, она всё же взялась за меня, после чего я помог встать."
+
+    me "Долго же ты думала."
+
+    show un normal pioneer at center with dspr
+
+    un "Пойдём уже"
+
+    jump d10_un_lr_kat_and_sl

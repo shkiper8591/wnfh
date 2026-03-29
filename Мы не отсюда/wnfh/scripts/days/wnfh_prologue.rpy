@@ -1099,13 +1099,13 @@ label wnfh_prologue:
     window hide dissolve
     stop ambience fadeout 2.0
     call screen wnfh_time_skip("22-е июля. Суббота.", 100, santa_barbara_in_dissolve, 25, 3) with dissolve2
-    #$ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0, hard=True)
     $ wnfh_set_slot_data(chapter = 0, game_date = "22-07-1989", scene = "Субботний вечер")
-    #$ renpy.pause(0.3)
+    $ renpy.pause(0.3)
     play music wnfh_music_list["chilling_out"] fadein 2.5
     play ambience ambience_camp_center_evening fadein 2.0
     scene bg ext_lenin_square_sunset_wnfh with sphere_blure_dissolve2
-    #$ renpy.pause(1.0, hard=True)
+    $ renpy.pause(1.0, hard=True)
     window show dissolve
 
     "Вечер выходного дня[wp]"

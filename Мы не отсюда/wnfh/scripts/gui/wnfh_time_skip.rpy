@@ -9,4 +9,4 @@ screen wnfh_time_skip(ts, ts_size = 30, ts_transition = dissolve, ts_text_spd = 
             size ts_size
             slow_cps ts_text_spd
 
-    timer ts_timer action Hide("wnfh_time_skip", transition = ts_transition)
+    timer ts_timer action [Hide("wnfh_time_skip", transition = ts_transition), Return()]

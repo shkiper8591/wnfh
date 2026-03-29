@@ -493,34 +493,22 @@ screen wnfh_save(main_menu = False):
                                         
                                         $ character_with_img = [character for character in wnfh_character_order]
                                         for index, character in enumerate(character_with_img, start = 21 - len(character_with_img)):
-                                            frame:
-                                                background debug_frame["black"]
-                                                area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
-                                                xanchor 0.5 yanchor 0.5
-                                                hbox: # ================================================ Ебальники с очками
-                                                    spacing 0
-                                                    anchor (0.5, 0.5) pos (0.5, 0.5)
-                                                    frame: # ================================================ Ебальники
-                                                        area(0.0, 0.5, 40, 70)
-                                                        xanchor 0.0 yanchor 0.5
-                                                        if persistent.wnfh_debug_color:
-                                                            background wnfh_characters[character][1]
-                                                        else:
-                                                            background frame_transparent
-                                                        add (wnfh_gui["avatars"][character]):
-                                                            xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
-                                                            zoom 0.05
-                                                            if renpy.store.wnfh_tymeofday != "day":
-                                                                matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
-                        
-                                                    frame: # ================================================ Очки
-                                                        background debug_frame["blue"]
-                                                        area(1.0, 0.5, 40, 70)
-                                                        xanchor 1.0 yanchor 0.5
-                                                        text slot_info["lp_info"][character]:
-                                                            style "wnfh_lp_counter"
-                                                            color wnfh_characters[character][1]
-                                                            size 30
+                                            #frame:
+                                            #    background debug_frame["black"]
+                                            #    area(0.5, 0.5, 90, wnfh_frames_elements["widget_lp_box_bg"][2])
+                                            #    xanchor 0.5 yanchor 0.5
+                                            hbox: # ================================================ Ебальники с очками
+                                                spacing 0
+                                                anchor (0.5, 0.5) pos (0.5, 0.5)
+                                                add (wnfh_gui["avatars"][character]):
+                                                    xalign 0.5 yanchor 0.5 xpos 0.5 ypos 0.5
+                                                    zoom 0.05
+                                                    if renpy.store.wnfh_tymeofday != "day":
+                                                        matrixcolor TintMatrix(wnfh_tint_color[renpy.store.wnfh_tymeofday][3])
+                                                text slot_info["lp_info"][character]:
+                                                    style "wnfh_lp_counter"
+                                                    color wnfh_characters[character][1]
+                                                    size 30
                                 
         frame:
             background debug_frame["green"]

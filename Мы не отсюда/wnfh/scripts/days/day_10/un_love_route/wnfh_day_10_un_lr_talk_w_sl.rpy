@@ -327,6 +327,8 @@ label d10_un_lr_talk_w_sl:
 
 label d10_un_lr_talk_w_sl_cont:
 
+    window show dissolve
+    
     me "Что же, тогда удачи тебе."
     kat "Ага[wp]"
 

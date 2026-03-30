@@ -1,4 +1,4 @@
-d10_un_lr_doubts_about_kat:
+label d10_un_lr_doubts_about_kat:
     
     window hide dissolve
     stop ambience fadeout 2.0

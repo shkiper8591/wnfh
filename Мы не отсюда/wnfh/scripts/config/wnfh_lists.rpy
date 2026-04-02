@@ -96,6 +96,9 @@ init -4 python:
         
         "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]            ,820           ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
         "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]          ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+
+        "relation_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,820           ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
+        "relation_box_double_line":               [wnfh_gui["tint_elements"]["frame_double_line"]   ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         
         "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]          ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]            ,1500          ,100         ,25                ,2             ,frame_black      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
@@ -127,9 +130,9 @@ init -4 python:
         "save_load_box_bg":                       [wnfh_gui["tint_elements"]["frame_bg"]            ,1860          ,870         ,25                ,2             ,frame_black      ,wjuh_bg],
         "save_load_box_double_line":              [wnfh_gui["tint_elements"]["frame_double_line"]   ,1880          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "save_load_element_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,1680          ,162         ,25                ,2             ,frame_black      ,wjuh_bg],
-        "save_load_element_gradient":             [wnfh_gui["tint_elements"]["frame_gradient"]            ,1680          ,162         ,25                ,0             ,frame_black      ,wjuh_bg], 
-        "save_load_element_double_line":          [wnfh_gui["tint_elements"]["frame_double_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
-        "save_load_element_line":          [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "save_load_element_gradient":             [wnfh_gui["tint_elements"]["frame_gradient"]      ,1680          ,162         ,25                ,0             ,frame_black      ,wjuh_bg], 
+        "save_load_element_double_line":          [wnfh_gui["tint_elements"]["frame_double_line"]   ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "save_load_element_line":                 [wnfh_gui["tint_elements"]["frame_line"]          ,1700          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
 
         "logbook_char_list_bg":                   [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,80          ,25                ,2             ,frame_black      ,wjuh_bg],
         "logbook_char_list_bg_2":                 [wnfh_gui["tint_elements"]["frame_bg"]            ,450           ,40          ,25                ,2             ,frame_black      ,wjuh_bg],

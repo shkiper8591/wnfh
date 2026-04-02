@@ -311,26 +311,6 @@ init -5:
         pause 2.5
         ease 2.5 pos(pos_x_mid, pos_y_mid) alpha 1.0
         ease 1.0 pos(pos_x_end, pos_y_end) alpha 0.0
-        
-    # Анимации реакции персонажей #
-        
-    transform wnfh_get_relation_atl(pos_x, pos_y):
-        xalign (0.0)
-        pos(pos_x, 0.18)
-        anchor(0.0, 0.5)
-        alpha 0.0
-        pause 1.0
-        ease 1.0 pos(pos_x, pos_y) alpha 1.0
-        pause 3.0
-        ease 1.0 pos(-0.4, pos_y) alpha 0.0
-
-    transform wnfh_relation_indicator_atl(pos_x_start, pos_y_start, pos_x_mid, pos_y_mid, pos_x_end, pos_y_end):
-        pos(pos_x_start, pos_y_start)
-        anchor(0.0, 0.5)
-        alpha 0.0
-        pause 2.5
-        ease 2.5 pos(pos_x_mid, pos_y_mid) alpha 1.0
-        ease 1.0 pos(pos_x_end, pos_y_end) alpha 0.0
     
     ## Анимации меню ##
     

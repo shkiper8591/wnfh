@@ -8,8 +8,8 @@ screen wnfh_map_screen():
         
         if zone.available and zone.label:
             imagebutton:
-                idle       AlphaMask(wnfh_gui["map"]["map_available"], zone.mask)
-                hover      AlphaMask(wnfh_gui["map"]["map_selected"], zone.mask)
+                idle  AlphaMask(wnfh_gui["map"]["map_available"], zone.mask)
+                hover AlphaMask(wnfh_gui["map"]["map_selected"], zone.mask)
                 # Динамическая строка с [zone.mask] создаёт Displayable из "map_mask_house_N.png" :contentReference[oaicite:0]{index=0}
                 focus_mask zone.mask
                 xpos 0 ypos 0

@@ -343,4 +343,4 @@ label d10_un_lr_talk_w_sl_cont:
 
     th "Чё-нибудь другое придумаю, если это вовсе понадобится. А пока пойду вернусь в наше убежище."
 
-    jump d10_un_lr_doubts_about_kat
+    jump d10_un_lr_doubts_about_sl

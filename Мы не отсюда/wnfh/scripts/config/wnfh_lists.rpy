@@ -507,6 +507,7 @@ init 1:
     $ wnfh_music_list["day_1"]                                  = wnfh_MUSIC + "Wnfh - beauty of sunset.mp3"
     $ wnfh_music_list["classic_bossa"]                          = wnfh_MUSIC + "_Blacksmith_ - Classic Bossa.mp3"
     $ wnfh_music_list["kilometri_leta"]                         = wnfh_MUSIC + "Svaty - kilometri leta.mp3"
+    $ wnfh_music_list["urban_prairie"]                          = wnfh_MUSIC + "Alec Holowka - Urban Prairie.mp3"
     #$ wnfh_music_list[""] = wnfh_MUSIC + ".mp3"
     
     

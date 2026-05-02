@@ -234,18 +234,18 @@ init -5:
         subpixel True
         pos(-0.5, 0.15)
         anchor(0.0, 0.5)
-        ease_quart 1.5 pos(-0.05, 0.15)
+        ease_quart 1.5 pos(-0.01, 0.15)
         pause 5.0
         ease_quart 1.5 pos(-0.5, 0.15)
     
-    transform wnfh_get_ach_title_atl(x_pos=0.095, y_pos=0.131):
+    transform wnfh_get_ach_title_atl(x_pos = 0.095, y_pos = 0.131):
         pos(x_pos-0.4, y_pos)
         anchor(0.0, 0.5)
         ease 1.0 pos(x_pos, y_pos)
         pause 3.0
         ease 1.0 pos(x_pos-0.4, y_pos)
         
-    transform wnfh_get_ach_signature_atl(x_pos=0.119, y_pos=0.17):
+    transform wnfh_get_ach_signature_atl(x_pos = 0.119, y_pos = 0.17):
         pos(x_pos-0.4, y_pos)
         anchor(0.0, 0.5)
         ease 1.0 pos(x_pos, y_pos)
@@ -311,6 +311,25 @@ init -5:
         pause 2.5
         ease 2.5 pos(pos_x_mid, pos_y_mid) alpha 1.0
         ease 1.0 pos(pos_x_end, pos_y_end) alpha 0.0
+
+    transform wnfh_get_relation(pos_x, pos_y):
+        xalign (0.0)
+        pos(pos_x, 0.18)
+        anchor(0.0, 0.5)
+        alpha 0.0
+        pause 1.0
+        ease 1.0 pos(pos_x, pos_y) alpha 1.0
+        pause 3.0
+        ease 1.0 pos(-0.4, pos_y) alpha 0.0
+
+    transform wnfh_relation_indicator(pos_y_start, pos_y_mid, pos_y_end):
+        subpixel True
+        pos(1.1, pos_y_start)
+        anchor(0.5, 0.5)
+        alpha 0.0
+        pause 1.5
+        ease_quad 2.5 ypos pos_y_mid alpha 1.0
+        ease_quad 1.0 ypos pos_y_end alpha 0.0
     
     ## Анимации меню ##
     

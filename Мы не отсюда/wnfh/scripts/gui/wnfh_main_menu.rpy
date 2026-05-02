@@ -40,7 +40,7 @@ screen wnfh_main_menu():
                 (6, 6), im.MatrixColor(wnfh_gui["tint_elements"]["vk"], im.matrix.tint(0.0, 0.0, 0.0,)),
                 (0, 0), im.MatrixColor(wnfh_gui["tint_elements"]["vk"], im.matrix.tint(*converter_hex('wnfh_tint_color', 0, renpy.store.wnfh_tymeofday)))
                 ), 60, 60),
-            [OpenURL("https://vk.com/blwnfh")]],
+            [OpenURL(wnfh_gui["hyperlinks"]["vk"])]],
 
             ["telegramm", im.Scale(im.Composite(
                 (130, 130),

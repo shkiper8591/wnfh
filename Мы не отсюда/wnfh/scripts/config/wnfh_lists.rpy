@@ -97,8 +97,8 @@ init -4 python:
         "ach_box_bg":                             [wnfh_gui["tint_elements"]["frame_bg"]            ,820           ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
         "ach_box_line":                           [wnfh_gui["tint_elements"]["frame_line"]          ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
 
-        "relation_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,820           ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
-        "relation_box_double_line":               [wnfh_gui["tint_elements"]["frame_double_line"]   ,840           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
+        "relation_box_bg":                        [wnfh_gui["tint_elements"]["frame_bg"]            ,520           ,100         ,25                ,2             ,frame_black        ,wjuh_bg],
+        "relation_box_double_line":               [wnfh_gui["tint_elements"]["frame_double_line"]   ,540           ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         
         "db_line_lower":                          [wnfh_gui["tint_elements"]["frame_line"]          ,1500          ,4           ,22                ,1             ,frame_green      ,wjuh_line],
         "db_bg":                                  [wnfh_gui["tint_elements"]["frame_bg"]            ,1500          ,100         ,25                ,2             ,frame_black      ,[wnfh_db_red_small,wnfh_db_red_large,None]],
@@ -193,50 +193,16 @@ init -4 python:
         "apple",
     ]}
 
-    
-
-    characters_banners_idle = [
-        "ach_kat_idle",
-        "ach_un_idle",
-        "ach_mi_idle",
-        "ach_usw_idle",
-        "ach_dv_idle",
-        "ach_sl_idle",
-        "ach_sv_idle",
-        "ach_mt_idle",
-        "ach_me_idle"
-    ]
-    characters_banners_hover = [
-        "ach_kat_hover",
-        "ach_un_hover",
-        "ach_mi_hover",
-        "ach_usw_hover",
-        "ach_dv_hover",
-        "ach_sl_hover",
-        "ach_sv_hover",
-        "ach_mt_hover",
-        "ach_me_hover",
-    ]
     wnfh_gui["banners"] = {img:(wnfh_BANNERS + img + ".png") for img in [
-        
-        "relation_frame",
         "relation_up",
         "relation_down",
-        "relation_neutral",
-        "ach_frame",
-        "ach_frame_1_1",
-        "ach_frame_1_2",
-        "ach_menu_frame",
-        "ach_menu_frame_lock",
         "trophy_bronz",
         "trophy_silver",
         "trophy_gold",
         "trophy_platina",
         "kit"
-        
-        #Тут срез для ачивок в файле wnfh_achievements_menu
-        ] + characters_banners_idle + characters_banners_hover
-        }
+        ]}
+
     wnfh_ach_list = {
      #Уже в игре
         #Тег ачивки  #0 Иконка                                    #1 Заголовк                 #2 Подпись                               #3 Трофей                                #4 Персонаж 
@@ -270,11 +236,6 @@ init -4 python:
         "sv",
         "placeholder",
     ]}
-
-    # Для галереи
-    wnfh_gui["gallery"] = {img:(wnfh_GALLERY + img + ".png") for img in [
-        "back",
-    ]}
     
     # Звук кнопки
     wnfh_gui["sound"] = {
@@ -283,9 +244,10 @@ init -4 python:
 
     # Ссылки в Сибирь
     wnfh_gui["hyperlinks"] = {
-        "vk":"https://vk.com/wnfh",
-        #"steam":""
-        #"discord":""
+        "vk":         "https://vk.com/blwnfh",
+        "telegramm":  "https://t.me/blwnfh",
+        "steam":      "https://steamcommunity.com/sharedfiles/filedetails/?id=2986236115",
+        "discord":    "https://discord.gg/KfaK7pmRSK",
     }
     
     

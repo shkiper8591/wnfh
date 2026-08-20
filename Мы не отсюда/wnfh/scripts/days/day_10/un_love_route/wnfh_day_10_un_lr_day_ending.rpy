@@ -229,10 +229,10 @@ label d10_un_lr_day_ending:
     "Уже через полудрёму сказала вожатая."
     "Немного усмехнувшись с этого, я быстро разделся и улёгся под постель. А там и сон не заставил себя долго ждать."
 
+    stop ambience fadeout 2.0
     window hide dissolve
     show blink
     with None
     $ renpy.pause(3.0)
     scene black
-    jump wnfh_day_11
-    ## це временное решение
+    jump d11_un_lr_morning

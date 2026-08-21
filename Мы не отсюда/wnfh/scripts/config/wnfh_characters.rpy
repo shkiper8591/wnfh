@@ -178,7 +178,7 @@ init python:
 
         config.mouse_displayable = MouseDisplayable(DynamicDisplayable(wnfh_mouse_dynamic_displayable), 0, 0).add("button", DynamicDisplayable(wnfh_mouse_dynamic_displayable_pressed), 10, 8)
         
-        for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv)]:
+        for i in [("kat", "mi", adv), ("kat", "un", adv), ("me", "dv", nvl), ("me", "el", adv), ("me", "kat", adv), ("me", "el", adv), ("me", "un", adv)]:
             wnfh_double_char_define(i[0], i[1], i[2])
             
 init -1 python:
